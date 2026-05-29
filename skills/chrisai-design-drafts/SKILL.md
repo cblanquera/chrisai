@@ -1,6 +1,6 @@
 ---
 name: chrisai-design-drafts
-description: Use when Codex needs static HTML/CSS/JS design-review drafts, clickable creative design drafts, or polished visual mockup artifacts based on an approved wireframe, brand direction, or existing design source of truth.
+description: Use when an agent needs static HTML/CSS/JS design-review drafts, clickable creative design drafts, or polished visual mockup artifacts based on an approved wireframe, brand direction, or existing design source of truth.
 ---
 
 # ChrisAI Design Drafts

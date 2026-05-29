@@ -39,7 +39,7 @@ Do not use this skill as the primary specialist for:
 
 This skill is the ChrisAI engineering-design pass.
 
-It should help Codex decide what structure ought to exist before the coding
+It should help the agent decide what structure ought to exist before the coding
 specialist decides exactly how a file should look.
 
 This skill should not duplicate the formatting, comment-density, import, JSX,

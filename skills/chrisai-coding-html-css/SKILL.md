@@ -1,6 +1,6 @@
 ---
 name: chrisai-coding-html-css
-description: Use this skill when writing or reviewing vanilla HTML and CSS for static sites, documentation pages, and GitHub Pages style projects. It consolidates practical HTML and CSS standards into one Codex workflow, including semantic HTML structure, attribute ordering, line wrapping, CSS section layout, selector discipline, naming conventions, deploy-safe linking patterns, and review checks for maintainable static frontend code.
+description: Use this skill when writing or reviewing vanilla HTML and CSS for static sites, documentation pages, and GitHub Pages style projects. It consolidates practical HTML and CSS standards into one portable agent workflow, including semantic HTML structure, attribute ordering, line wrapping, CSS section layout, selector discipline, naming conventions, deploy-safe linking patterns, and review checks for maintainable static frontend code.
 ---
 
 # ChrisAI Coding HTML CSS
@@ -9,8 +9,8 @@ Use this skill for vanilla HTML and CSS implementation, refactors, and reviews
 for static sites and frontend templates.
 
 This skill is intentionally practical. It turns the repo's HTML and CSS guides
-into generation rules and review checks so Codex produces cleaner markup and
-styles instead of only formatting them after the fact.
+into generation rules and review checks so the agent produces cleaner markup
+and styles instead of only formatting them after the fact.
 
 ## Second Pass Use
 

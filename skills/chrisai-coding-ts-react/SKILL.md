@@ -9,8 +9,8 @@ Use this skill for TypeScript ReactJS implementation, refactors, and reviews
 in any local codebase.
 
 This skill is intentionally self-contained. It consolidates the relevant
-ReactJS guidance and the local TypeScript-oriented coding style so Codex does
-not need to bounce between multiple documents during implementation.
+ReactJS guidance and the local TypeScript-oriented coding style so the agent
+does not need to bounce between multiple documents during implementation.
 
 ## Second Pass Use
 

@@ -1,6 +1,6 @@
 ---
 name: chrisai-design-creative
-description: Use when Codex needs to coordinate brand-led creative direction for sites, apps, docs, landing pages, or related product surfaces by selecting the design mode, analyzing the logo, optional brand guide, design source of truth, reference sites or apps, usability constraints, and differentiation, then handing off to extraction, wireframe, draft, asset, or implementation specialists as needed.
+description: Use when an agent needs to coordinate brand-led creative direction for sites, apps, docs, landing pages, or related product surfaces by selecting the design mode, analyzing the logo, optional brand guide, design source of truth, reference sites or apps, usability constraints, and differentiation, then handing off to extraction, wireframe, draft, asset, or implementation specialists as needed.
 ---
 
 # ChrisAI Design Creative

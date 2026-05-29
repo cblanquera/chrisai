@@ -1,6 +1,6 @@
 ---
 name: chrisai-docs-copy-editing
-description: Use when Codex needs to proofread, clarify, simplify, or tighten existing developer-facing documentation for junior developers without changing technical meaning, document ownership, or markdown structure rules.
+description: Use when an agent needs to proofread, clarify, simplify, or tighten existing developer-facing documentation for junior developers without changing technical meaning, document ownership, or markdown structure rules.
 ---
 
 # ChrisAI Docs Copy Editing

@@ -1,6 +1,6 @@
 ---
 name: chrisai-design-logo-generator
-description: Use when Codex needs to create, refine, or iterate on logos or logo marks, especially for SVG-first brand marks, logo concept directions, favicon-safe simplification, and production-ready mark variants before downstream PNG, SVG, or ICO export work.
+description: Use when an agent needs to create, refine, or iterate on logos or logo marks, especially for SVG-first brand marks, logo concept directions, favicon-safe simplification, and production-ready mark variants before downstream PNG, SVG, or ICO export work.
 ---
 
 # ChrisAI Design Logo Generator

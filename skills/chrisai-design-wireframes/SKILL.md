@@ -1,6 +1,6 @@
 ---
 name: chrisai-design-wireframes
-description: Use when Codex needs grayscale low-fidelity wireframes or clickable grayscale wireframe drafts for sites, apps, docs, landing pages, or product screens before creative visual design is approved.
+description: Use when an agent needs grayscale low-fidelity wireframes or clickable grayscale wireframe drafts for sites, apps, docs, landing pages, or product screens before creative visual design is approved.
 ---
 
 # ChrisAI Design Wireframes

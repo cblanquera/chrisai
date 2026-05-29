@@ -1,6 +1,6 @@
 ---
 name: chrisai-design-system-extraction
-description: Use when Codex needs to inspect an existing app, site, Figma file, design system, component library, screenshots, exported design files, or local project theme source to extract the design source of truth before extending an existing product design.
+description: Use when an agent needs to inspect an existing app, site, Figma file, design system, component library, screenshots, exported design files, or local project theme source to extract the design source of truth before extending an existing product design.
 ---
 
 # ChrisAI Design System Extraction

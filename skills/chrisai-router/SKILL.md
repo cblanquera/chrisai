@@ -1,6 +1,6 @@
 ---
 name: chrisai-router
-description: Use when a task should be handled with the ChrisAI skill family and Codex needs to choose the narrowest documentation, coding, browser-QA, or design specialist without relying on legacy routers.
+description: Use when a task should be handled with the ChrisAI skill family and an agent needs to choose the narrowest documentation, coding, browser-QA, or design specialist without relying on legacy routers.
 ---
 
 # ChrisAI Router

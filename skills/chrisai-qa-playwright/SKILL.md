@@ -168,7 +168,8 @@ This skill supports two capture modes:
 Core QA rules:
 
 - validate the rendered localhost preview, not the source tree
-- prefer the Codex in-app browser for manual inspection and screenshots
+- prefer the current agent's integrated browser for manual inspection and
+  screenshots when available; in Codex, use the Codex in-app browser
 - use Playwright-driven flows for deterministic screenshots and recordings
 - never switch to Safari, Chrome, or another external browser
 - check more than one viewport when layout or responsiveness is part of the

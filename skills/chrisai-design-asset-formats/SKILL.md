@@ -1,6 +1,6 @@
 ---
 name: chrisai-design-asset-formats
-description: Use when Codex needs to create, convert, validate, or package SVG, PNG, and ICO design assets, especially for prompt-to-PNG, prompt-to-SVG, PNG-to-SVG, SVG-to-PNG, PNG-to-ICO, and SVG-to-ICO workflows where transparency correctness, master-format choice, and favicon-safe output matter.
+description: Use when an agent needs to create, convert, validate, or package SVG, PNG, and ICO design assets, especially for prompt-to-PNG, prompt-to-SVG, PNG-to-SVG, SVG-to-PNG, PNG-to-ICO, and SVG-to-ICO workflows where transparency correctness, master-format choice, and favicon-safe output matter.
 ---
 
 # ChrisAI Design Asset Formats
