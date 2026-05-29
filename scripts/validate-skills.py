@@ -5,12 +5,15 @@ from __future__ import annotations
 
 import re
 import sys
+import json
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
 TEMPLATES_DIR = ROOT / "templates"
+PACKAGE_FILE = ROOT / "package.json"
+VERSION_FILE = ROOT / "VERSION"
 NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$")
 
 
@@ -81,6 +84,23 @@ def validate_skill(path: Path) -> list[str]:
     return errors
 
 
+def validate_package_version() -> list[str]:
+    if not PACKAGE_FILE.exists() or not VERSION_FILE.exists():
+        return []
+
+    errors: list[str] = []
+    package_json = json.loads(PACKAGE_FILE.read_text(encoding="utf-8"))
+    package_version = package_json.get("version")
+    repo_version = VERSION_FILE.read_text(encoding="utf-8").strip()
+
+    if package_version != repo_version:
+        errors.append(
+            f"package.json version {package_version!r} must match VERSION {repo_version!r}"
+        )
+
+    return errors
+
+
 def main() -> int:
     if not SKILLS_DIR.exists():
         print("skills directory is missing", file=sys.stderr)
@@ -102,6 +122,7 @@ def main() -> int:
         errors.extend(validate_skill(path))
     for path in template_dirs:
         errors.extend(validate_skill(path))
+    errors.extend(validate_package_version())
 
     if errors:
         print("Skill validation failed:", file=sys.stderr)

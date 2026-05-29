@@ -9,7 +9,15 @@ and OpenCode are install targets, not separate rewritten sources.
 
 ## Install
 
-Clone the repository, then sync to the agent you use:
+Install directly from GitHub with `npx`:
+
+```bash
+npx github:cblanquera/chrisai install --target codex
+npx github:cblanquera/chrisai install --target claude
+npx github:cblanquera/chrisai install --target opencode
+```
+
+Or clone the repository, then sync to the agent you use:
 
 ```bash
 scripts/sync-codex.sh
@@ -17,8 +25,9 @@ scripts/sync-claude.sh
 scripts/sync-opencode.sh
 ```
 
-Each sync script validates `skills/` first and then copies the portable skills
-into that agent's skills directory.
+Both install paths validate `skills/` first and then copy the portable skills
+into that agent's skills directory. The `npx` CLI is a small wrapper around the
+same sync scripts.
 
 Default targets:
 
@@ -35,6 +44,8 @@ CHRISAI_CODEX_SKILLS_DIR=/path/to/skills scripts/sync-codex.sh
 CHRISAI_CLAUDE_SKILLS_DIR=/path/to/skills scripts/sync-claude.sh
 CHRISAI_OPENCODE_SKILLS_DIR=/path/to/skills scripts/sync-opencode.sh
 ```
+
+The same overrides work with `npx`.
 
 ## Update
 
@@ -71,6 +82,7 @@ For development, edit skills in this repository first:
 
 ```bash
 scripts/validate-skills.py
+npm test
 ```
 
 After validation, sync to the agent target you want to test. Do not edit
@@ -92,6 +104,7 @@ skills/              Portable ChrisAI skills and bundled resources
 adapters/codex/      Codex install notes
 adapters/claude/     Claude Code install notes
 adapters/opencode/   OpenCode install notes
+bin/                 Minimal npm/npx CLI wrapper
 scripts/             Validation, version, update, and sync commands
 templates/           Copyable personal overlays such as local-environment
 docs/                Operational maintenance notes

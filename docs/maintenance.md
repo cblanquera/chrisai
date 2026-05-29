@@ -40,6 +40,14 @@ scripts/sync-opencode.sh
 Each sync script validates first, then replaces the installed ChrisAI skill
 folders in the target directory with copies from `skills/`.
 
+The same install flow is available through the dependency-free Node CLI:
+
+```bash
+npx github:cblanquera/chrisai install --target codex
+npx github:cblanquera/chrisai install --target claude
+npx github:cblanquera/chrisai install --target opencode
+```
+
 ## Local Environment Template
 
 Use `templates/local-environment/SKILL.md` as the starter for a personal

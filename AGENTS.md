@@ -13,8 +13,10 @@ unless the user explicitly asks for an operational action.
 - `adapters/codex/`: Codex install and sync guidance.
 - `adapters/claude/`: Claude Code install and sync guidance.
 - `adapters/opencode/`: OpenCode install and sync guidance.
+- `bin/`: minimal dependency-free npm/npx CLI wrapper.
 - `scripts/`: repository maintenance commands for validation, version checks,
   Git updates, and adapter sync.
+- `tests/`: Node test runner coverage for the CLI wrapper.
 - `templates/`: copyable starter files for user-local overlays, including
   `templates/local-environment/SKILL.md`.
 - `docs/`: concise operational documentation.
@@ -83,6 +85,7 @@ Validate before claiming skill content is ready:
 
 ```bash
 scripts/validate-skills.py
+npm test
 ```
 
 Check the repository version:

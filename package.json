@@ -1,0 +1,24 @@
+{
+  "name": "chrisai",
+  "version": "0.1.2",
+  "description": "Portable ChrisAI skills for AI coding agents.",
+  "bin": {
+    "chrisai": "./bin/chrisai.js"
+  },
+  "scripts": {
+    "test": "node --test tests/chrisai-cli.test.mjs",
+    "validate": "python3 scripts/validate-skills.py"
+  },
+  "files": [
+    "adapters/",
+    "bin/",
+    "docs/",
+    "scripts/",
+    "skills/",
+    "templates/",
+    "CHANGELOG.md",
+    "README.md",
+    "VERSION"
+  ],
+  "license": "UNLICENSED"
+}
