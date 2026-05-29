@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Docs Formatting"
+  short_description: "Normalize markdown docs and structure"
+  default_prompt: "Use $chrisai-docs-dev-formatting to normalize developer-facing markdown documentation for junior developers using the repo's style rules for headings, outline numbering, TOC usage, spacing, code fences, and links without changing the intended reader flow."

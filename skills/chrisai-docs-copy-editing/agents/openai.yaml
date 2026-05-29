@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Docs Copy Editing"
+  short_description: "Proofread and tighten technical prose"
+  default_prompt: "Use $chrisai-docs-copy-editing to proofread and tighten existing developer-facing documentation for junior developers by improving clarity, terminology, transitions, and consistency without changing technical meaning or taking over document structure."

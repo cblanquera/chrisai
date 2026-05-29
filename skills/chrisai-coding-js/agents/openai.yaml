@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Coding JS"
+  short_description: "Write repo-aligned JavaScript"
+  default_prompt: "Use $chrisai-coding-js to write or review JavaScript that follows this repo's formatting, comment flow, module-mode discovery, import or require patterns, export ordering, and file-boundary conventions across .js, .mjs, and .cjs files."
