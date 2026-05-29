@@ -9,7 +9,10 @@ unless the user explicitly asks for an operational action.
 - `skills/`: portable ChrisAI skill folders. Each skill folder must contain a
   `SKILL.md` with `name` and `description` frontmatter. Bundled `agents/`,
   `references/`, `scripts/`, or `assets/` directories may live inside a skill
-  when that skill needs them.
+  when that skill needs them. Skill-specific agent metadata belongs in that
+  skill's `agents/` folder, including Codex/OpenAI metadata such as
+  `openai.yaml` and equivalent Claude metadata when the skill needs
+  Claude-specific registration or behavior.
 - `adapters/codex/`: Codex install and sync guidance.
 - `adapters/claude/`: Claude Code install and sync guidance.
 - `adapters/opencode/`: OpenCode install and sync guidance.
@@ -110,6 +113,11 @@ scripts/sync-opencode.sh
 ```
 
 ## Cross-Platform Skill Drafting
+
+When drafting or revising skills, do not assume the consumer is Codex only.
+Write portable skill guidance first, then add adapter-specific notes for Codex,
+Claude Code, OpenCode, or other targets only where the behavior actually
+differs.
 
 When drafting or revising skills, consider Linux, macOS, and Windows support
 before treating command guidance as complete.
