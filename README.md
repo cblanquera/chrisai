@@ -1,0 +1,2 @@
+# chrisai
+Me + LLM = Godly
