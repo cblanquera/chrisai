@@ -154,13 +154,26 @@ Use this release flow after confirmation:
 
 1. Pre-test locally with validation, tests, package checks, and a temporary
    install target when the installer changed.
-2. Update release metadata such as `VERSION`, `package.json`, and
-   `CHANGELOG.md`.
-3. Commit and push the release changes.
-4. Pre-test from GitHub using `#main` into a temporary target before tagging.
-5. Create the GitHub release for the version tag.
-6. Install the tagged release into the user's requested local agent target and
+2. Check remote release and tag state before deciding the release version.
+   Do not rely on local tags alone because the checkout may not have fetched
+   every remote tag. Prefer `gh release list` and `git ls-remote --tags origin
+   'v*'` when GitHub and the remote are available.
+3. Choose the release version from the remote state:
+   - If `VERSION` and `package.json` point to a version that already has a
+     remote release or remote tag, bump to the next appropriate semver version,
+     usually the next patch version for skill and documentation changes.
+   - If the intended version has no remote release or tag, keep it and confirm
+     it matches the changelog.
+   - Never move or overwrite an existing remote release tag unless the user
+     explicitly asks for tag repair and understands the risk.
+4. Update release metadata such as `VERSION`, `package.json`, and
+   `CHANGELOG.md` so all three match the intended release version.
+5. Commit and push the release changes.
+6. Pre-test from GitHub using `#main` into a temporary target before tagging.
+7. Create the GitHub release for the version tag.
+8. Install the tagged release into the user's requested local agent target and
    verify preserved local overlays or unrelated skills.
 
 Before creating a release, confirm `VERSION`, `package.json`, `CHANGELOG.md`,
-validation status, branch, and remote state match the intended release.
+validation status, branch, latest remote release, remote tags, and remote state
+match the intended release.
