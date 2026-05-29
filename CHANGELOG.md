@@ -2,6 +2,13 @@
 
 ## 0.1.4 - 2026-05-29
 
+- Split the design workflow into specialist skills for creative coordination,
+  design-system extraction, grayscale wireframes, and static design drafts.
+- Added design evidence scripts for logo analysis, local design-system scans,
+  and Playwright-based existing-site capture.
+- Updated the README skill list for the expanded design skill family.
+- Clarified portable skill drafting guidance so skill content stays
+  agent-neutral unless Codex, Claude Code, or OpenCode behavior differs.
 - Added release workflow guidance that requires confirmation before remote
   publication actions such as push, tag, or GitHub release creation.
 - Documented the 0-6 release verification process in `AGENTS.md`.
