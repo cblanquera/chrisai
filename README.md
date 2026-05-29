@@ -27,8 +27,11 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-docs-dev-formatting` | Normalize markdown structure and formatting using ChrisAI documentation style rules. |
 | `chrisai-docs-dev-onboarding` | Write or restructure onboarding docs, quick starts, tutorials, and conceptual developer guides. |
 | `chrisai-design-asset-formats` | Create, convert, validate, and package SVG, PNG, and ICO design assets with transparency and favicon QA rules. |
-| `chrisai-design-creative` | Define or refine creative direction for docs, static-site, and related brand-led surfaces before implementation. |
+| `chrisai-design-creative` | Coordinate brand-led design direction, mode selection, and handoff across the design specialist skills. |
+| `chrisai-design-drafts` | Create static HTML/CSS/JS design-review drafts and clickable creative mockups from approved structure and direction. |
 | `chrisai-design-logo-generator` | Create and refine SVG-first logos and mark variants before downstream export and packaging. |
+| `chrisai-design-system-extraction` | Extract design source-of-truth rules from existing apps, sites, design files, component libraries, and project tokens. |
+| `chrisai-design-wireframes` | Create grayscale low-fidelity wireframes and clickable grayscale wireframe drafts before visual design. |
 | `chrisai-qa-playwright` | QA local web projects through localhost preview detection, Playwright capture, and responsive browser checks. |
 
 ## Install
