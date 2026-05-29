@@ -70,7 +70,7 @@ test('validate works without shell tools on PATH', () => {
   const result = runCli(['validate'], { PATH: '' });
 
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /Validated 19 skills and 1 template/);
+  assert.match(result.stdout, /Validated \d+ skills and 1 template/);
 });
 
 test('install works without shell tools on PATH', async () => {

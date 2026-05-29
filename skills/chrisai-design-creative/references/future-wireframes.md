@@ -1,16 +1,18 @@
 # Future Wireframes
 
 This reference exists to keep `chrisai-design-creative` structurally ready for
-future wireframing work without turning the current skill into a generic UX
-process guide.
+wireframing work without turning the current skill into a generic UX process
+guide.
 
 ## Intended Future Ownership
 
-When wireframing is added more fully, this skill should own:
+This skill owns:
 
 - low-fidelity homepage and landing-page structure studies
 - layout-option comparison for docs and static-site surfaces
 - translation of a creative direction into rough section and block layouts
+- grayscale static wireframe drafts for design review
+- clickable grayscale wireframe drafts when flow needs review
 
 It should still avoid taking ownership of:
 
@@ -18,12 +20,23 @@ It should still avoid taking ownership of:
 - interaction architecture for complex applications
 - implementation details that belong to HTML, CSS, or frontend code
 
-## Current Boundary
+## Boundary
 
-For now, treat wireframes as adjacent support work:
+Treat wireframes as design drafts:
 
-- acceptable: rough section ordering, hero layout ideas, block-level structure
-- not yet primary: full wireframe systems, multi-screen flow mapping, app UX process
+- acceptable: section ordering, hero layout ideas, block-level structure,
+  screen-level layout, clickable static flow drafts
+- not primary: production frontend implementation, complex app interaction
+  architecture, persisted product behavior
 
 If a request starts to lean heavily toward product UX or application interaction
 design, do not pretend this skill fully owns it yet.
+
+## Wireframe Rules
+
+- Use grayscale only.
+- Avoid logo colors, gradients, illustrations, photos, and decorative graphics.
+- Focus on hierarchy, layout, sections, density, affordances, and flow.
+- Use realistic labels where they clarify structure.
+- Keep interactions simple when creating clickable drafts.
+- Mark static HTML/CSS/JS wireframes as review drafts, not production code.

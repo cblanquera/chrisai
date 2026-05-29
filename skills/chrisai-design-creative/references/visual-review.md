@@ -30,7 +30,36 @@ Use this checklist before treating the creative direction as stable.
 
 - If both light and dark themes exist, do both feel intentionally designed?
 - Does the system still feel like the local product or brand rather than a transplanted reference?
+- Does the direction respect the brand style guide when one exists?
+- Does the logo's color, shape, or motif logic show up without becoming decorative noise?
 - Has visual personality stayed compatible with legibility and trust?
+
+## Reference Synthesis
+
+- Are reference-site commonalities used only where they help users understand the category?
+- Are reference-site differences turned into clear choices instead of averaged together?
+- Does the design avoid copying a reference's brand language?
+- Is the chosen differentiation specific enough to guide implementation?
+
+## Usability
+
+- Is the next action obvious?
+- Are navigation labels plain?
+- Does each page or screen have one clear primary job?
+- Can a user scan the page without interpreting decorative elements first?
+- Are onboarding, forms, and repeated controls predictable?
+
+## Existing Design Extension
+
+- Have existing design rules been stated before adding new page or screen ideas?
+- Does the proposed design obey the source-of-truth priority order?
+- Does any departure from the existing product language have explicit user approval?
+
+## Draft Artifacts
+
+- Is the artifact clearly marked as a design-review draft?
+- For wireframes, is the draft grayscale and free of polished visual styling?
+- For clickable drafts, do interactions demonstrate design intent without implying production behavior?
 
 If the answer to any of these is no, revise the direction before treating the
 handoff as complete.

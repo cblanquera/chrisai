@@ -1,6 +1,6 @@
 interface:
   display_name: "ChrisAI Design Creative"
-  short_description: "Creative direction for docs and static-site surfaces"
-  default_prompt: "Use $chrisai-design-creative to define or refine the creative direction for this docs or static-site surface, adapt available assets, and produce implementation-ready visual guidance before HTML and CSS work begins."
+  short_description: "Coordinator for brand-led design direction and specialist handoff"
+  default_prompt: "Use $chrisai-design-creative to choose the design mode, derive brand-led direction from the logo, optional style guide, design source of truth, reference sites or apps, usability constraints, and differentiation, then hand off to extraction, wireframe, draft, asset, or implementation specialists as needed."
 policy:
   allow_implicit_invocation: true

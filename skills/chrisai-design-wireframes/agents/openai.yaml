@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Design Wireframes"
+  short_description: "Grayscale wireframes and clickable wireframe drafts"
+  default_prompt: "Use $chrisai-design-wireframes to create grayscale low-fidelity wireframe options, refine the approved structure, and produce clickable static wireframe drafts only as review artifacts."
+policy:
+  allow_implicit_invocation: true

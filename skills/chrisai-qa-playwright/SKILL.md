@@ -14,6 +14,7 @@ This skill owns:
 - repo-local Playwright workspace selection and bootstrap
 - screenshot and recording workflows
 - responsive and visual QA against a localhost preview
+- rendered QA for design-review drafts when invoked by a design draft workflow
 - separating repo-side blockers from environment-side blockers
 
 This skill does not own:
@@ -23,6 +24,35 @@ This skill does not own:
 - GitHub Pages builder decisions
 - Markdown-content checks from the legacy docs-site workflow
 - opening Safari, Chrome, or other external browsers
+
+## Design Draft QA
+
+When this skill is used from `chrisai-design-wireframes` or
+`chrisai-design-drafts`, treat the draft folder as the consolidated workspace
+for that draft.
+
+Save design-draft QA artifacts inside the draft folder under `qa/`, including:
+
+- screenshots
+- recordings
+- interaction smoke-test notes
+- responsive-check notes
+
+Do not scatter design-draft QA artifacts into a separate temporary folder or
+the managed Playwright workspace unless the user explicitly asks.
+
+Use this skill for design drafts when they need:
+
+- rendered browser verification
+- desktop and mobile screenshots
+- blank-page checks
+- text-overlap checks
+- container-fit checks
+- responsive layout checks
+- clickable-flow smoke testing
+
+Do not use this skill to choose creative direction, extract design rules,
+revise visual style, or replace user approval.
 
 ## Preview Discovery Workflow
 
