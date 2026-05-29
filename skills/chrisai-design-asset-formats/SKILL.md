@@ -69,6 +69,10 @@ If a requested script depends on a local Python library that is not installed,
 ask the user whether they want to install it. If they decline, stop that path
 cleanly instead of pretending the conversion succeeded.
 
+Before relying on a Python helper, resolve a working Python runtime for the
+current OS. On Windows, do not assume `python3` exists; check `python`, `py`,
+project wrappers, or `local-environment` as appropriate.
+
 ## Step 1: Classify The Request
 
 Start by identifying both the asset class and the requested operation.

@@ -84,6 +84,7 @@ user approval.
 Validate before claiming skill content is ready:
 
 ```bash
+node bin/chrisai.js validate
 scripts/validate-skills.py
 npm test
 ```
@@ -108,14 +109,50 @@ scripts/sync-claude.sh
 scripts/sync-opencode.sh
 ```
 
+## Cross-Platform Skill Drafting
+
+When drafting or revising skills, consider Linux, macOS, and Windows support
+before treating command guidance as complete.
+
+Prefer cross-platform commands and installer paths when they exist. For this
+repo, prefer the `npx github:cblanquera/chrisai#<version> install --target ...`
+flow for user-facing install guidance because it uses the Node CLI instead of
+Unix shell tools.
+
+When a workflow genuinely depends on OS-specific tools, document the
+assumption clearly, provide equivalent alternatives when practical, and route
+machine-specific executable paths through `local-environment` instead of
+hard-coding personal paths into shared skills.
+
 ## Release Workflow
 
 When the user asks to publish a release, prefer handling the full local and
-GitHub workflow for them: verify the working tree, update release metadata,
-commit, push, tag or create the GitHub release, and report the resulting URL.
+GitHub workflow for them after confirming they want an actual publish flow.
+Publish flow means any operation that pushes, tags, or creates a GitHub
+release.
 
 Do not leave release work as instructions for the user unless authentication,
 permissions, or an explicit user preference blocks automation.
 
-Before creating a release, confirm `VERSION`, `CHANGELOG.md`, validation
-status, branch, and remote state match the intended release.
+If the user is discussing release planning, sequencing, or a possible release,
+do not assume permission to publish. Ask for explicit confirmation before
+remote publication actions such as pushing, tagging, or creating a GitHub
+release.
+
+Local commits are fine when they are part of the requested task or the accepted
+release-prep work. Do not treat a local commit by itself as a publish action.
+
+Use this release flow after confirmation:
+
+1. Pre-test locally with validation, tests, package checks, and a temporary
+   install target when the installer changed.
+2. Update release metadata such as `VERSION`, `package.json`, and
+   `CHANGELOG.md`.
+3. Commit and push the release changes.
+4. Pre-test from GitHub using `#main` into a temporary target before tagging.
+5. Create the GitHub release for the version tag.
+6. Install the tagged release into the user's requested local agent target and
+   verify preserved local overlays or unrelated skills.
+
+Before creating a release, confirm `VERSION`, `package.json`, `CHANGELOG.md`,
+validation status, branch, and remote state match the intended release.

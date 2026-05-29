@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.4 - 2026-05-29
+
+- Added release workflow guidance that requires confirmation before remote
+  publication actions such as push, tag, or GitHub release creation.
+- Documented the 0-6 release verification process in `AGENTS.md`.
+- Added cross-platform skill drafting guidance for Linux, macOS, and Windows.
+- Updated maintenance, QA, and asset skills to prefer cross-platform install
+  and runtime resolution paths where relevant.
+
 ## 0.1.3 - 2026-05-29
 
 - Made the `npx` installer cross-platform by moving validation and skill sync

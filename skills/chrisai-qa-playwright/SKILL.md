@@ -37,6 +37,8 @@ Before starting preview:
 Before running preview or QA commands:
 
 - resolve a concrete Node runtime that is version 22 or higher
+- consider Linux, macOS, and Windows command behavior before selecting preview
+  or helper commands
 - prefer the repo's declared toolchain when present, such as `package.json`
   `engines`, Volta, `nvm`, `.node-version`, or an existing project wrapper
 - use `local-environment` as the machine-local override layer when it exists
@@ -117,6 +119,10 @@ Use the bundled helpers as follows:
   `HOST` and `PORT` bindings and optional pre-steps
 - `scripts/capture_page.mjs` handles simple screenshot or video capture for a
   single route or page load
+
+Before relying on a Python helper, resolve a working Python runtime for the
+current OS. On Windows, do not assume `python3` exists; check `python`, `py`,
+project wrappers, or `local-environment` as appropriate.
 
 For multi-step interaction recordings, start from the bundled capture script
 and add a task-specific workspace script only when the recording needs custom
