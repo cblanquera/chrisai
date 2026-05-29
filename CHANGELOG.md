@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 - 2026-05-29
+## 0.1.1 - 2026-05-29
 
 - Established ChrisAI as a skill-first distribution repository.
 - Migrated portable ChrisAI skills from the previous `coding/skills` source.

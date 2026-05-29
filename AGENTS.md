@@ -104,3 +104,15 @@ scripts/sync-codex.sh
 scripts/sync-claude.sh
 scripts/sync-opencode.sh
 ```
+
+## Release Workflow
+
+When the user asks to publish a release, prefer handling the full local and
+GitHub workflow for them: verify the working tree, update release metadata,
+commit, push, tag or create the GitHub release, and report the resulting URL.
+
+Do not leave release work as instructions for the user unless authentication,
+permissions, or an explicit user preference blocks automation.
+
+Before creating a release, confirm `VERSION`, `CHANGELOG.md`, validation
+status, branch, and remote state match the intended release.
