@@ -10,6 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
+TEMPLATES_DIR = ROOT / "templates"
 NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$")
 
 
@@ -90,8 +91,16 @@ def main() -> int:
         print("no skills found", file=sys.stderr)
         return 1
 
+    template_dirs = []
+    if TEMPLATES_DIR.exists():
+        template_dirs = sorted(
+            path for path in TEMPLATES_DIR.iterdir() if (path / "SKILL.md").exists()
+        )
+
     errors: list[str] = []
     for path in skill_dirs:
+        errors.extend(validate_skill(path))
+    for path in template_dirs:
         errors.extend(validate_skill(path))
 
     if errors:
@@ -100,7 +109,11 @@ def main() -> int:
             print(f"- {error}", file=sys.stderr)
         return 1
 
-    print(f"Validated {len(skill_dirs)} skills.")
+    if template_dirs:
+        template_label = "template" if len(template_dirs) == 1 else "templates"
+        print(f"Validated {len(skill_dirs)} skills and {len(template_dirs)} {template_label}.")
+    else:
+        print(f"Validated {len(skill_dirs)} skills.")
     return 0
 
 

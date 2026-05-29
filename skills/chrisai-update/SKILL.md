@@ -21,12 +21,17 @@ adapter targets populated by scripts.
 3. Run `scripts/update-from-git.sh` only when the user explicitly asked to pull
    or update from Git.
 4. Run `scripts/validate-skills.py`.
-5. Ask which adapter target to sync when the user did not name one.
-6. Run only the requested sync command:
+5. Check whether the requested adapter target has a local `local-environment`
+   skill installed.
+6. If `local-environment` is missing, mention that it can be set up from
+   `templates/local-environment/SKILL.md` for machine-local executable paths.
+7. Ask which adapter target to sync when the user did not name one.
+8. Run only the requested sync command:
    - Codex: `scripts/sync-codex.sh`
    - Claude Code: `scripts/sync-claude.sh`
    - OpenCode: `scripts/sync-opencode.sh`
-7. Report the version, commit, validation result, and synced target.
+9. Report the version, commit, validation result, local-environment status,
+   and synced target.
 
 ## Boundaries
 
@@ -35,5 +40,6 @@ adapter targets populated by scripts.
 - Do not sync to Codex unless the user requested Codex sync.
 - Do not sync to Claude Code unless the user requested Claude Code sync.
 - Do not sync to OpenCode unless the user requested OpenCode sync.
+- Do not overwrite or auto-sync a customized `local-environment` skill.
 - Prefer environment overrides documented in `adapters/*/README.md` when an
   agent uses a non-default skills path.

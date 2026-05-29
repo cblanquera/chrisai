@@ -29,14 +29,21 @@ Do not duplicate specialist instructions here. Route, then defer.
 Use `local-environment` only as an optional machine-local override layer for
 runtime and executable resolution.
 
-- Look for `local-environment` only when the task likely depends on host-
-  specific executables, runtime paths, package managers, browser tooling, or
-  similar machine-local details.
+- Before running terminal commands, look for `local-environment` when the task
+  likely depends on host-specific executables, runtime paths, package managers,
+  browser tooling, or similar machine-local details.
 - If `local-environment` exists, use it to prefer the local machine's intended
   executable paths or verification commands.
-- If `local-environment` does not exist, continue silently with normal
-  behavior.
-- Do not ask the user about a missing `local-environment`.
+- If command resolution is failing or the right executable is unclear, check
+  `local-environment` first when it exists.
+- If command resolution is failing and `local-environment` does not exist,
+  recommend setting it up from `templates/local-environment/SKILL.md`.
+- If a command or executable path is resolved and used successfully during the
+  task, offer to record it in `local-environment` for next time.
+- Do not update `local-environment` without explicit user approval unless the
+  user directly asked to record the discovered command.
+- Do not record secrets, credentials, tokens, private URLs, or one-off
+  temporary commands in `local-environment`.
 - Do not consult `local-environment` for pure documentation, conceptual, or
   routing-only work.
 - Do not force specialist skills to repeat this lookup unless they are invoked
