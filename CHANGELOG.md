@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.3 - 2026-05-29
+
+- Made the `npx` installer cross-platform by moving validation and skill sync
+  into the Node CLI.
+- Added tests proving `chrisai validate` and `chrisai install` work without
+  shell tools such as `bash`, `python3`, or `rsync` on `PATH`.
+- Preserved the existing shell scripts for Unix users who prefer direct script
+  execution.
+
 ## 0.1.2 - 2026-05-29
 
 - Added a minimal dependency-free `npx` install CLI.

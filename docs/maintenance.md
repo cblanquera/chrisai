@@ -43,10 +43,13 @@ folders in the target directory with copies from `skills/`.
 The same install flow is available through the dependency-free Node CLI:
 
 ```bash
-npx github:cblanquera/chrisai install --target codex
-npx github:cblanquera/chrisai install --target claude
-npx github:cblanquera/chrisai install --target opencode
+npx github:cblanquera/chrisai#v0.1.3 install --target codex
+npx github:cblanquera/chrisai#v0.1.3 install --target claude
+npx github:cblanquera/chrisai#v0.1.3 install --target opencode
 ```
+
+The `npx` installer is the preferred cross-platform path. It does not require
+Unix shell tools on `PATH`.
 
 ## Local Environment Template
 

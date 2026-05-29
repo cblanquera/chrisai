@@ -66,6 +66,33 @@ test('install syncs the requested target', async () => {
   }
 });
 
+test('validate works without shell tools on PATH', () => {
+  const result = runCli(['validate'], { PATH: '' });
+
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(result.stdout, /Validated 19 skills and 1 template/);
+});
+
+test('install works without shell tools on PATH', async () => {
+  const targetDir = await mkdtemp(join(tmpdir(), 'chrisai-portable-test-'));
+
+  try {
+    const result = runCli(['install', '--target', 'codex'], {
+      CHRISAI_CODEX_SKILLS_DIR: targetDir,
+      PATH: ''
+    });
+
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /Synced ChrisAI skills/);
+    assert.match(
+      await readFile(join(targetDir, 'chrisai-router', 'SKILL.md'), 'utf8'),
+      /name: chrisai-router/
+    );
+  } finally {
+    await rm(targetDir, { force: true, recursive: true });
+  }
+});
+
 test('install preserves extra installed skills and local overlays', async () => {
   const targetDir = await mkdtemp(join(tmpdir(), 'chrisai-retired-test-'));
 

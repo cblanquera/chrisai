@@ -12,9 +12,9 @@ and OpenCode are install targets, not separate rewritten sources.
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai install --target codex
-npx github:cblanquera/chrisai install --target claude
-npx github:cblanquera/chrisai install --target opencode
+npx github:cblanquera/chrisai#v0.1.3 install --target codex
+npx github:cblanquera/chrisai#v0.1.3 install --target claude
+npx github:cblanquera/chrisai#v0.1.3 install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:
@@ -26,8 +26,9 @@ scripts/sync-opencode.sh
 ```
 
 Both install paths validate `skills/` first and then copy the portable skills
-into that agent's skills directory. The `npx` CLI is a small wrapper around the
-same sync scripts.
+into that agent's skills directory. The `npx` CLI uses Node filesystem APIs so
+it works on Windows, macOS, and Linux without requiring `bash`, `python3`, or
+`rsync`.
 
 Default targets:
 
