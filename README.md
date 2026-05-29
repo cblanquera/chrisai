@@ -7,14 +7,38 @@ ChrisAI coding, documentation, design, QA, and maintenance behaviors as reusable
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
 and OpenCode are install targets, not separate rewritten sources.
 
+## Included Skills
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai` | Short alias entrypoint for `chrisai-router`. |
+| `chrisai-router` | Canonical router for ChrisAI documentation, coding, QA, and design tasks. |
+| `chrisai-update` | Explicit update and sync workflow for ChrisAI installs. |
+| `chrisai-doctor` | Diagnose ChrisAI repository, validation, adapter sync, and local installation state. |
+| `chrisai-coding-engineering` | Frame architecture, abstractions, runtime boundaries, and refactor-versus-rewrite decisions before language-specific implementation details. |
+| `chrisai-coding-html-css` | Write or review vanilla HTML and CSS for static sites and docs pages. |
+| `chrisai-coding-js` | Write or review JavaScript using ChrisAI conventions across `.js`, `.mjs`, and `.cjs`. |
+| `chrisai-coding-ts` | Write or review TypeScript implementation details using ChrisAI coding conventions, not framework or architecture boundaries. |
+| `chrisai-coding-ts-logic-review` | Review TypeScript logic and related tests for branching risk, test gaps, duplicated rules, and refactor opportunities before applying changes. |
+| `chrisai-coding-ts-react` | Write or review React TSX using ChrisAI conventions. |
+| `chrisai-coding-ts-tests` | Write or review TypeScript tests using ChrisAI testing conventions. |
+| `chrisai-docs-copy-editing` | Proofread and tighten existing developer-facing documentation without changing technical meaning. |
+| `chrisai-docs-dev-api-reference` | Write or restructure junior-developer-facing API reference docs. |
+| `chrisai-docs-dev-formatting` | Normalize markdown structure and formatting using ChrisAI documentation style rules. |
+| `chrisai-docs-dev-onboarding` | Write or restructure onboarding docs, quick starts, tutorials, and conceptual developer guides. |
+| `chrisai-design-asset-formats` | Create, convert, validate, and package SVG, PNG, and ICO design assets with transparency and favicon QA rules. |
+| `chrisai-design-creative` | Define or refine creative direction for docs, static-site, and related brand-led surfaces before implementation. |
+| `chrisai-design-logo-generator` | Create and refine SVG-first logos and mark variants before downstream export and packaging. |
+| `chrisai-qa-playwright` | QA local web projects through localhost preview detection, Playwright capture, and responsive browser checks. |
+
 ## Install
 
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai#v0.1.3 install --target codex
-npx github:cblanquera/chrisai#v0.1.3 install --target claude
-npx github:cblanquera/chrisai#v0.1.3 install --target opencode
+npx github:cblanquera/chrisai#v0.1.4 install --target codex
+npx github:cblanquera/chrisai#v0.1.4 install --target claude
+npx github:cblanquera/chrisai#v0.1.4 install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:
