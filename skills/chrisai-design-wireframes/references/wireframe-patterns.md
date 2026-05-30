@@ -46,6 +46,22 @@ Common structures:
 
 Keep choices visible before irreversible actions.
 
+## Full-Scope Checklist
+
+Before handing off to creative design, confirm the wireframes cover the full
+requested scope:
+
+- entry page or starting screen
+- all requested destination screens
+- required modals, drawers, or focused states
+- empty, loading, error, success, and disabled states when they change layout
+- mobile and desktop variants when responsive behavior affects structure
+- navigation paths between screens
+- review or confirmation screen before irreversible actions when applicable
+
+If the scope is intentionally partial, say that clearly and do not treat it as
+approved for full creative design.
+
 ## Modals And Drawers
 
 Use a modal for focused interruption.

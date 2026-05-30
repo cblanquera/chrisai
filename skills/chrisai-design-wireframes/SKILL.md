@@ -51,11 +51,17 @@ Work through these steps in order:
 2. collect required structure inputs
 3. draft grayscale layout options
 4. choose or revise one structure
-5. create a clickable wireframe only when needed
-6. produce a wireframe handoff
+5. produce a complete grayscale wireframe set
+6. present review instructions and next steps
+7. create a clickable wireframe only when needed
+8. produce a wireframe handoff
 
 Do not apply brand color, gradients, decorative graphics, or polished visual
 styling before the wireframe is approved.
+
+Do not move to creative design until the full wireframe scope is represented
+and approved. A single partial screen is not enough unless the requested scope
+is only that screen.
 
 ## Step 1: Classify The Scope
 
@@ -105,6 +111,18 @@ by user task, density, complexity, and risk.
 Use [wireframe-patterns](references/wireframe-patterns.md) for common layout
 patterns.
 
+For each option or round, tell the user what to review:
+
+- page or screen purpose
+- section order
+- hierarchy and scan path
+- primary and secondary actions
+- navigation or flow behavior
+- missing sections, states, or screens
+- desktop and mobile assumptions when relevant
+
+Also tell the user what happens next after review.
+
 ## Step 4: Choose Or Revise One Structure
 
 Before moving to visual design, confirm:
@@ -118,7 +136,49 @@ Before moving to visual design, confirm:
 
 Do not proceed to polished design if the user has not accepted the structure.
 
-## Step 5: Create A Clickable Wireframe When Needed
+## Step 5: Produce A Complete Grayscale Wireframe Set
+
+Before creative design, cover the full requested scope:
+
+- all requested pages or screens
+- required sections on each page
+- primary states needed for review
+- key empty, loading, error, or success states when they affect layout
+- key responsive variants when mobile or desktop behavior changes materially
+- navigation or flow links between screens
+
+If scope is too large for one round, split it into named rounds and explain
+which screens or states are covered in the current round and which remain.
+
+Do not call the wireframe complete until the user can review the whole
+structure needed before visual design.
+
+## Step 6: Present Review Instructions And Next Steps
+
+After each review round, state:
+
+- what changed in this round
+- which folder contains the current draft when files were created
+- what the user should review now
+- what feedback would be most useful
+- the next step if approved
+- the next step if revisions are needed
+
+Use direct review prompts such as:
+
+```markdown
+Please review:
+
+- section order
+- whether the primary action is obvious
+- missing screens or states
+- whether the density feels right
+
+If this structure is approved, the next step is a clickable grayscale
+wireframe. If not, tell me which sections or flow points to change.
+```
+
+## Step 7: Create A Clickable Wireframe When Needed
 
 Use static HTML/CSS/JS only as a review artifact.
 
@@ -126,7 +186,6 @@ Before writing files:
 
 - ask whether the user wants the draft saved in the project
 - ask where the draft workspace should live
-- create a new folder for the draft
 - keep draft files separate from production code unless requested
 
 The draft folder is the consolidated workspace for the clickable wireframe.
@@ -134,10 +193,18 @@ Keep static files, draft-only assets, QA screenshots, QA notes, recordings, and
 review metadata inside that folder. If `chrisai-qa-playwright` is used, save
 its artifacts under the draft folder's `qa/` directory.
 
+Create a new folder for every major wireframe round or major structure change.
+Major changes include new layout directions, changed navigation models, added
+screens, removed screens, or substantial section reordering.
+
+For minor changes in the same review round, it is acceptable to update the same
+folder. Minor changes include copy labels, small spacing adjustments, local
+section tweaks, and small control-state clarifications.
+
 Clickable wireframes may include simple links, tabs, toggles, and state changes
 that demonstrate navigation or flow intent.
 
-## Step 6: Produce The Wireframe Handoff
+## Step 8: Produce The Wireframe Handoff
 
 State:
 
@@ -146,18 +213,24 @@ State:
 - section order
 - navigation or flow behavior
 - primary and secondary actions
+- full scope covered
+- any screens or states intentionally deferred
 - responsive assumptions
 - draft workspace and `qa/` artifacts when a clickable draft was created
 - unresolved questions
 - constraints for the creative design draft
+- next step after approval
 
 ## Review Gate
 
 Before treating the wireframe as ready:
 
 - Is it grayscale and low-fidelity?
+- Does it cover the full requested scope?
+- Have any missing screens, states, or responsive variants been named?
 - Is the next action obvious?
 - Does each page or screen have one clear primary job?
 - Are labels understandable without decoration?
 - Does the layout support scanning?
 - Is clickable behavior clearly review-only?
+- Did the final response tell the user what to review and what happens next?
