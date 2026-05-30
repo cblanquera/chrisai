@@ -12,6 +12,19 @@ scripts/validate-skills.py
 Validation checks that every folder under `skills/` has a matching `SKILL.md`,
 valid frontmatter, a lowercase kebab-case name, and a description.
 
+## Build HTML Artifact Renderer
+
+```bash
+npm run build:html-artifact
+```
+
+This rebuilds the bundled renderer for `chrisai-prompt-md-to-html` from its
+readable source file and refreshes the Mermaid browser runtime asset. Run it
+after changing the renderer source or upgrading the renderer dependencies.
+
+The committed bundled renderer lets installed skill copies run without
+installing local npm dependencies.
+
 ## Check Version
 
 ```bash

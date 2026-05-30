@@ -26,6 +26,7 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-docs-dev-api-reference` | Write or restructure junior-developer-facing API reference docs. |
 | `chrisai-docs-dev-formatting` | Normalize markdown structure and formatting using ChrisAI documentation style rules. |
 | `chrisai-docs-dev-onboarding` | Write or restructure onboarding docs, quick starts, tutorials, and conceptual developer guides. |
+| `chrisai-prompt-md-to-html` | Convert Markdown or Codex text responses into deterministic single-file HTML artifacts with fixed layouts, syntax highlighting, Mermaid support, and validated theme options. |
 | `chrisai-design-asset-formats` | Create, convert, validate, and package SVG, PNG, and ICO design assets with transparency and favicon QA rules. |
 | `chrisai-design-creative` | Coordinate brand-led design direction, mode selection, and handoff across the design specialist skills. |
 | `chrisai-design-drafts` | Create static HTML/CSS/JS design-review drafts and clickable creative mockups from approved structure and direction. |

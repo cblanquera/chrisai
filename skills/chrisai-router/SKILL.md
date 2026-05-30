@@ -8,7 +8,7 @@ description: Use when a task should be handled with the ChrisAI skill family and
 This skill is the canonical ChrisAI router.
 
 Use it to decide whether a task belongs to the ChrisAI documentation, coding,
-QA, or design skill family, then hand the work to the narrowest matching
+QA, design, or artifact skill family, then hand the work to the narrowest matching
 specialist skill.
 
 Do not duplicate specialist instructions here. Route, then defer.
@@ -19,7 +19,7 @@ Do not duplicate specialist instructions here. Route, then defer.
 - Specialist skills may be invoked directly by a human user.
 - Specialist skills must not auto-route to sibling skills.
 - Separate non-router categories may exist outside the ChrisAI docs, coding,
-  QA, and design family.
+  QA, design, and artifact family.
 - Do not reference or rely on deprecated intermediate routers.
 - `chrisai-router` is the only shared ChrisAI skill that may actively consult
   a machine-local `local-environment` overlay.
@@ -172,10 +172,23 @@ follow-up:
 
 Do not default to multi-skill design sequences.
 
+## Artifact Routes
+
+Choose exactly one artifact specialist unless the task clearly needs a
+deliberate sequence.
+
+- Use `chrisai-prompt-md-to-html` when a Markdown or Codex text response should
+  be converted into a deterministic single-file HTML artifact with a fixed
+  layout, optional validated theme colors, syntax highlighting, Mermaid
+  support, and safe fallbacks.
+
+Do not route production websites, frontend implementation, or open-ended design
+drafts to `chrisai-prompt-md-to-html`.
+
 ## Out Of Scope
 
 Do not route work here when the main deliverable belongs to a separate skill
-category rather than the ChrisAI docs, coding, QA, or design family.
+category rather than the ChrisAI docs, coding, QA, design, or artifact family.
 
 ## Decision Rules
 
@@ -213,6 +226,9 @@ category rather than the ChrisAI docs, coding, QA, or design family.
   favicon-safe logo simplification, prefer `chrisai-design-logo-generator`.
 - If the request is mainly about creating, converting, validating, or packaging
   SVG, PNG, or ICO assets, prefer `chrisai-design-asset-formats`.
+- If the request is mainly about converting a Markdown or Codex text response
+  into a deterministic single-file HTML artifact, prefer
+  `chrisai-prompt-md-to-html`.
 - If the request needs concrete local runtime or executable paths, consult
   `local-environment` first when it exists.
 - If the request is outside the ChrisAI scope, do not force ChrisAI routing.
