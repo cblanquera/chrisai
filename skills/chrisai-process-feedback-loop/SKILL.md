@@ -43,13 +43,30 @@ Work through these steps when a browser-visible artifact is part of the task:
 1. identify the current phase
 2. create or update the artifact through the owning domain skill
 3. show or verify the artifact in the in-app browser when available
-4. summarize the current round
-5. ask concrete review questions
-6. state exactly what approval unlocks
-7. revise or advance only according to the stated next step
+4. name the current phase and round
+5. summarize the current round using the required review format
+6. ask concrete review questions
+7. state exactly what approval unlocks
+8. revise or advance only according to the stated next step
 
 Read [browser-feedback-loop](references/browser-feedback-loop.md) for the
 shared round protocol, review summary format, and artifact versioning rules.
+
+## Required Response Shape
+
+When presenting a browser-visible round for review, use the structured review
+format from `browser-feedback-loop`. Keep the response easy to scan:
+
+- start with the phase and round status
+- show the review target on its own line when there is a URL, file, screenshot,
+  recording, or artifact name
+- use grouped sections for what changed, verification, review questions, and
+  approval path
+- use bullets for changed items, verification items, and review questions
+- state the approval path in one final sentence or short paragraph
+
+Do not compress the round into one paragraph when there are multiple changes,
+verification checks, or review questions.
 
 ## Browser Plugin Guidance
 
@@ -77,6 +94,7 @@ Before treating a browser-visible round as ready for user approval, confirm:
 - browser access succeeded, or the browser-plugin blocker was stated
 - the current phase was named
 - the user was told what changed
+- the response used the required browser-review structure
 - review questions are concrete and tied to the visible artifact
 - approval unlocks one exact next step
 - revision feedback has a clear path

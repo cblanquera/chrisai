@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.8 - 2026-05-31
+
+- Tightened `chrisai-process-feedback-loop` round responses so browser-visible
+  review rounds use a clearer phase/round, target, changes, verification,
+  review questions, and approval-path structure.
+
 ## 0.1.7 - 2026-05-31
 
 - Added `chrisai-process-feedback-loop` for staged feedback loops around

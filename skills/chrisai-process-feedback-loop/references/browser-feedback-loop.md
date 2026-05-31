@@ -23,9 +23,42 @@ If the stated next step is another round in the same phase, continue there. If
 the stated next step is the next phase, continue only when the full current
 phase scope is complete.
 
-## Required Round Summary
+## Required Round Response
 
-After every browser-visible round, state:
+After every browser-visible round, use this structure unless the round is tiny:
+
+```markdown
+Done. <Phase Name>, Round <n> is ready at:
+
+[<review target>](<review target>)
+
+What changed:
+- <specific change>
+- <specific change>
+
+Verified:
+- <specific check that passed>
+- <specific check that passed>
+
+Please review:
+- <concrete question tied to the visible artifact>
+- <concrete question tied to the visible artifact>
+
+If you approve this round, the next step is <exact next step>. If not, tell me
+which <areas/screens/states/metrics/flow points> to revise.
+```
+
+The review target may be a URL, file path, artifact name, screenshot,
+recording, or browser route. Put it on its own line so it is easy to find.
+
+Use "Verified" only for checks that were actually run. If no verification was
+run, omit the section or say what still needs verification.
+
+For non-design domains, adapt the labels without losing the structure. For
+example, a workbook, report, or data artifact can still use `What changed`,
+`Verified`, `Please review`, and an approval sentence.
+
+Every response must still communicate:
 
 - what changed
 - what the user should review now, phrased as specific questions
@@ -36,6 +69,9 @@ After every browser-visible round, state:
 
 The user should be able to approve the round and have the agent move to exactly
 the stated next step without asking again.
+
+Avoid paragraph-only round responses when more than one review question or
+verification item exists. Paragraph summaries make approval paths easy to miss.
 
 ## Review Questions
 
