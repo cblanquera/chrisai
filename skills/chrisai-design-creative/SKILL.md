@@ -77,6 +77,9 @@ is mainly about rendered QA, screenshots, or responsive browser checks.
 When QA is used for a design draft or clickable wireframe, keep QA screenshots,
 recordings, and notes inside the same draft workspace under `qa/`.
 
+Use [review-rounds](references/review-rounds.md) for shared review-loop rules
+across wireframes, creative drafts, clickable drafts, and design handoffs.
+
 ## Workflow
 
 Work through these steps in order:
@@ -134,9 +137,9 @@ Supported modes:
 - clickable creative design draft: hand off to `chrisai-design-drafts`
 - implementation-ready design handoff
 
-For draft artifacts, ask whether the user wants to save the drafts in the
-project. If yes, ask where to save them before handing off. Draft artifact
-creation itself belongs to `chrisai-design-drafts`.
+For draft artifacts, confirm whether the user wants drafts saved in the
+project and where the draft workspace should live before handing off. Draft
+artifact creation itself belongs to `chrisai-design-drafts`.
 
 ## Step 3: Collect Brand Or Design-Source Inputs
 
@@ -408,8 +411,8 @@ Do not hand off vague directions like "make it modern" or "make it pop."
 For static HTML/CSS/JS draft artifacts, state clearly that the artifact is a
 draft for design review, not production implementation. Before writing files,
 confirm whether the user wants the draft saved in the project and where it
-should be saved, then hand off to `chrisai-design-drafts`. Create a new folder
-per draft in that specialist workflow.
+should be saved, then hand off to `chrisai-design-drafts`. Folder and QA
+artifact rules live in that specialist workflow.
 
 Draft stages should normally proceed in this order:
 
@@ -428,8 +431,6 @@ surfaces or code-heavy pages, it is not stable yet.
 
 ## Future Wireframes
 
-This skill should stay ready to grow into wireframing work without changing its
-top-level identity.
-
-Use [future-wireframes](references/future-wireframes.md) when a request starts
-to move from visual direction into layout studies or low-fidelity structure.
+Use [future-wireframes](references/future-wireframes.md) only as a routing
+bridge when a request starts in creative direction but moves into low-fidelity
+structure.

@@ -10,6 +10,11 @@ artifacts after structure and design direction are known.
 
 Drafts are temporary review artifacts. They are not production implementation.
 
+Use
+[`review-rounds`](../chrisai-design-creative/references/review-rounds.md) for
+shared review-loop rules, including round approval, phase approval, next-step
+language, and folder behavior.
+
 ## Portability
 
 Write draft guidance for portable agent use first. Do not assume the consumer
@@ -59,7 +64,8 @@ Work through these steps in order:
 3. create the static draft
 4. label review-only behavior
 5. run draft QA
-6. produce a handoff
+6. present review instructions and next steps
+7. produce a handoff
 
 Do not create static draft files in the project until the user confirms where
 they should be saved.
@@ -116,6 +122,11 @@ flow, or state intent.
 Use [draft-artifact-rules](references/draft-artifact-rules.md) for artifact
 boundaries.
 
+Follow the folder rules in
+[`review-rounds`](../chrisai-design-creative/references/review-rounds.md):
+major round changes create a new folder; minor changes inside the same review
+round may update the current folder.
+
 ## Step 4: Label Review-Only Behavior
 
 The artifact must be clearly described as a draft for design review.
@@ -144,7 +155,50 @@ screenshots, recordings, and QA notes inside the same draft workspace under
 `qa/`. Do not scatter design-draft QA artifacts into a separate Playwright
 workspace unless the user explicitly asks for that.
 
-## Step 6: Produce The Handoff
+## Step 6: Present Review Instructions And Next Steps
+
+After each review round, state:
+
+- what changed in this round
+- which folder contains the current draft
+- what the user should review now, phrased as specific questions
+- what is clickable
+- what is simulated
+- what feedback would be most useful
+- the next step if this round is approved
+- whether more rounds remain before the next phase
+- the next step if revisions are needed
+
+For creative design drafts, ask the user to review visual fit, hierarchy,
+brand/style-guide alignment, component treatment, density, and missing states.
+Phrase those review items as concrete questions tied to what changed in the
+current round.
+
+For clickable creative drafts, also ask the user to test the intended flow and
+confirm whether simulated interactions communicate the behavior clearly.
+
+Use direct review prompts such as:
+
+```markdown
+What to review for this round:
+
+- Does the visual treatment match the approved brand direction?
+- Does the hierarchy make the primary action obvious?
+- Do the card, form, and navigation treatments feel consistent with the
+  existing design rules?
+- Are any important states missing before this becomes clickable?
+- Do the simulated interactions communicate the intended flow clearly?
+
+If this round is approved, the next step is to apply this treatment to the
+remaining draft screens. If not, tell me which visual decisions or states to
+revise.
+```
+
+Do not move from creative design draft to clickable creative draft, or from
+clickable draft to production implementation, unless that was the exact next
+step stated for the approved round and the current phase scope is complete.
+
+## Step 7: Produce The Handoff
 
 State:
 
@@ -155,6 +209,9 @@ State:
 - QA artifacts under `qa/` when QA was run
 - simulated behavior
 - known limitations
+- what the user should review next if approval is not yet final
+- what round approval unlocks
+- whether phase approval is still needed
 - what needs approval before production implementation
 
 ## Hard Rules
@@ -163,6 +220,7 @@ State:
 - Keep all draft-related files inside the draft workspace unless the user asks
   for a different layout.
 - Do not mix review drafts into production code unless the user asks.
+- Do not advance beyond the stated next step for the approved round.
 - Do not change approved wireframe structure during visual draft work unless
   the user requests a revision.
 - Do not claim simulated behavior is production behavior.

@@ -1,42 +1,37 @@
-# Future Wireframes
+# Wireframe Routing
 
-This reference exists to keep `chrisai-design-creative` structurally ready for
-wireframing work without turning the current skill into a generic UX process
-guide.
+Use this reference when a request starts as creative direction but moves into
+low-fidelity structure.
 
-## Intended Future Ownership
+`chrisai-design-creative` coordinates the decision and handoff.
+`chrisai-design-wireframes` owns grayscale wireframe drafting, clickable
+wireframe drafts, review rounds, and wireframe handoff.
 
-This skill owns:
+## When To Route
 
-- low-fidelity homepage and landing-page structure studies
-- layout-option comparison for docs and static-site surfaces
-- translation of a creative direction into rough section and block layouts
-- grayscale static wireframe drafts for design review
-- clickable grayscale wireframe drafts when flow needs review
+Route to `chrisai-design-wireframes` when the user needs:
 
-It should still avoid taking ownership of:
+- section ordering or page layout studies
+- screen-level layout options
+- clickable grayscale flow drafts
+- reviewable wireframe files
+- a complete wireframe set before creative design
 
-- high-fidelity app-product UX flows
-- interaction architecture for complex applications
-- implementation details that belong to HTML, CSS, or frontend code
+Keep the work in `chrisai-design-creative` only when the user needs a written
+creative direction or a high-level layout recommendation without draft
+artifacts.
 
-## Boundary
+## Handoff Notes
 
-Treat wireframes as design drafts:
+When routing, pass along:
 
-- acceptable: section ordering, hero layout ideas, block-level structure,
-  screen-level layout, clickable static flow drafts
-- not primary: production frontend implementation, complex app interaction
-  architecture, persisted product behavior
+- selected design mode
+- target pages, screens, or flow
+- required sections and actions
+- audience and primary user goal
+- existing design-extension rules when applicable
+- brand or reference constraints that affect layout
+- whether a clickable wireframe is needed
 
-If a request starts to lean heavily toward product UX or application interaction
-design, do not pretend this skill fully owns it yet.
-
-## Wireframe Rules
-
-- Use grayscale only.
-- Avoid logo colors, gradients, illustrations, photos, and decorative graphics.
-- Focus on hierarchy, layout, sections, density, affordances, and flow.
-- Use realistic labels where they clarify structure.
-- Keep interactions simple when creating clickable drafts.
-- Mark static HTML/CSS/JS wireframes as review drafts, not production code.
+Wireframe artifacts must stay grayscale, low-fidelity, and review-only. Use
+[`review-rounds`](review-rounds.md) for round approval and next-step rules.

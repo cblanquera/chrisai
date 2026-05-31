@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.6 - 2026-05-31
+
+- Added `chrisai-prompt-md-to-html` for deterministic single-file HTML
+  artifacts from Markdown or Codex text responses, including bundled rendering
+  assets, layout references, theme options, and script tests.
+- Updated the ChrisAI router and README so prompt-to-HTML artifact generation
+  is discoverable from the skill family.
+- Tightened the design wireframe workflow so every review round states what to
+  review, what approval unlocks, and whether more wireframe rounds remain
+  before creative design.
+- Centralized design review-round rules for wireframes, creative drafts,
+  clickable drafts, folder behavior, and next-step language.
+- Clarified that `chrisai-design-creative` coordinates wireframe routing while
+  `chrisai-design-wireframes` owns grayscale wireframe drafts and handoffs.
+- Added release guidance requiring remote GitHub release and tag checks before
+  choosing the next version.
+
 ## 0.1.5 - 2026-05-29
 
 - Split the design workflow into specialist skills for creative coordination,

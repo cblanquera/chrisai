@@ -10,6 +10,11 @@ before polished visual design.
 
 Wireframes are design-review drafts. They are not production implementation.
 
+Use
+[`review-rounds`](../chrisai-design-creative/references/review-rounds.md) for
+shared review-loop rules, including round approval, phase approval, next-step
+language, and folder behavior.
+
 ## Portability
 
 Write wireframe guidance for portable agent use first. Do not assume the
@@ -111,7 +116,7 @@ by user task, density, complexity, and risk.
 Use [wireframe-patterns](references/wireframe-patterns.md) for common layout
 patterns.
 
-For each option or round, tell the user what to review:
+For each option or round, ask specific wireframe review questions about:
 
 - page or screen purpose
 - section order
@@ -121,7 +126,7 @@ For each option or round, tell the user what to review:
 - missing sections, states, or screens
 - desktop and mobile assumptions when relevant
 
-Also tell the user what happens next after review.
+Also state the exact next step if the round is approved.
 
 ## Step 4: Choose Or Revise One Structure
 
@@ -159,23 +164,38 @@ After each review round, state:
 
 - what changed in this round
 - which folder contains the current draft when files were created
-- what the user should review now
+- what the user should review now, phrased as specific questions
 - what feedback would be most useful
-- the next step if approved
+- the next step if this round is approved
+- whether more wireframe rounds remain before creative design
 - the next step if revisions are needed
+
+Review questions should reference the actual wireframe decisions in the
+current round: page set, section order, navigation model, anchor or link
+targets, responsive structure, screen states, and density.
+
+When the next step is another wireframe round, say so directly. Examples:
+
+- If this concept direction is approved, the next round will wireframe the
+  first two sample pages.
+- If these sample pages are approved, the next round will complete the
+  remaining page set.
+- If this full wireframe set is approved, the next phase is creative
+  design.
 
 Use direct review prompts such as:
 
 ```markdown
-Please review:
+What to review for this round:
 
-- section order
-- whether the primary action is obvious
-- missing screens or states
-- whether the density feels right
+- Is the selected page or screen set complete for this phase?
+- Does the navigation model match the way users should move through the flow?
+- Are the sections in the right order for the primary user goal?
+- Is the primary action visible in the right place?
+- Are any empty, loading, error, or success states missing from the wireframe?
 
-If this structure is approved, the next step is a clickable grayscale
-wireframe. If not, tell me which sections or flow points to change.
+If this round is approved, the next step is to wireframe the remaining screens
+in this phase. If not, tell me which sections or flow points to change.
 ```
 
 ## Step 7: Create A Clickable Wireframe When Needed
@@ -193,13 +213,10 @@ Keep static files, draft-only assets, QA screenshots, QA notes, recordings, and
 review metadata inside that folder. If `chrisai-qa-playwright` is used, save
 its artifacts under the draft folder's `qa/` directory.
 
-Create a new folder for every major wireframe round or major structure change.
-Major changes include new layout directions, changed navigation models, added
-screens, removed screens, or substantial section reordering.
-
-For minor changes in the same review round, it is acceptable to update the same
-folder. Minor changes include copy labels, small spacing adjustments, local
-section tweaks, and small control-state clarifications.
+Follow the folder rules in
+[`review-rounds`](../chrisai-design-creative/references/review-rounds.md):
+major round changes create a new folder; minor changes inside the same review
+round may update the current folder.
 
 Clickable wireframes may include simple links, tabs, toggles, and state changes
 that demonstrate navigation or flow intent.
@@ -219,7 +236,8 @@ State:
 - draft workspace and `qa/` artifacts when a clickable draft was created
 - unresolved questions
 - constraints for the creative design draft
-- next step after approval
+- next step after round approval
+- whether the full wireframe phase is approved for creative design
 
 ## Review Gate
 

@@ -3,6 +3,13 @@
 Use this reference to choose the right workflow before collecting inputs or
 creating drafts.
 
+## Review Rounds
+
+Use [review-rounds](review-rounds.md) for shared review-loop rules across all
+design phases. The short version: each round must say what changed, ask
+specific review questions, and state the exact next step if the round is
+approved.
+
 ## Greenfield Design Direction
 
 Use when there is no existing app or site design to extend.
@@ -64,6 +71,7 @@ Output:
 
 - static low-fidelity draft or design description
 - open questions about layout and flow
+- review instructions and next-step guidance for the current round
 
 ## Clickable Grayscale Wireframe Draft
 
@@ -78,6 +86,8 @@ Rules:
 - links and simple state changes may be clickable
 - styling remains grayscale and low-fidelity
 - no production implementation claims
+- each round must state what is clickable, what is simulated, and what the
+  user should test before approval
 
 ## Creative Design Draft
 
@@ -93,6 +103,8 @@ Rules:
 - preserve the approved layout unless the user asks to revisit it
 - add color, typography, imagery, icons, and surface treatment
 - keep usability constraints visible
+- each round must state what visual decisions changed and what the user should
+  review before approval
 
 ## Clickable Creative Design Draft
 
@@ -107,6 +119,8 @@ Rules:
 - interactions should demonstrate intent, not production behavior
 - generated assets should route through `chrisai-design-asset-formats` when
   asset format, transparency, or favicon quality matters
+- each round must state what is clickable, what is simulated, what changed,
+  and what the user should test before approval
 
 ## Draft Artifact Storage
 
@@ -125,3 +139,7 @@ If no:
 
 - provide text guidance or temporary artifacts only
 - do not add project files
+
+Use
+[`draft-artifact-rules`](../../chrisai-design-drafts/references/draft-artifact-rules.md)
+for the detailed draft workspace, QA artifact, and folder-naming rules.
