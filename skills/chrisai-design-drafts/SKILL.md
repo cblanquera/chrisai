@@ -11,9 +11,9 @@ artifacts after structure and design direction are known.
 Drafts are temporary review artifacts. They are not production implementation.
 
 Use
-[`review-rounds`](../chrisai-design-creative/references/review-rounds.md) for
-shared review-loop rules, including round approval, phase approval, next-step
-language, and folder behavior.
+[`chrisai-process-feedback-loop`](../chrisai-process-feedback-loop/SKILL.md)
+for shared review-loop rules, including round approval, phase approval,
+next-step language, and artifact folder behavior.
 
 ## Portability
 
@@ -122,8 +122,8 @@ flow, or state intent.
 Use [draft-artifact-rules](references/draft-artifact-rules.md) for artifact
 boundaries.
 
-Follow the folder rules in
-[`review-rounds`](../chrisai-design-creative/references/review-rounds.md):
+Follow the artifact rules in
+[`browser-feedback-loop`](../chrisai-process-feedback-loop/references/browser-feedback-loop.md):
 major round changes create a new folder; minor changes inside the same review
 round may update the current folder.
 

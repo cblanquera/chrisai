@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Process Feedback Loop"
+  short_description: "Staged browser review and approval loops"
+  default_prompt: "Use $chrisai-process-feedback-loop when showing a draft, prototype, local app, screenshot, recording, or rendered page in the in-app browser, and manage concrete review questions, round approval, phase approval, and exact next-step language."
+policy:
+  allow_implicit_invocation: true

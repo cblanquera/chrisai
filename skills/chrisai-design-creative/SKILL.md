@@ -77,8 +77,10 @@ is mainly about rendered QA, screenshots, or responsive browser checks.
 When QA is used for a design draft or clickable wireframe, keep QA screenshots,
 recordings, and notes inside the same draft workspace under `qa/`.
 
-Use [review-rounds](references/review-rounds.md) for shared review-loop rules
-across wireframes, creative drafts, clickable drafts, and design handoffs.
+Use
+[`chrisai-process-feedback-loop`](../chrisai-process-feedback-loop/SKILL.md)
+for shared review-loop rules across wireframes, creative drafts, clickable
+drafts, browser-visible artifacts, and design handoffs.
 
 ## Workflow
 

@@ -132,6 +132,19 @@ feature implementation.
 - Do not route explicit manual `@browser` inspection there unless the request
   is clearly about QA or capture through the ChrisAI flow.
 
+## Process Routes
+
+Use `chrisai-process-feedback-loop` with the owning domain skill when the task
+shows a draft, prototype, rendered page, local app, screenshot, recording, or
+other reviewable artifact in the in-app browser and the user is expected to
+approve, reject, or revise what they see.
+
+- Use it for staged browser review, concrete review questions, round approval,
+  phase approval, and exact next-step language.
+- Do not use it by itself to create the artifact.
+- Do not use it instead of `chrisai-qa-playwright` when the primary deliverable
+  is QA, screenshots, recordings, or responsive browser verification.
+
 ## Design Routes
 
 Choose exactly one design specialist unless the task clearly needs a deliberate
@@ -213,6 +226,9 @@ category rather than the ChrisAI docs, coding, QA, design, or artifact family.
   implementation specialist again at the end as a style pass.
 - If the request is about rendered browser behavior, screenshots, or recorded
   flows, prefer `chrisai-qa-playwright` over coding specialists.
+- If the request shows a reviewable artifact in the in-app browser and expects
+  approval or revision feedback, add `chrisai-process-feedback-loop` to the
+  owning domain skill.
 - If the request is mainly about creative direction, visual-system work, or
   homepage composition, prefer `chrisai-design-creative`.
 - If the request is mainly about extracting rules from an existing design

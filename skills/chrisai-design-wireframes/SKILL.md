@@ -11,9 +11,9 @@ before polished visual design.
 Wireframes are design-review drafts. They are not production implementation.
 
 Use
-[`review-rounds`](../chrisai-design-creative/references/review-rounds.md) for
-shared review-loop rules, including round approval, phase approval, next-step
-language, and folder behavior.
+[`chrisai-process-feedback-loop`](../chrisai-process-feedback-loop/SKILL.md)
+for shared review-loop rules, including round approval, phase approval,
+next-step language, and artifact folder behavior.
 
 ## Portability
 
@@ -213,8 +213,8 @@ Keep static files, draft-only assets, QA screenshots, QA notes, recordings, and
 review metadata inside that folder. If `chrisai-qa-playwright` is used, save
 its artifacts under the draft folder's `qa/` directory.
 
-Follow the folder rules in
-[`review-rounds`](../chrisai-design-creative/references/review-rounds.md):
+Follow the artifact rules in
+[`browser-feedback-loop`](../chrisai-process-feedback-loop/references/browser-feedback-loop.md):
 major round changes create a new folder; minor changes inside the same review
 round may update the current folder.
 

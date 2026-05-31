@@ -34,4 +34,5 @@ When routing, pass along:
 - whether a clickable wireframe is needed
 
 Wireframe artifacts must stay grayscale, low-fidelity, and review-only. Use
-[`review-rounds`](review-rounds.md) for round approval and next-step rules.
+[`chrisai-process-feedback-loop`](../../chrisai-process-feedback-loop/SKILL.md)
+for round approval and next-step rules.

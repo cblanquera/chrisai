@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.7 - 2026-05-31
+
+- Added `chrisai-process-feedback-loop` for staged feedback loops around
+  in-app browser review artifacts, including round approval, phase approval,
+  artifact versioning, and exact next-step language.
+- Moved shared design review-loop guidance from `chrisai-design-creative` into
+  the new process feedback-loop skill.
+
 ## 0.1.6 - 2026-05-31
 
 - Added `chrisai-prompt-md-to-html` for deterministic single-file HTML

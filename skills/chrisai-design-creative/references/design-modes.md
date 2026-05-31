@@ -5,9 +5,11 @@ creating drafts.
 
 ## Review Rounds
 
-Use [review-rounds](review-rounds.md) for shared review-loop rules across all
-design phases. The short version: each round must say what changed, ask
-specific review questions, and state the exact next step if the round is
+Use
+[`chrisai-process-feedback-loop`](../../chrisai-process-feedback-loop/SKILL.md)
+for shared review-loop rules across all design phases that involve browser
+review or user approval. The short version: each round must say what changed,
+ask specific review questions, and state the exact next step if the round is
 approved.
 
 ## Greenfield Design Direction
