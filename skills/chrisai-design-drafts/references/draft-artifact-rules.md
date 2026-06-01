@@ -34,6 +34,10 @@ Example:
 design-drafts/
   001-clickable-wireframe-checkout/
     index.html
+    cart.html
+    shipping.html
+    payment.html
+    confirmation.html
     styles.css
     script.js
     assets/
@@ -48,15 +52,37 @@ design-drafts/
 
 For plain static drafts, a small folder can include:
 
-- `index.html`
+- `index.html` as the first page or review hub
+- one additional `.html` file per distinct page, screen, or major state
 - `styles.css`
 - `script.js` when needed
 - `assets/` when draft-only images or icons are needed
 - `qa/` when screenshots, recordings, or QA notes are produced
 - `README.md` for review context
 
+Do not put a multi-page or multi-state draft into one monolithic HTML file.
+Use sibling HTML files with relative links, such as `dashboard.html`,
+`settings.html`, `empty-state.html`, and `error-state.html`. Keep shared
+styling in `styles.css` and shared simulated interactions in `script.js`.
+
 Do not add build tooling unless the user requests it or the project already
 requires it.
+
+## Browser Preview Rules
+
+Do not try to open local static drafts with `file://` browser URLs. Serve the
+draft workspace with a simple static server, then open the localhost URL:
+
+```bash
+python3 -m http.server [port] --directory [location]
+```
+
+Use an available local port and the draft workspace as `[location]`. Link to
+the served entry page, such as `http://127.0.0.1:[port]/index.html`.
+
+This server is only a static preview server for review. It must serve the
+generated draft files as-is and must not add production build tooling,
+backend behavior, authentication, persistence, payments, or analytics.
 
 ## QA Artifact Rules
 

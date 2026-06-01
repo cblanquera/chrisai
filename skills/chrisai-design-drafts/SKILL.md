@@ -110,11 +110,20 @@ Static HTML/CSS/JS is acceptable for design review.
 Rules:
 
 - keep files small and readable
+- create a separate HTML file for each distinct page, screen, or major state
 - use semantic HTML where practical
 - use CSS variables for draft-level colors, type, spacing, and surfaces
 - avoid production build tooling unless the project already requires it
 - mark interactions as simulated where appropriate
 - do not wire real persistence, authentication, billing, or backend behavior
+
+Do not collapse a multi-page draft into one large HTML file. Use `index.html`
+only as the first page or review hub, then add sibling files such as
+`checkout.html`, `settings.html`, `empty-state.html`, or
+`mobile-menu.html` for the remaining pages and states. Share draft-level
+styles and behavior through `styles.css` and `script.js` when useful, and use
+relative links between HTML files so the folder can be reviewed without a
+build step.
 
 For clickable drafts, include only interactions needed to review navigation,
 flow, or state intent.
@@ -149,6 +158,27 @@ Before treating the draft as ready, check:
 
 Use browser QA tooling when a rendered screenshot or interaction check is
 needed.
+
+For local static drafts, do not try to open `file://` URLs in the browser.
+Serve the draft workspace with a simple static server, then open the
+localhost URL:
+
+```bash
+python3 -m http.server [port] --directory [location]
+```
+
+Use an available local port and the draft workspace as `[location]`. Link to
+the served entry page, such as `http://127.0.0.1:[port]/index.html`. This is a
+static preview server for review, not production infrastructure.
+
+Treat this server as agent-owned when the agent starts it:
+
+- stop it before the final response unless the user needs it open for review
+- use a 15-minute default timeout, 5 minutes for quick verification, or 30
+  minutes for user review
+- do not stop a server that was already running before the task
+- report whether the server was stopped, left running with its URL and timeout,
+  or identified as pre-existing and left alone
 
 When using [`chrisai-qa-playwright`](../chrisai-qa-playwright/SKILL.md), keep
 screenshots, recordings, and QA notes inside the same draft workspace under
@@ -219,7 +249,13 @@ State:
 - Do not save draft files before confirming location.
 - Keep all draft-related files inside the draft workspace unless the user asks
   for a different layout.
+- Do not create one monolithic HTML file for a multi-page or multi-state
+  draft; use one HTML file per page, screen, or major state.
 - Do not mix review drafts into production code unless the user asks.
+- Do not open `file://` URLs for browser review; use a local static server
+  for generated static drafts.
+- Do not end silently with an agent-started static preview server still
+  running.
 - Do not advance beyond the stated next step for the approved round.
 - Do not change approved wireframe structure during visual draft work unless
   the user requests a revision.

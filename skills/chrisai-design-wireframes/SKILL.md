@@ -213,6 +213,35 @@ Keep static files, draft-only assets, QA screenshots, QA notes, recordings, and
 review metadata inside that folder. If `chrisai-qa-playwright` is used, save
 its artifacts under the draft folder's `qa/` directory.
 
+Create a separate HTML file for each distinct page, screen, or major state.
+Do not put a multi-page wireframe into one large HTML file. Use `index.html`
+only as the first screen or review hub, then add sibling files such as
+`dashboard.html`, `details.html`, `empty-state.html`, or `error-state.html`
+for the remaining screens and states. Share grayscale wireframe styling through
+`styles.css`, keep optional simulated behavior in `script.js`, and connect the
+wireframe with relative links.
+
+For local static wireframes, do not try to open `file://` URLs in the browser.
+Serve the draft workspace with a simple static server, then open the
+localhost URL:
+
+```bash
+python3 -m http.server [port] --directory [location]
+```
+
+Use an available local port and the draft workspace as `[location]`. Link to
+the served entry page, such as `http://127.0.0.1:[port]/index.html`. This is a
+static preview server for review, not production infrastructure.
+
+Treat this server as agent-owned when the agent starts it:
+
+- stop it before the final response unless the user needs it open for review
+- use a 15-minute default timeout, 5 minutes for quick verification, or 30
+  minutes for user review
+- do not stop a server that was already running before the task
+- report whether the server was stopped, left running with its URL and timeout,
+  or identified as pre-existing and left alone
+
 Follow the artifact rules in
 [`browser-feedback-loop`](../chrisai-process-feedback-loop/references/browser-feedback-loop.md):
 major round changes create a new folder; minor changes inside the same review
@@ -251,4 +280,6 @@ Before treating the wireframe as ready:
 - Are labels understandable without decoration?
 - Does the layout support scanning?
 - Is clickable behavior clearly review-only?
+- Was any agent-started static preview server stopped, intentionally left
+  running with URL and timeout, or clearly identified as pre-existing?
 - Did the final response tell the user what to review and what happens next?

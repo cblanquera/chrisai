@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.9 - 2026-06-01
+
+- Added preview-server lifecycle guidance for QA, design drafts, wireframes,
+  and Markdown-to-HTML artifact verification.
+- Added timeout cleanup support to the QA localhost preview helper so
+  agent-started preview servers do not run indefinitely.
+- Clarified static design draft and wireframe review artifacts should use
+  separate HTML files per page, screen, or major state.
+
 ## 0.1.8 - 2026-05-31
 
 - Tightened `chrisai-process-feedback-loop` round responses so browser-visible

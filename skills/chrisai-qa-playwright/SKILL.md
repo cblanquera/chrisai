@@ -106,6 +106,26 @@ If a repo-specific preview flow clearly requires a pre-step before the server
 can run, treat that as an exception and state the extra command explicitly
 instead of pretending preview is one-step by default.
 
+## Preview Server Lifecycle
+
+Before starting a preview server, determine whether the server is already
+running or will be started by the agent.
+
+- Do not stop preview servers that were already running before the task.
+- Track any preview server started by the agent as agent-owned.
+- Stop agent-owned preview servers before the final response unless the user
+  needs the server left open for review or explicitly asks to keep it running.
+- Use a default timeout of 15 minutes for agent-owned preview servers.
+- Use a 5-minute timeout for quick verification when no user review window is
+  needed.
+- Use a 30-minute timeout for user review sessions unless the user asks for a
+  different lifetime.
+- Never end silently with an agent-owned preview server still running.
+
+When reporting QA results, state whether the preview server was stopped, left
+running for review, or was pre-existing and left alone. If an agent-owned
+server remains open, report the localhost URL and expected timeout.
+
 ## Workspace Ownership Rules
 
 This skill manages a repo-local QA workspace. Prefer predictable ownership over
@@ -146,7 +166,7 @@ needs a managed QA workspace:
 Use the bundled helpers as follows:
 
 - `scripts/localhost_preview.py` wraps the chosen preview command with explicit
-  `HOST` and `PORT` bindings and optional pre-steps
+  `HOST` and `PORT` bindings, optional pre-steps, and an optional timeout
 - `scripts/capture_page.mjs` handles simple screenshot or video capture for a
   single route or page load
 
@@ -204,10 +224,11 @@ Report results in this order:
 
 1. preview status
 2. selected package root and preview command
-3. workspace path used
-4. screenshot or recording coverage
-5. defects or blockers
-6. whether each blocker is repo-side, environment-side, or unresolved
+3. preview server lifecycle result
+4. workspace path used
+5. screenshot or recording coverage
+6. defects or blockers
+7. whether each blocker is repo-side, environment-side, or unresolved
 
 If there are no findings, say so explicitly and mention any residual gaps such
 as unverified mobile widths, unavailable Playwright bootstrap, or a flow that
@@ -219,6 +240,8 @@ Do not consider the QA complete unless the answer to all of these is yes:
 
 - Was the correct package root chosen for preview?
 - Was the preview command selected by the documented precedence?
+- Was any agent-owned preview server stopped, intentionally left running with
+  URL and timeout, or clearly identified as pre-existing?
 - Was the workspace reused or created without trampling another setup?
 - Were screenshot or recording outputs tied to explicit routes and viewports?
 - Were repo-side blockers separated from environment-side blockers?

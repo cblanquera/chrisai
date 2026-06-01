@@ -168,6 +168,12 @@ directly with a `file://` URL. Start a local preview server only if the browser
 tool cannot open local files, file access is blocked, or the artifact depends on
 HTTP-only behavior.
 
+When a preview server is required, treat any server started by the agent as
+agent-owned. Stop it before the final response unless it must remain open for
+user review. Use a 15-minute default timeout, 5 minutes for quick verification,
+or 30 minutes for user review, and report whether the server was stopped, left
+running with its URL and timeout, or was pre-existing and left alone.
+
 Report the output path, selected layout, selected theme, and any unsupported
 input that degraded to plain text.
 
