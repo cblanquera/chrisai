@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.12 - 2026-06-08
+
+- Added family routers for `chrisai-coding`, `chrisai-design`,
+  `chrisai-docs`, `chrisai-prompt`, and `chrisai-process`, with the main
+  `chrisai-router` now delegating to those routes before specialists.
+- Moved `chrisai-prompt-cache` discovery into the prompt family and updated the
+  README skill list for the expanded router structure.
+
 ## 0.1.11 - 2026-06-08
 
 - Expanded `chrisai-docs-dev-onboarding` with teaching-arc,

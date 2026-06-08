@@ -1,20 +1,28 @@
 # ChrisAI
 
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
-ChrisAI coding, documentation, design, QA, and maintenance behaviors as reusable
-`skills/*/SKILL.md` folders.
+ChrisAI coding, documentation, prompt, process, design, QA, and maintenance
+behaviors as reusable `skills/*/SKILL.md` folders.
 
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
 and OpenCode are install targets, not separate rewritten sources.
 
 ## Included Skills
 
+### Entry And Maintenance
+
 | Skill | Purpose |
 | --- | --- |
 | `chrisai` | Short alias entrypoint for `chrisai-router`. |
-| `chrisai-router` | Canonical router for ChrisAI documentation, coding, QA, and design tasks. |
+| `chrisai-router` | Canonical entry router for ChrisAI family routers and standalone QA or maintenance skills. |
 | `chrisai-update` | Explicit update and sync workflow for ChrisAI installs. |
 | `chrisai-doctor` | Diagnose ChrisAI repository, validation, adapter sync, and local installation state. |
+
+### Coding
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-coding` | Route ChrisAI coding work to architecture, JavaScript, TypeScript, React, test, HTML, or CSS specialists. |
 | `chrisai-coding-engineering` | Frame architecture, abstractions, runtime boundaries, and refactor-versus-rewrite decisions before language-specific implementation details. |
 | `chrisai-coding-html-css` | Write or review vanilla HTML and CSS for static sites and docs pages. |
 | `chrisai-coding-js` | Write or review JavaScript using ChrisAI conventions across `.js`, `.mjs`, and `.cjs`. |
@@ -22,19 +30,49 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-coding-ts-logic-review` | Review TypeScript logic and related tests for branching risk, test gaps, duplicated rules, and refactor opportunities before applying changes. |
 | `chrisai-coding-ts-react` | Write or review React TSX using ChrisAI conventions. |
 | `chrisai-coding-ts-tests` | Write or review TypeScript tests using ChrisAI testing conventions. |
+
+### Documentation
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-docs` | Route ChrisAI documentation work to onboarding, API reference, formatting, or copy-editing specialists. |
 | `chrisai-docs-copy-editing` | Proofread and tighten existing developer-facing documentation without changing technical meaning. |
 | `chrisai-docs-dev-api-reference` | Write or restructure junior-developer-facing API reference docs. |
 | `chrisai-docs-dev-formatting` | Normalize markdown structure and formatting using ChrisAI documentation style rules. |
 | `chrisai-docs-dev-onboarding` | Write or restructure onboarding docs, quick starts, tutorials, and conceptual developer guides. |
+
+### Prompt
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-prompt` | Route ChrisAI prompt work to artifact generation or prior-conversation context caching specialists. |
+| `chrisai-prompt-cache` | Preserve, index, chunk, retrieve, or hand off prior-conversation context without loading the full transcript. |
 | `chrisai-prompt-md-to-html` | Convert Markdown or Codex text responses into deterministic single-file HTML artifacts with fixed layouts, syntax highlighting, Mermaid support, and validated theme options. |
+
+### Design
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-design` | Route ChrisAI design work to creative, extraction, wireframe, draft, logo, or asset-format specialists. |
 | `chrisai-design-asset-formats` | Create, convert, validate, and package SVG, PNG, and ICO design assets with transparency and favicon QA rules. |
 | `chrisai-design-creative` | Coordinate brand-led design direction, mode selection, and handoff across the design specialist skills. |
 | `chrisai-design-drafts` | Create static HTML/CSS/JS design-review drafts and clickable creative mockups from approved structure and direction. |
 | `chrisai-design-logo-generator` | Create and refine SVG-first logos and mark variants before downstream export and packaging. |
 | `chrisai-design-system-extraction` | Extract design source-of-truth rules from existing apps, sites, design files, component libraries, and project tokens. |
 | `chrisai-design-wireframes` | Create grayscale low-fidelity wireframes and clickable grayscale wireframe drafts before visual design. |
+
+### Process
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-process` | Route ChrisAI process work to feedback-loop or task-bank specialists. |
 | `chrisai-process-feedback-loop` | Manage staged feedback loops for reviewable artifacts shown in the in-app browser. |
 | `chrisai-process-task-bank` | Coordinate large multi-item tasks with filesystem-backed work packets, decisions, logs, handoffs, and optional separate-session delegation. |
+
+### QA
+
+| Skill | Purpose |
+| --- | --- |
 | `chrisai-qa-playwright` | QA local web projects through localhost preview detection, Playwright capture, and responsive browser checks. |
 
 ## Install
@@ -42,9 +80,9 @@ and OpenCode are install targets, not separate rewritten sources.
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai#v0.1.11 install --target codex
-npx github:cblanquera/chrisai#v0.1.11 install --target claude
-npx github:cblanquera/chrisai#v0.1.11 install --target opencode
+npx github:cblanquera/chrisai#v0.1.12 install --target codex
+npx github:cblanquera/chrisai#v0.1.12 install --target claude
+npx github:cblanquera/chrisai#v0.1.12 install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:

@@ -18,6 +18,7 @@ to `chrisai-router`.
 ## Behavior
 
 - Treat `chrisai` as an alias for `chrisai-router`.
-- Route docs, coding, QA, and design tasks through `chrisai-router`.
+- Route docs, coding, prompt, process, design, QA, and maintenance tasks through
+  `chrisai-router`.
 - Do not duplicate or drift from the canonical router instructions.
 - If the canonical router changes, keep this alias aligned.

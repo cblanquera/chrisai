@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Design Router"
+  short_description: "Route ChrisAI design tasks to the right specialist"
+  default_prompt: "Use $chrisai-design to route this design task to the right ChrisAI creative, design-system extraction, wireframe, draft, logo, or asset specialist."

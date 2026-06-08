@@ -1,4 +1,4 @@
 interface:
   display_name: "ChrisAI Router"
-  short_description: "Route ChrisAI docs, coding, QA, process, design, or artifact tasks"
-  default_prompt: "Use $chrisai-router to decide whether this task should use a ChrisAI documentation, coding, browser-QA, process, design, or artifact skill, then choose the narrowest specialist without relying on legacy routers."
+  short_description: "Route ChrisAI tasks to the right family router"
+  default_prompt: "Use $chrisai-router to decide whether this task should use a ChrisAI documentation, coding, prompt, process, design, browser-QA, or maintenance route."
