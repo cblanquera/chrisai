@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.11 - 2026-06-08
+
+- Expanded `chrisai-docs-dev-onboarding` with teaching-arc,
+  guided-walkthrough, example-explanation, and review-gate guidance adapted
+  from Stackpress course content standards.
+
 ## 0.1.10 - 2026-06-08
 
 - Added `chrisai-process-task-bank` for large multi-item tasks that need
