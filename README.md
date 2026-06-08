@@ -34,6 +34,7 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-design-system-extraction` | Extract design source-of-truth rules from existing apps, sites, design files, component libraries, and project tokens. |
 | `chrisai-design-wireframes` | Create grayscale low-fidelity wireframes and clickable grayscale wireframe drafts before visual design. |
 | `chrisai-process-feedback-loop` | Manage staged feedback loops for reviewable artifacts shown in the in-app browser. |
+| `chrisai-process-task-bank` | Coordinate large multi-item tasks with filesystem-backed work packets, decisions, logs, handoffs, and optional separate-session delegation. |
 | `chrisai-qa-playwright` | QA local web projects through localhost preview detection, Playwright capture, and responsive browser checks. |
 
 ## Install

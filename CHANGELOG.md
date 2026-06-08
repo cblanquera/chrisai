@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.10 - 2026-06-08
+
+- Added `chrisai-process-task-bank` for large multi-item tasks that need
+  filesystem-backed work packets, durable decisions, progress logs, handoffs,
+  and optional separate-session delegation after user approval.
+- Updated the ChrisAI router and README so task-bank coordination is
+  discoverable from the process skill family.
+- Ignored the local `chrisai-response-simulation` conference demo skill so it
+  stays out of the distributed skill set.
+
 ## 0.1.9 - 2026-06-01
 
 - Added preview-server lifecycle guidance for QA, design drafts, wireframes,

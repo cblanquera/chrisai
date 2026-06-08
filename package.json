@@ -1,6 +1,6 @@
 {
   "name": "chrisai",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Portable ChrisAI skills for AI coding agents.",
   "bin": {
     "chrisai": "./bin/chrisai.js"
@@ -16,6 +16,7 @@
     "docs/",
     "scripts/",
     "skills/",
+    "!skills/chrisai-response-simulation/",
     "templates/",
     "CHANGELOG.md",
     "README.md",

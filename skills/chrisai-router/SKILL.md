@@ -145,6 +145,17 @@ approve, reject, or revise what they see.
 - Do not use it instead of `chrisai-qa-playwright` when the primary deliverable
   is QA, screenshots, recordings, or responsive browser verification.
 
+Use `chrisai-process-task-bank` with the owning domain skill when the task is
+large enough to need filesystem-backed work packets, durable decisions,
+progress logs, handoffs, or optional delegation across separate chat sessions
+while keeping each worker context small.
+
+- Use it for large artifact-production, multi-item implementation, broad
+  migrations, or long-running tasks that may drift or span sessions.
+- Do not use it for small tasks that fit cleanly in the active chat.
+- Do not let it replace the domain skill that owns the actual work.
+- When separate sessions may help, ask the user before spawning or delegating.
+
 ## Design Routes
 
 Choose exactly one design specialist unless the task clearly needs a deliberate
@@ -229,6 +240,9 @@ category rather than the ChrisAI docs, coding, QA, design, or artifact family.
 - If the request shows a reviewable artifact in the in-app browser and expects
   approval or revision feedback, add `chrisai-process-feedback-loop` to the
   owning domain skill.
+- If the request is a large multi-item task that needs durable work packets,
+  progress logs, decisions, handoffs, or possible separate-session
+  coordination, add `chrisai-process-task-bank` to the owning domain skill.
 - If the request is mainly about creative direction, visual-system work, or
   homepage composition, prefer `chrisai-design-creative`.
 - If the request is mainly about extracting rules from an existing design

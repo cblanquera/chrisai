@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Process Task Bank"
+  short_description: "Filesystem-backed task banks for large multi-item work"
+  default_prompt: "Use $chrisai-process-task-bank when a task is large enough to need itemized work packets, durable decisions, progress logs, handoffs, or optional delegation across separate chat sessions while keeping each worker context small."
+policy:
+  allow_implicit_invocation: true
