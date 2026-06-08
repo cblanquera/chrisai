@@ -1,6 +1,6 @@
 ---
 name: chrisai-router
-description: Use when a task should be handled with the ChrisAI skill family and an agent needs to choose the narrowest documentation, coding, browser-QA, or design specialist without relying on legacy routers.
+description: Use when a task should be handled with the ChrisAI skill family and an agent needs to choose the narrowest documentation, coding, browser-QA, process, design, or artifact specialist without relying on legacy routers.
 ---
 
 # ChrisAI Router
@@ -8,8 +8,8 @@ description: Use when a task should be handled with the ChrisAI skill family and
 This skill is the canonical ChrisAI router.
 
 Use it to decide whether a task belongs to the ChrisAI documentation, coding,
-QA, design, or artifact skill family, then hand the work to the narrowest matching
-specialist skill.
+QA, process, design, or artifact skill family, then hand the work to the
+narrowest matching specialist skill.
 
 Do not duplicate specialist instructions here. Route, then defer.
 
@@ -19,7 +19,7 @@ Do not duplicate specialist instructions here. Route, then defer.
 - Specialist skills may be invoked directly by a human user.
 - Specialist skills must not auto-route to sibling skills.
 - Separate non-router categories may exist outside the ChrisAI docs, coding,
-  QA, design, and artifact family.
+  QA, process, design, and artifact family.
 - Do not reference or rely on deprecated intermediate routers.
 - `chrisai-router` is the only shared ChrisAI skill that may actively consult
   a machine-local `local-environment` overlay.
@@ -156,6 +156,20 @@ while keeping each worker context small.
 - Do not let it replace the domain skill that owns the actual work.
 - When separate sessions may help, ask the user before spawning or delegating.
 
+Use `chrisai-prompt-cache` when the task is about preserving, indexing,
+chunking, retrieving, or handing off context from a prior conversation without
+loading the full transcript.
+
+- Use it for repo-local prompt caches, conversation archives, semantic topic
+  chunks, decision/evidence indexes, and future-session retrieval workflows.
+- Use it when the user wants explicit, inspectable conversation references
+  that complement Codex Memories.
+- Do not use it for required repo guidance that belongs in `AGENTS.md`.
+- Do not use it for active multi-item execution state that belongs in
+  `chrisai-process-task-bank`.
+- Do not use it for private automatic personal recall that Codex Memories can
+  handle better.
+
 ## Design Routes
 
 Choose exactly one design specialist unless the task clearly needs a deliberate
@@ -243,6 +257,8 @@ category rather than the ChrisAI docs, coding, QA, design, or artifact family.
 - If the request is a large multi-item task that needs durable work packets,
   progress logs, decisions, handoffs, or possible separate-session
   coordination, add `chrisai-process-task-bank` to the owning domain skill.
+- If the request is about caching, archiving, chunking, indexing, retrieving,
+  or handoff of prior conversation context, prefer `chrisai-prompt-cache`.
 - If the request is mainly about creative direction, visual-system work, or
   homepage composition, prefer `chrisai-design-creative`.
 - If the request is mainly about extracting rules from an existing design

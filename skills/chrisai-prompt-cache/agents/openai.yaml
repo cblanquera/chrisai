@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Prompt Cache"
+  short_description: "Chat ID keyed prompt caches for selective future context"
+  default_prompt: "Use $chrisai-prompt-cache to preserve, index, chunk, or retrieve context from a prior conversation without loading the full transcript, especially by using a copied Codex Chat ID as a stable cache key under ~/Documents/Codex/.chrisai/cache/."
+policy:
+  allow_implicit_invocation: true
