@@ -46,8 +46,10 @@ The intended sequence is:
 
 1. `chrisai-planning-greenfield-discovery`
 2. `chrisai-planning-greenfield-grill-review`
-3. `chrisai-planning-greenfield-freeze-and-plan`
-4. implementation work through the relevant coding, design, docs, or process
+3. Validation Cycle, when review findings, risks, open questions, assumptions,
+   or unresolved ADRs still need evidence before decisions can be trusted
+4. `chrisai-planning-greenfield-freeze-and-plan`
+5. implementation work through the relevant coding, design, docs, or process
    skills
 
 Do not start implementation from this router.
@@ -63,3 +65,7 @@ Do not start implementation from this router.
   design-system work.
 - If the user asks to skip grill review, record that as an explicit decision
   before using the freeze-and-plan specialist.
+- If unresolved `BLOCKER` or `HIGH` findings remain after review or
+  freeze-and-plan preflight, explain exactly what validation work would be
+  performed and ask the user whether they want another pass to enter a
+  Validation Cycle before proceeding.

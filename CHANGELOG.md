@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.14 - 2026-06-10
+
+- Added Validation Cycle guidance to the greenfield planning flow so
+  unresolved review findings prompt another evidence-gathering pass before
+  freeze-and-plan.
+- Tightened greenfield freeze-and-plan readiness gates so `BLOCKER` and `HIGH`
+  findings must be resolved and validation evidence must exist before
+  implementation planning proceeds.
+- Required planning skills to explain the exact proposed validation work before
+  asking the user whether to enter a Validation Cycle.
+
 ## 0.1.13 - 2026-06-10
 
 - Added the `chrisai-planning` family for large greenfield app planning before

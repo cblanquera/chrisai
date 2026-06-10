@@ -76,6 +76,9 @@ Do not propose implementation tasks.
 8. Identify inconsistent decisions across documents.
 9. Classify findings by severity.
 10. Write the final readiness review.
+11. If unresolved findings remain, summarize them, explain exactly what
+    validation work would be performed in the next pass, then ask the user
+    whether they want to proceed and enter a Validation Cycle.
 
 Read [review-model](references/review-model.md) for severity and report
 structure.
@@ -89,12 +92,53 @@ Write:
 
 ## Severity Model
 
-- `BLOCKER`: implementation should not begin until resolved.
-- `HIGH`: implementation planning should not freeze until accepted, resolved,
-  or explicitly deferred.
-- `MEDIUM`: important risk that can be tracked during planning.
-- `LOW`: minor issue, cleanup, or clarification.
-- `QUESTION`: answer needed to reduce ambiguity.
+- `BLOCKER`: a decision cannot be made without additional evidence.
+- `HIGH`: a decision has been made, but confidence is low and validation is
+  strongly recommended.
+- `MEDIUM`: decision may proceed, but future review is recommended.
+- `LOW`: informational finding.
+- `QUESTION`: open question that may influence future decisions.
+
+## Validation Cycle
+
+If the review process produces unresolved findings, inform the user, summarize
+the results, explain exactly what validation work would be performed next, and
+ask whether they want to proceed with another pass to enter a Validation Cycle.
+
+The purpose of a Validation Cycle is to convert uncertainty into
+evidence-backed decisions.
+
+Validation Cycle inputs may include:
+
+- findings
+- risks
+- open questions
+- assumptions
+- unresolved ADRs
+
+Validation Cycle outputs may include:
+
+- evidence
+- recommendations
+- updated ADRs
+- updated specifications
+- updated decisions
+
+Validation work may include research, prototypes, proof-of-concepts,
+benchmarks, technical spikes, security reviews, vendor evaluations, user
+interviews, or market validation. Do not assume all validation is research.
+
+Before asking the user to proceed, state:
+
+- which findings or questions the Validation Cycle will address
+- which validation methods will be used
+- which files or systems will be inspected, researched, prototyped, or updated
+- which artifacts are expected to be produced or changed
+- what evidence would be enough to resolve or downgrade each finding
+- what will remain out of scope for that pass
+
+Do not downgrade findings without evidence. Do not treat assumptions or
+opinions as decisions.
 
 ## Handoff
 
@@ -103,5 +147,7 @@ Before stopping, state:
 - number of findings by severity
 - whether any `BLOCKER` or `HIGH` findings remain
 - whether freeze-and-plan may begin
+- if unresolved findings remain, explain the proposed validation work and ask
+  whether the user wants to proceed with a Validation Cycle for another pass
 - the next recommended skill:
   `chrisai-planning-greenfield-freeze-and-plan`

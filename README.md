@@ -89,9 +89,9 @@ and OpenCode are install targets, not separate rewritten sources.
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai#v0.1.13 install --target codex
-npx github:cblanquera/chrisai#v0.1.13 install --target claude
-npx github:cblanquera/chrisai#v0.1.13 install --target opencode
+npx github:cblanquera/chrisai#v0.1.14 install --target codex
+npx github:cblanquera/chrisai#v0.1.14 install --target claude
+npx github:cblanquera/chrisai#v0.1.14 install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:
