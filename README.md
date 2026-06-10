@@ -1,7 +1,7 @@
 # ChrisAI
 
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
-ChrisAI coding, documentation, prompt, process, design, QA, and maintenance
+ChrisAI coding, documentation, prompt, planning, process, design, QA, and maintenance
 behaviors as reusable `skills/*/SKILL.md` folders.
 
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
@@ -49,6 +49,15 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-prompt-cache` | Preserve, index, chunk, retrieve, or hand off prior-conversation context without loading the full transcript. |
 | `chrisai-prompt-md-to-html` | Convert Markdown or Codex text responses into deterministic single-file HTML artifacts with fixed layouts, syntax highlighting, Mermaid support, and validated theme options. |
 
+### Planning
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-planning` | Route large greenfield app planning before implementation. |
+| `chrisai-planning-greenfield-discovery` | Create pre-grill planning corpuses for large unbuilt apps. |
+| `chrisai-planning-greenfield-grill-review` | Run deep adversarial readiness reviews for greenfield app plans. |
+| `chrisai-planning-greenfield-freeze-and-plan` | Freeze greenfield MVP scope and convert approved plans into buildable epics, tasks, dependencies, and build order. |
+
 ### Design
 
 | Skill | Purpose |
@@ -80,9 +89,9 @@ and OpenCode are install targets, not separate rewritten sources.
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai#v0.1.12 install --target codex
-npx github:cblanquera/chrisai#v0.1.12 install --target claude
-npx github:cblanquera/chrisai#v0.1.12 install --target opencode
+npx github:cblanquera/chrisai#v0.1.13 install --target codex
+npx github:cblanquera/chrisai#v0.1.13 install --target claude
+npx github:cblanquera/chrisai#v0.1.13 install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:

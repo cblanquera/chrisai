@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Planning Greenfield Discovery"
+  short_description: "Creates pre-grill planning corpuses for large unbuilt apps"
+  default_prompt: "Use $chrisai-planning-greenfield-discovery to plan a large app that has not been built yet from intake through research, specs, ADR candidates, spikes, MVP scope, acceptance criteria, and non-goals before grill review."
+policy:
+  allow_implicit_invocation: true

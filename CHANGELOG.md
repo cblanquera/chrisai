@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.13 - 2026-06-10
+
+- Added the `chrisai-planning` family for large greenfield app planning before
+  implementation, including discovery, grill-review, and freeze-and-plan phase
+  skills.
+- Added planning corpus guidance for pre-grill artifacts, final readiness
+  review handoff, `plans/AGENTS.md`, grill preflight checks, MVP freeze, and
+  implementation backlog generation.
+- Updated the ChrisAI router and README so planning is discoverable as a
+  first-class family separate from process task-bank coordination.
+
 ## 0.1.12 - 2026-06-08
 
 - Added family routers for `chrisai-coding`, `chrisai-design`,

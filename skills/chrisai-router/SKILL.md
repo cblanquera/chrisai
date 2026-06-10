@@ -1,6 +1,6 @@
 ---
 name: chrisai-router
-description: Use when a task should be handled with the ChrisAI skill family and an agent needs to choose the correct family router for documentation, coding, prompt, process, design, browser-QA, or maintenance work.
+description: Use when a task should be handled with the ChrisAI skill family and an agent needs to choose the correct family router for documentation, coding, prompt, planning, process, design, browser-QA, or maintenance work.
 ---
 
 # ChrisAI Router
@@ -8,8 +8,8 @@ description: Use when a task should be handled with the ChrisAI skill family and
 This skill is the canonical ChrisAI entry router.
 
 Use it to decide whether a task belongs to the ChrisAI documentation, coding,
-prompt, process, design, browser-QA, or maintenance family. Then hand the work
-to the narrowest matching family router or specialist.
+prompt, planning, process, design, browser-QA, or maintenance family. Then hand
+the work to the narrowest matching family router or specialist.
 
 Do not duplicate family-router or specialist instructions here. Route, then
 defer.
@@ -22,7 +22,7 @@ defer.
 - Specialist skills may be invoked directly by a human user.
 - Specialist skills must not auto-route to sibling skills.
 - Separate non-router categories may exist outside the ChrisAI docs, coding,
-  prompt, process, design, QA, and maintenance families.
+  prompt, planning, process, design, QA, and maintenance families.
 - `chrisai-router` is the only shared ChrisAI skill that may actively consult
   a machine-local `local-environment` overlay.
 
@@ -63,6 +63,9 @@ Choose the narrowest family route that fully owns the task.
   guides, tutorials, markdown structure, and copy-editing.
 - Use `chrisai-prompt` for prompt artifacts, Markdown-to-HTML conversion, and
   prior-conversation context caching, chunking, indexing, or retrieval.
+- Use `chrisai-planning` for large greenfield apps that have not been built yet
+  and need research-first planning, deep readiness review, MVP freeze, or
+  implementation backlog generation before coding begins.
 - Use `chrisai-process` for staged feedback loops, durable task banks,
   progress logs, decisions, handoffs, and optional separate-session
   coordination.
@@ -83,6 +86,10 @@ Choose the narrowest family route that fully owns the task.
 - Add `chrisai-process-task-bank` through `chrisai-process` when the task is
   large enough to need work packets, durable decisions, progress logs,
   handoffs, or possible separate-session coordination.
+- Prefer `chrisai-planning` over `chrisai-process-task-bank` only when the app
+  is large, unbuilt, and the deliverable is a pre-implementation planning
+  corpus. Existing app features, migrations, and implementation work should not
+  use `chrisai-planning`.
 - Prefer `chrisai-qa-playwright` over coding or design routes when the primary
   deliverable is rendered browser verification rather than creation.
 - If the request crosses families, choose the family that owns the user's
