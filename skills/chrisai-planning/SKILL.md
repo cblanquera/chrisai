@@ -1,6 +1,6 @@
 ---
 name: chrisai-planning
-description: Use when a ChrisAI planning task needs routing for large greenfield app planning, deep implementation-readiness review, or post-review MVP freeze and implementation backlog generation before any coding begins.
+description: Use when a ChrisAI planning task needs routing for large greenfield app planning, deep implementation-readiness review, evidence-backed validation cycles, or post-review MVP freeze and implementation backlog generation before any coding begins.
 ---
 
 # ChrisAI Planning Router
@@ -23,6 +23,10 @@ Do not duplicate specialist instructions here. Route, then defer.
 - Use `chrisai-planning-greenfield-grill-review` when a greenfield planning
   corpus already exists and the user wants a deep adversarial readiness review
   before implementation planning.
+- Use `chrisai-planning-greenfield-validation-cycle` after grill review and
+  before freeze-and-plan when `BLOCKER` or `HIGH` findings, unresolved ADRs,
+  risky assumptions, open questions, or Phase 0 gates need evidence-backed
+  validation.
 - Use `chrisai-planning-greenfield-freeze-and-plan` when grill review is
   complete or explicitly skipped and the user wants to resolve readiness
   findings, freeze the MVP, and convert the plan into epics, tasks, and build
@@ -46,8 +50,10 @@ The intended sequence is:
 
 1. `chrisai-planning-greenfield-discovery`
 2. `chrisai-planning-greenfield-grill-review`
-3. Validation Cycle, when review findings, risks, open questions, assumptions,
-   or unresolved ADRs still need evidence before decisions can be trusted
+3. `chrisai-planning-greenfield-validation-cycle`, when review findings,
+   risks, open questions, assumptions, unresolved ADRs, or Phase 0 gates still
+   need evidence before decisions can be trusted. Required artifacts live under
+   `plans/validation/`.
 4. `chrisai-planning-greenfield-freeze-and-plan`
 5. implementation work through the relevant coding, design, docs, or process
    skills
@@ -67,5 +73,9 @@ Do not start implementation from this router.
   before using the freeze-and-plan specialist.
 - If unresolved `BLOCKER` or `HIGH` findings remain after review or
   freeze-and-plan preflight, explain exactly what validation work would be
-  performed and ask the user whether they want another pass to enter a
-  Validation Cycle before proceeding.
+  performed and route to `chrisai-planning-greenfield-validation-cycle` before
+  proceeding.
+- Do not route to `chrisai-planning-greenfield-freeze-and-plan` while
+  unresolved `BLOCKER` or `HIGH` findings remain unless they are resolved by
+  explicit fallback, scope change, or deferral allowed by the validation-cycle
+  exit criteria.

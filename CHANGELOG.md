@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.15 - 2026-06-10
+
+- Added `chrisai-planning-greenfield-validation-cycle` as a first-class routed
+  workflow between greenfield grill review and freeze-and-plan.
+- Added validation-cycle artifact guidance for evidence matrices, decision
+  logs, pre-implementation prework, validation loops, and finding-specific
+  evidence under `plans/validation/`.
+- Updated the planning router, grill-review, freeze-and-plan, and README so
+  unresolved `BLOCKER` and `HIGH` findings route through the validation-cycle
+  specialist before implementation planning.
+
 ## 0.1.14 - 2026-06-10
 
 - Added Validation Cycle guidance to the greenfield planning flow so

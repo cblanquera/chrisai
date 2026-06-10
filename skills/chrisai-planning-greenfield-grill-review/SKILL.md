@@ -78,7 +78,8 @@ Do not propose implementation tasks.
 10. Write the final readiness review.
 11. If unresolved findings remain, summarize them, explain exactly what
     validation work would be performed in the next pass, then ask the user
-    whether they want to proceed and enter a Validation Cycle.
+    whether they want to proceed with
+    `chrisai-planning-greenfield-validation-cycle`.
 
 Read [review-model](references/review-model.md) for severity and report
 structure.
@@ -99,34 +100,12 @@ Write:
 - `LOW`: informational finding.
 - `QUESTION`: open question that may influence future decisions.
 
-## Validation Cycle
+## Validation Cycle Handoff
 
 If the review process produces unresolved findings, inform the user, summarize
 the results, explain exactly what validation work would be performed next, and
-ask whether they want to proceed with another pass to enter a Validation Cycle.
-
-The purpose of a Validation Cycle is to convert uncertainty into
-evidence-backed decisions.
-
-Validation Cycle inputs may include:
-
-- findings
-- risks
-- open questions
-- assumptions
-- unresolved ADRs
-
-Validation Cycle outputs may include:
-
-- evidence
-- recommendations
-- updated ADRs
-- updated specifications
-- updated decisions
-
-Validation work may include research, prototypes, proof-of-concepts,
-benchmarks, technical spikes, security reviews, vendor evaluations, user
-interviews, or market validation. Do not assume all validation is research.
+ask whether they want to proceed with
+`chrisai-planning-greenfield-validation-cycle`.
 
 Before asking the user to proceed, state:
 
@@ -146,8 +125,10 @@ Before stopping, state:
 
 - number of findings by severity
 - whether any `BLOCKER` or `HIGH` findings remain
-- whether freeze-and-plan may begin
+- whether freeze-and-plan may begin or validation-cycle is required
 - if unresolved findings remain, explain the proposed validation work and ask
-  whether the user wants to proceed with a Validation Cycle for another pass
+  whether the user wants to proceed with
+  `chrisai-planning-greenfield-validation-cycle`
 - the next recommended skill:
-  `chrisai-planning-greenfield-freeze-and-plan`
+  `chrisai-planning-greenfield-validation-cycle` when unresolved findings
+  remain, otherwise `chrisai-planning-greenfield-freeze-and-plan`

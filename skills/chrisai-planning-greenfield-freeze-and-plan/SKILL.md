@@ -40,12 +40,10 @@ user explicitly chooses to skip grill review.
 
 If any required readiness condition fails, do not proceed to implementation
 planning. Instead, summarize the failed conditions and ask whether the user
-wants to do another pass to enter a Validation Cycle. Before asking, explain
-exactly what validation work would be performed, which findings or decisions it
-would address, which artifacts would be updated, and what evidence would be
-enough to resume freeze-and-plan. The next pass should convert uncertainty into
-evidence-backed decisions, update ADRs and specifications, update decisions,
-and then re-run freeze-and-plan.
+wants to run `chrisai-planning-greenfield-validation-cycle`. Before asking,
+explain exactly what validation work would be performed, which findings or
+decisions it would address, which artifacts would be updated, and what evidence
+would be enough to resume freeze-and-plan.
 
 ## Workflow
 
@@ -53,7 +51,8 @@ and then re-run freeze-and-plan.
 2. Confirm `BLOCKER` findings are `0`, `HIGH` findings are `0`, and validation
    evidence exists for decisions that were previously blocked by uncertainty.
 3. If readiness fails, stop, summarize the proposed validation work, and ask
-   whether the user wants to proceed with a Validation Cycle for another pass.
+   whether the user wants to proceed with
+   `chrisai-planning-greenfield-validation-cycle`.
 4. Update affected specs, ADRs, MVP docs, and decision summaries as needed.
 5. Generate `plans/mvp/mvp-freeze.md` as the implementation contract.
 6. Convert the frozen MVP into epics.
@@ -104,7 +103,7 @@ Before stopping, state:
 - whether MVP freeze is complete
 - remaining unresolved or deferred decisions
 - if readiness failed, the exact validation work proposed and whether the user
-  wants to proceed with a Validation Cycle
+  wants to proceed with `chrisai-planning-greenfield-validation-cycle`
 - generated implementation planning artifacts
 - recommended first implementation epic or task
 - which non-planning ChrisAI skill should own implementation next

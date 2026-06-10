@@ -1,6 +1,6 @@
 {
   "name": "chrisai",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Portable ChrisAI skills for AI coding agents.",
   "bin": {
     "chrisai": "./bin/chrisai.js"

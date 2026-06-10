@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Planning Greenfield Validation Cycle"
+  short_description: "Evidence-backed validation loops before greenfield MVP freeze"
+  default_prompt: "Use $chrisai-planning-greenfield-validation-cycle after greenfield grill review and before freeze-and-plan when BLOCKER or HIGH findings, unresolved ADRs, risky assumptions, open questions, or Phase 0 gates need evidence-backed validation."
+policy:
+  allow_implicit_invocation: true

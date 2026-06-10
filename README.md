@@ -56,6 +56,7 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-planning` | Route large greenfield app planning before implementation. |
 | `chrisai-planning-greenfield-discovery` | Create pre-grill planning corpuses for large unbuilt apps. |
 | `chrisai-planning-greenfield-grill-review` | Run deep adversarial readiness reviews for greenfield app plans. |
+| `chrisai-planning-greenfield-validation-cycle` | Convert unresolved greenfield review findings and Phase 0 gates into evidence-backed decisions before freeze-and-plan. |
 | `chrisai-planning-greenfield-freeze-and-plan` | Freeze greenfield MVP scope and convert approved plans into buildable epics, tasks, dependencies, and build order. |
 
 ### Design
@@ -89,9 +90,9 @@ and OpenCode are install targets, not separate rewritten sources.
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai#v0.1.14 install --target codex
-npx github:cblanquera/chrisai#v0.1.14 install --target claude
-npx github:cblanquera/chrisai#v0.1.14 install --target opencode
+npx github:cblanquera/chrisai#v0.1.15 install --target codex
+npx github:cblanquera/chrisai#v0.1.15 install --target claude
+npx github:cblanquera/chrisai#v0.1.15 install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:
