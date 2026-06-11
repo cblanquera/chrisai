@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.16 - 2026-06-11
+
+- Added the `chrisai-planning-agent-spec` family for AI-readable planning under
+  `.agent/specs/`, including discovery, import, brownfield reconciliation,
+  review, validation, and freeze workflows.
+- Added agent spec structure and record-model guidance so planning outgest
+  defaults to compact records and indexes for AI workers instead of
+  document-heavy planning corpuses.
+- Renamed process task-bank coordination to
+  `chrisai-process-agent-progress` and clarified the boundary between
+  `.agent/specs/` durable intent and `.agent/progress/` active execution.
+- Updated routers, prompt-cache guidance, README skill listings, and metadata
+  to route new planning work through agent specs while keeping legacy
+  greenfield planning skills available.
+
 ## 0.1.15 - 2026-06-10
 
 - Added `chrisai-planning-greenfield-validation-cycle` as a first-class routed
@@ -31,7 +46,7 @@
   review handoff, `plans/AGENTS.md`, grill preflight checks, MVP freeze, and
   implementation backlog generation.
 - Updated the ChrisAI router and README so planning is discoverable as a
-  first-class family separate from process task-bank coordination.
+  first-class family separate from process agent-progress coordination.
 
 ## 0.1.12 - 2026-06-08
 
@@ -49,10 +64,10 @@
 
 ## 0.1.10 - 2026-06-08
 
-- Added `chrisai-process-task-bank` for large multi-item tasks that need
+- Added `chrisai-process-agent-progress` for large multi-item tasks that need
   filesystem-backed work packets, durable decisions, progress logs, handoffs,
   and optional separate-session delegation after user approval.
-- Updated the ChrisAI router and README so task-bank coordination is
+- Updated the ChrisAI router and README so agent-progress coordination is
   discoverable from the process skill family.
 - Ignored the local `chrisai-response-simulation` conference demo skill so it
   stays out of the distributed skill set.

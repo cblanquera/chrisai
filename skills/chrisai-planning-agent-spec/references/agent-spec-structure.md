@@ -1,0 +1,157 @@
+# Agent Spec Structure
+
+Use `.agent/specs/` for AI-readable planning and specification state that
+should not interfere with human-authored project documents.
+
+## Layout
+
+```text
+.agent/specs/
+  manifest.md
+  AGENTS.md
+
+  <spec-id>/
+    brief.md
+    index.md
+    status.md
+    records/
+      requirements.md
+      capabilities.md
+      constraints.md
+      assumptions.md
+      questions.md
+      decisions.md
+      risks.md
+      acceptance.md
+      evidence.md
+      tasks.md
+    indexes/
+      traceability.md
+      open-questions.md
+      by-mvp.md
+      by-status.md
+      by-source.md
+    reviews/
+      readiness-review.md
+      findings.md
+    imports/
+      source-documents.md
+    logs/
+      YYYY-MM-DD.md
+    generated/
+      stakeholder-brief.md
+      implementation-plan.md
+      sprint-plan.md
+```
+
+Create grouped record files first. Do not create one file per record unless a
+grouped file is too large, the record needs independent ownership, or a worker
+must load it without unrelated records.
+
+## Spec ID
+
+Use one `<spec-id>` per bounded product, feature, release, migration, or major
+initiative.
+
+Good examples:
+
+- `c4os-v1`
+- `checkout-redesign`
+- `plugin-marketplace`
+- `workspace-import-export`
+
+Avoid creating a spec folder per sprint, topic, requirement, or implementation
+task.
+
+## Manifest
+
+Purpose: dashboard for all agent specs.
+
+```markdown
+# Agent Spec Manifest
+
+| Spec ID | Status | Type | Source | Current Phase | Notes |
+| --- | --- | --- | --- | --- | --- |
+| c4os-v1 | active | greenfield | prompt | review | |
+```
+
+## Brief
+
+Purpose: durable scope and boundary.
+
+```markdown
+# <Spec Name> Brief
+
+Spec ID:
+Type: greenfield | planned-greenfield | brownfield | planned-brownfield
+Status:
+
+## Objective
+
+## Audience
+
+## Source Material
+
+## Scope
+
+## Non-Goals
+
+## Current State
+
+## Intended State
+
+## Definition Of Ready
+```
+
+## Index
+
+Purpose: read-first routing guide for the spec.
+
+```markdown
+# <Spec Name> Index
+
+## Read First
+
+## Record Files
+
+## Reviews
+
+## Optional Generated Views
+
+## Current Open Questions
+```
+
+## Status
+
+Purpose: concise current state, not a log.
+
+```markdown
+# <Spec Name> Status
+
+Current Phase:
+Readiness:
+Last Updated:
+
+## Summary
+
+## Blocking Questions
+
+## Next Recommended Action
+```
+
+## Default Outgest
+
+The default outgest is AI-readable records and indexes:
+
+- grouped source records under `records/`
+- routing and traceability files under `indexes/`
+- concise status in `status.md`
+- readiness findings under `reviews/`
+
+## Optional Generated Views
+
+Files under `generated/` are disposable views. They may be rewritten from
+records when a stakeholder, developer, sprint planner, or external tool needs
+a specific document shape.
+
+Do not treat generated files as the source of truth.

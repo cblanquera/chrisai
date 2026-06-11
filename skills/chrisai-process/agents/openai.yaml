@@ -1,4 +1,4 @@
 interface:
   display_name: "ChrisAI Process Router"
-  short_description: "Route ChrisAI feedback-loop and task-bank work"
-  default_prompt: "Use $chrisai-process to route this process task to the right ChrisAI feedback-loop or task-bank specialist."
+  short_description: "Route ChrisAI feedback-loop and agent-progress work"
+  default_prompt: "Use $chrisai-process to route this process task to the right ChrisAI feedback-loop or agent-progress specialist."

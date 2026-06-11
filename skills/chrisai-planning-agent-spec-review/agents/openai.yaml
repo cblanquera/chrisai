@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Agent Spec Review"
+  short_description: "Reviews spec records for readiness and risk"
+  default_prompt: "Use $chrisai-planning-agent-spec-review to run an adversarial readiness review over .agent/specs records."
+policy:
+  allow_implicit_invocation: true

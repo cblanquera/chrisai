@@ -63,10 +63,10 @@ Choose the narrowest family route that fully owns the task.
   guides, tutorials, markdown structure, and copy-editing.
 - Use `chrisai-prompt` for prompt artifacts, Markdown-to-HTML conversion, and
   prior-conversation context caching, chunking, indexing, or retrieval.
-- Use `chrisai-planning` for large greenfield apps that have not been built yet
-  and need research-first planning, deep readiness review, MVP freeze, or
-  implementation backlog generation before coding begins.
-- Use `chrisai-process` for staged feedback loops, durable task banks,
+- Use `chrisai-planning` for AI-readable agent specs, legacy greenfield
+  planning corpuses, readiness review, MVP freeze, or implementation backlog
+  generation before coding begins.
+- Use `chrisai-process` for staged feedback loops, durable agent-progress banks,
   progress logs, decisions, handoffs, and optional separate-session
   coordination.
 - Use `chrisai-qa-playwright` directly when the deliverable is browser QA,
@@ -83,13 +83,13 @@ Choose the narrowest family route that fully owns the task.
 - Add `chrisai-process-feedback-loop` through `chrisai-process` when the task
   shows a draft, prototype, rendered page, local app, screenshot, recording, or
   other reviewable artifact and expects approval or revision feedback.
-- Add `chrisai-process-task-bank` through `chrisai-process` when the task is
+- Add `chrisai-process-agent-progress` through `chrisai-process` when the task is
   large enough to need work packets, durable decisions, progress logs,
   handoffs, or possible separate-session coordination.
-- Prefer `chrisai-planning` over `chrisai-process-task-bank` only when the app
-  is large, unbuilt, and the deliverable is a pre-implementation planning
-  corpus. Existing app features, migrations, and implementation work should not
-  use `chrisai-planning`.
+- Prefer `chrisai-planning` over `chrisai-process-agent-progress` when the
+  deliverable is durable planning/specification state, readiness review, or
+  backlog generation. Existing implementation work, migrations, and active
+  execution tracking should use process and coding routes instead.
 - Prefer `chrisai-qa-playwright` over coding or design routes when the primary
   deliverable is rendered browser verification rather than creation.
 - If the request crosses families, choose the family that owns the user's

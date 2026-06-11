@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Agent Spec Discovery"
+  short_description: "Discovers greenfield prompts into spec indexes"
+  default_prompt: "Use $chrisai-planning-agent-spec-discovery to discover a greenfield product prompt into compact .agent/specs records and indexes."
+policy:
+  allow_implicit_invocation: true

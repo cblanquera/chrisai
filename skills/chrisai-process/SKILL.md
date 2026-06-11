@@ -1,6 +1,6 @@
 ---
 name: chrisai-process
-description: Use when a ChrisAI process task needs routing to staged feedback-loop handling, durable task-bank coordination, progress logs, decisions, or handoffs.
+description: Use when a ChrisAI process task needs routing to staged feedback-loop handling, durable agent-progress coordination, progress logs, decisions, or handoffs.
 ---
 
 # ChrisAI Process Router
@@ -16,7 +16,7 @@ Do not duplicate specialist instructions here. Route, then defer.
   task shows a draft, prototype, rendered page, local app, screenshot,
   recording, or other reviewable artifact in the in-app browser and the user is
   expected to approve, reject, or revise what they see.
-- Use `chrisai-process-task-bank` with the owning domain skill when the task is
+- Use `chrisai-process-agent-progress` with the owning domain skill when the task is
   large enough to need filesystem-backed work packets, durable decisions,
   progress logs, handoffs, or optional delegation across separate chat sessions
   while keeping each worker context small.
@@ -30,11 +30,11 @@ Do not duplicate specialist instructions here. Route, then defer.
 - Do not use `chrisai-process-feedback-loop` instead of
   `chrisai-qa-playwright` when the primary deliverable is QA, screenshots,
   recordings, or responsive browser verification.
-- Use `chrisai-process-task-bank` for large artifact-production, multi-item
+- Use `chrisai-process-agent-progress` for large artifact-production, multi-item
   implementation, broad migrations, or long-running tasks that may drift or
   span sessions.
-- Do not use `chrisai-process-task-bank` for small tasks that fit cleanly in
+- Do not use `chrisai-process-agent-progress` for small tasks that fit cleanly in
   the active chat.
-- Do not let `chrisai-process-task-bank` replace the domain skill that owns the
-  actual work.
+- Do not let `chrisai-process-agent-progress` replace the domain skill that
+  owns the actual work.
 - When separate sessions may help, ask the user before spawning or delegating.

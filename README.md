@@ -53,7 +53,14 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-planning` | Route large greenfield app planning before implementation. |
+| `chrisai-planning` | Route AI-readable agent-spec planning, legacy greenfield planning, readiness review, MVP freeze, or backlog generation before implementation. |
+| `chrisai-planning-agent-spec` | Route compact `.agent/specs/` planning for greenfield prompts, imported docs, brownfield projects, review, and freeze. |
+| `chrisai-planning-agent-spec-discovery` | Discover a pure greenfield product from a prompt into compact `.agent/specs/` records and indexes. |
+| `chrisai-planning-agent-spec-import` | Convert human planning docs or legacy `plans/` corpuses into compact spec records. |
+| `chrisai-planning-agent-spec-brownfield` | Create or update spec records from an existing codebase while tracking current state, intended state, and gaps. |
+| `chrisai-planning-agent-spec-review` | Review `.agent/specs/` records for readiness, risk, consistency, evidence, and traceability. |
+| `chrisai-planning-agent-spec-validation` | Validate unresolved spec questions, assumptions, risks, decisions, or findings with evidence before freeze. |
+| `chrisai-planning-agent-spec-freeze` | Freeze approved spec records into implementation-facing indexes, proposed task records, and optional `.agent/progress/` work packets. |
 | `chrisai-planning-greenfield-discovery` | Create pre-grill planning corpuses for large unbuilt apps. |
 | `chrisai-planning-greenfield-grill-review` | Run deep adversarial readiness reviews for greenfield app plans. |
 | `chrisai-planning-greenfield-validation-cycle` | Convert unresolved greenfield review findings and Phase 0 gates into evidence-backed decisions before freeze-and-plan. |
@@ -75,9 +82,9 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-process` | Route ChrisAI process work to feedback-loop or task-bank specialists. |
+| `chrisai-process` | Route ChrisAI process work to feedback-loop or agent-progress specialists. |
 | `chrisai-process-feedback-loop` | Manage staged feedback loops for reviewable artifacts shown in the in-app browser. |
-| `chrisai-process-task-bank` | Coordinate large multi-item tasks with filesystem-backed work packets, decisions, logs, handoffs, and optional separate-session delegation. |
+| `chrisai-process-agent-progress` | Coordinate large multi-item tasks with filesystem-backed work packets, decisions, logs, handoffs, and optional separate-session delegation. |
 
 ### QA
 

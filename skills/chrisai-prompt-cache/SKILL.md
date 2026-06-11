@@ -30,8 +30,9 @@ Use this skill when the user asks to:
 - compare or reconcile cached conversation context with current repo state
 
 Do not use this skill for ordinary project guidance that should live in
-`AGENTS.md`, active multi-item execution that belongs in a task bank, or private
-personal recall that Codex Memories can handle better.
+`AGENTS.md`, active multi-item execution that belongs in
+`chrisai-process-agent-progress`, or private personal recall that Codex
+Memories can handle better.
 
 ## Ownership
 
@@ -50,7 +51,7 @@ This skill does not own:
 - domain-specific implementation decisions
 - active task tracking after a conversation becomes execution work
 
-Use `chrisai-process-task-bank` when cached context turns into a large active
+Use `chrisai-process-agent-progress` when cached context turns into a large active
 work plan with item statuses, owners, or handoffs.
 
 ## Core Rule
@@ -179,5 +180,5 @@ handling.
 - Use Codex Memories for automatic personal/local recall.
 - Use this skill for explicit, auditable conversation references keyed by a
   copied Chat ID or a repo-local cache ID.
-- Use `chrisai-process-task-bank` for active task execution state.
+- Use `chrisai-process-agent-progress` for active task execution state.
 - Use MCP or app connectors for live external systems and private data.

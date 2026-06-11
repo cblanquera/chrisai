@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Planning Agent Spec"
+  short_description: "Routes AI-readable agent spec planning"
+  default_prompt: "Use $chrisai-planning-agent-spec to create or maintain a compact AI-readable agent spec under .agent/specs."
+policy:
+  allow_implicit_invocation: true

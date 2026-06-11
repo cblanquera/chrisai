@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Agent Spec Freeze"
+  short_description: "Freezes spec records into execution indexes"
+  default_prompt: "Use $chrisai-planning-agent-spec-freeze to freeze approved .agent/specs records into implementation-facing indexes, proposed task records, and optional .agent/progress work packets."
+policy:
+  allow_implicit_invocation: true

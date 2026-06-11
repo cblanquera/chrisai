@@ -1,12 +1,12 @@
-# Task Bank Structure
+# Agent Progress Bank Structure
 
-Create `.task-bank/` at the project root unless the user requests another
+Create `.agent/progress/` at the project root unless the user requests another
 location or the repository already has an equivalent planning folder.
 
 ## Layout
 
 ```text
-.task-bank/
+.agent/progress/
   brief.md
   manifest.md
   decisions.md
@@ -25,7 +25,7 @@ location or the repository already has an equivalent planning folder.
 Purpose: durable goal and definition of done.
 
 ```markdown
-# Task Bank Brief
+# Agent Progress Brief
 
 Goal:
 
@@ -45,7 +45,7 @@ Verification Expectations:
 Purpose: dashboard and routing index. Keep detailed notes out of this file.
 
 ```markdown
-# Task Bank Manifest
+# Agent Progress Manifest
 
 | ID | Type | Status | Owner | Output | Notes |
 | --- | --- | --- | --- | --- | --- |
@@ -56,7 +56,9 @@ Use stable IDs. Do not rename IDs after work starts.
 
 ## `decisions.md`
 
-Purpose: durable decisions that affect multiple items.
+Purpose: durable execution decisions that affect multiple progress items.
+Product, architecture, requirements, risk, and acceptance decisions belong in
+`.agent/specs/<spec-id>/records/decisions.md` when a spec bank exists.
 
 ```markdown
 # Decisions
@@ -72,6 +74,17 @@ Reason:
 
 Applies To:
 ```
+
+## Relationship To `.agent/specs/`
+
+Use `.agent/specs/` for durable intent: requirements, decisions, risks,
+constraints, acceptance criteria, and evidence.
+
+Use `.agent/progress/` for active execution: assigned work packets, statuses,
+owners, outputs, verification, logs, and handoffs.
+
+Progress items should link to relevant spec records instead of copying their
+full text.
 
 ## `conventions.md`
 

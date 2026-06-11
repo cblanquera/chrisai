@@ -1,6 +1,7 @@
 # Session Delegation
 
-Use this reference when separate chat sessions may help complete a task bank.
+Use this reference when separate chat sessions may help complete an
+`.agent/progress` progress bank.
 
 ## Ask First
 
@@ -17,14 +18,14 @@ Suggested delegation:
 - Session B: <item IDs or batch ID>
 
 Each session would read:
-- .task-bank/brief.md
-- .task-bank/conventions.md
-- .task-bank/decisions.md
+- .agent/progress/brief.md
+- .agent/progress/conventions.md
+- .agent/progress/decisions.md
 - assigned item or batch files
 
 Each session would write back:
 - changed output files
-- .task-bank/logs/<assigned-id>.md
+- .agent/progress/logs/<assigned-id>.md
 - manifest status updates for assigned IDs only
 
 Risks:
@@ -38,24 +39,25 @@ Do you want me to split this into separate sessions?
 Give each worker a narrow packet:
 
 ```markdown
-You are working on <item IDs or batch ID> from the task bank.
+You are working on <item IDs or batch ID> from the `.agent/progress` progress
+bank.
 
 Read only:
-- .task-bank/brief.md
-- .task-bank/conventions.md
-- .task-bank/decisions.md
+- .agent/progress/brief.md
+- .agent/progress/conventions.md
+- .agent/progress/decisions.md
 - <assigned item or batch files>
 - source files directly required by the assigned work
 
 Do:
 - complete only the assigned IDs
 - update only the assigned item, log, and manifest rows
-- record cross-item decisions in .task-bank/decisions.md
+- record cross-item decisions in .agent/progress/decisions.md
 - run the stated verification when possible
 
 Do not:
 - work on unassigned IDs
-- load the full task bank unless blocked
+- load the full `.agent/progress` progress bank unless blocked
 - overwrite unrelated user or worker changes
 
 Return:
