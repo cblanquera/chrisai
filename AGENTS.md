@@ -13,6 +13,9 @@ unless the user explicitly asks for an operational action.
   skill's `agents/` folder, including Codex/OpenAI metadata such as
   `openai.yaml` and equivalent Claude metadata when the skill needs
   Claude-specific registration or behavior.
+- `archives/`: retired skill content kept outside the active distribution
+  surface. Do not treat archived skills as installable or routable unless the
+  user explicitly asks to restore or inspect archived material.
 - `adapters/codex/`: Codex install and sync guidance.
 - `adapters/claude/`: Claude Code install and sync guidance.
 - `adapters/opencode/`: OpenCode install and sync guidance.

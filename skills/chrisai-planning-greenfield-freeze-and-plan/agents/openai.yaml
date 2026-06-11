@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Planning Greenfield Freeze And Plan"
-  short_description: "Freezes greenfield MVPs and converts plans into buildable work"
-  default_prompt: "Use $chrisai-planning-greenfield-freeze-and-plan after greenfield grill review is complete or explicitly skipped to resolve readiness findings, freeze the MVP, and generate epics, tasks, dependencies, and build order without implementing code."
-policy:
-  allow_implicit_invocation: true

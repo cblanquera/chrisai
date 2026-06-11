@@ -63,9 +63,8 @@ Choose the narrowest family route that fully owns the task.
   guides, tutorials, markdown structure, and copy-editing.
 - Use `chrisai-prompt` for prompt artifacts, Markdown-to-HTML conversion, and
   prior-conversation context caching, chunking, indexing, or retrieval.
-- Use `chrisai-planning` for AI-readable agent specs, legacy greenfield
-  planning corpuses, readiness review, MVP freeze, or implementation backlog
-  generation before coding begins.
+- Use `chrisai-planning` for AI-readable agent specs, readiness review, MVP
+  freeze, or implementation backlog generation before coding begins.
 - Use `chrisai-process` for staged feedback loops, durable agent-progress banks,
   progress logs, decisions, handoffs, and optional separate-session
   coordination.

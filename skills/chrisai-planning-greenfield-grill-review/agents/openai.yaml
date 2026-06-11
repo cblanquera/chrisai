@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Planning Greenfield Grill Review"
-  short_description: "Deep adversarial readiness reviews for greenfield app plans"
-  default_prompt: "Use $chrisai-planning-greenfield-grill-review after a large unbuilt app has a planning corpus and needs a deep adversarial implementation-readiness review before MVP freeze or implementation planning."
-policy:
-  allow_implicit_invocation: true

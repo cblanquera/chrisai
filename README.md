@@ -53,7 +53,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-planning` | Route AI-readable agent-spec planning, legacy greenfield planning, readiness review, MVP freeze, or backlog generation before implementation. |
+| `chrisai-planning` | Route AI-readable agent-spec planning, readiness review, MVP freeze, or backlog generation before implementation. |
 | `chrisai-planning-agent-spec` | Route compact `.agent/specs/` planning for greenfield prompts, imported docs, brownfield projects, review, and freeze. |
 | `chrisai-planning-agent-spec-discovery` | Discover a pure greenfield product from a prompt into compact `.agent/specs/` records and indexes. |
 | `chrisai-planning-agent-spec-import` | Convert human planning docs or legacy `plans/` corpuses into compact spec records. |
@@ -61,10 +61,6 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-planning-agent-spec-review` | Review `.agent/specs/` records for readiness, risk, consistency, evidence, and traceability. |
 | `chrisai-planning-agent-spec-validation` | Validate unresolved spec questions, assumptions, risks, decisions, or findings with evidence before freeze. |
 | `chrisai-planning-agent-spec-freeze` | Freeze approved spec records into implementation-facing indexes, proposed task records, and optional `.agent/progress/` work packets. |
-| `chrisai-planning-greenfield-discovery` | Create pre-grill planning corpuses for large unbuilt apps. |
-| `chrisai-planning-greenfield-grill-review` | Run deep adversarial readiness reviews for greenfield app plans. |
-| `chrisai-planning-greenfield-validation-cycle` | Convert unresolved greenfield review findings and Phase 0 gates into evidence-backed decisions before freeze-and-plan. |
-| `chrisai-planning-greenfield-freeze-and-plan` | Freeze greenfield MVP scope and convert approved plans into buildable epics, tasks, dependencies, and build order. |
 
 ### Design
 
@@ -187,6 +183,7 @@ canonical content.
 
 ```text
 skills/              Portable ChrisAI skills and bundled resources
+archives/            Retired skill content outside the active distribution
 adapters/codex/      Codex install notes
 adapters/claude/     Claude Code install notes
 adapters/opencode/   OpenCode install notes

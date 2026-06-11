@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.20 - 2026-06-12
+
+- Archived the legacy `chrisai-planning-greenfield-*` skills outside the active
+  `skills/` distribution and routed planning work through the agent-spec flow.
+- Updated planning router and README references so active skill discovery no
+  longer points to archived greenfield specialists.
+
 ## 0.1.19 - 2026-06-11
 
 - Added source retirement audit guidance to the agent-spec planning flow so
