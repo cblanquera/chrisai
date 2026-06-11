@@ -40,8 +40,12 @@ should not interfere with human-authored project documents.
       YYYY-MM-DD.md
     generated/
       stakeholder-brief.md
-      implementation-plan.md
-      sprint-plan.md
+      sow-<purpose>.md
+      work-order-<id>.md
+      sprint-plan-<sprint>.md
+      sprint-results-<sprint>.md
+      burndown-<period>.md
+      release-summary-<version>.md
 ```
 
 Create grouped record files first. Do not create one file per record unless a
@@ -151,7 +155,28 @@ The default outgest is AI-readable records and indexes:
 ## Optional Generated Views
 
 Files under `generated/` are disposable views. They may be rewritten from
-records when a stakeholder, developer, sprint planner, or external tool needs
-a specific document shape.
+records, indexes, reviews, source references, and `.agent/progress/` state when
+a stakeholder, project manager, product manager, sprint planner, or external
+tool needs a specific document shape.
+
+Useful generated views include:
+
+- statements of work
+- work orders
+- sprint plans
+- sprint results
+- burndown or status reports
+- release readiness summaries
+- risk registers
+- change summaries
+- stakeholder progress updates
 
 Do not treat generated files as the source of truth.
+
+If a generated view introduces new scope, decisions, risks, assumptions,
+acceptance criteria, evidence, or tasks, promote those facts back into records
+or progress before relying on them.
+
+Before generating a view, verify that the needed records and progress data
+exist. If inputs are missing, state the gap in the generated document instead
+of inventing commitments or delivery state.

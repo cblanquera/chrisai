@@ -3,6 +3,12 @@
 Use stable record IDs inside grouped Markdown files. Keep records short and
 link them explicitly.
 
+Compact records are short, stable, source-linked planning facts. They are the
+routing and durable-fact layer for AI workers, not a mandate to discard or
+flatten every useful source document. Preserve or link source material when it
+contains detail, rationale, validation history, examples, or stakeholder
+context that would make records too large.
+
 ## Record Types
 
 | Prefix | Type | Purpose |
@@ -76,6 +82,33 @@ Good indexes:
 - records by source confidence
 
 Avoid narrative indexes that repeat whole record bodies.
+
+## Generated Document Inputs
+
+Generated documents are disposable views assembled from records, indexes,
+reviews, imported source references, and active progress state. Before
+generating a human-facing document, check that the required source layers exist
+and call out missing information instead of inventing scope, delivery state, or
+commitments.
+
+Common project-management views usually need:
+
+- Statement of work: brief, requirements, capabilities, constraints,
+  acceptance, risks, decisions, and source references
+- Work order: requirements, tasks, acceptance, constraints, dependencies,
+  risks, and progress handoff context
+- Sprint plan: task records, traceability, open questions, risks, and progress
+  batches or proposed batches
+- Sprint results or burndown: progress manifest, progress items, logs, outputs,
+  acceptance, evidence, and remaining risks
+- Release readiness summary: acceptance, evidence, risks, findings, status, and
+  verified outputs
+- Stakeholder update: brief, status, accepted scope, completed outputs,
+  active risks, decisions, and next recommended action
+
+If a generated document introduces new requirements, decisions, risks,
+assumptions, acceptance criteria, evidence, or tasks, promote those facts back
+into records or progress before treating them as durable.
 
 ## Split Rules
 

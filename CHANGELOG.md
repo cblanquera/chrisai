@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.17 - 2026-06-11
+
+- Clarified `chrisai-planning-agent-spec` compact records as short,
+  source-linked planning facts rather than lossy replacements for useful source
+  documents.
+- Added generated project-management view guidance for statements of work, work
+  orders, sprint plans, sprint results, burndown/status reports, release
+  summaries, risk registers, change summaries, and stakeholder updates.
+- Strengthened generated-view rules so agents combine spec records with active
+  progress state, report missing inputs, and promote newly introduced durable
+  facts back into records or progress.
+
 ## 0.1.16 - 2026-06-11
 
 - Added the `chrisai-planning-agent-spec` family for AI-readable planning under

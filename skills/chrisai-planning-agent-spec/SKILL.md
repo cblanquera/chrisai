@@ -8,9 +8,10 @@ description: Use when planning should create or maintain an AI-readable file-bas
 Use this router when the deliverable is an AI-readable planning source of truth
 under `.agent/specs/`.
 
-The agent spec replaces document-heavy planning corpuses for new work. It
-ingests the same kinds of inputs as traditional planning, but the default
-outputs are compact records and indexes for AI workers to consume.
+The agent spec creates an AI-readable planning layer for new work. It ingests
+the same kinds of inputs as traditional planning, but the default outputs are
+compact records, indexes, and optional generated views for AI workers and
+project stakeholders to consume.
 
 ## Layer Model
 
@@ -20,10 +21,13 @@ Use these boundaries:
   reviews, indexes, and optional generated planning views.
 - `.agent/progress/`: active execution state, assigned work packets, batches,
   progress logs, and handoffs.
-- `plans/`: legacy or human-facing planning documents unless the user says
-  otherwise.
+- Human planning documents: legacy or human-facing planning documents unless
+  the user says otherwise.
 
-Do not recreate a large `plans/` document forest inside `.agent/specs/`.
+Do not recreate a large human planning document forest inside `.agent/specs/`.
+Preserve or link source material when it contains useful detail, rationale,
+validation history, or stakeholder context that compact records should not
+copy.
 
 ## Specialist Routes
 
@@ -44,13 +48,24 @@ Do not recreate a large `plans/` document forest inside `.agent/specs/`.
 ## Core Rules
 
 - Keep `.agent/specs/<spec-id>/records/` compact.
+- Treat compact records as short, stable, source-linked planning facts, not
+  lossy replacements for every source document.
 - Start with grouped record files, not one file per record.
 - Use stable record IDs such as `REQ-001`, `DEC-001`, and `AC-001`.
 - Treat generated docs as disposable views, not source of truth.
-- Do not create generated human documents unless the user asks for them.
+- Generate human-facing documents only when the user asks for them or an
+  established workflow explicitly requires them.
+- Before generating human-facing documents, check whether the needed records,
+  indexes, reviews, and progress data exist. Report gaps instead of inventing
+  missing scope, status, or commitments.
+- If a generated document introduces new scope, decisions, risks, assumptions,
+  acceptance criteria, or tasks, promote that information back into records or
+  progress before treating it as durable.
 - Promote durable findings from logs or reviews into records.
 - Distinguish current state from intended state for brownfield work.
 - Route active execution to `chrisai-process-agent-progress`.
+  Use `.agent/specs/` for agreed intent and `.agent/progress/` for delivery
+  state.
 
 ## Structure
 
@@ -65,6 +80,6 @@ reviewing, or freezing records.
 This family is self-contained. Do not load or defer to other planning skill
 families for discovery, review, validation, or freeze behavior.
 
-When migrating a legacy `plans/` corpus or other human planning documents,
-import them as source material and extract compact records. Do not copy every
-legacy document into `.agent/specs/`.
+When migrating human planning documents, import them as source material and
+extract compact records. Do not copy every legacy document into
+`.agent/specs/`.
