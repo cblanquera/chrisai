@@ -22,10 +22,21 @@ Before freezing, confirm:
 - requirements link to acceptance criteria
 - important decisions and risks are recorded
 - review has run or the user explicitly skips review
+- for pure greenfield specs, `reviews/readiness-review.md` and
+  `reviews/findings.md` exist unless the user explicitly skipped review
+- unresolved `BLOCKER` findings are `0`
+- unresolved `HIGH` findings are resolved, explicitly accepted, or deferred
+  with rationale
 
 If blockers remain, recommend `chrisai-planning-agent-spec-review`,
 `chrisai-planning-agent-spec-validation`, or focused record updates instead of
 freezing.
+
+If the review artifact is missing for a pure greenfield spec and the user did
+not explicitly skip review, ask whether the grill or adversarial review already
+happened. If it did, ask for the saved review file path and route to
+`chrisai-planning-agent-spec-review` to import it before freezing. If it did
+not, recommend `chrisai-planning-agent-spec-review`.
 
 ## Workflow
 

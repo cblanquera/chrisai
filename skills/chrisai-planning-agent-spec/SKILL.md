@@ -45,6 +45,33 @@ copy.
   frozen into implementation-facing indexes, proposed task records, and
   optional agent-progress items.
 
+## Pure Greenfield Readiness Loop
+
+For pure greenfield projects, the agent-spec path must preserve the same
+readiness discipline as the legacy greenfield flow while keeping records as the
+source of truth:
+
+1. Discovery creates compact records and, when a grill session would otherwise
+   lack enough context, a generated grill-session packet under
+   `generated/grill-session-brief.md`.
+2. The grill or adversarial review results are saved under `reviews/`, using
+   `reviews/readiness-review.md` for the narrative review and
+   `reviews/findings.md` for durable findings.
+3. When review happened outside the current session, ask for the review file
+   path before completing or updating the initial spec records. Import durable
+   findings into questions, risks, assumptions, decisions, evidence, or
+   acceptance records instead of treating the external file as the only source.
+4. After the initial review exists, repeat validation-cycle passes with
+   `chrisai-planning-agent-spec-validation`, updating review/status records
+   after each pass, until unresolved `BLOCKER` findings are `0` and unresolved
+   `HIGH` findings are resolved, accepted, or explicitly deferred with
+   rationale.
+
+Do not invoke implementation planning from the pure greenfield agent-spec path
+until this validation cycle has completed or the user explicitly accepts the
+remaining risk. Do not restart discovery or regenerate the grill-session packet
+unless new scope makes the existing records or packet materially stale.
+
 ## Core Rules
 
 - Keep `.agent/specs/<spec-id>/records/` compact.

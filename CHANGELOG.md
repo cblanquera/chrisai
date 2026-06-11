@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.18 - 2026-06-11
+
+- Added a pure greenfield readiness loop to the agent-spec planning flow,
+  including a generated grill-session packet, saved review outputs, external
+  grill-results import, and repeated validation-cycle passes before freeze.
+- Updated agent-spec discovery, review, validation, and freeze gates so
+  unresolved `BLOCKER` findings and unresolved `HIGH` findings cannot silently
+  proceed into implementation planning.
+- Clarified that validation-cycle repeats do not restart discovery or
+  regenerate the grill packet unless new scope makes existing records stale.
+
 ## 0.1.17 - 2026-06-11
 
 - Clarified `chrisai-planning-agent-spec` compact records as short,

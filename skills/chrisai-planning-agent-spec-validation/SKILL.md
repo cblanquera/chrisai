@@ -101,6 +101,11 @@ Validation can exit successfully when:
 - `status.md` says the spec is ready for review, another validation pass, or
   freeze
 
+For pure greenfield specs, do not recommend freeze or implementation planning
+while unresolved `BLOCKER` findings remain or unresolved `HIGH` findings lack
+evidence, explicit acceptance, or deferral rationale. Recommend another focused
+validation pass or review update instead.
+
 ## Handoff
 
 Before stopping, state:
