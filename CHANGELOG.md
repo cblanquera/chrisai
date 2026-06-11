@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.19 - 2026-06-11
+
+- Added source retirement audit guidance to the agent-spec planning flow so
+  legacy planning, progress, or documentation sources are discovered,
+  classified, and given explicit keep/archive/delete recommendations before
+  they are declared obsolete.
+- Added `generated/source-retirement-review.md` as a disposable planning view
+  for evaluating whether durable facts, active progress, and remaining source
+  context have been preserved.
+- Clarified that examples such as `plans/`, `docs/`, `specs/`, `roadmap/`, and
+  `.task-bank/` are non-exhaustive and agents must discover actual project
+  source locations.
+
 ## 0.1.18 - 2026-06-11
 
 - Added a pure greenfield readiness loop to the agent-spec planning flow,

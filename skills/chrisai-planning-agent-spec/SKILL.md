@@ -29,6 +29,16 @@ Preserve or link source material when it contains useful detail, rationale,
 validation history, or stakeholder context that compact records should not
 copy.
 
+Before any legacy planning, progress, or documentation source is removed,
+archived, or declared obsolete, run a source retirement audit. Discover actual
+project sources instead of assuming fixed folder names. Examples may include
+`plans/`, `docs/`, `docs/adr/`, `specs/`, `roadmap/`, `.task-bank/`, issue
+exports, sprint notes, PRDs, research notes, or project-specific folders. Treat
+examples as non-exhaustive; classify every discovered source by whether its
+durable facts were extracted into records, its active execution state moved to
+progress, and its remaining rationale, validation history, examples, or
+stakeholder context must be preserved.
+
 ## Specialist Routes
 
 - Use `chrisai-planning-agent-spec-discovery` when starting from a prompt, product
@@ -88,6 +98,9 @@ unless new scope makes the existing records or packet materially stale.
 - If a generated document introduces new scope, decisions, risks, assumptions,
   acceptance criteria, or tasks, promote that information back into records or
   progress before treating it as durable.
+- Before saying a legacy source can be deleted or retired, produce an explicit
+  source retirement decision for that source. If source material is only linked
+  by reference, do not call it safely removable.
 - Promote durable findings from logs or reviews into records.
 - Distinguish current state from intended state for brownfield work.
 - Route active execution to `chrisai-process-agent-progress`.

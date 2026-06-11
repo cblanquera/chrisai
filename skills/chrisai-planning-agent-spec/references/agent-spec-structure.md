@@ -46,6 +46,7 @@ should not interfere with human-authored project documents.
       sprint-results-<sprint>.md
       burndown-<period>.md
       release-summary-<version>.md
+      source-retirement-review.md
 ```
 
 Create grouped record files first. Do not create one file per record unless a
@@ -170,6 +171,7 @@ Useful generated views include:
 - risk registers
 - change summaries
 - stakeholder progress updates
+- source retirement reviews
 
 Do not treat generated files as the source of truth.
 
@@ -180,3 +182,35 @@ or progress before relying on them.
 Before generating a view, verify that the needed records and progress data
 exist. If inputs are missing, state the gap in the generated document instead
 of inventing commitments or delivery state.
+
+## Source Retirement Reviews
+
+Use `generated/source-retirement-review.md` when a user asks whether legacy
+planning, progress, or documentation sources can be removed, archived, or
+declared obsolete.
+
+Discover actual project sources rather than assuming standard folder names.
+Common examples include `plans/`, `docs/`, `docs/adr/`, `specs/`, `roadmap/`,
+`.task-bank/`, issue exports, sprint notes, PRDs, research notes, and
+project-specific folders. Treat this list as examples only.
+
+A source retirement review should include one row per source:
+
+```markdown
+| Source | Role | Extracted To | Remaining Unique Value | Recommendation |
+| --- | --- | --- | --- | --- |
+```
+
+Use recommendations such as:
+
+- `keep`: important facts, rationale, validation history, examples, or context
+  remain only in the source.
+- `archive`: source is not needed for active routing but should be preserved as
+  historical or evidentiary material.
+- `delete-after-confirmation`: durable facts and active progress were extracted
+  or superseded, and no important unique value remains.
+- `unknown`: coverage could not be established from available records,
+  progress, indexes, and source references.
+
+Do not recommend deletion when source material is only linked by reference.
+Either extract durable facts into records or preserve the source in an archive.

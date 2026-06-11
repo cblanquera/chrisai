@@ -105,10 +105,33 @@ Common project-management views usually need:
   verified outputs
 - Stakeholder update: brief, status, accepted scope, completed outputs,
   active risks, decisions, and next recommended action
+- Source retirement review: source-document inventory, records, indexes,
+  reviews, evidence, active progress state, and any remaining linked-only
+  source material
 
 If a generated document introduces new requirements, decisions, risks,
 assumptions, acceptance criteria, evidence, or tasks, promote those facts back
 into records or progress before treating them as durable.
+
+## Source Retirement Audit
+
+Run a source retirement audit before declaring legacy planning, progress, or
+documentation sources removable. Discover source locations from the workspace
+and `imports/source-documents.md`; do not rely on fixed folder names.
+
+For each source, answer:
+
+- What durable facts were extracted into records?
+- What active execution state was moved into progress?
+- What facts are still only linked by reference?
+- What rationale, validation history, examples, rejected alternatives, or
+  stakeholder context remains unique to the source?
+- Should the source be kept, archived, deleted after confirmation, or marked
+  unknown?
+
+If the source contains new durable facts, promote them into records or progress
+before recommending deletion. If preserving full detail is more appropriate
+than extraction, recommend archiving instead of deletion.
 
 ## Split Rules
 
