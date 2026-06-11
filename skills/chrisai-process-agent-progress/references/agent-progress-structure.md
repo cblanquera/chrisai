@@ -1,12 +1,12 @@
 # Agent Progress Bank Structure
 
-Create `.agent/progress/` at the project root unless the user requests another
+Create `.agents/progress/` at the project root unless the user requests another
 location or the repository already has an equivalent planning folder.
 
 ## Layout
 
 ```text
-.agent/progress/
+.agents/progress/
   brief.md
   manifest.md
   decisions.md
@@ -58,7 +58,7 @@ Use stable IDs. Do not rename IDs after work starts.
 
 Purpose: durable execution decisions that affect multiple progress items.
 Product, architecture, requirements, risk, and acceptance decisions belong in
-`.agent/specs/<spec-id>/records/decisions.md` when a spec bank exists.
+`.agents/specs/<spec-id>/records/decisions.md` when a spec bank exists.
 
 ```markdown
 # Decisions
@@ -75,12 +75,12 @@ Reason:
 Applies To:
 ```
 
-## Relationship To `.agent/specs/`
+## Relationship To `.agents/specs/`
 
-Use `.agent/specs/` for durable intent: requirements, decisions, risks,
+Use `.agents/specs/` for durable intent: requirements, decisions, risks,
 constraints, acceptance criteria, and evidence.
 
-Use `.agent/progress/` for active execution: assigned work packets, statuses,
+Use `.agents/progress/` for active execution: assigned work packets, statuses,
 owners, outputs, verification, logs, and handoffs.
 
 Progress items should link to relevant spec records instead of copying their

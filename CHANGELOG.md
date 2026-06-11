@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.21 - 2026-06-12
+
+- Updated the agent-spec planning family to use `.agents/specs/` as the
+  durable planning namespace.
+- Updated agent-progress guidance to use `.agents/progress/` for active
+  execution state and handoffs.
+- Refreshed planning and progress OpenAI metadata so generated prompts point to
+  the `.agents/` namespace.
+
 ## 0.1.20 - 2026-06-12
 
 - Archived the legacy `chrisai-planning-greenfield-*` skills outside the active

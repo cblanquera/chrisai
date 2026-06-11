@@ -1,6 +1,6 @@
 interface:
   display_name: "ChrisAI Agent Spec Validation"
   short_description: "Validates spec records with evidence"
-  default_prompt: "Use $chrisai-planning-agent-spec-validation to validate unresolved .agent/specs questions, assumptions, risks, decisions, or findings with evidence before freeze."
+  default_prompt: "Use $chrisai-planning-agent-spec-validation to validate unresolved .agents/specs questions, assumptions, risks, decisions, or findings with evidence before freeze."
 policy:
   allow_implicit_invocation: true

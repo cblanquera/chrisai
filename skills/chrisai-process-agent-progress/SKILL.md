@@ -9,7 +9,7 @@ Use this skill for large artifact-production or multi-item tasks where a
 single chat session is likely to drift, compact away important details, or
 load too much context at once.
 
-This skill creates a durable progress bank at `.agent/progress/` in the
+This skill creates a durable progress bank at `.agents/progress/` in the
 workspace. The progress bank is the source of truth for active item scope,
 status, execution decisions, logs, and handoffs.
 
@@ -30,7 +30,7 @@ Do not use this skill for small tasks that fit cleanly in the active chat.
 
 This skill owns:
 
-- `.agent/progress/` progress bank structure
+- `.agents/progress/` progress bank structure
 - item IDs, status, ownership, and progress logs
 - small work packets for individual items or batches
 - cross-item decisions and conventions
@@ -42,14 +42,14 @@ This skill does not own:
 
 - domain-specific implementation choices
 - product requirements, acceptance criteria, architecture decisions, planning
-  evidence, or durable product risks that belong in `.agent/specs/`
+  evidence, or durable product risks that belong in `.agents/specs/`
 - code, design, copy, image, video, data, or documentation quality standards
 - final verification for the produced artifacts
 - remote publication, release, or deployment decisions
 
 Use the relevant domain skill alongside this process skill.
 
-Use `.agent/specs/` as the preferred source for requirements, acceptance
+Use `.agents/specs/` as the preferred source for requirements, acceptance
 criteria, durable product decisions, risks, constraints, and evidence. Progress
 items should link to those spec records instead of duplicating them.
 
@@ -59,9 +59,9 @@ Keep each active worker's context small.
 
 A worker should normally read only:
 
-1. `.agent/progress/brief.md`
-2. `.agent/progress/conventions.md` when conventions affect the item
-3. `.agent/progress/decisions.md` when prior decisions affect the item
+1. `.agents/progress/brief.md`
+2. `.agents/progress/conventions.md` when conventions affect the item
+3. `.agents/progress/decisions.md` when prior decisions affect the item
 4. one assigned item file or one assigned batch file
 5. the specific source files needed for that item
 
@@ -70,7 +70,7 @@ cross-item conflict.
 
 ## Progress Bank Structure
 
-Create the bank at `.agent/progress/` unless the user requests another
+Create the bank at `.agents/progress/` unless the user requests another
 location or the repo already has an equivalent planning folder.
 
 Read [agent-progress-structure](references/agent-progress-structure.md) for
@@ -101,7 +101,7 @@ new dated log entry.
 8. Update the manifest after each item changes state.
 9. Record durable execution decisions in `decisions.md`, not only in logs.
    Product, architecture, requirements, risk, and acceptance decisions belong
-   in `.agent/specs/<spec-id>/records/decisions.md` when a spec bank exists.
+   in `.agents/specs/<spec-id>/records/decisions.md` when a spec bank exists.
 10. Write a handoff before stopping, switching sessions, or delegating.
 
 Read [work-packets](references/work-packets.md) for item and batch packet

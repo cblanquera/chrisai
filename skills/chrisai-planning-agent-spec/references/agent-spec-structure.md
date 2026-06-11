@@ -1,12 +1,12 @@
 # Agent Spec Structure
 
-Use `.agent/specs/` for AI-readable planning and specification state that
+Use `.agents/specs/` for AI-readable planning and specification state that
 should not interfere with human-authored project documents.
 
 ## Layout
 
 ```text
-.agent/specs/
+.agents/specs/
   manifest.md
   AGENTS.md
 
@@ -156,7 +156,7 @@ The default outgest is AI-readable records and indexes:
 ## Optional Generated Views
 
 Files under `generated/` are disposable views. They may be rewritten from
-records, indexes, reviews, source references, and `.agent/progress/` state when
+records, indexes, reviews, source references, and `.agents/progress/` state when
 a stakeholder, project manager, product manager, sprint planner, or external
 tool needs a specific document shape.
 

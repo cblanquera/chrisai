@@ -23,7 +23,7 @@ This skill creates planning records. It does not perform implementation work.
 1. Confirm the target project and whether docs should be treated as current
    truth or intended future state.
 2. Choose or confirm one `<spec-id>`.
-3. Create or update `.agent/specs/<spec-id>/`.
+3. Create or update `.agents/specs/<spec-id>/`.
 4. Inspect only the project files needed to infer the requested scope.
 5. Create or update evidence records for observed code or docs.
 6. Create or update requirement, capability, decision, risk, question, and
@@ -41,7 +41,7 @@ and `chrisai-planning-agent-spec/references/record-model.md` for record fields.
 
 - Do not infer product intent from code alone without labeling it as inferred.
 - Do not rewrite user documentation unless explicitly asked.
-- Do not create active `.agent/progress/` items unless freeze or execution is
+- Do not create active `.agents/progress/` items unless freeze or execution is
   requested.
 - Keep generated summaries separate from records.
 

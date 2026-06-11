@@ -1,7 +1,7 @@
 # Session Delegation
 
 Use this reference when separate chat sessions may help complete an
-`.agent/progress` progress bank.
+`.agents/progress` progress bank.
 
 ## Ask First
 
@@ -18,14 +18,14 @@ Suggested delegation:
 - Session B: <item IDs or batch ID>
 
 Each session would read:
-- .agent/progress/brief.md
-- .agent/progress/conventions.md
-- .agent/progress/decisions.md
+- .agents/progress/brief.md
+- .agents/progress/conventions.md
+- .agents/progress/decisions.md
 - assigned item or batch files
 
 Each session would write back:
 - changed output files
-- .agent/progress/logs/<assigned-id>.md
+- .agents/progress/logs/<assigned-id>.md
 - manifest status updates for assigned IDs only
 
 Risks:
@@ -39,25 +39,25 @@ Do you want me to split this into separate sessions?
 Give each worker a narrow packet:
 
 ```markdown
-You are working on <item IDs or batch ID> from the `.agent/progress` progress
+You are working on <item IDs or batch ID> from the `.agents/progress` progress
 bank.
 
 Read only:
-- .agent/progress/brief.md
-- .agent/progress/conventions.md
-- .agent/progress/decisions.md
+- .agents/progress/brief.md
+- .agents/progress/conventions.md
+- .agents/progress/decisions.md
 - <assigned item or batch files>
 - source files directly required by the assigned work
 
 Do:
 - complete only the assigned IDs
 - update only the assigned item, log, and manifest rows
-- record cross-item decisions in .agent/progress/decisions.md
+- record cross-item decisions in .agents/progress/decisions.md
 - run the stated verification when possible
 
 Do not:
 - work on unassigned IDs
-- load the full `.agent/progress` progress bank unless blocked
+- load the full `.agents/progress` progress bank unless blocked
 - overwrite unrelated user or worker changes
 
 Return:

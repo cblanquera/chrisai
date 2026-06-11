@@ -1,6 +1,6 @@
 ---
 name: chrisai-planning-agent-spec-validation
-description: Use when `.agent/specs/` records have blockers, high-risk findings, unresolved decisions, risky assumptions, or open questions that need evidence before freeze or implementation.
+description: Use when `.agents/specs/` records have blockers, high-risk findings, unresolved decisions, risky assumptions, or open questions that need evidence before freeze or implementation.
 ---
 
 # ChrisAI Planning Agent Spec Validation
@@ -27,9 +27,9 @@ Use this skill when any of these are true:
 
 Read only:
 
-1. `.agent/specs/manifest.md`
-2. `.agent/specs/<spec-id>/index.md`
-3. `.agent/specs/<spec-id>/status.md`
+1. `.agents/specs/manifest.md`
+2. `.agents/specs/<spec-id>/index.md`
+3. `.agents/specs/<spec-id>/status.md`
 4. relevant records
 5. relevant indexes
 6. relevant review findings

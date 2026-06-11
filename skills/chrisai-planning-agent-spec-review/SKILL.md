@@ -1,6 +1,6 @@
 ---
 name: chrisai-planning-agent-spec-review
-description: Use when a `.agent/specs/` agent spec needs adversarial readiness, risk, consistency, evidence, or traceability review before freeze or implementation.
+description: Use when a `.agents/specs/` agent spec needs adversarial readiness, risk, consistency, evidence, or traceability review before freeze or implementation.
 ---
 
 # ChrisAI Planning Agent Spec Review
@@ -21,9 +21,9 @@ promote them into records.
 
 Read only:
 
-1. `.agent/specs/manifest.md`
-2. `.agent/specs/<spec-id>/index.md`
-3. `.agent/specs/<spec-id>/status.md`
+1. `.agents/specs/manifest.md`
+2. `.agents/specs/<spec-id>/index.md`
+3. `.agents/specs/<spec-id>/status.md`
 4. relevant grouped record files
 5. relevant indexes
 6. relevant evidence records

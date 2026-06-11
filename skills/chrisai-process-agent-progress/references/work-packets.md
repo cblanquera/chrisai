@@ -21,7 +21,7 @@ Owner: unassigned
 
 ## Spec Links
 
-- <.agent/specs/<spec-id>/records/... record ID or file>
+- <.agents/specs/<spec-id>/records/... record ID or file>
 
 ## Outputs
 
@@ -81,7 +81,7 @@ A good packet has:
 - acceptance criteria that can be checked
 - verification steps
 - links to relevant decisions or conventions
-- links to relevant `.agent/specs/` records when a spec bank exists
+- links to relevant `.agents/specs/` records when a spec bank exists
 - enough context to start without reading unrelated items
 
 Avoid packets that require the worker to infer scope from the original chat.

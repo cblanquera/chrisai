@@ -5,7 +5,7 @@ description: Use when starting an AI-readable agent spec from a prompt, product 
 
 # ChrisAI Planning Agent Spec Discovery
 
-Use this skill to create the first `.agent/specs/<spec-id>/` from a prompt or
+Use this skill to create the first `.agents/specs/<spec-id>/` from a prompt or
 early product idea.
 
 This is the pure greenfield entry point for agent specs. It owns discovery,
@@ -55,8 +55,8 @@ If enough information exists, proceed and mark uncertainty explicitly.
 ## Workflow
 
 1. Choose one `<spec-id>` for the bounded initiative.
-2. Create or update `.agent/specs/manifest.md`.
-3. Create `.agent/specs/AGENTS.md` if missing.
+2. Create or update `.agents/specs/manifest.md`.
+3. Create `.agents/specs/AGENTS.md` if missing.
 4. Create the agent spec skeleton for the selected `<spec-id>`.
 5. Write `brief.md`, `index.md`, and `status.md`.
 6. Create grouped record files under `records/`.

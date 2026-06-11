@@ -1,12 +1,12 @@
 ---
 name: chrisai-planning-agent-spec
-description: Use when planning should create or maintain an AI-readable file-based agent spec under `.agent/specs/`, including greenfield prompts, imported planning docs, brownfield codebases, readiness review, or conversion into implementation progress.
+description: Use when planning should create or maintain an AI-readable file-based agent spec under `.agents/specs/`, including greenfield prompts, imported planning docs, brownfield codebases, readiness review, or conversion into implementation progress.
 ---
 
 # ChrisAI Planning Agent Spec
 
 Use this router when the deliverable is an AI-readable planning source of truth
-under `.agent/specs/`.
+under `.agents/specs/`.
 
 The agent spec creates an AI-readable planning layer for new work. It ingests
 the same kinds of inputs as traditional planning, but the default outputs are
@@ -17,14 +17,14 @@ project stakeholders to consume.
 
 Use these boundaries:
 
-- `.agent/specs/`: durable intent, requirements, decisions, risks, evidence,
+- `.agents/specs/`: durable intent, requirements, decisions, risks, evidence,
   reviews, indexes, and optional generated planning views.
-- `.agent/progress/`: active execution state, assigned work packets, batches,
+- `.agents/progress/`: active execution state, assigned work packets, batches,
   progress logs, and handoffs.
 - Human planning documents: legacy or human-facing planning documents unless
   the user says otherwise.
 
-Do not recreate a large human planning document forest inside `.agent/specs/`.
+Do not recreate a large human planning document forest inside `.agents/specs/`.
 Preserve or link source material when it contains useful detail, rationale,
 validation history, or stakeholder context that compact records should not
 copy.
@@ -84,7 +84,7 @@ unless new scope makes the existing records or packet materially stale.
 
 ## Core Rules
 
-- Keep `.agent/specs/<spec-id>/records/` compact.
+- Keep `.agents/specs/<spec-id>/records/` compact.
 - Treat compact records as short, stable, source-linked planning facts, not
   lossy replacements for every source document.
 - Start with grouped record files, not one file per record.
@@ -104,7 +104,7 @@ unless new scope makes the existing records or packet materially stale.
 - Promote durable findings from logs or reviews into records.
 - Distinguish current state from intended state for brownfield work.
 - Route active execution to `chrisai-process-agent-progress`.
-  Use `.agent/specs/` for agreed intent and `.agent/progress/` for delivery
+  Use `.agents/specs/` for agreed intent and `.agents/progress/` for delivery
   state.
 
 ## Structure
@@ -122,4 +122,4 @@ families for discovery, review, validation, or freeze behavior.
 
 When migrating human planning documents, import them as source material and
 extract compact records. Do not copy every legacy document into
-`.agent/specs/`.
+`.agents/specs/`.

@@ -1,6 +1,6 @@
 interface:
   display_name: "ChrisAI Agent Spec Import"
   short_description: "Imports planning docs into compact spec records"
-  default_prompt: "Use $chrisai-planning-agent-spec-import to convert existing planning documents into compact .agent/specs records."
+  default_prompt: "Use $chrisai-planning-agent-spec-import to convert existing planning documents into compact .agents/specs records."
 policy:
   allow_implicit_invocation: true

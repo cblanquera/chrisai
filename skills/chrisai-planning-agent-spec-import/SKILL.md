@@ -1,15 +1,15 @@
 ---
 name: chrisai-planning-agent-spec-import
-description: Use when converting human planning documents, legacy `plans/` folders, PRDs, specs, sprint notes, or stakeholder docs into a compact AI-readable agent spec under `.agent/specs/`.
+description: Use when converting human planning documents, legacy `plans/` folders, PRDs, specs, sprint notes, or stakeholder docs into a compact AI-readable agent spec under `.agents/specs/`.
 ---
 
 # ChrisAI Planning Agent Spec Import
 
 Use this skill when source material already exists as human planning
 documentation but the AI-readable source of truth should live under
-`.agent/specs/`.
+`.agents/specs/`.
 
-Do not copy a document forest into `.agent/specs/`. Extract compact records and
+Do not copy a document forest into `.agents/specs/`. Extract compact records and
 link to the source material as evidence.
 
 ## Source Types

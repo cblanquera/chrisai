@@ -1,6 +1,6 @@
 interface:
   display_name: "ChrisAI Agent Spec Brownfield"
   short_description: "Builds specs from existing code and docs"
-  default_prompt: "Use $chrisai-planning-agent-spec-brownfield to create .agent/specs records from an existing codebase while tracking current state, intended state, and gaps."
+  default_prompt: "Use $chrisai-planning-agent-spec-brownfield to create .agents/specs records from an existing codebase while tracking current state, intended state, and gaps."
 policy:
   allow_implicit_invocation: true

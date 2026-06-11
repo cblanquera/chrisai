@@ -1,6 +1,6 @@
 ---
 name: chrisai-planning-agent-spec-freeze
-description: Use when approved `.agent/specs/` records should be frozen into implementation-facing indexes and, when requested, `.agent/progress/` work packets.
+description: Use when approved `.agents/specs/` records should be frozen into implementation-facing indexes and, when requested, `.agents/progress/` work packets.
 ---
 
 # ChrisAI Planning Agent Spec Freeze
@@ -50,14 +50,14 @@ not, recommend `chrisai-planning-agent-spec-review`.
 6. Generate `generated/implementation-plan.md` or `generated/sprint-plan.md`
    only when the user asks for human-readable or tool-specific views.
 7. If the user wants active execution tracking, create or update
-   `.agent/progress/` items that link back to spec records.
+   `.agents/progress/` items that link back to spec records.
 8. Stop before coding unless the user explicitly requests implementation.
 
 ## Progress Boundary
 
-`.agent/specs/<spec-id>/records/tasks.md` contains proposed tasks.
+`.agents/specs/<spec-id>/records/tasks.md` contains proposed tasks.
 
-`.agent/progress/items/` contains active executable work packets with owners,
+`.agents/progress/items/` contains active executable work packets with owners,
 status, outputs, acceptance criteria, and verification.
 
 When creating progress items, include `Spec Links` to relevant `REQ`, `DEC`,
