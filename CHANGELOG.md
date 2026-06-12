@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.23 - 2026-06-12
+
+- Clarified that explicit human-facing deliverables, such as a requested root
+  `plans/` folder, are first-class outputs rather than disposable generated
+  views.
+- Updated agent-spec guidance so `.agents/specs/` backs requested deliverables
+  with traceability when writable, while requested human documents are still
+  produced when `.agents/` is unavailable.
+
 ## 0.1.22 - 2026-06-12
 
 - Added a mental-model README for the agent-spec planning skill that explains

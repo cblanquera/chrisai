@@ -225,7 +225,12 @@ material, and `.agents/progress/` state when a stakeholder, project manager,
 product manager, sprint planner, or external tool needs a specific document
 shape.
 
-Useful generated views include:
+Human-facing deliverables explicitly requested by the user, such as a root
+`plans/` folder, are first-class requested outputs. Create them in the requested
+location and, when `.agents/` is writable, link or mirror durable planning facts
+back into `.agents/specs/` and `.agents/references/`.
+
+Useful requested or derived views include:
 
 - statements of work
 - work orders
@@ -238,15 +243,17 @@ Useful generated views include:
 - stakeholder progress updates
 - source retirement reviews
 
-Do not treat sprint or release views as the source of product truth.
+Do not treat sprint or release views as the source of product truth. Do not
+ignore or relocate explicit human deliverables just because `.agents/specs/`
+also exists.
 
-If a generated view introduces new scope, decisions, risks, assumptions,
+If a requested or derived view introduces new scope, decisions, risks, assumptions,
 acceptance criteria, evidence, or tasks, promote those facts back into records
 or progress before relying on them.
 
 Before generating a view, verify that the needed records and progress data
-exist. If inputs are missing, state the gap in the generated document instead
-of inventing commitments or delivery state.
+exist. If inputs are missing, state the gap in the requested or derived
+document instead of inventing commitments or delivery state.
 
 ## Source Retirement Reviews
 

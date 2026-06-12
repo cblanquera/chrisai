@@ -9,9 +9,8 @@ Use this router when the deliverable is an AI-readable planning source of truth
 under `.agents/specs/`.
 
 The agent spec creates an AI-readable planning layer for new work. It ingests
-the same kinds of inputs as traditional planning, but the default outputs are
-compact records, indexes, and optional generated views for AI workers and
-project stakeholders to consume.
+the same kinds of inputs as traditional planning, but separates compact
+AI-readable records from human-authored or human-requested deliverables.
 
 ## Layer Model
 
@@ -32,8 +31,8 @@ Use these boundaries:
   progress logs, and handoffs.
 - `.agents/releases/`: release plans, release notes, readiness summaries, and
   verification evidence for shipped or prepared releases.
-- Human planning documents: legacy or human-facing planning documents unless
-  the user says otherwise.
+- User-requested human deliverables: first-class outputs in the location and
+  shape the user requested, including folders such as root `plans/`.
 
 Use consistent planning terms:
 
@@ -155,15 +154,23 @@ unless new scope makes the existing records or packet materially stale.
   lossy replacements for every source document.
 - Start with grouped record files, not one file per record.
 - Use stable record IDs such as `REQ-001`, `DEC-001`, and `AC-001`.
-- Treat generated docs as disposable views, not source of truth.
-- Generate human-facing documents only when the user asks for them or an
-  established workflow explicitly requires them.
+- Treat unrequested derived docs as disposable views, not source of truth.
+- When the user explicitly requests human-facing documents, create them as
+  requested. Do not demote them to generated views or replace them with compact
+  records.
+- When `.agents/` is writable, back requested human-facing deliverables with
+  compact `.agents/specs/` records or traceability links so recommendations are
+  AI-readable and recoverable.
+- When `.agents/` is not writable, still produce the requested human-facing
+  deliverables and include traceability sections inside those documents.
+- Generate additional human-facing documents only when the user asks for them
+  or an established workflow explicitly requires them.
 - Before generating human-facing documents, check whether the needed records,
   indexes, reviews, and progress data exist. Report gaps instead of inventing
   missing scope, status, or commitments.
-- If a generated document introduces new scope, decisions, risks, assumptions,
-  acceptance criteria, or tasks, promote that information back into records or
-  progress before treating it as durable.
+- If a human-facing or derived document introduces new scope, decisions, risks,
+  assumptions, acceptance criteria, or tasks, promote that information back into
+  records or progress before treating it as durable.
 - Before saying a legacy source can be deleted or retired, produce an explicit
   source retirement decision for that source. If source material is only linked
   by reference, do not call it safely removable.

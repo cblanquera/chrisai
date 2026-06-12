@@ -118,13 +118,13 @@ Good indexes:
 
 Avoid narrative indexes that repeat whole record bodies.
 
-## Sprint, Release, And Generated View Inputs
+## Human Deliverable, Sprint, And Release Inputs
 
-Sprint, release, and other human-facing views are assembled from specs,
-references, reviews, source references, and active progress state. Before
-generating a human-facing document, check that the required source layers exist
-and call out missing information instead of inventing scope, delivery state, or
-commitments.
+User-requested human deliverables are first-class outputs. Create them in the
+requested location and use specs, references, reviews, source references, and
+active progress state to keep them traceable. Before producing a human-facing
+document, check that the required source layers exist and call out missing
+information instead of inventing scope, delivery state, or commitments.
 
 Common project-management views usually need:
 
@@ -144,7 +144,7 @@ Common project-management views usually need:
   reviews, evidence, active progress state, and any remaining linked-only
   source material
 
-If a generated document introduces new requirements, decisions, risks,
+If a human-facing document introduces new requirements, decisions, risks,
 assumptions, acceptance criteria, evidence, or tasks, promote those facts back
 into records or progress before treating them as durable.
 

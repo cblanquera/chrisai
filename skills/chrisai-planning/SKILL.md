@@ -30,7 +30,9 @@ Use this family when all of these are true:
 1. The project is a large app or product surface, not a narrow feature.
 2. The user wants planning, specification, readiness review, or implementation
    backlog generation before execution.
-3. The output should live in `.agents/specs/` records or generated views.
+3. The durable planning layer should live in `.agents/specs/`, while explicit
+   human-facing deliverables should be created in the user-requested location
+   and linked back to records when possible.
 
 If any condition is false, use a narrower existing ChrisAI route instead.
 
