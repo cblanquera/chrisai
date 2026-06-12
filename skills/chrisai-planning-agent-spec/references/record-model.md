@@ -24,6 +24,36 @@ context that would make records too large.
 | `EVD` | evidence | Source, observation, command result, code finding, or research note |
 | `TASK` | task | Proposed work item before it becomes active progress |
 
+## MVP And POC Semantics
+
+POC records are first-class planning records when a feasibility step is needed
+before MVP. Use them to capture evidence, decisions, risks, and proposed follow
+up work from technical validation without pretending the proof is already a
+customer-usable product.
+
+Use `MVP: yes` only for records that belong to the smallest viable
+customer-facing product slice. Minimal means narrow scope; viable means usable
+for the target workflow with enough UI, data behavior, feedback, and
+verification to demonstrate product value.
+
+Do not use `MVP: yes` for a proof of concept by default. POCs, spikes,
+prototype screens, demo scaffolds, and raw technical validations should be
+recorded as evidence, current state, risks, POC-labeled requirements, or
+non-MVP tasks until a POC-to-MVP promotion step defines the customer-facing
+behavior that turns them into a usable product slice.
+
+When importing or reviewing POC material, separate:
+
+- current POC behavior: what the prototype or code proves now
+- MVP intended behavior: what a customer or evaluator must be able to do
+- viability gap: missing UI, workflow, data, permissions, empty states, error
+  handling, copy, persistence, integration, or verification
+- promotion decision: keep, replace, discard, or continue investigating
+
+Create `AC` records for product viability, not only technical proof. Acceptance
+criteria should be observable from the customer-facing workflow whenever the
+feature has a GUI.
+
 ## Source Confidence
 
 Use these confidence labels:
@@ -43,6 +73,8 @@ Use these confidence labels:
 Status: proposed | accepted | blocked | deferred | superseded
 Confidence: proposed | imported | inferred | evidence-backed | conflicting | stale
 MVP: yes | no | unknown
+Phase: poc | mvp | post-mvp | unknown
+Viability: poc-only | customer-usable | internal-only | unknown
 Source:
 Related:
 - CAP-001
@@ -55,6 +87,8 @@ Related:
 ### Acceptance Links
 
 ### Open Questions
+
+### Viability Notes
 
 ### Notes
 ```
@@ -79,14 +113,15 @@ Good indexes:
 - traceability from requirement to acceptance and task
 - open questions by blocking impact
 - MVP record list
+- MVP viability gaps
 - records by source confidence
 
 Avoid narrative indexes that repeat whole record bodies.
 
-## Generated Document Inputs
+## Sprint, Release, And Generated View Inputs
 
-Generated documents are disposable views assembled from records, indexes,
-reviews, imported source references, and active progress state. Before
+Sprint, release, and other human-facing views are assembled from specs,
+references, reviews, source references, and active progress state. Before
 generating a human-facing document, check that the required source layers exist
 and call out missing information instead of inventing scope, delivery state, or
 commitments.
@@ -97,8 +132,8 @@ Common project-management views usually need:
   acceptance, risks, decisions, and source references
 - Work order: requirements, tasks, acceptance, constraints, dependencies,
   risks, and progress handoff context
-- Sprint plan: task records, traceability, open questions, risks, and progress
-  batches or proposed batches
+- Sprint plan: a timeboxed execution view based on approved task records,
+  traceability, open questions, risks, and progress batches or proposed batches
 - Sprint results or burndown: progress manifest, progress items, logs, outputs,
   acceptance, evidence, and remaining risks
 - Release readiness summary: acceptance, evidence, risks, findings, status, and
@@ -117,7 +152,7 @@ into records or progress before treating them as durable.
 
 Run a source retirement audit before declaring legacy planning, progress, or
 documentation sources removable. Discover source locations from the workspace
-and `imports/source-documents.md`; do not rely on fixed folder names.
+and `.agents/plans/source-documents.md`; do not rely on fixed folder names.
 
 For each source, answer:
 
@@ -135,8 +170,8 @@ than extraction, recommend archiving instead of deletion.
 
 ## Split Rules
 
-Start with grouped files under `records/`. Split into folders or one-file
-records only when:
+Start with grouped files directly under the spec folder. Split into folders or
+one-file records only when:
 
 - a grouped file approaches 500 lines
 - multiple agents must edit independent records concurrently

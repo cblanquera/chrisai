@@ -8,7 +8,7 @@ description: Use when `.agents/specs/` records have blockers, high-risk findings
 Use this skill when agent spec records need evidence before they can be trusted
 for freeze or implementation planning.
 
-This skill validates records and updates AI-readable indexes. It does not
+This skill validates records and updates AI-readable routing files. It does not
 produce long human planning documents by default.
 
 ## Entry Conditions
@@ -31,7 +31,7 @@ Read only:
 2. `.agents/specs/<spec-id>/index.md`
 3. `.agents/specs/<spec-id>/status.md`
 4. relevant records
-5. relevant indexes
+5. relevant routing files or indexes
 6. relevant review findings
 7. source files, docs, commands, or external references needed for the specific
    validation item
@@ -48,8 +48,8 @@ Do not load unrelated spec folders.
 5. Create or update `EVD` records.
 6. Update the validated records with pass, fail, fallback, deferred, or blocked
    status.
-7. Update `indexes/traceability.md`, `indexes/open-questions.md`,
-   `indexes/by-status.md`, and `indexes/by-source.md` as needed.
+7. Update `traceability.md`, `open-questions.md`, `by-status.md`, and
+   `by-source.md` as needed.
 8. Update `reviews/findings.md` only when review findings change status.
 9. Update `status.md` with readiness and next action.
 10. Stop before freeze unless exit criteria are met.
@@ -78,17 +78,17 @@ Reject:
 
 Default outputs are records and indexes:
 
-- `records/evidence.md`
+- `evidence.md`
 - updated source records
-- `indexes/traceability.md`
-- `indexes/open-questions.md`
-- `indexes/by-status.md`
-- `indexes/by-source.md`
+- `traceability.md`
+- `open-questions.md`
+- `by-status.md`
+- `by-source.md`
 - `reviews/findings.md`, when findings change
 - `status.md`
 
-Do not create generated stakeholder, sprint, or implementation documents unless
-the user asks for them.
+Do not create stakeholder, sprint, release, or implementation views unless the
+user asks for them.
 
 ## Exit Criteria
 

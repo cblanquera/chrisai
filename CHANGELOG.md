@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.22 - 2026-06-12
+
+- Added a mental-model README for the agent-spec planning skill that explains
+  specs versus sprints, tasks versus progress items, POC-to-MVP promotion, and
+  reusable references.
+- Updated the agent-spec planning structure to use `.agents/plans/`,
+  `.agents/poc/`, `.agents/references/`, `.agents/specs/`, `.agents/sprints/`,
+  `.agents/progress/`, and `.agents/releases/`.
+- Refined planning and progress guidance so POC work is a first-class
+  feasibility step, MVP work requires customer-facing viability checks, and
+  sprints remain timeboxed execution views rather than product scope.
+
 ## 0.1.21 - 2026-06-12
 
 - Updated the agent-spec planning family to use `.agents/specs/` as the

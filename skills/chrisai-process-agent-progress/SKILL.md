@@ -53,6 +53,22 @@ Use `.agents/specs/` as the preferred source for requirements, acceptance
 criteria, durable product decisions, risks, constraints, and evidence. Progress
 items should link to those spec records instead of duplicating them.
 
+POC progress items are allowed when the work is intentionally proving
+feasibility before MVP. Mark them as POC work, keep their acceptance criteria
+focused on the question being tested, and record whether the result was proved,
+failed, inconclusive, or needs another pass.
+
+When a progress bank moves from POC to MVP, each active MVP item must preserve
+the product viability boundary from the spec. A verified item proves its stated
+slice is implemented and checked; it does not prove the MVP is customer-ready
+unless the item also links to customer-facing acceptance criteria or an
+MVP-level release gate that checks the full workflow.
+
+Do not let MVP progress drift into unpromoted POC continuation. If an MVP item
+starts from a spike, prototype, scaffold, or proof screen, write the item goal
+and acceptance criteria around the promoted user-facing behavior. Use the POC
+as input evidence or current-state context.
+
 ## Core Rule
 
 Keep each active worker's context small.
@@ -95,14 +111,18 @@ new dated log entry.
    - `logs/`
 4. Break the work into stable item IDs.
 5. Write one item file per independent unit of work.
-6. Group related item IDs into batch files only when batch execution improves
+6. For POC work, state the feasibility question and the decision needed after
+   the proof. For product or MVP work, link each item to the relevant customer
+   workflow, capability, or acceptance record. If no such record exists, mark
+   the item as planning or blocked until the spec is clarified.
+7. Group related item IDs into batch files only when batch execution improves
    focus.
-7. Work on one assigned item or batch at a time.
-8. Update the manifest after each item changes state.
-9. Record durable execution decisions in `decisions.md`, not only in logs.
+8. Work on one assigned item or batch at a time.
+9. Update the manifest after each item changes state.
+10. Record durable execution decisions in `decisions.md`, not only in logs.
    Product, architecture, requirements, risk, and acceptance decisions belong
-   in `.agents/specs/<spec-id>/records/decisions.md` when a spec bank exists.
-10. Write a handoff before stopping, switching sessions, or delegating.
+   in the relevant spec `decisions.md`.
+11. Write a handoff before stopping, switching sessions, or delegating.
 
 Read [work-packets](references/work-packets.md) for item and batch packet
 templates.
@@ -145,6 +165,11 @@ Use these manifest statuses unless the task requires something narrower:
 
 Only mark an item `verified` after the stated verification was actually run.
 
+Only mark MVP or release-gate items `verified` after verification covers the
+customer workflow, not just isolated technical tests. Technical proof may be
+recorded as implementation evidence, but customer-facing MVP readiness needs a
+workflow, UI, data, state, and failure-mode check appropriate to the item.
+
 ## Handoff
 
 Before ending a large-task turn, leave the progress bank recoverable:
@@ -167,3 +192,5 @@ Read [handoff](references/handoff.md) for the required handoff format.
 - Do not duplicate long strategy or style documents into every item file; link
   to them and summarize only the item-specific constraints.
 - Do not overwrite unrelated user work when reconciling parallel sessions.
+- Do not treat sprint names, batch names, or implementation phases as product
+  acceptance. They are execution organization only.

@@ -18,7 +18,7 @@ Do not duplicate specialist instructions here. Route, then defer.
 ## Specialist Routes
 
 - Use `chrisai-planning-agent-spec` for AI-native planning under
-  `.agent/specs/`, including prompt-only greenfield discovery, imported human
+  `.agents/specs/`, including prompt-only greenfield discovery, imported human
   planning documents, legacy `plans/` corpus import, existing brownfield
   projects, readiness review, evidence-backed validation, and freeze into
   implementation planning.
@@ -30,7 +30,7 @@ Use this family when all of these are true:
 1. The project is a large app or product surface, not a narrow feature.
 2. The user wants planning, specification, readiness review, or implementation
    backlog generation before execution.
-3. The output should live in `.agent/specs/` records or generated views.
+3. The output should live in `.agents/specs/` records or generated views.
 
 If any condition is false, use a narrower existing ChrisAI route instead.
 
@@ -45,7 +45,7 @@ Prefer the agent-spec sequence for new work:
 4. `chrisai-planning-agent-spec-validation`, when blockers, high-risk findings,
    assumptions, questions, or decisions need evidence
 5. `chrisai-planning-agent-spec-freeze`, when records should become
-   implementation-facing indexes, proposed task records, or `.agent/progress/`
+   implementation-facing indexes, proposed task records, or `.agents/progress/`
    work packets
 6. implementation work through the relevant coding, design, docs, or process
    skills

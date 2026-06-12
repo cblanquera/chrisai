@@ -1,20 +1,37 @@
 # Agent Spec Structure
 
-Use `.agents/specs/` for AI-readable planning and specification state that
-should not interfere with human-authored project documents.
+Use `.agents/` for AI-readable planning and execution state that should not
+interfere with human-authored project documents. Use `.agents/specs/` for
+durable product and feature scope.
 
 ## Layout
 
 ```text
-.agents/specs/
-  manifest.md
+.agents/
   AGENTS.md
 
-  <spec-id>/
-    brief.md
-    index.md
-    status.md
-    records/
+  plans/
+    source-documents.md
+
+  poc/
+    findings.md
+    results.md
+    snippets/
+
+  references/
+    terms/
+    decisions/
+    examples/
+    snippets/
+    research/
+
+  specs/
+    manifest.md
+
+    <spec-id>/
+      brief.md
+      index.md
+      status.md
       requirements.md
       capabilities.md
       constraints.md
@@ -25,48 +42,83 @@ should not interfere with human-authored project documents.
       acceptance.md
       evidence.md
       tasks.md
-    indexes/
       traceability.md
       open-questions.md
       by-mvp.md
+      mvp-viability-gaps.md
       by-status.md
       by-source.md
-    reviews/
-      readiness-review.md
-      findings.md
-    imports/
-      source-documents.md
+      reviews/
+        readiness-review.md
+        findings.md
+      logs/
+        YYYY-MM-DD.md
+
+  sprints/
+    sprint-001.md
+
+  progress/
+    manifest.md
+    items/
+    batches/
     logs/
-      YYYY-MM-DD.md
-    generated/
-      stakeholder-brief.md
-      sow-<purpose>.md
-      work-order-<id>.md
-      sprint-plan-<sprint>.md
-      sprint-results-<sprint>.md
-      burndown-<period>.md
-      release-summary-<version>.md
-      source-retirement-review.md
+
+  releases/
+    release-001/
+      plan.md
+      readiness.md
+      notes.md
 ```
 
-Create grouped record files first. Do not create one file per record unless a
-grouped file is too large, the record needs independent ownership, or a worker
-must load it without unrelated records.
+Create compact grouped record files first. Do not create one file per record
+unless a grouped file is too large, the record needs independent ownership, or a
+worker must load it without unrelated records.
+
+Keep long explanations, examples, snippets, research, and rationale in
+`.agents/references/` and link to them from specs, sprints, releases, and
+progress items.
+
+## Top-Level Folders
+
+- `.agents/plans/`: original planning documents, PRDs, stakeholder notes, and
+  imported source material preserved in human form.
+- `.agents/poc/`: POC results, findings, snippets, and implementation notes.
+  Actual prototype code should live outside `.agents/`.
+- `.agents/references/`: arbitrary reusable context files that keep specs and
+  progress items small.
+- `.agents/specs/`: durable product and feature scope.
+- `.agents/sprints/`: optional timeboxed plans that group accepted tasks or
+  progress items.
+- `.agents/progress/`: active execution state.
+- `.agents/releases/`: release plans, readiness evidence, release notes, and
+  verification summaries.
 
 ## Spec ID
 
-Use one `<spec-id>` per bounded product, feature, release, migration, or major
-initiative.
+Use one `<spec-id>` per bounded product, feature, migration, or major
+initiative. For Lean or Agile product work, prefer this sequence:
+
+- `01-poc`
+- `02-mvp`
+- `03-<feature-name>`
+- `04-<feature-name>`
 
 Good examples:
 
-- `c4os-v1`
+- `01-poc`
+- `02-mvp`
+- `03-session-management`
+- `04-plugin-marketplace`
 - `checkout-redesign`
 - `plugin-marketplace`
 - `workspace-import-export`
 
 Avoid creating a spec folder per sprint, topic, requirement, or implementation
 task.
+
+If the user talks about a sprint, create or update `.agents/sprints/<sprint>.md`
+only after the durable spec scope exists. A sprint is a timebox for executing
+work, not the source of product intent.
 
 ## Manifest
 
@@ -100,6 +152,18 @@ Status:
 ## Scope
 
 ## Non-Goals
+
+## MVP Viability
+
+Target customer or evaluator:
+
+Customer-facing workflow:
+
+Minimum usable capabilities:
+
+Known POC-only or prototype-only areas:
+
+Viability gaps:
 
 ## Current State
 
@@ -148,23 +212,24 @@ Last Updated:
 
 The default outgest is AI-readable records and indexes:
 
-- grouped source records under `records/`
-- routing and traceability files under `indexes/`
+- compact source records directly under the spec folder
+- routing and traceability files under the spec folder
 - concise status in `status.md`
 - readiness findings under `reviews/`
 
-## Optional Generated Views
+## Optional Sprint And Release Views
 
-Files under `generated/` are disposable views. They may be rewritten from
-records, indexes, reviews, source references, and `.agents/progress/` state when
-a stakeholder, project manager, product manager, sprint planner, or external
-tool needs a specific document shape.
+Files under `.agents/sprints/` and `.agents/releases/` are execution and
+delivery views. They may be rewritten from specs, references, reviews, source
+material, and `.agents/progress/` state when a stakeholder, project manager,
+product manager, sprint planner, or external tool needs a specific document
+shape.
 
 Useful generated views include:
 
 - statements of work
 - work orders
-- sprint plans
+- sprint plans as timeboxed execution views, not spec replacements
 - sprint results
 - burndown or status reports
 - release readiness summaries
@@ -173,7 +238,7 @@ Useful generated views include:
 - stakeholder progress updates
 - source retirement reviews
 
-Do not treat generated files as the source of truth.
+Do not treat sprint or release views as the source of product truth.
 
 If a generated view introduces new scope, decisions, risks, assumptions,
 acceptance criteria, evidence, or tasks, promote those facts back into records
@@ -185,7 +250,7 @@ of inventing commitments or delivery state.
 
 ## Source Retirement Reviews
 
-Use `generated/source-retirement-review.md` when a user asks whether legacy
+Use `.agents/releases/` or a spec review file when a user asks whether legacy
 planning, progress, or documentation sources can be removed, archived, or
 declared obsolete.
 

@@ -8,8 +8,8 @@ description: Use when a `.agents/specs/` agent spec needs adversarial readiness,
 Use this skill to review an agent spec before freeze, implementation planning, or
 major delegation.
 
-Review records and evidence. Do not review generated documents as the source of
-truth.
+Review records and evidence. Do not review sprint, release, or generated views
+as the source of truth.
 
 For pure greenfield projects, this skill owns the Grill Me With Docs-style
 readiness pass for agent specs. When the grill session happened outside the
@@ -25,10 +25,10 @@ Read only:
 2. `.agents/specs/<spec-id>/index.md`
 3. `.agents/specs/<spec-id>/status.md`
 4. relevant grouped record files
-5. relevant indexes
+5. relevant routing files or indexes
 6. relevant evidence records
-7. `generated/grill-session-brief.md`, when it exists and the review objective
-   is pure greenfield grill readiness
+7. a spec review packet or `.agents/references/` review packet, when it exists
+   and the review objective is pure greenfield grill readiness
 8. an external grill-results file path supplied by the user, when review
    already happened outside the current session
 
@@ -45,11 +45,16 @@ Do not load unrelated agent specs.
    evidence, and traceability.
 5. Identify unsupported decisions, conflicting records, stale imported content,
    missing acceptance criteria, missing evidence, and MVP ambiguity.
-6. Classify findings by severity.
-7. Write or update `reviews/readiness-review.md` and `reviews/findings.md`.
-8. Promote durable findings into records as questions, risks, assumptions, or
+6. For POC-backed MVP specs, audit whether POC results were captured and
+   explicitly promoted, replaced, discarded, or kept under investigation.
+7. For MVP specs, audit whether compact records preserve customer-facing
+   journeys and viability goals, not only implementation tasks, sprint phases,
+   or linked acceptance-document sets.
+8. Classify findings by severity.
+9. Write or update `reviews/readiness-review.md` and `reviews/findings.md`.
+10. Promote durable findings into records as questions, risks, assumptions, or
    decisions.
-9. Update `status.md` with readiness and next action.
+11. Update `status.md` with readiness and next action.
 
 ## Severity Model
 
@@ -58,6 +63,18 @@ Do not load unrelated agent specs.
 - `MEDIUM`: can proceed with documented risk.
 - `LOW`: informational or cleanup.
 - `QUESTION`: open question that may affect scope or decisions.
+
+For MVP work, treat these as at least `HIGH`, and as `BLOCKER` before release
+or MVP freeze when they affect the target workflow:
+
+- MVP records only describe scaffolds, technical probes, or POC screens without
+  a promotion decision.
+- POC results are missing, inconclusive, or unreviewed but are being used as
+  MVP implementation scope.
+- Customer journeys exist only in archived or linked source documents and are
+  not represented by compact records.
+- Progress items can be verified without proving a user-facing workflow.
+- Sprint or batch structure is being used as a substitute for product scope.
 
 ## Exit Rules
 

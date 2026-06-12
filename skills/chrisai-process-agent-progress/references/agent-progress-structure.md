@@ -35,10 +35,22 @@ Constraints:
 
 Definition Of Done:
 
+POC Gate:
+
+MVP Or Product Viability Gate:
+
 Source Materials:
 
 Verification Expectations:
 ```
+
+For POC work, `POC Gate` should state the feasibility question, expected proof,
+and decision needed after the proof.
+
+For MVP work, `Definition Of Done` must include a customer-facing viability
+gate, not only sprint completion, implementation phases, or test commands. The
+gate should identify the target user workflow and the evidence needed to call
+the slice usable.
 
 ## `manifest.md`
 
@@ -58,7 +70,7 @@ Use stable IDs. Do not rename IDs after work starts.
 
 Purpose: durable execution decisions that affect multiple progress items.
 Product, architecture, requirements, risk, and acceptance decisions belong in
-`.agents/specs/<spec-id>/records/decisions.md` when a spec bank exists.
+the relevant spec `decisions.md`.
 
 ```markdown
 # Decisions
@@ -85,6 +97,10 @@ owners, outputs, verification, logs, and handoffs.
 
 Progress items should link to relevant spec records instead of copying their
 full text.
+
+Sprints and batches are execution organization. They can group items by
+timebox, dependency, or focus area, but they must not replace specs as the
+source of product scope or acceptance.
 
 ## `conventions.md`
 
