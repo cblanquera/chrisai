@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.24 - 2026-06-12
+
+- Corrected agent-spec guidance so `chrisai-planning-agent-spec` creates and
+  maintains the `.agents/` project knowledge base, not a root `plans/`
+  document tree.
+- Removed the fallback that allowed root `plans/` deliverables when `.agents/`
+  is not writable; agents must now report the permission blocker and request
+  writable `.agents/` access or another explicit target.
+- Updated planning discovery/import wording so original planning materials are
+  preserved under `.agents/plans/` and reusable long-form context lives under
+  `.agents/references/`.
+
 ## 0.1.23 - 2026-06-12
 
 - Clarified that explicit human-facing deliverables, such as a requested root

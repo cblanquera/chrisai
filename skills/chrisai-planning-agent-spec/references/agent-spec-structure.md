@@ -4,6 +4,9 @@ Use `.agents/` for AI-readable planning and execution state that should not
 interfere with human-authored project documents. Use `.agents/specs/` for
 durable product and feature scope.
 
+Do not create a root `plans/` folder from this skill. Preserve planning sources
+inside `.agents/plans/` and keep the knowledge base under `.agents/`.
+
 ## Layout
 
 ```text
@@ -225,11 +228,6 @@ material, and `.agents/progress/` state when a stakeholder, project manager,
 product manager, sprint planner, or external tool needs a specific document
 shape.
 
-Human-facing deliverables explicitly requested by the user, such as a root
-`plans/` folder, are first-class requested outputs. Create them in the requested
-location and, when `.agents/` is writable, link or mirror durable planning facts
-back into `.agents/specs/` and `.agents/references/`.
-
 Useful requested or derived views include:
 
 - statements of work
@@ -243,9 +241,7 @@ Useful requested or derived views include:
 - stakeholder progress updates
 - source retirement reviews
 
-Do not treat sprint or release views as the source of product truth. Do not
-ignore or relocate explicit human deliverables just because `.agents/specs/`
-also exists.
+Do not treat sprint or release views as the source of product truth.
 
 If a requested or derived view introduces new scope, decisions, risks, assumptions,
 acceptance criteria, evidence, or tasks, promote those facts back into records
@@ -262,9 +258,9 @@ planning, progress, or documentation sources can be removed, archived, or
 declared obsolete.
 
 Discover actual project sources rather than assuming standard folder names.
-Common examples include `plans/`, `docs/`, `docs/adr/`, `specs/`, `roadmap/`,
-`.task-bank/`, issue exports, sprint notes, PRDs, research notes, and
-project-specific folders. Treat this list as examples only.
+Common examples include human planning folders, `docs/`, `docs/adr/`, existing
+`specs/`, `roadmap/`, `.task-bank/`, issue exports, sprint notes, PRDs,
+research notes, and project-specific folders. Treat this list as examples only.
 
 A source retirement review should include one row per source:
 

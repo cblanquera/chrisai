@@ -57,8 +57,9 @@ If enough information exists, proceed and mark uncertainty explicitly.
 
 1. Choose one `<spec-id>` for the bounded initiative.
 2. Create or update `.agents/AGENTS.md` and `.agents/specs/manifest.md`.
-3. Create top-level folders when needed: `plans/`, `poc/`, `references/`,
-   `specs/`, `sprints/`, `progress/`, and `releases/`.
+3. Create top-level `.agents/` folders when needed: `.agents/plans/`,
+   `.agents/poc/`, `.agents/references/`, `.agents/specs/`,
+   `.agents/sprints/`, `.agents/progress/`, and `.agents/releases/`.
 4. Create the agent spec skeleton for the selected `<spec-id>`.
 5. Write `brief.md`, `index.md`, and `status.md`.
 6. Create compact grouped record files directly under the spec folder.

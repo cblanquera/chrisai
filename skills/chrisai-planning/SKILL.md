@@ -19,7 +19,7 @@ Do not duplicate specialist instructions here. Route, then defer.
 
 - Use `chrisai-planning-agent-spec` for AI-native planning under
   `.agents/specs/`, including prompt-only greenfield discovery, imported human
-  planning documents, legacy `plans/` corpus import, existing brownfield
+  planning documents, legacy planning corpus import, existing brownfield
   projects, readiness review, evidence-backed validation, and freeze into
   implementation planning.
 
@@ -30,9 +30,9 @@ Use this family when all of these are true:
 1. The project is a large app or product surface, not a narrow feature.
 2. The user wants planning, specification, readiness review, or implementation
    backlog generation before execution.
-3. The durable planning layer should live in `.agents/specs/`, while explicit
-   human-facing deliverables should be created in the user-requested location
-   and linked back to records when possible.
+3. The output should live in the `.agents/` project knowledge base, with
+   durable scope under `.agents/specs/`. Do not create root-level `plans/`
+   deliverables from this route.
 
 If any condition is false, use a narrower existing ChrisAI route instead.
 
@@ -58,9 +58,9 @@ Do not start implementation from this router.
 
 - Prefer `chrisai-process-agent-progress` for large implementation or migration
   work in an existing codebase.
-- Use `chrisai-planning-agent-spec-import` when existing legacy `plans/`
-  corpuses or document-heavy planning artifacts need to be preserved,
-  reconciled, or converted into active spec records.
+- Use `chrisai-planning-agent-spec-import` when existing document-heavy
+  planning artifacts need to be preserved, reconciled, or converted into
+  active spec records.
 - Prefer `chrisai-coding-engineering` for architecture analysis of existing
   code, libraries, plugins, adapters, or runtime boundaries.
 - Prefer `chrisai-docs` for documentation-only planning artifacts.

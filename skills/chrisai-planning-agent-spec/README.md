@@ -4,13 +4,16 @@ This skill uses `.agents/` to separate product truth, execution state, and
 supporting reference material. The goal is to keep AI context small while still
 preserving enough planning detail for agents and humans to recover the work.
 
+This skill creates and maintains the `.agents/` project knowledge base. It is
+not a root `plans/` document generator.
+
 ## Short Version
 
 - `specs/` answers: what should exist?
 - `sprints/` answers: what are we doing in this timebox?
 - `progress/` answers: what is actively being worked on?
 - `references/` answers: where is the supporting detail?
-- `plans/` answers: where did the original planning material come from?
+- `.agents/plans/` answers: where did the original planning material come from?
 - `poc/` answers: what did feasibility work prove, fail, or leave unknown?
 - `releases/` answers: what shipped or is being prepared to ship?
 
@@ -175,9 +178,10 @@ Example:
 Create a product planning structure:
 
 ```text
-Create the .agents structure for this product using plans, poc, references,
-specs, sprints, progress, and releases. Treat specs as scope, sprints as
-timeboxes, and progress as active execution.
+Create the .agents project knowledge base for this product using .agents/plans,
+.agents/poc, .agents/references, .agents/specs, .agents/sprints,
+.agents/progress, and .agents/releases. Treat specs as scope, sprints as
+timeboxes, and progress as active execution. Do not create a root plans/ folder.
 ```
 
 Plan a POC:

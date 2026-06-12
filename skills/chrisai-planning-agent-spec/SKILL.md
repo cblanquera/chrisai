@@ -5,12 +5,13 @@ description: Use when planning should create or maintain an AI-readable file-bas
 
 # ChrisAI Planning Agent Spec
 
-Use this router when the deliverable is an AI-readable planning source of truth
-under `.agents/specs/`.
+Use this router when the deliverable is an AI-readable project knowledge base
+under `.agents/`, with durable product and feature scope under
+`.agents/specs/`.
 
 The agent spec creates an AI-readable planning layer for new work. It ingests
-the same kinds of inputs as traditional planning, but separates compact
-AI-readable records from human-authored or human-requested deliverables.
+the same kinds of inputs as traditional planning, but the output is the
+`.agents/` knowledge base, not a root-level human planning document tree.
 
 ## Layer Model
 
@@ -31,8 +32,18 @@ Use these boundaries:
   progress logs, and handoffs.
 - `.agents/releases/`: release plans, release notes, readiness summaries, and
   verification evidence for shipped or prepared releases.
-- User-requested human deliverables: first-class outputs in the location and
-  shape the user requested, including folders such as root `plans/`.
+
+Do not create a root `plans/` folder as this skill's deliverable. If the user
+explicitly asks for root-level planning documents while invoking this skill,
+map that request into `.agents/plans/`, `.agents/specs/`, `.agents/references/`,
+and related `.agents/` folders. If the user truly needs standalone human
+documents outside `.agents/`, route that as a separate documentation task
+instead of handling it inside this skill.
+
+If `.agents/` is not writable, do not silently fall back to root `plans/` or
+another folder. Report that the agent-spec knowledge base cannot be created in
+the current permission profile and ask for writable `.agents/` access or a
+different explicit target.
 
 Use consistent planning terms:
 
@@ -97,12 +108,12 @@ copy.
 Before any legacy planning, progress, or documentation source is removed,
 archived, or declared obsolete, run a source retirement audit. Discover actual
 project sources instead of assuming fixed folder names. Examples may include
-`plans/`, `docs/`, `docs/adr/`, `specs/`, `roadmap/`, `.task-bank/`, issue
-exports, sprint notes, PRDs, research notes, or project-specific folders. Treat
-examples as non-exhaustive; classify every discovered source by whether its
-durable facts were extracted into records, its active execution state moved to
-progress, and its remaining rationale, validation history, examples, or
-stakeholder context must be preserved.
+human planning folders, `docs/`, `docs/adr/`, existing `specs/`, `roadmap/`,
+`.task-bank/`, issue exports, sprint notes, PRDs, research notes, or
+project-specific folders. Treat examples as non-exhaustive; classify every
+discovered source by whether its durable facts were extracted into records, its
+active execution state moved to progress, and its remaining rationale,
+validation history, examples, or stakeholder context must be preserved.
 
 ## Specialist Routes
 
@@ -154,21 +165,18 @@ unless new scope makes the existing records or packet materially stale.
   lossy replacements for every source document.
 - Start with grouped record files, not one file per record.
 - Use stable record IDs such as `REQ-001`, `DEC-001`, and `AC-001`.
-- Treat unrequested derived docs as disposable views, not source of truth.
-- When the user explicitly requests human-facing documents, create them as
-  requested. Do not demote them to generated views or replace them with compact
-  records.
-- When `.agents/` is writable, back requested human-facing deliverables with
-  compact `.agents/specs/` records or traceability links so recommendations are
-  AI-readable and recoverable.
-- When `.agents/` is not writable, still produce the requested human-facing
-  deliverables and include traceability sections inside those documents.
-- Generate additional human-facing documents only when the user asks for them
-  or an established workflow explicitly requires them.
-- Before generating human-facing documents, check whether the needed records,
-  indexes, reviews, and progress data exist. Report gaps instead of inventing
+- Treat standalone human planning documents as outside this skill's primary
+  deliverable. Use `.agents/plans/` for preserved source material and
+  `.agents/references/` for reusable long-form context.
+- Do not create root-level `plans/` documents as a fallback for missing
+  `.agents/` write access.
+- Generate human-readable summaries or release/sprint views only inside the
+  `.agents/` knowledge base unless the user explicitly switches to a
+  documentation-focused task.
+- Before creating human-readable `.agents/` views, check whether the needed
+  records, reviews, and progress data exist. Report gaps instead of inventing
   missing scope, status, or commitments.
-- If a human-facing or derived document introduces new scope, decisions, risks,
+- If a human-readable `.agents/` view introduces new scope, decisions, risks,
   assumptions, acceptance criteria, or tasks, promote that information back into
   records or progress before treating it as durable.
 - Before saying a legacy source can be deleted or retired, produce an explicit
