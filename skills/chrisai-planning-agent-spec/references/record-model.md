@@ -170,10 +170,22 @@ than extraction, recommend archiving instead of deletion.
 
 ## Split Rules
 
-Start with grouped files directly under the spec folder. Split into folders or
-one-file records only when:
+Start with grouped Markdown files directly under the spec folder. Split into
+folders or one-file records only when:
 
 - a grouped file approaches 500 lines
 - multiple agents must edit independent records concurrently
 - a record requires a large evidence trail
 - a record needs separate ownership or review
+
+Before appending to a grouped Markdown file, decide whether the addition keeps
+the file compact and under the local line limit. Append directly only for
+compact durable facts. If the target file is near the limit, the addition is
+large, or the content is long-form rationale, examples, source excerpts,
+transcript summaries, audit notes, issue lists, screenshot notes, research, or
+detailed evidence, refactor the file by splitting it or move the detail to
+`.agents/references/` and link to it.
+
+These split rules apply to generated or maintained `.agents/**/*.md` planning
+artifacts only. Do not apply Markdown file-size thresholds to HTML, CSS,
+JavaScript, TypeScript, JSON, images, prototype code, or source files.

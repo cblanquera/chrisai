@@ -1,15 +1,17 @@
 # Agent Spec Mental Model
 
-This skill uses `.agents/` to separate product truth, execution state, and
-supporting reference material. The goal is to keep AI context small while still
-preserving enough planning detail for agents and humans to recover the work.
+This skill bootstraps `.agents/` so the project carries its own AI-readable
+operating rules. The goal is to keep AI context small while still preserving
+enough planning detail for agents and humans to recover the work.
 
-This skill creates and maintains the `.agents/` project knowledge base. It is
-not a root `plans/` document generator.
+After setup, ongoing work should follow `.agents/AGENTS.md` and the workflow
+files in `.agents/workflows/`, even when no ChrisAI skill is active. This skill
+is not a root `plans/` document generator.
 
 ## Short Version
 
 - `specs/` answers: what should exist?
+- `workflows/` answers: how should future agents work here?
 - `sprints/` answers: what are we doing in this timebox?
 - `progress/` answers: what is actively being worked on?
 - `references/` answers: where is the supporting detail?
@@ -21,12 +23,36 @@ not a root `plans/` document generator.
 
 ```text
 .agents/
+  AGENTS.md
+
+  workflows/
+    import.md
+    poc.md
+    mvp.md
+    post-mvp.md
+    ad-hoc.md
+    batch-reconciliation.md
+    review.md
+    validation.md
+    freeze.md
+    progress.md
+    handoff.md
+    source-retirement.md
+    wireframes.md
+    creatives.md
+
   plans/
     original planning docs, PRDs, stakeholder notes, imports
 
   poc/
     POC findings, results, snippets, and implementation notes
     actual prototype code should live outside .agents
+
+  wireframes/
+    low-fidelity screens, flows, layout notes, and reviews
+
+  creatives/
+    visual direction, brand explorations, asset briefs, and reviews
 
   references/
     arbitrary reusable context files
@@ -51,6 +77,21 @@ not a root `plans/` document generator.
   releases/
     release-001/
 ```
+
+## Local Rules And Workflows
+
+`.agents/AGENTS.md` is the local law for future chats. It should stay concise
+and cover:
+
+- source-of-truth boundaries
+- Markdown-only file-size and split-refactor rules for `.agents/**/*.md`
+- workflow routing
+- record ID conventions
+- no invented scope, status, commitments, or verification
+- promotion of durable facts back into records or progress
+
+Detailed procedures belong in `.agents/workflows/*.md`, not in
+`.agents/AGENTS.md`.
 
 ## Specs Versus Sprints
 
@@ -175,21 +216,22 @@ Example:
 
 ## Practical Prompt Phrases
 
-Create a product planning structure:
+Create or repair the local agent operating surface:
 
 ```text
-Create the .agents project knowledge base for this product using .agents/plans,
-.agents/poc, .agents/references, .agents/specs, .agents/sprints,
-.agents/progress, and .agents/releases. Treat specs as scope, sprints as
-timeboxes, and progress as active execution. Do not create a root plans/ folder.
+Initialize .agents for this project. Create .agents/AGENTS.md and
+.agents/workflows/ first, then seed the minimal spec records needed for future
+work. Treat specs as product truth, progress as active execution, and workflows
+as local operating procedures.
 ```
 
 Plan a POC:
 
 ```text
-Create the POC spec and POC progress items. Each item should state the
-feasibility question, expected proof, verification, and how the result should
-be promoted or discarded.
+Follow .agents/workflows/poc.md. Create POC records only for specific
+feasibility questions, risky integrations, architecture options, or workflow
+proofs that need evidence before MVP. Record the expected proof, verification,
+and promotion or discard decision.
 ```
 
 Promote POC results:
@@ -210,6 +252,16 @@ change product scope; only group work by priority, dependency, and timebox.
 Start execution:
 
 ```text
-Convert accepted tasks into active progress items. Each item should link to the
-spec task, relevant references, user workflow, outputs, and verification.
+Follow .agents/AGENTS.md and .agents/workflows/progress.md. Convert accepted
+tasks into active progress items only when execution is requested. Each item
+should link to spec records, relevant references, outputs, and verification.
+```
+
+Reconcile post-MVP feedback:
+
+```text
+Follow .agents/workflows/post-mvp.md and
+.agents/workflows/batch-reconciliation.md. Audit feedback first, pick 8-15
+related mismatches, implement them together, verify changed surfaces, and
+update progress once at the end.
 ```

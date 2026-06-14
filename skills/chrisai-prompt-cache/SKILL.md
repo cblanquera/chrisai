@@ -31,8 +31,8 @@ Use this skill when the user asks to:
 
 Do not use this skill for ordinary project guidance that should live in
 `AGENTS.md`, active multi-item execution that belongs in
-`chrisai-process-agent-progress`, or private personal recall that Codex
-Memories can handle better.
+`.agents/workflows/progress.md`, or private personal recall that Codex Memories
+can handle better.
 
 ## Ownership
 
@@ -51,8 +51,9 @@ This skill does not own:
 - domain-specific implementation decisions
 - active task tracking after a conversation becomes execution work
 
-Use `chrisai-process-agent-progress` when cached context turns into a large active
-work plan with item statuses, owners, or handoffs.
+Use `.agents/workflows/progress.md` when cached context turns into a large
+active work plan with item statuses, owners, or handoffs. If the project lacks
+that workflow, use `chrisai-planning-agent-spec` to repair the `.agents` setup.
 
 ## Core Rule
 
@@ -180,5 +181,5 @@ handling.
 - Use Codex Memories for automatic personal/local recall.
 - Use this skill for explicit, auditable conversation references keyed by a
   copied Chat ID or a repo-local cache ID.
-- Use `chrisai-process-agent-progress` for active task execution state.
+- Use `.agents/workflows/progress.md` for active task execution state.
 - Use MCP or app connectors for live external systems and private data.

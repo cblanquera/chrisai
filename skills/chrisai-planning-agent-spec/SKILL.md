@@ -1,206 +1,180 @@
 ---
 name: chrisai-planning-agent-spec
-description: Use when planning should create or maintain an AI-readable file-based agent spec under `.agents/specs/`, including greenfield prompts, imported planning docs, brownfield codebases, readiness review, or conversion into implementation progress.
+description: Use when creating, repairing, migrating, or standardizing a project-local `.agents/` knowledge base for AI-readable planning, workflows, specs, progress, releases, and handoffs.
 ---
 
 # ChrisAI Planning Agent Spec
 
-Use this router when the deliverable is an AI-readable project knowledge base
-under `.agents/`, with durable product and feature scope under
-`.agents/specs/`.
+Use this skill to bootstrap or repair a project-local `.agents/` knowledge base.
+The deliverable is the `.agents` operating surface itself: local rules,
+workflow files, folder structure, and only the initial records needed to make
+the project recoverable.
 
-The agent spec creates an AI-readable planning layer for new work. It ingests
-the same kinds of inputs as traditional planning, but the output is the
-`.agents/` knowledge base, not a root-level human planning document tree.
+After setup, future chats should follow `.agents/AGENTS.md` and
+`.agents/workflows/` even when no ChrisAI skill is active.
 
-## Layer Model
+## Activation
 
-Use these boundaries:
+Use this skill when any of these are true:
+
+- no `.agents/` folder exists
+- `.agents/` exists but lacks `.agents/AGENTS.md`
+- `.agents/` exists but lacks `.agents/workflows/`
+- existing `.agents/` content needs migration, repair, or standardization
+- the user explicitly asks to initialize or update the `.agents` operating
+  model
+
+Do not use this skill as the normal ongoing review, validation, freeze, sprint,
+or progress workflow after `.agents/AGENTS.md` and `.agents/workflows/` exist.
+In that case, read the local `.agents/AGENTS.md` and the relevant workflow file.
+
+## Setup Modes
+
+Classify the project before creating records:
+
+- `greenfield`: prompt, product idea, or sparse project with little existing
+  code or planning material. Use
+  [setup-greenfield](references/setup-greenfield.md).
+- `brownfield`: existing codebase or product behavior must be reflected. Use
+  [setup-brownfield](references/setup-brownfield.md).
+- `import`: existing human planning documents are the main source. Use
+  [setup-import](references/setup-import.md).
+- `hybrid`: existing code and planning documents both matter. Use brownfield
+  setup for current state and import setup for intended state.
+
+If classification is uncertain, proceed with the safest minimal setup and mark
+uncertainty in records or status instead of blocking on exhaustive intake.
+
+## Required Setup Output
+
+Create or repair:
+
+1. `.agents/AGENTS.md`
+2. `.agents/workflows/`
+3. top-level `.agents` folders from
+   [agent-spec-structure](references/agent-spec-structure.md)
+4. `.agents/specs/manifest.md`
+5. one initial spec folder only when setup has enough scope to name a bounded
+   product, feature, migration, or initiative
+
+`.agents/AGENTS.md` is the local law. Keep it concise and high authority. Put
+detailed operating procedures in `.agents/workflows/*.md`, not in
+`.agents/AGENTS.md`.
+
+## Workflow Files
+
+Generate or repair workflow files from these references:
+
+- [workflow-import](references/workflow-import.md)
+- [workflow-poc](references/workflow-poc.md)
+- [workflow-mvp](references/workflow-mvp.md)
+- [workflow-post-mvp](references/workflow-post-mvp.md)
+- [workflow-ad-hoc](references/workflow-ad-hoc.md)
+- [workflow-batch-reconciliation](references/workflow-batch-reconciliation.md)
+- [workflow-review](references/workflow-review.md)
+- [workflow-validation](references/workflow-validation.md)
+- [workflow-freeze](references/workflow-freeze.md)
+- [workflow-progress](references/workflow-progress.md)
+- [workflow-handoff](references/workflow-handoff.md)
+- [source-retirement](references/source-retirement.md)
+- [workflow-wireframes](references/workflow-wireframes.md)
+- [workflow-creatives](references/workflow-creatives.md)
+
+`setup-greenfield.md` and `setup-brownfield.md` are skill-internal setup
+references. Do not generate them into `.agents/workflows/`; future chats should
+invoke this skill when setup or repair is needed.
+
+Workflow files should say when to use the workflow, what to read first, what it
+may update, stop conditions, and handoff expectations. They should not duplicate
+large source documents or full skill bodies.
+
+## Core Boundaries
 
 - `.agents/plans/`: original planning documents, PRDs, stakeholder notes, and
-  imported source material that should be preserved in human form.
+  imported source material preserved in human form.
 - `.agents/poc/`: POC findings, results, snippets, and implementation notes.
   Actual prototype code should live outside `.agents/`.
-- `.agents/references/`: arbitrary reusable context files such as detailed
-  explanations, examples, snippets, research, rationale, and implementation
-  patterns that keep specs and progress packets compact.
+- `.agents/wireframes/`: low-fidelity screens, flows, layout notes, wireframe
+  reviews, and links to design files or screenshots.
+- `.agents/creatives/`: visual direction, brand explorations, moodboards, asset
+  briefs, copy explorations, and creative review notes.
+- `.agents/references/`: long explanations, examples, snippets, research,
+  rationale, source excerpts, and implementation patterns.
 - `.agents/specs/`: durable intent, requirements, decisions, risks, evidence,
   reviews, indexes, and proposed task records.
-- `.agents/sprints/`: optional timeboxed execution plans that group accepted
-  tasks or progress items without redefining product scope.
+- `.agents/sprints/`: optional timeboxed execution views derived from specs and
+  progress.
 - `.agents/progress/`: active execution state, assigned work packets, batches,
-  progress logs, and handoffs.
+  logs, outputs, and handoffs.
 - `.agents/releases/`: release plans, release notes, readiness summaries, and
-  verification evidence for shipped or prepared releases.
+  verification evidence.
 
-Do not create a root `plans/` folder as this skill's deliverable. If the user
-explicitly asks for root-level planning documents while invoking this skill,
-map that request into `.agents/plans/`, `.agents/specs/`, `.agents/references/`,
-and related `.agents/` folders. If the user truly needs standalone human
-documents outside `.agents/`, route that as a separate documentation task
-instead of handling it inside this skill.
+Do not create a root `plans/` folder as this skill's deliverable. If `.agents/`
+is not writable, do not silently fall back to another folder; report the
+permission problem and ask for a writable target.
 
-If `.agents/` is not writable, do not silently fall back to root `plans/` or
-another folder. Report that the agent-spec knowledge base cannot be created in
-the current permission profile and ask for writable `.agents/` access or a
-different explicit target.
+## Local AGENTS.md Rules
 
-Use consistent planning terms:
+`.agents/AGENTS.md` must include:
 
-- A `spec` is the durable source of truth for product intent and acceptance. It
-  is not a sprint, work queue, or status log.
-- A `sprint` is an optional timeboxed execution view assembled from approved
-  spec records and progress state. Do not create a spec folder per sprint.
-- A `TASK` record is proposed implementation work. It becomes active only after
-  it is converted into an agent-progress item.
-- A progress item is an executable delivery packet with an owner, output,
-  status, acceptance checks, and verification.
+- purpose of `.agents`
+- source-of-truth boundaries for specs, progress, references, plans, sprints,
+  wireframes, creatives, and releases
+- Markdown-only file-size and split-refactor rules for `.agents/**/*.md`
+- workflow routing through `.agents/workflows/`
+- stable record ID expectations
+- current-state versus intended-state guidance for brownfield work
+- no invented scope, status, commitments, or verification
+- audit-first batch reconciliation for bulk feedback and post-MVP mismatches
+- ad hoc request classification before it becomes hidden product truth
+- promotion rule for durable facts introduced in summaries, reviews, sprint
+  plans, release notes, or progress logs
+- source-retirement rule before declaring old docs obsolete
 
-When the user uses `spec`, `sprint`, `task`, or `item` interchangeably, preserve
-the user's intent but normalize the durable artifacts to these boundaries.
+Prefer `.agents/AGENTS.md` over `.agents/CONTEXT.md` for rules. `CONTEXT.md`
+may exist as supporting context, but it is not the operating policy surface.
 
-Use [README](README.md) when the user needs the mental model for how specs,
-sprints, tasks, progress items, POC, MVP, references, and releases fit
-together.
+File-size and split-refactor rules apply only to generated or maintained
+`.agents/**/*.md` files. Before appending to one of those files, decide whether
+the addition keeps the file compact and under the local line limit. Append only
+compact status, record, or routing facts. If the file is near the limit, the
+addition is large, or the content is long-form rationale, examples, source
+excerpts, transcript summaries, audit notes, issue lists, screenshot notes,
+research, or detailed evidence, do not append directly. Refactor the file by
+splitting it, or move the long-form material into `.agents/references/`, a
+dedicated batch file, or a log file and link to it.
 
-## POC To MVP Boundary
+Do not apply Markdown file-size rules to HTML, CSS, JavaScript, TypeScript,
+JSON, images, prototype code, generated artifacts, or source files.
 
-A POC step is valid and often should happen before MVP implementation.
+## Record Rules
 
-Use POCs to answer feasibility questions, validate risky technical paths,
-compare architecture options, test integration behavior, or prove a workflow can
-work in principle. Keep POC scope explicit, narrow, and disposable unless the
-user asks to harden it.
+Read [record-model](references/record-model.md) before creating or repairing
+records.
 
-Before treating POC output as MVP scope, run a POC-to-MVP promotion step:
+Use stable IDs such as `REQ-001`, `CAP-001`, `DEC-001`, `RISK-001`, `AC-001`,
+`EVD-001`, and `TASK-001`. Keep records compact, source-linked, and durable.
+Use `.agents/references/` for detail that would make records large.
 
-1. Record what the POC proved, failed to prove, and left unknown.
-2. Decide which POC behavior should be kept, replaced, or discarded.
-3. Extract customer-facing capabilities, workflows, data behavior, states,
-   acceptance criteria, and verification into spec records.
-4. Record the viability gaps between the proof and the intended MVP.
-5. Freeze or create progress items from the intended MVP records, not directly
-   from the POC artifact.
+A `TASK` record is proposed work. Active execution belongs in
+`.agents/progress/` and should be governed by `.agents/workflows/progress.md`.
 
-Treat MVP as minimal viable product, not proof of concept.
+## Stop Conditions
 
-An MVP scope must describe the smallest customer-usable product slice that can
-support a real target workflow. It may be narrow, but it must be coherent enough
-for the intended customer or evaluator to use without reading the underlying
-POC notes.
+Stop setup when:
 
-Do not mark work as MVP-ready when it only proves a technical concept, renders
-placeholder UI, or exposes raw implementation scaffolding. A POC can inform an
-MVP, but the spec must extract customer-facing capabilities, workflows,
-acceptance criteria, data behavior, error or empty states, and verification
-from the POC before freeze or execution planning.
+- `.agents/AGENTS.md` exists and contains the local operating rules
+- `.agents/workflows/` contains the workflow files needed for future chats
+- folder structure exists or missing folders are intentionally deferred
+- initial records or manifests are coherent enough for future work
+- open questions, blockers, and next workflow are stated
 
-When a project already has POC screens or prototypes, record them as current
-state or evidence. Then write intended-state requirements and acceptance
-criteria for the customer-facing MVP instead of continuing to build the POC as
-the product surface.
+Do not continue into implementation unless the user explicitly asks for active
+execution after setup.
 
-Do not recreate a large human planning document forest inside `.agents/specs/`.
-Preserve or link source material when it contains useful detail, rationale,
-validation history, or stakeholder context that compact records should not
-copy.
+## Removed Public Routes
 
-Before any legacy planning, progress, or documentation source is removed,
-archived, or declared obsolete, run a source retirement audit. Discover actual
-project sources instead of assuming fixed folder names. Examples may include
-human planning folders, `docs/`, `docs/adr/`, existing `specs/`, `roadmap/`,
-`.task-bank/`, issue exports, sprint notes, PRDs, research notes, or
-project-specific folders. Treat examples as non-exhaustive; classify every
-discovered source by whether its durable facts were extracted into records, its
-active execution state moved to progress, and its remaining rationale,
-validation history, examples, or stakeholder context must be preserved.
-
-## Specialist Routes
-
-- Use `chrisai-planning-agent-spec-discovery` when starting from a prompt, product
-  idea, or sparse greenfield description.
-- Use `chrisai-planning-agent-spec-import` when starting from human planning
-  documents and little or no existing code.
-- Use `chrisai-planning-agent-spec-brownfield` when starting from an existing
-  codebase, with or without human documentation.
-- Use `chrisai-planning-agent-spec-review` when an agent spec needs adversarial
-  readiness, risk, consistency, or evidence review.
-- Use `chrisai-planning-agent-spec-validation` when blockers, high-risk
-  findings, assumptions, questions, or decisions need evidence before freeze.
-- Use `chrisai-planning-agent-spec-freeze` when approved spec records should be
-  frozen into implementation-facing indexes, proposed task records, and
-  optional agent-progress items.
-
-## Pure Greenfield Readiness Loop
-
-For pure greenfield projects, the agent-spec path must preserve the same
-readiness discipline as the legacy greenfield flow while keeping records as the
-source of truth:
-
-1. Discovery creates compact records and, when a grill session would otherwise
-   lack enough context, a grill-session packet under the spec `reviews/`
-   folder or `.agents/references/`.
-2. The grill or adversarial review results are saved under `reviews/`, using
-   `reviews/readiness-review.md` for the narrative review and
-   `reviews/findings.md` for durable findings.
-3. When review happened outside the current session, ask for the review file
-   path before completing or updating the initial spec records. Import durable
-   findings into questions, risks, assumptions, decisions, evidence, or
-   acceptance records instead of treating the external file as the only source.
-4. After the initial review exists, repeat validation-cycle passes with
-   `chrisai-planning-agent-spec-validation`, updating review/status records
-   after each pass, until unresolved `BLOCKER` findings are `0` and unresolved
-   `HIGH` findings are resolved, accepted, or explicitly deferred with
-   rationale.
-
-Do not invoke implementation planning from the pure greenfield agent-spec path
-until this validation cycle has completed or the user explicitly accepts the
-remaining risk. Do not restart discovery or regenerate the grill-session packet
-unless new scope makes the existing records or packet materially stale.
-
-## Core Rules
-
-- Keep spec record files compact.
-- Treat compact records as short, stable, source-linked planning facts, not
-  lossy replacements for every source document.
-- Start with grouped record files, not one file per record.
-- Use stable record IDs such as `REQ-001`, `DEC-001`, and `AC-001`.
-- Treat standalone human planning documents as outside this skill's primary
-  deliverable. Use `.agents/plans/` for preserved source material and
-  `.agents/references/` for reusable long-form context.
-- Do not create root-level `plans/` documents as a fallback for missing
-  `.agents/` write access.
-- Generate human-readable summaries or release/sprint views only inside the
-  `.agents/` knowledge base unless the user explicitly switches to a
-  documentation-focused task.
-- Before creating human-readable `.agents/` views, check whether the needed
-  records, reviews, and progress data exist. Report gaps instead of inventing
-  missing scope, status, or commitments.
-- If a human-readable `.agents/` view introduces new scope, decisions, risks,
-  assumptions, acceptance criteria, or tasks, promote that information back into
-  records or progress before treating it as durable.
-- Before saying a legacy source can be deleted or retired, produce an explicit
-  source retirement decision for that source. If source material is only linked
-  by reference, do not call it safely removable.
-- Promote durable findings from logs or reviews into records.
-- Distinguish current state from intended state for brownfield work.
-- Route active execution to `chrisai-process-agent-progress`.
-  Use `.agents/specs/` for agreed intent and `.agents/progress/` for delivery
-  state.
-
-## Structure
-
-Read [agent-spec-structure](references/agent-spec-structure.md) before creating a
-new agent spec or changing folder layout.
-
-Read [record-model](references/record-model.md) when creating, importing,
-reviewing, or freezing records.
-
-## Standalone Rule
-
-This family is self-contained. Do not load or defer to other planning skill
-families for discovery, review, validation, or freeze behavior.
-
-When migrating human planning documents, import them as source material and
-extract compact records. Do not copy every legacy document into
-`.agents/specs/`.
+Older specialist skills for discovery, brownfield import, review, validation,
+freeze, and agent progress have been removed from the active distribution. Do
+not route to those former skill names. Use this setup skill to install
+project-local rules and workflow files instead.

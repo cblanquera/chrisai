@@ -1,6 +1,6 @@
 interface:
   display_name: "ChrisAI Planning Agent Spec"
-  short_description: "Routes AI-readable agent spec planning"
-  default_prompt: "Use $chrisai-planning-agent-spec to create or maintain a compact AI-readable agent spec under .agents/specs."
+  short_description: "Bootstraps project-local .agents rules and workflows"
+  default_prompt: "Use $chrisai-planning-agent-spec to create, repair, migrate, or standardize a project-local .agents knowledge base with AGENTS.md and workflow files."
 policy:
   allow_implicit_invocation: true

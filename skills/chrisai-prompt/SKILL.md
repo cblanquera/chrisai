@@ -33,6 +33,6 @@ Do not duplicate specialist instructions here. Route, then defer.
 - Do not use `chrisai-prompt-cache` for required repo guidance that belongs in
   `AGENTS.md`.
 - Do not use `chrisai-prompt-cache` for active multi-item execution state that
-  belongs in `chrisai-process-agent-progress`.
+  belongs in `.agents/workflows/progress.md`.
 - Do not use `chrisai-prompt-cache` for private automatic personal recall that
   Codex Memories can handle better.

@@ -53,14 +53,8 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-planning` | Route AI-readable agent-spec planning, readiness review, MVP freeze, or backlog generation before implementation. |
-| `chrisai-planning-agent-spec` | Route compact `.agent/specs/` planning for greenfield prompts, imported docs, brownfield projects, review, and freeze. |
-| `chrisai-planning-agent-spec-discovery` | Discover a pure greenfield product from a prompt into compact `.agent/specs/` records and indexes. |
-| `chrisai-planning-agent-spec-import` | Convert human planning docs or legacy `plans/` corpuses into compact spec records. |
-| `chrisai-planning-agent-spec-brownfield` | Create or update spec records from an existing codebase while tracking current state, intended state, and gaps. |
-| `chrisai-planning-agent-spec-review` | Review `.agent/specs/` records for readiness, risk, consistency, evidence, and traceability. |
-| `chrisai-planning-agent-spec-validation` | Validate unresolved spec questions, assumptions, risks, decisions, or findings with evidence before freeze. |
-| `chrisai-planning-agent-spec-freeze` | Freeze approved spec records into implementation-facing indexes, proposed task records, and optional `.agent/progress/` work packets. |
+| `chrisai-planning` | Route `.agents` setup, repair, migration, or standardization before implementation. |
+| `chrisai-planning-agent-spec` | Bootstrap project-local `.agents/AGENTS.md`, `.agents/workflows/`, folder structure, and initial records. |
 
 ### Design
 
@@ -78,9 +72,8 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-process` | Route ChrisAI process work to feedback-loop or agent-progress specialists. |
+| `chrisai-process` | Route ChrisAI process work to feedback-loop handling or local `.agents/workflows/progress.md` guidance. |
 | `chrisai-process-feedback-loop` | Manage staged feedback loops for reviewable artifacts shown in the in-app browser. |
-| `chrisai-process-agent-progress` | Coordinate large multi-item tasks with filesystem-backed work packets, decisions, logs, handoffs, and optional separate-session delegation. |
 
 ### QA
 

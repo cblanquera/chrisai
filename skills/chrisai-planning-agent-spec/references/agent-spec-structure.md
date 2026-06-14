@@ -13,6 +13,22 @@ inside `.agents/plans/` and keep the knowledge base under `.agents/`.
 .agents/
   AGENTS.md
 
+  workflows/
+    import.md
+    poc.md
+    mvp.md
+    post-mvp.md
+    ad-hoc.md
+    batch-reconciliation.md
+    review.md
+    validation.md
+    freeze.md
+    progress.md
+    handoff.md
+    source-retirement.md
+    wireframes.md
+    creatives.md
+
   plans/
     source-documents.md
 
@@ -20,6 +36,16 @@ inside `.agents/plans/` and keep the knowledge base under `.agents/`.
     findings.md
     results.md
     snippets/
+
+  wireframes/
+    flows.md
+    screens.md
+    reviews.md
+
+  creatives/
+    direction.md
+    assets.md
+    reviews.md
 
   references/
     terms/
@@ -81,12 +107,137 @@ Keep long explanations, examples, snippets, research, and rationale in
 `.agents/references/` and link to them from specs, sprints, releases, and
 progress items.
 
+## Local AGENTS.md
+
+Create or update `.agents/AGENTS.md` whenever an agent-spec knowledge base is
+created or materially changed. Use `AGENTS.md` as the project-local rule file
+for future agents working inside `.agents/`. Do not use `CONTEXT.md` as the
+rules surface for this skill; if it exists, treat it as supporting context only.
+
+The file should be concise and include rules equivalent to:
+
+```markdown
+# .agents Rules
+
+This folder is an AI-readable planning and execution knowledge base.
+
+Start by reading the workflow file that matches the task:
+
+- `workflows/import.md` for existing planning documents
+- `workflows/poc.md` for feasibility proofs before MVP scope
+- `workflows/mvp.md` for the smallest customer-usable product slice
+- `workflows/post-mvp.md` for feedback reconciliation, hardening, and ongoing
+  product work after MVP
+- `workflows/ad-hoc.md` for unplanned requests
+- `workflows/batch-reconciliation.md` for bulk feedback, QA mismatches, and
+  related fixes
+- `workflows/review.md` for readiness, risk, consistency, or traceability review
+- `workflows/validation.md` for evidence-gathering on blockers or risky claims
+- `workflows/freeze.md` for turning accepted records into implementation
+  contracts
+- `workflows/progress.md` for active execution packets, logs, and handoffs
+- `workflows/source-retirement.md` before declaring old docs obsolete
+- `workflows/wireframes.md` for low-fidelity screens and flow planning
+- `workflows/creatives.md` for visual direction, asset briefs, and creative
+  review notes
+
+## Source Of Truth
+
+- `.agents/specs/` contains durable product intent, requirements, decisions,
+  risks, evidence, acceptance criteria, indexes, and proposed tasks.
+- `.agents/progress/` contains active execution state and work packets.
+- `.agents/wireframes/` contains low-fidelity screens, flows, layout notes, and
+  wireframe review notes.
+- `.agents/creatives/` contains visual direction, brand explorations,
+  moodboards, asset briefs, copy explorations, and creative review notes.
+- `.agents/references/` contains long-form support material that keeps records
+  compact.
+- `.agents/plans/` preserves original human planning source material.
+- `.agents/sprints/` and `.agents/releases/` are derived views, not product
+  truth.
+
+## Markdown File Size
+
+- Apply these file-size and split-refactor rules only to `.agents/**/*.md`
+  files.
+- Do not apply them to HTML, CSS, JavaScript, TypeScript, JSON, images,
+  prototypes, or source files outside Markdown planning artifacts.
+- Keep active `.agents` Markdown files under 500 lines.
+- Before appending to a Markdown file, decide whether the addition keeps the
+  file compact. Append only compact status, record, or routing facts.
+- If a Markdown file approaches 500 lines or the addition is large, refactor the
+  file by splitting it before adding more content.
+- Start with grouped record files. Refactor by splitting by record type, phase,
+  source, or ownership only when size, review, or parallel editing requires it.
+- Do not create giant narrative specs or copy full PRDs into `.agents/specs/`.
+- Put long rationale, examples, research, source excerpts, transcript
+  summaries, and detailed evidence in `.agents/references/`, then link to them.
+- During post-MVP, batch reconciliation, and ongoing progress, do not split
+  files just because the phase is post-MVP. Split only when the target Markdown
+  file is near the line limit, the addition is large, or the content belongs in
+  references, a batch file, or a log.
+
+## Record Rules
+
+- Use stable record IDs such as `REQ-001`, `AC-001`, `DEC-001`, `RISK-001`,
+  `EVD-001`, and `TASK-001`.
+- Keep records short, source-linked, and durable.
+- For brownfield work, distinguish current state, intended state, and gaps.
+- Claims about existing behavior need source links, file paths, command output,
+  screenshots, or explicit confidence labels.
+- Bulk feedback and post-MVP mismatches should use audit-first batch
+  reconciliation before editing.
+- Ad hoc requests must be classified before they become hidden product truth.
+
+## Boundary Rules
+
+- Do not create a spec folder per sprint.
+- Proposed `TASK` records are not active work until converted into
+  `.agents/progress/` items.
+- Human-readable views must be derived from records and progress state. If data
+  is missing, say it is missing.
+- If a summary, sprint plan, release note, or review introduces new scope,
+  decisions, risks, acceptance criteria, evidence, or tasks, promote those
+  facts back into records or progress before treating them as durable.
+- Do not declare legacy sources obsolete without a source retirement audit.
+```
+
+## Workflow Files
+
+Create `.agents/workflows/` during setup. Workflow files are compact local
+operating procedures that let future chats work inside `.agents/` without
+loading ChrisAI skills. Each workflow should include:
+
+- when to use it
+- files to read first
+- files it may update
+- step-by-step process
+- stop conditions
+- handoff expectations
+
+Use the corresponding files in this skill's `references/` folder as templates.
+Keep workflow files short and project-local; put long examples or source
+material in `.agents/references/`.
+
+`setup-greenfield.md` and `setup-brownfield.md` are skill-internal references,
+not project-local workflows. If setup or repair is needed later, invoke
+`chrisai-planning-agent-spec` again.
+
 ## Top-Level Folders
 
+- `.agents/workflows/`: local operating procedures for import, POC, MVP,
+  post-MVP, ad hoc work, batch reconciliation, review, validation, freeze,
+  progress, handoffs, source retirement, wireframes, and creatives.
 - `.agents/plans/`: original planning documents, PRDs, stakeholder notes, and
   imported source material preserved in human form.
 - `.agents/poc/`: POC results, findings, snippets, and implementation notes.
   Actual prototype code should live outside `.agents/`.
+- `.agents/wireframes/`: low-fidelity screens, flows, layout notes, wireframe
+  reviews, and links to design files or screenshots. Final UI source belongs
+  outside `.agents/`.
+- `.agents/creatives/`: visual direction, brand explorations, moodboards, asset
+  briefs, copy explorations, and creative review notes. Large binaries and
+  final production assets should live outside `.agents/` and be linked.
 - `.agents/references/`: arbitrary reusable context files that keep specs and
   progress items small.
 - `.agents/specs/`: durable product and feature scope.

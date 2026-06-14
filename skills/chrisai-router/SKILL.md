@@ -82,13 +82,13 @@ Choose the narrowest family route that fully owns the task.
 - Add `chrisai-process-feedback-loop` through `chrisai-process` when the task
   shows a draft, prototype, rendered page, local app, screenshot, recording, or
   other reviewable artifact and expects approval or revision feedback.
-- Add `chrisai-process-agent-progress` through `chrisai-process` when the task is
+- Use `.agents/workflows/progress.md` through `chrisai-process` when the task is
   large enough to need work packets, durable decisions, progress logs,
   handoffs, or possible separate-session coordination.
-- Prefer `chrisai-planning` over `chrisai-process-agent-progress` when the
-  deliverable is durable planning/specification state, readiness review, or
-  backlog generation. Existing implementation work, migrations, and active
-  execution tracking should use process and coding routes instead.
+- Prefer `chrisai-planning` when the deliverable is `.agents` setup, repair,
+  migration, standardization, or missing workflow installation. Existing
+  implementation work and active execution tracking should use the relevant
+  local workflow plus coding, design, docs, or process routes.
 - Prefer `chrisai-qa-playwright` over coding or design routes when the primary
   deliverable is rendered browser verification rather than creation.
 - If the request crosses families, choose the family that owns the user's

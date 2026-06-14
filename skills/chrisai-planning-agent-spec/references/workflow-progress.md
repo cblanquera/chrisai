@@ -1,0 +1,108 @@
+# Progress Workflow
+
+Use this workflow for large or multi-item execution that needs recoverable
+state under `.agents/progress/`.
+
+## Read First
+
+1. `.agents/AGENTS.md`
+2. `.agents/progress/brief.md`
+3. `.agents/progress/manifest.md`
+4. `.agents/progress/conventions.md`, when conventions affect the item
+5. `.agents/progress/decisions.md`, when prior decisions affect the item
+6. one assigned item file or batch file
+7. source files directly required by the assigned work
+
+Do not load the full progress bank unless acting as coordinator or resolving a
+cross-item conflict.
+
+## Structure
+
+```text
+.agents/progress/
+  brief.md
+  manifest.md
+  decisions.md
+  conventions.md
+  outputs.md
+  batches/
+  items/
+  logs/
+```
+
+## Process
+
+1. Create the minimal progress bank when needed.
+2. Break work into stable item IDs.
+3. Write one item file per independent unit of work.
+4. For product or MVP work, link each item to the relevant customer workflow,
+   capability, requirement, or acceptance record.
+5. For POC work, state the feasibility question and the decision needed after
+   the proof.
+6. For post-MVP or bulk feedback, read `workflows/batch-reconciliation.md`
+   before editing when there are more than five small or related mismatches.
+7. Group related item IDs into batch files when batching improves focus,
+   reduces repeated verification, or avoids inefficient micro-passes.
+8. Keep risky, unclear, or contract-changing work as one item at a time.
+9. Work on one assigned item or batch at a time.
+10. Update the manifest after each item or batch changes state.
+11. Record durable execution decisions in `decisions.md`.
+12. Write a handoff before stopping, switching sessions, or delegating.
+
+## Item Versus Batch
+
+Use one item at a time for architecture, schema, auth, permissions, payment,
+security, data model, deployment, unclear acceptance, validation blockers,
+high rollback risk, or changes that touch unrelated surfaces.
+
+Use batches for related low-to-medium-risk feedback by screen, workflow,
+component, copy layer, responsive behavior, visual consistency, missing states,
+or QA mismatches that can be verified together.
+
+Batching work does not mean splitting files by default. Split or refactor a
+Markdown file only when the target file is near the line limit, the addition is
+large, or the content belongs in references, a batch file, or a log.
+
+## Item Packet Template
+
+```markdown
+# item-001: <short title>
+
+Status: ready
+Type:
+Phase: poc | mvp | post-mvp | internal
+Priority:
+Owner: unassigned
+
+## Goal
+
+## Inputs
+
+## Spec Links
+
+## Outputs
+
+## Acceptance Criteria
+
+## Verification
+
+## Dependencies
+
+## Notes
+```
+
+## Status Model
+
+Use `planned`, `ready`, `in_progress`, `blocked`, `review`, `done`, and
+`verified` unless the project defines a narrower model.
+
+Only mark an item `verified` after the stated verification was actually run.
+
+## Stop Conditions
+
+- manifest reflects current status
+- item or batch file is updated
+- log or handoff records what changed
+- new durable decisions are in `decisions.md`
+- next item or blocker is explicit
+- batch work updates progress once at the end of the batch

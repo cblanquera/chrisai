@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Process Agent Progress"
-  short_description: "Filesystem-backed agent progress for large multi-item work"
-  default_prompt: "Use $chrisai-process-agent-progress when active execution needs itemized work packets, execution decisions, progress logs, handoffs, or optional delegation while keeping each worker context small."
-policy:
-  allow_implicit_invocation: true
