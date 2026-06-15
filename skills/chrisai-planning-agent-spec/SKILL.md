@@ -65,10 +65,12 @@ detailed operating procedures in `.agents/workflows/*.md`, not in
 
 Generate or repair workflow files from these references:
 
+- [workflow-goal-manager](references/workflow-goal-manager.md)
+- [workflow-document-integrity](references/workflow-document-integrity.md)
 - [workflow-import](references/workflow-import.md)
 - [workflow-poc](references/workflow-poc.md)
 - [workflow-mvp](references/workflow-mvp.md)
-- [workflow-post-mvp](references/workflow-post-mvp.md)
+- [workflow-feature-development](references/workflow-feature-development.md)
 - [workflow-ad-hoc](references/workflow-ad-hoc.md)
 - [workflow-batch-reconciliation](references/workflow-batch-reconciliation.md)
 - [workflow-review](references/workflow-review.md)
@@ -88,10 +90,14 @@ Workflow files should say when to use the workflow, what to read first, what it
 may update, stop conditions, and handoff expectations. They should not duplicate
 large source documents or full skill bodies.
 
+Generate or repair `.agents/plans/feature-goals.md` from
+[plan-feature-goals](references/plan-feature-goals.md) during setup or repair.
+
 ## Core Boundaries
 
 - `.agents/plans/`: original planning documents, PRDs, stakeholder notes, and
-  imported source material preserved in human form.
+  imported source material, feature-goal intake, and planning references
+  preserved in human form.
 - `.agents/poc/`: POC findings, results, snippets, and implementation notes.
   Actual prototype code should live outside `.agents/`.
 - `.agents/wireframes/`: low-fidelity screens, flows, layout notes, wireframe
@@ -125,7 +131,24 @@ permission problem and ask for a writable target.
 - stable record ID expectations
 - current-state versus intended-state guidance for brownfield work
 - no invented scope, status, commitments, or verification
-- audit-first batch reconciliation for bulk feedback and post-MVP mismatches
+- workflow routing for `goal-manager.md` and `document-integrity.md`
+- `.agents/plans/feature-goals.md` routing when choosing the next goal or
+  deciding whether to create a new spec
+- a rule that user prompts identifying new feature goals are recorded or
+  reconciled in `.agents/plans/feature-goals.md`
+- a rule that the manager compares the last or current progress item, progress
+  manifest next-action text, and feature goals before deciding next work
+- a rule that bounded product streams become sibling specs instead of being
+  added to the initial or root spec by default
+- a rule that document integrity runs before goal closeout, freeze,
+  release/batch completion, or significant document-affecting decisions
+- a rule that raw user feedback is validated or rejected before implementation,
+  then reconciled into records, progress, a single fix item, or a batch
+- a rule that accepted POC, wireframe, creative, review, QA, and feedback
+  outcomes are promoted into specs/progress before MVP freeze or
+  feature-development closeout
+- audit-first batch reconciliation for bulk feedback and feature-development
+  mismatches
 - ad hoc request classification before it becomes hidden product truth
 - promotion rule for durable facts introduced in summaries, reviews, sprint
   plans, release notes, or progress logs

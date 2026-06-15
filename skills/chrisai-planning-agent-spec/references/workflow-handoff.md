@@ -25,6 +25,9 @@ leaving a large task for a future agent.
 Active Scope:
 - <item IDs, batch ID, spec ID, or release ID>
 
+Loop Phase:
+- <intake | grill-review | gap-reconciliation | poc | design | freeze | implementation | qa-feedback | fix-reconciliation | closeout>
+
 Status:
 - <id>: <status> - <short reason>
 
@@ -50,4 +53,3 @@ Next Recommended Step:
 - Put durable decisions in records or `decisions.md`; reference them here.
 - Put long execution notes in the relevant log file.
 - Do not claim verification unless the check was run.
-

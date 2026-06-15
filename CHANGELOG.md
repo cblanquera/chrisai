@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.25 - 2026-06-16
+
+- Added goal-manager, document-integrity, and feature-goal intake templates to
+  `chrisai-planning-agent-spec` so generated `.agents` setups can orchestrate
+  documented goals, gate document drift, and preserve future feature goals.
+- Renamed the after-MVP workflow model to feature development and updated
+  generated `.agents` routing, phase labels, README guidance, and workflow
+  references accordingly.
+- Strengthened the planning workflow loop so POC, wireframe, creative, review,
+  QA, and feedback outcomes are validated, reconciled, promoted, and checked
+  before MVP freeze, feature-development closeout, or implementation fixes.
+
 ## 0.1.24 - 2026-06-12
 
 - Corrected agent-spec guidance so `chrisai-planning-agent-spec` creates and

@@ -13,6 +13,7 @@ or sparse project before implementation begins.
 
 - `.agents/AGENTS.md`
 - `.agents/workflows/`
+- `.agents/plans/feature-goals.md`
 - `.agents/specs/manifest.md`
 - `.agents/specs/<spec-id>/`
 - `.agents/references/`
@@ -33,7 +34,9 @@ If enough information exists, proceed and mark uncertainty explicitly.
 
 ## Process
 
-1. Choose one `<spec-id>` for the bounded initiative.
+1. Choose one `<spec-id>` for the bounded initiative. Keep the initial/root spec
+   for the base product shell and overall architecture; create sibling specs
+   later for bounded product streams.
 2. Ensure `.agents/AGENTS.md`, `.agents/workflows/`, and
    `.agents/specs/manifest.md` exist.
 3. Create the initial spec skeleton.
@@ -41,19 +44,21 @@ If enough information exists, proceed and mark uncertainty explicitly.
 5. Create compact grouped record files directly under the spec folder.
 6. Capture goals, users, desired capabilities, constraints, and non-goals as
    records.
-7. Draft requirements and functional behavior as compact `REQ` and `CAP`
+7. Capture high-level future feature goals in `.agents/plans/feature-goals.md`
+   as planning input, not execution order.
+8. Draft requirements and functional behavior as compact `REQ` and `CAP`
    records, not long specifications.
-8. Create `ASM`, `Q`, and `RISK` records for unsupported claims and ambiguous
+9. Create `ASM`, `Q`, and `RISK` records for unsupported claims and ambiguous
    scope.
-9. Create provisional `DEC` records for early decision candidates.
-10. Create POC or spike `TASK` records only when evidence is needed before a
+10. Create provisional `DEC` records for early decision candidates.
+11. Create POC or spike `TASK` records only when evidence is needed before a
     decision can be trusted.
-11. Define POC path, MVP scope, customer-facing MVP journeys, success measures,
+12. Define POC path, MVP scope, customer-facing MVP journeys, success measures,
     and validation needs as records.
-12. Create MVP-relevant `AC` records.
-13. Create routing files for open questions, MVP, status, source, and
+13. Create MVP-relevant `AC` records.
+14. Create routing files for open questions, MVP, status, source, and
     traceability only when useful.
-14. Create a review packet under `reviews/` or `.agents/references/` only when
+15. Create a review packet under `reviews/` or `.agents/references/` only when
     records alone would not support a productive review.
 
 ## Stop Conditions
@@ -64,4 +69,3 @@ If enough information exists, proceed and mark uncertainty explicitly.
 - review packet exists when needed
 - no active implementation work has been created unless the user explicitly
   asked for execution
-

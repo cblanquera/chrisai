@@ -73,7 +73,7 @@ Use these confidence labels:
 Status: proposed | accepted | blocked | deferred | superseded
 Confidence: proposed | imported | inferred | evidence-backed | conflicting | stale
 MVP: yes | no | unknown
-Phase: poc | mvp | post-mvp | unknown
+Phase: poc | mvp | feature-development | unknown
 Viability: poc-only | customer-usable | internal-only | unknown
 Source:
 Related:

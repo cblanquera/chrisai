@@ -14,10 +14,12 @@ inside `.agents/plans/` and keep the knowledge base under `.agents/`.
   AGENTS.md
 
   workflows/
+    goal-manager.md
+    document-integrity.md
     import.md
     poc.md
     mvp.md
-    post-mvp.md
+    feature-development.md
     ad-hoc.md
     batch-reconciliation.md
     review.md
@@ -31,6 +33,7 @@ inside `.agents/plans/` and keep the knowledge base under `.agents/`.
 
   plans/
     source-documents.md
+    feature-goals.md
 
   poc/
     findings.md
@@ -126,8 +129,13 @@ Start by reading the workflow file that matches the task:
 - `workflows/import.md` for existing planning documents
 - `workflows/poc.md` for feasibility proofs before MVP scope
 - `workflows/mvp.md` for the smallest customer-usable product slice
-- `workflows/post-mvp.md` for feedback reconciliation, hardening, and ongoing
-  product work after MVP
+- `workflows/feature-development.md` for bounded feature streams, feedback
+  reconciliation, hardening, polish, expansion, and ongoing product work after
+  MVP
+- `workflows/goal-manager.md` for autonomous goal execution across planning,
+  design, implementation, QA, documentation, and handoff loops
+- `workflows/document-integrity.md` for keeping specs, progress, indexes,
+  status, releases, and derived views consistent
 - `workflows/ad-hoc.md` for unplanned requests
 - `workflows/batch-reconciliation.md` for bulk feedback, QA mismatches, and
   related fixes
@@ -152,9 +160,13 @@ Start by reading the workflow file that matches the task:
   moodboards, asset briefs, copy explorations, and creative review notes.
 - `.agents/references/` contains long-form support material that keeps records
   compact.
-- `.agents/plans/` preserves original human planning source material.
+- `.agents/plans/` preserves original human planning source material,
+  feature-goal intake, and planning references.
 - `.agents/sprints/` and `.agents/releases/` are derived views, not product
   truth.
+- `.agents/plans/feature-goals.md` is planning input, not an implementation
+  queue. Check it when choosing the next goal or deciding whether to create a
+  new spec.
 
 ## Markdown File Size
 
@@ -172,10 +184,10 @@ Start by reading the workflow file that matches the task:
 - Do not create giant narrative specs or copy full PRDs into `.agents/specs/`.
 - Put long rationale, examples, research, source excerpts, transcript
   summaries, and detailed evidence in `.agents/references/`, then link to them.
-- During post-MVP, batch reconciliation, and ongoing progress, do not split
-  files just because the phase is post-MVP. Split only when the target Markdown
-  file is near the line limit, the addition is large, or the content belongs in
-  references, a batch file, or a log.
+- During feature development, batch reconciliation, and ongoing progress, do
+  not split files just because the phase is feature work. Split only when the
+  target Markdown file is near the line limit, the addition is large, or the
+  content belongs in references, a batch file, or a log.
 
 ## Record Rules
 
@@ -185,13 +197,29 @@ Start by reading the workflow file that matches the task:
 - For brownfield work, distinguish current state, intended state, and gaps.
 - Claims about existing behavior need source links, file paths, command output,
   screenshots, or explicit confidence labels.
-- Bulk feedback and post-MVP mismatches should use audit-first batch
+- Bulk feedback and feature-development mismatches should use audit-first batch
   reconciliation before editing.
 - Ad hoc requests must be classified before they become hidden product truth.
+- When deciding what to do next, compare the last or current progress item,
+  progress manifest next-action text, and `.agents/plans/feature-goals.md`.
+- If a user prompt identifies a new feature goal, record or reconcile it in
+  `.agents/plans/feature-goals.md` before routing it.
+- Raw user feedback must be validated or explicitly rejected before becoming
+  implementation work unless the evidence is already explicit in project
+  artifacts.
+- Accepted POC, wireframe, creative, review, QA, and feedback outcomes must be
+  promoted into specs, evidence, acceptance, progress, or release records before
+  freeze, closeout, or release readiness.
+- Handoffs and active progress should name the loop phase: intake,
+  grill-review, gap-reconciliation, POC, design, freeze, implementation,
+  QA-feedback, fix-reconciliation, or closeout.
 
 ## Boundary Rules
 
 - Do not create a spec folder per sprint.
+- Keep the initial/root product spec for the base product shell and overall
+  architecture. Bounded product streams should become sibling specs instead of
+  being added to the root spec by default.
 - Proposed `TASK` records are not active work until converted into
   `.agents/progress/` items.
 - Human-readable views must be derived from records and progress state. If data
@@ -200,6 +228,12 @@ Start by reading the workflow file that matches the task:
   decisions, risks, acceptance criteria, evidence, or tasks, promote those
   facts back into records or progress before treating them as durable.
 - Do not declare legacy sources obsolete without a source retirement audit.
+- Run `workflows/document-integrity.md` before closing a goal, freezing scope,
+  marking a release or batch complete, or after significant document-affecting
+  decisions.
+- Manual grill reports are review inputs. Reconcile their findings into
+  questions, risks, decisions, validation targets, accepted risks, or blockers;
+  do not treat them as implementation instructions by themselves.
 ```
 
 ## Workflow Files
@@ -226,10 +260,12 @@ not project-local workflows. If setup or repair is needed later, invoke
 ## Top-Level Folders
 
 - `.agents/workflows/`: local operating procedures for import, POC, MVP,
-  post-MVP, ad hoc work, batch reconciliation, review, validation, freeze,
-  progress, handoffs, source retirement, wireframes, and creatives.
+  feature development, goal management, document integrity, ad hoc work, batch
+  reconciliation, review, validation, freeze, progress, handoffs, source
+  retirement, wireframes, and creatives.
 - `.agents/plans/`: original planning documents, PRDs, stakeholder notes, and
-  imported source material preserved in human form.
+  imported source material, feature-goal intake, and planning references
+  preserved in human form.
 - `.agents/poc/`: POC results, findings, snippets, and implementation notes.
   Actual prototype code should live outside `.agents/`.
 - `.agents/wireframes/`: low-fidelity screens, flows, layout notes, wireframe
@@ -250,7 +286,15 @@ not project-local workflows. If setup or repair is needed later, invoke
 ## Spec ID
 
 Use one `<spec-id>` per bounded product, feature, migration, or major
-initiative. For Lean or Agile product work, prefer this sequence:
+initiative. Keep the initial/root product spec for the base product shell and
+overall architecture. Create a new sibling spec when a feature-development goal
+becomes a bounded product stream with its own acceptance criteria, risks,
+decisions, POCs, or multiple implementation items.
+
+Do not create a spec folder per sprint, topic, requirement, implementation
+task, bugfix, single wireframe round, or small UI tweak.
+
+For Lean or Agile product work, prefer this sequence:
 
 - `01-poc`
 - `02-mvp`
@@ -267,12 +311,20 @@ Good examples:
 - `plugin-marketplace`
 - `workspace-import-export`
 
-Avoid creating a spec folder per sprint, topic, requirement, or implementation
-task.
-
 If the user talks about a sprint, create or update `.agents/sprints/<sprint>.md`
 only after the durable spec scope exists. A sprint is a timebox for executing
 work, not the source of product intent.
+
+`.agents/plans/feature-goals.md` is planning input, not an implementation queue.
+Convert feature goals into bounded spec records, acceptance criteria, and
+progress items before implementation.
+
+## Feature Goals
+
+Purpose: high-level feature-goal intake.
+
+Use [plan-feature-goals](plan-feature-goals.md) when generating
+`.agents/plans/feature-goals.md`.
 
 ## Manifest
 

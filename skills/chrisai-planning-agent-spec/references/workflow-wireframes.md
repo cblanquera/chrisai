@@ -22,13 +22,25 @@ wireframe review records.
 2. Keep wireframes low-fidelity and focused on structure, hierarchy, states,
    and flow.
 3. Link screens to relevant requirements, capabilities, or acceptance records.
-4. Record review findings as requirements, questions, risks, or decisions when
+4. Run review rounds explicitly. Each round should name the phase, round
+   number, target artifact, what changed, concrete review questions, and what
+   approval unlocks.
+5. Treat round approval as approval for that round only unless the full design
+   scope is explicitly approved.
+6. Record review findings as requirements, questions, risks, or decisions when
    they affect product truth.
-5. Link external design files or screenshots instead of embedding large assets.
+7. Promote accepted flows, states, and UX decisions into spec records before
+   implementation or MVP freeze.
+8. Link external design files or screenshots instead of embedding large assets.
 
 ## Stop Conditions
 
 - wireframe scope and linked records are clear
 - open UX questions are recorded
+- review round, approval state, and unresolved feedback are explicit
 - durable changes are promoted back into specs
 
+## Handoff
+
+State the reviewed artifact, phase and round, accepted decisions, unresolved
+questions, durable records updated, and whether implementation is unlocked.

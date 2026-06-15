@@ -10,8 +10,10 @@ state under `.agents/progress/`.
 3. `.agents/progress/manifest.md`
 4. `.agents/progress/conventions.md`, when conventions affect the item
 5. `.agents/progress/decisions.md`, when prior decisions affect the item
-6. one assigned item file or batch file
-7. source files directly required by the assigned work
+6. `.agents/plans/feature-goals.md`, when selecting next work or routing a new
+   feature goal
+7. one assigned item file or batch file
+8. source files directly required by the assigned work
 
 Do not load the full progress bank unless acting as coordinator or resolving a
 cross-item conflict.
@@ -39,15 +41,22 @@ cross-item conflict.
    capability, requirement, or acceptance record.
 5. For POC work, state the feasibility question and the decision needed after
    the proof.
-6. For post-MVP or bulk feedback, read `workflows/batch-reconciliation.md`
+6. For feature-development or bulk feedback, read `workflows/batch-reconciliation.md`
    before editing when there are more than five small or related mismatches.
-7. Group related item IDs into batch files when batching improves focus,
+7. Do not turn raw user feedback directly into implementation work. Route it
+   through validation or planner reconciliation first unless the evidence is
+   already explicit in project artifacts.
+8. Group related item IDs into batch files when batching improves focus,
    reduces repeated verification, or avoids inefficient micro-passes.
-8. Keep risky, unclear, or contract-changing work as one item at a time.
-9. Work on one assigned item or batch at a time.
-10. Update the manifest after each item or batch changes state.
-11. Record durable execution decisions in `decisions.md`.
-12. Write a handoff before stopping, switching sessions, or delegating.
+9. Keep risky, unclear, or contract-changing work as one item at a time.
+10. Work on one assigned item or batch at a time.
+11. When selecting next work, compare the last or current item, manifest
+    next-action text, and `.agents/plans/feature-goals.md`.
+12. If a user prompt identifies a new feature goal, record or reconcile it in
+    `.agents/plans/feature-goals.md` before creating progress work.
+13. Update the manifest after each item or batch changes state.
+14. Record durable execution decisions in `decisions.md`.
+15. Write a handoff before stopping, switching sessions, or delegating.
 
 ## Item Versus Batch
 
@@ -70,7 +79,7 @@ large, or the content belongs in references, a batch file, or a log.
 
 Status: ready
 Type:
-Phase: poc | mvp | post-mvp | internal
+Phase: poc | mvp | feature-development | internal
 Priority:
 Owner: unassigned
 
@@ -97,6 +106,10 @@ Use `planned`, `ready`, `in_progress`, `blocked`, `review`, `done`, and
 `verified` unless the project defines a narrower model.
 
 Only mark an item `verified` after the stated verification was actually run.
+Use `review` when implementation is ready for user or QA feedback. If feedback
+arrives, keep or return the item to `review` or `blocked` until validation or
+planner reconciliation decides whether a fix item, batch, question, or scope
+change is needed.
 
 ## Stop Conditions
 
@@ -104,5 +117,7 @@ Only mark an item `verified` after the stated verification was actually run.
 - item or batch file is updated
 - log or handoff records what changed
 - new durable decisions are in `decisions.md`
+- feature-goal intake is checked when selecting next work
+- user feedback has been validated, rejected, or routed before fix work starts
 - next item or blocker is explicit
 - batch work updates progress once at the end of the batch

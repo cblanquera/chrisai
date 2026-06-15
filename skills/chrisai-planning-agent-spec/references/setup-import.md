@@ -8,6 +8,7 @@ compact `.agents/specs/` records while preserving source documents.
 - provided planning documents or folder list
 - `.agents/AGENTS.md`, if present
 - `.agents/plans/source-documents.md`, if present
+- `.agents/plans/feature-goals.md`, if present
 
 ## May Update
 
@@ -32,17 +33,19 @@ Use brownfield setup too when current code behavior must be inspected.
 1. Inventory source documents without loading more than needed.
 2. Choose or confirm one `<spec-id>`.
 3. Preserve or index source documents in `.agents/plans/source-documents.md`.
-4. Extract requirements, capabilities, constraints, decisions, risks,
+4. Capture high-level future feature goals in `.agents/plans/feature-goals.md`
+   as planning input, not execution order or root-spec scope.
+5. Extract requirements, capabilities, constraints, decisions, risks,
    assumptions, questions, acceptance criteria, and evidence into grouped
    records.
-5. Extract MVP journeys, validation goals, and customer workflows into `CAP`,
+6. Extract MVP journeys, validation goals, and customer workflows into `CAP`,
    `REQ`, and `AC` records instead of leaving them only as links.
-6. For POCs, spikes, prototypes, or feasibility reports, import what each proof
+7. For POCs, spikes, prototypes, or feasibility reports, import what each proof
    tested, what it proved, what remains unknown, and whether it should be
    promoted, replaced, discarded, or continued.
-7. Mark confidence as `imported` unless evidence upgrades or conflicts exist.
-8. Mark ambiguous, stale, duplicated, or conflicting content explicitly.
-9. Update traceability, open questions, status, source, and MVP viability
+8. Mark confidence as `imported` unless evidence upgrades or conflicts exist.
+9. Mark ambiguous, stale, duplicated, or conflicting content explicitly.
+10. Update traceability, open questions, status, source, and MVP viability
    indexes.
 
 ## Stop Conditions
@@ -52,4 +55,3 @@ Use brownfield setup too when current code behavior must be inspected.
 - durable facts are compact records
 - remaining unique source value is preserved or linked
 - next workflow is review, validation, freeze, or source retirement
-

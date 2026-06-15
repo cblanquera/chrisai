@@ -41,16 +41,27 @@ directly as MVP.
 2. Define the expected proof and what would count as failure or inconclusive
    evidence.
 3. Keep the proof narrow and disposable unless the user asks to harden it.
-4. Record what was tested, what worked, what failed, and what remains unknown.
-5. Decide whether the result should be promoted, replaced, discarded, or
+4. If a developer must prototype the proof, create or route to a progress item
+   that names the feasibility question, expected evidence, failure signal, and
+   files or systems that may be touched.
+5. Record what was tested, what worked, what failed, and what remains unknown.
+6. Decide whether the result should be promoted, replaced, discarded, or
    continued.
-6. Promote only accepted learning into MVP/customer-facing records.
-7. Do not create MVP progress items directly from raw POC artifacts.
+7. Promote only accepted learning into MVP/customer-facing records.
+8. Reconcile rejected or inconclusive proof results into risks, questions,
+   fallback decisions, or follow-up POC items.
+9. Do not create MVP progress items directly from raw POC artifacts.
 
 ## Stop Conditions
 
 - POC result is `proved`, `failed`, `inconclusive`, or `needs-follow-up`
 - promotion decision is recorded
+- developer/progress handoff is linked when the proof required implementation
 - MVP records are updated only for accepted learning
 - unresolved viability gaps are explicit
 
+## Handoff
+
+State the feasibility question, proof implementation target if any, evidence
+needed, result status, promotion decision, changed records, and next workflow:
+validation, MVP, freeze, progress, or another POC.

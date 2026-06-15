@@ -3,6 +3,14 @@
 Use this workflow when a `.agents/specs/` record set needs readiness, risk,
 consistency, evidence, or traceability review before freeze or implementation.
 
+This workflow judges record quality and readiness. Use
+`workflows/document-integrity.md` instead when the question is whether indexes,
+status files, progress state, releases, or derived views have drifted.
+
+Manual grill reports may be used as review input. This workflow reconciles
+their findings into questions, risks, decisions, evidence needs, or blockers;
+it does not replace the griller's adversarial questioning process.
+
 ## Read First
 
 1. `.agents/AGENTS.md`
@@ -11,6 +19,7 @@ consistency, evidence, or traceability review before freeze or implementation.
 4. `.agents/specs/<spec-id>/status.md`
 5. relevant grouped record files
 6. relevant evidence, traceability, and review packet files
+7. manual grill report, QA report, or feedback packet when provided
 
 Do not load unrelated spec folders.
 
@@ -34,10 +43,14 @@ Do not load unrelated spec folders.
 6. For MVP specs, audit whether compact records preserve customer-facing
    journeys and viability goals, not only implementation tasks or sprint phases.
 7. Classify findings by severity.
-8. Write or update review files.
-9. Promote durable findings into records as questions, risks, assumptions, or
+8. For manual grill reports, reconcile each material finding into a record,
+   blocker, validation target, accepted risk, or explicit rejection.
+9. Write or update review files.
+10. Promote durable findings into records as questions, risks, assumptions, or
    decisions.
-10. Update `status.md` with readiness and next action.
+11. Update `status.md` with readiness and next action.
+12. If the review changes routing, status, indexes, or progress state, run
+    `workflows/document-integrity.md` before closeout.
 
 ## Severity Model
 
@@ -52,5 +65,10 @@ Do not load unrelated spec folders.
 - finding counts by severity are recorded
 - blocking records or questions are explicit
 - status says whether freeze may proceed
-- next workflow is validation, freeze, or setup repair
+- manual grill or feedback findings are reconciled when provided
+- next workflow is validation, freeze, document integrity, or setup repair
 
+## Handoff
+
+State the review objective, severity counts, changed records, readiness result,
+and next workflow.

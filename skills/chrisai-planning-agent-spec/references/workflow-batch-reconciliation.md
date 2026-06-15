@@ -1,7 +1,7 @@
 # Batch Reconciliation Workflow
 
-Use this workflow when the user gives bulk feedback, QA finds many mismatches,
-or work starts drifting into inefficient micro-passes.
+Use this workflow after feedback has been audited or validated and the work
+contains bulk feedback, many QA mismatches, or inefficient micro-passes.
 
 ## Use Batches When
 
@@ -25,12 +25,17 @@ or work starts drifting into inefficient micro-passes.
 ## Process
 
 1. Stop micro-passes and audit first.
-2. List mismatches with surface, severity, dependency, and verification method.
-3. Pick 8-15 related mismatches unless risk requires a smaller batch.
-4. Implement the batch together.
-5. Verify changed surfaces together.
-6. Update progress, logs, and status once at the end.
-7. Repeat with the next related batch.
+2. Confirm raw feedback has been validated, rejected, or marked as needing
+   validation before implementation.
+3. List mismatches with surface, severity, dependency, source feedback, and
+   verification method.
+4. Pick 8-15 related mismatches unless risk requires a smaller batch.
+5. Split out invalid, unvalidated, unclear, scope-changing, or risky items.
+6. Implement the batch together.
+7. Verify changed surfaces together.
+8. Update progress, logs, status, and durable records once at the end.
+9. Repeat with the next related batch only after the current batch has
+   verification and document-integrity status.
 
 ## File Updates
 
@@ -46,5 +51,7 @@ log file and link back.
 
 - batch membership is explicit
 - unrelated risky items are split out
+- unvalidated feedback is routed to validation instead of implementation
 - verification covers the batch surfaces
 - progress is updated once per batch, not after every micro-fix
+- document integrity can confirm records, progress, and feedback status agree
