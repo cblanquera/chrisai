@@ -70,35 +70,10 @@ alternate instruction surfaces unless the user explicitly requests that.
 Portable skill content in `skills/` is authoritative. Adapter directories and
 installed agent copies are generated targets.
 
-## Maintenance Commands
+## Maintenance Workflow
 
-Validate before claiming skill content is ready:
-
-```bash
-node bin/chrisai.js validate
-scripts/validate-skills.py
-npm test
-```
-
-Check the repository version:
-
-```bash
-scripts/check-version.sh
-```
-
-Update from Git only when explicitly requested:
-
-```bash
-scripts/update-from-git.sh
-```
-
-Sync only the requested adapter target:
-
-```bash
-scripts/sync-codex.sh
-scripts/sync-claude.sh
-scripts/sync-opencode.sh
-```
+Use `workflows/maintenance.md` for validation, version checks, Git update
+checks, and adapter sync commands.
 
 ## Cross-Platform Skill Drafting
 
@@ -122,46 +97,6 @@ hard-coding personal paths into shared skills.
 
 ## Release Workflow
 
-When the user asks to publish a release, prefer handling the full local and
-GitHub workflow for them after confirming they want an actual publish flow.
-Publish flow means any operation that pushes, tags, or creates a GitHub
-release.
-
-Do not leave release work as instructions for the user unless authentication,
-permissions, or an explicit user preference blocks automation.
-
-If the user is discussing release planning, sequencing, or a possible release,
-do not assume permission to publish. Ask for explicit confirmation before
-remote publication actions such as pushing, tagging, or creating a GitHub
-release.
-
-Local commits are fine when they are part of the requested task or the accepted
-release-prep work. Do not treat a local commit by itself as a publish action.
-
-Use this release flow after confirmation:
-
-1. Pre-test locally with validation, tests, package checks, and a temporary
-   install target when the installer changed.
-2. Check remote release and tag state before deciding the release version.
-   Do not rely on local tags alone because the checkout may not have fetched
-   every remote tag. Prefer `gh release list` and `git ls-remote --tags origin
-   'v*'` when GitHub and the remote are available.
-3. Choose the release version from the remote state:
-   - If `VERSION` and `package.json` point to a version that already has a
-     remote release or remote tag, bump to the next appropriate semver version,
-     usually the next patch version for skill and documentation changes.
-   - If the intended version has no remote release or tag, keep it and confirm
-     it matches the changelog.
-   - Never move or overwrite an existing remote release tag unless the user
-     explicitly asks for tag repair and understands the risk.
-4. Update release metadata such as `VERSION`, `package.json`, and
-   `CHANGELOG.md` so all three match the intended release version.
-5. Commit and push the release changes.
-6. Pre-test from GitHub using `#main` into a temporary target before tagging.
-7. Create the GitHub release for the version tag.
-8. Install the tagged release into the user's requested local agent target and
-   verify preserved local overlays or unrelated skills.
-
-Before creating a release, confirm `VERSION`, `package.json`, `CHANGELOG.md`,
-validation status, branch, latest remote release, remote tags, and remote state
-match the intended release.
+Use `workflows/release.md` when the user asks to publish, prepare, or reason
+about a release. Do not assume permission to push, tag, or create a GitHub
+release unless the user explicitly confirms an actual publish flow.
