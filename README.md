@@ -56,26 +56,13 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-design` | Route ChrisAI design work to creative, extraction, wireframe, draft, logo, or asset-format specialists. |
-| `chrisai-design-asset-formats` | Create, convert, validate, and package SVG, PNG, and ICO design assets with transparency and favicon QA rules. |
-| `chrisai-design-creative` | Coordinate brand-led design direction, mode selection, and handoff across the design specialist skills. |
-| `chrisai-design-drafts` | Create static HTML/CSS/JS design-review drafts and clickable creative mockups from approved structure and direction. |
-| `chrisai-design-logo-generator` | Create and refine SVG-first logos and mark variants before downstream export and packaging. |
-| `chrisai-design-system-extraction` | Extract design source-of-truth rules from existing apps, sites, design files, component libraries, and project tokens. |
-| `chrisai-design-wireframes` | Create grayscale low-fidelity wireframes and clickable grayscale wireframe drafts before visual design. |
+| `chrisai-design` | Route ChrisAI design work to internal workflows and references for creative direction, design-system extraction, wireframes, design drafts, and browser-visible feedback loops. |
 
 ### Process
 
 | Skill | Purpose |
 | --- | --- |
 | `chrisai-process` | Route ChrisAI process work to feedback-loop handling or local `.agents/workflows/progress.md` guidance. |
-| `chrisai-process-feedback-loop` | Manage staged feedback loops for reviewable artifacts shown in the in-app browser. |
-
-### QA
-
-| Skill | Purpose |
-| --- | --- |
-| `chrisai-qa-playwright` | QA local web projects through localhost preview detection, Playwright capture, and responsive browser checks. |
 
 ## Install
 
