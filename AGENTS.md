@@ -8,10 +8,10 @@ unless the user explicitly asks for an operational action.
 
 - `skills/`: portable ChrisAI skill folders. Each skill folder must contain a
   `SKILL.md` with `name` and `description` frontmatter. Bundled `agents/`,
-  `references/`, `scripts/`, or `assets/` directories may live inside a skill
-  when that skill needs them. Skill-specific agent metadata belongs in that
-  skill's `agents/` folder, including Codex/OpenAI metadata such as
-  `openai.yaml` and equivalent Claude metadata when the skill needs
+  `references/`, `scripts/`, `workflows/`, or `assets/` directories may live 
+  inside a skill when that skill needs them. Skill-specific agent metadata 
+  belongs in that skill's `agents/` folder, including Codex/OpenAI metadata 
+  such as `openai.yaml` and equivalent Claude metadata when the skill needs
   Claude-specific registration or behavior.
 - `archives/`: retired skill content kept outside the active distribution
   surface. Do not treat archived skills as installable or routable unless the
