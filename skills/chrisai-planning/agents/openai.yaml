@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Planning"
-  short_description: "Routes agent-spec planning work"
-  default_prompt: "Use $chrisai-planning when a project needs AI-readable agent spec planning, readiness review, MVP freeze, or implementation backlog generation before coding begins."
-policy:
-  allow_implicit_invocation: true

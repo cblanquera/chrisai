@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding Router"
-  short_description: "Route ChrisAI coding tasks to the right specialist"
-  default_prompt: "Use $chrisai-coding to route this coding task to the right ChrisAI architecture, JavaScript, TypeScript, React, test, HTML, or CSS specialist."

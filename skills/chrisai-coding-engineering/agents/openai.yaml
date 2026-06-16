@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding Engineering"
-  short_description: "Shape architecture before code style"
-  default_prompt: "Use $chrisai-coding-engineering when a programming task is mainly about architecture, abstractions, runtime boundaries, framework or library design, API ergonomics, or deciding whether to simplify, refactor, or replace an existing design before language-specific implementation details matter."

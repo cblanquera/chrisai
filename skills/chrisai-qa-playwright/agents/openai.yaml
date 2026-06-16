@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI QA Playwright"
-  short_description: "QA local web projects with Playwright"
-  default_prompt: "Use $chrisai-qa-playwright to detect the right localhost preview command for a local web project, manage a repo-local Playwright workspace, and run browser QA with screenshots or recordings without relying on GitHub Pages-specific assumptions."

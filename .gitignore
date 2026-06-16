@@ -46,6 +46,3 @@ pip-delete-this-directory.txt
 archives
 node_modules
 *.env
-
-# Local conference demo skill, intentionally kept out of the distribution.
-skills/chrisai-response-simulation/

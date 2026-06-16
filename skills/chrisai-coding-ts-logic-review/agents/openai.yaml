@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding TS Logic Review"
-  short_description: "Review TypeScript logic and test adequacy"
-  default_prompt: "Use $chrisai-coding-ts-logic-review to review existing TypeScript code and tests for complex branching, decision logic, missing branch coverage, duplicated rules, mutation risk, and refactor opportunities before deciding whether to apply changes."

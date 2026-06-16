@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Design System Extraction"
-  short_description: "Extract design rules from existing apps, sites, and design sources"
-  default_prompt: "Use $chrisai-design-system-extraction to inspect the design source of truth for this existing product, extract colors, typography, spacing, components, layout rules, and states, then produce extension rules before new design work begins."
-policy:
-  allow_implicit_invocation: true

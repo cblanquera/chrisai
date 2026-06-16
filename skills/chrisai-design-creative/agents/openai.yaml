@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Design Creative"
-  short_description: "Coordinator for brand-led design direction and specialist handoff"
-  default_prompt: "Use $chrisai-design-creative to choose the design mode, derive brand-led direction from the logo, optional style guide, design source of truth, reference sites or apps, usability constraints, and differentiation, then hand off to extraction, wireframe, draft, asset, or implementation specialists as needed."
-policy:
-  allow_implicit_invocation: true

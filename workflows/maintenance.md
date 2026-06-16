@@ -63,16 +63,3 @@ npx github:cblanquera/chrisai#v0.1.3 install --target opencode
 
 The `npx` installer is the preferred cross-platform path. It does not require
 Unix shell tools on `PATH`.
-
-## Local Environment Template
-
-Use `templates/local-environment/SKILL.md` as the starter for a personal
-machine-local skill. Install it into the agent's local skill directory and
-customize the installed copy with executable paths, runtime preferences, and
-verification commands for that machine.
-
-Do not commit customized local environment copies to this repository. The
-template is portable; the installed copy is intentionally machine-local.
-
-When a task discovers a reusable command or executable path, record it in the
-installed `local-environment` skill only after explicit user approval.

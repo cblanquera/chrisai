@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI"
-  short_description: "Alias for the ChrisAI router"
-  default_prompt: "Use $chrisai-router as the canonical ChrisAI router for documentation, coding, prompt, planning, process, design, browser-QA, or maintenance task selection."

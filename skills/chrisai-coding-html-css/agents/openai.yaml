@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding HTML CSS"
-  short_description: "Write vanilla HTML and CSS"
-  default_prompt: "Use $chrisai-coding-html-css to write or review vanilla HTML and CSS for a static site, docs page, or frontend template with semantic markup, durable class structure, and maintainable selectors."

@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Design Logo Generator"
-  short_description: "Create and refine SVG-first logos and mark variants"
-  default_prompt: "Use $chrisai-design-logo-generator to turn this brand or product brief into a small set of strong logo directions, generate SVG-first mark variants, refine the best one, and prepare a favicon-safe logo variant before export."
-policy:
-  allow_implicit_invocation: true

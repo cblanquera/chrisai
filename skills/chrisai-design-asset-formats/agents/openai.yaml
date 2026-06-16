@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Design Asset Formats"
-  short_description: "Create, convert, and package SVG, PNG, and ICO assets"
-  default_prompt: "Use $chrisai-design-asset-formats to create, convert, validate, or package this SVG, PNG, or ICO asset, choose the right master format, verify transparency when needed, and keep favicon outputs crisp at small sizes."
-policy:
-  allow_implicit_invocation: true

@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding TS React"
-  short_description: "Write repo-aligned TSX React"
-  default_prompt: "Use $chrisai-coding-ts-react to write or review TypeScript ReactJS or TSX that follows this repo's typed component structure, comment flow, hook patterns, prop and event typing, input control patterns, and frontend import and export conventions."

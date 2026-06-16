@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Docs Onboarding"
-  short_description: "Write onboarding-first developer docs"
-  default_prompt: "Use $chrisai-docs-dev-onboarding to draft or restructure developer-facing documentation for junior developers with a clear quick start, guided learning flow, and separate reference material."

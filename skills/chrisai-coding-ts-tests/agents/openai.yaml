@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding TS Tests"
-  short_description: "Write repo-aligned TypeScript tests"
-  default_prompt: "Use $chrisai-coding-ts-tests to write or review Jest or Mocha + Chai tests that follow this repo's testing standards, coverage targets, deterministic patterns, and comment-heavy test structure."

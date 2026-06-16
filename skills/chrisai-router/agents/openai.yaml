@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Router"
-  short_description: "Route ChrisAI tasks to the right family router"
-  default_prompt: "Use $chrisai-router to decide whether this task should use a ChrisAI documentation, coding, prompt, process, design, browser-QA, or maintenance route."

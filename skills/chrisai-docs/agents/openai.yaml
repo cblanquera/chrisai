@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Docs Router"
-  short_description: "Route ChrisAI docs tasks to the right specialist"
-  default_prompt: "Use $chrisai-docs to route this documentation task to the right ChrisAI onboarding, API reference, formatting, or copy-editing specialist."

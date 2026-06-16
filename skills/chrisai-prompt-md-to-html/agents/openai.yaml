@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChrisAI Prompt MD To HTML"
-  short_description: "Deterministic Markdown-to-HTML artifacts with fixed layouts"
-  default_prompt: "Use $chrisai-prompt-md-to-html to turn a Markdown or Codex text response into a single-file HTML artifact with a fixed layout, optional theme colors, syntax highlighting, and Mermaid support."
-policy:
-  allow_implicit_invocation: true

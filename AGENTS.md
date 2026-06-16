@@ -23,9 +23,7 @@ unless the user explicitly asks for an operational action.
 - `scripts/`: repository maintenance commands for validation, version checks,
   Git updates, and adapter sync.
 - `tests/`: Node test runner coverage for the CLI wrapper.
-- `templates/`: copyable starter files for user-local overlays, including
-  `templates/local-environment/SKILL.md`.
-- `docs/`: concise operational documentation.
+- `workflows/`: concise operational workflows.
 - `VERSION`: current ChrisAI distribution version.
 - `CHANGELOG.md`: version history.
 
@@ -71,19 +69,6 @@ alternate instruction surfaces unless the user explicitly requests that.
 
 Portable skill content in `skills/` is authoritative. Adapter directories and
 installed agent copies are generated targets.
-
-## Local Environment
-
-Use `templates/local-environment/SKILL.md` only as a template for a
-machine-local `local-environment` skill.
-
-When a task involves terminal commands and the correct executable is unclear,
-check for an installed `local-environment` skill first. If it does not exist
-and command resolution is failing, recommend setting it up from the template.
-
-When a reusable command or executable path is discovered and used successfully,
-offer to record it in `local-environment`. Do not update it without explicit
-user approval.
 
 ## Maintenance Commands
 

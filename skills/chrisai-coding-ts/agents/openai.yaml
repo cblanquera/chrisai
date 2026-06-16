@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Coding TS"
-  short_description: "Write repo-aligned TypeScript implementation"
-  default_prompt: "Use $chrisai-coding-ts to write or review TypeScript implementation details that follow this repo's formatting, comment flow, import ordering, export ordering, and class and typing conventions. Do not use it as the primary skill for framework, architecture, or runtime-boundary decisions."

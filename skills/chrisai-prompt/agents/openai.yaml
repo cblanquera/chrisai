@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Prompt Router"
-  short_description: "Route ChrisAI prompt and context-cache tasks"
-  default_prompt: "Use $chrisai-prompt to route this prompt or prompt-artifact task to the right ChrisAI Markdown-to-HTML or context-cache specialist."
