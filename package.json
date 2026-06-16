@@ -2,11 +2,11 @@
   "name": "chrisai",
   "version": "0.1.27",
   "description": "Portable ChrisAI skills for AI coding agents.",
+  "license": "MIT",
   "bin": {
     "chrisai": "./bin/chrisai.js"
   },
   "scripts": {
-    "build:html-artifact": "node scripts/build-html-artifact-renderer.mjs",
     "test": "node --test tests/*.test.mjs",
     "validate": "python3 scripts/validate-skills.py"
   },
@@ -16,13 +16,10 @@
     "docs/",
     "scripts/",
     "skills/",
-    "!skills/chrisai-response-simulation/",
-    "templates/",
     "CHANGELOG.md",
     "README.md",
     "VERSION"
   ],
-  "license": "UNLICENSED",
   "devDependencies": {
     "esbuild": "^0.17.19",
     "highlight.js": "^11.11.1",
