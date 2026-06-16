@@ -108,7 +108,7 @@ or progress.
 
   poc/
     POC findings, results, snippets, and implementation notes
-    actual prototype code should live outside .agents
+    actual prototype code lives on separate poc-<short-name> branches
 
   wireframes/
     low-fidelity screens, flows, layout notes, and reviews
@@ -254,6 +254,11 @@ The POC can continue after MVP as a place to test future features before they
 are accepted into the product. POC work should answer feasibility questions.
 It should not become product scope automatically.
 
+Each POC should have its own isolated branch named `poc-<short-name>`. Keep
+prototype code for that proof only on its POC branch, and do not combine
+multiple unrelated POCs on one branch. Record the branch name in `.agents/poc/`
+and in the relevant progress item when active execution tracking exists.
+
 Feature development is not a dumping ground for everything after MVP. Create a
 sibling spec when a feature-development goal becomes a bounded product stream
 with its own acceptance criteria, risks, decisions, POCs, or multiple
@@ -268,6 +273,9 @@ Before POC work becomes MVP or feature scope, run a promotion step:
 4. Convert accepted learning into customer-facing requirements, acceptance
    criteria, and tasks.
 5. Create progress items only from the promoted product or feature records.
+6. Promote reusable proof code only through an explicit merge, cherry-pick, or
+   reimplementation decision; do not treat the whole POC branch as product code
+   by default.
 
 Before MVP freeze, promote accepted POC results, wireframe decisions, creative
 direction, review findings, QA results, and validated feedback into specs,
@@ -342,10 +350,10 @@ as local operating procedures.
 Plan a POC:
 
 ```text
-Follow .agents/workflows/poc.md. Create POC records only for specific
-feasibility questions, risky integrations, architecture options, or workflow
-proofs that need evidence before MVP. Record the expected proof, verification,
-and promotion or discard decision.
+Follow .agents/workflows/poc.md. Create a separate branch named
+poc-<short-name> for this proof, and keep prototype code for that proof only on
+that branch. Record the feasibility question, expected evidence, failure signal,
+branch name, verification, and promotion or discard decision.
 ```
 
 Promote POC results:

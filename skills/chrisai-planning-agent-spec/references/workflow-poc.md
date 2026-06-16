@@ -35,6 +35,22 @@ directly as MVP.
 - `tasks.md`
 - `.agents/progress/`, only when active POC execution tracking is requested
 
+## Branch Policy
+
+Each POC should have its own branch named `poc-<short-name>`. Keep prototype
+code for that proof only on its POC branch. Do not combine multiple unrelated
+POCs on one branch.
+
+Do not switch branches or create a POC branch unless the user explicitly asks
+for implementation or branch work. Before switching or creating a branch, check
+`git status`. If unrelated dirty changes exist, stop and ask the user how to
+proceed.
+
+When a POC is accepted, promote only the accepted learning or reusable code into
+the target product/spec branch through an explicit merge, cherry-pick, or
+reimplementation decision. Do not treat the whole POC branch as product code by
+default.
+
 ## Process
 
 1. Name the feasibility question.
@@ -42,8 +58,8 @@ directly as MVP.
    evidence.
 3. Keep the proof narrow and disposable unless the user asks to harden it.
 4. If a developer must prototype the proof, create or route to a progress item
-   that names the feasibility question, expected evidence, failure signal, and
-   files or systems that may be touched.
+   that names the feasibility question, `poc-<short-name>` branch, expected
+   evidence, failure signal, and files or systems that may be touched.
 5. Record what was tested, what worked, what failed, and what remains unknown.
 6. Decide whether the result should be promoted, replaced, discarded, or
    continued.
@@ -56,12 +72,13 @@ directly as MVP.
 
 - POC result is `proved`, `failed`, `inconclusive`, or `needs-follow-up`
 - promotion decision is recorded
+- POC branch is recorded when the proof required implementation
 - developer/progress handoff is linked when the proof required implementation
 - MVP records are updated only for accepted learning
 - unresolved viability gaps are explicit
 
 ## Handoff
 
-State the feasibility question, proof implementation target if any, evidence
-needed, result status, promotion decision, changed records, and next workflow:
-validation, MVP, freeze, progress, or another POC.
+State the feasibility question, POC branch if any, proof implementation target
+if any, evidence needed, result status, promotion decision, changed records, and
+next workflow: validation, MVP, freeze, progress, or another POC.

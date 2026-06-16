@@ -39,8 +39,8 @@ cross-item conflict.
 3. Write one item file per independent unit of work.
 4. For product or MVP work, link each item to the relevant customer workflow,
    capability, requirement, or acceptance record.
-5. For POC work, state the feasibility question and the decision needed after
-   the proof.
+5. For POC work, state the feasibility question, `poc-<short-name>` branch, and
+   the decision needed after the proof.
 6. For feature-development or bulk feedback, read `workflows/batch-reconciliation.md`
    before editing when there are more than five small or related mismatches.
 7. Do not turn raw user feedback directly into implementation work. Route it
@@ -88,6 +88,10 @@ Owner: unassigned
 ## Inputs
 
 ## Spec Links
+
+## Branch
+
+For POC work: poc-<short-name>
 
 ## Outputs
 

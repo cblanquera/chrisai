@@ -50,6 +50,12 @@ When importing or reviewing POC material, separate:
   handling, copy, persistence, integration, or verification
 - promotion decision: keep, replace, discard, or continue investigating
 
+Actual prototype code should live on a separate `poc-<short-name>` branch for
+each proof, not in `.agents/`. Record the branch name in `.agents/poc/`,
+evidence, progress, or handoff records when implementation is involved. Accepted
+proof code reaches product code only through an explicit merge, cherry-pick, or
+reimplementation decision.
+
 Create `AC` records for product viability, not only technical proof. Acceptance
 criteria should be observable from the customer-facing workflow whenever the
 feature has a GUI.

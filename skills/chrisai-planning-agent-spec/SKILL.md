@@ -99,7 +99,8 @@ Generate or repair `.agents/plans/feature-goals.md` from
   imported source material, feature-goal intake, and planning references
   preserved in human form.
 - `.agents/poc/`: POC findings, results, snippets, and implementation notes.
-  Actual prototype code should live outside `.agents/`.
+  Actual prototype code should live on a separate `poc-<short-name>` branch for
+  each proof, outside `.agents/`.
 - `.agents/wireframes/`: low-fidelity screens, flows, layout notes, wireframe
   reviews, and links to design files or screenshots.
 - `.agents/creatives/`: visual direction, brand explorations, moodboards, asset

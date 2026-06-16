@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.27 - 2026-06-16
+
+- Updated `chrisai-planning-agent-spec` so each implemented POC uses its own
+  isolated `poc-<short-name>` branch while `.agents/poc/` remains the record
+  and evidence surface.
+- Clarified POC branch safety: agents must not create or switch POC branches
+  without explicit user approval, must check `git status`, and must not combine
+  unrelated POCs on one branch.
+- Added POC branch fields to progress handoffs and promotion rules so accepted
+  proof code reaches product branches only through explicit merge, cherry-pick,
+  or reimplementation decisions.
+
 ## 0.1.26 - 2026-06-16
 
 - Added a loop-escape clause to the agent-spec goal manager so repeated

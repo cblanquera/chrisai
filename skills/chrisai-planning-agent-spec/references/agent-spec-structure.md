@@ -267,7 +267,8 @@ not project-local workflows. If setup or repair is needed later, invoke
   imported source material, feature-goal intake, and planning references
   preserved in human form.
 - `.agents/poc/`: POC results, findings, snippets, and implementation notes.
-  Actual prototype code should live outside `.agents/`.
+  Actual prototype code should live on a separate `poc-<short-name>` branch for
+  each proof, outside `.agents/`.
 - `.agents/wireframes/`: low-fidelity screens, flows, layout notes, wireframe
   reviews, and links to design files or screenshots. Final UI source belongs
   outside `.agents/`.
