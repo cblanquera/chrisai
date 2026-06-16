@@ -132,6 +132,33 @@ When reviewer feedback arrives:
    accepted item; do not start another implementation pass from raw chat
    feedback alone.
 
+## Loop Escape
+
+Stop and escalate instead of repeating the same work when:
+
+- the same item, batch, feedback point, or validation target fails twice without
+  new evidence
+- the manager is about to rerun the same workflow with the same inputs and
+  expected output
+- QA reports the same failure after a fix and the cause is still unclear
+- implementation changes are cycling between two states or approaches
+- the next action is only "try again" without a different hypothesis, narrower
+  scope, or new verification method
+- progress state has not materially changed after one full loop through
+  implementation, QA, and planner reconciliation
+
+A retry is allowed only when the next pass has a new hypothesis, new evidence,
+narrower scope, or different verification method.
+
+Before escalating, write a short stuck report with:
+
+- active goal
+- repeated loop or item
+- what was attempted
+- evidence gathered
+- why the next retry is not justified
+- options for the user or next specialist workflow
+
 ## Artifact Promotion
 
 Before MVP freeze, feature-development closeout, or goal completion, confirm

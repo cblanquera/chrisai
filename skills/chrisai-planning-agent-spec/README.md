@@ -55,7 +55,10 @@ or progress.
 ## Workflow Roles
 
 - `goal-manager.md` orchestrates a documented goal across planning, design,
-  implementation, QA, documentation, and handoff loops.
+  implementation, QA, documentation, and handoff loops. It must stop and
+  escalate when it would repeat the same item or feedback loop without new
+  evidence, a new hypothesis, narrower scope, or a different verification
+  method.
 - `review.md` checks readiness, risk, evidence, and traceability. Manual grill
   reports are review inputs.
 - `validation.md` gathers evidence for assumptions, blockers, risky claims, QA

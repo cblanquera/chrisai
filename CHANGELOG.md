@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.26 - 2026-06-16
+
+- Added a loop-escape clause to the agent-spec goal manager so repeated
+  implementation, QA, validation, or feedback loops stop and escalate when no
+  new evidence, hypothesis, narrower scope, or verification method exists.
+- Updated the agent-spec README to explain the goal manager's stuck-loop
+  behavior for humans using the `.agents` workflow system.
+
 ## 0.1.25 - 2026-06-16
 
 - Added goal-manager, document-integrity, and feature-goal intake templates to
