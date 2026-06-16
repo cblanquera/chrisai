@@ -35,7 +35,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-docs` | Route ChrisAI documentation work to internal workflows and references for onboarding, API reference, formatting, and copy editing. |
+| `chrisai-docs` | Route developer-facing technical writing to internal workflows and references for guided learning, API reference, formatting, and copy editing. |
 
 ### Prompt
 

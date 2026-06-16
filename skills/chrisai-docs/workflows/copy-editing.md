@@ -23,14 +23,14 @@ Use this skill for:
 Do not use this skill as the primary owner for:
 
 - docs-from-scratch information architecture
-- onboarding flow design
+- guided-learning flow design
 - API reference schema or lookup structure
 - formatting-only cleanup
 - default multi-skill routing
 
 Use these skills instead:
 
-- `references/onboarding.md` for quick starts, tutorials, conceptual
+- `references/guided-learning.md` for quick starts, tutorials, conceptual
   guides, and junior-developer learning flow
 - `references/api-reference.md` for module/class/function/config reference
   pages and structured lookup material
@@ -47,8 +47,8 @@ Before editing, identify:
 4. whether the request needs a light edit, standard edit, or substantive edit
 5. whether another documentation skill should own the page first
 
-If the task is mainly about building onboarding flow, quick starts, or
-developer learning sequence, use `references/onboarding.md` first.
+If the task is mainly about guided-learning flow, quick starts, or developer
+learning sequence, use `references/guided-learning.md` first.
 
 If the task is mainly about API lookup structure, use
 `references/api-reference.md` first.
@@ -191,7 +191,7 @@ When reviewing without rewriting, return:
 
 Do not consider the output complete unless the answer to all of these is yes:
 
-- Was this an editorial task instead of an onboarding, reference, or
+- Was this an editorial task instead of a guided-learning, reference, or
   formatting-ownership task?
 - Can a junior developer understand the main point of the page?
 - Are terms defined before they are used heavily?

@@ -1,10 +1,11 @@
-# ChrisAI Docs Dev Onboarding
+# ChrisAI Docs Guided Learning
 
-This skill is the editorial standard for onboarding-oriented developer
+This reference is the editorial standard for learning-oriented developer
 documentation aimed at junior developers.
 
 Its job is to make the first experience obvious, fast, and low-friction. Do
-not write docs as a knowledge dump. Optimize for successful onboarding first.
+not write docs as a knowledge dump. Optimize for successful learning and first
+success.
 
 This standard combines:
 
@@ -31,12 +32,14 @@ settled.
 
 ## Scope
 
-Use this skill for:
+Use this reference for:
 
 - onboarding guides
 - quick starts
 - tutorials
 - conceptual explanations
+- guided learning pages
+- teaching-style revisions
 - restructuring developer docs for clarity and adoption
 
 Do not use this skill as the primary rule set for API reference schema design
@@ -51,22 +54,22 @@ For those cases, use:
 
 When this skill is used with other documentation skills:
 
-1. `references/onboarding.md` decides what content appears, in what order,
+1. `references/guided-learning.md` decides what content appears, in what order,
    and for which reader state.
 2. `references/api-reference.md` decides the structure of pure API
    reference pages.
 3. `references/formatting.md` standardizes presentation without overriding
    the intended reader flow.
 
-Do not force onboarding patterns onto pure API reference pages. Do not let
-formatting rules override first-success sequencing.
+Do not force guided-learning patterns onto pure API reference pages. Do not
+let formatting rules override first-success sequencing.
 
 ## Non-Negotiable Rules
 
 - Prioritize time to first success over feature completeness.
 - Reduce cognitive load at every step.
 - Introduce concepts only when the reader needs them.
-- Keep onboarding, explanation, and reference separate.
+- Keep onboarding, explanation, and reference material separate.
 - Prefer one recommended path before presenting alternatives.
 - Use clear, concise language.
 - Remove anything that does not help the reader act or understand.
@@ -89,8 +92,8 @@ to absorb later-stage detail too early.
 
 ## Default Reader Flow
 
-Unless the user explicitly requests another structure, organize onboarding docs
-in this sequence:
+Unless the user explicitly requests another structure, organize quick starts,
+tutorials, and guided learning docs in this sequence:
 
 1. `Start here`
 2. `Quick start`
@@ -118,11 +121,11 @@ sequence.
 
 ## Teaching Arc
 
-For tutorials, lessons, and conceptual onboarding pages, teach like a guided
+For tutorials, lessons, and conceptual pages, teach like a guided
 walkthrough instead of a manual.
 
-Most onboarding lessons should follow this arc, even when the actual headings
-differ:
+Most learning-oriented docs should follow this arc, even when the actual
+headings differ:
 
 1. Motivate the topic with the ordinary developer problem before naming the
    framework, API, or internal concept.
@@ -142,9 +145,9 @@ the real problem, why it matters, and what the lesson will make clear.
 
 ## Walkthrough Standard
 
-Use guided walkthroughs for the first practical example in an onboarding page.
-These are not exercises or homework; they are the teaching path inside the
-lesson.
+Use guided walkthroughs for the first practical example in a guided-learning
+page. These are not exercises or homework; they are the teaching path inside
+the lesson.
 
 The first walkthrough should:
 
@@ -174,6 +177,8 @@ be too heavy.
 
 ## Writing Standard
 
+- Teach the reason, show the action, explain the result, then add subtopics
+  and variations.
 - Lead with outcomes before internals.
 - Explain why the topic matters before asking the reader to memorize terms or
   copy code.
@@ -190,6 +195,33 @@ be too heavy.
 - Vary repeated instruction, explanation, transition, and recap phrasing so
   related pages do not sound like generated templates.
 
+## Opening Paragraph Pattern
+
+A good opening usually has three parts:
+
+1. the real-world problem
+2. why the topic matters
+3. what the lesson will make clear
+
+Avoid opening with `This page is for...`. That phrase describes the document,
+not the reader's problem. Start by framing the idea in ordinary developer
+terms, then connect it to the technical surface the page will teach.
+
+## Section Structure Rules
+
+Every heading must introduce content before it introduces another heading. Do
+not place an H2 directly before an H3, or any heading directly before a lower
+level heading.
+
+If a parent section mostly groups subsections, add a real orientation
+paragraph. The paragraph can summarize what the subsections cover, explain why
+those details belong together, or tell the reader how to read the group.
+
+Teaching paragraphs should usually contain more than one sentence. A
+single-sentence prose line often reads like a label, note, or generated recap
+instead of a lesson. Short labels, list items, commands, and code examples can
+still be short.
+
 ## Example Explanation Standard
 
 When explaining an example, answer at least two of these questions when
@@ -205,6 +237,54 @@ relevant:
 Put caveats after the simple case unless the caveat prevents a dangerous,
 destructive, or seriously misleading action.
 
+## Phrase Rotation
+
+Repeated instruction phrases make docs sound generated. Rotate wording across
+actions, explanations, transitions, and recaps while preserving exact API names
+and technical terms.
+
+Use phrase banks as examples, not required templates.
+
+Instruction starters can include:
+
+- `Start by looking at...`
+- `First, open...`
+- `Now add...`
+- `Next, change...`
+- `After that, check...`
+- `Once that is in place...`
+- `Run it again and look for...`
+
+Explanation starters can include:
+
+- `What this does is...`
+- `That matters because...`
+- `The important part is...`
+- `Behind that small line...`
+- `In plain terms...`
+- `The reason this works is...`
+
+Transition starters can include:
+
+- `That handles the simple case.`
+- `The next question is...`
+- `This is where the distinction matters.`
+- `With the basic flow working...`
+- `There is one detail worth slowing down for.`
+- `From here, the pattern becomes...`
+
+Recap starters can include:
+
+- `You should now be able to...`
+- `The main thing to remember is...`
+- `In this lesson, the important shift was...`
+- `What you changed was small, but it showed...`
+- `This prepares you for...`
+
+Do not use the same starter in neighboring paragraphs. When multiple files
+teach related ideas, repeat the concept but vary the angle so the prose does
+not become a template.
+
 ## Compression Standard
 
 AI tends to over-explain. Do not do that.
@@ -213,7 +293,7 @@ Before finalizing, cut:
 
 - repeated explanation
 - throat-clearing introductions
-- feature tours on onboarding pages
+- feature tours on guided-learning pages
 - optional branches that do not matter yet
 - background that does not help the next action
 - examples that do not get explained
@@ -277,11 +357,13 @@ Do not:
 - present examples without explaining what they demonstrate
 - place a heading directly before a subheading without an orientation
   paragraph
-- mix onboarding with advanced operations
+- mix first-use learning flow with advanced operations
 - mix tutorial content with exhaustive reference
 - call guided walkthroughs homework, exercises, or practice tasks
 - end only with a next-link when a learning checkpoint is needed
 - use completeness as an excuse for poor sequencing
+- use the same transition phrase repeatedly
+- leave one-sentence teaching paragraphs as standalone lines
 
 ## Review Gate
 
@@ -294,7 +376,9 @@ Do not consider the output complete unless the answer to all of these is yes:
 - Is the first example small enough to understand?
 - Are code, command, config, diagram, and file examples explained before the
   page moves on?
+- Does every heading have orientation content before any nested subheading?
 - Do transitions explain why the next section follows?
+- Are repeated phrases rotated or rewritten?
 - Does the ending summarize what the reader learned?
 - Was dense reference material kept out of the early flow?
 - Are follow-up tasks and next steps easy to find?
@@ -305,7 +389,7 @@ Do not consider the output complete unless the answer to all of these is yes:
 Default deliverables should be one of:
 
 - a docs outline with section summaries
-- a rewritten onboarding page
+- a rewritten guided-learning page
 - a quick start followed by explanation
 - a reorganization plan split into tutorial, tasks, explanation, and reference
 

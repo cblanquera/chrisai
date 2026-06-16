@@ -4,7 +4,7 @@ This skill writes API reference documentation for junior developers who already
 know the surface they need and want accurate, scannable details.
 
 Optimize for lookup, correctness, and integration guidance. Do not turn pure
-reference pages into onboarding tutorials.
+reference pages into guided-learning tutorials.
 
 ## Task Intake
 
@@ -17,7 +17,7 @@ Before drafting or restructuring, identify:
 4. the expected deliverable: single file, multi-file reference set, or index +
    detail pages
 
-If the task is mainly onboarding, switch to `references/onboarding.md`. If
+If the task is mainly guided learning, switch to `references/guided-learning.md`. If
 the task is mainly markdown cleanup, apply `references/formatting.md` after
 the reference structure is decided.
 
@@ -35,7 +35,7 @@ general markdown normalization.
 
 For those cases, use:
 
-- `references/onboarding.md`
+- `references/guided-learning.md`
 - `references/formatting.md`
 
 ## File Organization
@@ -109,7 +109,7 @@ When this skill is used with other documentation skills:
 1. `references/api-reference.md` owns the schema of the reference material.
 2. `references/formatting.md` may normalize presentation without changing
    the API schema.
-3. `references/onboarding.md` may provide surrounding onboarding pages, but
+3. `references/guided-learning.md` may provide surrounding learning pages, but
    should not force tutorial structure onto pure reference pages.
 
 ## Review Gate
@@ -120,4 +120,4 @@ Do not consider the output complete unless the answer to all of these is yes:
 - Are public methods, properties, and returns documented clearly?
 - Are examples realistic and junior-developer-friendly?
 - Are related references and integration paths linked?
-- Did the page avoid drifting into onboarding prose?
+- Did the page avoid drifting into guided-learning prose?

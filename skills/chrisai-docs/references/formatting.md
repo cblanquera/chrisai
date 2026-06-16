@@ -7,7 +7,7 @@ Use it after the document's editorial plan is clear, or when the user
 explicitly asks for formatting cleanup, normalization, or conversion of messy
 docs into a stable structure.
 
-Do not decide the teaching order of onboarding docs here. Do not define API
+Do not decide the teaching order of guided-learning docs here. Do not define API
 reference schema here. Preserve the owning document strategy and normalize the
 presentation around it.
 
@@ -31,7 +31,7 @@ Before normalizing a document, identify:
 4. whether another documentation skill should own the content order first
 
 If the task still needs content sequencing, switch to
-`references/onboarding.md` or `references/api-reference.md` first.
+`references/guided-learning.md` or `references/api-reference.md` first.
 
 ## Core Rules
 
