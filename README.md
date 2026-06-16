@@ -35,11 +35,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-docs` | Route ChrisAI documentation work to onboarding, API reference, formatting, or copy-editing specialists. |
-| `chrisai-docs-copy-editing` | Proofread and tighten existing developer-facing documentation without changing technical meaning. |
-| `chrisai-docs-dev-api-reference` | Write or restructure junior-developer-facing API reference docs. |
-| `chrisai-docs-dev-formatting` | Normalize markdown structure and formatting using ChrisAI documentation style rules. |
-| `chrisai-docs-dev-onboarding` | Write or restructure onboarding docs, quick starts, tutorials, and conceptual developer guides. |
+| `chrisai-docs` | Route ChrisAI documentation work to internal workflows and references for onboarding, API reference, formatting, and copy editing. |
 
 ### Prompt
 

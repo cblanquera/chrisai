@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Docs"
+  short_description: "Route ChrisAI docs tasks to internal docs guidance"
+  default_prompt: "Use $chrisai-docs to route this documentation task to the right internal workflow or reference for onboarding, API reference, formatting, or copy editing."
