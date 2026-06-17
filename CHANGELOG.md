@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.4 - 2026-06-18
+
+- Aligned repository version metadata with the manually created `v0.2.4`
+  GitHub release.
+
 ## 0.2.3 - 2026-06-18
 
 - Added MIT license metadata to all active ChrisAI skill frontmatter.
