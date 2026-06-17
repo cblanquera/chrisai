@@ -1,8 +1,8 @@
 # Release
 
 Use this workflow when publishing, preparing, or reasoning about a ChrisAI
-release. A publish flow means any operation that pushes, tags, or creates a
-GitHub release.
+release. A publish flow means any operation that pushes, tags, or publishes a
+GitHub skill release.
 
 ## Permission Boundary
 
@@ -14,8 +14,8 @@ permissions, or an explicit user preference blocks automation.
 
 If the user is discussing release planning, sequencing, or a possible release,
 do not assume permission to publish. Ask for explicit confirmation before
-remote publication actions such as pushing, tagging, or creating a GitHub
-release.
+remote publication actions such as pushing, tagging, or publishing a GitHub
+skill release.
 
 Local commits are fine when they are part of the requested task or the accepted
 release-prep work. Do not treat a local commit by itself as a publish action.
@@ -37,6 +37,9 @@ gh release list
 git ls-remote --tags origin 'v*'
 ```
 
+Use `gh skill publish --tag v<TAG>` as the release publication command. Do not
+use `gh release create` for normal ChrisAI skill publishing.
+
 ## Publish Sequence
 
 After publish confirmation:
@@ -49,7 +52,20 @@ After publish confirmation:
    `CHANGELOG.md` so all three match the intended release version.
 5. Commit and push the release changes.
 6. Pre-test from GitHub using `#main` into a temporary target before tagging.
-7. Create the GitHub release for the version tag.
+7. Publish the skill release:
+
+   ```bash
+   gh skill publish --tag v<TAG>
+   ```
+
+   Replace `v<TAG>` with the intended semver tag, such as `v0.2.5`. If the
+   command prompts for tagging strategy, choose the semver tag that matches the
+   checked-in `VERSION`, `package.json`, and `CHANGELOG.md`.
+
+   If GitHub returns `HTTP 404` while enabling immutable releases, continue
+   only if the publish itself succeeds. Report that immutable releases must be
+   enabled manually in GitHub repository settings under Settings > General >
+   Releases.
 8. Install the tagged release into the user's requested local agent target and
    verify preserved local overlays or unrelated skills.
 
