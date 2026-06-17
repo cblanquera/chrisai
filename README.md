@@ -1,5 +1,10 @@
 # ChrisAI
 
+[![skills.sh](https://skills.sh/b/cblanquera/chrisai)](https://skills.sh/cblanquera/chrisai)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/cblanquera/chrisai/test.yml)](https://github.com/cblanquera/chrisai/actions)
+[![Commits](https://img.shields.io/github/last-commit/cblanquera/chrisai)](https://github.com/cblanquera/chrisai/commits/main/)
+[![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/cblanquera/chrisai/blob/main/LICENSE)
+
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
 ChrisAI agents, branding, chatting, coding, designing, docing, and maintenance
 behaviors as reusable `skills/*/SKILL.md` folders.
