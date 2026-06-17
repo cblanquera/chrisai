@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Branding"
+  short_description: "Brand assets, domain discovery, research, and brand kits"
+  default_prompt: "Use $chrisai-branding for brand asset utilities, PNG/ICO conversion guidance, TLD exploration, brand research, and brand kit planning or generation."

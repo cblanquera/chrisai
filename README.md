@@ -1,7 +1,7 @@
 # ChrisAI
 
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
-ChrisAI coding, documentation, prompt, planning, process, design, QA, and maintenance
+ChrisAI coding, documentation, prompt, planning, process, design, branding, QA, and maintenance
 behaviors as reusable `skills/*/SKILL.md` folders.
 
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
@@ -51,6 +51,12 @@ and OpenCode are install targets, not separate rewritten sources.
 | Skill | Purpose |
 | --- | --- |
 | `chrisai-design` | Route ChrisAI design work to internal workflows and references for creative direction, design-system extraction, wireframes, design drafts, and browser-visible feedback loops. |
+
+### Branding
+
+| Skill | Purpose |
+| --- | --- |
+| `chrisai-branding` | Placeholder skill for brand asset utilities, PNG/ICO conversion guidance, TLD exploration, brand research, and brand kit planning or generation. |
 
 ### Process
 
