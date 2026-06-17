@@ -249,7 +249,10 @@ only as the first screen or review hub, then add sibling files such as
 `dashboard.html`, `details.html`, `empty-state.html`, or `error-state.html`
 for the remaining screens and states. Share grayscale wireframe styling through
 `styles.css`, keep optional simulated behavior in `script.js`, and connect the
-wireframe with relative links.
+wireframe with document-relative links. Use links such as `./index.html`,
+`./dashboard.html`, `./styles.css`, and `./script.js`; do not use
+root-relative links such as `/index.html`, `/dashboard.html`, `/styles.css`,
+or `/script.js` inside portable static wireframes.
 
 For local static wireframes, do not try to open `file://` URLs in the browser.
 Serve the draft workspace with a simple static server, then open the
@@ -317,6 +320,8 @@ Before treating the wireframe as ready:
 - Are labels understandable without decoration?
 - Does the layout support scanning?
 - Is clickable behavior clearly review-only?
+- Do page, style, script, and asset links use document-relative paths instead
+  of root-relative paths?
 - Was any agent-started static preview server stopped, intentionally left
   running with URL and timeout, or clearly identified as pre-existing?
 - Did the final response tell the user what to review and what happens next?

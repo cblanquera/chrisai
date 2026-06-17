@@ -26,6 +26,14 @@ Do not deliver markdown-only wireframes, markdown mockups, or prose-only
 creative drafts unless the user explicitly asks for text-only planning instead
 of generated files.
 
+Generated wireframes, creative drafts, clickable drafts, and functional
+creatives must use document-relative links for pages, scripts, styles, and
+draft assets. Prefer links such as `./index.html`, `./checkout.html`,
+`./styles.css`, `./script.js`, and `../assets/logo.png`. Do not assume the
+draft is hosted from a web root, and do not use root-relative paths such as
+`/index.html`, `/styles.css`, or `/assets/logo.png` inside portable static
+review artifacts.
+
 ## Internal Guidance
 
 - Use `workflows/creative-direction.md` when the task needs coordinated

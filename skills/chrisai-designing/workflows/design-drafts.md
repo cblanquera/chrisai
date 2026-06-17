@@ -128,8 +128,11 @@ only as the first page or review hub, then add sibling files such as
 `checkout.html`, `settings.html`, `empty-state.html`, or
 `mobile-menu.html` for the remaining pages and states. Share draft-level
 styles and behavior through `styles.css` and `script.js` when useful, and use
-relative links between HTML files so the folder can be reviewed without a
-build step.
+document-relative links between HTML files so the folder can be reviewed
+without a build step. Use links such as `./index.html`, `./checkout.html`,
+`./styles.css`, and `./script.js`; do not use root-relative links such as
+`/index.html`, `/checkout.html`, `/styles.css`, or `/script.js` inside
+portable static drafts.
 
 For clickable drafts, include only interactions needed to review navigation,
 flow, or state intent.
@@ -274,6 +277,9 @@ and open questions from the latest creative and/or wireframe revisions.
   for a different layout.
 - Do not create one monolithic HTML file for a multi-page or multi-state
   draft; use one HTML file per page, screen, or major state.
+- Do not use root-relative paths such as `/index.html`, `/styles.css`, or
+  `/assets/logo.png` inside generated static drafts; use document-relative
+  paths such as `./index.html`, `./styles.css`, or `./assets/logo.png`.
 - Do not mix review drafts into production code unless the user asks.
 - Do not open `file://` URLs for browser review; use a local static server
   for generated static drafts.

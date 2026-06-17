@@ -92,6 +92,32 @@ Use sibling HTML files with relative links, such as `dashboard.html`,
 `settings.html`, `empty-state.html`, and `error-state.html`. Keep shared
 styling in `styles.css` and shared simulated interactions in `script.js`.
 
+## Relative Link Rules
+
+Use document-relative links for all generated static review artifacts so the
+revision folder works when served from any directory path.
+
+Prefer:
+
+- `./index.html`
+- `./dashboard.html`
+- `./settings.html`
+- `./styles.css`
+- `./script.js`
+- `./assets/logo.png`
+- `../shared/example.png` only when the asset intentionally lives outside the
+  current revision folder
+
+Avoid root-relative paths such as `/index.html`, `/dashboard.html`,
+`/styles.css`, `/script.js`, or `/assets/logo.png`. Root-relative paths assume
+the draft is served from the web server root and can break when the artifact is
+reviewed from a nested folder, a temporary static server directory, or a copied
+revision folder.
+
+When linking between pages in the same revision folder, include the leading
+`./` for clarity, such as `href="./checkout.html"` or
+`window.location.href = "./confirmation.html"`.
+
 `README.md` is only review context. It must not replace the HTML/CSS/JS draft
 files.
 
