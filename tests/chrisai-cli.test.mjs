@@ -1,5 +1,6 @@
 //node
 import {
+  access,
   mkdir,
   mkdtemp,
   readFile,
@@ -56,11 +57,11 @@ test('install syncs the requested target', async () => {
     assert.match(result.stdout, /Synced ChrisAI skills/);
 
     const installedSkill = await readFile(
-      join(targetDir, 'chrisai-router', 'SKILL.md'),
+      join(targetDir, 'chrisai-coding', 'SKILL.md'),
       'utf8'
     );
 
-    assert.match(installedSkill, /name: chrisai-router/);
+    assert.match(installedSkill, /name: chrisai-coding/);
   } finally {
     await rm(targetDir, { force: true, recursive: true });
   }
@@ -70,7 +71,7 @@ test('validate works without shell tools on PATH', () => {
   const result = runCli(['validate'], { PATH: '' });
 
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /Validated \d+ skills and 1 template/);
+  assert.match(result.stdout, /Validated 7 skills\./);
 });
 
 test('install works without shell tools on PATH', async () => {
@@ -85,28 +86,32 @@ test('install works without shell tools on PATH', async () => {
     assert.equal(result.status, 0, result.stderr);
     assert.match(result.stdout, /Synced ChrisAI skills/);
     assert.match(
-      await readFile(join(targetDir, 'chrisai-router', 'SKILL.md'), 'utf8'),
-      /name: chrisai-router/
+      await readFile(join(targetDir, 'chrisai-coding', 'SKILL.md'), 'utf8'),
+      /name: chrisai-coding/
     );
   } finally {
     await rm(targetDir, { force: true, recursive: true });
   }
 });
 
-test('install preserves extra installed skills and local overlays', async () => {
+test('install prunes retired ChrisAI skills and preserves custom skills', async () => {
   const targetDir = await mkdtemp(join(tmpdir(), 'chrisai-retired-test-'));
 
   try {
+    await mkdir(join(targetDir, 'chrisai-router'), { recursive: true });
     await mkdir(join(targetDir, 'github-pages-vanilla'), { recursive: true });
-    await mkdir(join(targetDir, 'local-environment'), { recursive: true });
     await mkdir(join(targetDir, 'custom-team-skill'), { recursive: true });
+    await writeFile(
+      join(targetDir, 'chrisai-router', 'SKILL.md'),
+      'retired'
+    );
     await writeFile(
       join(targetDir, 'github-pages-vanilla', 'SKILL.md'),
       'retired'
     );
     await writeFile(
-      join(targetDir, 'local-environment', 'SKILL.md'),
-      'machine-local'
+      join(targetDir, 'custom-team-skill', 'SKILL.md'),
+      'custom'
     );
 
     const result = runCli(['install', '--target', 'codex'], {
@@ -115,17 +120,18 @@ test('install preserves extra installed skills and local overlays', async () => 
 
     assert.equal(result.status, 0, result.stderr);
 
+    await assert.rejects(
+      access(join(targetDir, 'chrisai-router', 'SKILL.md')),
+      { code: 'ENOENT' }
+    );
     assert.equal(
       await readFile(join(targetDir, 'github-pages-vanilla', 'SKILL.md'), 'utf8'),
       'retired'
     );
     assert.equal(
-      await readFile(join(targetDir, 'local-environment', 'SKILL.md'), 'utf8'),
-      'machine-local'
+      await readFile(join(targetDir, 'custom-team-skill', 'SKILL.md'), 'utf8'),
+      'custom'
     );
-    await mkdir(join(targetDir, 'custom-team-skill'), { recursive: false })
-      .then(() => assert.fail('custom-team-skill should already exist'))
-      .catch(error => assert.equal(error.code, 'EEXIST'));
   } finally {
     await rm(targetDir, { force: true, recursive: true });
   }

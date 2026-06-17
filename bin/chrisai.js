@@ -233,6 +233,22 @@ function copyDirectory(sourceDir, targetDir) {
 }
 
 /**
+ * Remove ChrisAI-owned skill folders that are no longer in this distribution.
+ */
+function pruneRetiredChrisAiSkills(targetDir, activeSkillNames) {
+  listDirectories(targetDir).forEach(targetSkillDir => {
+    const skillName = targetSkillDir.split(/[\\/]/).pop();
+
+    if (
+      !activeSkillNames.has(skillName)
+      && (skillName === 'chrisai' || skillName.startsWith('chrisai-'))
+    ) {
+      rmSync(targetSkillDir, { force: true, recursive: true });
+    }
+  });
+}
+
+/**
  * Sync current ChrisAI skills into a target directory.
  */
 function install(target) {
@@ -247,7 +263,14 @@ function install(target) {
   const targetDir = resolveTarget();
   mkdirSync(targetDir, { recursive: true });
 
-  listDirectories(skillsDir).forEach(skillDir => {
+  const skillDirs = listDirectories(skillsDir);
+  const activeSkillNames = new Set(
+    skillDirs.map(skillDir => skillDir.split(/[\\/]/).pop())
+  );
+
+  pruneRetiredChrisAiSkills(targetDir, activeSkillNames);
+
+  skillDirs.forEach(skillDir => {
     const skillName = skillDir.split(/[\\/]/).pop();
     const targetSkillDir = join(targetDir, skillName);
 

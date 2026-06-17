@@ -14,8 +14,9 @@ unless the user explicitly asks for an operational action.
   such as `openai.yaml` and equivalent Claude metadata when the skill needs
   Claude-specific registration or behavior.
 - `archives/`: retired skill content kept outside the active distribution
-  surface. Do not treat archived skills as installable or routable unless the
-  user explicitly asks to restore or inspect archived material.
+  surface. Do not perform work in this folder. Do not treat archived skills as
+  installable, routable, reusable, or authoritative for active work. Do not
+  reference `archives/` from active `skills/` or `docs/` content.
 - `adapters/codex/`: Codex install and sync guidance.
 - `adapters/claude/`: Claude Code install and sync guidance.
 - `adapters/opencode/`: OpenCode install and sync guidance.
@@ -91,9 +92,7 @@ flow for user-facing install guidance because it uses the Node CLI instead of
 Unix shell tools.
 
 When a workflow genuinely depends on OS-specific tools, document the
-assumption clearly, provide equivalent alternatives when practical, and route
-machine-specific executable paths through `local-environment` instead of
-hard-coding personal paths into shared skills.
+assumption clearly and provide equivalent alternatives when practical.
 
 ## Release Workflow
 

@@ -125,29 +125,12 @@ canonical content.
 
 ```text
 skills/              Portable ChrisAI skills and bundled resources
-archives/            Retired skill content outside the active distribution
 adapters/codex/      Codex install notes
 adapters/claude/     Claude Code install notes
 adapters/opencode/   OpenCode install notes
 bin/                 Minimal npm/npx CLI wrapper
 scripts/             Validation, version, update, and sync commands
-templates/           Copyable personal overlays such as local-environment
 docs/                Operational maintenance notes
 VERSION              Current distribution version
 CHANGELOG.md         Version history
 ```
-
-## Local Environment
-
-ChrisAI can use an optional `local-environment` skill for machine-local command
-resolution. This is useful for preferred Node, Yarn, npm, pnpm, Python, Rust,
-browser, or helper CLI paths.
-
-Start from:
-
-```text
-templates/local-environment/SKILL.md
-```
-
-Copy it into your agent's local skills directory and customize that installed
-copy. Do not commit real machine-local paths to this repository.

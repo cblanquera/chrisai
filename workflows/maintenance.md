@@ -22,19 +22,6 @@ scripts/validate-skills.py
 Validation checks that every folder under `skills/` has a matching `SKILL.md`,
 valid frontmatter, a lowercase kebab-case name, and a description.
 
-## Build HTML Artifact Renderer
-
-```bash
-npm run build:html-artifact
-```
-
-This rebuilds the bundled renderer for `chrisai-prompt-md-to-html` from its
-readable source file and refreshes the Mermaid browser runtime asset. Run it
-after changing the renderer source or upgrading the renderer dependencies.
-
-The committed bundled renderer lets installed skill copies run without
-installing local npm dependencies.
-
 ## Check Version
 
 ```bash
@@ -61,7 +48,9 @@ scripts/sync-opencode.sh
 ```
 
 Each sync script validates first, then replaces the installed ChrisAI skill
-folders in the target directory with copies from `skills/`.
+folders in the target directory with copies from `skills/`. Retired
+ChrisAI-owned folders such as old `chrisai-*` skills are removed from the
+target, while non-ChrisAI custom skills and local overlays are left alone.
 
 The same install flow is available through the dependency-free Node CLI:
 

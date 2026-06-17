@@ -22,6 +22,13 @@ fi
 python3 "$repo_root/scripts/validate-skills.py"
 mkdir -p "$target_dir"
 
+for target_skill_dir in "$target_dir"/chrisai "$target_dir"/chrisai-*; do
+  [ -d "$target_skill_dir" ] || continue
+  skill_name="$(basename "$target_skill_dir")"
+  [ -d "$source_dir/$skill_name" ] && continue
+  rm -rf "$target_skill_dir"
+done
+
 for skill_dir in "$source_dir"/*; do
   [ -d "$skill_dir" ] || continue
   skill_name="$(basename "$skill_dir")"

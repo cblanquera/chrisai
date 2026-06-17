@@ -21,22 +21,17 @@ local clone on a Unix-like environment where those scripts are known to work.
 3. Run `scripts/update-from-git.sh` only when the user explicitly asked to pull
    or update a local Git checkout.
 4. Run `node bin/chrisai.js validate` or `scripts/validate-skills.py`.
-5. Check whether the requested adapter target has a local `local-environment`
-   skill installed.
-6. If `local-environment` is missing, mention that it can be set up from
-   `templates/local-environment/SKILL.md` for machine-local executable paths.
-7. Ask which adapter target to sync when the user did not name one.
-8. Run only the requested sync command. Prefer:
+5. Ask which adapter target to sync when the user did not name one.
+6. Run only the requested sync command. Prefer:
    - Codex: `npx github:cblanquera/chrisai#<version> install --target codex`
    - Claude Code: `npx github:cblanquera/chrisai#<version> install --target claude`
    - OpenCode: `npx github:cblanquera/chrisai#<version> install --target opencode`
-9. When intentionally using a local Unix clone instead, the equivalent scripts
+7. When intentionally using a local Unix clone instead, the equivalent scripts
    are:
    - Codex: `scripts/sync-codex.sh`
    - Claude Code: `scripts/sync-claude.sh`
    - OpenCode: `scripts/sync-opencode.sh`
-10. Report the version, commit, validation result, local-environment status,
-   and synced target.
+8. Report the version, commit, validation result, and synced target.
 
 ## Boundaries
 
@@ -45,6 +40,5 @@ local clone on a Unix-like environment where those scripts are known to work.
 - Do not sync to Codex unless the user requested Codex sync.
 - Do not sync to Claude Code unless the user requested Claude Code sync.
 - Do not sync to OpenCode unless the user requested OpenCode sync.
-- Do not overwrite or auto-sync a customized `local-environment` skill.
 - Prefer environment overrides documented in `adapters/*/README.md` when an
   agent uses a non-default skills path.

@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.1 - 2026-06-18
+
+- Consolidated the active distribution into seven portable ChrisAI skills:
+  `chrisai-agents`, `chrisai-branding`, `chrisai-chatting`,
+  `chrisai-coding`, `chrisai-designing`, `chrisai-docing`, and
+  `chrisai-doctor`.
+- Updated installer and sync behavior so retired ChrisAI-owned skill folders
+  are pruned from adapter targets while unrelated custom skills are preserved.
+- Removed machine-local override guidance and tightened archive boundaries so
+  active skills and docs do not reference retired archive content.
+- Added chatting workflows for session caching, HTML form intake, and readable
+  HTML response previews.
+- Added branding workflows for brand strategy, research, naming, asset
+  preparation, domain checks, and launch readiness.
+
 ## 0.1.27 - 2026-06-16
 
 - Updated `chrisai-planning-agent-spec` so each implemented POC uses its own
@@ -271,5 +286,3 @@
 - Added Codex, Claude Code, and OpenCode adapter directories.
 - Added validation, version, update, and adapter sync scripts.
 - Added `chrisai-update` and `chrisai-doctor` maintenance skills.
-- Added a portable `local-environment` template and guidance for opt-in
-  machine-local command resolution.
