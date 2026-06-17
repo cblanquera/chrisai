@@ -28,7 +28,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-docs` | Route developer-facing technical writing to internal workflows and references for guided learning, API reference, formatting, and copy editing. |
+| `chrisai-docing` | Route developer-facing technical writing to internal workflows and references for guided learning, API reference, formatting, and copy editing. |
 
 ### Prompt
 
@@ -50,7 +50,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-design` | Route ChrisAI design work to internal workflows and references for creative direction, design-system extraction, wireframes, design drafts, and browser-visible feedback loops. |
+| `chrisai-designing` | Route ChrisAI design work to internal workflows and references for creative direction, design-system extraction, wireframes, design drafts, and browser-visible feedback loops. |
 
 ### Branding
 

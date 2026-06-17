@@ -1,0 +1,6 @@
+interface:
+  display_name: "ChrisAI Designing"
+  short_description: "Creative direction, extraction, wireframes, drafts, and browser review"
+  default_prompt: "Use $chrisai-designing for software design tasks involving wireframes, creative direction, design-system extraction, and creative handoff documentation."
+policy:
+  allow_implicit_invocation: true

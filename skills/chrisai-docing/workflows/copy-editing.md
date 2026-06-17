@@ -1,4 +1,4 @@
-# ChrisAI Docs Copy Editing
+# ChrisAI Docing Copy Editing
 
 This workflow is an editorial pass for existing developer-facing documentation.
 

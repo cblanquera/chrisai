@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Docing"
+  short_description: "Technical writing authoring and editing"
+  default_prompt: "Use $chrisai-docing for technical writing tasks that include guided learning, API reference, formatting, or copy editing for technical readers."

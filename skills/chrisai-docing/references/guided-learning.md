@@ -1,4 +1,4 @@
-# ChrisAI Docs Guided Learning
+# ChrisAI Docing Guided Learning
 
 This reference is the editorial standard for learning-oriented developer
 documentation aimed at junior developers.

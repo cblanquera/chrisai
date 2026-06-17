@@ -1,4 +1,4 @@
-# ChrisAI Docs Dev Formatting
+# ChrisAI Docing Dev Formatting
 
 This reference standardizes markdown documentation so it is consistent, scannable,
 and aligned with the repo's documentation style rules.

@@ -1,4 +1,4 @@
-# ChrisAI Docs Dev API Reference
+# ChrisAI Docing Dev API Reference
 
 This reference guides API reference documentation for junior developers who already
 know the surface they need and want accurate, scannable details.

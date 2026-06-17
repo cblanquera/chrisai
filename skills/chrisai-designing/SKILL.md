@@ -1,9 +1,9 @@
 ---
-name: chrisai-design
+name: chrisai-designing
 description: Use for software design tasks involving wireframes, creative direction, design-system extraction, and creative handoff documentation.
 ---
 
-# ChrisAI Design
+# ChrisAI Designing
 
 Use this skill for design work. Route the task to the narrowest
 internal workflow or reference unless the request clearly needs a deliberate

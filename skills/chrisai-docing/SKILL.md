@@ -1,9 +1,9 @@
 ---
-name: chrisai-docs
+name: chrisai-docing
 description: Use for technical writing tasks that include guided learning, API reference, formatting, or copy editing for technical readers.
 ---
 
-# ChrisAI Docs
+# ChrisAI Docing
 
 Use this skill for technical writing and developer-facing technical
 documentation. Route the task to the narrowest internal workflow or reference
