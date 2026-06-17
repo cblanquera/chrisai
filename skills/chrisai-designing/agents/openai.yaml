@@ -1,6 +1,9 @@
 interface:
   display_name: "ChrisAI Designing"
   short_description: "Creative direction, extraction, wireframes, drafts, and browser review"
+  icon_small: "./assets/bad-baby-bear-bot-head-icon-small.png"
+  icon_large: "./assets/bad-baby-bear-bot-head-icon.png"
+  brand_color: "#55B2A1"
   default_prompt: "Use $chrisai-designing for software design tasks involving wireframes, creative direction, design-system extraction, and creative handoff documentation."
 policy:
   allow_implicit_invocation: true

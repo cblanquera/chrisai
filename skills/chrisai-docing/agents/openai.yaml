@@ -1,4 +1,7 @@
 interface:
   display_name: "ChrisAI Docing"
   short_description: "Technical writing authoring and editing"
+  icon_small: "./assets/bad-baby-bear-bot-head-icon-small.png"
+  icon_large: "./assets/bad-baby-bear-bot-head-icon.png"
+  brand_color: "#55B2A1"
   default_prompt: "Use $chrisai-docing for technical writing tasks that include guided learning, API reference, formatting, or copy editing for technical readers."

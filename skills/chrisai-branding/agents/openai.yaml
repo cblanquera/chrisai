@@ -1,4 +1,7 @@
 interface:
   display_name: "ChrisAI Branding"
   short_description: "Guided brand research, identity, assets, and kits"
+  icon_small: "./assets/bad-baby-bear-bot-head-icon-small.png"
+  icon_large: "./assets/bad-baby-bear-bot-head-icon.png"
+  brand_color: "#55B2A1"
   default_prompt: "Use $chrisai-branding to choose the right branding workflow, from research and naming to logo direction, brand kits, audits, and asset preparation."

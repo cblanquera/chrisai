@@ -1,4 +1,7 @@
 interface:
   display_name: "ChrisAI Chatting"
   short_description: "Chat caches, intake forms, and HTML previews"
+  icon_small: "./assets/bad-baby-bear-bot-head-icon-small.png"
+  icon_large: "./assets/bad-baby-bear-bot-head-icon.png"
+  brand_color: "#55B2A1"
   default_prompt: "Use $chrisai-chatting to improve a chat session experience with session caching, HTML intake forms, or readable HTML preview links."
