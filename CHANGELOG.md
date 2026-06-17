@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 - 2026-06-18
+
+- Added Bad Baby Bear Bot icon assets for the active ChrisAI skill metadata.
+- Updated Codex `openai.yaml` metadata for all active ChrisAI skills with
+  shared icon paths and brand color.
+- Clarified adapter-specific workflow guidance for Codex, Claude Code, and
+  OpenCode.
+
 ## 0.2.1 - 2026-06-18
 
 - Consolidated the active distribution into seven portable ChrisAI skills:
