@@ -1,7 +1,7 @@
 # ChrisAI
 
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
-ChrisAI coding, documentation, prompt, planning, process, design, branding, QA, and maintenance
+ChrisAI agents, branding, chatting, coding, designing, docing, and maintenance
 behaviors as reusable `skills/*/SKILL.md` folders.
 
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
@@ -9,60 +9,25 @@ and OpenCode are install targets, not separate rewritten sources.
 
 ## Included Skills
 
-### Entry And Maintenance
-
 | Skill | Purpose |
 | --- | --- |
-| `chrisai` | Short alias entrypoint for `chrisai-router`. |
-| `chrisai-router` | Canonical entry router for ChrisAI family routers and standalone QA or maintenance skills. |
-| `chrisai-update` | Explicit update and sync workflow for ChrisAI installs. |
-| `chrisai-doctor` | Diagnose ChrisAI repository, validation, adapter sync, and local installation state. |
-
-### Coding
-
-| Skill | Purpose |
-| --- | --- |
+| `chrisai-agents` | Create, repair, migrate, or standardize a project-local `.agents/` folder for agent-readable workflows, context rules, planning, specs, progress tracking, and handoffs. |
+| `chrisai-branding` | Support brand identity work, including guided branding, research, competitor discovery, positioning, naming, domain checks, logo guidance, brand kits, audits, launch readiness, transparent PNG preparation, and PNG/ICO conversion. |
+| `chrisai-chatting` | Route experimental chat-session experience work, including session caching and recall, HTML form intake, and converting agent responses into HTML artifacts. |
 | `chrisai-coding` | Audit, recommend improvements to, and fix existing JavaScript, TypeScript, React TSX, TypeScript test, HTML/CSS, and TypeScript logic-review work through consolidated internal workflows and references. |
-
-### Documentation
-
-| Skill | Purpose |
-| --- | --- |
 | `chrisai-docing` | Route developer-facing technical writing to internal workflows and references for guided learning, API reference, formatting, and copy editing. |
-
-### Prompt
-
-| Skill | Purpose |
-| --- | --- |
-| `chrisai-prompt` | Route ChrisAI prompt work to artifact generation or prior-conversation context caching specialists. |
-| `chrisai-prompt-cache` | Preserve, index, chunk, retrieve, or hand off prior-conversation context without loading the full transcript. |
-| `chrisai-prompt-md-to-html` | Convert Markdown or Codex text responses into deterministic single-file HTML artifacts with fixed layouts, syntax highlighting, Mermaid support, and validated theme options. |
-
-### Planning
-
-| Skill | Purpose |
-| --- | --- |
-| `chrisai-planning` | Route `.agents` setup, repair, migration, or standardization before implementation. |
-| `chrisai-agents` | Create project-local `.agents` context knowledge bases, workflows, development specs, research, and progress tracking. |
-| `chrisai-planning-agent-spec` | Bootstrap project-local `.agents/AGENTS.md`, `.agents/workflows/`, folder structure, and initial records. |
-
-### Design
-
-| Skill | Purpose |
-| --- | --- |
 | `chrisai-designing` | Route ChrisAI design work to internal workflows and references for creative direction, design-system extraction, wireframes, design drafts, and browser-visible feedback loops. |
+| `chrisai-doctor` | Diagnose, verify, inspect, troubleshoot, update, upgrade, pull, install, or sync ChrisAI skills, repository state, validation, or agent adapter targets. |
 
-### Branding
+## Human-Readable Docs
 
-| Skill | Purpose |
+| Topic | Guide |
 | --- | --- |
-| `chrisai-branding` | Placeholder skill for brand asset utilities, PNG/ICO conversion guidance, TLD exploration, brand research, and brand kit planning or generation. |
-
-### Process
-
-| Skill | Purpose |
-| --- | --- |
-| `chrisai-process` | Route ChrisAI process work to feedback-loop handling or local `.agents/workflows/progress.md` guidance. |
+| Agents | [docs/agents.md](docs/agents.md) |
+| Branding | [docs/branding.md](docs/branding.md) |
+| Coding | [docs/coding.md](docs/coding.md) |
+| Designing | [docs/design.md](docs/design.md) |
+| Docing | [docs/docs.md](docs/docs.md) |
 
 ## Install
 
@@ -128,8 +93,8 @@ Then sync the target agent again:
 scripts/sync-codex.sh
 ```
 
-Use `chrisai-update` for agent-assisted update workflow and `chrisai-doctor`
-for diagnostics.
+Use `chrisai-doctor` for agent-assisted diagnostics, updates, and sync
+guidance.
 
 ## Stable And Development Workflow
 
