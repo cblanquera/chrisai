@@ -138,8 +138,8 @@ into the next workflow unless the user asks to continue.
 ## Decision Rules
 
 - If the task is mainly about a concrete UI, product screen, wireframe,
-  design-system extraction, creative draft, or design handoff, use
-  `chrisai-designing` instead.
+  design-system extraction, creative draft, or design handoff, route it to an
+  appropriate design workflow instead.
 - If the task is mainly about broad visual identity exploration beyond logo
   marks and usage guidance, use this skill for brand strategy, logo workflow,
   usage rules, asset preparation, or brand-kit framing; use a design
