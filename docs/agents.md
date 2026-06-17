@@ -8,19 +8,25 @@ Source skill: [`skills/chrisai-agents`](../skills/chrisai-agents/SKILL.md)
 
 ## Purpose
 
-The skill sets up `.agents` so future agents can continue from project-local
-rules and workflow files without needing the ChrisAI skill active.
+The skill sets up or repairs `.agents` so future agents can continue from
+project-local rules and workflow files without needing the ChrisAI skill
+active. It should not create empty folders or placeholder files just to match
+the full folder model; each folder is materialized when a workflow, context
+entry, record, progress item, design artifact, research note, or release view
+needs it.
 
 It supports two related jobs:
 
-- building a Markdown knowledge base from files, links, pasted text, or user
-  input
+- generating a local workflow for building a Markdown knowledge base from
+  files, links, pasted text, or user input
 - planning and tracking development for a singular product or bounded product
   stream
 
 ## Context Knowledge Base
 
-Use `.agents/context/` as the project knowledge-base surface. Example prompts:
+Use `.agents/context/` as the project knowledge-base surface once context
+exists. The generated `.agents/workflows/context-ingestion.md` workflow handles
+prompts such as:
 
 - "Can you ingest this document?"
 - "Can you add this file to the kb?"
@@ -28,7 +34,9 @@ Use `.agents/context/` as the project knowledge-base surface. Example prompts:
 - "What are the marketing guidelines for this product?"
 - "What does the CEO want?"
 
-For ingestion, the agent converts useful source content to Markdown and updates
+For ingestion, this skill should generate or repair
+`.agents/workflows/context-ingestion.md`. Future agents then follow that local
+workflow to convert useful source content to Markdown and update
 `.agents/context/index.md`.
 
 If generated context would exceed 500 lines, all chunks go under

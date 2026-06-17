@@ -1,7 +1,9 @@
 # Context Knowledge Base
 
-Use this reference when the user asks to ingest, process, add, intake, or query
-project context.
+Use this reference when generating or repairing
+`.agents/workflows/context-ingestion.md`, or when setup includes an initial
+context entry. The installed `.agents` workflow should handle ongoing requests
+to ingest, process, add, intake, or query project context.
 
 Common prompts:
 
@@ -13,6 +15,9 @@ Common prompts:
 - "What does the CEO want?"
 
 ## Folder Contract
+
+This is a materialized-on-demand contract. Do not create these files or folders
+until context exists or the setup explicitly seeds context.
 
 ```text
 .agents/context/

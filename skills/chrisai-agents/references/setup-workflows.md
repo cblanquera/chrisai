@@ -17,11 +17,11 @@ Read first:
 May update:
 
 - `.agents/AGENTS.md`
-- `.agents/context/index.md`
-- `.agents/context/feature-goals.md`
+- `.agents/context/index.md`, only when context exists or is seeded
+- `.agents/context/feature-goals.md`, only when feature-goal intake exists
 - `.agents/workflows/`
-- `.agents/development/specs/manifest.md`
-- `.agents/development/specs/<spec-id>/`
+- `.agents/development/specs/manifest.md`, only when spec records are created
+- `.agents/development/specs/<spec-id>/`, only when scope is bounded enough
 - `.agents/references/`
 
 Ask only enough to start responsibly:
@@ -39,8 +39,7 @@ If enough information exists, proceed and mark uncertainty explicitly.
 Process:
 
 1. Choose one `<spec-id>` for the bounded initiative.
-2. Ensure `.agents/AGENTS.md`, `.agents/context/index.md`,
-   `.agents/workflows/`, and `.agents/development/specs/manifest.md` exist.
+2. Ensure `.agents/AGENTS.md` and needed `.agents/workflows/` exist.
 3. Create the initial spec skeleton when the scope is bounded enough.
 4. Write `brief.md`, `index.md`, and `status.md`.
 5. Create compact grouped record files directly under the spec folder.
@@ -84,10 +83,10 @@ Read first:
 May update:
 
 - `.agents/AGENTS.md`
-- `.agents/context/`
+- `.agents/context/`, only when context is seeded or repaired
 - `.agents/workflows/`
-- `.agents/development/specs/manifest.md`
-- `.agents/development/specs/<spec-id>/`
+- `.agents/development/specs/manifest.md`, only when spec records are created
+- `.agents/development/specs/<spec-id>/`, only when scope is bounded enough
 - `.agents/references/`
 
 Source rules:
@@ -139,9 +138,9 @@ May update:
 - `.agents/context/`
 - `.agents/references/`
 - `.agents/workflows/`
-- `.agents/development/specs/manifest.md`
-- `.agents/development/specs/<spec-id>/`
-- `.agents/development/research/`
+- `.agents/development/specs/manifest.md`, only when spec records are created
+- `.agents/development/specs/<spec-id>/`, only when scope is bounded enough
+- `.agents/development/research/`, only when source material contains research
 
 Source types:
 

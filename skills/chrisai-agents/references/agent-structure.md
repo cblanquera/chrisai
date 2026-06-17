@@ -7,6 +7,11 @@ explicitly asks to move material.
 
 ## Layout
 
+This is the full folder contract, not a command to create every folder during
+setup. Materialize folders and files only when the current setup, repair,
+workflow, context entry, record, progress item, design artifact, research note,
+or release view needs them.
+
 ```text
 .agents/
   AGENTS.md
@@ -92,9 +97,6 @@ explicitly asks to move material.
       notes.md
 ```
 
-Do not create `.agents/plans/`. Context intake and feature-goal intake belong
-in `.agents/context/`.
-
 ## Local AGENTS.md
 
 Create or update `.agents/AGENTS.md` whenever the `.agents` operating surface
@@ -138,7 +140,8 @@ Start by reading the workflow file that matches the task:
 ## Source Of Truth
 
 - `.agents/context/` contains the project knowledge base and feature-goal
-  intake. Check it before answering project-specific questions.
+  intake when context exists. Check it before answering project-specific
+  questions.
 - `.agents/development/specs/` contains durable product intent, requirements,
   decisions, risks, evidence, acceptance criteria, indexes, and proposed tasks.
 - `.agents/development/progress/` contains active execution state and work
