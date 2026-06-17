@@ -22,14 +22,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-coding` | Route ChrisAI coding work to architecture, JavaScript, TypeScript, React, test, HTML, or CSS specialists. |
-| `chrisai-coding-engineering` | Frame architecture, abstractions, runtime boundaries, and refactor-versus-rewrite decisions before language-specific implementation details. |
-| `chrisai-coding-html-css` | Write or review vanilla HTML and CSS for static sites and docs pages. |
-| `chrisai-coding-js` | Write or review JavaScript using ChrisAI conventions across `.js`, `.mjs`, and `.cjs`. |
-| `chrisai-coding-ts` | Write or review TypeScript implementation details using ChrisAI coding conventions, not framework or architecture boundaries. |
-| `chrisai-coding-ts-logic-review` | Review TypeScript logic and related tests for branching risk, test gaps, duplicated rules, and refactor opportunities before applying changes. |
-| `chrisai-coding-ts-react` | Write or review React TSX using ChrisAI conventions. |
-| `chrisai-coding-ts-tests` | Write or review TypeScript tests using ChrisAI testing conventions. |
+| `chrisai-coding` | Route JavaScript, TypeScript, React TSX, TypeScript test, HTML/CSS, and TypeScript logic-review work to consolidated internal workflows and references. |
 
 ### Documentation
 

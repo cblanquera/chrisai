@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Coding"
+  short_description: "Coding style guides, and logic review for JavaScript, TypeScript, React TSX, HTML/CSS, and TypeScript tests"
+  default_prompt: "Use $chrisai-coding for tasks involving code styling, and logic reviews where code involves JavaScript, TypeScript, HTML, CSS."
