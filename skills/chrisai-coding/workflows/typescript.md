@@ -13,8 +13,8 @@ return here once the structure is decided.
 
 If the main question is a review-first pass over complex branching, decision
 logic, branch coverage gaps, duplicated rules, or mutation risk, use
-`workflows/typescript-logic-review.md` first and only return here after the user
-approves code edits.
+`workflows/logic-review.md` first and only return here after the user approves
+code edits.
 
 ## Second Pass Use
 

@@ -12,6 +12,11 @@ This skill covers:
 Use TypeScript-specific skills instead for `.ts`, `.tsx`, and TypeScript-first
 test work.
 
+If the main question is a review-first pass over complex branching, decision
+logic, branch coverage gaps, duplicated rules, or mutation risk, use
+`workflows/logic-review.md` first and only return here after the user approves
+code edits.
+
 ## Second Pass Use
 
 This workflow may guide approved fixes directly, but it is especially

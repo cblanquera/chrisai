@@ -1,4 +1,4 @@
-# TypeScript Logic Review Signals
+# Logic Review Signals
 
 Use these signals to guide review judgment. They are not a required scoring
 system and should not be reported as raw metrics unless the user asks.
@@ -150,7 +150,8 @@ test setup is clearer than a shared helper that hides the scenario.
 
 ## TypeScript-Specific Review Notes
 
-TypeScript features can either clarify or hide logic.
+TypeScript features can either clarify or hide logic. Use these notes only when
+the reviewed code is TypeScript.
 
 Helpful patterns:
 

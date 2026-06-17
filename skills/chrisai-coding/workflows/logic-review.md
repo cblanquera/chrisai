@@ -1,7 +1,8 @@
-# ChrisAI Coding TS Logic Review
+# ChrisAI Coding Logic Review
 
-Use this skill for TypeScript logic reviews where the goal is to understand
-branching risk, test adequacy, and refactor opportunities before changing code.
+Use this workflow for JavaScript or TypeScript logic reviews where the goal is
+to understand branching risk, test adequacy, and refactor opportunities before
+changing code.
 
 This is a review-first skill. Do not edit code during the initial review pass.
 Present findings, then ask whether to apply all suggested changes, selected
@@ -9,15 +10,15 @@ changes, or no changes.
 
 ## Relationship To Other Skills
 
-Use this skill when the main question is whether existing TypeScript logic is
-too complex, under-tested, duplicated, or risky to change.
+Use this workflow when the main question is whether existing JavaScript or
+TypeScript logic is too complex, under-tested, duplicated, or risky to change.
 
-Use `workflows/typescript.md` after the user approves code edits so the resulting
-TypeScript follows code style, comments, imports, exports, and typing
-rules.
+Use `workflows/javascript.md` or `workflows/typescript.md` after the user
+approves code edits so the resulting code follows language-specific code style,
+comments, imports, exports, and typing rules.
 
-Use `workflows/typescript-tests.md` after the user approves test edits so added or
-changed tests follow the repo's test standards.
+Use `workflows/typescript-tests.md` after the user approves test edits so added
+or changed tests follow the repo's test standards.
 
 If the review reveals a module boundary, public API, adapter, or architecture
 problem, mention it in the findings. Do not switch into architecture design
@@ -40,7 +41,8 @@ results, use it as context. Do not turn the review into a tool setup task.
 
 Treat metrics as private review signals, not the report headline.
 
-Read `references/typescript-logic-review-signals.md` when the review needs concrete guidance on:
+Read `references/logic-review-signals.md` when the review needs concrete
+guidance on:
 
 - cyclomatic complexity
 - cognitive complexity
@@ -192,7 +194,7 @@ After editing, summarize what changed and what verification ran.
 - Do not auto-edit code during the review pass.
 - Do not recommend refactoring well-tested, isolated logic only because it has
   several branches.
-- Do not count TypeScript syntax as risky when it does not add meaningful
+- Do not count language syntax as risky when it does not add meaningful
   behavior risk.
 - Do not require mutation testing, branch coverage tools, or new lint rules.
 - Do not replace business rules with abstractions that hide the decision table.

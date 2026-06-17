@@ -20,8 +20,8 @@ the context window small and focused on the code under review.
 - Use `workflows/typescript.md` for auditing, recommending, and fixing existing
   non-React TypeScript code shape, imports, exports, typing, classes, and final
   style passes.
-- Use `workflows/typescript-logic-review.md` for review-first TypeScript logic
-  work involving branching risk, hard-to-follow decisions, test gaps,
+- Use `workflows/logic-review.md` for review-first JavaScript or TypeScript
+  logic work involving branching risk, hard-to-follow decisions, test gaps,
   duplicated rules, mutation risk, or refactor opportunities before edits.
 - Use `workflows/react-tsx.md` for auditing, recommending, and fixing existing
   TypeScript ReactJS or TSX components, hooks, form behavior, prop and event
@@ -51,8 +51,8 @@ the context window small and focused on the code under review.
   `references/typescript-jsdoc-and-declaration-comments.md`,
   `references/typescript-module-design.md`, and
   `references/typescript-style-details.md`.
-- Use `references/typescript-logic-review-signals.md` when logic-review work
-  needs concrete signals for complexity, branch coverage, mutation risk, or
+- Use `references/logic-review-signals.md` when logic-review work needs
+  concrete signals for complexity, branch coverage, mutation risk, or
   duplicated decision logic.
 - Use React references when `workflows/react-tsx.md` calls for deeper examples:
   `references/react-commenting-style.md`, `references/react-forms.md`,
@@ -80,8 +80,8 @@ the context window small and focused on the code under review.
 Only chain internal guidance when there is a clear owner plus a clear
 follow-up. Use this order:
 
-1. `workflows/typescript-logic-review.md` first when the user asks for a
-   review-first pass over TypeScript branching, decision logic, branch coverage,
+1. `workflows/logic-review.md` first when the user asks for a review-first pass
+   over JavaScript or TypeScript branching, decision logic, branch coverage,
    duplicated rules, or mutation risk.
 2. `workflows/maintainability-audit.md` only when the user explicitly asks for
    that audit. Stop after recommendations; do not edit until the user approves.
@@ -96,12 +96,11 @@ request.
 
 ## Decision Rules
 
+- If the task is a JavaScript or TypeScript review-first logic audit, use
+  `workflows/logic-review.md` and do not edit during the initial review pass.
 - If the task is plain JavaScript, use `workflows/javascript.md`.
 - If the task is non-React TypeScript audit or fix work, use
   `workflows/typescript.md`.
-- If the task is a TypeScript review-first logic audit, use
-  `workflows/typescript-logic-review.md` and do not edit during the initial
-  review pass.
 - If the task is TSX, typed React components, hooks, forms, or React UI code,
   use `workflows/react-tsx.md`.
 - If the task is mainly auditing, repairing, or reviewing existing tests, use

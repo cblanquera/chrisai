@@ -42,11 +42,11 @@ What happens:
 
 Primary workflow: `workflows/typescript.md`
 
-### TypeScript Logic Review
+### Logic Review
 
 Use this skill when the request asks for a review-first pass over existing
-TypeScript logic, branching, duplicated decisions, risky mutation, hard-to-follow
-flows, or missing branch coverage.
+JavaScript or TypeScript logic, branching, duplicated decisions, risky mutation,
+hard-to-follow flows, or missing branch coverage.
 
 What happens:
 
@@ -55,10 +55,10 @@ What happens:
   edge cases, and missing tests.
 - The agent reports findings with concrete file references.
 - The agent does not edit during the initial review pass.
-- If the user approves fixes, the agent routes to the TypeScript or test
-  workflow as needed.
+- If the user approves fixes, the agent routes to the JavaScript, TypeScript, or
+  test workflow as needed.
 
-Primary workflow: `workflows/typescript-logic-review.md`
+Primary workflow: `workflows/logic-review.md`
 
 ### React TSX Audit Or Fix
 
@@ -150,8 +150,7 @@ The workflow files use references for specific standards:
   and declaration comments
 - `references/typescript-module-design.md`: TypeScript module boundaries
 - `references/typescript-style-details.md`: TypeScript style details
-- `references/typescript-logic-review-signals.md`: TypeScript logic review
-  signals
+- `references/logic-review-signals.md`: logic review signals
 - `references/react-commenting-style.md`: React comment rules
 - `references/react-forms.md`: React form patterns
 - `references/react-jsdoc-and-declaration-comments.md`: React JSDoc and
