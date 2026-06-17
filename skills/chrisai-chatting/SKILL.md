@@ -1,6 +1,6 @@
 ---
 name: chrisai-chatting
-description: Use for experimental chat-session experience work, including session caching and recall, intake from HTML form-submission artifacts, and converting agent responses into HTML artifacts.
+description: Use for experimental chat-session experience work, including session caching and recall, turning agent intake prompts into HTML form artifacts, and converting agent responses into readable HTML preview links.
 ---
 
 # ChrisAI Chatting
@@ -20,17 +20,15 @@ experience artifact.
 - `workflows/chat-session-caching-and-recall.md`: For preserving useful chat
   context, producing compact recall artifacts, deciding what should be cached,
   and rehydrating prior session state without overloading a new conversation.
-- `workflows/html-form-intake.md`: For turning submitted HTML form artifacts
-  into structured intake, validation notes, follow-up questions, and a usable
-  task brief.
+- `workflows/html-form-intake.md`: For turning agent intake prompts into local
+  HTML form artifacts, then using static copy/paste responses or explicit
+  one-shot server submissions to continue the original workflow.
 - `workflows/agent-response-to-html.md`: For mirroring agent responses into a
   readable HTML preview link while preserving the chat response as the
   canonical answer, or for saving/opening HTML when the user explicitly asks.
 
-## Placeholder Rules
+## General Rules
 
-- Keep not-yet-created workflows experimental and review-first until they have
-  concrete examples, input/output expectations, and clear success criteria.
 - Prefer artifact-oriented outputs when the user provides or asks for HTML.
 - Preserve source meaning when transforming chat content into cache summaries,
   intake briefs, or HTML artifacts.
@@ -46,10 +44,11 @@ experience artifact.
 - If the task is about compacting, saving, recalling, or transferring useful
   chat-session context, use the chat-session caching and recall
   workflow.
-- If the task starts from an HTML form submission, exported form artifact, or
-  submitted HTML payload, route it to the planned HTML form intake workflow.
+- If the task starts from an agent intake prompt that should be answered as a
+  form, an HTML form submission, exported form artifact, or submitted HTML
+  payload, use the HTML form intake workflow.
 - If the task asks for a response, summary, report, or handoff to become
   pretty, readable, previewed, or HTML-formatted, use the agent response to
   HTML workflow.
-- If the request spans multiple planned workflows, choose the workflow that
-  owns the first concrete artifact and keep any follow-up workflow explicit.
+- If the request spans multiple workflows, choose the workflow that owns the
+  first concrete artifact and keep any follow-up workflow explicit.

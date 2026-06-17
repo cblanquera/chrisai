@@ -1,4 +1,4 @@
 interface:
   display_name: "ChrisAI Chatting"
-  short_description: "Experimental chat-session workflow patterns"
-  default_prompt: "Use $chrisai-chatting to improve a chat session experience with experimental session caching, HTML form intake, or HTML response artifacts."
+  short_description: "Chat caches, intake forms, and HTML previews"
+  default_prompt: "Use $chrisai-chatting to improve a chat session experience with session caching, HTML intake forms, or readable HTML preview links."
