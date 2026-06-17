@@ -1,6 +1,7 @@
 ---
 name: chrisai-branding
 description: Use for brand identity support, guided greenfield or brownfield branding, brand research, competitor discovery, market positioning, naming and domain checks, logo generation guidance, brand strategy, voice, messaging, visual guidelines, brand kit generation, brand audits, launch readiness, transparent PNG preparation, and PNG/ICO conversion.
+license: MIT
 ---
 
 # ChrisAI Branding

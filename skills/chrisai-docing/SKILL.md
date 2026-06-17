@@ -1,6 +1,7 @@
 ---
 name: chrisai-docing
 description: Use for technical writing tasks that include guided learning, API reference, formatting, or copy editing for technical readers.
+license: MIT
 ---
 
 # ChrisAI Docing

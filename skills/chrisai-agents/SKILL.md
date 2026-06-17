@@ -1,6 +1,7 @@
 ---
 name: chrisai-agents
 description: Use when creating, repairing, migrating, or standardizing a project-local `.agents/` folder for agent-readable local workflows, context rules, product planning, research, specs, progress tracking, and handoffs.
+license: MIT
 ---
 
 # ChrisAI Agents

@@ -1,6 +1,7 @@
 ---
 name: chrisai-coding
 description: Use only for auditing, recommending improvements to, and fixing existing JavaScript, TypeScript, React TSX, TypeScript test, HTML, or CSS code.
+license: MIT
 ---
 
 # ChrisAI Coding

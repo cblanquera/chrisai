@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.3 - 2026-06-18
+
+- Added MIT license metadata to all active ChrisAI skill frontmatter.
+- Updated skill validation to allow the recommended `license` metadata field.
+
 ## 0.2.2 - 2026-06-18
 
 - Added Bad Baby Bear Bot icon assets for the active ChrisAI skill metadata.

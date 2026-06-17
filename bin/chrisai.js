@@ -34,6 +34,7 @@ const targetResolvers = {
 };
 
 const namePattern = /^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$/;
+const supportedFrontmatterKeys = new Set(['name', 'description', 'license']);
 
 /**
  * Print concise command usage.
@@ -149,7 +150,7 @@ function validateSkill(skillDir) {
   }
 
   const extraKeys = Object.keys(metadata)
-    .filter(key => key !== 'name' && key !== 'description')
+    .filter(key => !supportedFrontmatterKeys.has(key))
     .sort();
 
   if (extraKeys.length > 0) {

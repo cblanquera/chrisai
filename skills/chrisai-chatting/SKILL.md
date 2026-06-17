@@ -1,6 +1,7 @@
 ---
 name: chrisai-chatting
 description: Use for experimental chat-session experience work, including session caching and recall, turning agent intake prompts into HTML form artifacts, and converting agent responses into readable HTML preview links.
+license: MIT
 ---
 
 # ChrisAI Chatting

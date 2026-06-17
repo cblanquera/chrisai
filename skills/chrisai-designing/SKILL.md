@@ -1,6 +1,7 @@
 ---
 name: chrisai-designing
 description: Use for software design tasks involving wireframes, creative direction, design-system extraction, and creative handoff documentation.
+license: MIT
 ---
 
 # ChrisAI Designing

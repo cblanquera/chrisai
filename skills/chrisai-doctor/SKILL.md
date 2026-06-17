@@ -1,6 +1,7 @@
 ---
 name: chrisai-doctor
 description: Use when the user explicitly asks to diagnose, verify, inspect, troubleshoot, update, upgrade, pull, install, or sync ChrisAI skills, repository state, validation, or agent adapter targets.
+license: MIT
 ---
 
 # ChrisAI Doctor

@@ -15,6 +15,7 @@ TEMPLATES_DIR = ROOT / "templates"
 PACKAGE_FILE = ROOT / "package.json"
 VERSION_FILE = ROOT / "VERSION"
 NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$")
+SUPPORTED_FRONTMATTER_KEYS = {"name", "description", "license"}
 
 
 def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
@@ -74,7 +75,7 @@ def validate_skill(path: Path) -> list[str]:
     if not description:
         errors.append(f"{skill_file.relative_to(ROOT)}: missing description")
 
-    extra_keys = sorted(set(metadata) - {"name", "description"})
+    extra_keys = sorted(set(metadata) - SUPPORTED_FRONTMATTER_KEYS)
     if extra_keys:
         errors.append(
             f"{skill_file.relative_to(ROOT)}: unsupported frontmatter keys: "
