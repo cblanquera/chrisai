@@ -37,12 +37,24 @@ and OpenCode are install targets, not separate rewritten sources.
 
 ## Install
 
+Install from Skills.sh:
+
+```bash
+npx skills add cblanquera/chrisai
+```
+
+Install from the GitHub Skills CLI:
+
+```bash
+gh skill install cblanquera/chrisai
+```
+
 Install directly from GitHub with `npx`:
 
 ```bash
-npx github:cblanquera/chrisai#v0.1.15 install --target codex
-npx github:cblanquera/chrisai#v0.1.15 install --target claude
-npx github:cblanquera/chrisai#v0.1.15 install --target opencode
+npx github:cblanquera/chrisai install --target codex
+npx github:cblanquera/chrisai install --target claude
+npx github:cblanquera/chrisai install --target opencode
 ```
 
 Or clone the repository, then sync to the agent you use:
