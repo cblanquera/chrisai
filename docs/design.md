@@ -5,7 +5,7 @@ shaping a visual experience, extending an existing design, creating reviewable
 wireframes or drafts, or managing feedback on a browser-visible design
 artifact.
 
-Source skill: [`skills/chrisai-design`](../../skills/chrisai-design/SKILL.md)
+Source skill: [`skills/chrisai-design`](../skills/chrisai-design/SKILL.md)
 
 ## Terms
 
@@ -40,7 +40,7 @@ What happens:
   to the matching internal workflow.
 
 Primary workflow:
-[`workflows/creative-direction.md`](../../skills/chrisai-design/workflows/creative-direction.md)
+[`workflows/creative-direction.md`](../skills/chrisai-design/workflows/creative-direction.md)
 
 ### Existing Design Extension
 
@@ -59,7 +59,7 @@ What happens:
   wireframes, creative direction, or design drafts.
 
 Primary workflow:
-[`workflows/design-system-extraction.md`](../../skills/chrisai-design/workflows/design-system-extraction.md)
+[`workflows/design-system-extraction.md`](../skills/chrisai-design/workflows/design-system-extraction.md)
 
 ### Wireframes
 
@@ -83,7 +83,7 @@ What happens:
 - The agent states what approval unlocks before moving to visual design.
 
 Primary workflow:
-[`workflows/wireframes.md`](../../skills/chrisai-design/workflows/wireframes.md)
+[`workflows/wireframes.md`](../skills/chrisai-design/workflows/wireframes.md)
 
 ### Design Drafts
 
@@ -109,7 +109,7 @@ What happens:
 - The agent presents concrete review questions and a clear approval path.
 
 Primary workflow:
-[`workflows/design-drafts.md`](../../skills/chrisai-design/workflows/design-drafts.md)
+[`workflows/design-drafts.md`](../skills/chrisai-design/workflows/design-drafts.md)
 
 ### Browser-Visible Feedback
 
@@ -129,7 +129,7 @@ What happens:
   full phase scope is complete.
 
 Primary workflow:
-[`workflows/feedback-loop.md`](../../skills/chrisai-design/workflows/feedback-loop.md)
+[`workflows/feedback-loop.md`](../skills/chrisai-design/workflows/feedback-loop.md)
 
 ### Functional Creatives
 
@@ -149,7 +149,7 @@ What happens:
   is approved.
 
 Primary workflow:
-[`workflows/design-drafts.md`](../../skills/chrisai-design/workflows/design-drafts.md)
+[`workflows/design-drafts.md`](../skills/chrisai-design/workflows/design-drafts.md)
 
 ### Design Handoff Package
 
@@ -176,7 +176,7 @@ it documents generated artifacts; it does not replace the HTML/CSS/JS
 wireframes or creatives themselves.
 
 Primary workflow:
-[`workflows/design-handoff-package.md`](../../skills/chrisai-design/workflows/design-handoff-package.md)
+[`workflows/design-handoff-package.md`](../skills/chrisai-design/workflows/design-handoff-package.md)
 
 ### Logo, Image, Asset, Or Frontend Implementation Needs
 
@@ -201,33 +201,33 @@ This is a capability lookup, not a separate internal workflow.
 
 The workflow files use references for specific standards:
 
-- [`references/design-modes.md`](../../skills/chrisai-design/references/design-modes.md):
+- [`references/design-modes.md`](../skills/chrisai-design/references/design-modes.md):
   design-mode selection
-- [`references/brand-led-discovery.md`](../../skills/chrisai-design/references/brand-led-discovery.md):
+- [`references/brand-led-discovery.md`](../skills/chrisai-design/references/brand-led-discovery.md):
   brand and reference-site intake
-- [`references/existing-design-sources.md`](../../skills/chrisai-design/references/existing-design-sources.md):
+- [`references/existing-design-sources.md`](../skills/chrisai-design/references/existing-design-sources.md):
   source-of-truth handling
-- [`references/source-formats.md`](../../skills/chrisai-design/references/source-formats.md):
+- [`references/source-formats.md`](../skills/chrisai-design/references/source-formats.md):
   Figma, screenshots, local code, and exports
-- [`references/extraction-report.md`](../../skills/chrisai-design/references/extraction-report.md):
+- [`references/extraction-report.md`](../skills/chrisai-design/references/extraction-report.md):
   design extraction handoff format
-- [`references/wireframe-patterns.md`](../../skills/chrisai-design/references/wireframe-patterns.md):
+- [`references/wireframe-patterns.md`](../skills/chrisai-design/references/wireframe-patterns.md):
   common wireframe patterns
-- [`references/draft-artifact-rules.md`](../../skills/chrisai-design/references/draft-artifact-rules.md):
+- [`references/draft-artifact-rules.md`](../skills/chrisai-design/references/draft-artifact-rules.md):
   static draft workspace rules
-- [`references/browser-feedback-loop.md`](../../skills/chrisai-design/references/browser-feedback-loop.md):
+- [`references/browser-feedback-loop.md`](../skills/chrisai-design/references/browser-feedback-loop.md):
   browser review protocol
-- [`workflows/design-handoff-package.md`](../../skills/chrisai-design/workflows/design-handoff-package.md):
+- [`workflows/design-handoff-package.md`](../skills/chrisai-design/workflows/design-handoff-package.md):
   documentation generated from the latest wireframes and/or creatives
-- [`references/evidence-scripts.md`](../../skills/chrisai-design/references/evidence-scripts.md):
+- [`references/evidence-scripts.md`](../skills/chrisai-design/references/evidence-scripts.md):
   objective evidence helpers
-- [`references/homepage-patterns.md`](../../skills/chrisai-design/references/homepage-patterns.md):
+- [`references/homepage-patterns.md`](../skills/chrisai-design/references/homepage-patterns.md):
   homepage composition patterns
-- [`references/site-direction-playbooks.md`](../../skills/chrisai-design/references/site-direction-playbooks.md):
+- [`references/site-direction-playbooks.md`](../skills/chrisai-design/references/site-direction-playbooks.md):
   named visual directions
-- [`references/visual-review.md`](../../skills/chrisai-design/references/visual-review.md):
+- [`references/visual-review.md`](../skills/chrisai-design/references/visual-review.md):
   visual quality checks
-- [`references/future-wireframes.md`](../../skills/chrisai-design/references/future-wireframes.md):
+- [`references/future-wireframes.md`](../skills/chrisai-design/references/future-wireframes.md):
   routing from creative direction to wireframes
 
 ## What This Skill Does Not Do
