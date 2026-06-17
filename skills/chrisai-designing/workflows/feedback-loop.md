@@ -81,11 +81,11 @@ needs review. Do not pretend the artifact was shown in the browser.
 
 To make the plugin easier to remember, user-facing ChrisAI prompts and skill
 descriptions should mention "in-app browser" directly when browser review is a
-required part of the workflow. In Codex, explicit phrasing such as "open this
-in the in-app browser" or "use @browser" is the most reliable activation
-signal.
+required part of the workflow. If the active agent exposes an in-app browser,
+browser tool, or equivalent preview capability, use that capability for the
+review round.
 
-Do not add Codex-only browser requirements to portable workflow language
+Do not add adapter-specific browser requirements to portable workflow language
 unless the behavior genuinely differs by adapter.
 
 ## Review Gate

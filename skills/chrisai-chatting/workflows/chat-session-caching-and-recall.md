@@ -4,6 +4,11 @@ Use this workflow to turn a conversation, transcript, thread summary, or
 handoff into small, searchable reference files that future sessions can load
 selectively.
 
+This is a Codex-only workflow. It depends on Codex-specific concepts such as
+Codex Memories, copied Codex Chat IDs, and the user-local Codex cache path.
+For Claude Code, OpenCode, or other agents, use a generic conversation handoff
+or project-local progress artifact instead.
+
 This workflow creates a deliberate chat-session cache. It is not a replacement
 for Codex Memories. Memories are automatic local recall. A chat-session cache
 is explicit, inspectable, and safe to reference as generated context.
