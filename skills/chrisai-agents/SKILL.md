@@ -86,14 +86,6 @@ Do not create empty folders or placeholder files solely to match the full
 layout. Materialize each folder when a workflow, context entry, record, review,
 progress item, design artifact, research note, or release view needs it.
 
-## Context Workflow
-
-This skill should not perform ongoing context ingestion as its main job. During
-setup or repair, generate `.agents/workflows/context-ingestion.md` from
-`references/context-knowledge-base.md` so future agents can handle requests
-such as ingesting documents, adding files to the knowledge base, or intaking
-links from the local `.agents` workflow.
-
 ## Boundaries
 
 - All generated `.agents` documentation must be Markdown.
