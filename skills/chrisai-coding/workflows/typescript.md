@@ -4,7 +4,7 @@ Use this workflow only to audit, recommend improvements to, or fix existing
 TypeScript.
 
 This is a code-shape and fix-style workflow, not a framework-boundary
-skill.
+guide.
 
 If the main question is about architecture, framework fit, runtime boundaries,
 adapter shape, public API design, or whether a module boundary should exist at
@@ -15,6 +15,25 @@ If the main question is a review-first pass over complex branching, decision
 logic, branch coverage gaps, duplicated rules, or mutation risk, use
 `workflows/logic-review.md` first and only return here after the user approves
 code edits.
+
+## Contents
+
+- [Second Pass Use](#second-pass-use)
+- [Repo Discovery Workflow](#repo-discovery-workflow)
+- [Task Intake](#task-intake)
+- [Priority Order](#priority-order)
+- [Core Formatting](#core-formatting)
+- [Commenting Style](#commenting-style)
+- [Naming](#naming)
+- [Data Layout And Spacing](#data-layout-and-spacing)
+- [Imports](#imports)
+- [Exports](#exports)
+- [Types And Interfaces](#types-and-interfaces)
+- [Functions And Methods](#functions-and-methods)
+- [Classes](#classes)
+- [Runtime And Repo Hygiene](#runtime-and-repo-hygiene)
+- [References](#references)
+- [Review Checklist](#review-checklist)
 
 ## Second Pass Use
 
@@ -34,8 +53,9 @@ Before applying standards, inspect the local codebase in this order:
 3. existing import and export patterns in the same package
 4. package runtime constraints such as ESM, Node version, and build output
 
-If the local codebase already has a stronger local convention, preserve it. Use this
-skill to fill gaps and make decisions when the local pattern is unclear.
+If the local codebase already has a stronger local convention, preserve it. Use
+this workflow to fill gaps and make decisions when the local pattern is
+unclear.
 
 ## Task Intake
 
@@ -46,7 +66,7 @@ Decide early whether the existing-code work is mainly:
 - fixing an existing module boundary, extraction, or file split
 - reviewing an existing TypeScript change
 
-Do not use this skill as the primary decision-maker when the task is mainly
+Do not use this workflow as the primary decision-maker when the task is mainly
 about:
 
 - framework choice or framework integration boundaries
@@ -57,15 +77,15 @@ about:
   mutation-risk findings before code edits are approved
 
 For module-boundary decisions and file-splitting guidance, read
-`references/typescript-module-design.md` in this skill when needed.
+`references/typescript-module-design.md` from this skill folder when needed.
 
 ## Priority Order
 
 Apply rules in this order:
 
 1. Match the existing style of the touched file when it is clear.
-2. Apply the standards in this skill.
-3. If a local pattern conflicts with this skill, preserve the local pattern
+2. Apply the standards in this workflow.
+3. If a local pattern conflicts with this workflow, preserve the local pattern
    unless the user asks to normalize the file.
 
 Consistency beats preference. Keep changes small, focused, and easy to review.

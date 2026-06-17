@@ -7,6 +7,8 @@ request is to audit it, recommend improvements, or make a focused fix.
 This skill is not for greenfield code generation. It is intentionally scoped to
 reviewing and improving code that is already in the repository.
 
+Source skill: [`skills/chrisai-coding`](../../skills/chrisai-coding/SKILL.md)
+
 ## When This Skill Activates
 
 ### JavaScript Code Audit Or Fix
@@ -23,7 +25,8 @@ What happens:
 - If the user asked for a fix or approves recommendations, the agent makes the
   narrowest safe change and runs relevant validation when available.
 
-Primary workflow: `workflows/javascript.md`
+Primary workflow:
+[`workflows/javascript.md`](../../skills/chrisai-coding/workflows/javascript.md)
 
 ### TypeScript Code Audit Or Fix
 
@@ -38,9 +41,10 @@ What happens:
 - The agent preserves local conventions unless they conflict with the requested
   fix or make the code harder to maintain.
 - If approved to edit, the agent applies the smallest focused fix and validates
-  with the project’s available commands when practical.
+  with the project's available commands when practical.
 
-Primary workflow: `workflows/typescript.md`
+Primary workflow:
+[`workflows/typescript.md`](../../skills/chrisai-coding/workflows/typescript.md)
 
 ### Logic Review
 
@@ -58,7 +62,8 @@ What happens:
 - If the user approves fixes, the agent routes to the JavaScript, TypeScript, or
   test workflow as needed.
 
-Primary workflow: `workflows/logic-review.md`
+Primary workflow:
+[`workflows/logic-review.md`](../../skills/chrisai-coding/workflows/logic-review.md)
 
 ### React TSX Audit Or Fix
 
@@ -75,7 +80,8 @@ What happens:
 - If approved to edit, the agent makes focused changes without rewriting the
   frontend structure unless the user asked for that.
 
-Primary workflow: `workflows/react-tsx.md`
+Primary workflow:
+[`workflows/react-tsx.md`](../../skills/chrisai-coding/workflows/react-tsx.md)
 
 ### TypeScript Test Audit Or Fix
 
@@ -93,7 +99,8 @@ What happens:
 - If approved to edit, the agent repairs or adds the smallest meaningful test
   coverage for existing behavior.
 
-Primary workflow: `workflows/typescript-tests.md`
+Primary workflow:
+[`workflows/typescript-tests.md`](../../skills/chrisai-coding/workflows/typescript-tests.md)
 
 ### HTML And CSS Audit Or Fix
 
@@ -110,7 +117,8 @@ What happens:
 - If approved to edit, the agent makes focused changes and avoids unrelated
   redesign work.
 
-Primary workflow: `workflows/html-css.md`
+Primary workflow:
+[`workflows/html-css.md`](../../skills/chrisai-coding/workflows/html-css.md)
 
 ### Maintainability Audit
 
@@ -132,40 +140,63 @@ What happens:
 - If the user approves the recommendations, the agent re-reads the current files
   and applies the approved restructuring in a separate pass.
 
-Primary workflow: `workflows/maintainability-audit.md`
+Primary workflow:
+[`workflows/maintainability-audit.md`](../../skills/chrisai-coding/workflows/maintainability-audit.md)
 
 ## Internal References
 
 The workflow files use references for specific standards:
 
-- `references/javascript-commenting-style.md`: JavaScript comment rules
-- `references/javascript-formatting-basics.md`: JavaScript formatting basics
-- `references/javascript-jsdoc-and-declaration-comments.md`: JavaScript JSDoc
-  and declaration comments
-- `references/javascript-module-design.md`: JavaScript module boundaries
-- `references/javascript-module-systems.md`: JavaScript module system choices
-- `references/typescript-commenting-style.md`: TypeScript comment rules
-- `references/typescript-formatting-basics.md`: TypeScript formatting basics
-- `references/typescript-jsdoc-and-declaration-comments.md`: TypeScript JSDoc
-  and declaration comments
-- `references/typescript-module-design.md`: TypeScript module boundaries
-- `references/typescript-style-details.md`: TypeScript style details
-- `references/logic-review-signals.md`: logic review signals
-- `references/react-commenting-style.md`: React comment rules
-- `references/react-forms.md`: React form patterns
-- `references/react-jsdoc-and-declaration-comments.md`: React JSDoc and
-  declaration comments
-- `references/react-modern-react.md`: modern React guidance
-- `references/react-file-outline.md`: React file outline guidance
-- `references/react-section-comments.md`: React section comments
-- `references/typescript-tests-commenting-style.md`: TypeScript test comments
-- `references/typescript-tests-jest.md`: Jest guidance
-- `references/typescript-tests-mocha-chai.md`: Mocha and Chai guidance
-- `references/typescript-tests-test-selection.md`: test level selection
-- `references/typescript-tests-test-style-pass.md`: final test style pass
-- `references/html-css-css-style-details.md`: CSS details
-- `references/html-css-html-style-details.md`: HTML details
-- `references/maintainability-audit-signals.md`: maintainability audit signals
+- [`references/javascript-commenting-style.md`](../../skills/chrisai-coding/references/javascript-commenting-style.md):
+  JavaScript comment rules
+- [`references/javascript-formatting-basics.md`](../../skills/chrisai-coding/references/javascript-formatting-basics.md):
+  JavaScript formatting basics
+- [`references/javascript-jsdoc-and-declaration-comments.md`](../../skills/chrisai-coding/references/javascript-jsdoc-and-declaration-comments.md):
+  JavaScript JSDoc and declaration comments
+- [`references/javascript-module-design.md`](../../skills/chrisai-coding/references/javascript-module-design.md):
+  JavaScript module boundaries
+- [`references/javascript-module-systems.md`](../../skills/chrisai-coding/references/javascript-module-systems.md):
+  JavaScript module system choices
+- [`references/typescript-commenting-style.md`](../../skills/chrisai-coding/references/typescript-commenting-style.md):
+  TypeScript comment rules
+- [`references/typescript-formatting-basics.md`](../../skills/chrisai-coding/references/typescript-formatting-basics.md):
+  TypeScript formatting basics
+- [`references/typescript-jsdoc-and-declaration-comments.md`](../../skills/chrisai-coding/references/typescript-jsdoc-and-declaration-comments.md):
+  TypeScript JSDoc and declaration comments
+- [`references/typescript-module-design.md`](../../skills/chrisai-coding/references/typescript-module-design.md):
+  TypeScript module boundaries
+- [`references/typescript-style-details.md`](../../skills/chrisai-coding/references/typescript-style-details.md):
+  TypeScript style details
+- [`references/logic-review-signals.md`](../../skills/chrisai-coding/references/logic-review-signals.md):
+  logic review signals
+- [`references/react-commenting-style.md`](../../skills/chrisai-coding/references/react-commenting-style.md):
+  React comment rules
+- [`references/react-forms.md`](../../skills/chrisai-coding/references/react-forms.md):
+  React form patterns
+- [`references/react-jsdoc-and-declaration-comments.md`](../../skills/chrisai-coding/references/react-jsdoc-and-declaration-comments.md):
+  React JSDoc and declaration comments
+- [`references/react-modern-react.md`](../../skills/chrisai-coding/references/react-modern-react.md):
+  modern React guidance
+- [`references/react-file-outline.md`](../../skills/chrisai-coding/references/react-file-outline.md):
+  React file outline guidance
+- [`references/react-section-comments.md`](../../skills/chrisai-coding/references/react-section-comments.md):
+  React section comments
+- [`references/typescript-tests-commenting-style.md`](../../skills/chrisai-coding/references/typescript-tests-commenting-style.md):
+  TypeScript test comments
+- [`references/typescript-tests-jest.md`](../../skills/chrisai-coding/references/typescript-tests-jest.md):
+  Jest guidance
+- [`references/typescript-tests-mocha-chai.md`](../../skills/chrisai-coding/references/typescript-tests-mocha-chai.md):
+  Mocha and Chai guidance
+- [`references/typescript-tests-test-selection.md`](../../skills/chrisai-coding/references/typescript-tests-test-selection.md):
+  test level selection
+- [`references/typescript-tests-test-style-pass.md`](../../skills/chrisai-coding/references/typescript-tests-test-style-pass.md):
+  final test style pass
+- [`references/html-css-css-style-details.md`](../../skills/chrisai-coding/references/html-css-css-style-details.md):
+  CSS details
+- [`references/html-css-html-style-details.md`](../../skills/chrisai-coding/references/html-css-html-style-details.md):
+  HTML details
+- [`references/maintainability-audit-signals.md`](../../skills/chrisai-coding/references/maintainability-audit-signals.md):
+  maintainability audit signals
 
 ## What This Skill Does Not Do
 

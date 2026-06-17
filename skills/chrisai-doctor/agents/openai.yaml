@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Doctor"
+  short_description: "Diagnose, validate, update, and sync ChrisAI"
+  default_prompt: "Use $chrisai-doctor to diagnose, verify, update, install, or sync ChrisAI skills, repository state, validation, or adapter targets."

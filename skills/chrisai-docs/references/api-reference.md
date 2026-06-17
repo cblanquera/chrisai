@@ -1,6 +1,6 @@
 # ChrisAI Docs Dev API Reference
 
-This skill writes API reference documentation for junior developers who already
+This reference guides API reference documentation for junior developers who already
 know the surface they need and want accurate, scannable details.
 
 Optimize for lookup, correctness, and integration guidance. Do not turn pure
@@ -23,14 +23,14 @@ the reference structure is decided.
 
 ## Scope
 
-Use this skill for:
+Use this reference for:
 
 - class and module reference docs
 - method, property, and configuration documentation
 - type-safe usage examples
 - API folder organization and cross-linking
 
-Do not use this skill as the primary rule set for quick starts, tutorials, or
+Do not use this reference as the primary rule set for quick starts, tutorials, or
 general markdown normalization.
 
 For those cases, use:
@@ -104,7 +104,7 @@ Typical outputs are:
 
 ## Priority
 
-When this skill is used with other documentation skills:
+When this reference is used with other documentation guidance:
 
 1. `references/api-reference.md` owns the schema of the reference material.
 2. `references/formatting.md` may normalize presentation without changing

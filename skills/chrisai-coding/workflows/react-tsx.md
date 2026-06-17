@@ -3,9 +3,30 @@
 Use this workflow only to audit, recommend improvements to, or fix existing
 TypeScript ReactJS or TSX code in a local codebase.
 
-This skill is intentionally self-contained. It consolidates the relevant
+This workflow is intentionally self-contained. It consolidates the relevant
 ReactJS guidance and the local TypeScript-oriented coding style so the agent
 does not need to bounce between multiple documents during existing-code fixes.
+
+## Contents
+
+- [Second Pass Use](#second-pass-use)
+- [Repo Discovery Workflow](#repo-discovery-workflow)
+- [Task Intake](#task-intake)
+- [Priority Order](#priority-order)
+- [Core Formatting](#core-formatting)
+- [Commenting Style](#commenting-style)
+- [Naming](#naming)
+- [JSX Formatting](#jsx-formatting)
+- [Component Flow](#component-flow)
+- [Hooks](#hooks)
+- [File Layout](#file-layout)
+- [Imports](#imports)
+- [Types](#types)
+- [Exports](#exports)
+- [Classes](#classes)
+- [React Implementation Biases](#react-implementation-biases)
+- [References](#references)
+- [Review Checklist](#review-checklist)
 
 ## Second Pass Use
 
@@ -26,7 +47,8 @@ Before applying React-specific preferences, inspect the local codebase in this o
 4. any existing form, state, and hook conventions in the same package
 
 If the codebase already has a stronger local pattern, preserve it. Use this
-skill when the local pattern is missing, inconsistent, or needs a tie-breaker.
+workflow when the local pattern is missing, inconsistent, or needs a
+tie-breaker.
 
 ## Task Intake
 
@@ -46,8 +68,8 @@ For deeper form patterns or rendering-boundary checks, read the matching file in
 Apply rules in this order:
 
 1. Match the existing style of the touched file when it is clear.
-2. Apply the standards in this skill.
-3. If a local pattern conflicts with this skill, preserve the local pattern
+2. Apply the standards in this workflow.
+3. If a local pattern conflicts with this workflow, preserve the local pattern
    unless the user asks to normalize the file.
 
 Consistency beats preference. Keep changes small, focused, and easy to review.
@@ -148,7 +170,7 @@ Components must wrap returned JSX in parentheses.
 Keep component prop signatures readable.
 
 - Prefer a named prop type for non-trivial props.
-- Default to typed props and typed events. This skill is for TSX, not plain
+- Default to typed props and typed events. This workflow is for TSX, not plain
   JSX.
 - Inline simple prop types when that is still easy to scan.
 - If destructuring becomes tall or noisy, accept `props` first and unpack it in
@@ -299,7 +321,7 @@ type InputProps = {
 };
 ```
 
-Avoid leaving React-facing boundaries untyped in this skill's output unless the
+Avoid leaving React-facing boundaries untyped in this workflow's output unless the
 file already follows a stronger local convention.
 
 ## Exports
@@ -391,7 +413,7 @@ When auditing or fixing React code, check for these issues:
 - Complex hook logic is aggregated when that improves readability.
 - Controlled and uncontrolled field behavior is implemented correctly.
 - Reusable pieces are separated from local-only pieces appropriately.
-- Imports and exports follow this skill's conventions.
+- Imports and exports follow this workflow's conventions.
 - export groups stay in the required category order and are alphabetized within
   each category
 - TSX classes, when present, use explicit `public` members and follow the

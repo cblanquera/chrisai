@@ -4,7 +4,7 @@ Use this workflow for JavaScript or TypeScript logic reviews where the goal is
 to understand branching risk, test adequacy, and refactor opportunities before
 changing code.
 
-This is a review-first skill. Do not edit code during the initial review pass.
+This is a review-first workflow. Do not edit code during the initial review pass.
 Present findings, then ask whether to apply all suggested changes, selected
 changes, or no changes.
 

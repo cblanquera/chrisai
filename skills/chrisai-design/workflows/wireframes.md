@@ -15,6 +15,21 @@ Use [feedback-loop](feedback-loop.md) for shared review-loop rules, including
 review-round approval, phase approval, next-step language, revision folders,
 and artifact folder behavior.
 
+## Contents
+
+- [Portability](#portability)
+- [Ownership](#ownership)
+- [Workflow](#workflow)
+- [Step 1: Classify The Scope](#step-1-classify-the-scope)
+- [Step 2: Collect Structure Inputs](#step-2-collect-structure-inputs)
+- [Step 3: Draft Grayscale Layout Options](#step-3-draft-grayscale-layout-options)
+- [Step 4: Choose Or Revise One Structure](#step-4-choose-or-revise-one-structure)
+- [Step 5: Produce A Complete Grayscale Wireframe Set](#step-5-produce-a-complete-grayscale-wireframe-set)
+- [Step 6: Present Review Instructions And Next Steps](#step-6-present-review-instructions-and-next-steps)
+- [Step 7: Add Clickable Behavior When Needed](#step-7-add-clickable-behavior-when-needed)
+- [Step 8: Produce The Wireframe Handoff](#step-8-produce-the-wireframe-handoff)
+- [Review Gate](#review-gate)
+
 ## Portability
 
 Write wireframe guidance for portable agent use first. Do not assume the
@@ -88,7 +103,7 @@ Identify what is being structured:
 - modal, drawer, or focused workflow
 
 If the task is a complex product UX architecture problem, state the boundary
-and keep this skill focused on the requested screens or flow.
+and keep this workflow focused on the requested screens or flow.
 
 ## Step 2: Collect Structure Inputs
 

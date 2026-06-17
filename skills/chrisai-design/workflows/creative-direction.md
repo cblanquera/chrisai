@@ -16,9 +16,26 @@ mode, logo, optional brand style guide, existing design source of truth,
 reference-site commonalities, reference-site differences, usability constraints,
 and one deliberate differentiation choice.
 
+## Contents
+
+- [Ownership](#ownership)
+- [Workflow](#workflow)
+- [Step 1: Classify The Deliverable](#step-1-classify-the-deliverable)
+- [Step 2: Select The Design Mode](#step-2-select-the-design-mode)
+- [Step 3: Collect Brand Or Design-Source Inputs](#step-3-collect-brand-or-design-source-inputs)
+- [Step 4: Analyze The Logo, Brand Guide, Or Existing Design Source](#step-4-analyze-the-logo-brand-guide-or-existing-design-source)
+- [Step 5: Ask For And Analyze Reference Sites Or Apps](#step-5-ask-for-and-analyze-reference-sites-or-apps)
+- [Step 6: Extract Commonalities And Differences](#step-6-extract-commonalities-and-differences)
+- [Step 7: Apply Usability Constraints](#step-7-apply-usability-constraints)
+- [Step 8: Define Differentiation Or Extension Rules](#step-8-define-differentiation-or-extension-rules)
+- [Step 9: Define The Visual Direction Or Wireframe System](#step-9-define-the-visual-direction-or-wireframe-system)
+- [Step 10: Produce The Handoff Or Draft Artifact Plan](#step-10-produce-the-handoff-or-draft-artifact-plan)
+- [Step 11: Run A Visual Review Gate](#step-11-run-a-visual-review-gate)
+- [Future Wireframes](#future-wireframes)
+
 ## Ownership
 
-This skill owns:
+This workflow owns:
 
 - brand-led creative direction selection and refinement
 - visual-system definition
@@ -29,7 +46,7 @@ This skill owns:
 - implementation-ready design handoff
 - visual review before a direction is treated as stable
 
-This skill does not own:
+This workflow does not own:
 
 - repo layout or build decisions
 - detailed extraction of existing design systems

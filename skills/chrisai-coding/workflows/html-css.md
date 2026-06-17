@@ -3,7 +3,7 @@
 Use this workflow only to audit, recommend improvements to, or fix existing
 vanilla HTML and CSS for static sites and frontend templates.
 
-This skill is intentionally practical. It turns the repo's HTML and CSS guides
+This workflow is intentionally practical. It turns the repo's HTML and CSS guides
 into audit rules and review checks so the agent can make focused fixes to
 existing markup and styles instead of generating new surfaces.
 
@@ -46,8 +46,8 @@ markup that forces selectors to become more specific than they need to be.
 Apply rules in this order:
 
 1. Match the existing style of the touched files when it is clear.
-2. Apply the standards in this skill.
-3. If a local pattern conflicts with this skill, preserve the local pattern
+2. Apply the standards in this workflow.
+3. If a local pattern conflicts with this workflow, preserve the local pattern
    unless the user asks to normalize the file.
 
 Consistency beats preference. Keep changes small, focused, and easy to review.

@@ -1,6 +1,6 @@
 # ChrisAI Docs Copy Editing
 
-This skill is an editorial pass for existing developer-facing documentation.
+This workflow is an editorial pass for existing developer-facing documentation.
 
 Use it after the main content already exists, or when the task is specifically
 about proofreading, clarity, tone, consistency, or wording cleanup.
@@ -11,7 +11,7 @@ claims, code identifiers, and documented constraints.
 
 ## Ownership
 
-Use this skill for:
+Use this workflow for:
 
 - proofreading and copy editing
 - simplifying dense technical prose without changing meaning
@@ -20,7 +20,7 @@ Use this skill for:
 - tightening existing explanations that are already supported by the local
   source
 
-Do not use this skill as the primary owner for:
+Do not use this workflow as the primary owner for:
 
 - docs-from-scratch information architecture
 - guided-learning flow design
@@ -28,7 +28,7 @@ Do not use this skill as the primary owner for:
 - formatting-only cleanup
 - default multi-skill routing
 
-Use these skills instead:
+Use this internal guidance instead:
 
 - `references/guided-learning.md` for quick starts, tutorials, conceptual
   guides, and junior-developer learning flow

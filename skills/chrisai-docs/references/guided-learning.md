@@ -13,6 +13,30 @@ This standard combines:
 - progressive disclosure
 - very clear, concise documentation that gets to first success quickly
 
+## Contents
+
+- [Task Intake](#task-intake)
+- [Scope](#scope)
+- [Priority](#priority)
+- [Non-Negotiable Rules](#non-negotiable-rules)
+- [Editorial Model](#editorial-model)
+- [Default Reader Flow](#default-reader-flow)
+- [Section Standard](#section-standard)
+- [Teaching Arc](#teaching-arc)
+- [Walkthrough Standard](#walkthrough-standard)
+- [Writing Standard](#writing-standard)
+- [Opening Paragraph Pattern](#opening-paragraph-pattern)
+- [Section Structure Rules](#section-structure-rules)
+- [Example Explanation Standard](#example-explanation-standard)
+- [Phrase Rotation](#phrase-rotation)
+- [Compression Standard](#compression-standard)
+- [Decision Rules](#decision-rules)
+- [Restructuring Existing Docs](#restructuring-existing-docs)
+- [Deliverables](#deliverables)
+- [Anti-Patterns](#anti-patterns)
+- [Review Gate](#review-gate)
+- [Output Defaults](#output-defaults)
+
 ## Task Intake
 
 Before drafting or restructuring, identify:
@@ -42,7 +66,7 @@ Use this reference for:
 - teaching-style revisions
 - restructuring developer docs for clarity and adoption
 
-Do not use this skill as the primary rule set for API reference schema design
+Do not use this reference as the primary rule set for API reference schema design
 or markdown normalization.
 
 For those cases, use:
@@ -52,7 +76,7 @@ For those cases, use:
 
 ## Priority
 
-When this skill is used with other documentation skills:
+When this reference is used with other documentation guidance:
 
 1. `references/guided-learning.md` decides what content appears, in what order,
    and for which reader state.

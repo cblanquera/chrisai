@@ -5,6 +5,8 @@ shaping a visual experience, extending an existing design, creating reviewable
 wireframes or drafts, or managing feedback on a browser-visible design
 artifact.
 
+Source skill: [`skills/chrisai-design`](../../skills/chrisai-design/SKILL.md)
+
 ## Terms
 
 - A review round is one feedback cycle: show the artifact, ask for review,
@@ -37,7 +39,8 @@ What happens:
 - If the work turns into wireframes, drafts, or browser review, the agent moves
   to the matching internal workflow.
 
-Primary workflow: `workflows/creative-direction.md`
+Primary workflow:
+[`workflows/creative-direction.md`](../../skills/chrisai-design/workflows/creative-direction.md)
 
 ### Existing Design Extension
 
@@ -55,7 +58,8 @@ What happens:
 - If the extension needs a new structure or visual draft, the agent routes to
   wireframes, creative direction, or design drafts.
 
-Primary workflow: `workflows/design-system-extraction.md`
+Primary workflow:
+[`workflows/design-system-extraction.md`](../../skills/chrisai-design/workflows/design-system-extraction.md)
 
 ### Wireframes
 
@@ -78,7 +82,8 @@ What happens:
   in the current revision folder.
 - The agent states what approval unlocks before moving to visual design.
 
-Primary workflow: `workflows/wireframes.md`
+Primary workflow:
+[`workflows/wireframes.md`](../../skills/chrisai-design/workflows/wireframes.md)
 
 ### Design Drafts
 
@@ -103,7 +108,8 @@ What happens:
   in the current revision folder.
 - The agent presents concrete review questions and a clear approval path.
 
-Primary workflow: `workflows/design-drafts.md`
+Primary workflow:
+[`workflows/design-drafts.md`](../../skills/chrisai-design/workflows/design-drafts.md)
 
 ### Browser-Visible Feedback
 
@@ -119,10 +125,11 @@ What happens:
 - The agent lists only verification that was actually performed.
 - The agent asks concrete review questions tied to the visible artifact.
 - The agent states exactly what approval unlocks.
-- The agent does not treat review-round approval as phase approval unless the full
-  phase scope is complete.
+- The agent does not treat review-round approval as phase approval unless the
+  full phase scope is complete.
 
-Primary workflow: `workflows/feedback-loop.md`
+Primary workflow:
+[`workflows/feedback-loop.md`](../../skills/chrisai-design/workflows/feedback-loop.md)
 
 ### Functional Creatives
 
@@ -141,7 +148,8 @@ What happens:
 - The agent uses the feedback loop for every reviewable update until the phase
   is approved.
 
-Primary workflow: `workflows/design-drafts.md`
+Primary workflow:
+[`workflows/design-drafts.md`](../../skills/chrisai-design/workflows/design-drafts.md)
 
 ### Design Handoff Package
 
@@ -167,7 +175,8 @@ The Design Handoff Package is markdown documentation. That is allowed because
 it documents generated artifacts; it does not replace the HTML/CSS/JS
 wireframes or creatives themselves.
 
-Primary workflow: `workflows/design-handoff-package.md`
+Primary workflow:
+[`workflows/design-handoff-package.md`](../../skills/chrisai-design/workflows/design-handoff-package.md)
 
 ### Logo, Image, Asset, Or Frontend Implementation Needs
 
@@ -192,22 +201,34 @@ This is a capability lookup, not a separate internal workflow.
 
 The workflow files use references for specific standards:
 
-- `references/design-modes.md`: design-mode selection
-- `references/brand-led-discovery.md`: brand and reference-site intake
-- `references/existing-design-sources.md`: source-of-truth handling
-- `references/source-formats.md`: Figma, screenshots, local code, and exports
-- `references/extraction-report.md`: design extraction handoff format
-- `references/wireframe-patterns.md`: common wireframe patterns
-- `references/draft-artifact-rules.md`: static draft workspace rules
-- `references/browser-feedback-loop.md`: browser review protocol
-- `workflows/design-handoff-package.md`: documentation generated from the
-  latest wireframes and/or creatives
-- `references/evidence-scripts.md`: objective evidence helpers
-- `references/homepage-patterns.md`: homepage composition patterns
-- `references/site-direction-playbooks.md`: named visual directions
-- `references/visual-review.md`: visual quality checks
-- `references/future-wireframes.md`: routing from creative direction to
-  wireframes
+- [`references/design-modes.md`](../../skills/chrisai-design/references/design-modes.md):
+  design-mode selection
+- [`references/brand-led-discovery.md`](../../skills/chrisai-design/references/brand-led-discovery.md):
+  brand and reference-site intake
+- [`references/existing-design-sources.md`](../../skills/chrisai-design/references/existing-design-sources.md):
+  source-of-truth handling
+- [`references/source-formats.md`](../../skills/chrisai-design/references/source-formats.md):
+  Figma, screenshots, local code, and exports
+- [`references/extraction-report.md`](../../skills/chrisai-design/references/extraction-report.md):
+  design extraction handoff format
+- [`references/wireframe-patterns.md`](../../skills/chrisai-design/references/wireframe-patterns.md):
+  common wireframe patterns
+- [`references/draft-artifact-rules.md`](../../skills/chrisai-design/references/draft-artifact-rules.md):
+  static draft workspace rules
+- [`references/browser-feedback-loop.md`](../../skills/chrisai-design/references/browser-feedback-loop.md):
+  browser review protocol
+- [`workflows/design-handoff-package.md`](../../skills/chrisai-design/workflows/design-handoff-package.md):
+  documentation generated from the latest wireframes and/or creatives
+- [`references/evidence-scripts.md`](../../skills/chrisai-design/references/evidence-scripts.md):
+  objective evidence helpers
+- [`references/homepage-patterns.md`](../../skills/chrisai-design/references/homepage-patterns.md):
+  homepage composition patterns
+- [`references/site-direction-playbooks.md`](../../skills/chrisai-design/references/site-direction-playbooks.md):
+  named visual directions
+- [`references/visual-review.md`](../../skills/chrisai-design/references/visual-review.md):
+  visual quality checks
+- [`references/future-wireframes.md`](../../skills/chrisai-design/references/future-wireframes.md):
+  routing from creative direction to wireframes
 
 ## What This Skill Does Not Do
 

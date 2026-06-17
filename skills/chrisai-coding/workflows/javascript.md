@@ -3,19 +3,38 @@
 Use this workflow only to audit, recommend improvements to, or fix existing
 JavaScript.
 
-This skill covers:
+This workflow covers:
 
 - plain `.js`
 - ESM `.mjs`
 - CommonJS `.cjs`
 
-Use TypeScript-specific skills instead for `.ts`, `.tsx`, and TypeScript-first
+Use TypeScript-specific workflows instead for `.ts`, `.tsx`, and TypeScript-first
 test work.
 
 If the main question is a review-first pass over complex branching, decision
 logic, branch coverage gaps, duplicated rules, or mutation risk, use
 `workflows/logic-review.md` first and only return here after the user approves
 code edits.
+
+## Contents
+
+- [Second Pass Use](#second-pass-use)
+- [Repo Discovery Workflow](#repo-discovery-workflow)
+- [Task Intake](#task-intake)
+- [Priority Order](#priority-order)
+- [Core Formatting](#core-formatting)
+- [Commenting Style](#commenting-style)
+- [Naming](#naming)
+- [Data Layout And Spacing](#data-layout-and-spacing)
+- [Module System Discovery](#module-system-discovery)
+- [Imports And Requires](#imports-and-requires)
+- [Exports](#exports)
+- [Functions And Errors](#functions-and-errors)
+- [Classes](#classes)
+- [Runtime And Repo Hygiene](#runtime-and-repo-hygiene)
+- [References](#references)
+- [Review Checklist](#review-checklist)
 
 ## Second Pass Use
 
@@ -36,8 +55,9 @@ Before applying standards, inspect the local codebase in this order:
 4. the runtime and module system already used by the package or folder
 5. existing import, require, and export patterns in the same package
 
-If the local codebase already has a stronger local convention, preserve it. Use this
-skill to fill gaps and make decisions when the local pattern is unclear.
+If the local codebase already has a stronger local convention, preserve it. Use
+this workflow to fill gaps and make decisions when the local pattern is
+unclear.
 
 ## Task Intake
 
@@ -50,15 +70,15 @@ Decide early whether the existing-code work is mainly:
 - reviewing an existing JavaScript change
 
 For module-boundary decisions and file-splitting guidance, read
-`references/javascript-module-design.md` in this skill when needed.
+`references/javascript-module-design.md` from this skill folder when needed.
 
 ## Priority Order
 
 Apply rules in this order:
 
 1. Match the existing style of the touched file when it is clear.
-2. Apply the standards in this skill.
-3. If a local pattern conflicts with this skill, preserve the local pattern
+2. Apply the standards in this workflow.
+3. If a local pattern conflicts with this workflow, preserve the local pattern
    unless the user asks to normalize the file.
 
 Consistency beats preference. Keep changes small, focused, and easy to review.

@@ -1,6 +1,6 @@
 # ChrisAI Docs Dev Formatting
 
-This skill standardizes markdown documentation so it is consistent, scannable,
+This reference standardizes markdown documentation so it is consistent, scannable,
 and aligned with the repo's documentation style rules.
 
 Use it after the document's editorial plan is clear, or when the user
@@ -18,7 +18,7 @@ Use these repo guides as source material:
 - `docs/documenting/Documentation-Style-Guide.md`
 - `rules/documenting/Documentation-Style-Guide.md`
 
-When those guides differ, follow the explicit decisions encoded in this skill
+When those guides differ, follow the explicit decisions encoded in this reference
 instead of copying both versions verbatim.
 
 ## Task Intake

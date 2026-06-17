@@ -43,8 +43,8 @@ assertions.
 Apply rules in this order:
 
 1. Match the existing test framework and style in the touched codebase or file.
-2. Apply the standards in this skill.
-3. If a local pattern conflicts with this skill, preserve the local pattern
+2. Apply the standards in this workflow.
+3. If a local pattern conflicts with this workflow, preserve the local pattern
    unless the user asks to normalize or migrate it.
 
 Do not switch a codebase from Jest to Mocha/Chai, or the reverse, unless the user
