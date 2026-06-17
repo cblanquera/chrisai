@@ -1,16 +1,16 @@
 # ChrisAI Coding HTML CSS
 
-Use this skill for vanilla HTML and CSS implementation, refactors, and reviews
-for static sites and frontend templates.
+Use this workflow only to audit, recommend improvements to, or fix existing
+vanilla HTML and CSS for static sites and frontend templates.
 
 This skill is intentionally practical. It turns the repo's HTML and CSS guides
-into generation rules and review checks so the agent produces cleaner markup
-and styles instead of only formatting them after the fact.
+into audit rules and review checks so the agent can make focused fixes to
+existing markup and styles instead of generating new surfaces.
 
 ## Second Pass Use
 
-This skill may guide implementation directly, but it is especially recommended
-as the final pass after the markup and styles already work.
+This workflow may guide approved fixes directly, but it is especially
+recommended as the final pass after the existing markup and styles already work.
 
 Use the last pass to normalize section comments, HTML readability, naming,
 attribute ordering, selector ownership, and CSS organization without
@@ -30,13 +30,13 @@ skill to fill gaps and make decisions when the local pattern is unclear.
 
 ## Task Intake
 
-Decide early whether the work is mainly:
+Decide early whether the existing-code work is mainly:
 
-- page or layout markup
-- reusable partial or component markup
-- stylesheet organization
-- HTML/CSS refactor for clarity
-- review of an existing frontend change
+- auditing page or layout markup
+- auditing reusable partial or component markup
+- fixing stylesheet organization
+- recommending an HTML/CSS clarity refactor
+- reviewing an existing frontend change
 
 For mixed work, keep the HTML structure and CSS ownership aligned. Do not add
 markup that forces selectors to become more specific than they need to be.
@@ -65,7 +65,7 @@ Consistency beats preference. Keep changes small, focused, and easy to review.
 
 ## HTML Workflow
 
-When writing or editing HTML, think in this order:
+When auditing or fixing HTML, think in this order:
 
 1. semantic structure
 2. content hierarchy
@@ -141,7 +141,7 @@ linking that works in simple hosting environments such as GitHub Pages.
 
 ## CSS Workflow
 
-When writing or editing CSS, think in this order:
+When auditing or fixing CSS, think in this order:
 
 1. section ownership
 2. top-level selector choice
@@ -162,7 +162,7 @@ structure:
 - Partials
 - Pages
 
-Use section comments when the file already uses them or when adding enough code
+Use section comments when the file already uses them or when changing enough code
 that structure improves scanning.
 
 ## CSS Selector Rules

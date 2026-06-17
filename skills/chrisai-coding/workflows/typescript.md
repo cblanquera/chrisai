@@ -1,8 +1,9 @@
 # ChrisAI Coding TS
 
-Use this skill for TypeScript implementation, refactors, and reviews.
+Use this workflow only to audit, recommend improvements to, or fix existing
+TypeScript.
 
-This is a code-shape and implementation-style skill, not a framework-boundary
+This is a code-shape and fix-style workflow, not a framework-boundary
 skill.
 
 If the main question is about architecture, framework fit, runtime boundaries,
@@ -17,8 +18,8 @@ approves code edits.
 
 ## Second Pass Use
 
-This skill may guide implementation directly, but it is especially recommended
-as the final pass after the code already works.
+This workflow may guide approved fixes directly, but it is especially
+recommended as the final pass after the existing code already works.
 
 Use the last pass to normalize comment density, JSDoc coverage, declaration
 comments, imports, exports, and formatting without changing working
@@ -38,12 +39,12 @@ skill to fill gaps and make decisions when the local pattern is unclear.
 
 ## Task Intake
 
-Decide early whether the work is mainly:
+Decide early whether the existing-code work is mainly:
 
-- implementation in an existing module
-- refactor for clarity or typing
-- module extraction or file split
-- review of an existing TypeScript change
+- auditing an existing module
+- recommending a clarity or typing refactor
+- fixing an existing module boundary, extraction, or file split
+- reviewing an existing TypeScript change
 
 Do not use this skill as the primary decision-maker when the task is mainly
 about:
@@ -237,7 +238,7 @@ Rules:
 
 - Do not add argument types when TypeScript can naturally infer them from a
   default value or surrounding context.
-- Do not add return types when the implementation is clear and inference is
+- Do not add return types when the behavior is clear and inference is
   sufficient.
 - Add explicit types when they improve API clarity or prevent ambiguity.
 - Use narrowing with `typeof`, `Array.isArray`, or custom predicates before
@@ -269,7 +270,7 @@ Rules:
   that boundary solves a real special-case need.
 - Prefer getters to expose internal state instead of public mutable fields.
 - For public overloads, declare overload signatures first and follow them with
-  one implementation.
+  one shared function body.
 - Return `this` from chainable APIs when that pattern matches the file.
 
 ## Runtime And Repo Hygiene

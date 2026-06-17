@@ -1,32 +1,41 @@
 ---
 name: chrisai-coding
-description: Use for tasks involving code styling, and logic reviews where code involves JavaScript, TypeScript, HTML, CSS.
+description: Use only for auditing, recommending improvements to, and fixing existing JavaScript, TypeScript, React TSX, TypeScript test, HTML, or CSS code. Do not use for greenfield code generation or broad architecture design.
 ---
 
 # ChrisAI Coding
 
-Use this skill to audit code written in JavaScript, TypeScript, HTML, or CSS. 
-Route the task to the narrowest internal workflow or reference unless the 
-request clearly needs a deliberate sequence.
+Use this skill only for existing code. Route the task to the narrowest internal
+workflow or reference when the user asks to audit, recommend improvements, or
+fix code that already exists.
+
+Do not use this skill for greenfield work, scaffolding, feature creation from
+scratch, broad architecture design, or speculative code generation. This keeps
+the context window small and focused on the code under review.
 
 ## Internal Workflows
 
-- Use `workflows/javascript.md` for JavaScript implementation, refactors, and
-  reviews across `.js`, `.mjs`, and `.cjs`.
-- Use `workflows/typescript.md` for non-React TypeScript implementation,
-  refactors, reviews, code shape, imports, exports, typing, classes, and final
+- Use `workflows/javascript.md` for auditing, recommending, and fixing existing
+  JavaScript across `.js`, `.mjs`, and `.cjs`.
+- Use `workflows/typescript.md` for auditing, recommending, and fixing existing
+  non-React TypeScript code shape, imports, exports, typing, classes, and final
   style passes.
 - Use `workflows/typescript-logic-review.md` for review-first TypeScript logic
   work involving branching risk, hard-to-follow decisions, test gaps,
   duplicated rules, mutation risk, or refactor opportunities before edits.
-- Use `workflows/react-tsx.md` for TypeScript ReactJS or TSX components,
-  hooks, form behavior, prop and event typing, JSX structure, and frontend
-  import/export conventions.
-- Use `workflows/typescript-tests.md` for Jest, Mocha, Chai, React component
-  tests, test coverage, deterministic test design, and test style passes.
-- Use `workflows/html-css.md` for vanilla HTML and CSS implementation,
-  refactors, and reviews for static sites, documentation pages, and frontend
+- Use `workflows/react-tsx.md` for auditing, recommending, and fixing existing
+  TypeScript ReactJS or TSX components, hooks, form behavior, prop and event
+  typing, JSX structure, and frontend import/export conventions.
+- Use `workflows/typescript-tests.md` for auditing, recommending, and fixing
+  existing Jest, Mocha, Chai, React component tests, test coverage,
+  deterministic test design, and test style passes.
+- Use `workflows/html-css.md` for auditing, recommending, and fixing existing
+  vanilla HTML and CSS in static sites, documentation pages, and frontend
   templates.
+- Use `workflows/maintainability-audit.md` only when the user explicitly asks
+  for a maintainability, structure, organization, responsibility-separation, or
+  "code stuffed into one file" audit. This workflow recommends changes and
+  stops before editing unless the user approves the recommendations.
 
 ## Supporting References
 
@@ -61,6 +70,10 @@ request clearly needs a deliberate sequence.
 - Use HTML/CSS references when `workflows/html-css.md` calls for deeper
   examples: `references/html-css-css-style-details.md` and
   `references/html-css-html-style-details.md`.
+- Use `references/maintainability-audit-signals.md` only when
+  `workflows/maintainability-audit.md` needs concrete signals for code that is
+  hard to navigate, over-concentrated in one file, poorly grouped by centered
+  feature/entity/model/domain, or split in a way that obscures ownership.
 
 ## Sequencing
 
@@ -70,12 +83,13 @@ follow-up. Use this order:
 1. `workflows/typescript-logic-review.md` first when the user asks for a
    review-first pass over TypeScript branching, decision logic, branch coverage,
    duplicated rules, or mutation risk.
-2. The narrowest implementation workflow next when the user approves edits or
-   when the request starts as implementation work.
-3. The same implementation workflow again as the final style pass after the
-   behavior works.
-4. `workflows/typescript-tests.md` when test implementation, test repair, or
-   coverage is the owned deliverable.
+2. `workflows/maintainability-audit.md` only when the user explicitly asks for
+   that audit. Stop after recommendations; do not edit until the user approves.
+3. The narrowest fix workflow next when the user approves edits to existing
+   code.
+4. The same fix workflow again as the final style pass after the fix works.
+5. `workflows/typescript-tests.md` when existing test repair, coverage repair,
+   or test audit is the owned deliverable.
 
 Do not default to multi-step coding sequences when one workflow owns the
 request.
@@ -83,19 +97,24 @@ request.
 ## Decision Rules
 
 - If the task is plain JavaScript, use `workflows/javascript.md`.
-- If the task is non-React TypeScript implementation, use
+- If the task is non-React TypeScript audit or fix work, use
   `workflows/typescript.md`.
 - If the task is a TypeScript review-first logic audit, use
   `workflows/typescript-logic-review.md` and do not edit during the initial
   review pass.
 - If the task is TSX, typed React components, hooks, forms, or React UI code,
   use `workflows/react-tsx.md`.
-- If the task is mainly adding, repairing, or reviewing tests, use
+- If the task is mainly auditing, repairing, or reviewing existing tests, use
   `workflows/typescript-tests.md`.
 - If the task is vanilla HTML and CSS for static pages, docs pages, or frontend
   templates, use `workflows/html-css.md`.
 - If a task mixes React code and tests, pick the side that owns the asked
-  deliverable. A new test suite belongs to `workflows/typescript-tests.md`.
+  deliverable. A new test suite from scratch is outside this skill unless it is
+  the smallest fix for uncovered existing behavior.
 - If a task mixes HTML/CSS with JavaScript or TypeScript, choose the workflow
   that owns the primary file being changed, then load the other workflow only
   if needed.
+- If the user explicitly asks for maintainability, structure, organization,
+  separation of responsibilities, or a review of code being stuffed into one
+  place, use `workflows/maintainability-audit.md` as a review-only pass. Do not
+  use it automatically during normal implementation or fixes.

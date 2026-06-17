@@ -1,6 +1,7 @@
 # ChrisAI Coding JS
 
-Use this skill for JavaScript implementation, refactors, and reviews.
+Use this workflow only to audit, recommend improvements to, or fix existing
+JavaScript.
 
 This skill covers:
 
@@ -13,8 +14,8 @@ test work.
 
 ## Second Pass Use
 
-This skill may guide implementation directly, but it is especially recommended
-as the final pass after the code already works.
+This workflow may guide approved fixes directly, but it is especially
+recommended as the final pass after the existing code already works.
 
 Use the last pass to normalize comment density, JSDoc coverage, declaration
 comments, imports or requires, exports, and formatting without
@@ -35,13 +36,13 @@ skill to fill gaps and make decisions when the local pattern is unclear.
 
 ## Task Intake
 
-Decide early whether the work is mainly:
+Decide early whether the existing-code work is mainly:
 
-- implementation in an existing module
-- refactor for clarity
-- module extraction or file split
-- module system interop work
-- review of an existing JavaScript change
+- auditing an existing module
+- recommending a clarity refactor
+- fixing an existing module boundary, extraction, or file split
+- fixing module system interop in existing files
+- reviewing an existing JavaScript change
 
 For module-boundary decisions and file-splitting guidance, read
 `references/javascript-module-design.md` in this skill when needed.

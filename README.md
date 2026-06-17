@@ -22,7 +22,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-coding` | Route JavaScript, TypeScript, React TSX, TypeScript test, HTML/CSS, and TypeScript logic-review work to consolidated internal workflows and references. |
+| `chrisai-coding` | Audit, recommend improvements to, and fix existing JavaScript, TypeScript, React TSX, TypeScript test, HTML/CSS, and TypeScript logic-review work through consolidated internal workflows and references. |
 
 ### Documentation
 

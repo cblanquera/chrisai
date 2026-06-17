@@ -13,7 +13,7 @@ Use this skill when the main question is whether existing TypeScript logic is
 too complex, under-tested, duplicated, or risky to change.
 
 Use `workflows/typescript.md` after the user approves code edits so the resulting
-TypeScript follows implementation style, comments, imports, exports, and typing
+TypeScript follows code style, comments, imports, exports, and typing
 rules.
 
 Use `workflows/typescript-tests.md` after the user approves test edits so added or

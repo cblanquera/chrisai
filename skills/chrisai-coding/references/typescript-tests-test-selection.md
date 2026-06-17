@@ -26,7 +26,7 @@ Use this reference when it is unclear what kind of test to add.
 ## Do Not Add A Test Yet When
 
 - the behavior is already covered at the right layer
-- the implementation is in heavy flux and the stable public behavior is unclear
+- the existing code is in heavy flux and the stable public behavior is unclear
 - the only possible assertion is a tautology about mocked internals
 
 ## Selection Order

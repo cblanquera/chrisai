@@ -1,16 +1,16 @@
 # ChrisAI Coding TS React
 
-Use this skill for TypeScript ReactJS implementation, refactors, and reviews
-in any local codebase.
+Use this workflow only to audit, recommend improvements to, or fix existing
+TypeScript ReactJS or TSX code in a local codebase.
 
 This skill is intentionally self-contained. It consolidates the relevant
 ReactJS guidance and the local TypeScript-oriented coding style so the agent
-does not need to bounce between multiple documents during implementation.
+does not need to bounce between multiple documents during existing-code fixes.
 
 ## Second Pass Use
 
-This skill may guide implementation directly, but it is especially recommended
-as the final pass after the component logic already works.
+This workflow may guide approved fixes directly, but it is especially
+recommended as the final pass after the existing component logic already works.
 
 Use the last pass to normalize inline comments, JSDoc coverage, section
 comments, file organization, and readability without destabilizing
@@ -30,13 +30,13 @@ skill when the local pattern is missing, inconsistent, or needs a tie-breaker.
 
 ## Task Intake
 
-Decide whether the task is mainly:
+Decide whether the existing-code task is mainly:
 
-- component implementation
-- component refactor
-- hook extraction
-- form behavior work
-- review of an existing TSX change
+- auditing an existing component
+- recommending a component refactor
+- fixing an existing hook extraction
+- fixing existing form behavior
+- reviewing an existing TSX change
 
 For deeper form patterns or rendering-boundary checks, read the matching file in
 `references/` only when the task needs it.
@@ -382,7 +382,7 @@ Load additional reference material only when the task needs it:
 
 ## Review Checklist
 
-When writing or reviewing React code, check for these issues:
+When auditing or fixing React code, check for these issues:
 
 - JSX returns are wrapped in parentheses.
 - the file received a final style pass after the logic was working

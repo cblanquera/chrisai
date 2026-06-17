@@ -1,12 +1,12 @@
 # ChrisAI Coding TS Tests
 
-Use this skill for test implementation, test refactors, test reviews, and
-coverage work in any local codebase.
+Use this workflow only to audit, recommend improvements to, or fix existing
+tests and coverage in a local codebase.
 
 ## Second Pass Use
 
-This skill may guide test implementation directly, but it is especially
-recommended as the final pass after the tests already work.
+This workflow may guide approved test fixes directly, but it is especially
+recommended as the final pass after the existing tests already work.
 
 Use the last pass to normalize scenario comments, JSDoc coverage, declaration
 comments, and readability without changing already-correct test
@@ -21,20 +21,22 @@ Before enforcing test conventions, inspect the local codebase in this order:
 3. helper builders, fixtures, and shared setup already used nearby
 4. whether the package expects unit, integration, DOM, or mixed testing
 
-If the codebase already has a stronger local pattern, preserve it. Use this skill
-to resolve ambiguity and keep new tests aligned with the existing stack.
+If the codebase already has a stronger local pattern, preserve it. Use this
+workflow to resolve ambiguity and keep test fixes aligned with the existing
+stack.
 
 ## Task Intake
 
-Decide whether the task is mainly:
+Decide whether the existing-test task is mainly:
 
-- adding coverage for existing behavior
+- repairing coverage for existing behavior
 - fixing a broken or flaky test
 - reviewing a test change
-- introducing a new suite around a public boundary
+- recommending where a missing existing-behavior test should live
 
-If the correct test level is unclear, read `references/typescript-tests-test-selection.md`
-before writing assertions.
+If the correct test level is unclear, read
+`references/typescript-tests-test-selection.md` before recommending or fixing
+assertions.
 
 ## Priority Order
 
@@ -53,7 +55,7 @@ explicitly asks for a migration.
 - Use Jest rules when the codebase or touched tests already use Jest.
 - Use Mocha + Chai rules when the codebase or touched tests already use them.
 - For React component tests, prefer the codebase's existing React testing stack.
-- When no framework is obvious, inspect the codebase before writing tests and pick
+- When no framework is obvious, inspect the codebase before fixing tests and pick
   the framework already present in configuration, dependencies, or nearby test
   files.
 
@@ -62,8 +64,8 @@ explicitly asks for a migration.
 - Unless the user says otherwise, acceptable coverage is above `70%`.
 - Treat `80%` as the default deployment-ready target.
 - Do not stretch for `>90%` coverage unless it happens naturally.
-- Increase coverage by adding meaningful tests around real behavior, not by
-  padding trivial lines or over-mocking.
+- Increase coverage only when it fixes an existing behavior gap. Add meaningful
+  tests around real behavior instead of padding trivial lines or over-mocking.
 - Focus first on conditionals, branches, error paths, loops, and public
   side-effects.
 

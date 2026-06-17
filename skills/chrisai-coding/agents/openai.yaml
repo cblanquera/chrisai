@@ -1,4 +1,4 @@
 interface:
   display_name: "ChrisAI Coding"
-  short_description: "Coding style guides, and logic review for JavaScript, TypeScript, React TSX, HTML/CSS, and TypeScript tests"
-  default_prompt: "Use $chrisai-coding for tasks involving code styling, and logic reviews where code involves JavaScript, TypeScript, HTML, CSS."
+  short_description: "Audit and fix existing JS, TS, React, tests, HTML, and CSS"
+  default_prompt: "Use $chrisai-coding only to audit, recommend improvements to, or fix existing JavaScript, TypeScript, React TSX, TypeScript test, HTML, or CSS code. Do not use it for greenfield code generation. Use the maintainability audit workflow only when explicitly asked to review structure, organization, responsibility separation, or code stuffed into one file."

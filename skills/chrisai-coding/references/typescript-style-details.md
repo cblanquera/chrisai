@@ -128,7 +128,7 @@ import RouteResolver from './RouteResolver.js';
 - Prefer `public readonly` for stable public composition fields.
 - Avoid `protected readonly` and `private readonly` unless a special case
   makes that boundary-level immutability materially clearer.
-- Declare overload signatures before the shared implementation.
+- Declare overload signatures before the shared function body.
 
 ```ts
 function incrementStatus(code: number, by = 1) {
