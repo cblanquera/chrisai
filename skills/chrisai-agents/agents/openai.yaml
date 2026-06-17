@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Agents"
+  short_description: "Set up project-local .agents knowledge bases"
+  default_prompt: "Use $chrisai-agents to initialize or update a project-local .agents folder with context, workflows, and development tracking."

@@ -43,6 +43,7 @@ and OpenCode are install targets, not separate rewritten sources.
 | Skill | Purpose |
 | --- | --- |
 | `chrisai-planning` | Route `.agents` setup, repair, migration, or standardization before implementation. |
+| `chrisai-agents` | Create project-local `.agents` context knowledge bases, workflows, development specs, research, and progress tracking. |
 | `chrisai-planning-agent-spec` | Bootstrap project-local `.agents/AGENTS.md`, `.agents/workflows/`, folder structure, and initial records. |
 
 ### Design
