@@ -1,4 +1,4 @@
 interface:
   display_name: "ChrisAI Docs"
-  short_description: "Route ChrisAI technical writing tasks"
-  default_prompt: "Use $chrisai-docs to route this developer-facing technical writing task to the right internal workflow or reference for guided learning, API reference, formatting, or copy editing."
+  short_description: "Technical writing authoring and editing"
+  default_prompt: "Use $chrisai-docs for technical writing tasks that include guided learning, API reference, formatting, or copy editing for technical readers."

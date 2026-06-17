@@ -1,11 +1,11 @@
 ---
 name: chrisai-docs
-description: Use when a ChrisAI technical writing task needs routing to the right developer-docs workflow or reference for guided learning, API reference, formatting, or copy editing.
+description: Use for technical writing tasks that include guided learning, API reference, formatting, or copy editing for technical readers.
 ---
 
 # ChrisAI Docs
 
-Use this skill for ChrisAI technical writing and developer-facing technical
+Use this skill for technical writing and developer-facing technical
 documentation. Route the task to the narrowest internal workflow or reference
 unless the request clearly needs a deliberate sequence.
 
