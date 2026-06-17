@@ -4,24 +4,29 @@ Use this workflow when the main problem is researching competitors, corporate
 websites, product positioning, category language, market position, or public
 brand signals so a brand decision can be made from evidence.
 
-This workflow produces brand research, not comparison-page copy, sales battle
-cards, SEO pages, logo concepts, or a final brand kit. Use the output as an
-input to `workflows/brand-kit-generation.md` when strategy, voice, and
-guidelines need to be created next.
+This workflow orchestrates brand research. It produces a source-backed brief,
+not comparison-page copy, sales battle cards, SEO pages, logo concepts, or a
+final brand kit. Use the output as an input to
+`workflows/brand-kit-generation.md` when strategy, voice, and guidelines need
+to be created next.
 
 ## Ownership
 
 This workflow owns:
 
 - brand and competitor research intake
-- competitor set discovery and classification
-- official-site and public-source evidence collection
-- positioning, messaging, voice, proof, and market-gap synthesis
-- source-backed brand research briefs
+- research depth and scope decisions
+- routing to competitor discovery, competitor profiling, and market
+  positioning analysis
+- source-backed brand research brief assembly
 - handoff recommendations for brand kit generation
 
 This workflow does not own:
 
+- standalone competitor discovery; use `workflows/competitor-discovery.md`
+- standalone competitor profiling; use `workflows/competitor-profiling.md`
+- standalone market positioning analysis; use
+  `workflows/market-positioning-analysis.md`
 - writing competitor alternative pages or SEO comparison pages
 - sales battle cards or objection-handling collateral
 - deep customer interview or survey analysis
@@ -42,12 +47,10 @@ Work through these steps in order:
 1. Check existing context.
 2. Complete only the missing intake.
 3. Choose a research depth.
-4. Build and classify the competitor set.
-5. Collect evidence from consistent sources.
-6. Extract brand signals.
-7. Synthesize market position and white space.
-8. Produce the brand research brief.
-9. State next-step handoff options.
+4. Route missing research components.
+5. Assemble the brand research brief.
+6. Preserve reusable research artifacts when useful.
+7. State next-step handoff options.
 
 Do not synthesize brand claims from memory. If current public information
 matters, use live research and cite source URLs.
@@ -117,6 +120,19 @@ options, for example:
 - competitor types to include: direct, indirect, aspirational
 - number of competitors to analyze
 
+### Focus Areas
+
+Ask whether any dimensions matter more than others. Suggest:
+
+- positioning and category language
+- homepage or website messaging
+- pricing and packaging
+- product capabilities and proof points
+- customer reviews and voice-of-customer language
+- SEO, content, or AI/search visibility
+- visual identity signals
+- launch, rebrand, or naming implications
+
 ### Evidence Scope
 
 Confirm how broad the evidence should be. If asking the user, suggest:
@@ -181,122 +197,26 @@ Use only when requested or when the category is unclear.
 If the user lists 10 or more competitors, recommend shortlisting the top 5
 before deep analysis.
 
-## Step 4: Build The Competitor Set
+## Step 4: Route Missing Research Components
 
-Classify competitors before analysis:
+Use the narrow research workflows as needed:
 
-- Direct competitors target the same customer with a similar solution.
-- Indirect competitors solve the same customer problem with a different
-  approach.
-- Aspirational competitors are category leaders or reference brands worth
-  learning from even when they are not direct rivals.
+- `workflows/competitor-discovery.md` when competitors need to be found,
+  filtered, classified, or shortlisted.
+- `workflows/competitor-profiling.md` when known competitors need consistent
+  source-backed profiles.
+- `workflows/market-positioning-analysis.md` when competitor profiles need to
+  be synthesized into category patterns, positioning axes, white space, gaps,
+  or differentiation opportunities.
 
-If discovering competitors, use multiple signals:
+For a full brief, the normal sequence is discovery when needed, then
+profiling, then market positioning analysis, then report assembly.
 
-- category searches
-- official category pages and listicles
-- review directories
-- Product Hunt or app directories when relevant
-- public customer language about alternatives
-- search results for "[category] software", "[product] alternative", and
-  "[problem] tool" style queries
+Skip any component that is already complete or outside the user's requested
+scope. Do not run broad research when the user only asked for one known
+competitor profile or a narrow positioning read.
 
-Do not treat search ranking alone as proof that a company is a true
-competitor. Confirm relevance from the company's own positioning and product.
-
-## Step 5: Collect Evidence
-
-For each competitor, use consistent source types so profiles can be compared.
-
-Preferred official sources:
-
-- homepage
-- product or features pages
-- pricing page
-- about or company page
-- customers, case studies, testimonials, or logos
-- docs, help center, integrations, API pages, changelog, or GitHub/npm pages
-  when the product is technical
-
-Optional perception sources:
-
-- review sites and directories
-- app stores or marketplaces
-- Product Hunt or launch pages
-- press and interviews
-- social, Reddit, forums, or community discussions
-- AI/search visibility checks when the user's goal needs them
-
-For each source, capture:
-
-- URL
-- page or source type
-- date checked
-- relevant evidence
-- whether the point is a fact, quote, or inference
-
-Use third-party sources for market perception and customer language. Do not
-use them as unquestioned proof of product truth.
-
-## Step 6: Extract Brand Signals
-
-For each competitor, extract:
-
-- category label
-- target customer
-- primary value proposition
-- positioning angle
-- headline and key message themes
-- product promise and core capabilities
-- proof points and credibility signals
-- pricing or packaging signals when public
-- brand voice and tone
-- visual identity cues visible from public sources
-- customer language or perception signals when available
-- strengths, weaknesses, and notable gaps
-- confidence level for each meaningful inference
-
-Label confidence:
-
-- High: supported by multiple current official sources or strong direct
-  evidence.
-- Medium: supported by one official source or multiple weaker third-party
-  signals.
-- Low: inferred from limited, stale, unclear, or single-source evidence.
-
-Avoid presenting a low-confidence inference as a fact.
-
-## Step 7: Synthesize Market Position
-
-After extracting individual competitors, compare across the set.
-
-Identify:
-
-- repeated category language
-- overused claims
-- common value propositions
-- credibility signals everyone relies on
-- pricing or packaging patterns
-- tone and voice patterns
-- visual identity patterns
-- underserved customer segments
-- underused proof points
-- white-space positioning opportunities
-- risks, unknowns, and assumptions
-
-Use positioning axes that fit the category, such as:
-
-- simple vs comprehensive
-- technical vs approachable
-- premium vs value
-- enterprise vs self-serve
-- niche vs broad platform
-- speed vs control
-- automation vs human service
-
-Do not force a positioning map when the evidence does not support one.
-
-## Step 8: Produce The Brief
+## Step 5: Assemble The Brief
 
 Use `references/brand-research-report.md` for the report structure.
 
@@ -322,7 +242,32 @@ clear research workspace. If none is specified and a file artifact is needed,
 use a generic project-local path such as `research/brand-research/` or another
 existing research/brand folder that matches the workspace conventions.
 
-## Step 9: Handoff
+## Step 6: Preserve Reusable Artifacts
+
+For standard or deep research runs, preserve enough raw notes for later audit
+or reuse when the user wants files saved.
+
+Use a simple project-local structure such as:
+
+```text
+research/brand-research/
+├── raw/
+│   └── [date]/
+│       └── [competitor-or-source].md
+├── brand-research-brief.md
+└── sources.md
+```
+
+Do not overwrite prior dated research snapshots. If updating an existing
+research brief, check pricing, homepage positioning, product pages,
+changelog/news, and review/perception sources first because those are likely
+to drift. Note what changed since the prior version when that comparison is
+available.
+
+Skip raw-file preservation for quick scans unless the user asks for saved
+artifacts.
+
+## Step 7: Handoff
 
 End with the next useful step:
 

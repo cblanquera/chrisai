@@ -45,9 +45,11 @@ Use confidence levels:
 - Category:
 - Target customer:
 - Geography/language:
+- Focus areas:
 - Competitors analyzed:
 - Included sources:
 - Excluded sources:
+- Evidence caveats:
 
 ## Competitor Set
 
@@ -138,6 +140,7 @@ Recommended axes:
 
 - [What was not checked]
 - [What may be stale]
+- [What may be biased by source type or sample]
 - [What needs customer validation]
 - [What needs legal, trademark, or availability review]
 
