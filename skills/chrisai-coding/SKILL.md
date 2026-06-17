@@ -1,6 +1,6 @@
 ---
 name: chrisai-coding
-description: Use only for auditing, recommending improvements to, and fixing existing JavaScript, TypeScript, React TSX, TypeScript test, HTML, or CSS code. Do not use for greenfield code generation or broad architecture design.
+description: Use only for auditing, recommending improvements to, and fixing existing JavaScript, TypeScript, React TSX, TypeScript test, HTML, or CSS code. 
 ---
 
 # ChrisAI Coding
@@ -8,10 +8,6 @@ description: Use only for auditing, recommending improvements to, and fixing exi
 Use this skill only for existing code. Route the task to the narrowest internal
 workflow or reference when the user asks to audit, recommend improvements, or
 fix code that already exists.
-
-Do not use this skill for greenfield work, scaffolding, feature creation from
-scratch, broad architecture design, or speculative code generation. This keeps
-the context window small and focused on the code under review.
 
 ## Internal Workflows
 
