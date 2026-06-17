@@ -23,9 +23,9 @@ experience artifact.
 - `workflows/html-form-intake.md`: For turning submitted HTML form artifacts
   into structured intake, validation notes, follow-up questions, and a usable
   task brief.
-- `workflows/agent-response-to-html.md`: For converting agent responses into
-  readable, reviewable, or shareable HTML artifacts while preserving the
-  meaning and structure of the original response.
+- `workflows/agent-response-to-html.md`: For mirroring agent responses into a
+  readable HTML preview link while preserving the chat response as the
+  canonical answer, or for saving/opening HTML when the user explicitly asks.
 
 ## Placeholder Rules
 
@@ -48,8 +48,8 @@ experience artifact.
   workflow.
 - If the task starts from an HTML form submission, exported form artifact, or
   submitted HTML payload, route it to the planned HTML form intake workflow.
-- If the task asks for a response, summary, report, or handoff to become an
-  HTML file or HTML fragment, route it to the planned agent response to HTML
-  workflow.
+- If the task asks for a response, summary, report, or handoff to become
+  pretty, readable, previewed, or HTML-formatted, use the agent response to
+  HTML workflow.
 - If the request spans multiple planned workflows, choose the workflow that
   owns the first concrete artifact and keep any follow-up workflow explicit.
