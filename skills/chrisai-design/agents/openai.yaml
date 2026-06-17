@@ -1,6 +1,6 @@
 interface:
   display_name: "ChrisAI Design"
   short_description: "Creative direction, extraction, wireframes, drafts, and browser review"
-  default_prompt: "Use $chrisai-design for ChrisAI design work. Route internally to creative direction, design-system extraction, wireframes, design drafts, and feedback-loop guidance. For logo generation, image generation, production HTML/CSS/JS, or browser-visible review, softly look for an installed skill, plugin, tool, or project workflow; if unavailable, continue with best-effort design guidance and state limits."
+  default_prompt: "Use $chrisai-design for software design tasks involving wireframes, creative direction, design-system extraction, and creative handoff documentation."
 policy:
   allow_implicit_invocation: true

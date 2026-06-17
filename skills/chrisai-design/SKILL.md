@@ -1,22 +1,13 @@
 ---
 name: chrisai-design
-description: Use when a ChrisAI design task needs creative direction, design-system extraction, wireframes, design drafts, browser-visible feedback loops, or supporting design references.
+description: Use for software design tasks involving wireframes, creative direction, design-system extraction, and creative handoff documentation.
 ---
 
 # ChrisAI Design
 
-Use this skill for ChrisAI design work. Route the task to the narrowest
+Use this skill for design work. Route the task to the narrowest
 internal workflow or reference unless the request clearly needs a deliberate
 sequence.
-
-Do not treat the workflow and reference files as separate skills. They are
-internal guidance for this consolidated skill.
-
-Do not hard-code dependencies on external ChrisAI skills. When logo generation,
-image generation, production HTML/CSS/JS implementation, or browser-visible
-review would benefit from an installed capability, look softly for an available
-skill, plugin, tool, or project-local workflow. If no matching capability is
-available, continue with the best design effort possible and state any limits.
 
 Use precise review terminology:
 
@@ -95,6 +86,8 @@ Use installed capabilities opportunistically, but do not require them:
 - For browser-visible review, use the Browser plugin when available. If it is
   unavailable, provide the local URL or file path and state that browser review
   was not performed.
+
+If no matching capability is available, state any limits.
 
 ## Sequencing
 
