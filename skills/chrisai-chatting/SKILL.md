@@ -6,19 +6,16 @@ description: Use for experimental chat-session experience work, including sessio
 # ChrisAI Chatting
 
 Use this skill for experimental workflows that improve the shape, continuity,
-or artifact interface of chat sessions. Treat this skill as a placeholder until
-its workflow files are created.
+or artifact interface of chat sessions.
 
 Do not use this skill for general conversation quality, prompt editing, broad
 assistant behavior design, or production application implementation unless the
 request is specifically about chat-session experience patterns.
 
-## Planned Workflows
+## Internal Workflows
 
-The detailed workflow files are intentionally not created yet. When the user
-asks to draft or implement one of these workflows, create the narrowest
-workflow file needed and keep the guidance portable across Codex, Claude Code,
-OpenCode, and other compatible consumers.
+Use the narrowest workflow that owns the user's requested chat-session
+experience artifact.
 
 - `workflows/chat-session-caching-and-recall.md`: For preserving useful chat
   context, producing compact recall artifacts, deciding what should be cached,
@@ -32,8 +29,8 @@ OpenCode, and other compatible consumers.
 
 ## Placeholder Rules
 
-- Keep this skill experimental and review-first until a workflow has concrete
-  examples, input/output expectations, and clear success criteria.
+- Keep not-yet-created workflows experimental and review-first until they have
+  concrete examples, input/output expectations, and clear success criteria.
 - Prefer artifact-oriented outputs when the user provides or asks for HTML.
 - Preserve source meaning when transforming chat content into cache summaries,
   intake briefs, or HTML artifacts.
@@ -47,7 +44,7 @@ OpenCode, and other compatible consumers.
 ## Decision Rules
 
 - If the task is about compacting, saving, recalling, or transferring useful
-  chat-session context, route it to the planned chat-session caching and recall
+  chat-session context, use the chat-session caching and recall
   workflow.
 - If the task starts from an HTML form submission, exported form artifact, or
   submitted HTML payload, route it to the planned HTML form intake workflow.
