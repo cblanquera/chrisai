@@ -44,4 +44,4 @@ copy explorations, asset notes, and creative reviews.
 
 State the reviewed artifact, phase and round, accepted direction, rejected
 alternatives, unresolved questions, durable records updated, and whether
-implementation is unlocked.
+implementation is unlocked. Include the recommended next step.

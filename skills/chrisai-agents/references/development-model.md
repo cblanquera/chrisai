@@ -1,18 +1,24 @@
 # Development Model
 
 Use this reference when setting up or repairing product planning, research,
-specs, progress, releases, and handoffs inside `.agents/development/`.
+specs, progress, releases, and handoffs across `.agents/context/` and `.agents/`.
 
 ## Folder Boundaries
 
-- `.agents/context/`: project knowledge base, ingested Markdown context, and
-  feature-goal intake.
-- `.agents/development/specs/`: durable product or feature truth.
+- `.agents/context/`: shared synthesized product understanding, ingested
+  Markdown context, feature-goal intake, goals, decisions, constraints,
+  non-goals, terms, and final accepted reusable findings that future specs
+  should read first.
+- `.agents/specs/`: detailed traceable scope, evidence, requirements,
+  acceptance, decisions, risks, and proposed tasks. Greenfield and brownfield
+  setup starts in `.agents/specs/research/`; later work routes to
+  `.agents/specs/mvp/` or a sibling feature spec when the scope is bounded.
 - `.agents/development/progress/`: active execution state.
 - `.agents/development/sprints/`: optional timeboxed execution views derived
   from specs and progress state.
-- `.agents/development/research/`: POCs, grill reports, ADRs, validation
-  notes, feasibility findings, and research records.
+- `.agents/specs/<spec-id>/poc/`: target-spec-local proof records for
+  feasibility work. A POC lives inside the spec it is trying to prove, not in a
+  shared POC spec, separate research root, or top-level POC folder.
 - `.agents/references/`: long support material that keeps context, specs, and
   progress compact.
 - `.agents/wireframes/` and `.agents/creatives/`: top-level design planning and
@@ -81,9 +87,9 @@ more compact form.
 ## Spec Structure
 
 ```text
-.agents/development/specs/
+.agents/specs/
   manifest.md
-  <spec-id>/
+  research/
     brief.md
     index.md
     status.md
@@ -108,13 +114,42 @@ more compact form.
       findings.md
     logs/
       YYYY-MM-DD.md
+  mvp/
+    brief.md
+    index.md
+    status.md
+    poc/
+      brief.md
+      results.md
+      snippets/
+    requirements.md
+    capabilities.md
+    constraints.md
+    decisions.md
+    risks.md
+    acceptance.md
+    evidence.md
+    tasks.md
+    traceability.md
+    by-mvp.md
+    mvp-viability-gaps.md
 ```
 
-Use one `<spec-id>` per bounded product, feature, migration, or major
-initiative. Keep the initial/root product spec for the base product shell and
-overall architecture. Create a sibling spec when a feature-development goal
-becomes a bounded product stream with its own acceptance criteria, risks,
-decisions, POCs, or multiple implementation items.
+Use `.agents/specs/research/` for the first greenfield or brownfield research
+round. It is not the root product spec and should not become the hidden source
+that later specs must depend on.
+
+At research closeout, promote only final accepted reusable product
+understanding into `.agents/context/`, then route to
+`.agents/specs/<spec-id>/poc/` when feasibility proof is needed or
+`.agents/specs/mvp/` when the smallest customer-usable product slice can be
+specified.
+
+Use one additional sibling spec per bounded feature, migration, or major
+initiative after MVP when the work has its own acceptance criteria, risks,
+decisions, POCs, or multiple implementation items. Future specs should read
+`.agents/context/` first and link to earlier specs only for traceability or
+detailed evidence.
 
 Do not create one spec folder per sprint, topic, requirement, implementation
 task, bugfix, single wireframe round, or small UI tweak.
@@ -160,36 +195,30 @@ A sprint is a timeboxed execution view, not product truth. Create or update a
 sprint only after durable spec scope exists. A sprint can include accepted tasks
 or active progress items from multiple specs.
 
-## Research Structure
+## POC Structure
 
 ```text
-.agents/development/research/
-  poc/
-    findings.md
-    results.md
-    snippets/
-  grill/
-    findings.md
-    reports/
-  adr/
-    decisions.md
-    records/
-  validation/
-    findings.md
+.agents/specs/<spec-id>/poc/
+  brief.md
+  results.md
+  snippets/
 ```
 
+Keep POC questions, assumptions, risks, decisions, evidence, and proposed tasks
+in the parent spec's grouped record files with `Phase: poc` and links to
+`poc/brief.md` or `poc/results.md`. Do not duplicate those grouped record files
+inside `poc/`.
+
 POC code should live on separate `poc-<short-name>` branches when
-implementation is involved. Record the branch name in research and progress
+implementation is involved. Record the branch name in POC and progress
 records. Do not switch branches or create POC branches unless the user
 explicitly asks for branch or implementation work.
 
-ADRs under research capture architectural reasoning and decision history. If an
-ADR becomes product truth, also promote the durable decision into
-`.agents/development/specs/<spec-id>/decisions.md`.
-
-Grill reports are review inputs. Reconcile material findings into questions,
-risks, decisions, evidence needs, accepted risks, blockers, or explicit
-rejections before implementation.
+Keep grill reports, ADR notes, validation notes, and other long-form research
+support under `.agents/references/research/` unless they are compact records in
+the active spec. If an ADR or proof result becomes product truth, also promote
+the durable decision or accepted learning into `.agents/context/` and the
+relevant `.agents/specs/<spec-id>/decisions.md`.
 
 ## Feature Goals
 
@@ -236,7 +265,9 @@ Before POC work becomes MVP or feature scope:
 3. Decide whether to keep, replace, discard, or continue investigating.
 4. Convert accepted learning into customer-facing requirements, acceptance
    criteria, and tasks.
-5. Create progress items only from promoted product or feature records.
+5. Promote reusable accepted learning into `.agents/context/` when future specs
+   should inherit it.
+6. Create progress items only from promoted product or feature records.
 
 ## Brownfield Records
 
@@ -273,6 +304,23 @@ of inventing commitments or delivery state.
 If a derived view introduces new requirements, decisions, risks, assumptions,
 acceptance criteria, evidence, or tasks, promote those facts back into records
 or progress before treating them as durable.
+
+When a completed spec introduces durable product understanding that future
+specs should reuse, promote or reconcile only final accepted material into
+`.agents/context/` before closeout. Do not leave product goals, final product
+descriptions, accepted constraints, shared terminology, or cross-spec decisions
+only inside a completed spec.
+
+When creating or updating grouped record files under `.agents/specs/`, evaluate
+the records inside the file before promoting context. Promote durable reusable
+records only when their record `Status:` is final, such as `done`, `accepted`,
+`proved`, `proven`, `answered`, `closed`, or a project-defined equivalent.
+Records whose status is draft, proposed, open, blocked, in progress, under
+review, or otherwise not final may skip `.agents/context/` promotion until their
+status becomes final. If a file has an explicit document-level status, use it
+only as a coarse gate; a non-final document status defers promotion for the
+whole file, while a final or missing document status still requires checking the
+contained record statuses.
 
 Common derived views usually need:
 

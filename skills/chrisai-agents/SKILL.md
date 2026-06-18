@@ -23,7 +23,7 @@ context unless the user explicitly asks for an operational action.
   `context-ingestion.md` for future knowledge-base intake.
 - Establish the `.agents` folder contract without creating empty folders or
   placeholder files before they are needed.
-- Seed only the minimal context, development, research, spec, progress, or
+- Seed only the minimal `.agents/context/`, research, spec, progress, or
   handoff records needed for the current setup or repair task.
 
 ## Task Routing
@@ -71,14 +71,16 @@ Create or repair only what is needed for the current setup:
 
 1. `.agents/AGENTS.md`
 2. the `.agents/workflows/*.md` files needed for future local operation
-3. `.agents/context/index.md`, only when context exists or context ingestion is
-   being set up with an initial entry
-4. `.agents/development/specs/manifest.md`, only when durable spec records are
+3. `.agents/context/index.md`, only when context exists, reusable research
+   findings are available, or context ingestion is being set up with an initial
+   entry
+4. `.agents/specs/manifest.md`, only when durable spec records are
    created or repaired
 5. `.agents/development/progress/manifest.md`, only when active execution
    tracking exists or is requested
-6. an initial spec folder, only when enough bounded product, feature,
-   migration, or initiative scope exists
+6. `.agents/specs/research/` for greenfield or brownfield product discovery
+7. `.agents/specs/<spec-id>/poc/` or `.agents/specs/mvp/` after research
+   identifies the next appropriate path
 
 `.agents/AGENTS.md` is the local law. Keep it concise and high authority. Put
 detailed procedures in `.agents/workflows/*.md`, not in `.agents/AGENTS.md`.
@@ -91,12 +93,18 @@ progress item, design artifact, research note, or release view needs it.
 
 - All generated `.agents` documentation must be Markdown.
 - Keep generated or maintained `.agents/**/*.md` files under 500 lines.
-- Put large context chunks in `.agents/references/context/<source-slug>/`.
+- Put shared synthesized product understanding in `.agents/context/` so future
+  specs can read it without tethering themselves to an earlier spec.
+- Put large context chunks in `.agents/references/context/<source-slug>/` and
+  link them from `.agents/context/index.md`.
 - Put long rationale, examples, snippets, research, transcript summaries,
   detailed evidence, and large audit notes in `.agents/references/`.
-- Keep original product truth in `.agents/development/specs/`.
+- Keep detailed traceable scope, evidence, requirements, acceptance, decisions,
+  risks, and proposed tasks in `.agents/specs/`.
 - Keep active execution state in `.agents/development/progress/`.
-- Keep research material under `.agents/development/research/`.
+- Keep research-round records under `.agents/specs/research/`. Keep supporting
+  long-form research material under `.agents/references/research/` only when it
+  would make the spec too large.
 - Keep `.agents/workflows/`, `.agents/references/`, `.agents/wireframes/`, and
   `.agents/creatives/` at the top level.
 
@@ -109,8 +117,16 @@ Stop setup or repair when:
   chats.
 - context, development, research, progress, design, or release files exist only
   where current setup material requires them.
+- completed specs have been checked for final accepted reusable findings that
+  should be promoted into `.agents/context/`.
 - initial records or manifests are coherent enough for future work.
-- open questions, blockers, and next workflow are stated.
+- open questions, blockers, and recommended next step are stated.
 
 Do not continue into implementation unless the user explicitly asks for active
 execution after setup.
+
+## Completion Response
+
+Whenever a user task request is complete, include the recommended next step in
+the final response. The next step may be a workflow, spec, review, validation,
+sync, user decision, or "none" when no follow-up is useful.

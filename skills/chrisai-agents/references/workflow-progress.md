@@ -10,10 +10,11 @@ state under `.agents/development/progress/`.
 3. `.agents/development/progress/manifest.md`
 4. `.agents/development/progress/conventions.md`, when conventions affect the item
 5. `.agents/development/progress/decisions.md`, when prior decisions affect the item
-6. `.agents/context/feature-goals.md`, when selecting next work or routing a new
+6. `.agents/context/index.md`, when selecting product or spec-linked work
+7. `.agents/context/feature-goals.md`, when selecting next work or routing a new
    feature goal
-7. one assigned item file or batch file
-8. source files directly required by the assigned work
+8. one assigned item file or batch file
+9. source files directly required by the assigned work
 
 Do not load the full progress bank unless acting as coordinator or resolving a
 cross-item conflict.
@@ -56,7 +57,9 @@ cross-item conflict.
     `.agents/context/feature-goals.md` before creating progress work.
 13. Update the manifest after each item or batch changes state.
 14. Record durable execution decisions in `decisions.md`.
-15. Write a handoff before stopping, switching sessions, or delegating.
+15. If execution changes durable product understanding, promote it into
+    `.agents/context/` or route it to document integrity before closeout.
+16. Write a handoff before stopping, switching sessions, or delegating.
 
 ## Item Versus Batch
 
@@ -124,4 +127,5 @@ change is needed.
 - feature-goal intake is checked when selecting next work
 - user feedback has been validated, rejected, or routed before fix work starts
 - next item or blocker is explicit
+- recommended next step is included in the completion response
 - batch work updates progress once at the end of the batch

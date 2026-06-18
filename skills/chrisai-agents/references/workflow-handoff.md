@@ -53,3 +53,5 @@ Next Recommended Step:
 - Put durable decisions in records or `decisions.md`; reference them here.
 - Put long execution notes in the relevant log file.
 - Do not claim verification unless the check was run.
+- Always include the recommended next step when a task request is complete,
+  even when no handoff file is created.

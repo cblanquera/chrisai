@@ -18,6 +18,7 @@ feedback validation, planner reconciliation, and document integrity.
 
 - `.agents/AGENTS.md`
 - MVP status, release readiness, open risks, and progress manifest
+- `.agents/context/index.md`
 - `.agents/context/feature-goals.md`
 - the last or current progress item when selecting next work
 - feedback summaries, QA notes, release readiness, or issue lists
@@ -25,6 +26,7 @@ feedback validation, planner reconciliation, and document integrity.
 ## May Update
 
 - `.agents/development/progress/`
+- `.agents/context/` when feature work creates reusable product understanding
 - `.agents/context/feature-goals.md` when user prompts identify new feature goals
 - feature-development spec records
 - `.agents/development/sprints/`
@@ -46,16 +48,18 @@ feedback validation, planner reconciliation, and document integrity.
    stream with its own acceptance criteria, risks, decisions, POCs, or multiple
    implementation items.
 6. Promote durable scope changes into records before implementation.
-7. Route uncertain, risky, or scope-changing items to validation, review, or a
+7. Promote cross-spec product understanding into `.agents/context/` when later
+   specs should inherit it.
+8. Route uncertain, risky, or scope-changing items to validation, review, or a
    user decision.
-8. For UI changes, reuse existing app patterns when clear. If the UI cannot be
+9. For UI changes, reuse existing app patterns when clear. If the UI cannot be
    determined from existing artifacts, or a new UI pattern is proposed, route to
    `workflows/wireframes.md` and a hand-back review round before implementation.
-9. Route user feedback through QA/validation and planner reconciliation before
+10. Route user feedback through QA/validation and planner reconciliation before
    creating fix work.
-10. Verify changed surfaces before marking feature-development work complete.
-11. Update progress/status once at the end of the selected item, batch, or goal.
-12. Before appending feedback, audit notes, issue lists, or rationale to an
+11. Verify changed surfaces before marking feature-development work complete.
+12. Update progress/status once at the end of the selected item, batch, or goal.
+13. Before appending feedback, audit notes, issue lists, or rationale to an
    existing Markdown file, decide whether the addition stays compact. If not,
    refactor the file by splitting it or move the detail to references, a batch
    file, or a log and link back.
@@ -75,9 +79,11 @@ verification, and progress update timing.
 - selected workflow, batch, individual item, or goal-manager loop is justified
 - feedback was validated or rejected before fix work started
 - verification covers changed surfaces
+- reusable product findings were promoted into `.agents/context/` or explicitly
+  did not require promotion
 - progress/status reflects the completed batch or blockers
 
 ## Handoff
 
 Name the feature-development objective, selected workflow, skipped risky items,
-verification run, progress update, and next action.
+verification run, progress update, and recommended next step.

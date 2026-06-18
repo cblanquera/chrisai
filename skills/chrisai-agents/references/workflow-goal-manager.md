@@ -14,10 +14,11 @@ user. It routes specialist workflows; it does not replace them.
 2. `.agents/workflows/progress.md`
 3. `.agents/workflows/document-integrity.md`
 4. `.agents/development/progress/manifest.md`
-5. `.agents/context/feature-goals.md`
-6. the last or current progress item, active goal, batch, spec, release, or
+5. `.agents/context/index.md`
+6. `.agents/context/feature-goals.md`
+7. the last or current progress item, active goal, batch, spec, release, or
    handoff packet
-7. directly relevant requirements, acceptance criteria, architecture decisions,
+8. directly relevant requirements, acceptance criteria, architecture decisions,
    designs, POC evidence, QA notes, and source files
 
 Do not load the full knowledge base unless coordinating a cross-goal conflict.
@@ -25,9 +26,10 @@ Do not load the full knowledge base unless coordinating a cross-goal conflict.
 ## May Update
 
 - `.agents/development/progress/`
+- `.agents/context/` when a completed spec produces reusable product knowledge
 - `.agents/context/feature-goals.md` when user prompts identify new feature goals
 - relevant spec records, indexes, status files, and traceability files
-- `.agents/development/research/poc/`, `.agents/wireframes/`, `.agents/creatives/`, or
+- `.agents/specs/<spec-id>/poc/`, `.agents/wireframes/`, `.agents/creatives/`, or
   `.agents/releases/` when the active goal produces durable results there
 - review, validation, QA, or handoff records
 
@@ -43,7 +45,8 @@ Do not load the full knowledge base unless coordinating a cross-goal conflict.
 6. Keep progress state current.
 7. Run QA or validation before marking work complete.
 8. Run `workflows/document-integrity.md` before checkpointing or closeout.
-9. Continue autonomously unless a stop-and-ask condition applies.
+9. When a task request is complete, report the recommended next step.
+10. Continue autonomously unless a stop-and-ask condition applies.
 
 ## Loop Phases
 
@@ -109,8 +112,8 @@ remains out of scope.
 Use `.agents/context/feature-goals.md` as planning input, not as an
 implementation queue. If the proposed goal is a bounded product stream with its
 own acceptance criteria, risks, decisions, POCs, or multiple implementation
-items, create or recommend a sibling spec under `.agents/development/specs/` instead of
-continuing to add work to the initial/root spec.
+items, create or recommend a sibling spec under `.agents/specs/` instead of
+continuing to add work to an earlier spec.
 
 ## Feedback Loop
 
@@ -161,12 +164,15 @@ Before escalating, write a short stuck report with:
 
 ## Artifact Promotion
 
-Before MVP freeze, feature-development closeout, or goal completion, confirm
-accepted outputs from POCs, wireframes, creatives, reviews, QA, and feedback
-loops are promoted into the right source-of-truth surface:
+Before research closeout, POC closeout, MVP freeze, feature-development
+closeout, or goal completion, confirm accepted outputs from POCs, wireframes,
+creatives, reviews, QA, and feedback loops are promoted into the right
+source-of-truth surface:
 
-- feasibility results into `.agents/development/research/poc/`, evidence, decisions, risks, and
-  MVP viability gaps
+- reusable product understanding into `.agents/context/` so future specs can read
+  it without tethering themselves to earlier specs
+- feasibility results into `.agents/specs/<spec-id>/poc/`, evidence,
+  decisions, risks, and MVP viability gaps
 - accepted UX, flow, and creative direction into specs, acceptance criteria,
   wireframe or creative review notes, and progress inputs
 - rejected alternatives and invalid feedback into review, QA, or progress notes
@@ -228,8 +234,10 @@ with files needed for the commit, stop and ask.
 - progress state, status, and durable records reflect the result
 - document-integrity gate has passed or remaining drift is explicit
 - next action is clear, or a hard blocker has been escalated
+- the completion response includes the recommended next step
 
 ## Handoff
 
 State the active goal, delegated workflows or agents, completed work, QA or
-validation evidence, document-integrity result, blockers, and the next action.
+validation evidence, document-integrity result, blockers, and the recommended
+next step.

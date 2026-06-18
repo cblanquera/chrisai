@@ -20,8 +20,10 @@ Manager duties:
 5. Choose the next specialist workflow and delegate when useful.
 6. Keep progress state current.
 7. Run QA or validation before marking work complete.
-8. Run `workflows/document-integrity.md` before checkpointing or closeout.
-9. Continue autonomously unless a stop-and-ask condition applies.
+8. At spec closeout, promote reusable product knowledge into `.agents/context/`.
+9. Run `workflows/document-integrity.md` before checkpointing or closeout.
+10. When a task request is complete, report the recommended next step.
+11. Continue autonomously unless a stop-and-ask condition applies.
 
 Stop and ask only when:
 
@@ -108,6 +110,7 @@ When work is ready for user review, state:
 - concrete review questions
 - what approval unlocks
 - whether approval covers only the current round
+- the recommended next step after the review decision
 
 Round approval is not phase approval unless the full phase scope is complete.
 
@@ -138,9 +141,9 @@ for implementation or branch work. Before switching or creating a branch, check
 `git status`. If unrelated dirty changes exist, stop and ask how to proceed.
 
 When a POC is accepted, promote only the accepted learning or reusable code
-into the target product/spec branch through an explicit merge, cherry-pick, or
-reimplementation decision. Do not treat the whole POC branch as product code by
-default.
+into `.agents/context/`, the target product/spec branch, or both through an
+explicit merge, cherry-pick, or reimplementation decision. Do not treat the
+whole POC branch as product code by default.
 
 ## Batch Criteria
 
@@ -214,6 +217,10 @@ Before freezing, confirm:
 - requirements link to acceptance criteria
 - important decisions and risks are recorded
 - POC results have a promotion, replacement, discard, or follow-up decision
+- reusable product understanding has been promoted or reconciled into
+  `.agents/context/`
+- durable records in `.agents/specs/` have been checked for `.agents/context/`
+  promotion when their record status is final
 - accepted wireframe and creative decisions are promoted into requirements,
   acceptance, risks, or implementation inputs
 - validated feedback and QA results are reconciled

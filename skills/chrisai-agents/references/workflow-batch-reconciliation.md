@@ -55,3 +55,4 @@ log file and link back.
 - verification covers the batch surfaces
 - progress is updated once per batch, not after every micro-fix
 - document integrity can confirm records, progress, and feedback status agree
+- recommended next step is included in the completion response

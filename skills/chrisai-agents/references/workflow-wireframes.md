@@ -43,4 +43,5 @@ wireframe review records.
 ## Handoff
 
 State the reviewed artifact, phase and round, accepted decisions, unresolved
-questions, durable records updated, and whether implementation is unlocked.
+questions, durable records updated, whether implementation is unlocked, and the
+recommended next step.

@@ -21,18 +21,21 @@ directly as MVP.
 ## Read First
 
 - `.agents/AGENTS.md`
+- `.agents/context/index.md`
 - relevant spec brief, questions, assumptions, risks, decisions, and evidence
 - relevant source docs or code only for the feasibility question
 
 ## May Update
 
-- `.agents/development/research/poc/`
-- `questions.md`
-- `assumptions.md`
-- `risks.md`
-- `decisions.md`
-- `evidence.md`
-- `tasks.md`
+- `.agents/specs/<spec-id>/poc/`
+- `.agents/specs/<spec-id>/poc/brief.md`
+- `.agents/specs/<spec-id>/poc/results.md`
+- `.agents/specs/<spec-id>/poc/snippets/`, only for large proof notes,
+  command output, or implementation excerpts
+- `.agents/context/`, when accepted POC learning should be inherited by future
+  specs
+- parent spec `questions.md`, `assumptions.md`, `risks.md`, `decisions.md`,
+  `evidence.md`, and `tasks.md` records with `Phase: poc`
 - `.agents/development/progress/`, only when active POC execution tracking is requested
 
 ## Branch Policy
@@ -56,22 +59,31 @@ default.
 1. Name the feasibility question.
 2. Define the expected proof and what would count as failure or inconclusive
    evidence.
-3. Keep the proof narrow and disposable unless the user asks to harden it.
-4. If a developer must prototype the proof, create or route to a progress item
+3. Create or update `.agents/specs/<spec-id>/poc/brief.md` for the proof inside
+   the spec it is trying to prove. Do not create duplicate grouped record files
+   inside `poc/`, create a shared POC folder directly under `.agents/specs/`, or
+   fill the target spec with unproven product scope.
+4. Keep the proof narrow and disposable unless the user asks to harden it.
+5. If a developer must prototype the proof, create or route to a progress item
    that names the feasibility question, `poc-<short-name>` branch, expected
    evidence, failure signal, and files or systems that may be touched.
-5. Record what was tested, what worked, what failed, and what remains unknown.
-6. Decide whether the result should be promoted, replaced, discarded, or
+6. Record what was tested, what worked, what failed, and what remains unknown.
+7. Decide whether the result should be promoted, replaced, discarded, or
    continued.
-7. Promote only accepted learning into MVP/customer-facing records.
-8. Reconcile rejected or inconclusive proof results into risks, questions,
+8. Write the proof outcome and promotion decision in
+   `.agents/specs/<spec-id>/poc/results.md`.
+9. Promote only accepted learning into `.agents/context/` and
+   MVP/customer-facing records.
+10. Reconcile rejected or inconclusive proof results into risks, questions,
    fallback decisions, or follow-up POC items.
-9. Do not create MVP progress items directly from raw POC artifacts.
+11. Do not create MVP progress items directly from raw POC artifacts.
 
 ## Stop Conditions
 
 - POC result is `proved`, `failed`, `inconclusive`, or `needs-follow-up`
 - promotion decision is recorded
+- reusable accepted learning is promoted or explicitly not promoted to
+  `.agents/context/`
 - POC branch is recorded when the proof required implementation
 - developer/progress handoff is linked when the proof required implementation
 - MVP records are updated only for accepted learning
@@ -81,4 +93,5 @@ default.
 
 State the feasibility question, POC branch if any, proof implementation target
 if any, evidence needed, result status, promotion decision, changed records, and
-next workflow: validation, MVP, freeze, progress, or another POC.
+recommended next step: validation, MVP, freeze, progress, another POC, or no
+follow-up.

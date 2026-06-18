@@ -5,6 +5,10 @@ Use this reference when generating or repairing
 context entry. The installed `.agents` workflow should handle ongoing requests
 to ingest, process, add, intake, or query project context.
 
+`.agents/context/` is the shared product knowledge base. Future specs should read
+it first instead of depending on earlier specs for baseline product
+understanding.
+
 Common prompts:
 
 - "Can you ingest this document?"
@@ -20,16 +24,18 @@ This is a materialized-on-demand contract. Do not create these files or folders
 until context exists or the setup explicitly seeds context.
 
 ```text
-.agents/context/
-  index.md
-  feature-goals.md
-  <short-context-entry>.md
-
-.agents/references/context/
-  <source-slug>/
+.agents/
+  context/
     index.md
-    chunk-001.md
-    chunk-002.md
+    feature-goals.md
+    <short-context-entry>.md
+
+  references/
+    context/
+      <source-slug>/
+        index.md
+        chunk-001.md
+        chunk-002.md
 ```
 
 Do not create `.agents/context/source-documents.md`. Original resources may
@@ -53,6 +59,39 @@ context is the durable knowledge-base content.
 9. Update `.agents/context/index.md` with a compact pointer.
 10. Run document-integrity checks when the ingestion creates product truth,
     feature goals, decisions, risks, acceptance criteria, or progress impact.
+
+## Spec Closeout Promotion
+
+At the end of every research spec, POC, MVP spec, feature spec, migration spec,
+or initiative spec, check whether the completed work contains reusable
+knowledge that belongs in `.agents/context/`.
+
+When a grouped record file is created or updated under `.agents/specs/`, check
+whether any contained records are durable context for future specs. Promote or
+reconcile reusable records into `.agents/context/` only when their record
+`Status:` is final.
+
+Final record statuses include `done`, `accepted`, `proved`, `proven`,
+`answered`, `closed`, and equivalent project-defined final states. Records with
+draft, proposed, open, blocked, in progress, under review, or otherwise
+non-final statuses may skip promotion until they become final.
+
+If a file has an explicit non-final document-level status, defer promotion for
+the whole file. A final or missing document-level status does not by itself
+make the file promotable; still inspect contained record statuses.
+
+Promote or reconcile:
+
+- final product descriptions and positioning
+- goals, feature goals, users, workflows, and success measures
+- accepted constraints, non-goals, terms, and decisions
+- durable current-state or intended-state findings
+- accepted POC learning that future specs should inherit
+- source links or summaries that future specs should read before planning
+
+Do not promote speculative, rejected, superseded, or one-off implementation
+details unless they clarify future planning boundaries. Keep detailed evidence
+or long rationale in `.agents/references/` and link it from context when useful.
 
 ## Context Entry Template
 

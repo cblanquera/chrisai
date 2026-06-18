@@ -1,9 +1,9 @@
 # Agent Structure
 
-Use `.agents/` for agent-readable project context, local operating rules,
-product planning, active progress, research, and handoffs. Keep it separate
-from production source code and human-authored project docs unless the user
-explicitly asks to move material.
+Use `.agents/context/` for durable product context that future specs should read
+first. Use `.agents/` for agent-readable local operating rules, specs, active
+progress, research support material, and handoffs. Keep these surfaces separate
+from production source code unless the user explicitly asks to move material.
 
 ## Layout
 
@@ -18,7 +18,12 @@ or release view needs them.
 
   context/
     index.md
+    product.md
+    goals.md
     feature-goals.md
+    constraints.md
+    decisions.md
+    terms.md
     <short-context-entry>.md
 
   workflows/
@@ -40,26 +45,46 @@ or release view needs them.
     wireframes.md
     creatives.md
 
-  development/
-    specs/
-      manifest.md
-      <spec-id>/
+  specs/
+    manifest.md
+    research/
+      brief.md
+      index.md
+      status.md
+      requirements.md
+      capabilities.md
+      constraints.md
+      assumptions.md
+      questions.md
+      decisions.md
+      risks.md
+      acceptance.md
+      evidence.md
+      tasks.md
+      traceability.md
+      reviews/
+      logs/
+    mvp/
+      brief.md
+      index.md
+      status.md
+      poc/
         brief.md
-        index.md
-        status.md
-        requirements.md
-        capabilities.md
-        constraints.md
-        assumptions.md
-        questions.md
-        decisions.md
-        risks.md
-        acceptance.md
-        evidence.md
-        tasks.md
-        traceability.md
-        reviews/
-        logs/
+        results.md
+        snippets/
+      requirements.md
+      capabilities.md
+      constraints.md
+      decisions.md
+      risks.md
+      acceptance.md
+      evidence.md
+      tasks.md
+      traceability.md
+      by-mvp.md
+      mvp-viability-gaps.md
+
+  development/
     progress/
       manifest.md
       items/
@@ -67,10 +92,6 @@ or release view needs them.
       logs/
     sprints/
       sprint-001.md
-    research/
-      poc/
-      grill/
-      adr/
 
   references/
     context/
@@ -79,6 +100,9 @@ or release view needs them.
     examples/
     snippets/
     research/
+      grill/
+      adr/
+      validation/
 
   wireframes/
     flows.md
@@ -118,7 +142,7 @@ Start by reading the workflow file that matches the task:
 - `workflows/document-integrity.md` for keeping context, specs, progress,
   indexes, status, releases, and derived views consistent
 - `workflows/import.md` for converting existing planning material into compact
-  development records
+  spec records
 - `workflows/poc.md` for feasibility proofs before product commitments
 - `workflows/mvp.md` for the smallest customer-usable product slice
 - `workflows/feature-development.md` for bounded feature streams, hardening,
@@ -139,17 +163,24 @@ Start by reading the workflow file that matches the task:
 
 ## Source Of Truth
 
-- `.agents/context/` contains the project knowledge base and feature-goal
-  intake when context exists. Check it before answering project-specific
-  questions.
-- `.agents/development/specs/` contains durable product intent, requirements,
-  decisions, risks, evidence, acceptance criteria, indexes, and proposed tasks.
+- `.agents/context/` contains shared synthesized product understanding, goals,
+  feature-goal intake, constraints, decisions, non-goals, terminology, and
+  reusable findings. Check it before answering project-specific questions or
+  creating a new spec.
+- `.agents/specs/research/` contains the first greenfield or brownfield
+  research round. It is discovery material, not shared product context.
+- `.agents/specs/mvp/` contains the smallest customer-usable product slice once
+  research or accepted POC learning can support it.
+- `.agents/specs/<spec-id>/` may contain later bounded feature, migration, or
+  initiative specs after MVP.
 - `.agents/development/progress/` contains active execution state and work
   packets.
 - `.agents/development/sprints/` contains optional timeboxed execution views
   derived from specs and progress state.
-- `.agents/development/research/` contains research material, POCs, grill
-  reports, ADRs, validation notes, and feasibility records.
+- `.agents/specs/<spec-id>/poc/` contains only the POC proof brief, result, and
+  optional large snippets inside the spec it is trying to prove. Keep POC
+  questions, assumptions, risks, decisions, evidence, and tasks in the parent
+  spec record files with `Phase: poc`.
 - `.agents/wireframes/` contains low-fidelity screens, flows, layout notes, and
   wireframe review notes.
 - `.agents/creatives/` contains visual direction, brand explorations,
@@ -187,6 +218,8 @@ Start by reading the workflow file that matches the task:
 - Accepted POC, wireframe, creative, review, QA, and feedback outcomes must be
   promoted into specs, evidence, acceptance, progress, or release records before
   freeze, closeout, or release readiness.
+- At the end of every spec, check whether reusable product understanding should
+  be promoted or reconciled into `.agents/context/` for future specs.
 ```
 
 ## Split And Refactor Rules

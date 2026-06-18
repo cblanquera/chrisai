@@ -29,7 +29,8 @@ May update:
 - `.agents/context/<slug>.md`
 - `.agents/references/context/<slug>/`
 - `.agents/context/feature-goals.md`, when the source identifies feature goals
-- development records, when the source contains durable product truth
+- `.agents/context/` and spec records, when the source contains durable product
+  truth
 
 Process:
 
@@ -39,10 +40,12 @@ Process:
 4. If generated context would exceed 500 lines, put all chunks in
    `.agents/references/context/<slug>/`.
 5. Update `.agents/context/index.md` with a compact summary and links.
-6. Promote durable product facts into development records when needed.
+6. Promote durable product facts into `.agents/context/` when future specs should
+   inherit them, and into spec records when they affect active scope.
 
-Stop when the context index routes the new entry and no active Markdown file
-exceeds the line cap.
+Stop when the context index routes the new entry, no active Markdown file
+exceeds the line cap, and the completion response includes the recommended
+next step.
 
 ## Goal Manager
 
@@ -69,7 +72,8 @@ Process:
 5. Keep progress state current.
 6. Run QA or validation before marking work complete.
 7. Run document integrity before checkpointing or closeout.
-8. Stop and escalate instead of repeating the same failed loop without new
+8. When the task request is complete, report the recommended next step.
+9. Stop and escalate instead of repeating the same failed loop without new
    evidence, narrower scope, or a different verification method.
 
 ## Document Integrity
@@ -84,6 +88,9 @@ Check:
 - spec/progress boundary
 - current-state consistency
 - source-of-truth placement
+- `.agents/context/` promotion at spec closeout
+- durable `.agents/specs/` record promotion when contained record statuses are
+  final
 - derived-view discipline
 - verification claims
 - feature-goal routing
@@ -93,10 +100,20 @@ Check:
 Repair compactly. Do not delete or retire sources without a source-retirement
 workflow. If repair would change product scope, stop and ask the user.
 
+For grouped record files created under `.agents/specs/`, check the records
+inside the file before promoting context. Promote durable reusable records only
+when their record `Status:` is final, such as `done`, `accepted`, `proved`,
+`proven`, `answered`, `closed`, or a project-defined equivalent. Records with
+draft, proposed, open, blocked, in progress, under review, or otherwise
+non-final statuses may skip `.agents/context/` promotion until they become
+final. A non-final document-level status defers promotion for the whole file;
+a final or missing document-level status still requires checking contained
+record statuses.
+
 ## Import
 
-Use `import.md` when existing planning material should become compact
-development records while preserving useful context.
+Use `import.md` when existing planning material should become compact spec
+records while preserving useful context.
 
 Process:
 
@@ -104,10 +121,11 @@ Process:
 2. Ingest reusable background into `.agents/context/`.
 3. Extract requirements, capabilities, constraints, decisions, risks,
    assumptions, questions, acceptance criteria, and evidence into grouped
-   records under `.agents/development/specs/`.
+   records under `.agents/specs/`.
 4. Extract POC, spike, prototype, or feasibility material into
-   `.agents/development/research/`.
+   `.agents/references/research/`.
 5. Mark ambiguous, stale, duplicated, or conflicting content explicitly.
+6. Promote reusable imported findings into `.agents/context/` before closeout.
 
 ## POC
 
@@ -116,13 +134,19 @@ scope, architecture, integration, or sequencing.
 
 May update:
 
-- `.agents/development/research/poc/`
-- questions, assumptions, risks, decisions, evidence, and tasks under specs
+- `.agents/specs/<spec-id>/poc/`
+- `poc/brief.md`, `poc/results.md`, and optional `poc/snippets/`
+- parent spec questions, assumptions, risks, decisions, evidence, and tasks
+  with `Phase: poc`
 - `.agents/development/progress/`, only when active POC execution tracking is
   requested
 
 Record the feasibility question, expected proof, failure signal, result,
-promotion decision, and unresolved viability gaps.
+promotion decision, unresolved viability gaps, and any accepted learning that
+belongs in `.agents/context/`.
+
+POCs are proof records, not specs. Do not create `.agents/specs/<target>/` only
+to hold unproven POC scope.
 
 ## MVP
 
@@ -138,6 +162,8 @@ Process:
 4. Exclude POC-only scaffolds and internal-only shortcuts from MVP acceptance.
 5. Reconcile accepted research, wireframes, creatives, reviews, QA, and
    feedback into records before freeze.
+6. Promote final product goals, constraints, terminology, and accepted
+   cross-spec decisions into `.agents/context/`.
 
 ## Feature Development
 
@@ -175,7 +201,8 @@ proposed task records, or execution views.
 
 Before freezing, confirm accepted research, POC, wireframe, creative,
 validation, QA, feedback, and grill outcomes have been promoted into durable
-records or explicitly deferred.
+records or explicitly deferred. Also confirm reusable product understanding has
+been promoted or reconciled into `.agents/context/`.
 
 ## Ad Hoc And Batch Reconciliation
 
@@ -222,6 +249,9 @@ Next Recommended Step:
 - <specific workflow, item ID, batch ID, or reconciliation step>
 ```
 
+Every completed task response should include the recommended next step, even
+when no formal handoff file is created.
+
 ## Wireframes And Creatives
 
 Use `wireframes.md` for low-fidelity screens, flows, layout notes, and
@@ -230,7 +260,7 @@ explorations, moodboards, asset briefs, copy explorations, and creative review
 notes.
 
 Run review rounds explicitly. Promote accepted UX, flow, copy, asset, or
-creative decisions into development records before implementation or freeze.
+creative decisions into spec records before implementation or freeze.
 
 ## Source Retirement
 

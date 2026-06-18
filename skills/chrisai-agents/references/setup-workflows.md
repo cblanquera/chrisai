@@ -20,8 +20,10 @@ May update:
 - `.agents/context/index.md`, only when context exists or is seeded
 - `.agents/context/feature-goals.md`, only when feature-goal intake exists
 - `.agents/workflows/`
-- `.agents/development/specs/manifest.md`, only when spec records are created
-- `.agents/development/specs/<spec-id>/`, only when scope is bounded enough
+- `.agents/specs/manifest.md`, only when spec records are created
+- `.agents/specs/research/`
+- `.agents/specs/<spec-id>/poc/`, only when research shows a POC is needed next
+- `.agents/specs/mvp/`, only when research shows MVP scope can be trusted next
 - `.agents/references/`
 
 Ask only enough to start responsibly:
@@ -38,33 +40,43 @@ If enough information exists, proceed and mark uncertainty explicitly.
 
 Process:
 
-1. Choose one `<spec-id>` for the bounded initiative.
-2. Ensure `.agents/AGENTS.md` and needed `.agents/workflows/` exist.
-3. Create the initial spec skeleton when the scope is bounded enough.
-4. Write `brief.md`, `index.md`, and `status.md`.
-5. Create compact grouped record files directly under the spec folder.
-6. Capture goals, users, desired capabilities, constraints, and non-goals as
-   records.
-7. Capture high-level future feature goals in
-   `.agents/context/feature-goals.md`.
-8. Draft requirements and functional behavior as compact `REQ` and `CAP`
-   records, not long narrative specs.
-9. Create `ASM`, `Q`, and `RISK` records for unsupported claims and ambiguous
-   scope.
-10. Create provisional `DEC` records for early decision candidates.
-11. Create POC or spike `TASK` records only when evidence is needed before a
-    decision can be trusted.
-12. Define POC path, MVP scope, customer-facing MVP journeys, success measures,
-    and validation needs as records.
-13. Create MVP-relevant `AC` records.
-14. Create routing files for open questions, MVP, status, source, and
-    traceability only when useful.
-15. Create a review packet under `reviews/` or `.agents/references/` only when
+1. Ensure `.agents/AGENTS.md` and needed `.agents/workflows/` exist.
+2. Create or repair `.agents/specs/manifest.md`.
+3. Create `.agents/specs/research/` as the first spec folder.
+4. Write research `brief.md`, `index.md`, and `status.md`.
+5. Create compact grouped record files directly under the research spec folder.
+6. Capture goals, users, desired capabilities, constraints, non-goals,
+   assumptions, open questions, risks, and early evidence as research records.
+7. Capture high-level future feature goals in `.agents/context/feature-goals.md`.
+8. Do not convert the research spec directly into an MVP spec. Treat research
+   as discovery whose job is to produce reusable context and a next-path
+   recommendation.
+9. Create or update `.agents/context/` only with final accepted reusable
+   research results that future specs should read first, such as product
+   summary, goals, users, constraints, terms, decisions, non-goals, known risks,
+   and useful source links. If research status is not final, keep context
+   candidates in the research spec until they are accepted.
+10. Decide the next spec path:
+    - create or recommend `.agents/specs/<spec-id>/poc/` when feasibility,
+      architecture, platform, integration, security, performance, persistence,
+      permissions, or deployment uncertainty could change the product plan
+    - create or recommend `.agents/specs/mvp/` when the smallest
+      customer-usable workflow can be specified without a prior proof
+11. In `.agents/specs/<spec-id>/poc/` or `.agents/specs/mvp/`, link back to
+    `.agents/context/` for accepted shared context. Link to research records for
+    traceability, candidates, or detailed evidence.
+12. Create routing files for open questions, status, source, and traceability
+    only when useful.
+13. Create a review packet under `reviews/` or `.agents/references/` only when
     records alone would not support a productive review.
 
 Stop when `status.md` says `ready-for-review`, `needs-clarification`, or
-`needs-validation`, blockers are explicit, and no active implementation work
-has been created unless the user explicitly asked for execution.
+`needs-validation`, final accepted reusable findings have been promoted into
+`.agents/context/` or explicitly deferred because research is not final, the
+recommended next step is POC, MVP, review, validation, or no follow-up,
+blockers are explicit, and no active implementation work has been created
+unless the user explicitly asked for execution. Include the recommended next
+step in the completion response.
 
 ## Brownfield Setup
 
@@ -85,8 +97,10 @@ May update:
 - `.agents/AGENTS.md`
 - `.agents/context/`, only when context is seeded or repaired
 - `.agents/workflows/`
-- `.agents/development/specs/manifest.md`, only when spec records are created
-- `.agents/development/specs/<spec-id>/`, only when scope is bounded enough
+- `.agents/specs/manifest.md`, only when spec records are created
+- `.agents/specs/research/`
+- `.agents/specs/<spec-id>/poc/`, only when research shows a POC is needed next
+- `.agents/specs/mvp/`, only when research shows MVP scope can be trusted next
 - `.agents/references/`
 
 Source rules:
@@ -101,29 +115,37 @@ Process:
 
 1. Confirm the target project and whether docs are current truth or intended
    future state.
-2. Choose or confirm one `<spec-id>`. Do not add every feature-development
-   goal to the initial/root spec; create sibling specs for bounded product
-   streams.
-3. Ensure `.agents/AGENTS.md`, `.agents/workflows/`, and the spec skeleton
-   exist.
-4. Inspect only the sources needed to infer the requested scope.
-5. Create `EVD` records for observed code, behavior, or docs.
-6. Create or update `REQ`, `CAP`, `DEC`, `RISK`, `Q`, and `AC` records with
+2. Ensure `.agents/AGENTS.md`, `.agents/workflows/`, and
+   `.agents/specs/research/` exist.
+3. Inspect only the sources needed to infer the requested scope.
+4. Create `EVD` records for observed code, behavior, or docs in the research
+   spec.
+5. Create or update `REQ`, `CAP`, `DEC`, `RISK`, `Q`, and `AC` records with
    `Current State`, `Intended State`, and `Gap` when useful.
-7. Mark confidence as `inferred`, `evidence-backed`, `conflicting`, or `stale`
+6. Mark confidence as `inferred`, `evidence-backed`, `conflicting`, or `stale`
    as appropriate.
-8. Update traceability, open question, source, and status indexes.
+7. Update traceability, open question, source, and status indexes.
+8. Promote final accepted reusable current-state, intended-state, product,
+   goal, constraint, term, decision, non-goal, and source-link findings into
+   `.agents/context/`. If findings are not final, leave them in the research
+   spec as context candidates.
 9. Record or reconcile user-identified feature goals in
    `.agents/context/feature-goals.md` before routing them.
+10. Decide whether the next step should be `.agents/specs/<spec-id>/poc/` or
+    `.agents/specs/mvp/`. Use POC when current-state uncertainty or technical
+    risk could change product scope; use MVP when the customer-usable slice can
+    be specified from accepted research and context.
 
 Stop when inspected sources are listed, current-state findings are recorded,
-intended-state conflicts or gaps are explicit, and the next workflow is review,
-validation, freeze, or progress.
+intended-state conflicts or gaps are explicit, final accepted reusable findings
+are in `.agents/context/` or explicitly deferred because research is not final,
+and the recommended next step is review, validation, POC, MVP, freeze,
+progress, or no follow-up.
 
 ## Import Setup
 
 Use import setup when existing human planning material should become compact
-development records while preserving useful context.
+spec records while preserving useful context.
 
 Read first:
 
@@ -138,9 +160,10 @@ May update:
 - `.agents/context/`
 - `.agents/references/`
 - `.agents/workflows/`
-- `.agents/development/specs/manifest.md`, only when spec records are created
-- `.agents/development/specs/<spec-id>/`, only when scope is bounded enough
-- `.agents/development/research/`, only when source material contains research
+- `.agents/specs/manifest.md`, only when spec records are created
+- `.agents/specs/<spec-id>/`, only when scope is bounded enough
+- `.agents/references/research/`, only when source material contains long-form
+  research support that should not be compacted into spec records
 
 Source types:
 
@@ -171,10 +194,14 @@ Process:
 8. Mark ambiguous, stale, duplicated, or conflicting content explicitly.
 9. Update traceability, open questions, status, source, and MVP viability
    indexes.
+10. At closeout, promote only final accepted reusable imported facts into
+    `.agents/context/` so future specs do not need to depend on the import spec
+    for baseline product understanding. Keep ambiguous, conflicting, stale, or
+    non-final imported material in spec records until reconciled.
 
 Stop when source material is inventoried, durable facts are compact records,
-remaining unique source value is preserved or linked, and the next workflow is
-review, validation, freeze, or source retirement.
+remaining unique source value is preserved or linked, and the recommended next
+step is review, validation, freeze, source retirement, or no follow-up.
 
 ## Hybrid Setup
 

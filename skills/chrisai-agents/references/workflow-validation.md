@@ -7,20 +7,22 @@ implementation, or another fix pass.
 ## Read First
 
 1. `.agents/AGENTS.md`
-2. `.agents/development/specs/manifest.md`
-3. `.agents/development/specs/<spec-id>/index.md`
-4. `.agents/development/specs/<spec-id>/status.md`
-5. relevant records and review findings
-6. source files, docs, commands, or external references needed for the specific
+2. `.agents/specs/manifest.md`
+3. `.agents/context/index.md`, when product context exists
+4. `.agents/specs/<spec-id>/index.md`
+5. `.agents/specs/<spec-id>/status.md`
+6. relevant records and review findings
+7. source files, docs, commands, or external references needed for the specific
    validation target
-7. active progress item, batch, QA note, screenshot, recording, reproduction
+8. active progress item, batch, QA note, screenshot, recording, reproduction
    steps, or user feedback when validating implementation feedback
 
 Do not load unrelated spec folders.
 
 ## May Update
 
-- `.agents/development/specs/<spec-id>/evidence.md`
+- `.agents/specs/<spec-id>/evidence.md`
+- `.agents/context/`, when validated evidence changes reusable product knowledge
 - validated source records
 - `traceability.md`
 - `open-questions.md`
@@ -49,8 +51,10 @@ Do not load unrelated spec folders.
 8. Route reproduced low-to-medium-risk fixes to progress or batch
    reconciliation, and route scope-changing or uncertain feedback to review,
    MVP, feature development, or the user.
-9. Update indexes and findings.
-10. Update `status.md` or progress state with readiness and next action.
+9. Promote validated reusable product knowledge into `.agents/context/` when
+   future specs should inherit it.
+10. Update indexes and findings.
+11. Update `status.md` or progress state with readiness and next action.
 
 ## Evidence Rules
 
@@ -66,10 +70,12 @@ of backend behavior, and stale docs when current code contradicts them.
 - evidence records exist or the validation remains explicitly blocked
 - blocker/high-risk status is updated
 - feedback is reproduced, rejected, deferred, or routed
-- next workflow is review, another validation pass, freeze, progress, batch
-  reconciliation, or goal-manager
+- reusable validated findings are promoted into `.agents/context/` or explicitly
+  left in the active spec only
+- recommended next step is review, another validation pass, freeze, progress,
+  batch reconciliation, goal-manager, or no follow-up
 
 ## Handoff
 
 State the validation target, evidence gathered, feedback classification,
-records or progress files updated, and the next owner.
+records or progress files updated, and the recommended next step or owner.

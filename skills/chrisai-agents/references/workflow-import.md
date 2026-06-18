@@ -1,8 +1,8 @@
 # Import Workflow
 
 Use this workflow when existing human planning material should be converted into
-compact `.agents/development/specs/` records while preserving useful project
-context in the `.agents` knowledge base.
+compact `.agents/specs/` records while preserving useful project
+context in `.agents/context/`.
 
 ## Read First
 
@@ -14,8 +14,8 @@ context in the `.agents` knowledge base.
 
 - `.agents/context/`
 - `.agents/references/`
-- `.agents/development/specs/manifest.md`
-- `.agents/development/specs/<spec-id>/`
+- `.agents/specs/manifest.md`
+- `.agents/specs/<spec-id>/`
 
 ## Process
 
@@ -31,12 +31,19 @@ context in the `.agents` knowledge base.
    tested, what it proved, what remains unknown, and whether it should be
    promoted, replaced, discarded, or continued.
 6. Mark ambiguous, stale, duplicated, or conflicting content explicitly.
-7. Update traceability, open questions, status, source, and MVP viability
+7. Promote only final accepted reusable imported product facts into
+   `.agents/context/` so later specs do not need to depend on the import spec.
+   Keep ambiguous, conflicting, stale, or non-final imported material in spec
+   records until reconciled.
+8. Update traceability, open questions, status, source, and MVP viability
    indexes.
 
 ## Stop Conditions
 
 - source material is inventoried
 - durable facts are compact records
+- final accepted reusable product context is promoted into `.agents/context/`
+  or explicitly deferred
 - remaining unique source value is preserved or linked
-- next workflow is review, validation, freeze, or source retirement
+- recommended next step is review, validation, freeze, source retirement, or no
+  follow-up
