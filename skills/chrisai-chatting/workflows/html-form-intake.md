@@ -4,9 +4,9 @@ Use this workflow when another skill, workflow, or agent produces an intake
 request and the user wants to answer the intake in a form instead of writing a
 normal chat reply.
 
-This workflow turns an agent's intake questions into an HTML form artifact,
-collects the user's answers, and returns the completed intake to the original
-workflow.
+This workflow turns an agent's intake questions into a local HTML form
+artifact. The user fills out the form, submits it locally, then pastes the
+generated raw-text response back into chat.
 
 ## Trigger Conditions
 
@@ -28,9 +28,9 @@ design, coding, or product workflow.
 
 The user's chat reply remains authoritative.
 
-If a form is open or a form server is waiting and the user responds in normal
-chat instead, stop waiting for the form, shut down any form server, and use the
-chat response as the intake answer.
+After sending the local form link, wait for the user to paste the generated
+response back into chat. If the user answers directly in normal chat instead,
+use the chat response as the intake answer.
 
 Do not force the user to complete a form once they have answered in chat.
 
@@ -99,23 +99,26 @@ Use a small JSON schema as the handoff from agent parsing to rendering:
 Use stable lowercase IDs with hyphens or underscores. Do not include secrets,
 tokens, credentials, private keys, or sensitive personal data in the schema.
 
-## Default Static Form Mode
+## Static Form Mode
 
-Use static form mode when the user needs a simple artifact and copy/paste is
-acceptable.
+Use static form mode for intake forms. Do not start a server for this workflow.
 
 1. Extract the intake schema.
 2. Generate a local HTML form file from the schema.
 3. Send the user a clickable local file link.
 4. The user opens the form, fills it out, and submits.
-5. The form displays both:
-   - a JSON response
-   - a readable Markdown response
-6. The user copies the JSON or Markdown back into chat.
-7. Parse the pasted response and continue the original workflow.
+5. The form displays one raw-text response under the heading "Copy this
+   response back into chat".
+6. On submit, the form should attempt to copy that raw-text response to the
+   clipboard automatically as a shortcut.
+7. If automatic clipboard copy fails, the form must still show the raw text and
+   a manual copy button or selectable text area.
+8. The user pastes the raw-text response back into chat.
+9. Parse the pasted response and continue the original workflow.
 
 Static mode must not depend on a server, external network, remote scripts, or
-browser file-write permissions.
+browser file-write permissions. Clipboard support is a convenience only; the
+visible raw text is the reliable fallback.
 
 Use the bundled renderer:
 
@@ -132,87 +135,26 @@ python3 scripts/render-intake-form-html.py --schema <schema.json> --preview-file
 The script writes the HTML form under the system temp directory, prints its
 `file://` URL, and exits.
 
-## One-Shot Server Mode
-
-Use one-shot server mode only when the user explicitly wants the smoother
-submit-and-continue behavior and accepts a temporary local server.
-
-Expected behavior:
-
-1. Generate the intake schema.
-2. Start a local server bound only to `127.0.0.1`.
-3. Serve exactly one form.
-4. Accept exactly one form submission.
-5. Write the submitted response to a known JSON output file.
-6. Return a success page to the browser.
-7. Shut down the server immediately after submission.
-8. The agent waits for the server process to exit.
-9. The agent reads the JSON file and continues the original workflow.
-
-The server must also shut down on timeout. Use a clear timeout such as 15
-minutes unless the user asks for a different window.
-
-Server command shape:
-
-```bash
-python3 scripts/render-intake-form-html.py \
-  --schema <schema.json> \
-  --serve \
-  --response-output <response.json> \
-  --timeout 900
-```
-
-The script prints the localhost URL first. When the form is submitted, it
-writes the JSON response, prints the response file path, and exits.
-
-## Chat Override During Server Mode
-
-While waiting for a one-shot server submission, monitor the conversation.
-
-If the user replies in chat before the form is submitted:
-
-1. Stop the form server.
-2. Ignore any later form submission for that intake round.
-3. Treat the chat reply as the user's intake response.
-4. Continue the original workflow from the chat response.
-5. Briefly tell the user the form was cancelled because they answered in chat.
-
-This rule prevents the server from blocking progress and keeps normal chat as
-the fastest escape hatch.
-
-## Server Guardrails
-
-If server mode is used:
-
-- bind only to `127.0.0.1`
-- use a random or caller-selected free port
-- serve one intake form only
-- accept one POST only
-- write one known JSON output file
-- shut down after POST, timeout, explicit cancellation, or chat override
-- do not use remote assets
-- do not accept file uploads in the first version
-- do not run indefinitely
-- do not continue until the server exits, times out, or is cancelled
-
 ## Response Handling
 
-When the completed form response is available:
+When the pasted form response is available:
 
 1. Validate that required fields are present.
 2. Preserve the original field labels and submitted values.
-3. Convert the response into the format expected by the original skill.
+3. Convert the raw-text response into the format expected by the original
+   skill.
 4. Continue the original workflow.
 5. If required answers are missing, ask only for the missing answers.
 
-If both a form submission and a chat reply exist, prefer the most recent direct
-user instruction. If timing is ambiguous, ask which answer should be used.
+If both a pasted form response and a direct chat answer exist, prefer the most
+recent direct user instruction. If timing is ambiguous, ask which answer should
+be used.
 
 ## Safety
 
 - Treat the generated form as a local convenience artifact, not a persistent
   data-collection system.
 - Avoid collecting secrets or sensitive personal data.
-- Explain when server mode is active and how it will stop.
-- Always stop a server before ending the turn.
-- Prefer static form mode when there is no clear benefit to server mode.
+- Do not start a localhost server for this workflow.
+- Keep the visible raw-text response as the source of truth for what the user
+  should paste back into chat.

@@ -22,8 +22,8 @@ experience artifact.
   context, producing compact recall artifacts, deciding what should be cached,
   and rehydrating prior session state without overloading a new conversation.
 - `workflows/html-form-intake.md`: For turning agent intake prompts into local
-  HTML form artifacts, then using static copy/paste responses or explicit
-  one-shot server submissions to continue the original workflow.
+  HTML form artifacts that produce raw-text responses for the user to paste
+  back into chat.
 - `workflows/agent-response-to-html.md`: For mirroring agent responses into a
   readable HTML preview link while preserving the chat response as the
   canonical answer, or for saving/opening HTML when the user explicitly asks.

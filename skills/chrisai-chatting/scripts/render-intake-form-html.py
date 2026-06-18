@@ -5,18 +5,13 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import functools
 import html
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 import json
 import re
 import sys
 import tempfile
-import threading
-import time
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import parse_qs, quote, urlencode
 
 
 FIELD_TYPES = {
@@ -114,7 +109,7 @@ def json_attr(value: Any) -> str:
     return html.escape(json.dumps(value, ensure_ascii=False), quote=True)
 
 
-def render_input(question: dict[str, Any], server_mode: bool) -> str:
+def render_input(question: dict[str, Any]) -> str:
     qid = html.escape(question["id"], quote=True)
     label = html.escape(question["label"])
     required = " required" if question["required"] else ""
@@ -167,15 +162,13 @@ def render_input(question: dict[str, Any], server_mode: bool) -> str:
     return "\n".join(parts)
 
 
-def build_document(schema: dict[str, Any], server_mode: bool) -> str:
+def build_document(schema: dict[str, Any]) -> str:
     title = html.escape(schema["title"])
     description = html.escape(schema["description"])
     generated = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     source_bits = [value for value in [schema["source_skill"], schema["source_workflow"]] if value]
     source = html.escape(" / ".join(source_bits) or "Chat intake")
-    fields_html = "\n".join(render_input(question, server_mode) for question in schema["questions"])
-    action = ' action="/submit" method="post"' if server_mode else ""
-    static_attr = "false" if server_mode else "true"
+    fields_html = "\n".join(render_input(question) for question in schema["questions"])
     schema_json = json_attr(schema)
 
     return f"""<!doctype html>
@@ -348,7 +341,7 @@ def build_document(schema: dict[str, Any], server_mode: bool) -> str:
         <h1>{title}</h1>
         <p class="description">{description or "Complete this local intake form, then submit it to produce a copyable response."}</p>
       </header>
-      <form id="intake-form"{action} data-static="{static_attr}" data-schema="{schema_json}">
+      <form id="intake-form" data-schema="{schema_json}">
         {fields_html}
         <div class="actions">
           <button type="submit">Submit intake</button>
@@ -359,25 +352,20 @@ def build_document(schema: dict[str, Any], server_mode: bool) -> str:
       <section class="result" id="result">
         <h2>Copy this response back into chat</h2>
         <div class="actions">
-          <button class="secondary" type="button" id="copy-json">Copy JSON</button>
-          <button class="secondary" type="button" id="copy-markdown">Copy Markdown</button>
-          <button class="secondary" type="button" id="download-json">Download JSON</button>
+          <button class="secondary" type="button" id="copy-response">Copy Response</button>
+          <span class="error" id="copy-status" role="status"></span>
         </div>
-        <h3>JSON</h3>
-        <pre id="json-output"></pre>
-        <h3>Markdown</h3>
-        <pre id="markdown-output"></pre>
+        <pre id="response-output"></pre>
       </section>
     </article>
   </main>
   <script>
     const form = document.getElementById("intake-form");
-    const isStatic = form.dataset.static === "true";
     const schema = JSON.parse(form.dataset.schema);
     const result = document.getElementById("result");
     const error = document.getElementById("form-error");
-    const jsonOutput = document.getElementById("json-output");
-    const markdownOutput = document.getElementById("markdown-output");
+    const copyStatus = document.getElementById("copy-status");
+    const responseOutput = document.getElementById("response-output");
 
     function valuesForQuestion(question, data) {{
       const values = data.getAll(question.id).filter((value) => String(value).trim() !== "");
@@ -410,52 +398,83 @@ def build_document(schema: dict[str, Any], server_mode: bool) -> str:
       }};
     }}
 
-    function toMarkdown(response) {{
-      const lines = [`# ${{response.title}}`, "", `Submitted: ${{response.submitted_at}}`, ""];
+    function toRawText(response) {{
+      const lines = [`Intake response: ${{response.title}}`, `Submitted: ${{response.submitted_at}}`, ""];
       for (const field of response.fields) {{
         const raw = Array.isArray(field.value) ? field.value.join(", ") : field.value;
-        lines.push(`## ${{field.label}}`, "", raw || "_No answer provided._", "");
+        lines.push(field.label, raw || "No answer provided.", "");
       }}
-      return lines.join("\\n");
+      return lines.join("\\n").trim();
     }}
 
-    function showResponse(response) {{
-      const jsonText = JSON.stringify(response, null, 2);
-      const markdownText = toMarkdown(response);
-      jsonOutput.textContent = jsonText;
-      markdownOutput.textContent = markdownText;
+    async function showResponse(response) {{
+      const rawText = toRawText(response);
+      responseOutput.textContent = rawText;
       result.classList.add("active");
       result.scrollIntoView({{ behavior: "smooth", block: "start" }});
-    }}
-
-    async function copyText(text) {{
-      try {{
-        await navigator.clipboard.writeText(text);
-      }} catch (err) {{
-        window.prompt("Copy this text:", text);
+      if (await copyText(rawText, false)) {{
+        copyStatus.textContent = "Copied. Paste it back into chat.";
+      }} else {{
+        copyStatus.textContent = "Copy failed. Select the text below and paste it back into chat.";
+        selectResponseText();
       }}
     }}
 
-    document.getElementById("copy-json").addEventListener("click", () => copyText(jsonOutput.textContent));
-    document.getElementById("copy-markdown").addEventListener("click", () => copyText(markdownOutput.textContent));
-    document.getElementById("download-json").addEventListener("click", () => {{
-      const blob = new Blob([jsonOutput.textContent], {{ type: "application/json" }});
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "intake-response.json";
-      link.click();
-      URL.revokeObjectURL(url);
+    function selectResponseText() {{
+      const range = document.createRange();
+      range.selectNodeContents(responseOutput);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+    }}
+
+    function fallbackCopy(text) {{
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.top = "-1000px";
+      document.body.appendChild(textarea);
+      textarea.select();
+      let copied = false;
+      try {{
+        copied = document.execCommand("copy");
+      }} catch (err) {{
+        copied = false;
+      }}
+      document.body.removeChild(textarea);
+      return copied;
+    }}
+
+    async function copyText(text, showPrompt = true) {{
+      try {{
+        if (navigator.clipboard && window.isSecureContext) {{
+          await navigator.clipboard.writeText(text);
+          return true;
+        }}
+      }} catch (err) {{
+        // Fall through to the older copy path below.
+      }}
+      if (fallbackCopy(text)) return true;
+      if (showPrompt) window.prompt("Copy this text:", text);
+      return false;
+    }}
+
+    document.getElementById("copy-response").addEventListener("click", async () => {{
+      if (await copyText(responseOutput.textContent)) {{
+        copyStatus.textContent = "Copied. Paste it back into chat.";
+      }} else {{
+        copyStatus.textContent = "Copy failed. Select the text below and paste it back into chat.";
+        selectResponseText();
+      }}
     }});
 
-    if (isStatic) {{
-      form.addEventListener("submit", (event) => {{
-        event.preventDefault();
-        error.textContent = "";
-        if (!form.reportValidity()) return;
-        showResponse(collectResponse());
-      }});
-    }}
+    form.addEventListener("submit", (event) => {{
+      event.preventDefault();
+      error.textContent = "";
+      if (!form.reportValidity()) return;
+      showResponse(collectResponse());
+    }});
   </script>
 </body>
 </html>
@@ -480,114 +499,6 @@ def write_document(document: str, output_path: str | None) -> None:
     sys.stdout.write(document)
 
 
-def request_to_response(schema: dict[str, Any], form: dict[str, list[str]]) -> dict[str, Any]:
-    answers: dict[str, Any] = {}
-    fields: list[dict[str, Any]] = []
-    for question in schema["questions"]:
-        values = [value for value in form.get(question["id"], []) if str(value).strip()]
-        value: Any = values if question["type"] == "checkbox" else (values[0] if values else "")
-        answers[question["id"]] = value
-        fields.append(
-            {
-                "id": question["id"],
-                "label": question["label"],
-                "type": question["type"],
-                "required": question["required"],
-                "value": value,
-            }
-        )
-    return {
-        "title": schema["title"],
-        "source_skill": schema["source_skill"],
-        "source_workflow": schema["source_workflow"],
-        "submitted_at": dt.datetime.now(dt.timezone.utc).isoformat(),
-        "answers": answers,
-        "fields": fields,
-    }
-
-
-def success_page(output_path: Path) -> bytes:
-    safe_path = html.escape(str(output_path))
-    body = f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intake Submitted</title>
-  <style>body{{font-family:system-ui;margin:40px;line-height:1.5}}main{{max-width:720px;margin:auto}}</style>
-</head>
-<body>
-  <main>
-    <h1>Intake submitted</h1>
-    <p>Your response was saved locally.</p>
-    <p><code>{safe_path}</code></p>
-    <p>You can return to chat now.</p>
-  </main>
-</body>
-</html>"""
-    return body.encode("utf-8")
-
-
-def make_handler(schema: dict[str, Any], document: str, output_json: Path, stop_event: threading.Event):
-    class IntakeHandler(BaseHTTPRequestHandler):
-        def log_message(self, format: str, *args: object) -> None:
-            return
-
-        def do_GET(self) -> None:
-            if self.path not in {"/", "/index.html"}:
-                self.send_error(404)
-                return
-            payload = document.encode("utf-8")
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(payload)))
-            self.end_headers()
-            self.wfile.write(payload)
-
-        def do_POST(self) -> None:
-            if self.path != "/submit":
-                self.send_error(404)
-                return
-            length = int(self.headers.get("Content-Length", "0") or 0)
-            raw = self.rfile.read(length).decode("utf-8")
-            parsed = parse_qs(raw, keep_blank_values=True)
-            response = request_to_response(schema, parsed)
-            output_json.parent.mkdir(parents=True, exist_ok=True)
-            output_json.write_text(json.dumps(response, indent=2, ensure_ascii=False), encoding="utf-8")
-            payload = success_page(output_json)
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(payload)))
-            self.end_headers()
-            self.wfile.write(payload)
-            stop_event.set()
-
-    return IntakeHandler
-
-
-def serve_once(schema: dict[str, Any], output_json: str, host: str, port: int, timeout: int) -> int:
-    output_path = Path(output_json)
-    stop_event = threading.Event()
-    document = build_document(schema, server_mode=True)
-    handler = make_handler(schema, document, output_path, stop_event)
-    server = ThreadingHTTPServer((host, port), handler)
-    actual_host, actual_port = server.server_address
-    print(f"http://{actual_host}:{actual_port}/", flush=True)
-
-    thread = threading.Thread(target=server.serve_forever, daemon=True)
-    thread.start()
-    submitted = stop_event.wait(timeout)
-    server.shutdown()
-    server.server_close()
-    thread.join(timeout=5)
-
-    if submitted:
-        print(str(output_path), flush=True)
-        return 0
-    print(f"Timed out after {timeout} seconds without a submission.", file=sys.stderr)
-    return 2
-
-
 def main(argv: Iterable[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--schema", help="Intake schema JSON path. Defaults to stdin.")
@@ -599,23 +510,10 @@ def main(argv: Iterable[str] | None = None) -> int:
         help="Directory used with --preview-file when --output is not provided.",
     )
     parser.add_argument("--filename", default="intake-form.html", help="Preview filename.")
-    parser.add_argument("--serve", action="store_true", help="Run a one-shot localhost form server.")
-    parser.add_argument("--response-output", help="JSON output path for --serve submissions.")
-    parser.add_argument("--host", default="127.0.0.1", help="Host for --serve.")
-    parser.add_argument("--port", type=int, default=0, help="Port for --serve. Defaults to a random free port.")
-    parser.add_argument("--timeout", type=int, default=900, help="Server timeout in seconds.")
     args = parser.parse_args(argv)
 
-    if args.preview_file and args.serve:
-        parser.error("--preview-file and --serve cannot be used together")
-    if args.serve and not args.response_output:
-        parser.error("--serve requires --response-output")
-
     schema = load_schema(args.schema)
-    if args.serve:
-        return serve_once(schema, args.response_output, args.host, args.port, args.timeout)
-
-    document = build_document(schema, server_mode=False)
+    document = build_document(schema)
     if args.preview_file:
         output = preview_output_path(args.output, args.preview_dir, args.filename)
         output.parent.mkdir(parents=True, exist_ok=True)

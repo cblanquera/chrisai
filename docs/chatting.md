@@ -22,7 +22,7 @@ artifact and keeps any follow-up step explicit.
 | User intent | Internal workflow | What happens |
 | --- | --- | --- |
 | Cache, archive, summarize, index, retrieve, or recall a prior chat session or copied Codex Chat ID. | [`workflows/chat-session-caching-and-recall.md`](../skills/chrisai-chatting/workflows/chat-session-caching-and-recall.md) | The agent turns useful conversation context into small, searchable cache files. It writes an index first, splits topics by retrieval intent, records durable decisions, and treats cached material as historical evidence that should be checked against current repo state before acting. |
-| Answer an agent intake prompt through a local HTML form instead of a normal chat reply. | [`workflows/html-form-intake.md`](../skills/chrisai-chatting/workflows/html-form-intake.md) | The agent converts the intake questions into a normalized schema, generates a local HTML form, and sends a clickable file link. By default, the form produces JSON and Markdown for the user to paste back into chat. If the user explicitly wants submit-and-continue behavior, the workflow can use a one-shot local server that writes one JSON response and shuts down after submit, timeout, cancellation, or chat override. |
+| Answer an agent intake prompt through a local HTML form instead of a normal chat reply. | [`workflows/html-form-intake.md`](../skills/chrisai-chatting/workflows/html-form-intake.md) | The agent converts the intake questions into a normalized schema, generates a local HTML form, and sends a clickable file link. The form produces one raw-text response, attempts to copy it on submit, and tells the user to paste that response back into chat. |
 | Make an agent response prettier, readable, previewable, browser-friendly, or HTML-formatted. | [`workflows/agent-response-to-html.md`](../skills/chrisai-chatting/workflows/agent-response-to-html.md) | The agent still answers in chat first, then mirrors the same response into a local HTML preview file and includes a clickable file link. The HTML is a convenience preview, not the only copy of the answer. It does not start a server or force browser automation for response previews. |
 
 ## Common Examples
@@ -44,7 +44,7 @@ when the request sounds like:
 - "Can I answer this intake in a form?"
 - "Turn these questions into an HTML form."
 - "Make a local questionnaire for this workflow."
-- "Let me submit the intake through a temporary local form."
+- "Let me answer the intake through a local form."
 - "I answered in chat instead; use this and stop waiting for the form."
 
 Use
@@ -78,6 +78,5 @@ include a local file link such as:
 Readable HTML preview: [response.html](/absolute/path/to/response.html)
 ```
 
-For intake forms, the default mode is a static local file link. One-shot server
-mode is only for cases where the user explicitly wants submit-and-continue
-behavior and accepts the temporary local server.
+For intake forms, use a static local file link. The submitted form should show
+one raw-text response and ask the user to paste that response back into chat.
