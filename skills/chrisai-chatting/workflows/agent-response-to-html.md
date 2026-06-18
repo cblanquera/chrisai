@@ -36,6 +36,13 @@ Do not make HTML preview the only answer unless the user explicitly asks for
 HTML-only output and accepts the recall tradeoff. Chat text is what future
 sessions can reliably recall.
 
+When the user asks to turn a previous response into HTML, treat the earlier
+chat response as the canonical answer. Do not repeat the full answer in the new
+chat response unless the user explicitly asks for it again. Generate the HTML
+from the referenced previous response and keep the new chat message minimal:
+report the preview link or saved file path only, with any short clarification
+needed to identify which prior response was used.
+
 ## Rendering Model
 
 Use the bundled deterministic renderer script:
@@ -109,6 +116,33 @@ Readable HTML preview: [response.html](/absolute/path/to/response.html)
    delivery mechanism.
 6. If the user asks to save, export, share, or persist the HTML, write an HTML
    file and report the path.
+
+## Previous Response Flow
+
+Use this flow when the user refers to an earlier chat response with phrasing
+like "that response", "your previous answer", "the earlier summary", or
+"convert the response above to HTML".
+
+1. Locate the referenced response in chat history. If the reference is
+   ambiguous, ask a concise clarification instead of guessing.
+2. Pipe the referenced response body to
+   `scripts/render-response-html.py --preview-file`, or use `--output <path>`
+   when saving a requested file.
+3. Do not reprint the referenced response in chat.
+4. Return only the preview link or saved file path, plus a short identifier if
+   useful.
+
+Minimal preview response:
+
+```text
+Readable HTML preview: [response.html](/absolute/path/to/response.html)
+```
+
+Minimal saved-file response:
+
+```text
+Saved the HTML response at <path>.
+```
 
 ## Preview Link Rules
 
