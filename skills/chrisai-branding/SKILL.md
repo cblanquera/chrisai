@@ -171,6 +171,8 @@ into the next workflow unless the user asks to continue.
   labeling.
 - Use `references/brand-kit-template.md` during brand-kit work that needs a
   structured kit, mini kit, or implementation handoff template.
+- Use `references/logo-visual-concept-board.md` before creating first-pass
+  visual logo concepts that should be judged as a polished concept board.
 - Use `references/logo-generation.md` during logo work that needs concept
   methods, SVG standards, review checklists, or favicon-safe handoff guidance.
 - Use `references/logo-analysis.md` when an existing SVG or PNG logo should be
