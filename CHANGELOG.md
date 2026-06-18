@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.5 - 2026-06-18
+
+- Simplified `chrisai-chatting` HTML form intake to use static local forms,
+  raw-text pasteback, submit-time auto-copy, and a visible manual copy
+  fallback.
+- Removed the one-shot localhost server path from the form intake workflow and
+  renderer.
+
 ## 0.2.4 - 2026-06-18
 
 - Aligned repository version metadata with the manually created `v0.2.4`
