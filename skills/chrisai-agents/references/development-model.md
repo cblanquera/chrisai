@@ -168,9 +168,12 @@ task, bugfix, single wireframe round, or small UI tweak.
   logs/
 ```
 
-A `TASK` record is proposed work. Active execution belongs in progress items or
-batches. A task may become one progress item, multiple progress items, or no
-progress item yet.
+A `TASK` record is proposed work until accepted by the owning spec or freeze
+workflow. Active execution belongs in progress items or batches. A task may
+become one progress item, multiple progress items, or no progress item yet.
+Progress items for MVP, distribution, or feature work must link to accepted
+spec records; they must not be sourced only from a progress-hosted rebuild
+plan, chat-only plan, raw review note, or feature-goal list.
 
 Use these statuses unless the project defines a narrower model:
 

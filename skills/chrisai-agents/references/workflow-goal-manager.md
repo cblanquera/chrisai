@@ -36,17 +36,39 @@ Do not load the full knowledge base unless coordinating a cross-goal conflict.
 ## Manager Duties
 
 1. Confirm the active documented goal, scope, non-goals, and done definition.
-2. Compare the last or current progress item, progress manifest next-action
+2. Run the pre-implementation gate before creating or updating execution
+   progress.
+3. Compare the last or current progress item, progress manifest next-action
    text, and `.agents/context/feature-goals.md` before deciding what to do next.
-3. If the user's prompt identifies a new feature goal, record or reconcile it in
+4. If the user's prompt identifies a new feature goal, record or reconcile it in
    `.agents/context/feature-goals.md`.
-4. Decompose the goal into the smallest useful item or batch.
-5. Choose the next specialist workflow and delegate when useful.
-6. Keep progress state current.
-7. Run QA or validation before marking work complete.
-8. Run `workflows/document-integrity.md` before checkpointing or closeout.
-9. When a task request is complete, report the recommended next step.
-10. Continue autonomously unless a stop-and-ask condition applies.
+5. Decompose the goal into the smallest useful item or batch.
+6. Choose the next specialist workflow and delegate when useful.
+7. Keep progress state current.
+8. Run QA or validation before marking work complete.
+9. Run `workflows/document-integrity.md` before checkpointing or closeout.
+10. When a task request is complete, report the recommended next step.
+11. Continue autonomously unless a stop-and-ask condition applies.
+
+## Pre-Implementation Gate
+
+Before creating progress items, batches, or implementation-facing checkpoint
+plans, confirm the goal has an accepted planning source:
+
+- For MVP or distribution work, `.agents/specs/mvp/` must exist and contain
+  accepted MVP scope, requirements, acceptance criteria, and task records.
+- For post-MVP feature work, a bounded sibling feature spec must exist when the
+  objective has its own acceptance criteria, risks, decisions, POCs, or multiple
+  implementation items.
+- Progress items must link back to accepted `TASK`, `REQ`, `CAP`, or `AC`
+  records from the relevant spec. Do not create progress from a
+  progress-hosted rebuild plan, chat-only plan, raw review note, or feature-goal
+  list.
+
+If the goal is MVP or distribution work and no accepted `.agents/specs/mvp/`
+exists, stop execution planning and route to `workflows/mvp.md`. If a spec
+exists but its task records are only proposed, route to `workflows/freeze.md`
+or `workflows/review.md` before progress is created.
 
 ## Loop Phases
 

@@ -66,14 +66,17 @@ Read first:
 Process:
 
 1. Confirm the active goal, scope, non-goals, and done definition.
-2. Check context and feature goals before choosing next work.
-3. Decompose the goal into the smallest useful item or batch.
-4. Choose the next specialist workflow.
-5. Keep progress state current.
-6. Run QA or validation before marking work complete.
-7. Run document integrity before checkpointing or closeout.
-8. When the task request is complete, report the recommended next step.
-9. Stop and escalate instead of repeating the same failed loop without new
+2. Before creating progress, confirm MVP or distribution goals have accepted
+   `.agents/specs/mvp/` scope and accepted task, requirement, capability, or
+   acceptance records. If not, route to `mvp.md`, `freeze.md`, or `review.md`.
+3. Check context and feature goals before choosing next work.
+4. Decompose the goal into the smallest useful item or batch.
+5. Choose the next specialist workflow.
+6. Keep progress state current.
+7. Run QA or validation before marking work complete.
+8. Run document integrity before checkpointing or closeout.
+9. When the task request is complete, report the recommended next step.
+10. Stop and escalate instead of repeating the same failed loop without new
    evidence, narrower scope, or a different verification method.
 
 ## Document Integrity
@@ -179,10 +182,12 @@ items.
 
 Use `progress.md` for active execution packets, batches, logs, and handoffs.
 
-Progress items should link to relevant specs, acceptance criteria, research,
-wireframes, creatives, or context. Do not turn raw feedback directly into
-implementation work. Route feedback through validation or planner
-reconciliation first unless evidence is already explicit.
+Progress items must link to accepted task, requirement, capability, or
+acceptance records from the MVP or feature spec they implement. Do not create
+progress from a progress-hosted rebuild plan, chat-only plan, raw feedback,
+raw review note, raw feature-goal list, or unaccepted proposed task. Route
+feedback through validation or planner reconciliation first unless evidence is
+already explicit.
 
 ## Review And Validation
 

@@ -35,31 +35,38 @@ cross-item conflict.
 
 ## Process
 
-1. Create the minimal progress bank when needed.
-2. Break work into stable item IDs.
-3. Write one item file per independent unit of work.
-4. For product or MVP work, link each item to the relevant customer workflow,
-   capability, requirement, or acceptance record.
-5. For POC work, state the feasibility question, `poc-<short-name>` branch, and
+1. Confirm active execution is allowed by accepted planning records before
+   creating item or batch files.
+2. Create the minimal progress bank when needed.
+3. Break work into stable item IDs.
+4. Write one item file per independent unit of work.
+5. For product, MVP, distribution, or feature work, link each item to accepted
+   `TASK`, `REQ`, `CAP`, or `AC` records from `.agents/specs/mvp/` or the
+   relevant sibling feature spec.
+6. Do not create progress items from a progress-hosted rebuild plan, chat-only
+   plan, raw review note, raw feature-goal list, or unaccepted proposed task.
+   Route missing or unaccepted MVP/distribution scope to `workflows/mvp.md`,
+   `workflows/freeze.md`, or `workflows/review.md` before progress continues.
+7. For POC work, state the feasibility question, `poc-<short-name>` branch, and
    the decision needed after the proof.
-6. For feature-development or bulk feedback, read `workflows/batch-reconciliation.md`
+8. For feature-development or bulk feedback, read `workflows/batch-reconciliation.md`
    before editing when there are more than five small or related mismatches.
-7. Do not turn raw user feedback directly into implementation work. Route it
+9. Do not turn raw user feedback directly into implementation work. Route it
    through validation or planner reconciliation first unless the evidence is
    already explicit in project artifacts.
-8. Group related item IDs into batch files when batching improves focus,
+10. Group related item IDs into batch files when batching improves focus,
    reduces repeated verification, or avoids inefficient micro-passes.
-9. Keep risky, unclear, or contract-changing work as one item at a time.
-10. Work on one assigned item or batch at a time.
-11. When selecting next work, compare the last or current item, manifest
+11. Keep risky, unclear, or contract-changing work as one item at a time.
+12. Work on one assigned item or batch at a time.
+13. When selecting next work, compare the last or current item, manifest
     next-action text, and `.agents/context/feature-goals.md`.
-12. If a user prompt identifies a new feature goal, record or reconcile it in
+14. If a user prompt identifies a new feature goal, record or reconcile it in
     `.agents/context/feature-goals.md` before creating progress work.
-13. Update the manifest after each item or batch changes state.
-14. Record durable execution decisions in `decisions.md`.
-15. If execution changes durable product understanding, promote it into
+15. Update the manifest after each item or batch changes state.
+16. Record durable execution decisions in `decisions.md`.
+17. If execution changes durable product understanding, promote it into
     `.agents/context/` or route it to document integrity before closeout.
-16. Write a handoff before stopping, switching sessions, or delegating.
+18. Write a handoff before stopping, switching sessions, or delegating.
 
 ## Item Versus Batch
 
