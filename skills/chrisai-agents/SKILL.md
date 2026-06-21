@@ -23,8 +23,8 @@ context unless the user explicitly asks for an operational action.
   `context-ingestion.md` for future knowledge-base intake.
 - Establish the `.agents` folder contract without creating empty folders or
   placeholder files before they are needed.
-- Seed only the minimal `.agents/context/`, research, spec, progress, or
-  handoff records needed for the current setup or repair task.
+- Seed only the minimal `.agents/context/`, research, spec, progress, root
+  artifact, or handoff records needed for the current setup or repair task.
 
 ## Task Routing
 
@@ -45,11 +45,41 @@ Read only the references needed for the task:
 - Use `references/workflow-details.md` when a workflow needs detailed routing
   rules, entry gates, evidence standards, branch policy, batching criteria, or
   progress item templates.
-- Use the dedicated `references/workflow-*.md` files when the user is doing
-  spec-driven development inside `.agents`, including goal management, import,
-  POC, MVP, feature development, progress, review, validation, freeze, handoff,
-  batch reconciliation, wireframes, creatives, ad hoc work, document integrity,
-  or source retirement.
+- Use `references/workflow-ad-hoc.md` for unplanned requests that need
+  classification before becoming durable product truth.
+- Use `references/workflow-batch-reconciliation.md` for bulk feedback, QA
+  mismatches, and related fix batches.
+- Use `references/workflow-creatives.md` for creative direction, asset notes,
+  and creative review rounds. Creative direction is optional for some desktop
+  and mobile MVPs, but when used it must be accepted or explicitly deferred
+  before production frontend implementation starts.
+- Use `references/workflow-document-integrity.md` when context, specs, progress,
+  indexes, releases, or derived views may have drifted.
+- Use `references/workflow-feature-development.md` for bounded post-MVP feature
+  streams, hardening, polish, release readiness, maintenance, or feedback
+  reconciliation.
+- Use `references/workflow-freeze.md` when accepted records should become
+  implementation contracts, proposed task records, or execution views.
+- Use `references/workflow-goal-manager.md` for autonomous goal execution
+  across planning, design, implementation, QA, documentation, and handoff loops.
+- Use `references/workflow-handoff.md` before stopping, switching sessions,
+  delegating work, or leaving a large task for a future agent.
+- Use `references/workflow-import.md` when existing planning material should
+  become compact spec records while preserving reusable context.
+- Use `references/workflow-mvp.md` to define, narrow, validate, or freeze the
+  smallest viable customer-usable product slice after research is complete.
+- Use `references/workflow-poc.md` when a feasibility question must be answered
+  before trusting MVP scope, architecture, integration, or sequencing.
+- Use `references/workflow-progress.md` for active execution packets, batches,
+  logs, and handoffs.
+- Use `references/workflow-review.md` for readiness, risk, consistency,
+  evidence, or traceability review before freeze or implementation.
+- Use `references/workflow-validation.md` when blockers, assumptions, questions,
+  QA feedback, user feedback, or decisions need evidence before action.
+- Use `references/workflow-wireframes.md` for static and functional wireframes,
+  review rounds, and accepted handoff documents.
+- Use `references/source-retirement.md` before declaring old planning,
+  progress, documentation, or source material obsolete, archived, or deletable.
 
 ## Setup Modes
 
@@ -57,7 +87,9 @@ Classify the project before creating records:
 
 - `greenfield`: prompt, idea, or sparse project with little existing code or
   planning material.
-- `brownfield`: existing codebase or product behavior must be reflected.
+- `brownfield`: existing codebase or product behavior must be reflected. Treat
+  brownfield products as post-MVP by default unless the user explicitly asks to
+  define, rebuild, or audit an MVP.
 - `import`: existing human planning documents, uploaded files, pasted text, or
   links are the main source.
 - `hybrid`: existing code and planning material both matter.
@@ -78,9 +110,13 @@ Create or repair only what is needed for the current setup:
    created or repaired
 5. `.agents/development/progress/manifest.md`, only when active execution
    tracking exists or is requested
-6. `.agents/specs/research/` for greenfield or brownfield product discovery
-7. `.agents/specs/<spec-id>/poc/` or `.agents/specs/mvp/` after research
-   identifies the next appropriate path
+6. `.agents/specs/research/` for greenfield product discovery, or brownfield
+   research only when the user explicitly asks to reopen discovery
+7. root `proofs/`, `wireframes/`, or `creatives/` when research, proof,
+   wireframe, or creative artifacts are created
+8. `.agents/specs/mvp/` only after research has accepted or explicitly
+   deferred required POCs, static wireframes, functional wireframes, and
+   creative direction
 
 `.agents/AGENTS.md` is the local law. Keep it concise and high authority. Put
 detailed procedures in `.agents/workflows/*.md`, not in `.agents/AGENTS.md`.
@@ -97,16 +133,23 @@ progress item, design artifact, research note, or release view needs it.
   specs can read it without tethering themselves to an earlier spec.
 - Put large context chunks in `.agents/references/context/<source-slug>/` and
   link them from `.agents/context/index.md`.
-- Put long rationale, examples, snippets, research, transcript summaries,
-  detailed evidence, and large audit notes in `.agents/references/`.
+- Link `.agents/context/` files only to other `.agents/context/` files or
+  `.agents/references/` files. Put source paths, external URLs, spec links,
+  progress links, root artifact links, and other provenance in
+  `.agents/references/`.
+- Put long rationale, examples, research, transcript summaries, detailed
+  evidence, and large audit notes in `.agents/references/`.
+- Put product wireframe artifacts in root `wireframes/`, creative artifacts in
+  root `creatives/`, and proof implementation artifacts in root `proofs/`.
+  Promote accepted handoff, guideline, and proof-result documents from those
+  folders into `.agents/context/`.
 - Keep detailed traceable scope, evidence, requirements, acceptance, decisions,
   risks, and proposed tasks in `.agents/specs/`.
 - Keep active execution state in `.agents/development/progress/`.
 - Keep research-round records under `.agents/specs/research/`. Keep supporting
   long-form research material under `.agents/references/research/` only when it
   would make the spec too large.
-- Keep `.agents/workflows/`, `.agents/references/`, `.agents/wireframes/`, and
-  `.agents/creatives/` at the top level.
+- Keep `.agents/workflows/` and `.agents/references/` at the top level.
 
 ## Stop Conditions
 

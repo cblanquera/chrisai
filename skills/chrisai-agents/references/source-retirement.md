@@ -15,6 +15,8 @@ source material obsolete, archived, or deletable.
 - source-retirement review under `.agents/releases/`, `.agents/specs/<spec-id>/reviews/`,
   or another project-approved `.agents` review location
 - `.agents/context/` when source material contains reusable product knowledge
+- `.agents/references/` when retired-source provenance or supporting detail is
+  needed by `.agents/context/`
 - records or progress items when durable facts were not yet extracted
 - `.agents/context/index.md`
 
@@ -31,6 +33,9 @@ source material obsolete, archived, or deletable.
 8. Recommend `keep`, `archive`, `delete-after-confirmation`, or `unknown`.
 9. Promote missing reusable context, durable records, or progress state before
    recommending deletion.
+10. Ensure `.agents/context/` does not link directly to retired sources,
+    outside files, specs, progress, or root artifacts. Put any needed
+    provenance in `.agents/references/`.
 
 ## Review Table
 
@@ -43,5 +48,7 @@ source material obsolete, archived, or deletable.
 
 - every discovered source has a recommendation
 - linked-only material is not called safely removable
+- any retained provenance used by `.agents/context/` lives in
+  `.agents/references/`
 - delete recommendations require explicit confirmation
 - recommended next step is included in the completion response

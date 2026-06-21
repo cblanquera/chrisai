@@ -36,15 +36,27 @@ prompts such as:
 
 For ingestion, this skill should generate or repair
 `.agents/workflows/context-ingestion.md`. Future agents then follow that local
-workflow to convert useful source content to Markdown and update
-`.agents/context/index.md`.
+workflow to convert useful source content to detailed Markdown and update
+`.agents/context/index.md`. The index is allowed to summarize for routing, but
+the retained context should preserve durable details, examples, terminology,
+constraints, decisions, open questions, conflicts, stakeholder intent, and
+source-specific nuance.
 
 If generated context would exceed 500 lines, all chunks go under
 `.agents/references/context/<source-slug>/`; `.agents/context/index.md` gets
-only the compact summary and links.
+only the compact routing summary and links to the detailed chunk index.
 
 The skill does not create `source-documents.md`. Original file paths and links
 can move, so the retained Markdown context is the durable lookup surface.
+Context files may link only to other `.agents/context/` documents or
+`.agents/references/` documents. Links to specs, progress, root artifacts,
+source files, external URLs, uploaded files, or anything outside `.agents`
+belong in `.agents/references/` provenance notes instead.
+
+Chat, prompts, and review conversations can also be source material. When they
+change durable product meaning, the context entry should capture the decision,
+rationale, examples, constraints, exceptions, rejected alternatives,
+terminology, and open questions instead of only summarizing the conversation.
 
 ## Folder Model
 
@@ -53,25 +65,25 @@ can move, so the retained Markdown context is the durable lookup surface.
   AGENTS.md
   context/
   workflows/
-  development/
-    specs/
-    progress/
+  specs/
     research/
-      poc/
-      grill/
-      adr/
+    mvp/
+  development/
+    progress/
   references/
-  wireframes/
-  creatives/
+wireframes/
+creatives/
+proofs/
 ```
 
-Top-level `wireframes`, `creatives`, `references`, and `workflows` remain at
-the top of `.agents`. Product specs, active progress, and research live under
-`.agents/development/`.
+`wireframes/`, `creatives/`, and `proofs/` live at the repository root because
+they contain reviewable product artifacts or proof implementation files. Their
+approved handoff, guideline, and result documents are promoted into
+`.agents/context/`.
 
 ## Development Model
 
-`.agents/development/specs/` stores durable product truth such as requirements,
+`.agents/specs/` stores durable product truth such as requirements,
 capabilities, decisions, risks, acceptance criteria, evidence, and proposed
 tasks.
 
@@ -80,8 +92,10 @@ tasks.
 `.agents/development/sprints/` stores optional timeboxed execution views
 derived from specs and progress state.
 
-`.agents/development/research/` stores POCs, grill reports, ADRs, validation
-notes, feasibility findings, and research records.
+Root `proofs/` stores POC implementation artifacts, proof documents, and
+results, usually on `poc-<short-name>` branches. Root `wireframes/` stores
+static and functional wireframes plus approved handoff documents. Root
+`creatives/` stores creative direction and approved creative guidelines.
 
 Feature-goal intake lives in `.agents/context/feature-goals.md`, not in a
 separate plans folder.
@@ -101,11 +115,15 @@ Short version:
 
 - `.agents/context/` answers: what does this project know?
 - `.agents/workflows/` answers: how should future agents work here?
-- `.agents/development/specs/` answers: what should exist?
+- `.agents/specs/` answers: what should exist?
 - `.agents/development/progress/` answers: what is actively being worked on?
 - `.agents/development/sprints/` answers: what are we doing in this timebox?
-- `.agents/development/research/` answers: what did proofs, ADRs, grill
-  reports, and validation work prove, fail, or leave unknown?
+- `proofs/` answers: what did proof implementations test, prove, fail, or
+  leave unknown?
+- `wireframes/` answers: what screens, layouts, components, states, and
+  interactions were accepted?
+- `creatives/` answers: what visual direction, style rules, and assets were
+  accepted?
 - `.agents/references/` answers: where is the supporting detail?
 - `.agents/releases/` answers: what shipped or is being prepared to ship?
 
@@ -120,6 +138,7 @@ idea
   -> prototype narrow POCs for uncertain concepts
   -> run wireframe and creative review rounds when UX or direction matters
   -> promote accepted POC, wireframe, creative, review, and QA outcomes
+     as detailed reusable context and records, not summary-only notes
   -> freeze MVP scope into traceable proposed tasks
   -> create progress items or batches only when execution is requested
   -> implement, verify, and document work through progress
@@ -157,8 +176,8 @@ into `.agents` records before development continues.
 ## Spec Templates
 
 The old `agent-spec-structure.md` carried concrete templates that were not
-fully present in the first `chrisai-agents` draft. They map to the new
-`.agents/development/specs/` layout as follows.
+fully present in the first `chrisai-agents` draft. They map to the
+`.agents/specs/` layout as follows.
 
 Manifest:
 
@@ -268,7 +287,7 @@ verification.
 Use this split:
 
 ```text
-.agents/development/specs/<spec-id>/tasks.md
+.agents/specs/<spec-id>/tasks.md
   TASK-001: proposed work
 
 .agents/development/progress/items/item-001.md
@@ -281,9 +300,15 @@ For Lean or Agile product work, the default lifecycle is:
 
 ```text
 Product idea
-  -> POC
-  -> POC-to-MVP promotion
-  -> MVP
+  -> research
+  -> proof, static wireframe, and functional wireframe acceptance
+  -> optional creative acceptance or explicit deferral
+  -> MVP planning from accepted research
+  -> scaffold and mock backend
+  -> frontend build and backend build
+  -> frontend-to-mock-backend acceptance
+  -> frontend-to-finished-backend acceptance
+  -> backend debt, security, deployment prep, and release hardening
   -> feature-development specs
   -> sprints and releases
 ```
@@ -297,7 +322,8 @@ automatically. Before POC work becomes MVP or feature scope:
 4. Convert accepted learning into customer-facing requirements, acceptance
    criteria, and tasks.
 5. Create progress items only from promoted product or feature records.
-6. Promote reusable proof code only through explicit merge, cherry-pick, or
+6. Promote proof results into `.agents/context/`.
+7. Promote reusable proof code only through explicit merge, cherry-pick, or
    reimplementation decisions.
 
 ## Practical Prompts
@@ -316,17 +342,18 @@ Ingest project context:
 
 ```text
 Add this file to the project knowledge base. Convert useful content to
-Markdown, update .agents/context/index.md, and put large generated chunks under
-.agents/references/context/.
+detailed Markdown, update .agents/context/index.md, and put large generated
+chunks under .agents/references/context/.
 ```
 
 Plan a POC:
 
 ```text
 Follow .agents/workflows/poc.md. Create a separate branch named
-poc-<short-name> for this proof only if implementation is requested. Record the
-feasibility question, expected evidence, failure signal, branch name when any,
-verification, and promotion or discard decision.
+poc-<short-name> for this proof only if implementation is requested. Put proof
+artifacts under root proofs/<proof-slug>/, record the feasibility question,
+expected evidence, failure signal, branch name when any, verification, result,
+and promotion or discard decision.
 ```
 
 Promote POC results:
@@ -334,7 +361,19 @@ Promote POC results:
 ```text
 Run a POC-to-MVP promotion pass. Review what the POC proved, failed to prove,
 and left unknown. Convert only accepted learning into MVP requirements,
-acceptance criteria, risks, and tasks.
+acceptance criteria, risks, and tasks. Promote the accepted proof result into
+.agents/context/. Put any root proofs/<proof-slug>/ provenance in
+.agents/references/ and link context only to that reference file.
+```
+
+Plan MVP:
+
+```text
+Follow .agents/workflows/mvp.md. Confirm research is complete first: required
+POCs have results, static wireframes are accepted, functional wireframes are
+accepted, and creative direction is accepted or explicitly deferred. Generate
+MVP tasks from the viable-product delivery sequence, not a feature-by-feature
+backlog.
 ```
 
 Plan a sprint:

@@ -40,20 +40,34 @@ Do not load unrelated spec folders.
    evidence, and traceability.
 4. Identify unsupported decisions, conflicting records, stale imported content,
    missing acceptance criteria, missing evidence, and MVP ambiguity.
-5. For POC-backed MVP specs, audit whether POC results were captured and
-   explicitly promoted, replaced, discarded, or kept under investigation.
-6. For MVP specs, audit whether compact records preserve customer-facing
+5. For MVP specs, audit the research artifact gates before approving readiness:
+   required POCs have root `proofs/<proof-slug>/results.md` or explicit
+   deferrals, static wireframes are accepted, functional wireframes are accepted,
+   and creative direction is accepted or explicitly deferred. For desktop or
+   mobile MVPs, creative direction may be optional only when the deferral is
+   explicit.
+6. For POC-backed MVP specs, audit whether POC results were captured and
+   explicitly promoted, replaced, discarded, deferred, or kept under
+   investigation.
+7. For wireframe-backed MVP specs, audit whether accepted handoff documents
+   exist at root `wireframes/<flow-or-screen-set>/handoff.md`, and whether
+   accepted layouts, interactions, states, and placeholder policy decisions were
+   promoted into records.
+8. For creative-backed MVP specs, audit whether accepted guidelines exist at
+   root `creatives/<direction-or-screen-set>/guidelines.md`, or whether creative
+   direction was explicitly deferred before frontend implementation.
+9. For MVP specs, audit whether compact records preserve customer-facing
    journeys and viability goals, not only implementation tasks or sprint phases.
-7. Classify findings by severity.
-8. For manual grill reports, reconcile each material finding into a record,
+10. Classify findings by severity.
+11. For manual grill reports, reconcile each material finding into a record,
    blocker, validation target, accepted risk, or explicit rejection.
-9. Write or update review files.
-10. Promote durable findings into records as questions, risks, assumptions, or
+12. Write or update review files.
+13. Promote durable findings into records as questions, risks, assumptions, or
    decisions.
-11. Promote reusable product findings into `.agents/context/` when future specs
+14. Promote reusable product findings into `.agents/context/` when future specs
     should inherit them.
-12. Update `status.md` with readiness and next action.
-13. If the review changes routing, status, indexes, context, or progress state, run
+15. Update `status.md` with readiness and next action.
+16. If the review changes routing, status, indexes, context, or progress state, run
     `workflows/document-integrity.md` before closeout.
 
 ## Severity Model

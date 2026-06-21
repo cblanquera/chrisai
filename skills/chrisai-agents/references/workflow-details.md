@@ -133,8 +133,8 @@ with files needed for the commit, stop and ask.
 ## POC Branch Policy
 
 Each POC should have its own branch named `poc-<short-name>`. Keep prototype
-code for that proof only on its POC branch. Do not combine multiple unrelated
-POCs on one branch.
+code for that proof under root `proofs/<proof-slug>/` on its POC branch. Do
+not combine multiple unrelated POCs on one branch.
 
 Do not switch branches or create a POC branch unless the user explicitly asks
 for implementation or branch work. Before switching or creating a branch, check
@@ -214,6 +214,9 @@ Before freezing, confirm:
 - target scope is clear
 - blockers are resolved or explicitly accepted
 - MVP scope describes a customer-usable product slice when MVP is in scope
+- MVP scope is based on accepted or explicitly deferred research artifacts:
+  proof results, static wireframes, functional wireframes, and creative
+  direction
 - requirements link to acceptance criteria
 - important decisions and risks are recorded
 - POC results have a promotion, replacement, discard, or follow-up decision

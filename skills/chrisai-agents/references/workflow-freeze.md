@@ -13,6 +13,9 @@ implementation contract, proposed task records, or execution views.
 6. relevant requirements, acceptance, decisions, risks, evidence, and reviews
 7. accepted POC, wireframe, creative, validation, QA, feedback, and gap reports
    that affect the freeze target
+8. root `wireframes/<flow-or-screen-set>/handoff.md`,
+   `creatives/<direction-or-screen-set>/guidelines.md`, and
+   `proofs/<proof-slug>/results.md` when they exist
 
 ## May Update
 
@@ -30,6 +33,9 @@ Before freezing, confirm:
 - target scope is clear
 - blockers are resolved or explicitly accepted
 - MVP scope describes a customer-usable product slice when MVP is in scope
+- MVP planning is based on completed research, including accepted or explicitly
+  deferred POCs, static wireframes, functional wireframes, and creative
+  direction
 - requirements link to acceptance criteria
 - important decisions and risks are recorded
 - POC results have a promotion, replacement, discard, or follow-up decision
@@ -52,7 +58,12 @@ Before freezing, confirm:
    `.agents/context/`.
 5. Update decision and risk records when freeze decisions are made.
 6. Update implementation-facing routing files.
-7. Generate proposed `TASK` records in `tasks.md`.
+7. Generate proposed `TASK` records in `tasks.md`. For MVP freeze, derive tasks
+   from the accepted user workflow and default viable-product delivery
+   sequence: creative direction/scaffold/mock backend, frontend build, backend
+   build, frontend-to-mock-backend acceptance, frontend-to-finished-backend
+   acceptance, and backend debt/security/deployment hardening. Do not generate
+   a feature-by-feature MVP backlog by default.
 8. Generate sprint, release, or tool-specific views only when requested.
 9. If the user wants active execution tracking, create progress items that link
    back to spec records.

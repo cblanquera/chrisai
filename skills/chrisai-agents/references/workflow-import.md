@@ -20,8 +20,9 @@ context in `.agents/context/`.
 ## Process
 
 1. Inventory source material without loading more than needed.
-2. Ingest reusable background into `.agents/context/` or, for large generated
-   context, `.agents/references/context/<source-slug>/`.
+2. Ingest reusable background as detailed source-derived Markdown in
+   `.agents/context/` or, for large generated context,
+   `.agents/references/context/<source-slug>/`.
 3. Extract requirements, capabilities, constraints, decisions, risks,
    assumptions, questions, acceptance criteria, and evidence into grouped
    records.
@@ -34,7 +35,8 @@ context in `.agents/context/`.
 7. Promote only final accepted reusable imported product facts into
    `.agents/context/` so later specs do not need to depend on the import spec.
    Keep ambiguous, conflicting, stale, or non-final imported material in spec
-   records until reconciled.
+   records until reconciled, but preserve its source-derived detail in context
+   references when it may be needed for future interpretation.
 8. Update traceability, open questions, status, source, and MVP viability
    indexes.
 

@@ -2,8 +2,9 @@
 
 Use `.agents/context/` for durable product context that future specs should read
 first. Use `.agents/` for agent-readable local operating rules, specs, active
-progress, research support material, and handoffs. Keep these surfaces separate
-from production source code unless the user explicitly asks to move material.
+progress, research support material, and handoffs. Use root `wireframes/`,
+`creatives/`, and `proofs/` for product artifacts and proof implementation
+artifacts that need to be inspected, run, or reviewed outside `.agents`.
 
 ## Layout
 
@@ -15,7 +16,6 @@ or release view needs them.
 ```text
 .agents/
   AGENTS.md
-
   context/
     index.md
     product.md
@@ -68,10 +68,6 @@ or release view needs them.
       brief.md
       index.md
       status.md
-      poc/
-        brief.md
-        results.md
-        snippets/
       requirements.md
       capabilities.md
       constraints.md
@@ -92,7 +88,6 @@ or release view needs them.
       logs/
     sprints/
       sprint-001.md
-
   references/
     context/
     terms/
@@ -103,22 +98,34 @@ or release view needs them.
       grill/
       adr/
       validation/
-
-  wireframes/
-    flows.md
-    screens.md
-    reviews.md
-
-  creatives/
-    direction.md
-    assets.md
-    reviews.md
-
   releases/
     release-001/
       plan.md
       readiness.md
       notes.md
+
+wireframes/
+  <flow-or-screen-set>/
+    index.md
+    static/
+    functional/
+    handoff.md
+    reviews.md
+
+creatives/
+  <direction-or-screen-set>/
+    index.md
+    guidelines.md
+    reviews.md
+    assets/
+
+proofs/
+  <proof-slug>/
+    README.md
+    proof.md
+    results.md
+    src/
+    tests/
 ```
 
 ## Local AGENTS.md
@@ -157,9 +164,10 @@ Start by reading the workflow file that matches the task:
   contracts
 - `workflows/progress.md` for active execution packets, logs, and handoffs
 - `workflows/source-retirement.md` before declaring old docs obsolete
-- `workflows/wireframes.md` for low-fidelity screens and flow planning
+- `workflows/wireframes.md` for root `wireframes/` artifacts, static and
+  functional wireframe review, and accepted handoff documents
 - `workflows/creatives.md` for visual direction, asset briefs, and creative
-  review notes
+  review notes under root `creatives/`
 
 ## Source Of Truth
 
@@ -167,24 +175,34 @@ Start by reading the workflow file that matches the task:
   feature-goal intake, constraints, decisions, non-goals, terminology, and
   reusable findings. Check it before answering project-specific questions or
   creating a new spec.
-- `.agents/specs/research/` contains the first greenfield or brownfield
-  research round. It is discovery material, not shared product context.
-- `.agents/specs/mvp/` contains the smallest customer-usable product slice once
-  research or accepted POC learning can support it.
+- `.agents/context/` files may link only to other `.agents/context/` files or
+  `.agents/references/` files. Put source paths, external URLs, spec paths,
+  progress paths, root artifact paths, and other provenance in
+  `.agents/references/`.
+- `.agents/specs/research/` contains the first greenfield research round, or
+  brownfield research only when the user explicitly asks to reopen discovery. It
+  is discovery material, not shared product context.
+- `.agents/specs/mvp/` contains the smallest customer-usable product slice only
+  after research has accepted or explicitly deferred required POCs, accepted
+  static wireframes, accepted functional wireframes, and accepted or explicitly
+  deferred creative direction.
 - `.agents/specs/<spec-id>/` may contain later bounded feature, migration, or
   initiative specs after MVP.
 - `.agents/development/progress/` contains active execution state and work
   packets.
 - `.agents/development/sprints/` contains optional timeboxed execution views
   derived from specs and progress state.
-- `.agents/specs/<spec-id>/poc/` contains only the POC proof brief, result, and
-  optional large snippets inside the spec it is trying to prove. Keep POC
-  questions, assumptions, risks, decisions, evidence, and tasks in the parent
-  spec record files with `Phase: poc`.
-- `.agents/wireframes/` contains low-fidelity screens, flows, layout notes, and
-  wireframe review notes.
-- `.agents/creatives/` contains visual direction, brand explorations,
-  moodboards, asset briefs, copy explorations, and creative review notes.
+- Root `proofs/` contains POC implementation artifacts, proof documents, test
+  descriptions, evidence, and results, usually created on a `poc-<short-name>`
+  branch. Keep durable POC questions, assumptions, risks, decisions, evidence,
+  and tasks in spec record files with `Phase: poc`.
+- Root `wireframes/` contains static and functional wireframe artifacts,
+  review notes, and approved handoff documents describing screen layouts,
+  components, states, interactions, and functionality.
+- Root `creatives/` contains creative direction, brand explorations,
+  moodboards, asset briefs, copy explorations, review notes, and approved
+  creative guideline documents describing colors, spacing, typography, styled
+  components, styled pages, and asset rules.
 - `.agents/references/` contains long-form support material that keeps context,
   records, and progress items compact.
 - `.agents/releases/` contains release plans, readiness evidence, release
@@ -216,8 +234,9 @@ Start by reading the workflow file that matches the task:
 - Raw user feedback must be validated, rejected, classified, or reconciled
   before becoming implementation work unless the evidence is already explicit.
 - Accepted POC, wireframe, creative, review, QA, and feedback outcomes must be
-  promoted into specs, evidence, acceptance, progress, or release records before
-  freeze, closeout, or release readiness.
+  promoted into `.agents/context/` and, when scope-specific, into specs,
+  evidence, acceptance, progress, or release records before freeze, closeout, or
+  release readiness.
 - At the end of every spec, check whether reusable product understanding should
   be promoted or reconciled into `.agents/context/` for future specs.
 ```

@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.2.6 - 2026-06-21
+
+- Reworked `chrisai-agents` MVP planning so POCs, static wireframes,
+  functional wireframes, and optional creative direction are treated as
+  research-phase gates before MVP implementation planning.
+- Moved wireframe, creative, and proof artifact guidance to root `wireframes/`,
+  `creatives/`, and `proofs/`, with required handoff, guideline, proof, and
+  result documents promoted into `.agents/context/`.
+- Tightened `.agents/context` governance so context links only to
+  `.agents/context` or `.agents/references`, while provenance for specs,
+  progress, root artifacts, source files, and external material lives in
+  references.
+- Updated brownfield setup to default to post-MVP feature, migration, or
+  initiative work unless the user explicitly asks to define, rebuild, or audit
+  MVP scope.
+- Added a stop-and-ask rule for completed MVP task lists that still do not
+  produce a viable or accepted MVP.
+
 ## 0.2.5 - 2026-06-18
 
 - Simplified `chrisai-chatting` HTML form intake to use static local forms,

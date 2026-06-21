@@ -19,8 +19,11 @@ feature development, progress, or release work.
 1. Classify the request.
 2. For `tiny` work, do it directly and record progress only if a progress bank
    is active.
-3. For `durable` work, promote reusable product facts into `.agents/context/` and
-   scope-specific facts into records before or during implementation.
+3. For `durable` work, promote reusable product meaning from the chat or prompt
+   into detailed `.agents/context/` entries and scope-specific facts into
+   records before or during implementation. Preserve rationale, examples,
+   constraints, exceptions, rejected alternatives, terminology, and open
+   questions instead of reducing the prompt to a short summary.
 4. For `active-progress`, attach it to the current item only if it truly belongs
    there; otherwise create a new item or batch.
 5. For `feedback`, route to validation or planner reconciliation before
@@ -36,8 +39,9 @@ feature development, progress, or release work.
 
 - ad hoc work did not become hidden product truth
 - new feature goals from the prompt are captured in `.agents/context/feature-goals.md`
-- reusable product facts are promoted into `.agents/context/` when future specs
-  should inherit them
+- reusable product facts, rationale, examples, constraints, terminology, and
+  open questions from chat are promoted into `.agents/context/` when future
+  specs should inherit them
 - feedback was routed to validation, planner reconciliation, progress, or batch
   work instead of becoming hidden implementation scope
 - records or progress state reflect durable changes

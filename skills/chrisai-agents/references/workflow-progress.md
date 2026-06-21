@@ -47,6 +47,9 @@ cross-item conflict.
    plan, raw review note, raw feature-goal list, or unaccepted proposed task.
    Route missing or unaccepted MVP/distribution scope to `workflows/mvp.md`,
    `workflows/freeze.md`, or `workflows/review.md` before progress continues.
+   If all accepted MVP progress items are done but the MVP is still not viable
+   or not accepted, stop, summarize the completed work and remaining gap, give
+   the user options, and wait for the user's response.
 7. For POC work, state the feasibility question, `poc-<short-name>` branch, and
    the decision needed after the proof.
 8. For feature-development or bulk feedback, read `workflows/batch-reconciliation.md`

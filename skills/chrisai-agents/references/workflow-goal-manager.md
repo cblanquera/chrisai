@@ -29,7 +29,7 @@ Do not load the full knowledge base unless coordinating a cross-goal conflict.
 - `.agents/context/` when a completed spec produces reusable product knowledge
 - `.agents/context/feature-goals.md` when user prompts identify new feature goals
 - relevant spec records, indexes, status files, and traceability files
-- `.agents/specs/<spec-id>/poc/`, `.agents/wireframes/`, `.agents/creatives/`, or
+- root `proofs/`, root `wireframes/`, root `creatives/`, or
   `.agents/releases/` when the active goal produces durable results there
 - review, validation, QA, or handoff records
 
@@ -94,6 +94,8 @@ Stop and ask the user only when:
 - multiple valid approaches exist and the choice materially affects the product
 - required information cannot be determined from project artifacts
 - a proposed change would alter MVP scope
+- all accepted MVP tasks are complete but the MVP is still not viable or not
+  accepted
 
 ## Delegation Rules
 
@@ -184,6 +186,13 @@ Before escalating, write a short stuck report with:
 - why the next retry is not justified
 - options for the user or next specialist workflow
 
+When all accepted MVP tasks are complete but the MVP is still not viable or not
+accepted, tell the user what completed, why the MVP is not complete, and the
+available options. Options may include revising MVP scope, adding accepted task
+records through freeze, running validation, running a POC, revisiting wireframes
+or creatives, or pausing the MVP. Wait for the user's response before creating
+new work.
+
 ## Artifact Promotion
 
 Before research closeout, POC closeout, MVP freeze, feature-development
@@ -193,8 +202,8 @@ source-of-truth surface:
 
 - reusable product understanding into `.agents/context/` so future specs can read
   it without tethering themselves to earlier specs
-- feasibility results into `.agents/specs/<spec-id>/poc/`, evidence,
-  decisions, risks, and MVP viability gaps
+- feasibility results into root `proofs/`, evidence, decisions, risks, and MVP
+  viability gaps
 - accepted UX, flow, and creative direction into specs, acceptance criteria,
   wireframe or creative review notes, and progress inputs
 - rejected alternatives and invalid feedback into review, QA, or progress notes
@@ -218,9 +227,10 @@ implementation when:
 - approval is needed for a suggested new screen, flow, state, control, or
   interaction model
 
-When a new feature-development wireframe is introduced, record it in
-`.agents/wireframes/`, link it from the active progress item or batch, and
-promote durable UX decisions into spec records before implementation.
+When a new feature-development wireframe is introduced, record it in root
+`wireframes/`, link it from the active progress item or batch, and promote
+durable UX decisions into `.agents/context/` and spec records before
+implementation.
 
 ## Hand-Back Review
 
