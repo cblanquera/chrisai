@@ -179,6 +179,13 @@ Start by reading the workflow file that matches the task:
   `.agents/references/` files. Put source paths, external URLs, spec paths,
   progress paths, root artifact paths, and other provenance in
   `.agents/references/`.
+- Context links to `.agents/references/` must include a purpose or load
+  condition. Prefer `Load when:` and optional `Skip when:` notes so agents can
+  decide whether to load the reference without opening it first.
+- Projects with enough context may use context owner documents instead of a
+  flat context index. Each owner should state `Load When`, `Skip When`, `Owns`,
+  `Does Not Own`, and reference-routing notes. Owner documents are
+  project-specific; do not force a universal owner set.
 - `.agents/specs/research/` contains the first greenfield research round, or
   brownfield research only when the user explicitly asks to reopen discovery. It
   is discovery material, not shared product context.

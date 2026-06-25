@@ -64,6 +64,21 @@ useful, records the external path, URL, root artifact path, spec path, progress
 path, or evidence pointer. Then link the context entry only to that
 `.agents/references/` file.
 
+Any generated or maintained context document that links to
+`.agents/references/` must include enough routing metadata for a future agent to
+decide whether to load that reference without opening it first. Do not emit bare
+reference lists such as only `- .agents/references/source-inventory.md`.
+Prefer one compact block per reference:
+
+```markdown
+- `.agents/references/<reference>.md`
+  Load when: <task condition, question, or evidence need>.
+  Skip when: <common case where the current context is enough>.
+```
+
+Use `Skip when:` when it helps avoid unnecessary context loading. At minimum,
+each reference link must state its purpose or load condition.
+
 ## Ingestion Workflow
 
 1. Confirm the source: uploaded file, workspace file, pasted text, URL, link to
@@ -80,8 +95,9 @@ path, or evidence pointer. Then link the context entry only to that
    `.agents/context/<slug>.md`.
 8. If the generated content would exceed 500 lines, put every chunk under
    `.agents/references/context/<slug>/` and write a chunk index there.
-9. Update `.agents/context/index.md` with a compact pointer. Keep the index
-   short, but ensure it points to the detailed context entry or chunk index.
+9. Update `.agents/context/index.md` or the local context map with a compact
+   pointer. Keep routing short, but ensure it points to the detailed context
+   entry or chunk index and states when to load linked references.
 10. Run document-integrity checks when the ingestion creates product truth,
     feature goals, decisions, risks, acceptance criteria, or progress impact.
 
@@ -200,10 +216,14 @@ context.
 ## Context References
 
 - `.agents/references/<reference>.md`
+  Load when: <why this supporting material is needed>.
+  Skip when: <when this context entry is sufficient>.
 
 ## Related Context
 
 - `.agents/context/index.md`
+  Load when: <why the related context matters for this entry>.
+  Skip when: <when this entry is sufficient>.
 ```
 
 `Source Note` is optional and should not include direct file paths, URLs, spec
@@ -268,11 +288,80 @@ open questions, conflicts, and nuanced stakeholder intent from this chunk.
 ## Context References
 
 - `.agents/references/<reference>.md`
+  Load when: <why this supporting material is needed>.
+  Skip when: <when this chunk is sufficient>.
 ```
+
+## Optional Context Owner Pattern
+
+For projects with enough context that a flat index becomes noisy, create a
+small set of context owner documents instead of many loosely related files.
+Owners are project-specific; do not hardcode a universal set. Examples of owner
+boundaries include product behavior, technical constraints, creative direction,
+implementation surface, work orders, compliance boundaries, or integration
+contracts.
+
+Each owner document should make routing explicit for agents:
+
+```markdown
+# <Owner Context>
+
+Status: active
+Created:
+Updated:
+Source Note:
+
+## Load When
+
+- <task condition that requires this owner>
+
+## Skip When
+
+- <task condition better handled by another owner>
+
+## Owns
+
+- <facts, decisions, constraints, or vocabulary this file owns>
+
+## Does Not Own
+
+- <nearby topics owned elsewhere>
+
+## Summary
+
+Short routing summary only. Do not rely on this section as the full retained
+context.
+
+## Detailed Context
+
+### <Topic>
+
+- <accepted reusable product truth>
+
+## Reference Routing
+
+- `.agents/references/context/<topic>/index.md`
+  Load when: <specific detail, provenance, evidence, or nuance is needed>.
+  Skip when: <the owner document already answers the task>.
+
+## Related Context
+
+- `.agents/context/<other-owner>.md`
+  Load when: <task condition that crosses ownership boundaries>.
+  Skip when: <this owner alone is sufficient>.
+```
+
+Use the owner pattern only when it reduces unnecessary loading and clarifies
+ownership. A small project may still use `index.md` plus individual context
+entries. Whether the project uses a flat index or owner documents, do not emit
+bare `Related Context`, `Context References`, or `Reference Routing` links; each
+link needs a purpose, `Load when:`, or equivalent routing note.
 
 ## Context Index
 
-Use `.agents/context/index.md` as the read-first routing file. Keep it compact:
+Use `.agents/context/index.md` as the default read-first routing file unless
+the local `.agents/AGENTS.md` names a different context map or owner document.
+Keep it compact:
 
 ```markdown
 # Context Index
@@ -288,9 +377,13 @@ answering project questions.
 
 ## Large References
 
-| Topic | Reference Index | Summary | Updated |
-| --- | --- | --- | --- |
-| CEO interview transcript | `../references/context/ceo-interview/index.md` | Wants, constraints, and product priorities. | |
+Avoid bare reference rows that require opening the reference to judge
+relevance. Prefer compact bullets with routing metadata:
+
+- `../references/context/ceo-interview/index.md`
+  Load when: stakeholder wants, constraints, or product priorities need
+  source-derived detail.
+  Skip when: the compact context entry already answers the task.
 
 ## Feature Goals
 
@@ -301,9 +394,11 @@ answering project questions.
 
 Before answering project-specific questions:
 
-1. Read `.agents/context/index.md` if it exists.
-2. Read the most relevant compact context files.
-3. Read large reference chunks only when the index or question requires detail.
+1. Read `.agents/context/index.md` if it exists, or the local context map named
+   by `.agents/AGENTS.md`.
+2. Read the most relevant compact context files or context owner documents.
+3. Read large reference chunks only when a `Load when:` note or the question
+   requires detail.
 4. State uncertainty when context is missing, stale, conflicting, or only
    loosely related.
 5. Do not answer from general knowledge when `.agents/context/` contains

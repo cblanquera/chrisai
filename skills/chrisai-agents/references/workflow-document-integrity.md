@@ -50,6 +50,9 @@ Do not scan unrelated folders unless checking a cross-document conflict.
    URLs, uploaded files, local absolute paths, or documents outside `.agents`.
    When provenance is needed, it lives in `.agents/references/` and context
    links to that reference file.
+   Links to `.agents/references/` must include a purpose or load condition,
+   preferably `Load when:` and optional `Skip when:` notes. Do not leave bare
+   reference bullets that force agents to open the file just to judge relevance.
 4. **Line limits:** active `.agents/**/*.md` files remain under the local line
    cap or are split before more content is added.
 5. **Current-state consistency:** progress manifest, spec status, release
@@ -110,6 +113,8 @@ Do not scan unrelated folders unless checking a cross-document conflict.
 - durable truth is in the right source-of-truth surface
 - `.agents/context/` has no direct links outside `.agents/context/` or
   `.agents/references/`
+- `.agents/context/` links to `.agents/references/` include enough load/skip
+  guidance for future agents to decide whether to open them
 - durable final records in `.agents/specs/` are promoted into
   detailed `.agents/context/`, explicitly do not contain reusable context, or
   have a non-final record or document status that defers promotion

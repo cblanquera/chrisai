@@ -20,7 +20,8 @@ file, link, pasted text, or raw resource to the project knowledge base.
 Read first:
 
 - `.agents/AGENTS.md`
-- `.agents/context/index.md`, if present
+- `.agents/context/index.md`, if present, or the local context map named by
+  `.agents/AGENTS.md`
 - the source file, text, or link to ingest
 
 May update:
@@ -43,8 +44,8 @@ Process:
 3. Write detailed context under `.agents/context/` only when under 500 lines.
 4. If generated context would exceed 500 lines, put all chunks in
    `.agents/references/context/<slug>/` with a chunk index.
-5. Update `.agents/context/index.md` with compact routing summaries and links
-   to detailed context or chunk indexes.
+5. Update `.agents/context/index.md` or the local context map with compact
+   routing summaries and links to detailed context or chunk indexes.
 6. Promote durable product facts into `.agents/context/` when future specs should
    inherit them, and into spec records when they affect active scope.
 7. Do not leave durable product knowledge only in summaries, source URLs, file
@@ -52,10 +53,18 @@ Process:
 8. Ensure `.agents/context/` links only to `.agents/context/` or
    `.agents/references/`. Put source paths, external URLs, spec paths, progress
    paths, root artifact paths, and other provenance in `.agents/references/`.
+9. Do not emit bare `Related Context`, `Context References`, or
+   `Reference Routing` links. Every link to `.agents/references/` must state
+   what it is for and when to load it. Prefer:
+   `Load when: <condition>` and, when useful, `Skip when: <condition>`.
+10. When the project has multiple durable context areas, optionally assign each
+    fact to a context owner document with `Load When`, `Skip When`, `Owns`,
+    `Does Not Own`, and reference-routing notes. Do not hardcode a universal
+    owner set.
 
-Stop when the context index routes the new entry, no active Markdown file
-exceeds the line cap, and the completion response includes the recommended
-next step.
+Stop when the context index or local context map routes the new entry, no
+active Markdown file exceeds the line cap, linked references include load/skip
+guidance, and the completion response includes the recommended next step.
 
 ## Goal Manager
 
@@ -67,7 +76,8 @@ Read first:
 - `.agents/AGENTS.md`
 - `.agents/workflows/progress.md`
 - `.agents/workflows/document-integrity.md`
-- `.agents/context/index.md`
+- `.agents/context/index.md`, or the local context map named by
+  `.agents/AGENTS.md`
 - `.agents/context/feature-goals.md`
 - `.agents/development/progress/manifest.md`, when progress exists
 - the last or current progress item, active goal, batch, spec, release, or
@@ -97,7 +107,11 @@ releases, or derived views may have drifted.
 Check:
 
 - context index links
+- local context owner boundaries and read-first routing, when the project uses
+  context owner documents
 - `.agents/context/` link boundary
+- `.agents/references/` links from context include a purpose, `Load when:`, or
+  equivalent routing note so agents can decide whether to load them
 - Markdown line limits
 - spec/progress boundary
 - current-state consistency
@@ -116,6 +130,9 @@ workflow. If repair would change product scope, stop and ask the user.
 
 Context files may link only to `.agents/context/` or `.agents/references/`.
 Move provenance links to `.agents/references/` before closeout.
+Do not leave bare `.agents/references/` links in context files. Add a concise
+purpose or `Load when:` note, and add `Skip when:` where it prevents unnecessary
+reference loading.
 
 For grouped record files created under `.agents/specs/`, check the records
 inside the file before promoting context. Promote durable reusable records only
