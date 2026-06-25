@@ -1,6 +1,6 @@
 {
   "name": "chrisai",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Portable ChrisAI skills for AI coding agents.",
   "license": "MIT",
   "bin": {

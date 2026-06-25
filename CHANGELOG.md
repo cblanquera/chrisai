@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.7 - 2026-06-25
+
+- Updated `chrisai-agents` context routing so reference links include purpose,
+  `Load when:`, and optional `Skip when:` guidance before agents load
+  `.agents/references/` material.
+- Clarified `.agents/context/index.md` as the read-first router, with optional
+  context owner documents behind it for larger project knowledge bases.
+- Propagated reference-routing guidance into wireframe, creative, proof, and
+  workflow templates so generated artifacts avoid bare provenance lists.
+
 ## 0.2.6 - 2026-06-21
 
 - Reworked `chrisai-agents` MVP planning so POCs, static wireframes,
