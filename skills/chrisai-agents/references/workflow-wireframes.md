@@ -67,6 +67,7 @@ frontend, backend, QA, and future planning work:
 - analytics, QA, acceptance, or verification notes when known
 - unresolved UX questions, explicit deferrals, and non-goals
 - `.agents/context/` promotion summary and `.agents/references/` provenance
+  with purpose and `Load when:` notes
 
 Use this structure:
 
@@ -85,7 +86,14 @@ Unlocks:
 ## Source Artifacts
 
 List root wireframe artifacts and any `.agents/references/` provenance notes.
+Every `.agents/references/` link must state why it exists and when to load it.
 Do not link `.agents/context/` directly to root artifacts.
+
+Use this shape for provenance references:
+
+- `.agents/references/<reference>.md`
+  Load when: <specific source detail, artifact provenance, or evidence is needed>.
+  Skip when: <the handoff already answers the implementation or review question>.
 
 ## Placeholder Policy
 
@@ -135,7 +143,8 @@ For each screen:
 ## Context Promotion
 
 Summarize what was promoted into `.agents/context/` and which
-`.agents/references/` files carry provenance.
+`.agents/references/` files carry provenance. Include purpose and `Load when:`
+guidance for each reference link.
 ```
 
 ## Stop Conditions

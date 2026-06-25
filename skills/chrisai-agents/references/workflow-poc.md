@@ -98,7 +98,8 @@ default.
 - setup, commands, fixtures, inputs, and test data
 - expected proof signal, failure signal, and inconclusive signal
 - safety, security, cost, performance, deployment, or cleanup concerns
-- links to related spec records and `.agents/references/` provenance notes
+- links to related spec records and `.agents/references/` provenance notes with
+  purpose and `Load when:` guidance
 
 Use this structure:
 
@@ -141,7 +142,14 @@ Created:
 ## Related Records And Provenance
 
 Link to spec records as needed. Put source, root artifact, external, or
-implementation provenance in `.agents/references/`.
+implementation provenance in `.agents/references/`. Every `.agents/references/`
+link must state why it exists and when to load it.
+
+Use this shape for provenance references:
+
+- `.agents/references/<reference>.md`
+  Load when: <specific proof detail, artifact provenance, or evidence is needed>.
+  Skip when: <the proof document already answers the feasibility question>.
 ```
 
 `results.md` should describe what happened after execution:
@@ -154,7 +162,8 @@ implementation provenance in `.agents/references/`.
 - accepted learning, rejected assumptions, risks, and follow-up questions
 - promotion decision: promote, replace, discard, continue, or defer
 - reusable code decision: merge, cherry-pick, reimplement, archive, or discard
-- `.agents/context/` promotion summary and `.agents/references/` provenance
+- `.agents/context/` promotion summary and `.agents/references/` provenance with
+  purpose and `Load when:` guidance
 
 Use this structure:
 
@@ -201,7 +210,8 @@ merge | cherry-pick | reimplement | archive | discard
 ## Context Promotion
 
 Summarize what was promoted into `.agents/context/` and which
-`.agents/references/` files carry provenance.
+`.agents/references/` files carry provenance. Include purpose and `Load when:`
+guidance for each reference link.
 ```
 
 ## Stop Conditions

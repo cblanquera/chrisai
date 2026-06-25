@@ -131,8 +131,9 @@ progress item, design artifact, research note, or release view needs it.
 - Keep generated or maintained `.agents/**/*.md` files under 500 lines.
 - Put shared synthesized product understanding in `.agents/context/` so future
   specs can read it without tethering themselves to an earlier spec.
-- Put large context chunks in `.agents/references/context/<source-slug>/` and
-  link them from `.agents/context/index.md`.
+- Put large context chunks in `.agents/references/context/<source-slug>/`, keep
+  each chunk under the active line cap, and link the chunk index from
+  `.agents/context/index.md`.
 - Link `.agents/context/` files only to other `.agents/context/` files or
   `.agents/references/` files. Put source paths, external URLs, spec links,
   progress links, root artifact links, and other provenance in

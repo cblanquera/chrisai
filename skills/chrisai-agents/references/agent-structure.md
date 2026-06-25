@@ -182,10 +182,11 @@ Start by reading the workflow file that matches the task:
 - Context links to `.agents/references/` must include a purpose or load
   condition. Prefer `Load when:` and optional `Skip when:` notes so agents can
   decide whether to load the reference without opening it first.
-- Projects with enough context may use context owner documents instead of a
-  flat context index. Each owner should state `Load When`, `Skip When`, `Owns`,
-  `Does Not Own`, and reference-routing notes. Owner documents are
-  project-specific; do not force a universal owner set.
+- Projects with enough context may use context owner documents behind
+  `.agents/context/index.md`. The index remains the read-first router. Each
+  owner should state `Load When`, `Skip When`, `Owns`, `Does Not Own`, and
+  reference-routing notes. Owner documents are project-specific; do not force a
+  universal owner set.
 - `.agents/specs/research/` contains the first greenfield research round, or
   brownfield research only when the user explicitly asks to reopen discovery. It
   is discovery material, not shared product context.
@@ -221,8 +222,8 @@ Start by reading the workflow file that matches the task:
   maintained `.agents/**/*.md` files.
 - Keep active `.agents` Markdown files under 500 lines.
 - If generated context content would exceed 500 lines, put all chunks in
-  `.agents/references/context/<source-slug>/` and link them from
-  `.agents/context/index.md`.
+  `.agents/references/context/<source-slug>/`, keep each chunk under the active
+  line cap, and link the chunk index from `.agents/context/index.md`.
 - Before appending to any Markdown file, decide whether the addition keeps the
   file compact.
 - Put long rationale, examples, research, source excerpts, transcript

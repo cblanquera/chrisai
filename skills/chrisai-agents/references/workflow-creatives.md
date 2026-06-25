@@ -62,10 +62,12 @@ detail for production UI implementation:
 - copy tone, labels, microcopy, and content rules when creative direction
   affects them
 - asset inventory, production asset requirements, and external asset
-  provenance stored through `.agents/references/`
+  provenance stored through `.agents/references/` with purpose and
+  `Load when:` notes
 - implementation notes, QA checks, non-goals, unresolved questions, and
   explicit deferrals
 - `.agents/context/` promotion summary and `.agents/references/` provenance
+  with purpose and `Load when:` notes
 
 Use this structure:
 
@@ -84,7 +86,14 @@ Unlocks:
 ## Source Artifacts
 
 List root creative artifacts, asset folders, and any `.agents/references/`
-provenance notes. Do not link `.agents/context/` directly to root artifacts.
+provenance notes. Every `.agents/references/` link must state why it exists and
+when to load it. Do not link `.agents/context/` directly to root artifacts.
+
+Use this shape for provenance references:
+
+- `.agents/references/<reference>.md`
+  Load when: <specific source detail, asset provenance, or evidence is needed>.
+  Skip when: <the guidelines already answer the implementation or review question>.
 
 ## Creative Principles
 
@@ -126,7 +135,8 @@ Describe page-level styling for each approved screen/template.
 ## Context Promotion
 
 Summarize what was promoted into `.agents/context/` and which
-`.agents/references/` files carry provenance.
+`.agents/references/` files carry provenance. Include purpose and `Load when:`
+guidance for each reference link.
 ```
 
 ## Stop Conditions
