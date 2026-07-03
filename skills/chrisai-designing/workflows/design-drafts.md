@@ -72,7 +72,8 @@ until the creative or draft phase is approved. This includes feedback received
 as annotations, screenshot notes, direct chat comments, ad hoc requests, or
 informal change lists. Apply the feedback, decide whether it is a major
 revision or a minor update, then present the updated creative in another
-review round.
+review round. Every artifact update must also update the revision-local
+`notes.md` review log.
 
 ## Step 1: Confirm The Draft Stage
 
@@ -106,6 +107,12 @@ consolidated workspace for the revision, including source files, draft-only
 assets, QA screenshots, QA notes, recordings, and review metadata. Minor
 changes may update the current revision folder.
 
+Each revision folder must keep `notes.md` as the per-update review log once
+the draft has its first update or review round. Append or update one entry for
+each artifact update, including what changed, what should be reviewed,
+feedback or annotations applied, simulated or deferred behavior, open
+questions, and the approval path.
+
 Keep review artifacts separate from production app code unless the user
 explicitly requests otherwise.
 
@@ -120,7 +127,8 @@ Rules:
 - use semantic HTML where practical
 - use CSS variables for draft-level colors, type, spacing, and surfaces
 - avoid production build tooling unless the project already requires it
-- mark interactions as simulated where appropriate
+- identify simulated interactions in `notes.md`, `README.md`, review
+  responses, or handoff where appropriate
 - do not wire real persistence, authentication, billing, or backend behavior
 
 Do not collapse a multi-page draft into one large HTML file. Use `index.html`
@@ -140,9 +148,10 @@ flow, or state intent.
 Functional creative drafts are still design-review artifacts, not production
 implementation. They may include enough static HTML/CSS/JS behavior to review
 flow, screen states, validation messaging, menus, tabs, modals, drawers, and
-state transitions, but they must clearly label simulated behavior and avoid
-real persistence, authentication, billing, backend calls, or production
-analytics.
+state transitions, but simulated behavior must be identified in companion
+Markdown, review responses, or handoff rather than as visible UI labels unless
+the label is intended product copy. Avoid real persistence, authentication,
+billing, backend calls, or production analytics.
 
 Use [draft-artifact-rules](../references/draft-artifact-rules.md) for artifact
 boundaries.
@@ -160,7 +169,8 @@ The artifact must be clearly described as a draft for design review.
 
 Do not present it as production-ready code.
 
-If the draft is intentionally static, say which actions are simulated.
+If the draft is intentionally static, say which actions are simulated in the
+review response and companion Markdown.
 
 ## Step 5: Run Draft QA
 
@@ -212,6 +222,7 @@ After each review round, state:
 
 - what changed in this review round
 - which revision folder contains the current draft
+- where the per-update `notes.md` entry was written or updated
 - what the user should review now, phrased as specific questions
 - what is clickable
 - what is simulated
@@ -259,6 +270,7 @@ When the user asks for documentation or implementation handoff material, use
 - screens included
 - interactions included
 - QA artifacts under `qa/` when QA was run
+- per-update `notes.md` location and latest round summarized
 - simulated behavior
 - known limitations
 - what the user should review next if approval is not yet final
@@ -289,6 +301,8 @@ and open questions from the latest creative and/or wireframe revisions.
 - Do not change approved wireframe structure during visual draft work unless
   the user requests a revision.
 - Do not claim simulated behavior is production behavior.
+- Do not skip the revision-local `notes.md` entry after changing a generated
+  draft artifact.
 - Do not invent SVG, PNG, ICO, or transparency validation results. Look for an
   available asset or graphics capability when validation matters; if none is
   available, state the limitation and keep the draft at best-effort guidance.

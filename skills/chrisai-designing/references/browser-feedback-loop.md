@@ -33,6 +33,11 @@ change lists, and direct chat feedback all count as review feedback. Apply the
 feedback through the owning workflow, then present the updated artifact through
 another review round until the phase is approved.
 
+When generated artifact files are created or changed, the current revision
+folder must include `notes.md` with one entry per update or review round.
+Those notes prevent later creative and frontend work from drifting away from
+the approved review decisions.
+
 ## Required Round Response
 
 After every browser-visible round, use this structure unless the round is tiny:
@@ -41,6 +46,9 @@ After every browser-visible round, use this structure unless the round is tiny:
 Done. <Phase Name>, Round <n> is ready at:
 
 [<review target>](<review target>)
+
+Notes:
+[<notes.md>](<notes target>)
 
 What changed:
 - <specific change>
@@ -60,6 +68,8 @@ which <areas/screens/states/metrics/flow points> to revise.
 
 The review target may be a URL, file path, artifact name, screenshot,
 recording, or browser route. Put it on its own line so it is easy to find.
+Include the notes link when generated files were created or changed. Omit it
+only for review rounds that did not produce or modify files.
 
 Use "Verified" only for checks that were actually run. If no verification was
 run, omit the section or say what still needs verification.
@@ -124,6 +134,17 @@ Name revision folders clearly enough to make the phase history readable, such
 as `r01-wireframe-dashboard`, `r02-wireframe-navigation-rework`, or
 `r03-creative-functional-flow`. Review-round metadata may live inside the
 current revision folder.
+
+Every generated-artifact update must append or update `notes.md` in the
+current revision folder. Each entry should include:
+
+- round number, date, and short label
+- changed screens, states, copy, layout, or behavior
+- what should be reviewed next
+- feedback, annotations, screenshot notes, or chat notes applied
+- simulated, illustrative, deferred, or non-production behavior
+- open questions
+- exact approval path
 
 When QA screenshots, recordings, or notes are produced for the round, keep them
 with the artifact being reviewed unless the owning domain skill says otherwise.

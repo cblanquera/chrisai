@@ -14,6 +14,14 @@ Use "review round" for the feedback cycle and "revision" for a major
 folder-level artifact change. Major changes create a new revision folder; minor
 changes may stay in the current revision folder.
 
+When generated wireframes, creative drafts, clickable drafts, or functional
+creatives are created or changed, the current revision folder must include a
+`notes.md` entry for that update. The entry records what changed, what should
+be reviewed, feedback or annotations applied, simulated or deferred behavior,
+open questions, and approval path. Rendered HTML must show only intended
+product UI; put agent notes, annotations, and implementation commentary in
+Markdown companion files.
+
 ## Greenfield Design Direction
 
 Use when there is no existing app or site design to extend.
@@ -30,7 +38,8 @@ Output:
 - brand-led creative direction
 - visual system guidance
 - differentiation strategy
-- implementation-ready handoff
+- implementation-ready handoff through `workflows/design-handoff-package.md`
+  when generated wireframe or creative artifacts are being handed off
 
 ## Existing Design Extension
 
@@ -52,7 +61,8 @@ Output:
 
 - extracted existing design rules
 - extension rules for the new page or screen
-- design handoff that preserves the current product language
+- design handoff that preserves the current product language, using
+  `workflows/design-handoff-package.md` when generated artifacts exist
 
 Do not introduce a new style unless the user explicitly asks for a redesign.
 
@@ -72,11 +82,15 @@ Rules:
 - generated wireframes must be static HTML/CSS/JS review artifacts
 - do not output markdown-only wireframes unless the user explicitly requests
   text-only planning
+- rendered HTML must not include annotations, TODOs, review notes, placeholder
+  labels, or implementation commentary unless the text is intended product copy
+- each artifact update must append or update revision-local `notes.md`
 - focus on sections, hierarchy, layout density, and user flow
 
 Output:
 
 - static HTML/CSS/JS low-fidelity draft
+- revision-local `notes.md` update when files are created or changed
 - open questions about layout and flow
 - review instructions and next-step guidance for the current review round
 
@@ -91,9 +105,13 @@ Rules:
 
 - generated clickable wireframes must be static HTML/CSS/JS review artifacts
 - generated clickable wireframes must use HTML/CSS/JS files, not markdown
-- links and simple state changes may be clickable
+- product-like clickable behavior is the default for app screens,
+  multi-screen flows, forms, menus, tabs, modals, drawers, and stateful
+  surfaces when interaction affects understanding
 - styling remains grayscale and low-fidelity
 - no production implementation claims
+- rendered HTML must not include annotations or review notes
+- each artifact update must append or update revision-local `notes.md`
 - each review round must state what is clickable, what is simulated, and what the
   user should test before approval
 
@@ -112,6 +130,9 @@ Rules:
 - preserve the approved layout unless the user asks to revisit it
 - add color, typography, imagery, icons, and surface treatment
 - keep usability constraints visible
+- rendered HTML must not include agent annotations, review notes, or
+  implementation commentary unless the text is intended product copy
+- each artifact update must append or update revision-local `notes.md`
 - each review round must state what visual decisions changed and what the user should
   review before approval
 
@@ -131,6 +152,9 @@ Rules:
 - generated assets should use an available image, logo, asset, or graphics
   capability when asset format, transparency, or favicon quality matters; if no
   capability is available, use best-effort placeholders or static guidance
+- rendered HTML must not include agent annotations, review notes, or
+  implementation commentary unless the text is intended product copy
+- each artifact update must append or update revision-local `notes.md`
 - each review round must state what is clickable, what is simulated, what changed,
   and what the user should test before approval
 
@@ -146,9 +170,12 @@ Rules:
 
 - functional creatives are still design-review artifacts
 - functional creatives must use static HTML/CSS/JS for simulated behavior
-- behavior must be clearly labeled as simulated unless it is real
+- simulated behavior must be identified in `notes.md`, `README.md`, the review
+  response, or handoff unless the label is intended product UI
 - do not add real persistence, authentication, billing, backend calls, or
   production analytics
+- rendered HTML must not include agent annotations, review notes, or
+  implementation commentary unless the text is intended product copy
 - each reviewable update must go through `workflows/feedback-loop.md` until the
   phase is approved
 
@@ -163,6 +190,7 @@ If yes:
 - create one new revision folder for major changes
 - keep minor changes in the current revision folder when appropriate
 - name folders clearly by revision and draft stage when possible
+- append or update `notes.md` for every generated-artifact update
 - keep draft files separate from production app code unless the user requests
   otherwise
 

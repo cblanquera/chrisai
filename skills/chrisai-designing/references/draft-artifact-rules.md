@@ -36,10 +36,19 @@ Keep all draft-related files inside that folder, including:
 - static HTML/CSS/JS files
 - draft-only assets
 - generated graphics
+- `notes.md` for per-update review-round notes
 - QA screenshots
 - browser-review notes
 - interaction smoke-test notes
 - review metadata
+
+Keep the rendered product surface and documentation separate. HTML, CSS, and
+JS files should contain only UI that would plausibly exist in the actual app.
+Review notes, agent rationale, simulated-behavior explanations, deferred
+states, open questions, TODOs, and implementation commentary belong in
+Markdown files such as `README.md`, `notes.md`, `handoff.md`, or `qa/notes.md`.
+`notes.md` is the durable per-update review log for the revision. `qa/notes.md`
+is only for browser verification notes.
 
 Example:
 
@@ -53,6 +62,7 @@ design-drafts/
     confirmation.html
     styles.css
     script.js
+    notes.md
     assets/
     qa/
       desktop.png
@@ -67,6 +77,7 @@ design-drafts/
     confirmation.html
     styles.css
     script.js
+    notes.md
     assets/
     qa/
       desktop.png
@@ -86,11 +97,18 @@ For plain static drafts, a small folder can include:
 - `assets/` when draft-only images or icons are needed
 - `qa/` when screenshots, recordings, or QA notes are produced
 - `README.md` for review context
+- `notes.md` for the required per-update review log
 
 Do not put a multi-page or multi-state draft into one monolithic HTML file.
 Use sibling HTML files with relative links, such as `dashboard.html`,
 `settings.html`, `empty-state.html`, and `error-state.html`. Keep shared
 styling in `styles.css` and shared simulated interactions in `script.js`.
+
+Do not render artifact labels or agent notes inside the product UI. Avoid
+visible labels such as "placeholder", "annotation", "wireframe note",
+"simulated", "future state", "TODO", or "not final" unless that wording is
+intended product copy. If an explanation is needed for reviewers or downstream
+agents, put it in Markdown next to the draft.
 
 ## Relative Link Rules
 
@@ -123,6 +141,42 @@ files.
 
 Do not add build tooling unless the user requests it or the project already
 requires it.
+
+## Per-Update Notes
+
+Every generated wireframe or creative revision must include `notes.md` once
+the artifact has gone through its first update or review round. Append or
+update one entry per artifact update. This applies to major revisions and minor
+updates inside the current revision folder.
+
+Use this entry shape unless the project already has a stricter local format:
+
+```markdown
+## Round <n> - <YYYY-MM-DD> - <short label>
+
+### Changed
+- <visible artifact change>
+- <behavior or state change>
+
+### Review Focus
+- <specific screen, state, flow, or decision the user should review>
+
+### Feedback And Annotations Applied
+- <annotation, screenshot note, chat note, or ad hoc request applied>
+
+### Simulated Or Deferred
+- <behavior that is simulated, illustrative, deferred, or not production>
+
+### Open Questions
+- <question or "None">
+
+### Approval Path
+If approved, the next step is <exact next step>. If not, revise <specific area>.
+```
+
+Do not put this update log in rendered HTML. Do not rely only on the chat
+transcript for this information; future creative and frontend agents need the
+revision-local notes to prevent drift.
 
 ## Browser Preview Rules
 
@@ -166,6 +220,8 @@ Acceptable simulated interactions:
 - modal or drawer open and close
 - stepper navigation
 - preview-only form state
+- validation messaging and success or error states
+- disabled, selected, loading, and empty states
 - page-to-page links inside the draft
 
 Avoid:
@@ -197,6 +253,9 @@ If a `README.md` is created in the draft workspace, include:
 - source inputs
 - what is clickable
 - what is simulated
+- what values are illustrative placeholders, unless promoted into
+  requirements, configuration, or final copy
+- where the per-update notes live
 - QA artifacts
 - known limitations
 - whether it is safe to delete

@@ -26,7 +26,7 @@ and artifact folder behavior.
 - [Step 4: Choose Or Revise One Structure](#step-4-choose-or-revise-one-structure)
 - [Step 5: Produce A Complete Grayscale Wireframe Set](#step-5-produce-a-complete-grayscale-wireframe-set)
 - [Step 6: Present Review Instructions And Next Steps](#step-6-present-review-instructions-and-next-steps)
-- [Step 7: Add Clickable Behavior When Needed](#step-7-add-clickable-behavior-when-needed)
+- [Step 7: Add Product-Like Clickable Behavior](#step-7-add-product-like-clickable-behavior)
 - [Step 8: Produce The Wireframe Handoff](#step-8-produce-the-wireframe-handoff)
 - [Review Gate](#review-gate)
 
@@ -74,7 +74,7 @@ Work through these steps in order:
 4. choose or revise one structure
 5. produce a complete grayscale wireframe set
 6. present review instructions and next steps
-7. add clickable behavior when needed
+7. add product-like clickable behavior
 8. produce a wireframe handoff
 
 Do not apply brand color, gradients, decorative graphics, or polished visual
@@ -89,7 +89,38 @@ until the wireframe phase is approved. This includes feedback received as
 annotations, screenshot notes, direct chat comments, ad hoc requests, or
 informal change lists. Apply the feedback, decide whether it is a major
 revision or a minor update, then present the updated wireframe in another
-review round.
+review round. Every artifact update must also update the revision-local
+`notes.md` review log.
+
+## Rendered Wireframe Truth Contract
+
+A rendered wireframe is a product-surface prototype. It must show only elements
+that would plausibly appear in the real app.
+
+Allowed visible content:
+
+- realistic app labels, navigation, buttons, fields, tables, cards, and copy
+- product help text, empty states, validation messages, confirmation messages,
+  and tooltips when those are intended app UI
+- product status text such as loading, disabled, selected, error, success, or
+  permission states when those states are part of the product experience
+
+Forbidden visible content:
+
+- agent annotations, review instructions, rationale, TODOs, or implementation
+  notes
+- labels such as "placeholder", "annotation", "wireframe note", "future
+  state", "simulated", or "not final" unless that exact wording is intended
+  product copy
+- explanatory callouts that point at UI and describe what another agent should
+  build
+- fake UI panels whose only purpose is to describe the design artifact
+
+Put review context, assumptions, simulated-behavior notes, deferred states,
+open questions, and implementation commentary in companion Markdown files such
+as `README.md`, `notes.md`, `handoff.md`, or `qa/notes.md`. When an intended
+app element looks like an annotation, either make it realistic product UI or
+move the explanation to Markdown.
 
 ## Step 1: Classify The Scope
 
@@ -116,7 +147,8 @@ Collect:
 - known navigation or flow constraints
 - existing design-extension rules when applicable
 - device targets
-- whether a clickable wireframe is needed
+- whether there is any reason to make an app, flow, form, menu, tab, modal,
+  drawer, or stateful surface static-only instead of product-like and clickable
 
 Ask only for missing inputs that materially affect structure.
 
@@ -133,6 +165,8 @@ Wireframe rules:
 - no markdown-only wireframes unless the user explicitly requests text-only
   planning
 - realistic labels where they clarify structure
+- no rendered annotations, review notes, TODOs, placeholder labels, or
+  implementation commentary inside the HTML UI
 - stable dimensions for repeated controls and layout regions
 - clear hierarchy and scan path
 
@@ -190,6 +224,7 @@ After each review round, state:
 
 - what changed in this review round
 - which revision folder contains the current draft when files were created
+- where the per-update `notes.md` entry was written or updated
 - what the user should review now, phrased as specific questions
 - what feedback would be most useful
 - the next step if this review round is approved
@@ -224,11 +259,17 @@ If this review round is approved, the next step is to wireframe the remaining sc
 in this phase. If not, tell me which sections or flow points to change.
 ```
 
-## Step 7: Add Clickable Behavior When Needed
+## Step 7: Add Product-Like Clickable Behavior
 
 Use static HTML/CSS/JS only as a review artifact. Even non-clickable
 wireframes should be generated as HTML/CSS/JS files so the user can review the
 actual layout in a browser.
+
+Clickable behavior is the default for app screens, multi-screen flows, forms,
+menus, tabs, modals, drawers, and stateful product surfaces when interaction
+affects understanding. Static-only wireframes are acceptable only for
+intentionally non-interactive surfaces, early layout-option comparisons, or an
+explicitly partial draft.
 
 Before writing files:
 
@@ -242,6 +283,19 @@ review metadata inside that folder. If the Browser plugin or another available
 browser capability is used, save its artifacts under the draft folder's `qa/`
 directory. If no browser capability is available, provide the review URL or
 file path and state that browser verification was not performed.
+
+Keep the rendered HTML separate from the companion documentation:
+
+- HTML files, `styles.css`, and `script.js` contain only the product-like
+  prototype.
+- `README.md` contains durable review context for the revision.
+- `notes.md` contains one entry per update or review round: what changed, what
+  should be reviewed, feedback or annotations applied, simulated or deferred
+  behavior, open questions, and approval path.
+- `handoff.md` contains implementation or creative handoff details after
+  approval or when requested.
+- `qa/notes.md` contains browser checks, screenshots, recordings, and smoke
+  test notes.
 
 Create a separate HTML file for each distinct page, screen, or major state.
 Do not put a multi-page wireframe into one large HTML file. Use `index.html`
@@ -282,13 +336,19 @@ current revision folder. Review rounds and revisions are tracked separately.
 For example, a wireframe may go through 10 review rounds and 3 major revision
 folders.
 
-Clickable wireframes may include simple links, tabs, toggles, and state changes
-that demonstrate navigation or flow intent.
+Clickable wireframes should include enough static behavior to review the
+intended product flow: page links, tabs, menus, drawers, modals, steppers,
+simple form entry, validation messaging, disabled states, success states, and
+state transitions when those affect form or function. Avoid real persistence,
+authentication, payments, backend calls, or production analytics.
 
 ## Step 8: Produce The Wireframe Handoff
 
 When the user asks for documentation or implementation handoff material, use
-[design-handoff-package](design-handoff-package.md). Otherwise, state:
+[design-handoff-package](design-handoff-package.md). After the wireframe phase
+is approved and the next step is creative design or frontend implementation,
+produce a standalone Markdown handoff even if the rendered HTML remains
+available. Otherwise, state:
 
 - selected structure
 - page or screen purpose
@@ -299,6 +359,7 @@ When the user asks for documentation or implementation handoff material, use
 - any screens or states intentionally deferred
 - responsive assumptions
 - draft workspace and `qa/` artifacts when a clickable draft was created
+- per-update `notes.md` location and latest round summarized
 - unresolved questions
 - constraints for the creative design draft
 - next step after review-round approval
@@ -307,6 +368,7 @@ When the user asks for documentation or implementation handoff material, use
 The Design Handoff Package should explain interactions that are not obvious
 from the wireframe alone, including clicks, drags, toggles, menus, state
 changes, and non-obvious components such as file explorers or resizable panels.
+It should be usable by another agent without reopening the rendered HTML.
 
 ## Review Gate
 
@@ -319,7 +381,15 @@ Before treating the wireframe as ready:
 - Does each page or screen have one clear primary job?
 - Are labels understandable without decoration?
 - Does the layout support scanning?
-- Is clickable behavior clearly review-only?
+- Is clickable behavior product-like enough to review navigation, forms,
+  menus, states, and flow intent?
+- Does the rendered HTML contain only intended product UI, with all agent
+  notes, review commentary, and implementation guidance moved to Markdown?
+- Was `notes.md` appended or updated for this artifact update with changes,
+  review focus, feedback or annotations applied, simulated behavior, open
+  questions, and approval path?
+- Are any placeholder values clearly documented as illustrative in Markdown
+  unless promoted into requirements, configuration, or final copy?
 - Do page, style, script, and asset links use document-relative paths instead
   of root-relative paths?
 - Was any agent-started static preview server stopped, intentionally left

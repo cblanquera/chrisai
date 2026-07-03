@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.2.8 - 2026-07-03
+
+- Tightened `chrisai-designing` so rendered wireframes, creative drafts,
+  clickable drafts, and functional creatives show only intended product UI,
+  with annotations, review notes, TODOs, simulated-behavior notes, and
+  implementation commentary kept in companion Markdown files.
+- Required revision-local `notes.md` update records for every generated design
+  artifact update, including changes, review focus, feedback or annotations
+  applied, simulated or deferred behavior, open questions, and approval path.
+- Updated design handoff guidance so final handoff packages read every
+  `notes.md` update record and synthesize review decisions, superseded
+  directions, deferred items, conflicts, and open questions.
+- Aligned design mode routing, future wireframe routing, visual review, and
+  creative-direction handoffs around product-like clickable wireframes and
+  standalone generated-artifact handoff packages.
+
 ## 0.2.7 - 2026-06-25
 
 - Updated `chrisai-agents` context routing so reference links include purpose,

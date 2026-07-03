@@ -57,7 +57,9 @@ Use this checklist before treating the creative direction as stable.
 
 ## Draft Artifacts
 
-- Is the artifact clearly marked as a design-review draft?
+- Is the artifact clearly identified as a design-review draft in `README.md`,
+  `notes.md`, the review response, or handoff rather than as annotation-like
+  rendered UI?
 - For wireframes, is the draft grayscale and free of polished visual styling?
 - For clickable drafts, do interactions demonstrate design intent without implying production behavior?
 

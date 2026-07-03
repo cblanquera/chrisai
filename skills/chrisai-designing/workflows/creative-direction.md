@@ -43,7 +43,7 @@ This workflow owns:
 - design-mode selection and specialist handoff
 - adaptation of existing logos, icons, screenshots, and brand assets
 - reference-site or reference-app synthesis
-- implementation-ready design handoff
+- pre-artifact design-direction handoff
 - visual review before a direction is treated as stable
 
 This workflow does not own:
@@ -97,7 +97,7 @@ recordings, and notes inside the same draft workspace under `qa/`.
 
 Use [feedback-loop](feedback-loop.md) for shared review-loop rules across
 wireframes, creative drafts, clickable drafts, browser-visible artifacts, and
-design handoffs.
+reviewable design-direction handoffs.
 
 ## Workflow
 
@@ -154,7 +154,7 @@ Supported modes:
 - creative design draft from an approved wireframe: hand off to
   `workflows/design-drafts.md`
 - clickable creative design draft: use `workflows/design-drafts.md`
-- implementation-ready design handoff
+- pre-artifact design-direction handoff
 
 For draft artifacts, confirm whether the user wants drafts saved in the
 project and where the draft workspace should live before handing off. Draft
@@ -411,7 +411,14 @@ best-effort static guidance or placeholders and state the limitation.
 
 ## Step 10: Produce The Handoff Or Draft Artifact Plan
 
-When handing off to implementation, define:
+When handing off generated wireframes, creative drafts, clickable drafts, or
+functional creatives to creative design or frontend implementation, use
+[design-handoff-package](design-handoff-package.md). That workflow must read
+every revision-local `notes.md` update record, synthesize review decisions,
+identify superseded or deferred directions, and produce a standalone handoff
+that another agent can use without reopening the rendered HTML.
+
+When handing off a design direction before generated artifacts exist, define:
 
 - the design concept in one sentence
 - the brand interpretation
@@ -430,12 +437,14 @@ When handing off to implementation, define:
 - any elements that must stay restrained for readability
 
 Do not hand off vague directions like "make it modern" or "make it pop."
+Do not use this design-direction handoff as a substitute for the Design
+Handoff Package when generated artifact revisions exist.
 
 For static HTML/CSS/JS draft artifacts, state clearly that the artifact is a
 draft for design review, not production implementation. Before writing files,
 confirm whether the user wants the draft saved in the project and where it
-should be saved, then use `workflows/design-drafts.md`. Folder and QA artifact
-rules live in that workflow.
+should be saved, then use `workflows/design-drafts.md`. Folder, `notes.md`,
+rendered-UI truth, and QA artifact rules live in that workflow.
 
 Draft stages should normally proceed in this order:
 

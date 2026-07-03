@@ -27,6 +27,18 @@ Do not deliver markdown-only wireframes, markdown mockups, or prose-only
 creative drafts unless the user explicitly asks for text-only planning instead
 of generated files.
 
+Rendered wireframes, creative drafts, clickable drafts, and functional
+creatives must show only intended product UI. Do not render agent annotations,
+review notes, implementation commentary, TODO labels, placeholder labels, or
+explanatory callouts inside the HTML interface. Put review context,
+assumptions, simulated-behavior notes, deferred states, open questions, and
+handoff guidance in companion Markdown files inside the revision folder.
+Every update that changes a generated wireframe, creative draft, clickable
+draft, or functional creative must append or update a companion `notes.md`
+review-round entry that records what changed, what should be reviewed,
+feedback or annotations applied, simulated behavior, open questions, and the
+exact next approval path.
+
 Generated wireframes, creative drafts, clickable drafts, and functional
 creatives must use document-relative links for pages, scripts, styles, and
 draft assets. Prefer links such as `./index.html`, `./checkout.html`,
@@ -39,7 +51,8 @@ review artifacts.
 
 - Use `workflows/creative-direction.md` when the task needs coordinated
   creative direction, visual-system definition, homepage or landing-page
-  composition, brand adaptation, reference-site synthesis, or a design handoff.
+  composition, brand adaptation, reference-site synthesis, or a
+  pre-artifact design-direction handoff.
 - Use `workflows/design-system-extraction.md` when the task needs existing
   app, site, Figma, design-system, component-library, screenshot, exported
   design-file, or local theme-source inspection before extending a product.
@@ -113,15 +126,15 @@ follow-up. Use this order:
    approved structure and direction.
 5. `workflows/feedback-loop.md` whenever an artifact is shown for review.
 6. `workflows/design-handoff-package.md` after the latest wireframe and/or
-   creative artifacts exist and the user asks for documentation or handoff
-   material.
+   creative artifacts are approved, or when the user asks for documentation or
+   handoff material.
 
 Do not default to multi-step design sequences.
 
 ## Decision Rules
 
 - If the request is mainly about creative direction, visual-system work,
-  homepage composition, or design handoff, use
+  homepage composition, or pre-artifact design-direction handoff, use
   `workflows/creative-direction.md`.
 - If the request is mainly about extracting rules from an existing design
   source of truth, use `workflows/design-system-extraction.md`.

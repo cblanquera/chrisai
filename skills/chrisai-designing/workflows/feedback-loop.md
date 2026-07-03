@@ -18,6 +18,8 @@ This workflow owns:
 - exact next-step language after approval
 - revision paths after annotation-based, ad hoc, or chat feedback
 - review artifact versioning rules
+- per-update notes that preserve what changed, review focus, applied
+  annotations, simulated behavior, open questions, and approval path
 
 This workflow does not own:
 
@@ -41,15 +43,23 @@ Work through these steps when a browser-visible artifact is part of the task:
 2. create or update the artifact through the owning domain skill
 3. show or verify the artifact in the in-app browser when available
 4. name the current phase, review round, and revision folder when files exist
-5. summarize the current review round using the required review format
-6. ask concrete review questions
-7. state exactly what approval unlocks
-8. revise or advance only according to the stated next step
+5. append or update the revision-local `notes.md` entry when files were
+   created or changed
+6. summarize the current review round using the required review format
+7. ask concrete review questions
+8. state exactly what approval unlocks
+9. revise or advance only according to the stated next step
 
 Treat annotations, screenshot comments, direct notes, ad hoc requests, and chat
 feedback as review feedback. Apply the feedback through the owning design
 workflow, decide whether it is a major revision or minor update, then run the
 feedback loop again until the relevant phase is approved.
+
+When generated artifact files are created or changed, do not rely on the chat
+transcript as the only change record. Keep one `notes.md` file in the current
+revision folder and add a review-round entry for each update. The entry should
+record what changed, what should be reviewed, feedback or annotations applied,
+simulated or deferred behavior, open questions, and the exact approval path.
 
 Read [browser-feedback-loop](../references/browser-feedback-loop.md) for the
 shared round protocol, review summary format, and artifact versioning rules.
@@ -62,6 +72,7 @@ format from `browser-feedback-loop`. Keep the response easy to scan:
 - start with the phase, review round, and revision status
 - show the review target on its own line when there is a URL, file, screenshot,
   recording, or artifact name
+- include the `notes.md` path when files were created or changed
 - use grouped sections for what changed, verification, review questions, and
   approval path
 - use bullets for changed items, verification items, and review questions
@@ -96,6 +107,8 @@ Before treating a browser-visible round as ready for user approval, confirm:
 - browser access succeeded, or the browser-plugin blocker was stated
 - the current phase was named
 - the user was told what changed
+- revision-local `notes.md` was appended or updated when generated files
+  changed
 - the response used the required browser-review structure
 - review questions are concrete and tied to the visible artifact
 - approval unlocks one exact next step

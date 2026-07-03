@@ -31,7 +31,10 @@ When routing, pass along:
 - audience and primary user goal
 - existing design-extension rules when applicable
 - brand or reference constraints that affect layout
-- whether a clickable wireframe is needed
+- whether there is any reason to make an app, flow, form, menu, tab, modal,
+  drawer, or stateful surface static-only instead of product-like and clickable
 
-Wireframe artifacts must stay grayscale, low-fidelity, and review-only. Use
+Wireframe artifacts must stay grayscale, low-fidelity, and review-only. The
+rendered HTML must show only intended product UI, and every generated-artifact
+update must append or update revision-local `notes.md`. Use
 `workflows/feedback-loop.md` for review-round approval and next-step rules.
