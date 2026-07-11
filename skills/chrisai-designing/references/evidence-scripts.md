@@ -1,5 +1,18 @@
 # Evidence Scripts
 
+## Contents
+
+- [`analyze-logo`](#analyze-logo)
+- [`capture-reference-site`](#capture-reference-site)
+- [`capture-existing-site`](#capture-existing-site)
+- [`scan-project-design-system`](#scan-project-design-system)
+- [`extract-figma-file`](#extract-figma-file)
+- [`inspect-design-images`](#inspect-design-images)
+- [`inspect-psd`](#inspect-psd)
+- [`inspect-ai-or-pdf`](#inspect-ai-or-pdf)
+- [`compare-reference-sites`](#compare-reference-sites)
+- [`extract-brand-guide`](#extract-brand-guide)
+
 Use scripts only to extract objective evidence from assets and URLs. Scripts do
 not choose the final design direction.
 

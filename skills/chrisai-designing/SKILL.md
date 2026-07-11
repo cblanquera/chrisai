@@ -29,8 +29,10 @@ of generated files.
 
 Rendered wireframes, creative drafts, clickable drafts, and functional
 creatives must show only intended product UI. Do not render agent annotations,
-review notes, implementation commentary, TODO labels, placeholder labels, or
-explanatory callouts inside the HTML interface. Put review context,
+review notes, implementation commentary, TODO labels, annotative placeholders,
+or explanatory callouts inside the HTML interface. Realistic illustrative
+content is allowed when product truth is unavailable, but it must not be
+visibly labeled as placeholder or annotation content. Put review context,
 assumptions, simulated-behavior notes, deferred states, open questions, and
 handoff guidance in companion Markdown files inside the revision folder.
 Every update that changes a generated wireframe, creative draft, clickable
@@ -56,9 +58,9 @@ review artifacts.
 - Use `workflows/design-system-extraction.md` when the task needs existing
   app, site, Figma, design-system, component-library, screenshot, exported
   design-file, or local theme-source inspection before extending a product.
-- Use `workflows/wireframes.md` when the task needs HTML/CSS/JS grayscale
-  low-fidelity wireframes, layout options, flow structure, or clickable
-  grayscale wireframe drafts.
+- Use `workflows/wireframe-drafts.md` when the task needs document-driven
+  HTML/CSS/JS grayscale low-fidelity wireframes, layout options, flow
+  structure, or clickable grayscale wireframe drafts.
 - Use `workflows/design-drafts.md` when the task needs static HTML/CSS/JS
   design-review artifacts, clickable creative drafts, functional creative
   drafts, or polished visual mockups from an approved structure and direction.
@@ -68,8 +70,9 @@ review artifacts.
   language.
 - Use `workflows/design-handoff-package.md` when the user asks to document,
   explain, package, summarize, or hand off generated wireframes and/or
-  creatives. Generate the package from whichever latest approved or latest
-  available wireframe and creative revisions exist.
+  creatives. Generate a final package from approved revisions. Generate an
+  interim package from pending or unknown revisions only when the user
+  explicitly requests pre-approval documentation.
 
 ## Supporting References
 
@@ -81,13 +84,23 @@ review artifacts.
   during creative-direction work.
 - Use `references/source-formats.md` and
   `references/extraction-report.md` during design-system extraction.
-- Use `references/wireframe-patterns.md` during wireframe work.
+- Use `references/wireframe-specs-contract.md`,
+  `references/wireframe-implementation-rules.md`,
+  `references/wireframe-revision-workflow.md`, and
+  `references/wireframe-review-workflow.md` during wireframe work.
+- Use `references/wireframe-lib-inventory.md` to select bundled wireframe
+  layouts, components, icons, utilities, and behavioral samples before
+  creating new equivalents.
+- Use `references/creative-draft-specs-contract.md`,
+  `references/creative-draft-implementation-rules.md`,
+  `references/creative-draft-revision-workflow.md`, and
+  `references/creative-draft-review-workflow.md` during creative draft work.
 - Use `references/draft-artifact-rules.md` during static draft creation.
 - Use `references/browser-feedback-loop.md` during browser-visible review
   rounds.
 - Use `references/evidence-scripts.md` when objective extraction scripts can
   provide useful evidence.
-- Use `references/future-wireframes.md` only as a bridge when a creative
+- Use `references/wireframe-routing.md` only as a bridge when a creative
   direction task turns into low-fidelity structure work.
 
 ## Soft Capability Lookup
@@ -120,8 +133,8 @@ follow-up. Use this order:
    must be understood before new design work.
 2. `workflows/creative-direction.md` when the visual direction, design mode, or
    brand-led system is still open.
-3. `workflows/wireframes.md` when structure, hierarchy, or flow must be
-   approved before visual design.
+3. `workflows/wireframe-drafts.md` when structure, hierarchy, or flow must be
+   specified and approved before visual design.
 4. `workflows/design-drafts.md` when a static review artifact is needed from an
    approved structure and direction.
 5. `workflows/feedback-loop.md` whenever an artifact is shown for review.
@@ -139,7 +152,7 @@ Do not default to multi-step design sequences.
 - If the request is mainly about extracting rules from an existing design
   source of truth, use `workflows/design-system-extraction.md`.
 - If the request is mainly about grayscale wireframes or clickable grayscale
-  wireframes, use `workflows/wireframes.md`.
+  wireframes, use `workflows/wireframe-drafts.md`.
 - If the request is mainly about static design-review artifacts, clickable
   creative drafts, or mockups from approved structure and direction, use
   `workflows/design-drafts.md`.

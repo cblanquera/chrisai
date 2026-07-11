@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel Layout Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../layouts/panel-layout.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <div class="wf-shell" data-wf-panel-layout data-wf-panel-resizable data-wf-left-open="true" data-wf-right-open="true">
+    <aside class="wf-shell__left wf-stack" id="sample-navigation">
+      <div class="wf-shell__brand">Product shell</div>
+      <nav class="wf-stack" aria-label="Product navigation">
+        <a class="wf-shell__nav-link" href="#" aria-current="page">Overview</a>
+        <a class="wf-shell__nav-link" href="#">Records</a>
+        <a class="wf-shell__nav-link" href="#">Reports</a>
+      </nav>
+    </aside>
+
+    <header class="wf-shell__header">
+      <div class="wf-shell__header-start">
+        <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="left" aria-controls="sample-navigation" aria-expanded="true" aria-label="Toggle navigation panel">
+          <span data-wf-icon="menu"></span>
+        </button>
+        <div class="wf-shell__brand">Workspace overview</div>
+      </div>
+      <div class="wf-shell__header-end">
+        <a class="wf-button wf-button--secondary" href="../index.html">
+          <span data-wf-icon="arrow-left"></span>
+          Back
+        </a>
+        <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="right" aria-controls="sample-settings" aria-expanded="true" aria-label="Toggle settings panel">
+          <span data-wf-icon="settings"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="wf-shell__center">
+      <section class="wf-panel">
+        <div class="wf-panel__header">
+          <h1 class="wf-subheading">Primary work area</h1>
+        </div>
+        <div class="wf-panel__body wf-stack">
+          <div class="sample-box">Main content</div>
+          <div class="sample-box">Scrollable center region</div>
+        </div>
+        <div class="wf-panel__footer">24 records</div>
+      </section>
+    </main>
+
+    <aside class="wf-shell__right wf-stack" id="sample-settings">
+      <h2 class="wf-subheading">Settings</h2>
+      <p class="wf-copy">Contextual controls for the current workspace.</p>
+      <button class="wf-button wf-button--secondary" type="button">Account settings</button>
+    </aside>
+
+    <div class="wf-shell__resize-handle wf-shell__resize-handle--left" data-wf-panel-resize="left" role="separator" tabindex="0" aria-label="Resize navigation panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="260"></div>
+    <div class="wf-shell__resize-handle wf-shell__resize-handle--right" data-wf-panel-resize="right" role="separator" tabindex="0" aria-label="Resize settings panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="320"></div>
+  </div>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../layouts/panel-layout.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

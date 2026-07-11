@@ -1,0 +1,31 @@
+.wf-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-5);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-4);
+  background: var(--wf-surface);
+}
+
+.wf-card--raised {
+  box-shadow: var(--wf-shadow-1);
+}
+
+.wf-card__header,
+.wf-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+}
+
+.wf-card__title {
+  margin: 0;
+  font-size: var(--wf-text-lg);
+  line-height: var(--wf-line-tight);
+}
+
+.wf-card__body {
+  color: var(--wf-text-muted);
+}

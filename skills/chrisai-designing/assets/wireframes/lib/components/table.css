@@ -1,0 +1,33 @@
+.wf-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-4);
+  background: var(--wf-surface);
+}
+
+.wf-table {
+  min-width: 640px;
+  font-size: var(--wf-text-sm);
+}
+
+.wf-table th,
+.wf-table td {
+  padding: var(--wf-space-3) var(--wf-space-4);
+  border-bottom: 1px solid var(--wf-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.wf-table th {
+  background: var(--wf-gray-50);
+  color: var(--wf-text-muted);
+  font-weight: 700;
+}
+
+.wf-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.wf-table tbody tr:hover {
+  background: var(--wf-gray-50);
+}

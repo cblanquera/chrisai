@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tooltip Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/tooltip.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Tooltip</h1>
+      <div class="sample-frame">
+        <span class="wf-tooltip-anchor">
+          <button class="wf-button wf-button--secondary" type="button" data-wf-tooltip aria-describedby="tooltip-one">Hover or focus</button>
+          <span class="wf-tooltip" id="tooltip-one" role="tooltip" hidden>Compact contextual detail.</span>
+        </span>
+      </div>
+    </div>
+  </main>
+  <script src="../../components/tooltip.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

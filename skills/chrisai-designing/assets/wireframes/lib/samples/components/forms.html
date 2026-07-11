@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forms Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Form fields</h1>
+      <form class="wf-form sample-frame">
+        <div class="wf-field">
+          <label class="wf-label" for="name">Workspace name</label>
+          <input class="wf-input" id="name" name="name" value="Northwind Portal">
+          <p class="wf-help">Use helper text for constraints or field purpose.</p>
+        </div>
+        <div class="wf-field" aria-invalid="true">
+          <label class="wf-label" for="slug">Workspace slug</label>
+          <input class="wf-input" id="slug" name="slug" value="northwind portal" aria-describedby="slug-error">
+          <p class="wf-error" id="slug-error">Use lowercase letters, numbers, and hyphens only.</p>
+        </div>
+        <div class="wf-field">
+          <label class="wf-label" for="type">Workspace type</label>
+          <select class="wf-select" id="type" name="type">
+            <option>Client portal</option>
+            <option>Internal dashboard</option>
+          </select>
+        </div>
+        <div class="wf-field">
+          <label class="wf-label" for="notes">Notes</label>
+          <textarea class="wf-textarea" id="notes" name="notes">Initial workspace setup.</textarea>
+        </div>
+        <label class="wf-check"><input type="checkbox" checked> Send setup notification</label>
+        <button class="wf-button" type="button">Save settings</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

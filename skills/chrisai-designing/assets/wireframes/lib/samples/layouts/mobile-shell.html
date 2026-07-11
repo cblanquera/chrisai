@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mobile Shell Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/accordion.css">
+  <link rel="stylesheet" href="../../components/alert.css">
+  <link rel="stylesheet" href="../../components/badge.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/cards.css">
+  <link rel="stylesheet" href="../../components/dialog.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../../components/loader.css">
+  <link rel="stylesheet" href="../../components/notifier.css">
+  <link rel="stylesheet" href="../../layouts/mobile-shell.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body class="sample-mobile-page">
+  <main class="sample-mobile-viewport">
+    <div class="wf-mobile-shell wf-mobile-shell--tabs" data-wf-mobile-shell>
+      <div class="wf-mobile-shell__stage">
+        <section class="wf-mobile-screen" data-wf-mobile-screen="home" data-wf-mobile-state="active" aria-labelledby="mobile-home-title">
+          <header class="wf-mobile-screen__bar">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mobile-drawer-open aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation">
+              <span data-wf-icon="menu"></span>
+            </button>
+            <h1 class="wf-mobile-screen__title" id="mobile-home-title" data-wf-mobile-focus tabindex="-1">Field Notes</h1>
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-dialog-open="#mobile-notifications" aria-label="Open notifications">
+              <span data-wf-icon="bell"></span>
+            </button>
+          </header>
+          <div class="wf-mobile-screen__content">
+            <div class="sample-mobile-stack">
+              <section class="wf-card wf-card--raised">
+                <div class="wf-card__header">
+                  <div>
+                    <p class="wf-kicker">Wednesday</p>
+                    <h2 class="wf-card__title">Good morning, Sam</h2>
+                  </div>
+                  <span class="wf-badge wf-badge--solid">3 due</span>
+                </div>
+                <div class="wf-card__body">Your field schedule is clear until the North Site review at 10:30.</div>
+                <div class="wf-card__footer">
+                  <button class="wf-button" type="button" data-wf-dialog-open="#mobile-quick-action">
+                    <span data-wf-icon="add"></span>
+                    New entry
+                  </button>
+                  <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-toast-trigger data-wf-toast-title="Synced" data-wf-toast-body="All field notes are up to date." aria-label="Sync field notes">
+                    <span data-wf-icon="upload"></span>
+                  </button>
+                </div>
+              </section>
+
+              <div class="wf-row">
+                <div class="sample-mobile-metric"><strong>12</strong><span>Open notes</span></div>
+                <div class="sample-mobile-metric"><strong>4</strong><span>Site visits</span></div>
+                <div class="sample-mobile-metric"><strong>96%</strong><span>Synced</span></div>
+              </div>
+
+              <h2 class="sample-mobile-section-title">Recent activity</h2>
+              <div class="sample-mobile-list">
+                <button class="sample-mobile-list__item" type="button" data-wf-mobile-go="activity-detail">
+                  <span class="sample-mobile-list__icon" data-wf-icon="edit"></span>
+                  <span class="sample-mobile-list__copy"><strong>North Site inspection</strong><span>Updated 18 minutes ago</span></span>
+                  <span data-wf-icon="chevron-right"></span>
+                </button>
+                <button class="sample-mobile-list__item" type="button" data-wf-mobile-go="activity">
+                  <span class="sample-mobile-list__icon" data-wf-icon="check"></span>
+                  <span class="sample-mobile-list__copy"><strong>Safety checklist</strong><span>Completed yesterday</span></span>
+                  <span data-wf-icon="chevron-right"></span>
+                </button>
+              </div>
+
+              <div class="wf-alert wf-alert--muted">
+                <span data-wf-icon="info"></span>
+                <div><p class="wf-alert__title">Offline ready</p><p class="wf-alert__body">Recent projects are available without a connection.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wf-mobile-screen" data-wf-mobile-screen="activity" data-wf-mobile-state="inactive" aria-labelledby="mobile-activity-title" aria-hidden="true" inert>
+          <header class="wf-mobile-screen__bar">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mobile-drawer-open aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation"><span data-wf-icon="menu"></span></button>
+            <h1 class="wf-mobile-screen__title" id="mobile-activity-title" data-wf-mobile-focus tabindex="-1">Activity</h1>
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Filter activity"><span data-wf-icon="filter"></span></button>
+          </header>
+          <div class="wf-mobile-screen__content">
+            <div class="sample-mobile-stack">
+              <label class="wf-field">
+                <span class="wf-sr-only">Search activity</span>
+                <input class="wf-input" type="search" placeholder="Search activity">
+              </label>
+              <div class="sample-mobile-list">
+                <button class="sample-mobile-list__item" type="button" data-wf-mobile-go="activity-detail">
+                  <span class="sample-mobile-list__icon" data-wf-icon="edit"></span>
+                  <span class="sample-mobile-list__copy"><strong>North Site inspection</strong><span>Today, 9:42 AM</span></span>
+                  <span class="wf-badge">Draft</span>
+                </button>
+                <button class="sample-mobile-list__item" type="button" data-wf-mobile-go="activity-detail">
+                  <span class="sample-mobile-list__icon" data-wf-icon="check"></span>
+                  <span class="sample-mobile-list__copy"><strong>Warehouse checklist</strong><span>Yesterday, 4:10 PM</span></span>
+                  <span class="wf-badge wf-badge--outline">Done</span>
+                </button>
+                <button class="sample-mobile-list__item" type="button" data-wf-mobile-go="activity-detail">
+                  <span class="sample-mobile-list__icon" data-wf-icon="calendar"></span>
+                  <span class="sample-mobile-list__copy"><strong>South Yard follow-up</strong><span>Monday, 11:30 AM</span></span>
+                  <span data-wf-icon="chevron-right"></span>
+                </button>
+              </div>
+              <div class="wf-loader" role="status"><span class="wf-spinner" aria-hidden="true"></span><span>Checking for updates</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wf-mobile-screen" data-wf-mobile-screen="activity-detail" data-wf-mobile-state="inactive" aria-labelledby="mobile-detail-title" aria-hidden="true" inert>
+          <header class="wf-mobile-screen__bar">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mobile-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+            <h1 class="wf-mobile-screen__title" id="mobile-detail-title" data-wf-mobile-focus tabindex="-1">Inspection</h1>
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="More options"><span data-wf-icon="more"></span></button>
+          </header>
+          <div class="wf-mobile-screen__content">
+            <div class="sample-mobile-stack">
+              <section class="wf-card">
+                <div class="wf-card__header"><h2 class="wf-card__title">North Site inspection</h2><span class="wf-badge">Draft</span></div>
+                <div class="wf-card__body">Structural review of loading bay B and the adjacent storage area.</div>
+                <div class="wf-row wf-row-wrap"><span class="wf-badge wf-badge--outline">North Site</span><span class="wf-badge wf-badge--outline">Priority</span></div>
+              </section>
+
+              <section class="wf-accordion" data-wf-accordion data-wf-accordion-single>
+                <div class="wf-accordion__item">
+                  <button class="wf-accordion__trigger" type="button" aria-expanded="true" aria-controls="mobile-observations">Observations<span class="wf-accordion__icon" data-wf-icon="chevron-right"></span></button>
+                  <div class="wf-accordion__panel" id="mobile-observations">Guard rail fasteners require a second measurement before approval.</div>
+                </div>
+                <div class="wf-accordion__item">
+                  <button class="wf-accordion__trigger" type="button" aria-expanded="false" aria-controls="mobile-follow-up">Follow-up<span class="wf-accordion__icon" data-wf-icon="chevron-right"></span></button>
+                  <div class="wf-accordion__panel" id="mobile-follow-up" hidden>Schedule the facilities lead for the next site visit.</div>
+                </div>
+              </section>
+
+              <form class="wf-form">
+                <label class="wf-field"><span class="wf-label">Field note</span><textarea class="wf-textarea">Recheck bay B rail measurements before sign-off.</textarea></label>
+                <label class="wf-check"><input type="checkbox" checked> Mark for follow-up</label>
+                <button class="wf-button" type="button" data-wf-toast-trigger data-wf-toast-title="Note saved" data-wf-toast-body="The inspection draft was updated."><span data-wf-icon="check"></span>Save note</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <section class="wf-mobile-screen" data-wf-mobile-screen="profile" data-wf-mobile-state="inactive" aria-labelledby="mobile-profile-title" aria-hidden="true" inert>
+          <header class="wf-mobile-screen__bar">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mobile-drawer-open aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation"><span data-wf-icon="menu"></span></button>
+            <h1 class="wf-mobile-screen__title" id="mobile-profile-title" data-wf-mobile-focus tabindex="-1">Profile</h1>
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Profile settings"><span data-wf-icon="settings"></span></button>
+          </header>
+          <div class="wf-mobile-screen__content">
+            <div class="sample-mobile-stack">
+              <section class="wf-card">
+                <div class="wf-row"><span class="sample-mobile-list__icon" data-wf-icon="user"></span><div><h2 class="wf-card__title">Sam Rivera</h2><p class="wf-copy">Field coordinator</p></div></div>
+              </section>
+              <form class="wf-form">
+                <label class="wf-field"><span class="wf-label">Display name</span><input class="wf-input" value="Sam Rivera"></label>
+                <label class="wf-field"><span class="wf-label">Default project</span><select class="wf-select"><option>North Site</option><option>South Yard</option></select></label>
+                <label class="wf-check"><input type="checkbox" checked> Sync over cellular</label>
+                <label class="wf-check"><input type="checkbox"> Weekly summary</label>
+                <button class="wf-button" type="button" data-wf-toast-trigger data-wf-toast-title="Profile saved" data-wf-toast-body="Your mobile preferences were updated.">Save changes</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <nav class="wf-mobile-shell__tabs" aria-label="Primary navigation">
+        <button class="wf-mobile-shell__tab" type="button" data-wf-mobile-tab="home" aria-current="page"><span data-wf-icon="home"></span><span>Home</span></button>
+        <button class="wf-mobile-shell__tab" type="button" data-wf-mobile-tab="activity"><span data-wf-icon="list"></span><span>Activity</span></button>
+        <button class="wf-mobile-shell__tab" type="button" data-wf-mobile-tab="profile"><span data-wf-icon="user"></span><span>Profile</span></button>
+      </nav>
+
+      <button class="wf-mobile-shell__drawer-backdrop" type="button" data-wf-mobile-drawer-close aria-label="Close navigation" hidden></button>
+      <aside class="wf-mobile-shell__drawer" id="mobile-navigation" data-wf-mobile-drawer aria-hidden="true" inert>
+        <div class="wf-spread"><div><p class="wf-kicker">Field Notes</p><h2 class="wf-heading">Workspace</h2></div><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mobile-drawer-close aria-label="Close navigation"><span data-wf-icon="close"></span></button></div>
+        <nav class="sample-mobile-drawer-nav" aria-label="Workspace navigation">
+          <button class="wf-button wf-button--ghost" type="button" data-wf-mobile-tab="home"><span data-wf-icon="home"></span>Home</button>
+          <button class="wf-button wf-button--ghost" type="button" data-wf-mobile-tab="activity"><span data-wf-icon="list"></span>Activity</button>
+          <button class="wf-button wf-button--ghost" type="button" data-wf-mobile-tab="profile"><span data-wf-icon="user"></span>Profile</button>
+        </nav>
+        <hr class="wf-divider">
+        <p class="wf-copy">North Site workspace</p>
+      </aside>
+    </div>
+  </main>
+
+  <dialog class="wf-dialog wf-dialog--sheet wf-dialog--sheet-top" id="mobile-notifications" data-wf-dialog-backdrop-close>
+    <div class="wf-dialog__header"><h2 class="wf-subheading">Notifications</h2><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-dialog-close aria-label="Close notifications"><span data-wf-icon="close"></span></button></div>
+    <div class="wf-dialog__body">
+      <div class="sample-mobile-list">
+        <div class="sample-mobile-list__item"><span class="sample-mobile-list__icon" data-wf-icon="alert"></span><span class="sample-mobile-list__copy"><strong>Review due today</strong><span>North Site inspection</span></span><span class="wf-badge wf-badge--solid">New</span></div>
+        <div class="sample-mobile-list__item"><span class="sample-mobile-list__icon" data-wf-icon="check"></span><span class="sample-mobile-list__copy"><strong>Checklist approved</strong><span>Warehouse safety review</span></span></div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="wf-dialog wf-dialog--sheet wf-dialog--sheet-bottom" id="mobile-quick-action" data-wf-dialog-backdrop-close>
+    <div class="wf-dialog__header"><h2 class="wf-subheading">New entry</h2><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-dialog-close aria-label="Close quick actions"><span data-wf-icon="close"></span></button></div>
+    <div class="wf-dialog__body">
+      <div class="sample-mobile-sheet-actions">
+        <button class="wf-button wf-button--secondary sample-mobile-sheet-action" type="button" data-wf-dialog-close><span data-wf-icon="edit"></span><span>Field note</span></button>
+        <button class="wf-button wf-button--secondary sample-mobile-sheet-action" type="button" data-wf-dialog-close><span data-wf-icon="check"></span><span>Checklist</span></button>
+        <button class="wf-button wf-button--secondary sample-mobile-sheet-action" type="button" data-wf-dialog-close><span data-wf-icon="calendar"></span><span>Site visit</span></button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="wf-notifier" data-wf-notifier aria-live="polite"></div>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../components/accordion.js"></script>
+  <script src="../../components/dialog.js"></script>
+  <script src="../../components/notifier.js"></script>
+  <script src="../../layouts/mobile-shell.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

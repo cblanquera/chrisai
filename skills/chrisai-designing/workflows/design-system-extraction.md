@@ -35,7 +35,7 @@ This workflow does not own:
 Use [creative-direction](creative-direction.md) when the task needs
 coordinated creative direction or a final visual-system handoff.
 
-Use [wireframes](wireframes.md) when the next step is grayscale layout
+Use [wireframe-drafts](wireframe-drafts.md) when the next step is grayscale layout
 exploration.
 
 Use [design-drafts](design-drafts.md) when the next step is a static

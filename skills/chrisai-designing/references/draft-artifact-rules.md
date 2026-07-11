@@ -7,6 +7,24 @@ Do not use markdown-only wireframes, markdown mockups, ASCII layouts, or
 prose-only drafts unless the user explicitly asks for text-only planning
 instead of generated files.
 
+Wireframes use the project-root `wireframes/rNNN-meta-title/` model defined in
+[Wireframe Revision Workflow](wireframe-revision-workflow.md). The storage and
+revision-folder guidance below applies to creative design drafts and other
+non-wireframe design-review artifacts. Shared rendering, notes, browser, and
+review rules still apply to both.
+
+## Contents
+
+- [Revision Folders](#revision-folders)
+- [File Rules](#file-rules)
+- [Relative Link Rules](#relative-link-rules)
+- [Per-Update Notes](#per-update-notes)
+- [Browser Preview Rules](#browser-preview-rules)
+- [QA Artifact Rules](#qa-artifact-rules)
+- [Interaction Rules](#interaction-rules)
+- [Visual Rules](#visual-rules)
+- [Review Label](#review-label)
+
 ## Revision Folders
 
 Review rounds and revisions are different.
@@ -15,8 +33,8 @@ Review rounds and revisions are different.
 - A revision is a folder-level artifact version created for a major change.
 
 Each major revision must live in one self-contained folder. Minor changes may
-update the current revision folder. For example, a wireframe phase can go
-through 10 review rounds and 3 major revision folders.
+update the current revision folder. Use exactly three revision digits:
+`r001`, `r002`, `r003`, and so on.
 
 Ask where to save drafts before writing files. If the user wants project-visible
 review artifacts and has no preference, recommend `design-drafts/`. If the user
@@ -27,13 +45,15 @@ Do not place drafts inside production source folders such as `src/`, `app/`,
 `pages/`, `components/`, or `public/` unless the user explicitly asks.
 
 Create one folder per major revision. Prefer names that include the revision
-number and draft stage, such as `r01-wireframe-homepage`,
-`r02-clickable-wireframe-onboarding`, `r03-creative-dashboard`, or
-`r04-functional-creative-checkout`.
+number and draft stage, such as `r001-creative-homepage`,
+`r002-clickable-creative-dashboard`, or
+`r003-functional-creative-checkout`.
 
 Keep all draft-related files inside that folder, including:
 
 - static HTML/CSS/JS files
+- `specs.md` for document-driven wireframe drafts when required by the
+  wireframe-drafts workflow
 - draft-only assets
 - generated graphics
 - `notes.md` for per-update review-round notes
@@ -54,7 +74,8 @@ Example:
 
 ```text
 design-drafts/
-  r01-clickable-wireframe-checkout/
+  r001-clickable-creative-checkout/
+    specs.md
     index.html
     cart.html
     shipping.html
@@ -69,7 +90,8 @@ design-drafts/
       mobile.png
       notes.md
     README.md
-  r02-clickable-wireframe-checkout-navigation-rework/
+  r002-clickable-creative-checkout-navigation-rework/
+    specs.md
     index.html
     cart.html
     shipping.html
@@ -97,6 +119,7 @@ For plain static drafts, a small folder can include:
 - `assets/` when draft-only images or icons are needed
 - `qa/` when screenshots, recordings, or QA notes are produced
 - `README.md` for review context
+- `specs.md` for the required pre-build wireframe or creative draft contract
 - `notes.md` for the required per-update review log
 
 Do not put a multi-page or multi-state draft into one monolithic HTML file.
@@ -138,6 +161,11 @@ When linking between pages in the same revision folder, include the leading
 
 `README.md` is only review context. It must not replace the HTML/CSS/JS draft
 files.
+
+For wireframe and creative drafts, `specs.md` is the source contract for the
+rendered draft. It must not replace HTML/CSS/JS files, and it must be updated
+before rendered files change when feedback alters structural or creative
+intent.
 
 Do not add build tooling unless the user requests it or the project already
 requires it.

@@ -1,0 +1,21 @@
+.wf-date-time-field {
+  position: relative;
+}
+
+.wf-date-time-field .wf-input {
+  padding-right: 48px;
+}
+
+.wf-date-time-field .wf-icon-button {
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  transform: translateY(-50%);
+}
+
+.wf-date-time-field input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}

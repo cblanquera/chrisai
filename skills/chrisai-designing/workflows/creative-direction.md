@@ -31,7 +31,7 @@ and one deliberate differentiation choice.
 - [Step 9: Define The Visual Direction Or Wireframe System](#step-9-define-the-visual-direction-or-wireframe-system)
 - [Step 10: Produce The Handoff Or Draft Artifact Plan](#step-10-produce-the-handoff-or-draft-artifact-plan)
 - [Step 11: Run A Visual Review Gate](#step-11-run-a-visual-review-gate)
-- [Future Wireframes](#future-wireframes)
+- [Wireframe Routing](#wireframe-routing)
 
 ## Ownership
 
@@ -66,9 +66,9 @@ mainly about inspecting an existing app, site, design system, Figma file,
 screenshot set, exported design file, or local component source to extract
 design rules.
 
-Use [wireframes](wireframes.md) when the work is mainly about grayscale
-wireframes or clickable grayscale wireframes. Generated wireframes must be
-HTML/CSS/JS review artifacts, not markdown-only drafts.
+Use [wireframe-drafts](wireframe-drafts.md) when the work is mainly about
+grayscale wireframes or clickable grayscale wireframes. Generated wireframes
+must be HTML/CSS/JS review artifacts, not markdown-only drafts.
 
 Use [design-drafts](design-drafts.md) when the work is mainly about static
 HTML/CSS/JS design-review artifacts or clickable creative design drafts.
@@ -149,8 +149,8 @@ Supported modes:
 
 - greenfield design direction
 - existing design extension: use `workflows/design-system-extraction.md`
-- grayscale wireframe draft: use `workflows/wireframes.md`
-- clickable grayscale wireframe draft: use `workflows/wireframes.md`
+- grayscale wireframe draft: use `workflows/wireframe-drafts.md`
+- clickable grayscale wireframe draft: use `workflows/wireframe-drafts.md`
 - creative design draft from an approved wireframe: hand off to
   `workflows/design-drafts.md`
 - clickable creative design draft: use `workflows/design-drafts.md`
@@ -346,7 +346,7 @@ information hierarchy, user flow, density, and interaction targets.
 Generated wireframes must be static HTML/CSS/JS review artifacts unless the
 user explicitly asks for text-only planning.
 
-Detailed wireframe drafting belongs to [wireframes](wireframes.md).
+Detailed wireframe drafting belongs to [wireframe-drafts](wireframe-drafts.md).
 
 For creative design modes, apply the approved wireframe and the approved
 visual direction. Do not redesign the layout after wireframe approval unless
@@ -414,6 +414,7 @@ best-effort static guidance or placeholders and state the limitation.
 When handing off generated wireframes, creative drafts, clickable drafts, or
 functional creatives to creative design or frontend implementation, use
 [design-handoff-package](design-handoff-package.md). That workflow must read
+each revision-local `specs.md` build contract and
 every revision-local `notes.md` update record, synthesize review decisions,
 identify superseded or deferred directions, and produce a standalone handoff
 that another agent can use without reopening the rendered HTML.
@@ -443,8 +444,10 @@ Handoff Package when generated artifact revisions exist.
 For static HTML/CSS/JS draft artifacts, state clearly that the artifact is a
 draft for design review, not production implementation. Before writing files,
 confirm whether the user wants the draft saved in the project and where it
-should be saved, then use `workflows/design-drafts.md`. Folder, `notes.md`,
-rendered-UI truth, and QA artifact rules live in that workflow.
+should be saved, then use `workflows/design-drafts.md`. Folder, `specs.md`,
+`notes.md`, rendered-UI truth, and QA artifact rules live in that workflow.
+Create or update revision-local `specs.md` before rendering or changing
+creative intent.
 
 Draft stages should normally proceed in this order:
 
@@ -461,8 +464,8 @@ Before considering the direction stable, run the checks in
 If the direction passes only on the homepage but breaks down on reading
 surfaces or code-heavy pages, it is not stable yet.
 
-## Future Wireframes
+## Wireframe Routing
 
-Use [future-wireframes](../references/future-wireframes.md) only as a routing
+Use [wireframe-routing](../references/wireframe-routing.md) only as a routing
 bridge when a request starts in creative direction but moves into low-fidelity
 structure.

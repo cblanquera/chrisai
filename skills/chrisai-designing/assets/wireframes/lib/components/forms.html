@@ -1,0 +1,28 @@
+<form class="wf-form">
+  <div class="wf-field">
+    <label class="wf-label" for="workspace-name">Workspace name</label>
+    <input class="wf-input" id="workspace-name" name="workspace-name" value="Northwind Portal">
+    <p class="wf-help">Use the name members will recognize.</p>
+  </div>
+  <div class="wf-field">
+    <label class="wf-label" for="workspace-slug">Workspace slug</label>
+    <input class="wf-input" id="workspace-slug" name="workspace-slug" value="northwind portal" aria-describedby="workspace-slug-error" aria-invalid="true">
+    <p class="wf-error" id="workspace-slug-error">Use lowercase letters, numbers, and hyphens only.</p>
+  </div>
+  <div class="wf-field">
+    <label class="wf-label" for="workspace-type">Workspace type</label>
+    <select class="wf-select" id="workspace-type" name="workspace-type">
+      <option>Client portal</option>
+      <option>Internal dashboard</option>
+    </select>
+  </div>
+  <div class="wf-field">
+    <label class="wf-label" for="workspace-notes">Notes</label>
+    <textarea class="wf-textarea" id="workspace-notes" name="workspace-notes">Initial workspace setup.</textarea>
+  </div>
+  <label class="wf-check">
+    <input type="checkbox" checked>
+    Send setup notification
+  </label>
+  <button class="wf-button" type="submit">Save settings</button>
+</form>

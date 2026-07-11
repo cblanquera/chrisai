@@ -1,0 +1,22 @@
+<div class="wf-dropdown">
+  <button class="wf-button wf-dropdown__trigger" type="button" aria-expanded="false" aria-controls="record-actions">
+    Actions
+    <span data-wf-icon="chevron-down"></span>
+  </button>
+  <div class="wf-dropdown__panel" id="record-actions" hidden>
+    <button class="wf-dropdown__item" type="button">Edit record</button>
+    <button class="wf-dropdown__item" type="button">Duplicate</button>
+    <button class="wf-dropdown__item" type="button">Archive</button>
+  </div>
+</div>
+
+<div class="wf-dropdown">
+  <button class="wf-button wf-button--secondary wf-dropdown__trigger" type="button" aria-expanded="false" aria-controls="record-popover">
+    View details
+    <span data-wf-icon="chevron-down"></span>
+  </button>
+  <section class="wf-dropdown__panel wf-popover" id="record-popover" hidden>
+    <h2 class="wf-subheading">Record details</h2>
+    <p class="wf-copy">Owner, status, and recent activity for this record.</p>
+  </section>
+</div>

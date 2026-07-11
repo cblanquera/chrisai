@@ -1,5 +1,17 @@
 # Design Modes
 
+## Contents
+
+- [Review Rounds](#review-rounds)
+- [Greenfield Design Direction](#greenfield-design-direction)
+- [Existing Design Extension](#existing-design-extension)
+- [Grayscale Wireframe Draft](#grayscale-wireframe-draft)
+- [Clickable Grayscale Wireframe Draft](#clickable-grayscale-wireframe-draft)
+- [Creative Design Draft](#creative-design-draft)
+- [Clickable Creative Design Draft](#clickable-creative-design-draft)
+- [Functional Creative Draft](#functional-creative-draft)
+- [Draft Artifact Storage](#draft-artifact-storage)
+
 Use this reference to choose the right workflow before collecting inputs or
 creating drafts.
 
@@ -70,7 +82,7 @@ Do not introduce a new style unless the user explicitly asks for a redesign.
 
 Use when the structure is not approved yet.
 
-Owner: `workflows/wireframes.md`.
+Owner: `workflows/wireframe-drafts.md`.
 
 Rules:
 
@@ -82,6 +94,13 @@ Rules:
 - generated wireframes must be static HTML/CSS/JS review artifacts
 - do not output markdown-only wireframes unless the user explicitly requests
   text-only planning
+- create or update revision-local `specs.md` before generating or revising the
+  rendered draft
+- `specs.md` must capture layouts, reusable components, interactions, states,
+  routes, workflow starting points, and draft-local library plans
+- `specs.md` must use headings and bullets, not markdown tables
+- when `specs.md` calls for icons, render inline or local grayscale SVG icons
+  based on Lucide icons
 - rendered HTML must not include annotations, TODOs, review notes, placeholder
   labels, or implementation commentary unless the text is intended product copy
 - each artifact update must append or update revision-local `notes.md`
@@ -89,6 +108,7 @@ Rules:
 
 Output:
 
+- revision-local `specs.md`
 - static HTML/CSS/JS low-fidelity draft
 - revision-local `notes.md` update when files are created or changed
 - open questions about layout and flow
@@ -96,15 +116,16 @@ Output:
 
 ## Clickable Grayscale Wireframe Draft
 
-Use after the grayscale wireframe direction is accepted and navigation or flow
-needs to be tested.
+Use when navigation or flow needs to be tested. This may happen in the first
+wireframe draft when interaction affects understanding.
 
-Owner: `workflows/wireframes.md`.
+Owner: `workflows/wireframe-drafts.md`.
 
 Rules:
 
 - generated clickable wireframes must be static HTML/CSS/JS review artifacts
 - generated clickable wireframes must use HTML/CSS/JS files, not markdown
+- generated clickable wireframes must follow revision-local `specs.md`
 - product-like clickable behavior is the default for app screens,
   multi-screen flows, forms, menus, tabs, modals, drawers, and stateful
   surfaces when interaction affects understanding
@@ -117,77 +138,42 @@ Rules:
 
 ## Creative Design Draft
 
-Use after the wireframe is approved.
+Use after structure and visual direction are approved. Use
+`workflows/design-drafts.md` for a rendered artifact and
+`workflows/creative-direction.md` for direction-only handoff.
 
-Owner: `workflows/design-drafts.md` when creating a static review artifact.
-Owner: `workflows/creative-direction.md` when only a design-direction handoff
-is needed.
-
-Rules:
-
-- apply the approved visual direction to the approved wireframe
-- generated creative drafts must be static HTML/CSS/JS review artifacts
-- preserve the approved layout unless the user asks to revisit it
-- add color, typography, imagery, icons, and surface treatment
-- keep usability constraints visible
-- rendered HTML must not include agent annotations, review notes, or
-  implementation commentary unless the text is intended product copy
-- each artifact update must append or update revision-local `notes.md`
-- each review round must state what visual decisions changed and what the user should
-  review before approval
+Apply the visual system to the approved structure. Record visual tokens,
+components, states, assets, responsive behavior, and review criteria in
+revision-local `specs.md` before rendering.
 
 ## Clickable Creative Design Draft
 
-Use after the creative design direction is accepted and the user needs a
-reviewable interaction draft.
-
-Owner: `workflows/design-drafts.md`.
-
-Rules:
-
-- generated clickable creative drafts must be static HTML/CSS/JS review
-  artifacts
-- generated clickable creative drafts must use HTML/CSS/JS files, not markdown
-- interactions should demonstrate intent, not production behavior
-- generated assets should use an available image, logo, asset, or graphics
-  capability when asset format, transparency, or favicon quality matters; if no
-  capability is available, use best-effort placeholders or static guidance
-- rendered HTML must not include agent annotations, review notes, or
-  implementation commentary unless the text is intended product copy
-- each artifact update must append or update revision-local `notes.md`
-- each review round must state what is clickable, what is simulated, what changed,
-  and what the user should test before approval
+Use when an approved creative direction needs reviewable interaction. Route to
+`workflows/design-drafts.md`; record interaction intent and simulated behavior
+in `specs.md` before rendering.
 
 ## Functional Creative Draft
 
-Use when the user needs to review a creative design with enough interaction to
-evaluate flows, states, menus, forms, modals, drawers, validation messaging, or
-state transitions.
-
-Owner: `workflows/design-drafts.md`.
-
-Rules:
-
-- functional creatives are still design-review artifacts
-- functional creatives must use static HTML/CSS/JS for simulated behavior
-- simulated behavior must be identified in `notes.md`, `README.md`, the review
-  response, or handoff unless the label is intended product UI
-- do not add real persistence, authentication, billing, backend calls, or
-  production analytics
-- rendered HTML must not include agent annotations, review notes, or
-  implementation commentary unless the text is intended product copy
-- each reviewable update must go through `workflows/feedback-loop.md` until the
-  phase is approved
+Use when interaction depth is needed to review flows, forms, menus, modals,
+validation, or state transitions. Route to `workflows/design-drafts.md` and
+keep behavior simulated unless production implementation is requested through
+another workflow.
 
 ## Draft Artifact Storage
 
-Before writing static draft files, ask whether the user wants drafts saved in
-the project.
+Wireframes always follow
+[Wireframe Revision Workflow](wireframe-revision-workflow.md), including its
+project-root `wireframes/rNNN-meta-title/` location. Do not route wireframes
+through the generic creative-draft storage rules below.
+
+Before writing creative design draft files, ask whether the user wants drafts
+saved in the project.
 
 If yes:
 
 - ask where to save them
-- create one new revision folder for major changes
+- create one new three-digit revision folder such as `r001` or `r002` for
+  major changes
 - keep minor changes in the current revision folder when appropriate
 - name folders clearly by revision and draft stage when possible
 - append or update `notes.md` for every generated-artifact update

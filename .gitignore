@@ -12,6 +12,8 @@ downloads/
 eggs/
 .eggs/
 lib/
+!skills/chrisai-designing/assets/wireframes/lib/
+!skills/chrisai-designing/assets/wireframes/lib/**
 lib64/
 parts/
 sdist/

@@ -1,0 +1,75 @@
+:root {
+  --wf-white: #fff;
+  --wf-gray-25: #fafafa;
+  --wf-gray-50: #f6f6f6;
+  --wf-gray-100: #ececec;
+  --wf-gray-200: #dcdcdc;
+  --wf-gray-300: #c7c7c7;
+  --wf-gray-400: #a6a6a6;
+  --wf-gray-500: #7d7d7d;
+  --wf-gray-600: #5f5f5f;
+  --wf-gray-700: #424242;
+  --wf-gray-800: #2b2b2b;
+
+  --wf-surface: var(--wf-white);
+  --wf-surface-muted: var(--wf-gray-50);
+  --wf-surface-raised: var(--wf-white);
+  --wf-border: var(--wf-gray-200);
+  --wf-border-strong: var(--wf-gray-300);
+  --wf-text: var(--wf-gray-700);
+  --wf-text-muted: var(--wf-gray-600);
+  --wf-text-subtle: var(--wf-gray-500);
+  --wf-focus: var(--wf-gray-700);
+  --wf-emphasis: var(--wf-gray-600);
+  --wf-emphasis-hover: var(--wf-gray-700);
+  --wf-on-emphasis: var(--wf-white);
+
+  --wf-space-1: 4px;
+  --wf-space-2: 8px;
+  --wf-space-3: 12px;
+  --wf-space-4: 16px;
+  --wf-space-5: 20px;
+  --wf-space-6: 24px;
+  --wf-space-8: 32px;
+  --wf-space-10: 40px;
+  --wf-space-12: 48px;
+  --wf-space-16: 64px;
+
+  --wf-radius-1: 2px;
+  --wf-radius-2: 4px;
+  --wf-radius-3: 6px;
+  --wf-radius-4: 8px;
+
+  --wf-shadow-1: 0 1px 2px rgb(66 66 66 / 10%);
+  --wf-shadow-2: 0 8px 24px rgb(66 66 66 / 16%);
+
+  --wf-font-sans: Arial, Helvetica, sans-serif;
+  --wf-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --wf-text-xs: 12px;
+  --wf-text-sm: 14px;
+  --wf-text-md: 16px;
+  --wf-text-lg: 20px;
+  --wf-text-xl: 24px;
+  --wf-text-2xl: 32px;
+  --wf-line-tight: 1.2;
+  --wf-line: 1.5;
+
+  --wf-page-max: 1180px;
+  --wf-left-panel-width: 260px;
+  --wf-right-panel-width: 320px;
+  --wf-header-height: 64px;
+  --wf-panel-min-width: 220px;
+  --wf-panel-max-width: 480px;
+  --wf-mobile-app-bar-height: 56px;
+  --wf-mobile-bottom-nav-height: 64px;
+  --wf-mobile-content-gutter: 16px;
+  --wf-mobile-drawer-width: 304px;
+  --wf-mobile-safe-top: env(safe-area-inset-top, 0px);
+  --wf-mobile-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --wf-detail-header-height: 56px;
+  --wf-motion-fast: 160ms;
+  --wf-motion-medium: 240ms;
+  --wf-motion-ease: cubic-bezier(0.2, 0, 0, 1);
+  --wf-sidebar: var(--wf-left-panel-width);
+  --wf-header: var(--wf-header-height);
+}

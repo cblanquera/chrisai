@@ -1,0 +1,68 @@
+.wf-button {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--wf-space-2);
+  padding: 0 var(--wf-space-4);
+  border: 1px solid var(--wf-emphasis);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-emphasis);
+  color: var(--wf-on-emphasis);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.wf-button:hover {
+  background: var(--wf-emphasis-hover);
+}
+
+.wf-button--secondary {
+  border-color: var(--wf-gray-400);
+  background: var(--wf-white);
+  color: var(--wf-gray-700);
+}
+
+.wf-button--secondary:hover {
+  background: var(--wf-gray-100);
+}
+
+.wf-button--ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--wf-gray-700);
+}
+
+.wf-button--ghost:hover {
+  background: var(--wf-gray-100);
+}
+
+.wf-button:disabled,
+.wf-button:disabled:hover,
+.wf-button[aria-disabled="true"],
+.wf-button[aria-disabled="true"]:hover {
+  border-color: var(--wf-gray-300);
+  background: var(--wf-gray-100);
+  color: var(--wf-gray-500);
+}
+
+.wf-button-group {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+.wf-button-group .wf-button {
+  border-radius: 0;
+}
+
+.wf-button-group .wf-button:first-child {
+  border-radius: var(--wf-radius-2) 0 0 var(--wf-radius-2);
+}
+
+.wf-button-group .wf-button:last-child {
+  border-radius: 0 var(--wf-radius-2) var(--wf-radius-2) 0;
+}
+
+.wf-button-group .wf-button + .wf-button {
+  margin-left: -1px;
+}

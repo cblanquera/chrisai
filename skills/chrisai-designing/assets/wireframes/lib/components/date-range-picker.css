@@ -1,0 +1,86 @@
+[data-wf-date-range] {
+  position: relative;
+}
+
+.wf-date-range__trigger {
+  width: 100%;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-2) var(--wf-space-3);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-white);
+  color: var(--wf-text);
+  text-align: left;
+}
+
+.wf-date-range__popover {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + var(--wf-space-2));
+  left: 0;
+  width: min(100%, 340px);
+  padding: var(--wf-space-4);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-white);
+  box-shadow: var(--wf-shadow-2);
+}
+
+.wf-date-range__header,
+.wf-date-range__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+}
+
+.wf-date-range__weekdays,
+.wf-date-range__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-top: var(--wf-space-3);
+}
+
+.wf-date-range__weekdays span {
+  padding-block: var(--wf-space-1);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-xs);
+  text-align: center;
+}
+
+.wf-date-range__days button {
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--wf-radius-2);
+  background: transparent;
+  color: var(--wf-text);
+}
+
+.wf-date-range__days button:hover {
+  background: var(--wf-gray-100);
+}
+
+.wf-date-range__days button[data-wf-date-in-range] {
+  background: var(--wf-gray-100);
+  border-radius: 0;
+}
+
+.wf-date-range__days button[data-wf-date-edge] {
+  background: var(--wf-gray-600);
+  color: var(--wf-white);
+}
+
+.wf-date-range__footer {
+  margin-top: var(--wf-space-3);
+  padding-top: var(--wf-space-3);
+  border-top: 1px solid var(--wf-border);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}

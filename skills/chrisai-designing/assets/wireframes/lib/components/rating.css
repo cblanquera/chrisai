@@ -1,0 +1,36 @@
+.wf-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--wf-space-1);
+}
+
+.wf-rating button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: var(--wf-radius-2);
+  background: transparent;
+  color: var(--wf-gray-400);
+}
+
+.wf-rating button:hover,
+.wf-rating button:focus-visible {
+  background: var(--wf-gray-100);
+}
+
+.wf-rating button[data-wf-rating-filled] {
+  color: var(--wf-gray-700);
+}
+
+.wf-rating button[data-wf-rating-filled] svg {
+  fill: currentColor;
+}
+
+.wf-rating output {
+  margin-left: var(--wf-space-2);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}

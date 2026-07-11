@@ -1,5 +1,14 @@
 # Existing Design Sources
 
+## Contents
+
+- [Term](#term)
+- [Priority Order](#priority-order)
+- [Source Intake](#source-intake)
+- [Extraction Targets](#extraction-targets)
+- [Format Guidance](#format-guidance)
+- [Extension Rule](#extension-rule)
+
 Use this reference when the user asks to add or revise a page, screen, or flow
 for a product that already has a design.
 

@@ -1,5 +1,15 @@
 # Brand-Led Discovery
 
+## Contents
+
+- [Brand Inputs](#brand-inputs)
+- [Logo Analysis](#logo-analysis)
+- [Brand Guide Analysis](#brand-guide-analysis)
+- [Reference Analysis](#reference-analysis)
+- [Commonalities](#commonalities)
+- [Differences](#differences)
+- [Differentiation](#differentiation)
+
 Use this reference when the skill needs to turn logos, style guides,
 reference sites, and product assets into a concrete creative direction.
 

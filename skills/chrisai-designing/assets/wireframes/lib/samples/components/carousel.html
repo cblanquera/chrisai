@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carousel Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/carousel.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Carousel</h1>
+      <section class="wf-carousel" data-wf-carousel>
+        <div class="wf-carousel__track">
+          <article class="wf-carousel__slide"><h2 class="wf-heading">Step one</h2><p class="wf-copy">Introduce the first major state.</p></article>
+          <article class="wf-carousel__slide"><h2 class="wf-heading">Step two</h2><p class="wf-copy">Show the next decision or object.</p></article>
+          <article class="wf-carousel__slide"><h2 class="wf-heading">Step three</h2><p class="wf-copy">Close the flow with a final state.</p></article>
+        </div>
+        <div class="wf-carousel__controls">
+          <button class="wf-button wf-button--secondary" type="button" data-wf-carousel-action="prev"><span data-wf-icon="arrow-left"></span> Previous</button>
+          <div class="wf-carousel__dots">
+            <button class="wf-carousel__dot" type="button" data-wf-carousel-dot="0" aria-label="Slide 1"></button>
+            <button class="wf-carousel__dot" type="button" data-wf-carousel-dot="1" aria-label="Slide 2"></button>
+            <button class="wf-carousel__dot" type="button" data-wf-carousel-dot="2" aria-label="Slide 3"></button>
+          </div>
+          <button class="wf-button" type="button" data-wf-carousel-action="next">Next <span data-wf-icon="arrow-right"></span></button>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../components/carousel.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

@@ -3,6 +3,15 @@
 Use this reference when a task shows a draft, prototype, rendered page, local
 app, screenshot, recording, or other reviewable artifact in the in-app browser.
 
+## Contents
+
+- [Terminology](#terminology)
+- [Required Round Response](#required-round-response)
+- [Review Questions](#review-questions)
+- [Artifact Rules](#artifact-rules)
+- [Browser Safety](#browser-safety)
+- [Phase Safety](#phase-safety)
+
 ## Terminology
 
 A review round is one feedback cycle inside a phase:
@@ -131,8 +140,8 @@ copy labels, small spacing adjustments, color token tweaks, local section
 changes, and small state clarifications.
 
 Name revision folders clearly enough to make the phase history readable, such
-as `r01-wireframe-dashboard`, `r02-wireframe-navigation-rework`, or
-`r03-creative-functional-flow`. Review-round metadata may live inside the
+as `r001-wireframe-dashboard`, `r002-wireframe-navigation-rework`, or
+`r003-creative-functional-flow`. Review-round metadata may live inside the
 current revision folder.
 
 Every generated-artifact update must append or update `notes.md` in the

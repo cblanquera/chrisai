@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wireframing Library Samples</title>
+  <link rel="stylesheet" href="../base/tokens.css">
+  <link rel="stylesheet" href="../base/reset.css">
+  <link rel="stylesheet" href="../base/base.css">
+  <link rel="stylesheet" href="../components/badge.css">
+  <link rel="stylesheet" href="../components/cards.css">
+  <link rel="stylesheet" href="../icons/icons.css">
+  <link rel="stylesheet" href="./sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <header class="wf-stack">
+        <p class="wf-kicker">Wireframing library</p>
+        <h1 class="wf-title">Review samples</h1>
+        <p class="wf-copy">Sample pages are for reviewing the reusable grayscale HTML/CSS/JS library. Copy source library files into revisions only when `specs.md` requires them.</p>
+      </header>
+
+      <section class="wf-card">
+        <div class="wf-card__header">
+          <h2 class="wf-card__title">Layouts</h2>
+          <span class="wf-badge">5 samples</span>
+        </div>
+        <nav class="sample-nav" aria-label="Layout samples">
+          <a class="sample-link" href="./layouts/blank-page.html">Blank page</a>
+          <a class="sample-link" href="./layouts/panel-layout.html">Panel layout</a>
+          <a class="sample-link" href="./layouts/panel-detail-stack.html">Panel detail stack</a>
+          <a class="sample-link" href="./layouts/grid-system.html">Grid system</a>
+          <a class="sample-link" href="./layouts/mobile-shell.html">Mobile shell</a>
+        </nav>
+      </section>
+
+      <section class="wf-card">
+        <div class="wf-card__header">
+          <h2 class="wf-card__title">Components</h2>
+          <span class="wf-badge">28 samples</span>
+        </div>
+        <nav class="sample-nav" aria-label="Component samples">
+          <a class="sample-link" href="./components/accordion.html">Accordion</a>
+          <a class="sample-link" href="./components/alert.html">Alert</a>
+          <a class="sample-link" href="./components/badge.html">Badge</a>
+          <a class="sample-link" href="./components/breadcrumbs.html">Breadcrumbs</a>
+          <a class="sample-link" href="./components/buttons.html">Buttons</a>
+          <a class="sample-link" href="./components/cards.html">Cards</a>
+          <a class="sample-link" href="./components/carousel.html">Carousel</a>
+          <a class="sample-link" href="./components/dialog.html">Dialog</a>
+          <a class="sample-link" href="./components/dropdown-popover.html">Dropdown/popover</a>
+          <a class="sample-link" href="./components/forms.html">Forms</a>
+          <a class="sample-link" href="./components/switch.html">Switch</a>
+          <a class="sample-link" href="./components/phone-field.html">Phone field</a>
+          <a class="sample-link" href="./components/country-select.html">Country dropdown</a>
+          <a class="sample-link" href="./components/password-field.html">Password field</a>
+          <a class="sample-link" href="./components/rating.html">Five star rating</a>
+          <a class="sample-link" href="./components/range-slider.html">Range slider</a>
+          <a class="sample-link" href="./components/tags-input.html">Tags input</a>
+          <a class="sample-link" href="./components/date-time-field.html">Date and time</a>
+          <a class="sample-link" href="./components/date-range-picker.html">Date range picker</a>
+          <a class="sample-link" href="./components/wysiwyg.html">WYSIWYG</a>
+          <a class="sample-link" href="./components/hero.html">Hero</a>
+          <a class="sample-link" href="./components/loader.html">Loader</a>
+          <a class="sample-link" href="./components/notifier.html">Notifier</a>
+          <a class="sample-link" href="./components/pagination.html">Pagination</a>
+          <a class="sample-link" href="./components/table.html">Table</a>
+          <a class="sample-link" href="./components/tabs.html">Tabs</a>
+          <a class="sample-link" href="./components/tree.html">Tree</a>
+          <a class="sample-link" href="./components/tooltip.html">Tooltip</a>
+        </nav>
+      </section>
+
+      <section class="wf-card">
+        <div class="wf-card__header">
+          <h2 class="wf-card__title">Lucide icons</h2>
+          <span class="wf-badge">36 names</span>
+        </div>
+        <div class="sample-grid" id="icon-grid"></div>
+      </section>
+    </div>
+  </main>
+  <script src="../icons/icons.js"></script>
+  <script>
+    var grid = document.getElementById('icon-grid');
+    window.WireframeIcons.names.forEach(function (name) {
+      var item = document.createElement('div');
+      item.className = 'sample-box wf-row';
+      item.innerHTML = window.WireframeIcons.svg(name) + '<span>' + name + '</span>';
+      grid.appendChild(item);
+    });
+  </script>
+</body>
+</html>

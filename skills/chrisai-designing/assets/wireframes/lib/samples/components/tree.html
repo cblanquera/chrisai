@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tree Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/tree.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Tree</h1>
+      <ul class="wf-tree sample-frame" data-wf-tree>
+        <li class="wf-tree__item">
+          <button class="wf-tree__toggle" type="button" aria-expanded="true" aria-controls="tree-product"><span class="wf-tree__chevron" data-wf-icon="chevron-right"></span> Product</button>
+          <ul id="tree-product">
+            <li><a class="wf-tree__link" href="#">Roadmap</a></li>
+            <li><a class="wf-tree__link" href="#">Research</a></li>
+          </ul>
+        </li>
+        <li class="wf-tree__item">
+          <button class="wf-tree__toggle" type="button" aria-expanded="false" aria-controls="tree-ops"><span class="wf-tree__chevron" data-wf-icon="chevron-right"></span> Operations</button>
+          <ul id="tree-ops" hidden>
+            <li><a class="wf-tree__link" href="#">Billing</a></li>
+            <li><a class="wf-tree__link" href="#">Support</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../utilities/state.js"></script>
+  <script src="../../components/tree.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

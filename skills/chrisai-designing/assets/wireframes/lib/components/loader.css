@@ -1,0 +1,32 @@
+.wf-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wf-space-2);
+  color: var(--wf-text-muted);
+}
+
+.wf-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--wf-gray-300);
+  border-top-color: var(--wf-emphasis);
+  border-radius: 999px;
+  animation: wf-spin .8s linear infinite;
+}
+
+.wf-skeleton {
+  display: block;
+  min-height: 16px;
+  border-radius: var(--wf-radius-2);
+  background: linear-gradient(90deg, var(--wf-gray-100), var(--wf-gray-200), var(--wf-gray-100));
+  background-size: 200% 100%;
+  animation: wf-skeleton 1.2s ease-in-out infinite;
+}
+
+@keyframes wf-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wf-skeleton {
+  to { background-position: -200% 0; }
+}

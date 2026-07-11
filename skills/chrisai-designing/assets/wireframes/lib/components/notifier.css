@@ -1,0 +1,32 @@
+.wf-notifier {
+  position: fixed;
+  right: var(--wf-space-4);
+  bottom: var(--wf-space-4);
+  z-index: 30;
+  display: grid;
+  gap: var(--wf-space-3);
+  width: min(360px, calc(100vw - 32px));
+}
+
+.wf-toast {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-4);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-surface);
+  box-shadow: var(--wf-shadow-2);
+}
+
+.wf-toast__title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.wf-toast__body {
+  margin: var(--wf-space-1) 0 0;
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phone Field Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../../components/phone-field.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page"><div class="sample-shell wf-stack">
+    <a class="sample-link" href="../index.html">Back to samples</a>
+    <h1 class="wf-title">Phone number field</h1>
+    <section class="sample-frame">
+      <div class="wf-field">
+        <label class="wf-label" for="sample-phone">Phone number</label>
+        <div class="wf-phone-field">
+          <label class="wf-sr-only" for="sample-phone-code">Country calling code</label>
+          <select class="wf-phone-field__code" id="sample-phone-code"><option>🇺🇸 +1</option><option>🇨🇦 +1</option><option>🇬🇧 +44</option><option>🇦🇺 +61</option><option>🇯🇵 +81</option><option>🇵🇭 +63</option><option>🇸🇬 +65</option><option>🇩🇪 +49</option><option>🇫🇷 +33</option><option>🇧🇷 +55</option></select>
+          <input class="wf-phone-field__number" id="sample-phone" type="tel" value="555 012 3400">
+        </div>
+        <p class="wf-help">Include the number used for account recovery.</p>
+      </div>
+    </section>
+  </div></main>
+</body>
+</html>

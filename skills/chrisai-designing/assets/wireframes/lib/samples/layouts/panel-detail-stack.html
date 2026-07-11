@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel Detail Stack Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/badge.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../../components/notifier.css">
+  <link rel="stylesheet" href="../../components/table.css">
+  <link rel="stylesheet" href="../../layouts/panel-layout.css">
+  <link rel="stylesheet" href="../../layouts/panel-detail-stack.css">
+  <link rel="stylesheet" href="../sample.css">
+  <link rel="stylesheet" href="./panel-detail-stack.css">
+</head>
+<body>
+  <div class="wf-shell" data-wf-panel-layout data-wf-panel-detail-layout data-wf-panel-resizable data-wf-left-open="true" data-wf-right-open="false" style="--wf-right-panel-width: 420px;">
+    <aside class="wf-shell__left wf-stack" id="article-navigation">
+      <div class="wf-shell__brand">Editorial workspace</div>
+      <nav class="wf-stack" aria-label="Editorial navigation">
+        <a class="wf-shell__nav-link" href="#" aria-current="page">Articles</a>
+        <a class="wf-shell__nav-link" href="#">Authors</a>
+        <a class="wf-shell__nav-link" href="#">Collections</a>
+      </nav>
+    </aside>
+
+    <header class="wf-shell__header">
+      <div class="wf-shell__header-start">
+        <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="left" aria-controls="article-navigation" aria-expanded="true" aria-label="Toggle navigation panel"><span data-wf-icon="menu"></span></button>
+        <div class="wf-shell__brand">Article library</div>
+      </div>
+      <div class="wf-shell__header-end">
+        <a class="wf-button wf-button--secondary" href="../index.html"><span data-wf-icon="arrow-left"></span>Samples</a>
+        <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="right" aria-controls="article-detail-panel" aria-expanded="false" aria-label="Toggle article detail"><span data-wf-icon="info"></span></button>
+      </div>
+    </header>
+
+    <main class="wf-shell__center">
+      <div class="wf-stack">
+        <div class="wf-spread">
+          <div><p class="wf-kicker">Content</p><h1 class="wf-heading">Articles</h1></div>
+          <button class="wf-button" type="button"><span data-wf-icon="add"></span>New article</button>
+        </div>
+        <div class="wf-row wf-row-wrap">
+          <label class="wf-field" style="flex: 1 1 260px;"><span class="wf-sr-only">Search articles</span><input class="wf-input" type="search" placeholder="Search articles"></label>
+          <button class="wf-button wf-button--secondary" type="button"><span data-wf-icon="filter"></span>Filter</button>
+        </div>
+        <div class="wf-table-wrap">
+          <table class="wf-table sample-detail-table">
+            <thead><tr><th scope="col">Article</th><th scope="col">Author</th><th scope="col">Status</th><th scope="col">Updated</th></tr></thead>
+            <tbody>
+              <tr tabindex="0" aria-selected="false" data-wf-detail-open="article-detail" data-wf-detail-stack-target="#article-detail-panel" data-article-id="article-1"><td><strong>Designing resilient review workflows</strong></td><td data-row-author="author-1">Mara Chen</td><td><span class="wf-badge wf-badge--solid">Published</span></td><td>Today</td></tr>
+              <tr tabindex="0" aria-selected="false" data-wf-detail-open="article-detail" data-wf-detail-stack-target="#article-detail-panel" data-article-id="article-2"><td><strong>A field guide to content operations</strong></td><td data-row-author="author-2">Jon Bell</td><td><span class="wf-badge">Draft</span></td><td>Yesterday</td></tr>
+              <tr tabindex="0" aria-selected="false" data-wf-detail-open="article-detail" data-wf-detail-stack-target="#article-detail-panel" data-article-id="article-3"><td><strong>Measuring knowledge-base quality</strong></td><td data-row-author="author-1">Mara Chen</td><td><span class="wf-badge wf-badge--outline">Review</span></td><td>Jul 9</td></tr>
+              <tr tabindex="0" aria-selected="false" data-wf-detail-open="article-detail" data-wf-detail-stack-target="#article-detail-panel" data-article-id="article-4"><td><strong>Planning a documentation migration</strong></td><td data-row-author="author-3">Priya Shah</td><td><span class="wf-badge wf-badge--solid">Published</span></td><td>Jul 8</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="wf-copy">4 articles</p>
+      </div>
+    </main>
+
+    <aside class="wf-shell__right wf-detail-stack" id="article-detail-panel" data-wf-detail-stack aria-hidden="true" inert>
+      <div class="wf-detail-stack__stage">
+        <section class="wf-detail-screen" data-wf-detail-screen="article-detail" data-wf-detail-state="active">
+          <header class="wf-detail-screen__header">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+            <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Article detail</h2>
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="More article actions"><span data-wf-icon="more"></span></button>
+          </header>
+          <div class="wf-detail-screen__content wf-stack">
+            <div class="sample-detail-summary">
+              <div class="wf-spread"><span class="wf-badge" data-sample-article-status>Published</span><span class="wf-muted" data-sample-article-updated>Today</span></div>
+              <h3 data-sample-article-title>Article title</h3>
+              <p class="wf-copy">By <button class="sample-detail-byline" type="button" data-wf-detail-go="author-detail" data-sample-article-author>Author</button></p>
+            </div>
+            <div class="sample-detail-copy">
+              <p data-sample-article-summary>Article summary.</p>
+              <p>Clear ownership, focused review rounds, and explicit completion criteria help editorial teams move work forward without losing decisions.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="wf-detail-screen" data-wf-detail-screen="author-detail" data-wf-detail-state="inactive" aria-hidden="true" inert>
+          <header class="wf-detail-screen__header">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+            <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Author detail</h2>
+            <span class="wf-detail-screen__header-spacer"></span>
+          </header>
+          <div class="wf-detail-screen__content wf-stack">
+            <div class="sample-detail-summary"><p class="wf-kicker">Author</p><h3 data-sample-author-name>Author name</h3><p class="wf-copy" data-sample-author-bio>Author biography.</p></div>
+            <dl class="sample-detail-definition">
+              <div><dt>Email</dt><dd data-sample-author-email>author@example.test</dd></div>
+              <div><dt>Role</dt><dd data-sample-author-role>Editor</dd></div>
+            </dl>
+            <div class="sample-detail-actions">
+              <button class="wf-button" type="button" data-wf-detail-go="author-update"><span data-wf-icon="edit"></span>Update</button>
+              <button class="wf-button wf-button--secondary" type="button" data-sample-remove-author><span data-wf-icon="trash"></span>Remove</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="wf-detail-screen" data-wf-detail-screen="author-update" data-wf-detail-state="inactive" aria-hidden="true" inert>
+          <header class="wf-detail-screen__header">
+            <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+            <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Update author</h2>
+            <span class="wf-detail-screen__header-spacer"></span>
+          </header>
+          <form class="wf-detail-screen__content wf-form sample-detail-form" id="sample-author-form" data-wf-detail-submit>
+            <label class="wf-field"><span class="wf-label">Name</span><input class="wf-input" name="name" required></label>
+            <label class="wf-field"><span class="wf-label">Email</span><input class="wf-input" name="email" type="email" required></label>
+            <label class="wf-field"><span class="wf-label">Role</span><input class="wf-input" name="role"></label>
+            <label class="wf-field"><span class="wf-label">Biography</span><textarea class="wf-textarea" name="bio"></textarea></label>
+            <button class="wf-button" type="submit"><span data-wf-icon="check"></span>Save changes</button>
+          </form>
+        </section>
+      </div>
+    </aside>
+
+    <div class="wf-shell__resize-handle wf-shell__resize-handle--left" data-wf-panel-resize="left" role="separator" tabindex="0" aria-label="Resize navigation panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="260"></div>
+    <div class="wf-shell__resize-handle wf-shell__resize-handle--right" data-wf-panel-resize="right" role="separator" tabindex="0" aria-label="Resize detail panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="420"></div>
+  </div>
+
+  <div class="wf-notifier" data-wf-notifier aria-live="polite"></div>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../components/notifier.js"></script>
+  <script src="../../layouts/panel-layout.js"></script>
+  <script src="../../layouts/panel-detail-stack.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+  <script src="./panel-detail-stack.js"></script>
+</body>
+</html>

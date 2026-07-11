@@ -1,0 +1,45 @@
+.wf-carousel {
+  position: relative;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-4);
+  background: var(--wf-surface);
+  overflow: hidden;
+}
+
+.wf-carousel__track {
+  display: flex;
+  transition: transform .2s ease;
+}
+
+.wf-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: var(--wf-space-6);
+}
+
+.wf-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-3);
+  border-top: 1px solid var(--wf-border);
+}
+
+.wf-carousel__dots {
+  display: flex;
+  gap: var(--wf-space-2);
+}
+
+.wf-carousel__dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 1px solid var(--wf-gray-600);
+  border-radius: 999px;
+  background: var(--wf-white);
+}
+
+.wf-carousel__dot[aria-current="true"] {
+  background: var(--wf-emphasis);
+}

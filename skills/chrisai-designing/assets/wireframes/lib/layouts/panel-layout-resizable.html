@@ -1,0 +1,44 @@
+<div class="wf-shell" data-wf-panel-layout data-wf-panel-resizable data-wf-left-open="true" data-wf-right-open="true">
+  <aside class="wf-shell__left wf-stack" id="workspace-navigation">
+    <div class="wf-shell__brand">Client portal</div>
+    <nav class="wf-stack" aria-label="Workspace navigation">
+      <a class="wf-shell__nav-link" href="./overview.html" aria-current="page">Overview</a>
+      <a class="wf-shell__nav-link" href="./records.html">Records</a>
+      <a class="wf-shell__nav-link" href="./settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <header class="wf-shell__header">
+    <div class="wf-shell__header-start">
+      <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="left" aria-controls="workspace-navigation" aria-expanded="true" aria-label="Toggle navigation panel">
+        <span data-wf-icon="menu"></span>
+      </button>
+      <div class="wf-shell__brand">Workspace overview</div>
+    </div>
+    <div class="wf-shell__header-end">
+      <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="right" aria-controls="workspace-settings" aria-expanded="true" aria-label="Toggle settings panel">
+        <span data-wf-icon="settings"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="wf-shell__center">
+    <section class="wf-panel">
+      <div class="wf-panel__header">
+        <h1 class="wf-subheading">Records</h1>
+      </div>
+      <div class="wf-panel__body wf-stack">
+        <p class="wf-copy">Primary work area.</p>
+      </div>
+      <div class="wf-panel__footer">24 records</div>
+    </section>
+  </main>
+
+  <aside class="wf-shell__right wf-stack" id="workspace-settings">
+    <h2 class="wf-subheading">Workspace settings</h2>
+    <p class="wf-copy">Contextual settings and actions for the current workspace.</p>
+  </aside>
+
+  <div class="wf-shell__resize-handle wf-shell__resize-handle--left" data-wf-panel-resize="left" role="separator" tabindex="0" aria-label="Resize navigation panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="260"></div>
+  <div class="wf-shell__resize-handle wf-shell__resize-handle--right" data-wf-panel-resize="right" role="separator" tabindex="0" aria-label="Resize settings panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="320"></div>
+</div>

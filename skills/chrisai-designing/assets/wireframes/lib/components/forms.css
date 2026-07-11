@@ -1,0 +1,57 @@
+.wf-form {
+  display: grid;
+  gap: var(--wf-space-4);
+}
+
+.wf-field {
+  display: grid;
+  gap: var(--wf-space-2);
+}
+
+.wf-label {
+  color: var(--wf-text);
+  font-size: var(--wf-text-sm);
+  font-weight: 700;
+}
+
+.wf-input,
+.wf-select,
+.wf-textarea {
+  width: 100%;
+  min-height: 38px;
+  padding: var(--wf-space-2) var(--wf-space-3);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-white);
+  color: var(--wf-text);
+}
+
+.wf-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.wf-help,
+.wf-error {
+  margin: 0;
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}
+
+.wf-error {
+  color: var(--wf-gray-700);
+  font-weight: 700;
+}
+
+.wf-field[aria-invalid="true"] .wf-input,
+.wf-field[aria-invalid="true"] .wf-select,
+.wf-field[aria-invalid="true"] .wf-textarea {
+  border-color: var(--wf-gray-700);
+  background: var(--wf-gray-50);
+}
+
+.wf-check {
+  display: flex;
+  align-items: center;
+  gap: var(--wf-space-2);
+}

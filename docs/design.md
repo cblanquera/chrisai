@@ -61,7 +61,7 @@ What happens:
 Primary workflow:
 [`workflows/design-system-extraction.md`](../skills/chrisai-designing/workflows/design-system-extraction.md)
 
-### Wireframes
+### Wireframe Drafts
 
 Use this skill when the request is about structure, hierarchy, section order,
 screen layout, navigation, flow, or low-fidelity clickable drafts before visual
@@ -72,18 +72,30 @@ What happens:
 - The agent keeps the work grayscale and low fidelity.
 - The agent identifies the page, screen, or flow scope.
 - The agent gathers only the structure inputs that materially affect layout.
-- The agent creates layout options or a complete wireframe set for the agreed
-  scope as HTML/CSS/JS files.
-- If clickable wireframes are needed, the agent creates static review artifacts
-  and keeps them separate from production code.
+- The agent creates or updates revision-local `specs.md` before generating or
+  revising rendered files.
+- The agent records layouts, reusable components, interactions, states, routes,
+  workflow starting points, and draft-local library plans in `specs.md`.
+- The agent selects from the bundled wireframe layouts, components, icons, and
+  interaction helpers before creating new equivalents.
+- Bundled sample pages are used to inspect behavior and dependencies, but are
+  copied into a project revision only when explicitly requested.
+- The agent writes `specs.md` with headings and bullets, not markdown tables.
+- When `specs.md` calls for icons, the agent creates inline or local SVG icons
+  based on Lucide icons.
+- The agent creates page-based HTML/CSS/JS wireframe drafts from `specs.md`.
+- The agent makes app screens, flows, forms, menus, tabs, modals, drawers, and
+  stateful surfaces functional enough to review when interaction affects
+  understanding.
 - The agent applies annotation-based, ad hoc, screenshot, or chat feedback,
-  then runs another review round until the wireframe phase is approved.
+  updates `specs.md` when product-surface intent changes, then runs another
+  review round until the wireframe phase is approved.
 - Major wireframe changes create a new revision folder; minor changes can stay
   in the current revision folder.
 - The agent states what approval unlocks before moving to visual design.
 
 Primary workflow:
-[`workflows/wireframes.md`](../skills/chrisai-designing/workflows/wireframes.md)
+[`workflows/wireframe-drafts.md`](../skills/chrisai-designing/workflows/wireframe-drafts.md)
 
 ### Design Drafts
 
@@ -94,6 +106,11 @@ mockups based on an approved structure and visual direction.
 What happens:
 
 - The agent confirms the draft stage and where draft files should live.
+- The agent creates or updates revision-local `specs.md` before generating or
+  revising creative HTML/CSS/JS.
+- The agent records visual-system rules, components, variants, states, assets,
+  content, responsive behavior, interaction intent, file plans, review
+  criteria, and open questions in `specs.md`.
 - The agent creates review-only static artifacts, not production
   implementation.
 - The agent generates HTML/CSS/JS files, not markdown-only mockups.
@@ -103,7 +120,8 @@ What happens:
 - The agent uses available browser capabilities for rendered checks when
   possible.
 - The agent applies annotation-based, ad hoc, screenshot, or chat feedback,
-  then runs another review round until the creative or draft phase is approved.
+  updates `specs.md` first when creative intent changes, then runs another
+  review round until the creative or draft phase is approved.
 - Major creative changes create a new revision folder; minor changes can stay
   in the current revision folder.
 - The agent presents concrete review questions and a clear approval path.
@@ -211,8 +229,24 @@ The workflow files use references for specific standards:
   Figma, screenshots, local code, and exports
 - [`references/extraction-report.md`](../skills/chrisai-designing/references/extraction-report.md):
   design extraction handoff format
-- [`references/wireframe-patterns.md`](../skills/chrisai-designing/references/wireframe-patterns.md):
-  common wireframe patterns
+- [`references/wireframe-specs-contract.md`](../skills/chrisai-designing/references/wireframe-specs-contract.md):
+  revision-local wireframe `specs.md` contract
+- [`references/wireframe-implementation-rules.md`](../skills/chrisai-designing/references/wireframe-implementation-rules.md):
+  rendering and bundled-library rules
+- [`references/wireframe-revision-workflow.md`](../skills/chrisai-designing/references/wireframe-revision-workflow.md):
+  revision numbering, copy-forward behavior, and required files
+- [`references/wireframe-review-workflow.md`](../skills/chrisai-designing/references/wireframe-review-workflow.md):
+  wireframe review and readiness checks
+- [`references/wireframe-lib-inventory.md`](../skills/chrisai-designing/references/wireframe-lib-inventory.md):
+  bundled layouts, components, icons, utilities, and behavioral samples
+- [`references/creative-draft-specs-contract.md`](../skills/chrisai-designing/references/creative-draft-specs-contract.md):
+  revision-local creative `specs.md` contract
+- [`references/creative-draft-implementation-rules.md`](../skills/chrisai-designing/references/creative-draft-implementation-rules.md):
+  generating creative artifacts from `specs.md`
+- [`references/creative-draft-revision-workflow.md`](../skills/chrisai-designing/references/creative-draft-revision-workflow.md):
+  creative revision numbering and copy-forward behavior
+- [`references/creative-draft-review-workflow.md`](../skills/chrisai-designing/references/creative-draft-review-workflow.md):
+  creative review and readiness checks
 - [`references/draft-artifact-rules.md`](../skills/chrisai-designing/references/draft-artifact-rules.md):
   static draft workspace rules
 - [`references/browser-feedback-loop.md`](../skills/chrisai-designing/references/browser-feedback-loop.md):
@@ -227,7 +261,7 @@ The workflow files use references for specific standards:
   named visual directions
 - [`references/visual-review.md`](../skills/chrisai-designing/references/visual-review.md):
   visual quality checks
-- [`references/future-wireframes.md`](../skills/chrisai-designing/references/future-wireframes.md):
+- [`references/wireframe-routing.md`](../skills/chrisai-designing/references/wireframe-routing.md):
   routing from creative direction to wireframes
 
 ## What This Skill Does Not Do

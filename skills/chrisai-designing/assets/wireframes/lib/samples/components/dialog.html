@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dialog Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/dialog.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Dialog</h1>
+      <button class="wf-button" type="button" data-wf-dialog-open="#sample-dialog">Open dialog</button>
+      <dialog class="wf-dialog" id="sample-dialog">
+        <div class="wf-dialog__header">
+          <h2 class="wf-subheading">Confirm status change</h2>
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-dialog-close aria-label="Close"><span data-wf-icon="close"></span></button>
+        </div>
+        <div class="wf-dialog__body">
+          <p class="wf-copy">This modal models a blocking confirmation before a state change.</p>
+        </div>
+        <div class="wf-dialog__footer">
+          <button class="wf-button wf-button--secondary" type="button" data-wf-dialog-close>Cancel</button>
+          <button class="wf-button" type="button" data-wf-dialog-close value="confirm">Confirm</button>
+        </div>
+      </dialog>
+    </div>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../components/dialog.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

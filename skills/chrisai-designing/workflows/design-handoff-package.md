@@ -9,9 +9,19 @@ design artifacts. This is separate from wireframes and creatives themselves,
 which must remain HTML/CSS/JS review artifacts unless the user explicitly asks
 for text-only planning.
 
-After wireframes and/or creatives are approved and the next phase is creative
-design or frontend implementation, produce a standalone handoff package. The
-handoff must be usable by another agent without reopening the rendered HTML.
+After the relevant wireframe and/or creative phases are approved, produce a
+final standalone handoff package. If the user explicitly requests documentation
+before approval, produce an interim handoff marked `pending`; do not present it
+as implementation-ready. Both forms must be usable without reopening rendered
+HTML.
+
+## Handoff Modes
+
+- **Final handoff:** requires approved included source phases and may be used
+  for creative design or frontend implementation.
+- **Interim handoff:** requires an explicit user request, records source status
+  as `pending` or `unknown`, preserves unresolved questions, and must state that
+  implementation should wait for phase approval.
 
 ## Ownership
 
@@ -32,8 +42,8 @@ This workflow does not own:
 - production implementation
 - replacing browser-visible review rounds
 
-Use [wireframes](wireframes.md), [design-drafts](design-drafts.md), and
-[feedback-loop](feedback-loop.md) for artifact creation and approval before
+Use [wireframe-drafts](wireframe-drafts.md), [design-drafts](design-drafts.md),
+and [feedback-loop](feedback-loop.md) for artifact creation and approval before
 treating generated artifacts as approved sources.
 
 ## Workflow
@@ -41,21 +51,25 @@ treating generated artifacts as approved sources.
 Work through these steps in order:
 
 1. find the latest relevant wireframe and creative revision folders
-2. read every entry in the revision-local `notes.md` review logs when present
-3. identify approval status and any unresolved review notes
-4. extract the screen inventory and user flows
-5. document component identity and purpose
-6. document interaction behavior and state changes
-7. document functional assumptions and simulated behavior
-8. document routes, forms, fields, and validation behavior
-9. synthesize the update history into final decisions, superseded directions,
+2. read revision-local wireframe and creative `specs.md` files
+3. read every entry in the revision-local `notes.md` review logs when present
+4. identify approval status and any unresolved review notes
+5. extract the screen inventory and user flows
+6. document component identity and purpose
+7. document interaction behavior and state changes
+8. document functional assumptions and simulated behavior
+9. document routes, forms, fields, and validation behavior
+10. synthesize the update history into final decisions, superseded directions,
    remaining review notes, and open questions
-10. document implementation priority and open questions
+11. document implementation priority
 
 If only wireframes exist, generate the package from the latest wireframe
 revision. If only creatives exist, generate the package from the latest
 creative revision. If both exist, use both and clearly identify which source
 owns structure versus visual treatment.
+
+Choose final or interim mode before drafting the package. Never silently turn
+unapproved source artifacts into a final handoff.
 
 ## Required Package Structure
 
@@ -66,8 +80,11 @@ Use this structure unless the user asks for another format:
 
 ## Source Artifacts
 - Wireframe revision: <path or none>
+- Wireframe spec: <specs.md path or none>
 - Creative revision: <path or none>
+- Creative spec: <specs.md path or none>
 - Review notes: <notes.md path or none>
+- Handoff mode: <final or interim>
 - Review status: <approved, pending, or unknown>
 - Generated from: <artifact folder or folders>
 
@@ -163,71 +180,33 @@ Not included:
 - <question>
 ```
 
-## Component Documentation Rules
+## Synthesis Rules
 
-Document ambiguous components by naming what they really are, not only how they
-look. For example:
-
-- "File Explorer" instead of "left sidebar"
-- "Command Toolbar" instead of "button row"
-- "Resizable Preview Panel" instead of "large content box"
-- "Filter Toggle Group" instead of "three buttons"
-
-For each non-obvious component, explain:
-
-- what it is
-- why it exists
-- what parts are visible
-- what user actions it supports
-- what states it can enter
-- what behavior is simulated or deferred
-
-## Interaction Documentation Rules
-
-Document interactions explicitly. Include clicks, double-clicks, drags, drops,
-toggles, hovers, keyboard shortcuts, menu opens, form submits, validation
-states, drawer behavior, modal behavior, and responsive behavior when visible
-or implied by the artifact.
-
-If behavior is not obvious from the artifact, write the intended behavior as an
-implementation note instead of assuming the implementer will infer it.
-
-## Standalone Handoff Rules
-
-Do not require the next agent to inspect the rendered HTML to understand the
-approved structure. The package should restate the major components,
-navigation, interaction points, forms, states, and functional assumptions in
-plain language.
-
-Use revision-local `notes.md` entries to reconcile what changed across review
-rounds, what the user was asked to review, which annotations were applied, and
-which simulated or deferred behaviors remain. Do not silently drop review-log
-decisions when preparing the final handoff.
-
-Read all update records, not only the latest entry. The final handoff should
-synthesize the complete review history and make clear which prior decisions
-remain current, which were superseded by later rounds, which are deferred, and
-which are still open. If any `notes.md` entry conflicts with the rendered
-artifact or another entry, call out the conflict instead of choosing silently.
-
-Separate:
-
-- actual intended product behavior
-- simulated review behavior
-- deferred or out-of-scope behavior
-- illustrative placeholder values
-
-Placeholder values in approved artifacts are illustrative unless the handoff
-explicitly promotes them into requirements, configuration, or final copy.
+- Name components by function, not appearance; explain purpose, visible parts,
+  actions, states, and simulated or deferred behavior.
+- Document non-obvious interactions, validation, responsive behavior, and
+  implementation intent explicitly.
+- Make the package understandable without reopening rendered HTML.
+- Read all `specs.md` and `notes.md` records, reconcile current, superseded,
+  deferred, and open decisions, and report source conflicts rather than
+  choosing silently.
+- Separate intended product behavior, review simulations, deferred scope, and
+  illustrative values. Treat illustrative values as non-final unless promoted
+  explicitly.
 
 ## Review Gate
 
 Do not consider the Design Handoff Package complete unless:
 
 - the latest source revisions are identified
+- revision-local wireframe and creative `specs.md` files were read or
+  explicitly reported missing
 - revision-local `notes.md` files were read fully or explicitly reported
   missing
 - source approval status is stated
+- final mode includes only approved source phases
+- interim mode is explicitly labeled pending or unknown and not
+  implementation-ready
 - the Review Decision History summarizes every update record's final handoff
   impact
 - every included screen has a purpose and primary action

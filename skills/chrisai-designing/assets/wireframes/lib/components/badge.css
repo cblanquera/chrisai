@@ -1,0 +1,25 @@
+.wf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--wf-space-1);
+  min-height: 22px;
+  padding: 0 var(--wf-space-2);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: 999px;
+  background: var(--wf-gray-50);
+  color: var(--wf-gray-800);
+  font-size: var(--wf-text-xs);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.wf-badge--solid {
+  background: var(--wf-emphasis);
+  border-color: var(--wf-emphasis);
+  color: var(--wf-on-emphasis);
+}
+
+.wf-badge--outline {
+  background: transparent;
+}

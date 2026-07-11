@@ -1,0 +1,35 @@
+.wf-phone-field {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+}
+
+.wf-phone-field__code,
+.wf-phone-field__number {
+  min-width: 0;
+  min-height: 38px;
+  padding: var(--wf-space-2) var(--wf-space-3);
+  border: 1px solid var(--wf-border-strong);
+  background: var(--wf-white);
+  color: var(--wf-text);
+}
+
+.wf-phone-field__code {
+  border-radius: var(--wf-radius-2) 0 0 var(--wf-radius-2);
+}
+
+.wf-phone-field__number {
+  margin-left: -1px;
+  border-radius: 0 var(--wf-radius-2) var(--wf-radius-2) 0;
+}
+
+.wf-phone-field__code:focus,
+.wf-phone-field__number:focus {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 420px) {
+  .wf-phone-field {
+    grid-template-columns: 104px minmax(0, 1fr);
+  }
+}

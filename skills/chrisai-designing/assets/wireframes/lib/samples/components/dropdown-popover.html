@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dropdown Popover Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/dropdown.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Dropdown and popover</h1>
+      <div class="wf-dropdown">
+        <button class="wf-button wf-dropdown__trigger" type="button" aria-expanded="false" aria-controls="sample-menu">Actions <span data-wf-icon="chevron-down"></span></button>
+        <div class="wf-dropdown__panel" id="sample-menu" hidden>
+          <button class="wf-dropdown__item" type="button">Edit record</button>
+          <button class="wf-dropdown__item" type="button">Duplicate</button>
+          <button class="wf-dropdown__item" type="button">Archive</button>
+        </div>
+      </div>
+      <div class="wf-dropdown">
+        <button class="wf-button wf-button--secondary wf-dropdown__trigger" type="button" aria-expanded="false" aria-controls="sample-popover">Open popover <span data-wf-icon="chevron-down"></span></button>
+        <section class="wf-dropdown__panel wf-popover" id="sample-popover" hidden>
+          <h2 class="wf-subheading">Context panel</h2>
+          <p class="wf-copy">A popover can hold compact details, filters, or next-step choices.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../utilities/state.js"></script>
+  <script src="../../components/dropdown.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

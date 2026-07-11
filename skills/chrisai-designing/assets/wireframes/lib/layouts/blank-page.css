@@ -1,0 +1,31 @@
+.wf-blank {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--wf-space-8);
+}
+
+.wf-blank__panel {
+  width: min(100%, 680px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--wf-space-5);
+  padding: var(--wf-space-8);
+}
+
+.wf-blank__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--wf-space-3);
+}
+
+@media (max-width: 640px) {
+  .wf-blank {
+    padding: var(--wf-space-4);
+    place-items: start stretch;
+  }
+
+  .wf-blank__panel {
+    padding: var(--wf-space-5);
+  }
+}

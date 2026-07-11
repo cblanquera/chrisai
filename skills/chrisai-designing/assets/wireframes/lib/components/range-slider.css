@@ -1,0 +1,23 @@
+.wf-range {
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  accent-color: var(--wf-gray-600);
+}
+
+.wf-range__output {
+  min-width: 42px;
+  padding: var(--wf-space-1) var(--wf-space-2);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-gray-50);
+  color: var(--wf-text);
+  text-align: center;
+}
+
+.wf-range__limits {
+  display: flex;
+  justify-content: space-between;
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-xs);
+}

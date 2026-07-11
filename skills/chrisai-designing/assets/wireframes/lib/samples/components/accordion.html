@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accordion Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/accordion.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body>
+  <main class="sample-page">
+    <div class="sample-shell wf-stack">
+      <a class="sample-link" href="../index.html">Back to samples</a>
+      <h1 class="wf-title">Accordion</h1>
+      <section class="wf-accordion" data-wf-accordion data-wf-accordion-single>
+        <div class="wf-accordion__item">
+          <button class="wf-accordion__trigger" type="button" aria-expanded="true" aria-controls="accordion-one">Account details <span class="wf-accordion__icon" data-wf-icon="chevron-right"></span></button>
+          <div class="wf-accordion__panel" id="accordion-one">Account name, owner, billing status, and workspace metadata.</div>
+        </div>
+        <div class="wf-accordion__item">
+          <button class="wf-accordion__trigger" type="button" aria-expanded="false" aria-controls="accordion-two">Permissions <span class="wf-accordion__icon" data-wf-icon="chevron-right"></span></button>
+          <div class="wf-accordion__panel" id="accordion-two" hidden>Role assignment, invite status, and access exceptions.</div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../utilities/state.js"></script>
+  <script src="../../components/accordion.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

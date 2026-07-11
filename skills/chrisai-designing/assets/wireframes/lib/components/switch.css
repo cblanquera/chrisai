@@ -1,0 +1,70 @@
+.wf-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--wf-space-3);
+  color: var(--wf-text);
+  cursor: pointer;
+}
+
+.wf-switch__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.wf-switch__control {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex: 0 0 auto;
+  border: 1px solid var(--wf-gray-400);
+  border-radius: 999px;
+  background: var(--wf-gray-200);
+  transition: background var(--wf-motion-fast) ease;
+}
+
+.wf-switch__control::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--wf-white);
+  box-shadow: var(--wf-shadow-1);
+  transition: transform var(--wf-motion-fast) ease;
+}
+
+.wf-switch__input:checked + .wf-switch__control {
+  background: var(--wf-gray-600);
+  border-color: var(--wf-gray-600);
+}
+
+.wf-switch__input:checked + .wf-switch__control::after {
+  transform: translateX(18px);
+}
+
+.wf-switch__input:focus-visible + .wf-switch__control {
+  outline: 2px solid var(--wf-focus);
+  outline-offset: 2px;
+}
+
+.wf-switch__input:disabled + .wf-switch__control,
+.wf-switch__input:disabled ~ .wf-switch__copy {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.wf-switch__copy strong,
+.wf-switch__copy span {
+  display: block;
+}
+
+.wf-switch__copy span {
+  margin-top: var(--wf-space-1);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}

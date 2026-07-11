@@ -1,0 +1,30 @@
+.wf-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-4);
+  border: 1px solid var(--wf-border-strong);
+  border-left-width: 4px;
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-white);
+}
+
+.wf-alert__title {
+  margin: 0 0 var(--wf-space-1);
+  font-weight: 700;
+}
+
+.wf-alert__body {
+  margin: 0;
+  color: var(--wf-text-muted);
+}
+
+.wf-alert--muted {
+  background: var(--wf-gray-50);
+  border-left-color: var(--wf-gray-400);
+}
+
+.wf-alert--strong {
+  background: var(--wf-gray-100);
+  border-left-color: var(--wf-emphasis);
+}

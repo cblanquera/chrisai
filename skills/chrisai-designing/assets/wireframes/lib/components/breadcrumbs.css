@@ -1,0 +1,28 @@
+.wf-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--wf-space-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}
+
+.wf-breadcrumbs a {
+  text-decoration: none;
+}
+
+.wf-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.wf-breadcrumbs__separator {
+  color: var(--wf-text-subtle);
+}
+
+.wf-breadcrumbs [aria-current="page"] {
+  color: var(--wf-text);
+  font-weight: 700;
+}

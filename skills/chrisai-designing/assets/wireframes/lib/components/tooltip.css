@@ -1,0 +1,24 @@
+.wf-tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.wf-tooltip {
+  position: absolute;
+  z-index: 40;
+  bottom: calc(100% + var(--wf-space-2));
+  left: 50%;
+  width: max-content;
+  max-width: 240px;
+  padding: var(--wf-space-2) var(--wf-space-3);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-emphasis-hover);
+  color: var(--wf-on-emphasis);
+  font-size: var(--wf-text-xs);
+  transform: translateX(-50%);
+}
+
+.wf-tooltip[hidden] {
+  display: none;
+}

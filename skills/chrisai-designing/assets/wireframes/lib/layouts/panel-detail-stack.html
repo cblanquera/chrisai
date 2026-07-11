@@ -1,0 +1,62 @@
+<div class="wf-shell" data-wf-panel-layout data-wf-panel-detail-layout data-wf-panel-resizable data-wf-left-open="true" data-wf-right-open="false">
+  <aside class="wf-shell__left wf-stack" id="workspace-navigation">
+    <div class="wf-shell__brand">Workspace</div>
+  </aside>
+
+  <header class="wf-shell__header">
+    <div class="wf-shell__header-start">
+      <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="left" aria-controls="workspace-navigation" aria-expanded="true" aria-label="Toggle navigation panel"><span data-wf-icon="menu"></span></button>
+      <div class="wf-shell__brand">Records</div>
+    </div>
+    <div class="wf-shell__header-end">
+      <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="right" aria-controls="context-detail" aria-expanded="false" aria-label="Toggle detail panel"><span data-wf-icon="info"></span></button>
+    </div>
+  </header>
+
+  <main class="wf-shell__center">
+    <button class="wf-button wf-button--secondary" type="button" data-wf-detail-open="item-detail" data-wf-detail-stack-target="#context-detail">Open record detail</button>
+  </main>
+
+  <aside class="wf-shell__right wf-detail-stack" id="context-detail" data-wf-detail-stack aria-hidden="true" inert>
+    <div class="wf-detail-stack__stage">
+      <section class="wf-detail-screen" data-wf-detail-screen="item-detail" data-wf-detail-state="active">
+        <header class="wf-detail-screen__header">
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+          <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Record detail</h2>
+          <span class="wf-detail-screen__header-spacer"></span>
+        </header>
+        <div class="wf-detail-screen__content wf-stack">
+          <p class="wf-copy">Contextual detail for the selected record.</p>
+          <button class="wf-button wf-button--secondary" type="button" data-wf-detail-go="related-detail">Open related detail</button>
+        </div>
+      </section>
+
+      <section class="wf-detail-screen" data-wf-detail-screen="related-detail" data-wf-detail-state="inactive" aria-hidden="true" inert>
+        <header class="wf-detail-screen__header">
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+          <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Related detail</h2>
+          <span class="wf-detail-screen__header-spacer"></span>
+        </header>
+        <div class="wf-detail-screen__content wf-stack">
+          <p class="wf-copy">Details and actions for the related record.</p>
+          <button class="wf-button" type="button" data-wf-detail-go="related-edit">Update</button>
+        </div>
+      </section>
+
+      <section class="wf-detail-screen" data-wf-detail-screen="related-edit" data-wf-detail-state="inactive" aria-hidden="true" inert>
+        <header class="wf-detail-screen__header">
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back"><span data-wf-icon="arrow-left"></span></button>
+          <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Update related record</h2>
+          <span class="wf-detail-screen__header-spacer"></span>
+        </header>
+        <form class="wf-detail-screen__content wf-form" data-wf-detail-submit>
+          <label class="wf-field"><span class="wf-label">Name</span><input class="wf-input" name="name"></label>
+          <button class="wf-button" type="submit">Save changes</button>
+        </form>
+      </section>
+    </div>
+  </aside>
+
+  <div class="wf-shell__resize-handle wf-shell__resize-handle--left" data-wf-panel-resize="left" role="separator" tabindex="0" aria-label="Resize navigation panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="260"></div>
+  <div class="wf-shell__resize-handle wf-shell__resize-handle--right" data-wf-panel-resize="right" role="separator" tabindex="0" aria-label="Resize detail panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="320"></div>
+</div>

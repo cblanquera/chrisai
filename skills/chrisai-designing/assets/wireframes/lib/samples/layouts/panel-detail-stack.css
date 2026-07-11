@@ -1,0 +1,134 @@
+.sample-detail-table tbody tr {
+  cursor: pointer;
+}
+
+.sample-detail-table {
+  table-layout: fixed;
+}
+
+.sample-detail-table th:first-child {
+  width: 46%;
+}
+
+.sample-detail-table th:nth-child(2) {
+  width: 20%;
+}
+
+.sample-detail-table th:nth-child(3) {
+  width: 16%;
+}
+
+.sample-detail-table th:nth-child(4) {
+  width: 18%;
+}
+
+.sample-detail-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sample-detail-table tbody tr:focus-visible {
+  outline: 2px solid var(--wf-focus);
+  outline-offset: -2px;
+}
+
+.sample-detail-table tbody tr[data-wf-detail-selected] {
+  background: var(--wf-gray-100);
+}
+
+.sample-detail-summary {
+  display: grid;
+  gap: var(--wf-space-2);
+  padding-bottom: var(--wf-space-5);
+  border-bottom: 1px solid var(--wf-border);
+}
+
+.sample-detail-summary h3 {
+  margin: 0;
+  font-size: var(--wf-text-xl);
+  line-height: var(--wf-line-tight);
+}
+
+.sample-detail-byline {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--wf-text);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.sample-detail-copy {
+  display: grid;
+  gap: var(--wf-space-4);
+  color: var(--wf-text-muted);
+}
+
+.sample-detail-copy p {
+  margin: 0;
+}
+
+.sample-detail-definition {
+  display: grid;
+  gap: var(--wf-space-4);
+  margin: 0;
+}
+
+.sample-detail-definition div {
+  display: grid;
+  gap: var(--wf-space-1);
+  padding-bottom: var(--wf-space-3);
+  border-bottom: 1px solid var(--wf-border);
+}
+
+.sample-detail-definition dt {
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}
+
+.sample-detail-definition dd {
+  margin: 0;
+  color: var(--wf-text);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.sample-detail-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--wf-space-3);
+}
+
+.sample-detail-form {
+  align-content: start;
+  grid-auto-rows: max-content;
+  gap: var(--wf-space-3);
+}
+
+.sample-detail-form .wf-field {
+  gap: var(--wf-space-1);
+}
+
+.sample-detail-form .wf-input,
+.sample-detail-form .wf-textarea {
+  min-height: 34px;
+  padding: 6px var(--wf-space-3);
+}
+
+.sample-detail-form .wf-textarea {
+  min-height: 76px;
+}
+
+.sample-detail-form > .wf-button[type="submit"] {
+  min-height: 34px;
+  justify-self: start;
+  padding-inline: var(--wf-space-3);
+}
+
+@media (max-width: 520px) {
+  .sample-detail-actions {
+    grid-template-columns: 1fr;
+  }
+}
