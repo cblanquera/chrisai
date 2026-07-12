@@ -48,44 +48,44 @@ Do not invent additional status values unless the user asks for them. When work 
 
 Use this planning rubric to design the sequence. Omit, merge, or rename layers that do not apply to the actual technical implementation, but state the reason in `tasks/sprint.md`. For each applicable layer, define planned outputs, relevant examples, verification process, and acceptance criteria.
 
-Acceptance criteria are reserved for something the user can visually review as a human, such as a rendered interface, document, diagram, image, report, or visible workflow state. Code review, source inspection, automated tests, static checks, logs, and machine-readable output are validation items, not acceptance criteria. Do not invent an acceptance artifact solely to give a task acceptance criteria. When no human-reviewable visual output is relevant, write `Acceptance criteria: none` and allow the task to finish at `verified`.
+Acceptance criteria require a visual artifact or state the user can review, such as a rendered interface, document, diagram, image, report, or workflow. Code review, source inspection, tests, static checks, logs, and machine-readable output are validation. Do not invent an acceptance artifact. When no visual review applies, write `Acceptance criteria: none`; the task can finish at `verified`.
 
 1. Determine or create a reusable foundation layer.
    - Examples: templating, state management, resources, assets, icons, shared utilities, data contracts, interfaces, model types, or configuration.
    - Verification: unit tests and focused code review where applicable.
-   - Acceptance: none unless the layer produces a relevant human-reviewable visual artifact.
+   - Acceptance: code review, or explicit user abstention from review.
 2. Determine or create a temporary placeholder layer.
    - Examples: text examples, sample images, sample code, fixtures, fake endpoints, mocked providers, test doubles, or scaffold data.
    - Verification: none unless placeholders affect runtime behavior, tests, or user-visible outputs.
-   - Acceptance: none unless placeholders produce or alter a relevant human-reviewable visual output.
+   - Acceptance: none unless placeholders produce or alter a relevant visual output.
 3. Determine or create reusable front end components or reusable technical units.
    - Examples: accordions, alerts, badges, breadcrumbs, buttons, cards, dialogs, popovers, form fields, heroes, loaders, notifiers, pagination, tables, tabs, trees, tooltips, command surfaces, service modules, domain modules, or adapters.
    - Verification: where applicable, unit tests, browser inspection, screenshots, recordings, contract tests, or sample command output.
-   - Acceptance: a sample rendered view showing all relevant visual components; none for nonvisual technical units.
+   - Acceptance: a rendered sample showing the relevant visual components; otherwise none.
 4. Determine or create reusable front end layouts or composition structures.
    - Examples: header, footer, left or right asides, menus, grids, panels, routing shells, orchestration boundaries, integration shells, or module composition.
    - Verification: where applicable, unit tests, browser inspection, screenshots, recordings, integration tests, or shell-level smoke tests.
-   - Acceptance: a sample rendered view showing all relevant visual layouts; none for nonvisual composition structures.
+   - Acceptance: a rendered sample showing the relevant visual layouts; otherwise none.
 5. Determine or create event, action, and workflow handling.
    - Examples: clicks, hover states, drag and drop, keyboard events, game controller events, state transitions, commands, jobs, queue handlers, webhooks, or domain workflows.
    - Verification: where applicable, unit tests, functional tests, browser inspection, screenshots, recordings, contract tests, or workflow smoke tests.
-   - Acceptance: a rendered interactive view or recording in which the user can visually review the relevant interaction states; none for nonvisual handlers or workflows.
+   - Acceptance: a rendered view or recording showing the relevant interaction states; otherwise none.
 6. Develop the primary outputs using the reusable layers.
    - Examples: front end screens/pages, API behavior, CLI behavior, background jobs, integrations, reports, exports, or automation flows.
    - Verification: where applicable, unit tests, functional tests, browser inspection, screenshots, recordings, integration tests, or end-to-end smoke tests.
-   - Acceptance: the actual rendered visual output for the user to review against the Frozen spec; none when the primary output has no relevant visual form.
+   - Acceptance: the rendered visual output reviewed against the Frozen spec; otherwise none.
 7. Develop placeholders for external systems, back end endpoints, storage, providers, or expensive dependencies, and connect them to the primary outputs.
    - Examples: endpoint placeholders, repository stubs, storage adapters, payment/provider fakes, service mocks, or fixture-backed integrations.
    - Verification: where applicable, unit tests, functional tests, browser inspection, screenshots, recordings, contract tests, or integration smoke tests.
-   - Acceptance: visually review the same layer 6 output against placeholders when that output has acceptance criteria; otherwise none.
+   - Acceptance: repeat the layer 6 visual review against placeholders; otherwise none.
 8. Replace placeholders one by one with actual logic while deprecating the placeholder layer.
    - Examples: real endpoints, real persistence, real provider integrations, real validation, real permissions, or real background processing.
    - Verification: where applicable, unit tests, functional tests, browser inspection, screenshots, recordings, contract tests, integration tests, or end-to-end smoke tests.
-   - Acceptance: visually review the same layer 6 output with real logic when that output has acceptance criteria; otherwise none.
+   - Acceptance: repeat the layer 6 visual review with real logic; otherwise none.
 9. Refactor code for maintainable boundaries.
    - Examples: abstraction, reusability, separation of responsibility, plugin patterns, event-driven boundaries, model layers, database layers, provider adapters, naming, and testability.
    - Verification: where applicable, unit tests, functional tests, browser inspection, screenshots, recordings, integration tests, static checks, or focused code review.
-   - Acceptance: visually review the same layer 6 output after refactor when that output has acceptance criteria; otherwise none.
+   - Acceptance: repeat the layer 6 visual review after refactoring; otherwise none.
 
 ## 2. Accept Implementation Plan
 
@@ -109,7 +109,7 @@ Each task file must include:
 
 Do not create empty placeholder task files for tasks that are not part of the accepted plan.
 
-In each task file, keep verification and acceptance separate. Acceptance criteria must identify the visual artifact or visible state the user will review and what they should look for. If no such review is relevant, write `Acceptance criteria: none` and explain that briefly in the acceptance notes.
+Keep verification and acceptance separate. Name the visual artifact or state and what the user should review. Otherwise write `Acceptance criteria: none` and briefly explain why in the acceptance notes.
 
 ## 3. Implement Tasks
 
