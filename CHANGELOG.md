@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.1 - 2026-07-12
+
+- Overhauled `chrisai-agents` as a deterministic installer and repair surface
+  for project-local `.agents` workspaces, with managed sections that preserve
+  project-owned content and conflict-safe dry-run planning before writes.
+- Added a compact Agent Workspace Rules contract, glossary, context
+  initialization, Agent File ingestion and creation, spec-driven development,
+  task implementation, optional grill and user-journey workflows, and zombie
+  Reference File recovery.
+- Added deterministic `.agents` validation for managed-surface completeness,
+  line caps, reference naming and links, context-index routing, and zombie
+  Reference Files.
+- Reworked `chrisai-designing` around explicit wireframe and creative-draft
+  specification, implementation, review, revision, and handoff contracts.
+- Added a reusable wireframe library with base styles, components, layouts,
+  interaction utilities, icons, and browser-reviewable samples.
+
 ## 0.2.8 - 2026-07-03
 
 - Tightened `chrisai-designing` so rendered wireframes, creative drafts,
