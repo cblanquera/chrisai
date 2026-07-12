@@ -1,7 +1,4 @@
 interface:
   display_name: "ChrisAI Agents"
-  short_description: "Govern .agents planning and MVP flow"
-  icon_small: "./assets/bad-baby-bear-bot-head-icon-small.png"
-  icon_large: "./assets/bad-baby-bear-bot-head-icon.png"
-  brand_color: "#55B2A1"
-  default_prompt: "Use $chrisai-agents to repair .agents context, research specs, MVP gates, and root proof, wireframe, or creative artifact promotion."
+  short_description: "Install, repair, and update .agents workspace rules"
+  default_prompt: "Use $chrisai-agents to install, repair, or update the project-local .agents workspace rules."

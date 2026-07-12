@@ -16,7 +16,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-agents` | Create, repair, migrate, or standardize a project-local `.agents/` folder for agent-readable workflows, context rules, planning, specs, progress tracking, and handoffs. |
+| `chrisai-agents` | Install, repair, or update a project-local `.agents` operating surface with managed rules, workflows, references, and deterministic validation helpers. |
 | `chrisai-branding` | Support brand identity work, including guided branding, research, competitor discovery, positioning, naming, domain checks, logo guidance, brand kits, audits, launch readiness, transparent PNG preparation, and PNG/ICO conversion. |
 | `chrisai-chatting` | Route experimental chat-session experience work, including session caching and recall, HTML form intake, and readable HTML response preview links. |
 | `chrisai-coding` | Audit, recommend improvements to, and fix existing JavaScript, TypeScript, React TSX, TypeScript test, HTML/CSS, and TypeScript logic-review work through consolidated internal workflows and references. |
