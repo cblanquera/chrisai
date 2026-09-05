@@ -17,6 +17,7 @@ easier to scan.
 - `chevron-down`
 - `chevron-left`
 - `chevron-right`
+- `chevron-up`
 - `close`
 - `clock`
 - `copy`

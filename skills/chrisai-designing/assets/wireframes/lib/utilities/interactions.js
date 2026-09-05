@@ -8,6 +8,8 @@
     if (window.WireframeDateRange) window.WireframeDateRange.init(root);
     if (window.WireframeDateTimeField) window.WireframeDateTimeField.init(root);
     if (window.WireframeDropdown) window.WireframeDropdown.init(root);
+    if (window.WireframeFormBuilder) window.WireframeFormBuilder.init(root);
+    if (window.WireframeMindMap) window.WireframeMindMap.init(root);
     if (window.WireframeMobileShell) window.WireframeMobileShell.init(root);
     if (window.WireframeNotifier) window.WireframeNotifier.init(root);
     if (window.WireframePanelLayout) window.WireframePanelLayout.init(root);
@@ -20,6 +22,7 @@
     if (window.WireframeTree) window.WireframeTree.init(root);
     if (window.WireframeTooltip) window.WireframeTooltip.init(root);
     if (window.WireframeWysiwyg) window.WireframeWysiwyg.init(root);
+    if (window.WireframeWorkflow) window.WireframeWorkflow.init(root);
   }
 
   window.WireframeInteractions = { init: init };

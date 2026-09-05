@@ -1,0 +1,16 @@
+<section class="wf-workflow wf-workflow--designer" data-wf-workflow-designer aria-label="Workflow settings">
+  <header class="wf-workflow__header wf-workflow__header--minimal">
+    <nav class="wf-workflow__header-actions" aria-label="Workflow tools"><a class="wf-button wf-button--secondary" href="./workflow-board.html"><span data-wf-icon="arrow-left"></span>Board</a></nav>
+  </header>
+
+  <div class="wf-workflow__identity">
+    <label class="wf-field"><span class="wf-label">Workflow name</span><input class="wf-input" data-wf-workflow-name></label>
+    <label class="wf-field"><span class="wf-label">Status</span><select class="wf-select" data-wf-workflow-status><option value="active">Active</option><option value="draft">Draft</option><option value="archived">Archived</option></select></label>
+    <label class="wf-field wf-workflow__identity-description"><span class="wf-label">Description</span><textarea class="wf-textarea" data-wf-workflow-description-input></textarea></label>
+  </div>
+  <div class="wf-workflow__settings-actions"><button class="wf-button" type="button" data-wf-workflow-save>Save workflow</button></div>
+
+  <script type="application/json" data-wf-workflow-data>
+    {"storageKey":"wf-content-workflow","workflow":{"description":"Move content from idea through publication.","name":"Content production","status":"active","stages":[{"automations":[],"description":"Capture and prioritize upcoming work.","id":"backlog","limit":0,"name":"Backlog","outcome":"none","tasks":["Confirm brief"]},{"automations":[{"id":"draft-reminder","name":"Draft reminder","status":"active"},{"id":"request-review","name":"Request review","status":"active"}],"description":"Create the first complete version.","id":"drafting","limit":4,"name":"Drafting","outcome":"none","tasks":["Draft narrative","Add supporting assets"]},{"automations":[{"id":"review-handoff","name":"Review handoff","status":"active"}],"description":"Check accuracy, clarity, and readiness.","id":"review","limit":3,"name":"Review","outcome":"none","tasks":["Complete technical review"]},{"automations":[{"id":"publish-notification","name":"Publish notification","status":"paused"}],"description":"Finished and available to its audience.","id":"published","limit":0,"name":"Published","outcome":"complete","tasks":[]}],"cards":[]}}
+  </script>
+</section>

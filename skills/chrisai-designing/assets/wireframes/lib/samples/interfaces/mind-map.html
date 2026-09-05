@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mind Map Interface Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/dialog.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../../components/table.css">
+  <link rel="stylesheet" href="../../interfaces/mind-map.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body class="sample-interface-page">
+  <main class="sample-interface-shell">
+    <nav class="sample-interface-nav" aria-label="Sample navigation"><a class="wf-button wf-button--secondary" href="../index.html"><span data-wf-icon="arrow-left"></span>All samples</a><p>General-purpose hierarchy editing</p></nav>
+    <section class="wf-mind-map" data-wf-mind-map data-wf-mind-map-view="horizontal" aria-label="Mind map editor">
+      <header class="wf-mind-map__toolbar">
+        <div><p class="wf-kicker">Mind map</p><h2 class="wf-heading">Product launch</h2></div>
+        <div class="wf-mind-map__toolbar-actions">
+          <div class="wf-button-group" role="group" aria-label="Mind map view"><button class="wf-button wf-button--secondary" type="button" data-wf-mind-map-view-button="horizontal" aria-pressed="true">Horizontal</button><button class="wf-button wf-button--secondary" type="button" data-wf-mind-map-view-button="vertical" aria-pressed="false">Vertical</button><button class="wf-button wf-button--secondary" type="button" data-wf-mind-map-view-button="list" aria-pressed="false">List</button></div>
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mind-map-undo aria-label="Undo" disabled><span data-wf-icon="undo"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-mind-map-redo aria-label="Redo" disabled><span data-wf-icon="redo"></span></button>
+        </div>
+      </header>
+      <div class="wf-mind-map__workspace">
+        <div class="wf-mind-map__main">
+          <div class="wf-mind-map__viewport" data-wf-mind-map-viewport tabindex="0" aria-label="Mind map canvas. Select a topic and press Tab to add a child topic.">
+            <div class="wf-mind-map__grid" aria-hidden="true"></div>
+            <div class="wf-mind-map__canvas" data-wf-mind-map-canvas><div class="wf-mind-map__scene" data-wf-mind-map-scene><svg class="wf-mind-map__connectors" data-wf-mind-map-connectors aria-hidden="true"></svg><div class="wf-mind-map__nodes" data-wf-mind-map-nodes role="tree" aria-label="Topic hierarchy"></div></div></div>
+          </div>
+          <div class="wf-mind-map__list" data-wf-mind-map-list hidden><div class="wf-table-wrap"><table class="wf-table"><thead><tr><th scope="col">Topic</th><th scope="col">Parent</th><th scope="col">Children</th></tr></thead><tbody data-wf-mind-map-list-body></tbody></table></div></div>
+          <div class="wf-mind-map__zoom" role="group" aria-label="Canvas zoom"><button class="wf-button wf-button--secondary wf-icon-button" type="button" data-wf-mind-map-zoom-out aria-label="Zoom out">−</button><span data-wf-mind-map-zoom-value>100%</span><button class="wf-button wf-button--secondary wf-icon-button" type="button" data-wf-mind-map-zoom-in aria-label="Zoom in"><span data-wf-icon="add"></span></button><button class="wf-button wf-button--secondary wf-icon-button" type="button" data-wf-mind-map-fit aria-label="Fit map"><span data-wf-icon="eye"></span></button></div>
+          <p class="wf-sr-only" data-wf-mind-map-status aria-live="polite"></p>
+        </div>
+        <aside class="wf-mind-map__inspector" aria-label="Selected topic settings">
+          <div><p class="wf-kicker">Selected topic</p><h3 class="wf-subheading" data-wf-mind-map-selected-heading>Product launch</h3></div>
+          <label class="wf-field" data-wf-mind-map-title-field><span class="wf-label">Topic title</span><input class="wf-input" type="text" value="Product launch" data-wf-mind-map-title aria-describedby="wf-mind-map-sample-title-help wf-mind-map-sample-title-error"><span class="wf-help" id="wf-mind-map-sample-title-help">The title shown on the map.</span><span class="wf-error" id="wf-mind-map-sample-title-error" data-wf-mind-map-title-error hidden>A topic title is required.</span></label>
+          <dl class="wf-mind-map__meta"><div><dt>Parent</dt><dd data-wf-mind-map-parent>Central topic</dd></div><div><dt>Children</dt><dd data-wf-mind-map-child-count>2</dd></div></dl>
+          <div class="wf-stack"><button class="wf-button" type="button" data-wf-mind-map-add><span data-wf-icon="add"></span>Add child topic</button><button class="wf-button wf-button--secondary" type="button" data-wf-mind-map-delete><span data-wf-icon="trash"></span>Delete branch</button></div>
+        </aside>
+      </div>
+      <dialog class="wf-dialog" data-wf-mind-map-delete-dialog aria-labelledby="wf-mind-map-sample-delete-title"><div class="wf-dialog__header"><h2 class="wf-subheading" id="wf-mind-map-sample-delete-title">Delete this branch?</h2></div><div class="wf-dialog__body"><p class="wf-copy" data-wf-mind-map-delete-copy>The selected topic and its child topics will be removed.</p></div><div class="wf-dialog__footer"><button class="wf-button wf-button--secondary" type="button" data-wf-mind-map-delete-cancel>Cancel</button><button class="wf-button" type="button" data-wf-mind-map-delete-confirm>Delete branch</button></div></dialog>
+      <script type="application/json" data-wf-mind-map-data>{"rootId":"topic-1","selectedId":"topic-1","nodes":[{"id":"topic-1","parentId":null,"title":"Product launch"},{"id":"topic-2","parentId":"topic-1","title":"Audience"},{"id":"topic-3","parentId":"topic-1","title":"Channels"},{"id":"topic-4","parentId":"topic-2","title":"Primary users"}]}</script>
+    </section>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../interfaces/mind-map.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

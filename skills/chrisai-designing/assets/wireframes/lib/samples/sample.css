@@ -8,6 +8,31 @@
   margin-inline: auto;
 }
 
+.sample-interface-page {
+  min-height: 100vh;
+  padding: var(--wf-space-4);
+  background: var(--wf-gray-100);
+}
+
+.sample-interface-shell {
+  width: min(100%, 1440px);
+  margin-inline: auto;
+}
+
+.sample-interface-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  margin-bottom: var(--wf-space-3);
+}
+
+.sample-interface-nav p {
+  margin: 0;
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}
+
 .sample-nav {
   display: flex;
   flex-wrap: wrap;

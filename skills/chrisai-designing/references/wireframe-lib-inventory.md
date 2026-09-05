@@ -32,6 +32,20 @@ files are complete review pages and are not source templates.
 | Mobile shell drawer variant | `layouts/mobile-shell-drawer.html`, `layouts/mobile-shell.css`, `layouts/mobile-shell.js` | `samples/layouts/mobile-shell.html` | base files, buttons, icons, interactions | A portrait mobile prototype needs overlay navigation that slides from the left. |
 | Mobile shell interactions | `layouts/mobile-shell.js` | `samples/layouts/mobile-shell.html` | mobile shell CSS, interactions | A mobile prototype needs screen-stack transitions, root tab changes, or an optional slide-in drawer. |
 
+## Interfaces
+
+Interfaces are composed, task-focused editing surfaces. Copy the interface's
+HTML, CSS, and JavaScript together, plus only the listed library dependencies.
+Replace the embedded JSON with the revision's initial state.
+
+| Item | Source files | Sample | Dependencies | Copy when |
+| --- | --- | --- | --- | --- |
+| Mind map | `interfaces/mind-map.html`, `interfaces/mind-map.css`, `interfaces/mind-map.js` | `samples/interfaces/mind-map.html` | base files, buttons, dialog, forms, table, icons, interactions | A user needs to create, rename, arrange, inspect, and remove hierarchical topics in horizontal, vertical, or list views. |
+| Workflow board | `interfaces/workflow-board.html`, `interfaces/workflow.css`, `interfaces/workflow.js` | `samples/interfaces/workflow-board.html` | base files, badge, buttons, dialog, forms, icons, notifier, interactions | Ordered stages need sorting, an add-stage placeholder, gear-based settings, stage task templates, multiple stage automations, guarded stage removal with card move/delete choices, draggable cards, filters, details, card tasks, requirements, and capacity limits. |
+| Workflow settings | `interfaces/workflow-designer.html`, `interfaces/workflow.css`, `interfaces/workflow.js` | `samples/interfaces/workflow-designer.html` | base files, buttons, forms, icons, notifier, interactions | A workflow needs editable name, status, and description while stage-specific controls remain on the board. |
+| Workflow automation builder | `interfaces/workflow-automation-builder.html`, `interfaces/workflow.css`, `interfaces/workflow.js` | `samples/interfaces/workflow-automation-builder.html` | base files, buttons, dialog, forms, icons, notifier, interactions | A stage needs readable Trigger, Conditions, ordered Actions, Timing, run settings, a live preview, and a non-mutating test. |
+| Form builder | `interfaces/form-builder.html`, `interfaces/form-builder.css`, `interfaces/form-builder.js` | `samples/interfaces/form-builder.html` | base files, badge, buttons, dialog, forms, icons, notifier, interactions | A user needs to add, configure, reorder, duplicate, delete, preview, save, or publish structured form fields. |
+
 ## Icons
 
 | Item | Source files | Sample | Dependencies | Copy when |

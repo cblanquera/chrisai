@@ -11,6 +11,7 @@
     'chevron-down': '<path d="m6 9 6 6 6-6"/>',
     'chevron-left': '<path d="m15 18-6-6 6-6"/>',
     'chevron-right': '<path d="m9 18 6-6-6-6"/>',
+    'chevron-up': '<path d="m18 15-6-6-6 6"/>',
     close: '<path d="M18 6 6 18M6 6l12 12"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
     copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M4 16V6a2 2 0 0 1 2-2h10"/>',

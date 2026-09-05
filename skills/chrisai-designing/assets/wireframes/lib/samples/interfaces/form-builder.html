@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Builder Interface Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/badge.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/dialog.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../../components/notifier.css">
+  <link rel="stylesheet" href="../../interfaces/form-builder.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body class="sample-interface-page">
+  <main class="sample-interface-shell">
+    <nav class="sample-interface-nav" aria-label="Sample navigation"><a class="wf-button wf-button--secondary" href="../index.html"><span data-wf-icon="arrow-left"></span>All samples</a><p>General-purpose structured form design</p></nav>
+    <section class="wf-form-builder" data-wf-form-builder data-wf-form-builder-storage="wf-form-builder-sample" aria-label="Form builder">
+      <header class="wf-form-builder__header"><div><p class="wf-kicker">Form builder</p><h2 class="wf-heading" data-wf-form-builder-heading>Project request</h2><span class="wf-form-builder__save-state" data-wf-form-builder-save-state>Saved</span></div><div class="wf-form-builder__header-actions"><button class="wf-button wf-button--secondary" type="button" data-wf-form-builder-preview><span data-wf-icon="eye"></span>Preview</button><button class="wf-button wf-button--secondary" type="button" data-wf-form-builder-save>Save</button><button class="wf-button" type="button" data-wf-form-builder-publish>Publish</button></div></header>
+      <div class="wf-form-builder__meta"><label class="wf-field"><span class="wf-label">Form name</span><input class="wf-input" type="text" value="Project request" data-wf-form-builder-name></label><label class="wf-field"><span class="wf-label">Status</span><select class="wf-select" data-wf-form-builder-status><option value="draft">Draft</option><option value="active" selected>Active</option><option value="archived">Archived</option></select></label><label class="wf-field wf-form-builder__meta-description"><span class="wf-label">Description</span><textarea class="wf-textarea" data-wf-form-builder-description>Collect the context needed to evaluate and schedule a new project.</textarea></label></div>
+      <div class="wf-form-builder__workspace">
+        <section class="wf-form-builder__canvas" aria-label="Form fields"><div class="wf-form-builder__field-list" data-wf-form-builder-field-list aria-live="polite"></div><button class="wf-form-builder__add-card" type="button" data-wf-form-builder-add><span data-wf-icon="add"></span>Add field</button></section>
+        <aside class="wf-form-builder__properties" aria-labelledby="wf-form-builder-sample-properties-title"><div class="wf-form-builder__panel-heading"><h3 class="wf-subheading" id="wf-form-builder-sample-properties-title">Field settings</h3></div><form class="wf-form" data-wf-form-builder-properties>
+          <label class="wf-field" data-wf-form-builder-label-field><span class="wf-label">Label</span><input class="wf-input" type="text" data-wf-form-builder-property="label"><span class="wf-error" data-wf-form-builder-label-error hidden>A field label is required.</span></label><label class="wf-field"><span class="wf-label">Field name</span><input class="wf-input" type="text" data-wf-form-builder-property="name"></label><label class="wf-field"><span class="wf-label">Answer type</span><select class="wf-select" data-wf-form-builder-property="type"><option value="short">Short answer</option><option value="long">Long answer</option><option value="number">Number</option><option value="date">Date</option><option value="datetime">Date and time</option><option value="select">Dropdown</option><option value="radio">Multiple choice</option><option value="checkbox">Checkboxes</option><option value="file">File upload</option><option value="url">URL</option><option value="tags">Tags</option><option value="textlist">Text list</option><option value="rich">Rich text</option></select></label><label class="wf-field"><span class="wf-label">Help text</span><textarea class="wf-textarea" data-wf-form-builder-property="help"></textarea></label><label class="wf-field"><span class="wf-label">Placeholder</span><input class="wf-input" type="text" data-wf-form-builder-property="placeholder"></label><label class="wf-field" data-wf-form-builder-options-field><span class="wf-label">Choices</span><textarea class="wf-textarea" data-wf-form-builder-property="options"></textarea><span class="wf-help">Enter one option per line.</span></label><label class="wf-check"><input type="checkbox" data-wf-form-builder-property="required"><span>Required</span></label><div class="wf-form-builder__property-actions"><button class="wf-button wf-button--secondary" type="button" data-wf-form-builder-duplicate>Duplicate</button><button class="wf-button wf-button--ghost" type="button" data-wf-form-builder-delete>Delete</button></div>
+        </form></aside>
+      </div>
+      <dialog class="wf-dialog wf-form-builder__preview-dialog" data-wf-form-builder-preview-dialog aria-labelledby="wf-form-builder-sample-preview-title"><div class="wf-dialog__header"><h2 class="wf-subheading" id="wf-form-builder-sample-preview-title">Form preview</h2><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-form-builder-preview-close aria-label="Close preview"><span data-wf-icon="close"></span></button></div><div class="wf-dialog__body"><div class="wf-form-builder__preview-copy"><h3 data-wf-form-builder-preview-heading>Project request</h3><p class="wf-copy" data-wf-form-builder-preview-description></p></div><div class="wf-form" data-wf-form-builder-preview-list></div></div><div class="wf-dialog__footer"><button class="wf-button" type="button" data-wf-form-builder-preview-close>Done</button></div></dialog>
+      <dialog class="wf-dialog" data-wf-form-builder-delete-dialog aria-labelledby="wf-form-builder-sample-delete-title"><div class="wf-dialog__header"><h2 class="wf-subheading" id="wf-form-builder-sample-delete-title">Delete this field?</h2></div><div class="wf-dialog__body"><p class="wf-copy">The field will be removed from the form.</p></div><div class="wf-dialog__footer"><button class="wf-button wf-button--secondary" type="button" data-wf-form-builder-delete-cancel>Cancel</button><button class="wf-button" type="button" data-wf-form-builder-delete-confirm>Delete field</button></div></dialog>
+      <script type="application/json" data-wf-form-builder-data>{"fields":[{"help":"","id":"project-name","label":"Project name","name":"projectName","options":[],"placeholder":"Name the project","required":true,"type":"short"},{"help":"Describe the outcome this project should create.","id":"objective","label":"Objective","name":"objective","options":[],"placeholder":"What should change?","required":true,"type":"long"},{"help":"","id":"target-date","label":"Target date","name":"targetDate","options":[],"placeholder":"","required":false,"type":"date"},{"help":"","id":"priority","label":"Priority","name":"priority","options":["Low","Normal","High","Urgent"],"placeholder":"","required":true,"type":"radio"},{"help":"PDF, image, or document up to 10 MB.","id":"supporting-file","label":"Supporting file","name":"supportingFile","options":[],"placeholder":"","required":false,"type":"file"}]}</script>
+    </section>
+  </main>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../components/notifier.js"></script>
+  <script src="../../interfaces/form-builder.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

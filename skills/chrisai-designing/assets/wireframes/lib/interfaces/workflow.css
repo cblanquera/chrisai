@@ -1,0 +1,849 @@
+.wf-workflow {
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-4);
+  background: var(--wf-surface-muted);
+  color: var(--wf-text);
+}
+
+.wf-workflow--designer {
+  min-height: auto;
+}
+
+.wf-workflow__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-5);
+  padding: var(--wf-space-5) var(--wf-space-6);
+  border-bottom: 1px solid var(--wf-border);
+  background: var(--wf-surface);
+}
+
+.wf-workflow__header .wf-heading,
+.wf-workflow__header .wf-copy,
+.wf-workflow__header .wf-kicker,
+.wf-workflow__stage-settings .wf-subheading,
+.wf-workflow__step h3,
+.wf-workflow__step p,
+.wf-workflow__automation-preview p {
+  margin: 0;
+}
+
+.wf-workflow__header-actions,
+.wf-workflow__filters,
+.wf-workflow__tag-list,
+.wf-workflow__card-meta,
+.wf-workflow__card-footer,
+.wf-workflow__column-tools,
+.wf-workflow__stage-actions,
+.wf-workflow__stage-automation,
+.wf-workflow__condition-row,
+.wf-workflow__action-row,
+.wf-workflow__timing-fields,
+.wf-workflow__action-config-fields {
+  display: flex;
+  align-items: center;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__header-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.wf-workflow__header--minimal .wf-workflow__header-actions {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.wf-workflow--automation .wf-workflow__header--minimal .wf-workflow__header-actions {
+  justify-content: flex-start;
+}
+
+.wf-workflow__filters {
+  padding: var(--wf-space-4) var(--wf-space-6);
+  border-bottom: 1px solid var(--wf-border);
+  background: var(--wf-surface);
+}
+
+.wf-workflow__filters .wf-field:first-child {
+  flex: 1 1 280px;
+}
+
+.wf-workflow__filters .wf-field:last-child {
+  flex: 0 1 220px;
+}
+
+.wf-workflow__board-viewport {
+  min-height: 570px;
+  overflow: auto;
+  padding: var(--wf-space-5);
+}
+
+.wf-workflow__board {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--wf-space-4);
+  min-width: min-content;
+}
+
+.wf-workflow__column {
+  width: 286px;
+  flex: 0 0 286px;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-gray-100);
+}
+
+.wf-workflow__column[data-drag-over="true"] {
+  outline: 2px solid var(--wf-gray-600);
+  outline-offset: 2px;
+}
+
+.wf-workflow__column[data-dragging="true"] {
+  opacity: .55;
+}
+
+.wf-workflow__column-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-3) var(--wf-space-4);
+  border-bottom: 1px solid var(--wf-border);
+}
+
+.wf-workflow__column-copy {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.wf-workflow__column-title {
+  display: flex;
+  align-items: center;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__column-copy h3,
+.wf-workflow__column-copy p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wf-workflow__column-tools {
+  flex: 0 0 auto;
+}
+
+.wf-workflow__column-handle {
+  width: 18px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: radial-gradient(circle, var(--wf-gray-500) 1px, transparent 1.5px) 0 0 / 6px 6px;
+  cursor: grab;
+}
+
+.wf-workflow__column-header h3,
+.wf-workflow__column-header p,
+.wf-workflow__card h4,
+.wf-workflow__card p {
+  margin: 0;
+}
+
+.wf-workflow__column-header h3 {
+  font-size: var(--wf-text-md);
+}
+
+.wf-workflow__column-header p {
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-xs);
+}
+
+.wf-workflow__column-count {
+  min-width: 26px;
+  padding: 2px 7px;
+  border: 1px solid var(--wf-border-strong);
+  border-radius: 999px;
+  background: var(--wf-white);
+  font-size: var(--wf-text-xs);
+  text-align: center;
+}
+
+.wf-workflow__column--add {
+  display: grid;
+  min-height: 154px;
+  place-items: stretch;
+  border-style: dashed;
+  background: transparent;
+}
+
+.wf-workflow__column--add > button {
+  display: grid;
+  place-content: center;
+  gap: var(--wf-space-2);
+  min-height: 152px;
+  padding: var(--wf-space-5);
+  border: 0;
+  background: transparent;
+  color: var(--wf-text);
+  text-align: center;
+}
+
+.wf-workflow__column--add > button:hover {
+  background: var(--wf-gray-100);
+}
+
+.wf-workflow__column--add .wf-icon {
+  margin-inline: auto;
+}
+
+.wf-workflow__column--add small {
+  color: var(--wf-text-muted);
+}
+
+.wf-workflow__card-list {
+  display: grid;
+  gap: var(--wf-space-3);
+  min-height: 120px;
+  padding: var(--wf-space-3);
+}
+
+.wf-workflow__card {
+  display: grid;
+  gap: var(--wf-space-3);
+  width: 100%;
+  padding: var(--wf-space-4);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-white);
+  box-shadow: var(--wf-shadow-1);
+  color: var(--wf-text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.wf-workflow__card:hover,
+.wf-workflow__card:focus-visible {
+  border-color: var(--wf-gray-600);
+}
+
+.wf-workflow__card[data-dragging="true"] {
+  opacity: .55;
+}
+
+.wf-workflow__card h4 {
+  font-size: var(--wf-text-sm);
+}
+
+.wf-workflow__card p,
+.wf-workflow__card-meta,
+.wf-workflow__card-footer {
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-xs);
+}
+
+.wf-workflow__tag-list {
+  flex-wrap: wrap;
+}
+
+.wf-workflow__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 1px var(--wf-space-2);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: 999px;
+  background: var(--wf-gray-50);
+  font-size: var(--wf-text-xs);
+}
+
+.wf-workflow__card-footer {
+  justify-content: space-between;
+}
+
+.wf-workflow__progress-track {
+  width: 84px;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--wf-gray-200);
+}
+
+.wf-workflow__progress-track > span {
+  display: block;
+  height: 100%;
+  background: var(--wf-gray-700);
+}
+
+.wf-workflow__empty-column {
+  display: flex;
+  min-height: 94px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: var(--wf-space-3);
+  border: 1px dashed var(--wf-border-strong);
+  border-radius: var(--wf-radius-3);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+  text-align: center;
+}
+
+.wf-workflow__drawer-layer {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  pointer-events: none;
+}
+
+.wf-workflow__drawer-layer[data-open="true"] {
+  pointer-events: auto;
+}
+
+.wf-workflow__drawer-overlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgb(43 43 43 / 28%);
+  opacity: 0;
+  transition: opacity var(--wf-motion-medium) var(--wf-motion-ease);
+}
+
+.wf-workflow__drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(430px, 100%);
+  overflow: auto;
+  border-left: 1px solid var(--wf-border);
+  background: var(--wf-white);
+  box-shadow: var(--wf-shadow-2);
+  transform: translateX(100%);
+  transition: transform var(--wf-motion-medium) var(--wf-motion-ease);
+}
+
+.wf-workflow__drawer-layer[data-open="true"] .wf-workflow__drawer-overlay {
+  opacity: 1;
+}
+
+.wf-workflow__drawer-layer[data-open="true"] .wf-workflow__drawer {
+  transform: translateX(0);
+}
+
+.wf-workflow__drawer-header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-5);
+  border-bottom: 1px solid var(--wf-border);
+  background: var(--wf-white);
+}
+
+.wf-workflow__drawer-body {
+  display: grid;
+  gap: var(--wf-space-6);
+  padding: var(--wf-space-5);
+}
+
+.wf-workflow__drawer-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--wf-space-3);
+  margin: 0;
+}
+
+.wf-workflow__drawer-meta div {
+  min-width: 0;
+  padding: var(--wf-space-3);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-gray-50);
+}
+
+.wf-workflow__drawer-meta dt,
+.wf-workflow__drawer-meta dd {
+  margin: 0;
+}
+
+.wf-workflow__drawer-meta dt {
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-xs);
+}
+
+.wf-workflow__drawer-meta dd {
+  overflow: hidden;
+  font-size: var(--wf-text-sm);
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.wf-workflow__activity {
+  display: grid;
+  gap: var(--wf-space-2);
+  margin: 0;
+  padding-left: var(--wf-space-5);
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}
+
+.wf-workflow__identity,
+.wf-workflow__automation-identity {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 180px;
+  gap: var(--wf-space-4);
+  padding: var(--wf-space-5) var(--wf-space-6);
+  border-bottom: 1px solid var(--wf-border);
+  background: var(--wf-surface);
+}
+
+.wf-workflow__automation-identity {
+  grid-template-columns: minmax(220px, 1fr) 180px 180px;
+}
+
+.wf-workflow__automation-stage {
+  display: grid;
+  align-content: center;
+  gap: var(--wf-space-2);
+  padding: var(--wf-space-3);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-gray-50);
+}
+
+.wf-workflow__identity-description {
+  grid-column: 1 / -1;
+}
+
+.wf-workflow__identity-description .wf-textarea {
+  min-height: 70px;
+}
+
+.wf-workflow__settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--wf-space-4) var(--wf-space-6) var(--wf-space-5);
+  background: var(--wf-surface);
+}
+
+.wf-workflow__designer-layout {
+  display: grid;
+  grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+  min-height: 490px;
+}
+
+.wf-workflow__stage-list-panel,
+.wf-workflow__stage-settings {
+  padding: var(--wf-space-5);
+}
+
+.wf-workflow__stage-list-panel {
+  border-right: 1px solid var(--wf-border);
+  background: var(--wf-gray-50);
+}
+
+.wf-workflow__stage-list {
+  display: grid;
+  gap: var(--wf-space-2);
+  margin-top: var(--wf-space-4);
+}
+
+.wf-workflow__stage-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--wf-space-2);
+  padding: var(--wf-space-2);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-white);
+}
+
+.wf-workflow__stage-item[aria-selected="true"] {
+  border-color: var(--wf-gray-700);
+  box-shadow: inset 3px 0 0 var(--wf-gray-700);
+}
+
+.wf-workflow__stage-handle {
+  width: 18px;
+  height: 26px;
+  border: 0;
+  background: radial-gradient(circle, var(--wf-gray-500) 1px, transparent 1.5px) 0 0 / 6px 6px;
+  cursor: grab;
+}
+
+.wf-workflow__stage-select {
+  min-width: 0;
+  padding: var(--wf-space-2);
+  border: 0;
+  background: transparent;
+  color: var(--wf-text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.wf-workflow__stage-select small {
+  display: block;
+  margin-top: 2px;
+  color: var(--wf-text-muted);
+  font-weight: 400;
+}
+
+.wf-workflow__stage-form {
+  grid-template-columns: minmax(0, 1fr) 160px;
+  margin-top: var(--wf-space-5);
+}
+
+.wf-workflow__stage-description {
+  grid-column: 1 / -1;
+}
+
+.wf-workflow__stage-automation {
+  display: grid;
+  align-items: stretch;
+  gap: var(--wf-space-3);
+  margin-top: var(--wf-space-6);
+  padding-top: var(--wf-space-5);
+  border-top: 1px solid var(--wf-border);
+}
+
+.wf-workflow__stage-automation h3,
+.wf-workflow__stage-automation p,
+.wf-workflow__automation-item strong {
+  margin: 0;
+}
+
+.wf-workflow__stage-automation h3,
+.wf-workflow__automation-item strong,
+.wf-workflow__stage-automation .wf-button {
+  font-size: var(--wf-text-sm);
+}
+
+.wf-workflow__stage-automation .wf-button {
+  min-height: 32px;
+  padding-right: var(--wf-space-3);
+  padding-left: var(--wf-space-3);
+}
+
+.wf-workflow__stage-tasks,
+.wf-workflow__stage-task-list {
+  display: grid;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__stage-task-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__automation-list {
+  display: grid;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__automation-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-3);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-white);
+}
+
+.wf-workflow__automation-item > div {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__stage-dialog-footer {
+  justify-content: space-between;
+}
+
+.wf-workflow__stage-dialog-footer > div {
+  display: flex;
+  gap: var(--wf-space-2);
+}
+
+[data-wf-workflow-board-stage-dialog] {
+  max-height: calc(100dvh - 32px);
+}
+
+[data-wf-workflow-board-stage-dialog] > form {
+  display: grid;
+  max-height: calc(100dvh - 34px);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+}
+
+[data-wf-workflow-board-stage-dialog] .wf-dialog__body {
+  overflow: auto;
+}
+
+.wf-workflow__warning {
+  margin: 0;
+  padding: var(--wf-space-3);
+  border: 1px solid var(--wf-border-strong);
+  border-left: 4px solid var(--wf-gray-700);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-gray-100);
+}
+
+.wf-workflow__automation-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  align-items: start;
+  gap: var(--wf-space-5);
+  padding: var(--wf-space-5);
+}
+
+.wf-workflow__automation-steps {
+  display: grid;
+  gap: var(--wf-space-4);
+}
+
+.wf-workflow__step {
+  overflow: hidden;
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-white);
+}
+
+.wf-workflow__step > header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--wf-space-3);
+  padding: var(--wf-space-4);
+  border-bottom: 1px solid var(--wf-border);
+  background: var(--wf-gray-50);
+}
+
+.wf-workflow__step > header > span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--wf-gray-700);
+  color: var(--wf-white);
+  font-size: var(--wf-text-sm);
+  font-weight: 700;
+}
+
+.wf-workflow__step > header p {
+  color: var(--wf-text-muted);
+  font-size: var(--wf-text-sm);
+}
+
+.wf-workflow__step-body {
+  display: grid;
+  gap: var(--wf-space-4);
+  padding: var(--wf-space-4);
+}
+
+.wf-workflow__condition-row,
+.wf-workflow__action-row {
+  align-items: flex-end;
+  padding: var(--wf-space-3);
+  border: 1px solid var(--wf-border);
+  border-radius: var(--wf-radius-2);
+  background: var(--wf-gray-50);
+}
+
+.wf-workflow__condition-row .wf-field,
+.wf-workflow__action-row__copy {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.wf-workflow__condition-row .wf-field:first-child {
+  flex-basis: 150px;
+}
+
+.wf-workflow__condition-row .wf-field:nth-child(2) {
+  flex-basis: 120px;
+}
+
+.wf-workflow__action-list {
+  display: grid;
+  gap: var(--wf-space-2);
+}
+
+.wf-workflow__action-row {
+  align-items: center;
+  background: var(--wf-white);
+}
+
+.wf-workflow__action-row[data-dragging="true"] {
+  opacity: .55;
+}
+
+.wf-workflow__action-handle {
+  width: 18px;
+  height: 28px;
+  flex: 0 0 18px;
+  border: 0;
+  background: radial-gradient(circle, var(--wf-gray-500) 1px, transparent 1.5px) 0 0 / 6px 6px;
+  cursor: grab;
+}
+
+.wf-workflow__action-row__copy strong,
+.wf-workflow__action-row__copy small,
+.wf-workflow__automation-preview strong,
+.wf-workflow__automation-preview small {
+  display: block;
+}
+
+.wf-workflow__action-row__copy small,
+.wf-workflow__automation-preview small {
+  margin-top: 2px;
+  color: var(--wf-text-muted);
+}
+
+.wf-workflow__timing-fields,
+.wf-workflow__action-config-fields {
+  align-items: flex-end;
+}
+
+.wf-workflow__timing-fields .wf-field,
+.wf-workflow__action-config-fields .wf-field {
+  flex: 1 1 0;
+}
+
+.wf-workflow__automation-preview {
+  position: sticky;
+  top: var(--wf-space-4);
+  display: grid;
+  gap: var(--wf-space-5);
+  padding: var(--wf-space-5);
+  border: 1px solid var(--wf-border-strong);
+  border-radius: var(--wf-radius-3);
+  background: var(--wf-white);
+  box-shadow: var(--wf-shadow-1);
+}
+
+.wf-workflow__automation-preview > div {
+  display: grid;
+  gap: var(--wf-space-2);
+  padding-top: var(--wf-space-4);
+  border-top: 1px solid var(--wf-border);
+}
+
+.wf-workflow__automation-preview ol {
+  display: grid;
+  gap: var(--wf-space-2);
+  margin: 0;
+  padding-left: var(--wf-space-5);
+  font-size: var(--wf-text-sm);
+}
+
+.wf-workflow__action-dialog {
+  width: min(100% - 32px, 640px);
+}
+
+@media (max-width: 900px) {
+  .wf-workflow__header {
+    align-items: flex-start;
+  }
+
+  .wf-workflow__designer-layout,
+  .wf-workflow__automation-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-workflow__stage-list-panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--wf-border);
+  }
+
+  .wf-workflow__automation-preview {
+    position: static;
+  }
+}
+
+@media (max-width: 680px) {
+  .wf-workflow {
+    min-height: 640px;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+
+  .wf-workflow__header,
+  .wf-workflow__filters {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--wf-space-4);
+  }
+
+  .wf-workflow__header-actions {
+    justify-content: stretch;
+  }
+
+  .wf-workflow__header-actions .wf-button {
+    flex: 1 1 auto;
+  }
+
+  .wf-workflow__filters .wf-field {
+    flex-basis: auto !important;
+  }
+
+  .wf-workflow__identity,
+  .wf-workflow__automation-identity,
+  .wf-workflow__stage-form {
+    grid-template-columns: 1fr;
+  }
+
+  .wf-workflow__identity-description,
+  .wf-workflow__stage-description {
+    grid-column: auto;
+  }
+
+  .wf-workflow__identity,
+  .wf-workflow__automation-identity,
+  .wf-workflow__automation-layout {
+    padding-right: var(--wf-space-4);
+    padding-left: var(--wf-space-4);
+  }
+
+  .wf-workflow__settings-actions {
+    padding-right: var(--wf-space-4);
+    padding-left: var(--wf-space-4);
+  }
+
+  .wf-workflow__condition-row,
+  .wf-workflow__timing-fields,
+  .wf-workflow__action-config-fields {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .wf-workflow__condition-row .wf-field {
+    width: 100%;
+    flex-basis: auto !important;
+  }
+
+  .wf-workflow__drawer-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wf-workflow__drawer-overlay,
+  .wf-workflow__drawer {
+    transition-duration: 0ms;
+  }
+}
