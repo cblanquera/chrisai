@@ -22,6 +22,8 @@ Do not make future specs depend on sibling specs for shared truth. Promote accep
 5. `.agents/specs/<spec-id>/index.md`, when updating an existing spec
 6. relevant Spec Files, Source Material, project files, and user instructions
 
+Whenever this workflow creates an Agent Document, apply the [Agent File Creation Workflow](agent-file-creation.md). Whenever it changes an existing Agent Document, apply the [Agent File Update Workflow](agent-file-update.md). Complete content before applying line thresholds.
+
 Do not load unrelated spec folders unless the current spec explicitly links to them or the user asks for cross-spec review.
 
 ## Spec Folder Naming

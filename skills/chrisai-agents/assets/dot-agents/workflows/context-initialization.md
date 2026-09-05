@@ -5,7 +5,7 @@ Use this workflow when bootstrapping or substantially rebuilding `.agents/contex
 
 Do not use this workflow to replace the [Spec Driven Development Workflow](spec-driven-development.md). Use specs for bounded planning, implementation contracts, research queues, Proofs, and Freeze. Use this workflow to establish the reusable source-of-truth layer that future specs should read first.
 
-If the task is only importing one known source into one known Agent File, use the [Agent File Ingestion Workflow](agent-file-ingestion.md) directly.
+If the task is only importing one known source into one known Agent Document, use the [Agent File Ingestion Workflow](agent-file-ingestion.md) directly.
 
 ## Read First
 
@@ -14,8 +14,9 @@ If the task is only importing one known source into one known Agent File, use th
 3. `.agents/context/index.md`, when Context Files exist
 4. `.agents/workflows/agent-file-ingestion.md`
 5. `.agents/workflows/agent-file-creation.md`
-6. `.agents/workflows/spec-driven-development.md`, when a bounded spec may be needed
-7. relevant Source Material, project documentation, code, and user instructions
+6. `.agents/workflows/agent-file-update.md`, when existing Agent Documents may change
+7. `.agents/workflows/spec-driven-development.md`, when a bounded spec may be needed
+8. relevant Source Material, project documentation, code, and user instructions
 
 Do not load unrelated Source Material just because it exists. Start from the user's stated inputs, then expand only when the initial scan shows an intersection or conflict.
 
@@ -46,21 +47,21 @@ Before writing the first Context File or rebuilding several Context Files, propo
 2. Choose topic files that future agents can route from `.agents/context/index.md`.
 3. Keep `.agents/context/index.md` as the read-first router, not a summary substitute for the Context Files.
 4. Add `Load when:` guidance for each context link when it helps future agents choose the right file.
-5. Put long provenance, detailed examples, and extracted support material behind Resource Links or Reference Links.
+5. Plan likely Reference Links for long provenance, detailed examples, and extracted support material, but do not partition or summarize the material before completing the draft.
 
 If the best taxonomy is unclear, ask for confirmation before creating multiple Context Files. For a small first pass, prefer one focused Context File plus `index.md` over a broad empty taxonomy.
 
 ## 4. Draft Context Files
 
-Use the [Agent File Ingestion Workflow](agent-file-ingestion.md) for Source Material imports and the [Agent File Creation Workflow](agent-file-creation.md) for drafting, splitting, and linking.
+Use the [Agent File Ingestion Workflow](agent-file-ingestion.md) for Source Material imports, the [Agent File Creation Workflow](agent-file-creation.md) for new Agent Documents, and the [Agent File Update Workflow](agent-file-update.md) for existing Agent Documents.
 
 When drafting Context Files:
 
-1. Preserve meaning, requirements, decisions, constraints, examples, and edge cases. Do not reduce context to a summary-only record.
+1. Finish a Complete Draft with all in-scope meaning, requirements, decisions, constraints, examples, edge cases, identifiers, citations, tables, and other meaning-bearing detail. Do not reduce context to a summary-only record.
 2. Separate accepted truth from agent-added clarification when that distinction matters.
 3. Keep temporary assumptions, raw research notes, one-spec tasks, and implementation sequencing out of `.agents/context/`.
 4. Add or update `.agents/context/index.md` when a Context File is added, renamed, split, or materially rerouted.
-5. Split oversized support detail into flat numbered Reference Files and link them with task-informative Reference Links.
+5. Only after the draft is complete, losslessly split it into cohesive flat numbered Reference Files and link them with descriptions that state what they contain and when to load them.
 
 ## 5. Route Gaps And Specs
 

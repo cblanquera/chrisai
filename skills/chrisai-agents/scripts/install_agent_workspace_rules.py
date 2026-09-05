@@ -21,6 +21,7 @@ TEMPLATE_FILES = (
     Path("references/00002-intersection-points.md"),
     Path("references/00003-reference-recovery-points.md"),
     Path("workflows/agent-file-creation.md"),
+    Path("workflows/agent-file-update.md"),
     Path("workflows/agent-file-ingestion.md"),
     Path("workflows/context-initialization.md"),
     Path("workflows/spec-driven-development.md"),

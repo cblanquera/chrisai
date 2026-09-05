@@ -27,6 +27,7 @@ The installer manages these files under a target project root:
   TERMS.md
   workflows/
     agent-file-creation.md
+    agent-file-update.md
     agent-file-ingestion.md
     context-initialization.md
     repair-zombie-reference-files.md
@@ -45,10 +46,24 @@ The installer manages these files under a target project root:
 `.agents/AGENTS.md` is the local operating contract. `.agents/TERMS.md`
 contains a managed glossary section with room for project-specific terms
 outside the managed block. Workflow files and references provide the detailed
-rules for Agent Files, context initialization, spec-driven development, grill
-sessions, user journeys, and zombie Reference File repair.
+rules for lossless Agent File creation, ingestion, updates, context
+initialization, spec-driven development, grill sessions, user journeys, and
+zombie Reference File repair.
 
-## Install Or Repair
+## Fidelity And File Size
+
+The installed contract requires agents to finish a Complete Draft before
+applying line thresholds. When an existing Agent Document is updated, the
+owner Agent File and its relevant linked Reference Files are reconstructed and
+merged with the accepted change before they are repartitioned.
+
+The preferred 200-line target and hard 500-line limit apply to each final Agent
+File, not to the amount of documentation as a whole or to an in-progress
+Complete Draft. A split redistributes complete content into cohesive,
+task-routed Reference Files; it does not authorize summarizing, omitting, or
+deleting information or data.
+
+## Install, Repair, Or Update
 
 Run the bundled installer from the skill folder. Start with a dry run:
 
@@ -89,7 +104,8 @@ Validation checks managed-surface completeness, line caps, reference naming,
 links, context-index routing, and zombie Reference Files. It reports hard-rule
 violations as errors and preference-level or review-required issues as
 warnings. It does not decide whether context content is truly Accepted Reusable
-Truth; that still requires reading source material and user instructions.
+Truth or whether a split retained all documented information; those still
+require source and coverage review.
 
 ## Scope Rules
 

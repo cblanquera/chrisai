@@ -1,6 +1,6 @@
 ---
 name: chrisai-agents
-description: Use when installing, repairing, or updating a project-root `.agents` operating surface, including AGENTS, TERMS, workflows, workflow references, validator helpers, Agent File line caps, spec-driven development rules, grill sessions, user journeys, and zombie Reference File checks.
+description: Install, repair, or update a project-root `.agents` operating surface with lossless Agent Document workflows, spec lifecycle rules, routed references, and deterministic validation.
 license: MIT
 ---
 
@@ -8,7 +8,7 @@ license: MIT
 
 ## Purpose
 
-Use this skill to install or repair the local operating surface for a project root `.agents/` folder. This skill maintains the rule files, workflows, references used by those workflows, and deterministic helper scripts; it does not directly author Accepted Reusable Truth in `.agents/context/` or project resources in `.agents/resources/`.
+Use this skill to install, repair, or update the local operating surface for a project root `.agents/` folder. This skill maintains the rule files, workflows, references used by those workflows, and deterministic helper scripts; it does not directly author Accepted Reusable Truth in `.agents/context/` or project resources in `.agents/resources/`.
 
 This is the ChrisAI distribution of the Agent Workspace Rules surface. The installed `.agents` files intentionally keep `agent-workspace-rules` managed markers and reference filenames so repeated installs can refresh those managed sections safely.
 
@@ -18,8 +18,9 @@ The installer manages these target files:
 
 - `.agents/AGENTS.md`: compact local operating contract.
 - `.agents/TERMS.md`: managed glossary section plus room for project-specific terms.
-- `.agents/workflows/agent-file-creation.md`: workflow for drafting, splitting, and linking Agent Files.
-- `.agents/workflows/agent-file-ingestion.md`: workflow for importing Source Material into Agent Files while preserving Raw Source.
+- `.agents/workflows/agent-file-creation.md`: workflow for completing new Agent Documents before splitting and linking them.
+- `.agents/workflows/agent-file-update.md`: workflow for loading, revising, and repartitioning existing Agent Documents without losing unaffected information.
+- `.agents/workflows/agent-file-ingestion.md`: workflow for importing Source Material into complete Agent Documents while independently preserving Raw Source.
 - `.agents/workflows/context-initialization.md`: workflow for bootstrapping or substantially rebuilding `.agents/context/` from mixed project inputs.
 - `.agents/workflows/spec-driven-development.md`: workflow for creating, researching, resolving gaps for, promoting context from, and freezing Spec Files.
 - `.agents/workflows/spec-task-implementation.md`: workflow for planning and implementing tasks from Frozen Spec Files.
@@ -33,7 +34,7 @@ The installer manages these target files:
 
 The installer plans every target file before writing. If any conflict is found, it reports the conflict and writes nothing. It refreshes managed sections when markers already exist. It appends managed sections to existing `.agents/AGENTS.md` and `.agents/TERMS.md` when those files exist without markers, so user-authored content can remain outside the managed block.
 
-## Install Or Repair
+## Install, Repair, Or Update
 
 1. Identify the target project root. The Agent Workspace is `<project-root>/.agents`.
 2. Run the installer in dry-run mode first:
@@ -63,9 +64,9 @@ python .agents/scripts/validate-agent-workspace.py
 
 Use `python3` instead of `python` on systems where that is the Python 3 executable.
 
-## After Setup Or Repair
+## After Setup, Repair, Or Update
 
-After installing or repairing a target `.agents/` workspace, tell the user what
+After installing, repairing, or updating a target `.agents/` workspace, tell the user what
 changed, where to start, the validation result, and the recommended next step.
 When several routes are plausible, include up to two useful alternatives. Do
 not continue into context initialization, ingestion, spec work, or implementation
@@ -82,7 +83,7 @@ unless the user asks for that next step.
 
 Run `scripts/validate_agent_workspace.py` for deterministic checks. It reports errors for hard-rule violations and warnings for preference-level or review-required issues. Read [Validator Checks](references/validator-checks.md) when interpreting output or deciding whether a rule can be checked mechanically.
 
-The validator does not decide whether context content is truly Accepted Reusable Truth. That requires reading Source Material and user instructions.
+The validator does not decide whether context content is truly Accepted Reusable Truth or whether an Agent Document retained all information through creation, ingestion, update, or splitting. Those require human review of the Source Material, the complete draft, and the final routed files.
 
 ## Bundled Resources
 

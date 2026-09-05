@@ -26,6 +26,8 @@ Do not treat an agent recommendation as accepted unless the user explicitly acce
 7. `.agents/specs/<spec-id>/decisions.md`, `questions.md`, and `status.md` when they exist
 8. relevant Spec Files, Context Files, Source Material, wireframes, creative designs, code, and user instructions
 
+Whenever this workflow creates an Agent Document, apply the [Agent File Creation Workflow](agent-file-creation.md). Whenever it changes an existing Agent Document, apply the [Agent File Update Workflow](agent-file-update.md). Preserve the complete question record before applying line thresholds.
+
 Do not load unrelated spec folders unless the current spec links to them or the user asks for cross-spec review.
 
 ## Prepare Or Resume

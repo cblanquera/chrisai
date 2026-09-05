@@ -1,7 +1,9 @@
 # Agent File Ingestion Workflow
 
 <!-- agent-workspace-rules:start -->
-Use this workflow when importing Source Material into an Agent File.
+Use this workflow when importing Source Material into a new or existing Agent Document.
+
+Raw Source preservation and Agent Document completeness are separate requirements. Retaining the source does not permit a summary-only Agent Document.
 
 ## Destination
 
@@ -19,13 +21,15 @@ Use this workflow when importing Source Material into an Agent File.
 4. Markdown Raw Source remains a Resource File, not an Agent File.
 5. Record Source Provenance in the resulting Agent File or a linked Reference File.
 6. If text extraction is partial or uncertain, state the limitation and link the preserved Resource File.
+7. Record a temporary source coverage inventory of sections, identifiers, citations, tables, examples, edge cases, and other details that the Agent Document must retain.
 
 ## Draft Agent File
 
-1. Convert Source Material into clear markdown for future agents.
-2. Keep the import detailed enough to preserve meaning, requirements, decisions, constraints, examples, and edge cases. Do not reduce it to a summary-only record.
-3. Reword, label, group, and add short connective context when needed so future agents can understand how the import fits the project.
-4. Separate imported claims from agent-added clarification when that distinction matters.
+1. Convert Source Material into a Complete Draft for future agents before applying line thresholds.
+2. Preserve all available meaning, requirements, decisions, constraints, examples, edge cases, identifiers, citations, tables, and other meaning-bearing details. Do not reduce the import to a summary-only record.
+3. Add a summary when it improves routing, but never use it as a substitute for the complete documented detail.
+4. Reword, label, group, and add short connective context when needed so future agents can understand how the import fits the project.
+5. Separate imported claims from agent-added clarification when that distinction matters.
 
 ## Scan Intersections
 
@@ -35,21 +39,24 @@ Load [Intersection Points](../references/00002-intersection-points.md) for the s
 
 ## Resolve Updates
 
-1. If the import closes previous gaps or answers open questions, update the intersecting Agent Files after confirming the affected files are in scope.
-2. If the import introduces new gaps or open questions, add explicit sections for them in the new or updated Agent File.
-3. If the import contradicts existing Agent Files, stop before editing those existing files. Tell the user which files intersect, what conflicts, and what updates the import would drive. Ask for confirmation before applying those updates.
-4. If the import shows content in `.agents/context/` should be demoted, preserve useful material in the right Spec File, Reference File, or Resource File. If the correct destination is unclear, ask the user where to demote it before editing.
-5. Do not require unrelated unresolved questions to be answered before accepting an import.
-6. Create `.agents/context/index.md` if absent when the first Context File is created.
-7. Update `.agents/context/index.md` when a Context File is added, renamed, split, or materially rerouted.
+1. Treat each intersecting owner Agent File and its relevant linked Reference Files as one Agent Document.
+2. If the import closes previous gaps or answers open questions, update the intersecting Agent Documents after confirming they are in scope.
+3. Use the [Agent File Update Workflow](agent-file-update.md) for every existing Agent Document changed by the import. Merge the current document and accepted imported material before repartitioning.
+4. If the import introduces new gaps or open questions, add explicit sections for them in the new or updated Agent Document.
+5. If the import contradicts existing Agent Files, stop before editing those existing files. Tell the user which files intersect, what conflicts, and what updates the import would drive. Ask for confirmation before applying those updates.
+6. If the import shows content in `.agents/context/` should be demoted, preserve useful material in the right Spec File, Reference File, or Resource File. If the correct destination is unclear, ask the user where to demote it before editing.
+7. Do not require unrelated unresolved questions to be answered before accepting an import.
+8. Create `.agents/context/index.md` if absent when the first Context File is created.
+9. Update `.agents/context/index.md` when a Context File is added, renamed, split, or materially rerouted.
 
 ## Split And Validate
 
-1. Follow the [Agent File Creation Workflow](agent-file-creation.md) after drafting.
-2. Split oversized Agent Files into Reference Files when required.
+1. Use the [Agent File Creation Workflow](agent-file-creation.md) for a new Agent Document and the [Agent File Update Workflow](agent-file-update.md) for an existing one.
+2. Partition only after the new or updated Complete Draft contains all in-scope information.
 3. Use Resource Links for Raw Source.
-4. Use Reference Links for split supporting markdown under `.agents/references/`.
-5. Run the Agent Workspace validator after ingestion and repair required issues.
+4. Use descriptive Reference Links for losslessly split markdown under `.agents/references/`.
+5. Compare the source coverage inventory with the final routed Agent Document before treating line-count compliance as success.
+6. Run the Agent Workspace validator after ingestion and repair required issues.
 
 ## Handoff
 

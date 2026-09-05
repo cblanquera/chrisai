@@ -12,7 +12,7 @@ The validator reports errors for deterministic hard-rule failures:
 - Missing `.agents/scripts/validate-agent-workspace.py`.
 - Missing managed workflow or Reference Files installed by `agent-workspace-rules`.
 - Missing `.agents/context/index.md` when `.agents/context/` exists.
-- Agent Files over 500 lines. Raw Source markdown under `.agents/resources/` is excluded from Agent File line caps.
+- Final Agent Files over 500 lines. Raw Source markdown under `.agents/resources/` is excluded from Agent File line caps. The error directs agents to split losslessly rather than shorten content.
 - Reference subfolders.
 - Reference File names that do not match `00001-meta-title.md`.
 - Duplicate Reference File numbers.
@@ -25,7 +25,7 @@ The validator reports errors for deterministic hard-rule failures:
 
 The validator reports warnings for deterministic review signals:
 
-- Agent Files over the preferred 200-line target but still under the 500-line cap.
+- Agent Files over the preferred 200-line target but still at or below the 500-line cap. Keeping a coherent 201-500 line file is allowed; the warning is a routing review, not an instruction to summarize.
 - Reference File numbering gaps.
 - Reference or Resource Links whose text looks like a path or filename instead of a useful description.
 
@@ -35,7 +35,10 @@ These rules are intentionally not treated as deterministic:
 
 - Whether `.agents/context/` contains only Accepted Reusable Truth.
 - Whether Raw Source under `.agents/resources/` should be promoted into an Agent File.
+- Whether the final owner Agent File and linked Reference Files retain every in-scope detail from the Complete Draft and coverage inventory after creation, ingestion, update, or splitting.
+- Whether an update preserved all unaffected information and recorded an explicit disposition for anything corrected, superseded, rejected, demoted, or removed.
+- Whether split boundaries form cohesive sections or retrieval tasks without forcing agents to load unrelated information.
 - Whether a Reference Link description is semantically sufficient for a specific future task.
 - Whether a zombie Reference File should be linked, rewritten, moved, or removed after no owner can be found.
 
-For those cases, use the validator output as a routing signal and inspect the project files before editing.
+For those cases, use the validator output as a routing signal and perform the relevant coverage review. Line-count compliance alone does not prove an Agent Document is complete.

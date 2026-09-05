@@ -16,6 +16,8 @@ Do not use this workflow before Freeze unless the user explicitly asks to draft 
 7. `.agents/specs/<spec-id>/status.md`
 8. relevant spec records, task files, project files, and user instructions
 
+Whenever this workflow creates an Agent Document, apply the [Agent File Creation Workflow](agent-file-creation.md). Whenever it changes an existing Agent Document, apply the [Agent File Update Workflow](agent-file-update.md). Complete content before applying line thresholds.
+
 Do not load unrelated spec folders unless the current spec explicitly links to them or the user asks for cross-spec implementation planning.
 
 ## Status Model

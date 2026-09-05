@@ -20,6 +20,7 @@ MANAGED_RULE_FILES = (
     Path("references/00002-intersection-points.md"),
     Path("references/00003-reference-recovery-points.md"),
     Path("workflows/agent-file-creation.md"),
+    Path("workflows/agent-file-update.md"),
     Path("workflows/agent-file-ingestion.md"),
     Path("workflows/context-initialization.md"),
     Path("workflows/spec-driven-development.md"),
@@ -162,10 +163,17 @@ def validate_line_counts(agent_files: list[Path], agents_dir: Path, reporter: Re
         lines = count_lines(path)
         rel = display(path, agents_dir)
         if lines > HARD_LINE_LIMIT:
-            reporter.error(f"{rel} has {lines} lines; hard limit is {HARD_LINE_LIMIT}")
+            reporter.error(
+                f"{rel} has {lines} lines; final hard limit is {HARD_LINE_LIMIT}. "
+                "Split losslessly by cohesive section or retrieval task; do not summarize, "
+                "omit, or delete content to meet the limit"
+            )
         elif lines > PREFERRED_LINE_LIMIT:
             reporter.warn(
-                f"{rel} has {lines} lines; preferred target is under {PREFERRED_LINE_LIMIT}"
+                f"{rel} has {lines} lines; preferred target is {PREFERRED_LINE_LIMIT} "
+                "lines or fewer. Keep a coherent file at 201-500 lines, or split "
+                "losslessly when that improves routing; do not shorten content merely "
+                "to clear this warning"
             )
 
 

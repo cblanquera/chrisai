@@ -6,8 +6,9 @@ This file is the local operating contract for the project root `.agents/` worksp
 ## Read First
 
 - [Agent Workspace Terms](TERMS.md): load when a task depends on Agent Workspace terminology or when adding new local terms.
-- [Agent File Creation Workflow](workflows/agent-file-creation.md): use when creating, revising, splitting, or linking Agent Files.
-- [Agent File Ingestion Workflow](workflows/agent-file-ingestion.md): use when importing Source Material into Agent Files.
+- [Agent File Creation Workflow](workflows/agent-file-creation.md): use when creating, splitting, or linking a new Agent Document.
+- [Agent File Update Workflow](workflows/agent-file-update.md): use when revising an existing Agent Document, including one distributed across an owner Agent File and Reference Files.
+- [Agent File Ingestion Workflow](workflows/agent-file-ingestion.md): use when importing Source Material into a new or existing Agent Document.
 - [Context Initialization Workflow](workflows/context-initialization.md): use when bootstrapping or substantially rebuilding `.agents/context/` from mixed project inputs.
 - [Spec Driven Development Workflow](workflows/spec-driven-development.md): use when creating, researching, resolving gaps for, or freezing `.agents/specs/*/` work.
 - [Spec Task Implementation Workflow](workflows/spec-task-implementation.md): use when planning or implementing tasks from a Frozen spec.
@@ -20,9 +21,11 @@ This file is the local operating contract for the project root `.agents/` worksp
 
 All markdown files under `.agents/` are Agent Files unless explicitly excluded. Raw Source markdown under `.agents/resources/` is an excluded Resource File.
 
-Keep every Agent File under 500 lines. Prefer less than 200 lines.
+Fidelity comes before file size. This rule applies to every Agent File write, including writes performed through another workflow. Complete the Agent Document before applying line thresholds. When updating, include the existing owner Agent File and every relevant linked Reference File in that complete document.
 
-When creating or revising an Agent File, finish the unprocessed draft first. After the draft is complete, split oversized content into Reference Files and add Reference Links from the original file.
+Only after the content is complete, partition it, normally by cohesive section or retrieval task, into a concise owner or router Agent File and descriptive Reference Files. A Lossless Split redistributes content; it must not summarize, omit, or delete information or data.
+
+Line thresholds apply to each final Agent File at workflow closeout, not to an in-progress Complete Draft or the Agent Document as a whole. Prefer 200 lines or fewer. Final Agent Files must contain 500 lines or fewer. A 201-500 line Agent File is allowed when another split would harm coherence or retrieval.
 
 ## Folder Rules
 
@@ -36,6 +39,8 @@ Promote accepted reusable truth into `.agents/context/`. Demote content out of `
 
 `.agents/references/` stores flat, numbered Reference Files used by Agent Files.
 
+When content is split from an owner Agent File, the owner and its linked Reference Files collectively retain the complete Agent Document. A Reference File is deferred content, not disposable content; it does not establish authority independently of its owner and provenance.
+
 `.agents/resources/` stores Raw Source and other Resource Files. Zombie Resource Files are allowed.
 
 `.agents/workflows/` stores reusable Agent Workspace maintenance workflows.
@@ -46,7 +51,7 @@ Promote accepted reusable truth into `.agents/context/`. Demote content out of `
 
 Name Reference Files as `.agents/references/00001-meta-title.md`, incrementing the five-digit number for each new Reference File.
 
-Every Reference Link must use enough description for an agent to decide whether to load it for the current task.
+Every Reference Link must summarize what the Reference File contains and say when an agent should load it for the current task.
 
 Reference Files may link to Context Files, Resource Files, or other Reference Files.
 
@@ -54,7 +59,7 @@ There must never be a zombie Reference File. Every Reference File must be linked
 
 ## Validation
 
-Run the deterministic validator after creating, splitting, or repairing Agent Files:
+Run the deterministic validator after creating, ingesting, updating, splitting, or repairing Agent Files:
 
 ```bash
 python .agents/scripts/validate-agent-workspace.py

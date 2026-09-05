@@ -24,6 +24,8 @@ Do not use this workflow for every spec. For pure backend cleanup, narrow migrat
 7. `.agents/specs/<spec-id>/brief.md`, `decisions.md`, `status.md`, and existing `journeys.md` when they exist
 8. relevant Spec Files, Context Files, Source Material, wireframes, creative designs, code, and user instructions
 
+Whenever this workflow creates an Agent Document, apply the [Agent File Creation Workflow](agent-file-creation.md). Whenever it changes an existing Agent Document, apply the [Agent File Update Workflow](agent-file-update.md). Preserve every material journey and step before applying line thresholds.
+
 Do not load unrelated spec folders unless the current spec links to them or the user asks for cross-spec review.
 
 ## Applicability Gate
