@@ -45,6 +45,7 @@ Replace the embedded JSON with the revision's initial state.
 | Workflow settings | `interfaces/workflow-designer.html`, `interfaces/workflow.css`, `interfaces/workflow.js` | `samples/interfaces/workflow-designer.html` | base files, buttons, forms, icons, notifier, interactions | A workflow needs editable name, status, and description while stage-specific controls remain on the board. |
 | Workflow automation builder | `interfaces/workflow-automation-builder.html`, `interfaces/workflow.css`, `interfaces/workflow.js` | `samples/interfaces/workflow-automation-builder.html` | base files, buttons, dialog, forms, icons, notifier, interactions | A stage needs readable Trigger, Conditions, ordered Actions, Timing, run settings, a live preview, and a non-mutating test. |
 | Form builder | `interfaces/form-builder.html`, `interfaces/form-builder.css`, `interfaces/form-builder.js` | `samples/interfaces/form-builder.html` | base files, badge, buttons, dialog, forms, icons, notifier, interactions | A user needs to add, configure, reorder, duplicate, delete, preview, save, or publish structured form fields. |
+| Sectioned form | `interfaces/sectioned-form.html`, `interfaces/sectioned-form.css`, `interfaces/sectioned-form.js` | `samples/interfaces/sectioned-form.html` | base files, buttons, dialog, forms, icons, notifier, interactions | A long form needs direct parent fields, progress, suggestions, browser-local drafts, summary cards, dialog-owned fieldsets, and section changes that update the parent form before submission. |
 
 ## Icons
 

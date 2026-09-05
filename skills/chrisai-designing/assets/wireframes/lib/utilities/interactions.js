@@ -17,6 +17,7 @@
     if (window.WireframePasswordField) window.WireframePasswordField.init(root);
     if (window.WireframeRange) window.WireframeRange.init(root);
     if (window.WireframeRating) window.WireframeRating.init(root);
+    if (window.WireframeSectionedForm) window.WireframeSectionedForm.init(root);
     if (window.WireframeTagsInput) window.WireframeTagsInput.init(root);
     if (window.WireframeTabs) window.WireframeTabs.init(root);
     if (window.WireframeTree) window.WireframeTree.init(root);
