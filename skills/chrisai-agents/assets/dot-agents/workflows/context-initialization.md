@@ -24,8 +24,9 @@ Do not load unrelated Source Material just because it exists. Start from the use
 
 1. List each input source, including prompt text, attachment name, file path, URL, repository area, existing Agent File, or code path.
 2. Record Source Provenance when known: path, URL, capture source, extraction limits, and access date when useful.
-3. Preserve Raw Source under `.agents/resources/` before rewriting it when the source is pasted text, extracted attachment text, external material, or otherwise not already durable in the repository.
-4. If extraction is partial, lossy, or uncertain, record the limitation next to the Resource Link or in a linked Reference File.
+3. Preserve Raw Source under `.agents/resources/` before rewriting it when the source is pasted text, extracted attachment text, external material, transient, scheduled for deletion, or otherwise not already durable in the repository.
+4. Do not copy canonical repository source code or whole project folders into `.agents/resources/` merely because they are scanned during initialization. Keep durable project sources in place and record precise paths plus a revision or content hash when useful.
+5. If extraction is partial, lossy, or uncertain, record the limitation next to the Resource Link, source location, or in a linked Reference File.
 
 ## 2. Classify Material
 

@@ -63,6 +63,15 @@ Complete Draft. A split redistributes complete content into cohesive,
 task-routed Reference Files; it does not authorize summarizing, omitting, or
 deleting information or data.
 
+## Source Preservation Boundary
+
+`.agents/resources/` is an evidence store, not a mirror of the repository.
+External, transient, attached, deletion-bound, or explicitly archival sources
+are preserved there before rewriting. Canonical project files, including source
+code, stay in their authoritative locations and are recorded through precise
+paths plus a revision or content hash when useful. Inspecting source code does
+not authorize copying its directory tree into the Agent Workspace.
+
 ## Install, Repair, Or Update
 
 Run the bundled installer from the skill folder. Start with a dry run:

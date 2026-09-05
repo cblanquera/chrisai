@@ -3,7 +3,7 @@
 <!-- agent-workspace-rules:start -->
 Use this workflow when importing Source Material into a new or existing Agent Document.
 
-Raw Source preservation and Agent Document completeness are separate requirements. Retaining the source does not permit a summary-only Agent Document.
+Source preservation and Agent Document completeness are separate requirements. Archiving a source or referencing it in place does not permit a summary-only Agent Document.
 
 ## Destination
 
@@ -13,15 +13,17 @@ Raw Source preservation and Agent Document completeness are separate requirement
 4. If the Intersection Scan strongly suggests the import is not Accepted Reusable Truth, explain why and ask before demoting or rerouting it.
 5. Confirm the target Agent File path before writing when the destination is ambiguous.
 
-## Preserve Source
+## Decide And Preserve Source
 
-1. Store Raw Source in `.agents/resources/` before rewriting it.
-2. Create `.agents/resources/` if absent when preserving the first Raw Source.
-3. Preserve all available Raw Source. Do not summarize Source Material as a substitute for retaining Raw Source.
-4. Markdown Raw Source remains a Resource File, not an Agent File.
-5. Record Source Provenance in the resulting Agent File or a linked Reference File.
-6. If text extraction is partial or uncertain, state the limitation and link the preserved Resource File.
-7. Record a temporary source coverage inventory of sections, identifiers, citations, tables, examples, edge cases, and other details that the Agent Document must retain.
+1. Determine whether each source is already durable in the project or needs an independent archive.
+2. Keep canonical project files, including source code, in their authoritative locations. Do not copy whole source folders, generated trees, dependencies, or the repository into `.agents/resources/` merely because they were inspected. Record precise repository-relative paths and, when useful, a commit, revision, or content hash as Source Provenance.
+3. Before rewriting, preserve an exact or faithfully extracted copy under `.agents/resources/` when the source is external, pasted, attached, transient, scheduled for deletion, not reliably recoverable, or explicitly requested for archival.
+4. When only part of a directory is in scope, archive only those bounded inputs. Preserve the directory structure or a manifest when relationships between archived files carry meaning.
+5. Create `.agents/resources/` if absent when preserving the first Raw Source. Preserve all available material within the chosen archive scope; a summary is not a substitute for the archived source.
+6. Markdown Raw Source remains a Resource File, not an Agent File.
+7. Record Source Provenance in the resulting Agent File or a linked Reference File whether the source is archived or retained in place.
+8. If text extraction is partial or uncertain, state the limitation and link the preserved Resource File or source location.
+9. Record a temporary source coverage inventory of sections, identifiers, citations, tables, examples, edge cases, and other details that the Agent Document must retain.
 
 ## Draft Agent File
 
@@ -53,14 +55,14 @@ Load [Intersection Points](../references/00002-intersection-points.md) for the s
 
 1. Use the [Agent File Creation Workflow](agent-file-creation.md) for a new Agent Document and the [Agent File Update Workflow](agent-file-update.md) for an existing one.
 2. Partition only after the new or updated Complete Draft contains all in-scope information.
-3. Use Resource Links for Raw Source.
+3. Use Resource Links for archived Raw Source. For canonical project sources retained in place, link or cite their authoritative paths through Source Provenance.
 4. Use descriptive Reference Links for losslessly split markdown under `.agents/references/`.
 5. Compare the source coverage inventory with the final routed Agent Document before treating line-count compliance as success.
 6. Run the Agent Workspace validator after ingestion and repair required issues.
 
 ## Handoff
 
-End each ingestion pass by stating sources processed, Raw Source preserved, Agent Files created or updated, intersections or conflicts found, validation result, blocker or user decision still needed, recommended next step, and any useful alternatives.
+End each ingestion pass by stating sources processed, which sources were archived or retained in place, Agent Files created or updated, intersections or conflicts found, validation result, blocker or user decision still needed, recommended next step, and any useful alternatives.
 
 ## Reference
 

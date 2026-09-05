@@ -19,13 +19,13 @@ This file defines shared Agent Workspace terminology. Add project-specific terms
 - **Knowledge Base (KB)**: `.agents/context/`, the Agent Workspace source-of-truth folder containing Accepted Reusable Truth.
 - **Lossless Split**: partitioning a Complete Draft into cohesive Agent Files without summarizing, omitting, or deleting information or data.
 - **Proofs**: technical prototypes, experiments, or verification artifacts created to address Gaps before a spec is trusted for implementation.
-- **Raw Source**: preserved verbatim or extracted source data stored under `.agents/resources/` before being rewritten into Agent Files.
+- **Raw Source**: verbatim or faithfully extracted source data stored under `.agents/resources/` when an independent archive is required. Canonical project files referenced in place remain Source Material; they do not become Resource Files merely because an agent ingests them.
 - **Reference Files**: Agent Files under `.agents/references/`.
 - **Reference Links**: markdown links from Agent Files to Reference Files with enough description for an agent to decide whether to load them.
 - **Resource Files**: files under `.agents/resources/` that store Raw Source and other non-agent supporting material.
 - **Resource Links**: markdown links from Agent Files to Resource Files.
 - **Source Material**: import input such as files, URLs, screenshots with text, raw resources, pasted text, or ad hoc prompt text.
-- **Source Provenance**: source path, URL, capture source, extraction limits, and access date when known.
+- **Source Provenance**: source path, URL, repository revision or content hash when useful, capture source, extraction limits, and access date when known.
 - **Spec Files**: Agent Files found under `.agents/specs/*/`.
 <!-- agent-workspace-rules:end -->
 

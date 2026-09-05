@@ -8,7 +8,7 @@ This file is the local operating contract for the project root `.agents/` worksp
 - [Agent Workspace Terms](TERMS.md): load when a task depends on Agent Workspace terminology or when adding new local terms.
 - [Agent File Creation Workflow](workflows/agent-file-creation.md): use when creating, splitting, or linking a new Agent Document.
 - [Agent File Update Workflow](workflows/agent-file-update.md): use when revising an existing Agent Document, including one distributed across an owner Agent File and Reference Files.
-- [Agent File Ingestion Workflow](workflows/agent-file-ingestion.md): use when importing Source Material into a new or existing Agent Document.
+- [Agent File Ingestion Workflow](workflows/agent-file-ingestion.md): use when importing Source Material into a new or existing Agent Document, including deciding whether to archive the source or reference it in place.
 - [Context Initialization Workflow](workflows/context-initialization.md): use when bootstrapping or substantially rebuilding `.agents/context/` from mixed project inputs.
 - [Spec Driven Development Workflow](workflows/spec-driven-development.md): use when creating, researching, resolving gaps for, or freezing `.agents/specs/*/` work.
 - [Spec Task Implementation Workflow](workflows/spec-task-implementation.md): use when planning or implementing tasks from a Frozen spec.
@@ -42,6 +42,8 @@ Promote accepted reusable truth into `.agents/context/`. Demote content out of `
 When content is split from an owner Agent File, the owner and its linked Reference Files collectively retain the complete Agent Document. A Reference File is deferred content, not disposable content; it does not establish authority independently of its owner and provenance.
 
 `.agents/resources/` stores Raw Source and other Resource Files. Zombie Resource Files are allowed.
+
+Do not mirror the repository or copy canonical source-code trees into `.agents/resources/`. Keep durable project sources in their authoritative locations and record precise Source Provenance. Archive an exact Resource copy only when the source is external, transient, at risk of deletion, otherwise unavailable to future agents, or explicitly requested.
 
 `.agents/workflows/` stores reusable Agent Workspace maintenance workflows.
 

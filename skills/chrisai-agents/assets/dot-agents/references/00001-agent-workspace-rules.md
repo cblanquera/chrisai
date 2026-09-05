@@ -31,9 +31,18 @@ Split by cohesive section or retrieval task, not arbitrary line ranges. Move com
 
 A concise owner or router may summarize what each Reference File contains, but that routing summary must not replace the complete detail in the reference.
 
-Preserve Raw Source before rewriting Source Material into Agent Files. Do not summarize Source Material as a substitute for Raw Source preservation.
+## Source Preservation
 
-Raw Source preservation and Agent Document completeness are independent requirements. Preserving the source does not permit a summary-only Agent Document.
+Decide whether Source Material needs an independent archive before rewriting it. `.agents/resources/` is an evidence store, not a mirror of the project.
+
+- Preserve an exact or faithfully extracted Resource copy when the source is external, pasted, attached, transient, scheduled for deletion, not reliably recoverable, or explicitly requested for archival.
+- Keep canonical project files, including source code, in their authoritative repository locations. Record precise paths and, when useful, a commit, revision, or content hash instead of copying the files into `.agents/resources/`.
+- Do not bulk-copy source folders, generated trees, dependencies, or the repository into `.agents/resources/` merely because an agent inspected them. If a directory really needs archival, define the bounded archive scope and preserve its structure or manifest.
+- If a project source will be deleted or replaced without durable recoverability, preserve it before that change.
+
+When archival is required, preserve the Raw Source before rewriting it. Do not use a summary as a substitute for the archive.
+
+Source preservation and Agent Document completeness are independent requirements. Whether a source is archived or referenced in place, the resulting Agent Document must retain all in-scope meaning rather than becoming a summary-only record.
 
 ## Updating Existing Agent Documents
 
