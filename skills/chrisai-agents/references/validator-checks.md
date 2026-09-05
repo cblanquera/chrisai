@@ -34,7 +34,7 @@ The validator reports warnings for deterministic review signals:
 These rules are intentionally not treated as deterministic:
 
 - Whether `.agents/context/` contains only Accepted Reusable Truth.
-- Whether a source needed an independent Raw Source archive or was correctly retained in its canonical project location instead of being duplicated under `.agents/resources/`.
+- Whether non-code Source Material needed an independent Raw Source archive, and whether source code was kept in place unless the user explicitly requested a source-code archive.
 - Whether Raw Source under `.agents/resources/` should be promoted into an Agent File.
 - Whether the final owner Agent File and linked Reference Files retain every in-scope detail from the Complete Draft and coverage inventory after creation, ingestion, update, or splitting.
 - Whether an update preserved all unaffected information and recorded an explicit disposition for anything corrected, superseded, rejected, demoted, or removed.

@@ -15,15 +15,17 @@ Source preservation and Agent Document completeness are separate requirements. A
 
 ## Decide And Preserve Source
 
-1. Determine whether each source is already durable in the project or needs an independent archive.
-2. Keep canonical project files, including source code, in their authoritative locations. Do not copy whole source folders, generated trees, dependencies, or the repository into `.agents/resources/` merely because they were inspected. Record precise repository-relative paths and, when useful, a commit, revision, or content hash as Source Provenance.
-3. Before rewriting, preserve an exact or faithfully extracted copy under `.agents/resources/` when the source is external, pasted, attached, transient, scheduled for deletion, not reliably recoverable, or explicitly requested for archival.
-4. When only part of a directory is in scope, archive only those bounded inputs. Preserve the directory structure or a manifest when relationships between archived files carry meaning.
-5. Create `.agents/resources/` if absent when preserving the first Raw Source. Preserve all available material within the chosen archive scope; a summary is not a substitute for the archived source.
-6. Markdown Raw Source remains a Resource File, not an Agent File.
-7. Record Source Provenance in the resulting Agent File or a linked Reference File whether the source is archived or retained in place.
-8. If text extraction is partial or uncertain, state the limitation and link the preserved Resource File or source location.
-9. Record a temporary source coverage inventory of sections, identifiers, citations, tables, examples, edge cases, and other details that the Agent Document must retain.
+1. Classify each input as source code or non-code Source Material, then decide whether it is already durable or needs an independent archive.
+2. Keep source code in its authoritative location. Do not copy source-code files, source folders, generated trees, dependencies, or the repository into `.agents/resources/` unless the user explicitly requests a source-code archive. Being external, transient, scheduled for deletion, not reliably recoverable, or otherwise at risk does not grant permission; report the risk and ask the user.
+3. For source code retained in place, record precise repository-relative paths and, when useful, a commit, revision, or content hash as Source Provenance.
+4. When the user explicitly requests a source-code archive, preserve only the requested scope. If the scope is ambiguous, confirm it before copying. Do not add dependencies, generated output, unrelated folders, or the repository unless explicitly included.
+5. For non-code Source Material, preserve an exact or faithfully extracted copy under `.agents/resources/` before rewriting when it is external, pasted, attached, transient, scheduled for deletion, not reliably recoverable, or explicitly requested for archival.
+6. When only part of a non-code directory is in scope, archive only those bounded inputs. Preserve the directory structure or a manifest when relationships between archived files carry meaning.
+7. Create `.agents/resources/` if absent when preserving the first Raw Source. Preserve all available material within the authorized archive scope; a summary is not a substitute for the archived source.
+8. Markdown Raw Source remains a Resource File, not an Agent File.
+9. Record Source Provenance in the resulting Agent File or a linked Reference File whether the source is archived or retained in place.
+10. If text extraction is partial or uncertain, state the limitation and link the preserved Resource File or source location.
+11. Record a temporary source coverage inventory of sections, identifiers, citations, tables, examples, edge cases, and other details that the Agent Document must retain.
 
 ## Draft Agent File
 

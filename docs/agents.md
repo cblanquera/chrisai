@@ -66,11 +66,12 @@ deleting information or data.
 ## Source Preservation Boundary
 
 `.agents/resources/` is an evidence store, not a mirror of the repository.
-External, transient, attached, deletion-bound, or explicitly archival sources
-are preserved there before rewriting. Canonical project files, including source
-code, stay in their authoritative locations and are recorded through precise
-paths plus a revision or content hash when useful. Inspecting source code does
-not authorize copying its directory tree into the Agent Workspace.
+External, transient, attached, deletion-bound, or explicitly archival non-code
+sources are preserved there before rewriting. Source code stays in its
+authoritative location and is recorded through precise paths plus a revision or
+content hash when useful. Only an explicit user request for a source-code
+archive authorizes copying code into `.agents/resources/`; source location,
+durability, or deletion risk does not imply that permission.
 
 ## Install, Repair, Or Update
 

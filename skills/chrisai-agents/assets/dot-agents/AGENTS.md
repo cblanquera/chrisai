@@ -43,7 +43,7 @@ When content is split from an owner Agent File, the owner and its linked Referen
 
 `.agents/resources/` stores Raw Source and other Resource Files. Zombie Resource Files are allowed.
 
-Do not mirror the repository or copy canonical source-code trees into `.agents/resources/`. Keep durable project sources in their authoritative locations and record precise Source Provenance. Archive an exact Resource copy only when the source is external, transient, at risk of deletion, otherwise unavailable to future agents, or explicitly requested.
+Do not mirror the repository into `.agents/resources/`. Keep source code in its authoritative location and record precise Source Provenance. Copy source code into `.agents/resources/` only when the user explicitly requests a source-code archive; being external, transient, at risk of deletion, or otherwise unavailable is not permission. Report those risks and ask instead. Non-code Source Material may be archived when the ingestion workflow determines preservation is required.
 
 `.agents/workflows/` stores reusable Agent Workspace maintenance workflows.
 

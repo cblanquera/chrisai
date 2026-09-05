@@ -35,10 +35,11 @@ A concise owner or router may summarize what each Reference File contains, but t
 
 Decide whether Source Material needs an independent archive before rewriting it. `.agents/resources/` is an evidence store, not a mirror of the project.
 
-- Preserve an exact or faithfully extracted Resource copy when the source is external, pasted, attached, transient, scheduled for deletion, not reliably recoverable, or explicitly requested for archival.
-- Keep canonical project files, including source code, in their authoritative repository locations. Record precise paths and, when useful, a commit, revision, or content hash instead of copying the files into `.agents/resources/`.
-- Do not bulk-copy source folders, generated trees, dependencies, or the repository into `.agents/resources/` merely because an agent inspected them. If a directory really needs archival, define the bounded archive scope and preserve its structure or manifest.
-- If a project source will be deleted or replaced without durable recoverability, preserve it before that change.
+- For non-code Source Material, preserve an exact or faithfully extracted Resource copy when the source is external, pasted, attached, transient, scheduled for deletion, not reliably recoverable, or explicitly requested for archival.
+- Keep source code in its authoritative location and record precise paths plus a commit, revision, or content hash when useful. Copy source code into `.agents/resources/` only when the user explicitly requests a source-code archive. Do not infer permission from the code being external, transient, scheduled for deletion, or difficult to recover; report the risk and ask.
+- When a source-code archive is explicitly requested, archive only the requested scope. Do not add generated trees, dependencies, unrelated source folders, or the repository unless the request explicitly includes them.
+- Do not bulk-copy non-code project folders merely because an agent inspected them. If a non-code directory needs archival, define the bounded scope and preserve its structure or manifest.
+- If non-code project Source Material will be deleted or replaced without durable recoverability, preserve it before that change.
 
 When archival is required, preserve the Raw Source before rewriting it. Do not use a summary as a substitute for the archive.
 

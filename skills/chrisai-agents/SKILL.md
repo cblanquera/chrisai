@@ -76,7 +76,7 @@ unless the user asks for that next step.
 
 - Do not install `.agents/context/` content. Installed rules may describe how context should be used, but Accepted Reusable Truth must come from the target project and user-approved sources.
 - Do not install `.agents/resources/` content. Installed rules may describe Resource Links and Raw Source preservation, but resource files are project-owned.
-- Do not treat `.agents/resources/` as a mirror of the repository. Canonical project files, including source code, stay in their authoritative locations and receive precise Source Provenance unless an independent archive is needed or explicitly requested.
+- Do not treat `.agents/resources/` as a mirror of the repository. Source code stays in its authoritative location and receives precise Source Provenance. Copy source code into `.agents/resources/` only when the user explicitly requests a source-code archive; never infer that permission from source location, durability, or deletion risk.
 - Keep `.agents/TERMS.md` managed by section so future project-specific terms can be added outside the managed block.
 - Keep references flat under `.agents/references/`; this skill installs only references used by `.agents/AGENTS.md` or `.agents/workflows/*`.
 
