@@ -1,0 +1,102 @@
+<div class="wf-shell wf-detail-panel" data-wf-detail-panel data-wf-panel-layout data-wf-panel-detail-layout data-wf-panel-resizable data-wf-left-open="false" data-wf-right-open="false" style="--wf-right-panel-width: 420px;">
+  <aside class="wf-shell__left wf-stack" id="record-navigation">
+    <div class="wf-shell__brand">Operations workspace</div>
+    <nav class="wf-stack" aria-label="Workspace navigation">
+      <a class="wf-shell__nav-link" href="#" aria-current="page">Requests</a>
+      <a class="wf-shell__nav-link" href="#">Customers</a>
+      <a class="wf-shell__nav-link" href="#">Reports</a>
+    </nav>
+  </aside>
+
+  <header class="wf-shell__header">
+    <div class="wf-shell__header-start">
+      <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="left" aria-controls="record-navigation" aria-expanded="false" aria-label="Toggle navigation panel"><span data-wf-icon="menu"></span></button>
+      <div class="wf-shell__brand">Request workspace</div>
+    </div>
+    <div class="wf-shell__header-end">
+      <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-panel-toggle="right" aria-controls="record-detail-panel" aria-expanded="false" aria-label="Toggle request detail"><span data-wf-icon="info"></span></button>
+    </div>
+  </header>
+
+  <main class="wf-shell__center">
+    <section class="wf-detail-panel__workspace" aria-labelledby="wf-detail-panel-title">
+      <div>
+        <h1 class="wf-heading" id="wf-detail-panel-title">Service requests</h1>
+        <p class="wf-copy">Review incoming requests and the people connected to them.</p>
+      </div>
+      <div class="wf-detail-panel__filters">
+        <label class="wf-field wf-detail-panel__search"><span class="wf-sr-only">Search requests</span><input class="wf-input" type="search" placeholder="Search requests" data-wf-detail-panel-search></label>
+        <label class="wf-field"><span class="wf-sr-only">Filter by status</span><select class="wf-select" data-wf-detail-panel-status><option value="">All statuses</option></select></label>
+      </div>
+      <div class="wf-table-wrap">
+        <table class="wf-table wf-detail-panel__table">
+          <thead><tr><th scope="col">Request</th><th scope="col">Requester</th><th scope="col">Status</th><th scope="col">Updated</th></tr></thead>
+          <tbody data-wf-detail-panel-list></tbody>
+        </table>
+      </div>
+      <p class="wf-copy" data-wf-detail-panel-count></p>
+    </section>
+  </main>
+
+  <aside class="wf-shell__right wf-detail-stack" id="record-detail-panel" data-wf-detail-stack aria-hidden="true" inert>
+    <div class="wf-detail-stack__stage">
+      <section class="wf-detail-screen" data-wf-detail-screen="record-detail" data-wf-detail-state="active">
+        <header class="wf-detail-screen__header">
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Close request detail"><span data-wf-icon="arrow-left"></span></button>
+          <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Request detail</h2>
+          <span class="wf-detail-screen__header-spacer"></span>
+        </header>
+        <div class="wf-detail-screen__content wf-stack">
+          <div class="wf-detail-panel__summary">
+            <div class="wf-spread"><span class="wf-badge" data-wf-detail-panel-record-status></span><span class="wf-muted" data-wf-detail-panel-record-updated></span></div>
+            <h3 data-wf-detail-panel-record-title></h3>
+            <p class="wf-copy">Requested by <button class="wf-detail-panel__inline-action" type="button" data-wf-detail-go="person-detail" data-wf-detail-panel-record-person></button></p>
+          </div>
+          <div class="wf-detail-panel__copy">
+            <p data-wf-detail-panel-record-summary></p>
+            <p data-wf-detail-panel-record-detail></p>
+          </div>
+          <button class="wf-button wf-button--secondary" type="button" data-wf-detail-panel-resolve><span data-wf-icon="check"></span>Mark resolved</button>
+        </div>
+      </section>
+
+      <section class="wf-detail-screen" data-wf-detail-screen="person-detail" data-wf-detail-state="inactive" aria-hidden="true" inert>
+        <header class="wf-detail-screen__header">
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back to request"><span data-wf-icon="arrow-left"></span></button>
+          <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Requester detail</h2>
+          <span class="wf-detail-screen__header-spacer"></span>
+        </header>
+        <div class="wf-detail-screen__content wf-stack">
+          <div class="wf-detail-panel__summary"><h3 data-wf-detail-panel-person-name></h3><p class="wf-copy" data-wf-detail-panel-person-role></p></div>
+          <dl class="wf-detail-panel__definition">
+            <div><dt>Email</dt><dd data-wf-detail-panel-person-email></dd></div>
+            <div><dt>Phone</dt><dd data-wf-detail-panel-person-phone></dd></div>
+          </dl>
+          <button class="wf-button" type="button" data-wf-detail-go="person-update"><span data-wf-icon="edit"></span>Update requester</button>
+        </div>
+      </section>
+
+      <section class="wf-detail-screen" data-wf-detail-screen="person-update" data-wf-detail-state="inactive" aria-hidden="true" inert>
+        <header class="wf-detail-screen__header">
+          <button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-detail-back aria-label="Back to requester"><span data-wf-icon="arrow-left"></span></button>
+          <h2 class="wf-detail-screen__title" data-wf-detail-focus tabindex="-1">Update requester</h2>
+          <span class="wf-detail-screen__header-spacer"></span>
+        </header>
+        <form class="wf-detail-screen__content wf-form wf-detail-panel__form" data-wf-detail-submit data-wf-detail-panel-person-form>
+          <label class="wf-field"><span class="wf-label">Name *</span><input class="wf-input" name="name" required></label>
+          <label class="wf-field"><span class="wf-label">Role</span><input class="wf-input" name="role"></label>
+          <label class="wf-field"><span class="wf-label">Email *</span><input class="wf-input" name="email" type="email" required></label>
+          <label class="wf-field"><span class="wf-label">Phone</span><input class="wf-input" name="phone" type="tel"></label>
+          <button class="wf-button" type="submit"><span data-wf-icon="check"></span>Save changes</button>
+        </form>
+      </section>
+    </div>
+  </aside>
+
+  <div class="wf-shell__resize-handle wf-shell__resize-handle--left" data-wf-panel-resize="left" role="separator" tabindex="0" aria-label="Resize navigation panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="260"></div>
+  <div class="wf-shell__resize-handle wf-shell__resize-handle--right" data-wf-panel-resize="right" role="separator" tabindex="0" aria-label="Resize request detail panel" aria-orientation="vertical" aria-valuemin="220" aria-valuemax="480" aria-valuenow="420"></div>
+
+  <script type="application/json" data-wf-detail-panel-data>
+    {"people":[{"email":"maya@example.test","id":"person-1","name":"Maya Chen","phone":"+63 917 555 0148","role":"Store manager"},{"email":"jon@example.test","id":"person-2","name":"Jon Bell","phone":"+63 917 555 0198","role":"Operations lead"}],"records":[{"detail":"The replacement should arrive before the next scheduled store opening.","id":"request-1","personId":"person-1","status":"Open","summary":"Replace a damaged countertop display at the Makati branch.","title":"Damaged display replacement","updated":"Today"},{"detail":"Access is needed for two new members of the regional support team.","id":"request-2","personId":"person-2","status":"Pending","summary":"Add team access to the inventory reporting workspace.","title":"Reporting workspace access","updated":"Yesterday"}]}
+  </script>
+</div>

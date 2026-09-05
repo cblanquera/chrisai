@@ -8,6 +8,7 @@
     if (window.WireframeDateRange) window.WireframeDateRange.init(root);
     if (window.WireframeDateTimeField) window.WireframeDateTimeField.init(root);
     if (window.WireframeDropdown) window.WireframeDropdown.init(root);
+    if (window.WireframeDetailPanel) window.WireframeDetailPanel.init(root);
     if (window.WireframeFormBuilder) window.WireframeFormBuilder.init(root);
     if (window.WireframeMindMap) window.WireframeMindMap.init(root);
     if (window.WireframeMobileShell) window.WireframeMobileShell.init(root);
