@@ -120,6 +120,20 @@ It verifies that:
 - the final partitions and routes comply with the file rules; and
 - deleting one unaffected prior requirement is reported as unacceptable loss.
 
+### User journey coverage
+
+The mock authentication spec defines registration, sign-in, and administrator
+user management for four materially distinct human actors or actor states. The
+coverage contract requires a disposition for all 12 actor-feature
+intersections, applicable Use Cases, success and failure journeys, and linked
+Gaps for unverified sign-in and verification-email failure.
+
+The scenario verifies that an email provider remains an external dependency,
+wireframe-only behavior is not silently promoted into the spec, and complete
+coverage can coexist with incomplete specification behavior. Negative checks
+remove one coverage-matrix row, start an unauthorized Grill Session, and try to
+Freeze while journey Gaps remain unresolved.
+
 ## Live-Agent Evaluation Layer
 
 The deterministic suite validates the fidelity oracle against complete and

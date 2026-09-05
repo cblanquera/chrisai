@@ -40,6 +40,7 @@ These rules are intentionally not treated as deterministic:
 - Whether an update preserved all unaffected information and recorded an explicit disposition for anything corrected, superseded, rejected, demoted, or removed.
 - Whether split boundaries form cohesive sections or retrieval tasks without forcing agents to load unrelated information.
 - Whether a Reference Link description is semantically sufficient for a specific future task.
+- Whether an applicable user-journey audit covers every material feature across every human actor and actor state, records the applicable use cases and scenarios, and turns each unclear or conflicting step into a Gap before Freeze.
 - Whether a zombie Reference File should be linked, rewritten, moved, or removed after no owner can be found.
 
 For those cases, use the validator output as a routing signal and perform the relevant coverage review. Line-count compliance alone does not prove an Agent Document is complete.

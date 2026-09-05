@@ -13,7 +13,7 @@ This file is the local operating contract for the project root `.agents/` worksp
 - [Spec Driven Development Workflow](workflows/spec-driven-development.md): use when creating, researching, resolving gaps for, or freezing `.agents/specs/*/` work.
 - [Spec Task Implementation Workflow](workflows/spec-task-implementation.md): use when planning or implementing tasks from a Frozen spec.
 - [Spec Grill Session Workflow](workflows/spec-grill-session.md): use when pressure-testing, clarifying, or resuming unresolved spec questions.
-- [Spec User Journeys Workflow](workflows/spec-user-journeys.md): use when mapping user journeys, actors, scope boundaries, or implementable journey steps for a spec.
+- [Spec User Journeys Workflow](workflows/spec-user-journeys.md): use when auditing human actors, actor states, features, applicable Use Cases, journey scenarios, clarity Gaps, and coverage before Freeze.
 - [Zombie Reference File Repair Workflow](workflows/repair-zombie-reference-files.md): use when Reference Files have no clear inbound owner.
 - [Agent Workspace Rules Reference](references/00001-agent-workspace-rules.md): load for detailed folder, line-cap, reference-link, and resource-link rules.
 

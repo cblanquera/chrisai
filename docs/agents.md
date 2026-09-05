@@ -63,6 +63,23 @@ Complete Draft. A split redistributes complete content into cohesive,
 task-routed Reference Files; it does not authorize summarizing, omitting, or
 deleting information or data.
 
+## User Journey Coverage
+
+The Spec User Journeys Workflow audits every in-scope feature against every
+materially distinct human actor and actor state. It derives applicable Use
+Cases, expands materially different success, failure, permission, lifecycle,
+dependency, and recovery scenarios, then walks each journey from trigger to
+outcome using the current Context Files and current spec.
+
+External systems and automated jobs are dependencies or handoffs, not Actors.
+Wireframes and code are supporting evidence; behavior missing from or
+conflicting with the current spec becomes a Gap rather than an inferred
+requirement. The workflow finishes the complete coverage audit and records all
+Gaps without automatically starting a Grill Session. Applicable journey
+coverage must be complete before a spec can Freeze, although unresolved journey
+Gaps may still follow the normal accepted, deferred, or explicitly unresolved
+Freeze rules.
+
 ## Source Preservation Boundary
 
 `.agents/resources/` is an evidence store, not a mirror of the repository.

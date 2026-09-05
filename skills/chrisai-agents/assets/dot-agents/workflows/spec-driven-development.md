@@ -86,7 +86,7 @@ If no Proofs are required, record `Proofs: not required` in `status.md`. Do not 
 Use optional companion workflows any time during spec planning, in any order, and as many times as needed:
 
 - [Spec Grill Session Workflow](spec-grill-session.md): use when unresolved Gaps, fuzzy terms, interrupted Q/A, or decision ambiguity need one-question-at-a-time clarification.
-- [Spec User Journeys Workflow](spec-user-journeys.md): use when the spec has user-facing behavior, actors, permissions, lifecycle states, integrations, or step sequencing that should be mapped before Freeze.
+- [Spec User Journeys Workflow](spec-user-journeys.md): use when the spec needs systematic coverage of human actors, actor states, features, applicable Use Cases, journey scenarios, permissions, lifecycle states, integrations, or step sequencing before Freeze.
 
 These loops are not required for every spec. When a loop is invoked, update the spec `index.md`, `decisions.md`, and `status.md` with the result. When a loop is not applicable but its absence affects Freeze readiness, record `not applicable` in `status.md` with a reason.
 
@@ -127,6 +127,7 @@ A spec can be Frozen only when:
 - `decisions.md` has every material Gap answered, accepted, deferred, or explicitly unresolved with user approval
 - required research is complete or explicitly deferred
 - Proofs are marked not required in `status.md`, or required Proofs are recorded in `proofs.md` and Frozen in `status.md`
+- user journey coverage is marked complete when applicable, or marked not applicable with a reason; all journey-created Gaps follow the same decision requirements above
 - reusable accepted truth has been promoted or deliberately left spec-local
 - the spec does not conflict with `.agents/context/`
 

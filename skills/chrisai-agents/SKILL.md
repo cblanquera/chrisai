@@ -25,7 +25,7 @@ The installer manages these target files:
 - `.agents/workflows/spec-driven-development.md`: workflow for creating, researching, resolving gaps for, promoting context from, and freezing Spec Files.
 - `.agents/workflows/spec-task-implementation.md`: workflow for planning and implementing tasks from Frozen Spec Files.
 - `.agents/workflows/spec-grill-session.md`: optional workflow for resumable, lossless spec clarification sessions.
-- `.agents/workflows/spec-user-journeys.md`: optional workflow for mapping user journeys and deriving journey-driven Gaps.
+- `.agents/workflows/spec-user-journeys.md`: optional workflow for auditing human actors, actor states, features, applicable Use Cases, journey scenarios, and journey-driven Gaps before Freeze.
 - `.agents/workflows/repair-zombie-reference-files.md`: workflow for repairing unowned Reference Files.
 - `.agents/references/00001-agent-workspace-rules.md`: detailed rule reference used by AGENTS and workflows.
 - `.agents/references/00002-intersection-points.md`: detailed scan points used by the ingestion workflow.

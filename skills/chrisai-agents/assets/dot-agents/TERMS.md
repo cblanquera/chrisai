@@ -6,6 +6,8 @@ This file defines shared Agent Workspace terminology. Add project-specific terms
 ## Managed Terms
 
 - **Accepted Reusable Truth**: project knowledge approved or established enough to live in `.agents/context/`.
+- **Actor**: a human user or human-operated role whose goals, permissions, actions, or outcomes matter to a spec. External systems and automated processes are dependencies or handoffs, not Actors.
+- **Actor State**: a condition of an Actor, such as unverified, signed out, signed in, or suspended, that materially changes available behavior, permissions, system response, destination, or recovery.
 - **Agent Document**: the complete body of agent-consumable information represented by one Agent File or by an owner Agent File plus its linked Reference Files.
 - **Agent Workspace**: everything inside a project root `.agents/` folder.
 - **Agent Files**: markdown files under `.agents/` designed for AI-agent consumption unless explicitly excluded.
@@ -16,6 +18,7 @@ This file defines shared Agent Workspace terminology. Add project-specific terms
 - **Freeze/Frozen**: accepted planning state for a Spec File or spec package that should not be changed unless the user explicitly permits reopening it.
 - **Gaps**: documented unknowns written as questions and based on the current Context Files plus the Agent Files in the relevant spec. Each Gap must be paired with an assumption, a decision, or an explicit unresolved status.
 - **Intersection Scan**: review of Agent Files for overlaps, conflicts, answered gaps, new gaps, and affected records before updates.
+- **Journey Coverage Complete**: every in-scope feature, materially distinct Actor and Actor State, actor-feature intersection, applicable Use Case, and material journey scenario has been assessed, with every unclear or conflicting behavior linked to a Gap.
 - **Knowledge Base (KB)**: `.agents/context/`, the Agent Workspace source-of-truth folder containing Accepted Reusable Truth.
 - **Lossless Split**: partitioning a Complete Draft into cohesive Agent Files without summarizing, omitting, or deleting information or data.
 - **Proofs**: technical prototypes, experiments, or verification artifacts created to address Gaps before a spec is trusted for implementation.
@@ -27,6 +30,8 @@ This file defines shared Agent Workspace terminology. Add project-specific terms
 - **Source Material**: import input such as files, URLs, screenshots with text, raw resources, pasted text, or ad hoc prompt text.
 - **Source Provenance**: source path, URL, repository revision or content hash when useful, capture source, extraction limits, and access date when known.
 - **Spec Files**: Agent Files found under `.agents/specs/*/`.
+- **Use Case**: one Actor's goal involving an in-scope feature, including its trigger, preconditions, expected outcome, applicable scenarios, evidence, journeys, and Gaps.
+- **User Journey**: one materially distinct path through a Use Case from trigger to outcome or explicit boundary, including actor actions, system responses, state transitions, permissions, feedback, dependencies, recovery, evidence, and Gaps.
 <!-- agent-workspace-rules:end -->
 
 ## Project Terms
