@@ -26,6 +26,9 @@ easier to scan.
 - `eye`
 - `eye-off`
 - `filter`
+- `file`
+- `folder`
+- `grip`
 - `home`
 - `info`
 - `italic`

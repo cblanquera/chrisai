@@ -16,19 +16,19 @@
     <div class="sample-shell wf-stack">
       <a class="sample-link" href="../index.html">Back to samples</a>
       <h1 class="wf-title">Tree</h1>
-      <ul class="wf-tree sample-frame" data-wf-tree>
-        <li class="wf-tree__item">
-          <button class="wf-tree__toggle" type="button" aria-expanded="true" aria-controls="tree-product"><span class="wf-tree__chevron" data-wf-icon="chevron-right"></span> Product</button>
+      <ul class="wf-tree sample-frame" data-wf-tree data-wf-tree-select="single" aria-label="Workspace folders">
+        <li class="wf-tree__item" data-wf-tree-id="product" aria-selected="true">
+          <div class="wf-tree__node"><button class="wf-tree__expand" type="button" data-wf-tree-toggle aria-expanded="true" aria-controls="tree-product" aria-label="Collapse Product"><span class="wf-tree__chevron" data-wf-icon="chevron-right"></span></button><button class="wf-tree__label" type="button" data-wf-tree-select-node><span class="wf-tree__label-text">Product</span></button></div>
           <ul id="tree-product">
-            <li><a class="wf-tree__link" href="#">Roadmap</a></li>
-            <li><a class="wf-tree__link" href="#">Research</a></li>
+            <li data-wf-tree-id="roadmap"><button class="wf-tree__label" type="button" data-wf-tree-select-node><span class="wf-tree__label-text">Roadmap</span></button></li>
+            <li data-wf-tree-id="research"><button class="wf-tree__label" type="button" data-wf-tree-select-node><span class="wf-tree__label-text">Research</span></button></li>
           </ul>
         </li>
-        <li class="wf-tree__item">
-          <button class="wf-tree__toggle" type="button" aria-expanded="false" aria-controls="tree-ops"><span class="wf-tree__chevron" data-wf-icon="chevron-right"></span> Operations</button>
+        <li class="wf-tree__item" data-wf-tree-id="operations">
+          <div class="wf-tree__node"><button class="wf-tree__expand" type="button" data-wf-tree-toggle aria-expanded="false" aria-controls="tree-ops" aria-label="Expand Operations"><span class="wf-tree__chevron" data-wf-icon="chevron-right"></span></button><button class="wf-tree__label" type="button" data-wf-tree-select-node><span class="wf-tree__label-text">Operations</span></button></div>
           <ul id="tree-ops" hidden>
-            <li><a class="wf-tree__link" href="#">Billing</a></li>
-            <li><a class="wf-tree__link" href="#">Support</a></li>
+            <li data-wf-tree-id="billing"><button class="wf-tree__label" type="button" data-wf-tree-select-node><span class="wf-tree__label-text">Billing</span></button></li>
+            <li data-wf-tree-id="support"><button class="wf-tree__label" type="button" data-wf-tree-select-node><span class="wf-tree__label-text">Support</span></button></li>
           </ul>
         </li>
       </ul>

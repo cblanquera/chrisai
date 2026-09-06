@@ -1,0 +1,15 @@
+.wf-import-mapper { overflow: hidden; border: 1px solid var(--wf-border); border-radius: var(--wf-radius-4); background: var(--wf-surface); }
+.wf-import-mapper__header { padding: var(--wf-space-5); border-bottom: 1px solid var(--wf-border); }
+.wf-import-mapper__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--wf-space-2); padding: 0; margin: var(--wf-space-5) 0 0; list-style: none; }
+.wf-import-mapper__steps li { padding-top: var(--wf-space-2); border-top: 4px solid var(--wf-gray-200); color: var(--wf-text-muted); font-size: var(--wf-text-sm); }
+.wf-import-mapper__steps li[data-state="current"], .wf-import-mapper__steps li[data-state="done"] { border-color: var(--wf-gray-700); color: var(--wf-text); font-weight: 700; }
+.wf-import-mapper__panel { display: grid; gap: var(--wf-space-5); min-height: 410px; padding: var(--wf-space-6); }
+.wf-import-mapper__panel[hidden] { display: none; }
+.wf-import-mapper__drop { display: grid; place-items: center; gap: var(--wf-space-3); min-height: 240px; padding: var(--wf-space-6); border: 1px dashed var(--wf-border-strong); border-radius: var(--wf-radius-4); background: var(--wf-gray-50); text-align: center; }
+.wf-import-mapper__footer { display: flex; align-items: center; justify-content: space-between; gap: var(--wf-space-3); padding: var(--wf-space-4) var(--wf-space-6); border-top: 1px solid var(--wf-border); }
+.wf-import-mapper__progress { height: 10px; overflow: hidden; border-radius: 999px; background: var(--wf-gray-200); }
+.wf-import-mapper__progress span { display: block; width: 0; height: 100%; background: var(--wf-gray-700); transition: width .2s ease; }
+.wf-import-mapper__summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--wf-space-3); }
+.wf-import-mapper__metric { padding: var(--wf-space-4); border: 1px solid var(--wf-border); border-radius: var(--wf-radius-3); }
+.wf-import-mapper__metric strong { display: block; font-size: var(--wf-text-xl); }
+@media (max-width: 620px) { .wf-import-mapper__steps { grid-template-columns: 1fr 1fr; } .wf-import-mapper__summary { grid-template-columns: 1fr; } }

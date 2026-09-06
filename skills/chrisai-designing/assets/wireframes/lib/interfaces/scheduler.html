@@ -1,0 +1,51 @@
+<section class="wf-scheduler" data-wf-scheduler aria-labelledby="scheduler-title">
+  <header class="wf-scheduler__header">
+    <div>
+      <h1 class="wf-heading" id="scheduler-title">Campaign schedule</h1>
+      <p class="wf-copy">Plan launches, reviews, and team milestones.</p>
+    </div>
+    <button class="wf-button" type="button" data-wf-scheduler-add><span data-wf-icon="add"></span>Add event</button>
+  </header>
+  <div class="wf-scheduler__toolbar">
+    <div class="wf-button-group">
+      <button class="wf-button wf-button--secondary" type="button" data-wf-scheduler-prev aria-label="Previous month"><span data-wf-icon="chevron-left"></span></button>
+      <button class="wf-button wf-button--secondary" type="button" data-wf-scheduler-today>Today</button>
+      <button class="wf-button wf-button--secondary" type="button" data-wf-scheduler-next aria-label="Next month"><span data-wf-icon="chevron-right"></span></button>
+    </div>
+    <h2 class="wf-subheading wf-scheduler__period" data-wf-scheduler-period></h2>
+    <label class="wf-field wf-scheduler__view-field">
+      <span class="wf-sr-only">Calendar view</span>
+      <select class="wf-select" data-wf-scheduler-view>
+        <option value="month">Month</option>
+        <option value="week">Week</option>
+        <option value="day">Day</option>
+      </select>
+    </label>
+  </div>
+  <div class="wf-scheduler__overflow">
+    <div class="wf-scheduler__calendar" data-wf-scheduler-calendar></div>
+  </div>
+  <div class="wf-scheduler__legend">
+    <span>Click any day or time slot to add an event.</span>
+    <span>Click an event to edit it.</span>
+  </div>
+  <dialog class="wf-dialog" id="scheduler-event-dialog">
+    <form data-wf-scheduler-form>
+      <header class="wf-dialog__header"><h2 class="wf-subheading" data-wf-scheduler-dialog-title>Add event</h2></header>
+      <div class="wf-dialog__body wf-form">
+        <label class="wf-field"><span class="wf-label">Title *</span><input class="wf-input" name="title" required></label>
+        <div class="wf-row">
+          <label class="wf-field"><span class="wf-label">Date *</span><input class="wf-input" type="date" name="date" required></label>
+          <label class="wf-field"><span class="wf-label">Time *</span><input class="wf-input" type="time" name="time" required></label>
+        </div>
+        <label class="wf-field"><span class="wf-label">Owner</span><input class="wf-input" name="owner"></label>
+      </div>
+      <footer class="wf-dialog__footer">
+        <button class="wf-button wf-button--secondary" type="button" data-wf-scheduler-delete>Delete</button>
+        <button class="wf-button wf-button--secondary" type="button" data-wf-dialog-close>Cancel</button>
+        <button class="wf-button" type="submit">Save event</button>
+      </footer>
+    </form>
+  </dialog>
+  <script type="application/json" data-wf-scheduler-data>{"month":"2026-09","date":"2026-09-08","events":[{"id":"e1","title":"Holiday campaign kickoff","date":"2026-09-03","time":"09:00","owner":"Marketing"},{"id":"e2","title":"Creative review","date":"2026-09-08","time":"14:30","owner":"Design"},{"id":"e3","title":"Partner launch","date":"2026-09-17","time":"10:00","owner":"Operations"},{"id":"e4","title":"Performance check-in","date":"2026-09-24","time":"15:00","owner":"Marketing"}]}</script>
+</section>

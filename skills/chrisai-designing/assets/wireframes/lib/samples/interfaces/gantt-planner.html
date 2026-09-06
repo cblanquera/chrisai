@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gantt Planner Interface Sample</title>
+  <link rel="stylesheet" href="../../base/tokens.css">
+  <link rel="stylesheet" href="../../base/reset.css">
+  <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
+  <link rel="stylesheet" href="../../components/forms.css">
+  <link rel="stylesheet" href="../../components/diagram-canvas.css">
+  <link rel="stylesheet" href="../sample.css">
+</head>
+<body class="sample-interface-page">
+  <div class="sample-interface-shell">
+    <nav class="sample-interface-nav"><a class="sample-link" href="../index.html">← All samples</a><p>Interactive task and milestone planning</p></nav>
+    <section class="wf-diagram wf-diagram--gantt" data-wf-diagram data-wf-diagram-kind="gantt" data-wf-diagram-kicker="Dependency planner" data-wf-diagram-title="Storefront launch plan" data-wf-diagram-description="Add tasks and milestones, drag bars to reschedule, resize durations, and edit details." data-wf-diagram-palette="task,milestone" aria-label="Gantt planner">
+      <script type="application/json" data-wf-diagram-data>{"weeks":["Sep 7","14","21","28","Oct 5","12","19","26","Nov 2","9","16","23"],"nodes":[{"id":"discovery","type":"task","label":"Discovery","owner":"Product","start":1,"duration":2},{"id":"design","type":"task","label":"UX and visual design","owner":"Design","start":2,"duration":4},{"id":"catalog","type":"task","label":"Catalog migration","owner":"Operations","start":3,"duration":5},{"id":"build","type":"task","label":"Storefront build","owner":"Engineering","start":5,"duration":5},{"id":"qa","type":"task","label":"Acceptance testing","owner":"QA","start":9,"duration":2},{"id":"launch","type":"milestone","label":"Launch","owner":"Launch","start":11,"duration":1}]}</script>
+    </section>
+  </div>
+  <script src="../../icons/icons.js"></script>
+  <script src="../../components/diagram-canvas.js"></script>
+  <script src="../../utilities/interactions.js"></script>
+</body>
+</html>

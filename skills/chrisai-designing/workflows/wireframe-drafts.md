@@ -72,6 +72,14 @@ with its `base/` CSS system, then inspect
 [wireframe-lib-inventory](../references/wireframe-lib-inventory.md) for other
 useful files. Copy only what the revision uses.
 
+When a user describes a component, interface, or layout without knowing its
+library name, treat the description as a lookup request. Use the inventory as
+the first index, then inspect the closest matching source under `components/`,
+`interfaces/`, or `layouts/` and its corresponding review sample. Identify and
+reference the closest established pattern before asking the user to name it or
+creating a new equivalent. If several patterns plausibly match, show the most
+relevant options and explain the structural difference briefly.
+
 Treat HTML files beside component and layout CSS as canonical source markup.
 Copy them directly or use them as guides. Adapt content, IDs, links, structure,
 behavior, and initial state to match `specs.md` while preserving relevant
