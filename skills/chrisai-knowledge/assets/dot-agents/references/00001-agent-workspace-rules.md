@@ -70,6 +70,10 @@ Examples in non-link notation:
 
 The link description should summarize what the Reference File contains and state when to load it, not merely repeat the filename.
 
+The deterministic link check ignores fenced code examples and does not report
+link errors or warnings from `.agents/workflows/` or `.agents/skills/`. Valid
+workflow links may still establish inbound ownership for Reference Files.
+
 ## Coverage Review
 
 Before partitioning, inventory the headings, identifiers, citations, tables, examples, edge cases, and other details that must survive. After creation, ingestion, update, or splitting, compare the Complete Draft and inventory with the final owner and Reference Files. Confirm every in-scope detail remains present or has an explicit recorded disposition. Line-count compliance without this coverage review is not completion.

@@ -113,10 +113,19 @@ Store generated screenshots, recordings, and other evidence under:
 .agents/resources/acceptance/<spec-id>/<acceptance-control>/attempt-<number>/
 ```
 
-Use unique attempt folders instead of overwriting earlier evidence. Inventory
-every artifact in `evidence.md` with an evidence ID, acceptance control,
-attempt, type, capture time, environment or build, Resource Link, result, and
-useful notes. Record a content hash when it materially helps integrity checks.
+Keep at most one finalized evidence folder per Acceptance Control. Capture a
+new run in a fresh numbered folder without overwriting retained evidence, and
+keep the previous folder while the new run is `planned`, `ready`, or `running`.
+After the new attempt has a final status and its ledger links resolve, remove
+older attempt folders before committing the replacement; deleting committed
+artifacts later does not remove them from Git history.
+
+Inventory only the retained artifacts in `evidence.md` with an evidence ID,
+acceptance control, attempt, type, capture time, environment or build, Resource
+Link, result, and useful notes. Do not retain links to removed artifacts. Keep
+older attempt numbers, times, environments or builds, results, and notes as
+text-only history in the acceptance record. Retain older evidence only when
+the user explicitly requests it for debugging, audit, or compliance. Record a content hash when it materially helps integrity checks.
 
 Use dummy accounts, keys, fixtures, and data by default. Do not impose extra
 approval merely because ordinary dummy evidence is stored. If acceptance

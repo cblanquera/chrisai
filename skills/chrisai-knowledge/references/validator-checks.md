@@ -16,12 +16,17 @@ The validator reports errors for deterministic hard-rule failures:
 - Reference subfolders.
 - Reference File names that do not match `00001-meta-title.md`.
 - Duplicate Reference File numbers.
-- Local markdown links inside `.agents/` that point to missing files.
+- Local markdown links in checked project Agent Files that point to missing
+  files. Links inside fenced code blocks are examples, not live references.
 - Reference or Resource Links with empty link text.
 - `.agents/context/index.md` links that resolve outside `.agents/context/`, including links that leave `.agents/`.
 - Zombie Reference Files with no inbound link from another Agent File.
 
-The validator does not parse markdown under `.agents/skills/` for line counts or local links. This keeps independently installed tooling outside project Agent Document rules while preserving all checks for the managed workspace surface.
+The validator does not parse markdown under `.agents/skills/` for line counts or
+local links. It does not report local-link errors or warnings from
+`.agents/workflows/`; valid workflow links to Reference Files may still
+establish inbound ownership. This keeps independently installed tooling and
+reusable workflow examples from producing project link errors.
 
 ## Warnings
 

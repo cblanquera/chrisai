@@ -72,6 +72,18 @@ test('agent workspace install manages required workflows idempotently', async ()
     const acceptanceWorkflow = await readFile(acceptanceWorkflowPath, 'utf8');
     assert.ok(updateWorkflow.length > 0);
     assert.ok(acceptanceWorkflow.length > 0);
+    assert.match(
+      acceptanceWorkflow,
+      /Keep at most one finalized evidence folder per Acceptance Control/
+    );
+    assert.match(
+      acceptanceWorkflow,
+      /text-only history in the acceptance record/
+    );
+    assert.match(
+      acceptanceWorkflow,
+      /Retain older evidence only when\s+the user explicitly requests it/
+    );
 
     const dryRun = runPython(installerPath, ['--target', targetRoot]);
     assert.equal(dryRun.status, 0, dryRun.stderr);
@@ -170,6 +182,77 @@ test('line validation enforces final boundaries and excludes non-Agent Files', a
     assert.match(hardError.stdout, /size-test\.md has 501 lines/);
     assert.doesNotMatch(hardError.stdout, /raw-source\.md/);
     assert.doesNotMatch(hardError.stdout, /external-skill/);
+  } finally {
+    await rm(targetRoot, { force: true, recursive: true });
+  }
+});
+
+test('link validation ignores fenced examples and workflow or skill sources', async () => {
+  const targetRoot = await mkdtemp(join(tmpdir(), 'chrisai-knowledge-links-'));
+
+  try {
+    const agentsDir = await installWorkspace(targetRoot);
+    const exampleFile = join(agentsDir, 'link-examples.md');
+    const workflowFile = join(
+      agentsDir,
+      'workflows',
+      'project-example.md'
+    );
+    const installedSkillFile = join(
+      agentsDir,
+      'skills',
+      'external-skill',
+      'SKILL.md'
+    );
+    const installedValidatorPath = join(
+      agentsDir,
+      'scripts',
+      'validate-agent-workspace.py'
+    );
+
+    await mkdir(dirname(installedSkillFile), { recursive: true });
+    const fencedExamples = [
+      '```text',
+      'Readable HTML preview: [response.html](/absolute/path/to/response.html)',
+      'Readable HTML preview: [response.html](/absolute/path/to/response.html)',
+      'Readable HTML preview: [response.html](/absolute/path/to/response.html)',
+      '```',
+      '',
+      '```markdown',
+      '[<review target>](<review target>)',
+      '[<notes.md>](<notes target>)',
+      '```',
+      ''
+    ].join('\n');
+    await writeFile(exampleFile, fencedExamples);
+    await writeFile(
+      workflowFile,
+      '[Missing workflow example](missing-workflow.md)\n'
+    );
+    await writeFile(
+      installedSkillFile,
+      '[Missing skill example](missing-skill.md)\n'
+    );
+
+    const ignoredExamples = runPython(installedValidatorPath, []);
+    assert.equal(
+      ignoredExamples.status,
+      0,
+      ignoredExamples.stderr || ignoredExamples.stdout
+    );
+    assert.doesNotMatch(ignoredExamples.stdout, /absolute[\\/]path/);
+    assert.doesNotMatch(ignoredExamples.stdout, /review target/);
+    assert.doesNotMatch(ignoredExamples.stdout, /notes target/);
+    assert.doesNotMatch(ignoredExamples.stdout, /missing-workflow/);
+    assert.doesNotMatch(ignoredExamples.stdout, /missing-skill/);
+
+    await writeFile(
+      exampleFile,
+      `${fencedExamples}[Missing live file](missing-live.md)\n`
+    );
+    const liveBrokenLink = runPython(installedValidatorPath, []);
+    assert.equal(liveBrokenLink.status, 1, liveBrokenLink.stderr);
+    assert.match(liveBrokenLink.stdout, /missing-live\.md/);
   } finally {
     await rm(targetRoot, { force: true, recursive: true });
   }

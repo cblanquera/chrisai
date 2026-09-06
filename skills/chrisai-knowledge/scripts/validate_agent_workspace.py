@@ -14,6 +14,8 @@ HARD_LINE_LIMIT = 500
 PREFERRED_LINE_LIMIT = 200
 REFERENCE_NAME_RE = re.compile(r"^(\d{5})-[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
 LINK_RE = re.compile(r"(?<!!)\[([^\]]*)\]\(([^)]+)\)")
+FENCE_START_RE = re.compile(r"^[ ]{0,3}(`{3,}|~{3,})")
+FENCE_END_RE = re.compile(r"^[ ]{0,3}(`{3,}|~{3,})[ \t]*$")
 SCHEME_RE = re.compile(r"^[a-zA-Z][a-zA-Z0-9+.-]*:")
 MANAGED_RULE_FILES = (
     Path("references/00001-agent-workspace-rules.md"),
@@ -86,6 +88,39 @@ def clean_link_target(raw: str) -> str:
     return unquote(target)
 
 
+def markdown_outside_fences(text: str) -> list[str]:
+    segments: list[str] = []
+    current: list[str] = []
+    fence_character: str | None = None
+    fence_length = 0
+
+    for line in text.splitlines(keepends=True):
+        candidate = line.rstrip("\r\n")
+        if fence_character is None:
+            match = FENCE_START_RE.match(candidate)
+            if match:
+                if current:
+                    segments.append("".join(current))
+                    current = []
+                marker = match.group(1)
+                fence_character = marker[0]
+                fence_length = len(marker)
+                continue
+            current.append(line)
+            continue
+
+        match = FENCE_END_RE.match(candidate)
+        if match:
+            marker = match.group(1)
+            if marker[0] == fence_character and len(marker) >= fence_length:
+                fence_character = None
+                fence_length = 0
+
+    if current:
+        segments.append("".join(current))
+    return segments
+
+
 def parse_links(agent_file: Path, agents_dir: Path) -> list[Link]:
     try:
         text = agent_file.read_text(encoding="utf-8")
@@ -93,24 +128,25 @@ def parse_links(agent_file: Path, agents_dir: Path) -> list[Link]:
         return []
 
     links: list[Link] = []
-    for match in LINK_RE.finditer(text):
-        link_text = match.group(1).strip()
-        raw_target = match.group(2).strip()
-        target = clean_link_target(raw_target)
-        resolved: Path | None = None
+    for segment in markdown_outside_fences(text):
+        for match in LINK_RE.finditer(segment):
+            link_text = match.group(1).strip()
+            raw_target = match.group(2).strip()
+            target = clean_link_target(raw_target)
+            resolved: Path | None = None
 
-        if target and not target.startswith("#") and not SCHEME_RE.match(target):
-            resolved = (agent_file.parent / target).resolve(strict=False)
+            if target and not target.startswith("#") and not SCHEME_RE.match(target):
+                resolved = (agent_file.parent / target).resolve(strict=False)
 
-        links.append(
-            Link(
-                source=agent_file,
-                text=link_text,
-                raw_target=raw_target,
-                clean_target=target,
-                resolved=resolved,
+            links.append(
+                Link(
+                    source=agent_file,
+                    text=link_text,
+                    raw_target=raw_target,
+                    clean_target=target,
+                    resolved=resolved,
+                )
             )
-        )
     return links
 
 
@@ -229,6 +265,7 @@ def validate_links(
     references_dir: Path,
     resources_dir: Path,
     context_dir: Path,
+    unchecked_source_dirs: tuple[Path, ...],
     reporter: Reporter,
 ) -> dict[Path, set[Path]]:
     reference_inbound: dict[Path, set[Path]] = {}
@@ -241,9 +278,14 @@ def validate_links(
 
         rel_source = display(link.source, agents_dir)
         rel_target = display(link.resolved, agents_dir)
+        source_is_unchecked = any(
+            is_relative_to(link.source, directory)
+            for directory in unchecked_source_dirs
+        )
 
         if not link.resolved.exists():
-            reporter.error(f"{rel_source} links to missing file {rel_target}")
+            if not source_is_unchecked:
+                reporter.error(f"{rel_source} links to missing file {rel_target}")
             continue
 
         if not is_relative_to(link.resolved, agents_dir):
@@ -256,6 +298,9 @@ def validate_links(
             reference_inbound.setdefault(link.resolved, set())
             if link.source.resolve() != link.resolved:
                 reference_inbound[link.resolved].add(link.source.resolve())
+
+        if source_is_unchecked:
+            continue
 
         if is_reference or is_resource:
             if not link.text:
@@ -300,6 +345,7 @@ def validate(target_root: Path) -> int:
     references_dir = agents_dir / "references"
     resources_dir = agents_dir / "resources"
     skills_dir = agents_dir / "skills"
+    workflows_dir = agents_dir / "workflows"
 
     reporter = Reporter()
     validate_required_surface(agents_dir, reporter)
@@ -322,7 +368,13 @@ def validate(target_root: Path) -> int:
         links.extend(parse_links(agent_file, agents_dir))
 
     inbound = validate_links(
-        links, agents_dir, references_dir, resources_dir, context_dir, reporter
+        links,
+        agents_dir,
+        references_dir,
+        resources_dir,
+        context_dir,
+        (skills_dir, workflows_dir),
+        reporter,
     )
     validate_zombies(reference_files, inbound, agents_dir, reporter)
 

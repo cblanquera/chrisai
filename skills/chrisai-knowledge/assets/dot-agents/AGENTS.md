@@ -72,6 +72,9 @@ python .agents/scripts/validate-agent-workspace.py
 
 Use `python3` instead of `python` on systems where that is the Python 3 executable.
 
+Link validation ignores fenced code examples and does not report link errors or
+warnings from `.agents/workflows/` or `.agents/skills/`.
+
 ## Workflow Closeout
 
 After setup and after each workflow pass, tell the user what changed, the validation result, any blocker or user decision still needed, and the recommended next step.

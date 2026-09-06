@@ -65,10 +65,15 @@ Each Acceptance Criterion receives a flat record such as
 `.agents/specs/<spec-id>/acceptance/00001-001.md`. The same folder contains
 `status.md` for latest results and `evidence.md` for screenshots, recordings,
 and other Resource Files stored under
-`.agents/resources/acceptance/<spec-id>/`. Library-backed acceptance also uses
-human-editable JSON under project-root `tests/acceptance/` and a small
-project-native runner; interactive agent tools and manual procedures do not
-pretend to provide a standalone script.
+`.agents/resources/acceptance/<spec-id>/`. Each Acceptance Control retains only
+its latest finalized evidence folder by default. Earlier attempts remain as
+compact text history in the criterion record; their artifacts are removed only
+after the replacement attempt and its links are finalized. Older artifacts are
+retained only when the user explicitly requests them for debugging, audit, or
+compliance. Library-backed acceptance also uses human-editable JSON under
+project-root `tests/acceptance/` and a small project-native runner; interactive
+agent tools and manual procedures do not pretend to provide a standalone
+script.
 
 Delegated acceptance moves a verified task to `accepted` only after every
 criterion passes with recorded evidence. Failed, blocked, human-required, or
@@ -92,6 +97,8 @@ deleting information or data.
 These project Agent File rules exclude Raw Source under `.agents/resources/`
 and independently installed skill packages under `.agents/skills/`. Installed
 skills are reusable tooling and remain subject to their own package validator.
+The local-link check also ignores fenced code examples and does not report link
+errors or warnings from reusable files under `.agents/workflows/`.
 
 ## User Journey Coverage
 
