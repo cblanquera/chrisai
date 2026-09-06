@@ -5,22 +5,34 @@ output structure, SVG standards, or review checklists.
 
 ## Logo Workflow Standard
 
-The first logo iteration must be visually credible. Do not use raw
-hand-authored SVG geometry as the default logo ideation engine.
+The first logo iteration must be both visually credible and structurally
+editable. SVG is the working logo format from the first selectable candidate
+through explicit approval. This does not lower the presentation bar: do not
+present rough implementation geometry merely because it is valid SVG.
 
 Default sequence:
 
 1. define the brief and design direction
 2. mine the domain and reject obvious cliches
-3. create a visual concept board using the best available image, design, or
-   logo-generation capability
-4. review the board as images, not source code
-5. select or narrow a direction
-6. rebuild, simplify, or clean up SVG/vector assets only after the visual
-   direction is promising
+3. create one separately addressable, polished SVG candidate per concept
+4. add a useful `<title>`, `<desc>`, and stable semantic IDs to every SVG
+5. assemble the concept board and its companion map from those candidate files
+6. present every candidate with concise anatomy and terminology descriptions
+7. select a direction through the map and lock its exact source asset
+8. refine from that exact SVG baseline by changing only authorized objects
+9. receive explicit approval for the SVG logo
+10. create PNG and other delivery derivatives only after approval
 
-SVG is a production and handoff format unless the user explicitly asks for
-SVG-only exploration.
+Image generation or raster references may help explore visual directions, but
+they are not selectable logo candidates. Reconstruct any surviving direction
+as a real SVG before board presentation. Do not embed a raster inside SVG or
+switch the refinement baseline to PNG.
+
+When an existing image materially defines the requested construction, read
+`references/logo-reference-led-generation.md`. Classify the reference, complete
+the interpretation checkpoint, and pass the capability and fidelity gates
+before creating selectable SVGs. SVG delivery does not authorize improvised
+manual reconstruction of polished raster artwork.
 
 ## Borrowed Reference Priorities
 
@@ -40,8 +52,16 @@ Use the OpenDesign SVG references as follows:
 - `optimization.md`: final cleanup only, especially preserving `viewBox` and
   avoiding dangerous optimizer defaults
 
-Use `references/logo-visual-concept-board.md` for the repeatable first-pass
-visual prompt contract and critique/regeneration loop.
+Use `references/logo-concept-artifacts.md` for self-describing SVGs, board maps,
+review-response descriptions, selection resolution, and the raster-reference
+fallback. Use
+`references/logo-visual-concept-board.md` for the repeatable first-pass visual
+prompt contract, separate-candidate workflow, board assembly, and pre-selection
+critique loop. Use `references/logo-reference-led-generation.md` whenever a
+visual reference materially guides the result. Use
+`references/logo-iterative-refinement.md` after selection
+or whenever an existing logo should change without losing its accepted
+identity.
 
 ## Brief Template
 
@@ -123,52 +143,23 @@ Push literal ideas through abstraction:
 
 ## Visual Concept Board Standard
 
-The first board should feel like an early professional design presentation, not
-an implementation scratchpad.
+Use `references/logo-visual-concept-board.md` as the authority for first-pass
+visual prompts, separate candidate assets, board assembly, pre-selection
+repairs, and presentation quality. Do not duplicate those mechanics here.
+Apply `references/logo-concept-artifacts.md` to every multi-candidate set so
+each SVG is self-describing, every board has a verified map to its source files,
+and every review response includes candidate anatomy and useful edit terms.
 
-Create 3-6 visual directions. Each direction should include:
+Use a vector-capable design method to create every selectable candidate as SVG.
+An image-generation or raster-design capability may be used for exploratory
+references, but convert the surviving idea into a true SVG and visually verify
+it before selection. If the idea cannot be represented faithfully as SVG, stop
+and explain the limitation instead of presenting a PNG candidate.
 
-- a rendered mark or mark-plus-wordmark image
-- a concept name
-- a concise rationale
-- the structural category
-- where it would work best
-- the biggest risk
-
-Use image generation, image editing, a design tool, or another visual logo
-generator when available. A browser-reviewable HTML/CSS artifact can support
-presentation, but it should not be used to disguise weak marks.
-
-Use `references/logo-visual-concept-board.md` to shape the prompt and inspect
-the first pass before presenting it as usable.
-
-Only use hand-authored SVG as the first visual artifact when:
-
-- the user explicitly requests SVG-only exploration
-- no visual/image/design capability is available and the user accepts the
-  lower-confidence path
-- the SVG is already visually strong enough to pass the presentation gate
-
-### Presentation Quality Gate
-
-Reject or regenerate before showing the user when the first board looks like:
-
-- squiggly line work
-- MS Paint-style construction
-- icon-library placeholders
-- rough technical diagrams
-- generic sync, settings, upload, widget, toolbar, or status icons
-- text with an arbitrary symbol
-- a set of near-identical layouts
-- marks that need a written explanation to make sense
-
-Check the board at normal viewing size and small preview size. If the mark
-does not feel credible before explanation, do not ask the user to choose from
-it.
-
-Run one targeted regeneration when the first board has obvious correctable
-problems. Name the failure modes in the second prompt, preserve the strongest
-traits, and stop after that second pass unless the user asks to keep exploring.
+After selection, stop using the concept-board regeneration loop. Load
+`references/logo-iterative-refinement.md`, preserve the exact selected SVG,
+perform the anatomy and shared-vocabulary handoff, and treat each revision as a
+candidate against that baseline.
 
 ## Concept Methods
 
@@ -287,8 +278,7 @@ Transform or replace cliches by:
 
 ## SVG Output Standards
 
-Apply these after a visual direction has been selected or when the user has
-explicitly asked for SVG-only work.
+Apply these to every selectable logo candidate, refinement, and approved master.
 
 Prefer:
 
@@ -344,8 +334,8 @@ colored logos.
 
 ## Browser Preview Checklist
 
-When SVG/vector files are created, use a browser preview, generated HTML
-artifact, or equivalent visual review before production handoff.
+Use a browser preview, generated HTML artifact, or equivalent visual review for
+every SVG concept board and refinement round.
 
 The review surface should include:
 
@@ -386,13 +376,29 @@ Before calling a logo direction strong, check:
 - Can it work on light and dark backgrounds?
 - Does it still work at `16x16` when that use case matters?
 - Does the favicon-safe variant preserve the identity?
+- Is the selected source available as one addressable asset?
+- Is every selectable source a real SVG without an embedded raster?
+- Does each candidate have a useful `<title>`, `<desc>`, and semantic IDs?
+- Does the board have a current map from every visible position to an exact
+  candidate and its component IDs?
+- Was every candidate's visible anatomy described in the review response, with
+  construction terms paired with plain-language explanations?
+- Did post-selection revisions use that exact SVG as the baseline and edit only
+  the authorized objects?
+- Was explicit SVG approval received before creating any PNG derivative?
 
 ## Failure Signs
 
 Reject or rework when:
 
-- raw SVG files were created before a brief, direction choice, concept table, or
-  visual concept board
+- rough SVG files were created before a brief, direction choice, or concept
+  table and presented without visual-quality review
+- a candidate is PNG, another raster format, or an SVG wrapper around an
+  embedded raster
+- a multi-logo composite was generated even though separate candidate calls
+  were available
+- a candidate is shown without its own self-describing SVG source file
+- a comparison board is presented without a current companion map
 - the first visual iteration looks like an implementation sketch
 - the mark depends on tiny details
 - the mark needs explanatory text to be understood
@@ -407,6 +413,12 @@ Reject or rework when:
 - all variants share the same frame, arrow, bracket, line, node, slot, or
   rounded-app-icon vocabulary
 - the hand-authored geometry is valid SVG but not a visually credible logo
+- a selected logo was regenerated from text without supplying the selected
+  source as the edit target
+- a selected logo was refined before its visible anatomy and shared vocabulary
+  were described to the user
+- a PNG derivative was created before explicit approval of the SVG logo
+- a rejected or degraded candidate became the input to the next revision
 
 ## Favicon-Safe Checklist
 
@@ -425,11 +437,15 @@ For favicon, app icon, package icon, or small social-avatar use:
 
 For asset production, preserve:
 
-- selected SVG master
+- candidate SVGs and the board map used for selection
+- the shared reference contract when the work was reference-led
+- selected SVG baseline and candidate label
+- approved SVG production master
+- post-selection anatomy and shared-vocabulary map, including SVG IDs
 - favicon-safe SVG variant when needed
 - rationale for the selected direction
+- locked invariants and approved changes
 - color assumptions
 - usage constraints
 - open decisions
-- required exports: SVG, PNG, ICO, favicon, social avatar, app icon, or other
-```
+- post-approval exports: PNG, ICO, favicon, social avatar, app icon, or other

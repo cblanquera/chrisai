@@ -40,10 +40,17 @@ Be cautious when the SVG has:
 ## Operational Rule
 
 If the SVG is only being used as an intermediate export and the real quality is
-in the PNG source, do not pretend the asset has become a good vector master.
+in a PNG source, do not pretend the asset has become a good vector master.
 
-Keep PNG as the master unless the SVG can be maintained as a real vector asset.
+For non-logo brand assets, keep PNG as the master unless the SVG can be
+maintained as a real vector asset.
 
-For logo work, a clean SVG is still only a production candidate. It must also
-pass visual review for silhouette, memorability, small-size use, light/dark
-surfaces, and brand fit before it can be treated as the selected logo master.
+For logo work, PNG may remain an exploratory reference, but it cannot become a
+selectable candidate or refinement baseline. If a faithful real-vector SVG
+cannot be made, stop and explain the limitation. Do not use an SVG wrapper with
+an embedded bitmap as a workaround.
+
+A clean logo SVG is still only a working candidate until the user explicitly
+approves it. It must also pass visual review for silhouette, memorability,
+small-size use, light/dark surfaces, and brand fit before it becomes the
+approved logo master. Create PNG derivatives only after that approval.

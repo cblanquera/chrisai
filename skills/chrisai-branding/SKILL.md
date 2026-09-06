@@ -158,6 +158,39 @@ into the next workflow unless the user asks to continue.
 ## Workflow Behavior
 
 - Confirm the narrow requested deliverable before expanding the scope.
+- During logo generation, use separately addressable SVG files as the working
+  candidate format from the first review set through explicit logo approval.
+  Do not substitute PNG logo candidates or PNG refinement baselines. Raster
+  images may support research or visual reference, but convert the accepted
+  idea into a real, editable SVG before presenting it as a selectable logo.
+  Create PNG derivatives only after the user approves the SVG logo.
+- When a logo request includes a reference image, classify the reference before
+  generating: inspiration, structural reference, edit target, or vectorization
+  source. Read and apply `references/logo-reference-led-generation.md`. Do not
+  treat a polished raster reference as a prompt for improvised, hand-authored
+  SVG geometry. Establish a preserve/change/avoid contract in concrete visual
+  language, then use a reference-aware visual or vector-capable path that can
+  meet the fidelity requirement. If the active environment cannot do that,
+  stop at the construction brief instead of presenting low-confidence SVGs.
+- Immediately after the user selects a logo candidate, describe the visible
+  logo anatomy in the agent's concrete visual terms before acting on refinement
+  instructions. Name and count the shapes, groups, colors, positions, spatial
+  relationships, projection, and negative spaces; pair technical vocabulary
+  with the user's words so both parties share the same component language. If
+  that anatomy was already supplied with the review set, reuse it rather than
+  forcing a second terminology round; confirm the exact requested target and
+  proceed when it is unambiguous.
+- Whenever any logo is presented for review, including a first-pass set, a
+  one-off logo, or a refinement set, include a concise anatomy and terminology
+  description for every candidate in that same response. Name the primary
+  silhouette, visible component groups, construction logic, important negative
+  spaces, and useful SVG IDs; pair technical terms with plain-language
+  explanations. The user should be able to select a candidate and request a
+  targeted modification in their very next message.
+- For post-selection logo edits, treat the entire accepted mark as locked by
+  default. If the user's target phrase could plausibly identify more than one
+  visible component, resolve that ambiguity before rendering; do not invent an
+  edit target from the concept rationale or specification.
 - Prefer concise, structured drafts over broad branding playbooks.
 - Keep source-of-truth inputs explicit: product name, audience, category,
   competitors, existing website, logo files, colors, typography, domain
@@ -171,8 +204,20 @@ into the next workflow unless the user asks to continue.
   labeling.
 - Use `references/brand-kit-template.md` during brand-kit work that needs a
   structured kit, mini kit, or implementation handoff template.
+- Use `references/logo-concept-artifacts.md` whenever logo work creates
+  multiple SVG candidates or a comparison board. It defines self-describing
+  SVG candidates, the lean board-map package, and the required review-response
+  terminology handoff.
 - Use `references/logo-visual-concept-board.md` before creating first-pass
   visual logo concepts that should be judged as a polished concept board.
+- Use `references/logo-reference-led-generation.md` whenever an attached logo,
+  sketch, screenshot, raster image, or existing mark materially guides a new
+  logo candidate. It defines reference roles, the interpretation checkpoint,
+  capability gate, SVG delivery boundary, and reference-fidelity review.
+- Use `references/logo-iterative-refinement.md` after a logo candidate is
+  selected or whenever an existing logo image or vector asset should be
+  revised without losing its accepted identity. It defines the required visual
+  target gate, whole-mark lock, allowed-change region, and comparison evidence.
 - Use `references/logo-generation.md` during logo work that needs concept
   methods, SVG standards, review checklists, or favicon-safe handoff guidance.
 - Use `references/logo-analysis.md` when an existing SVG or PNG logo should be
@@ -180,8 +225,9 @@ into the next workflow unless the user asks to continue.
 - Use `references/tld-finder.md`, `references/github-name-check.md`,
   `references/npm-org-check.md`, and `references/x-name-check.md` when the
   user needs usage guidance for the bundled availability scripts.
-- Use `references/master-format-selection.md` before deciding whether an SVG
-  or PNG should be the master asset.
+- Use `references/master-format-selection.md` for non-logo brand assets or when
+  evaluating an imported source. Logo generation uses SVG as its working and
+  approved master format.
 - Use `references/png-transparency-validation.md` before calling a PNG
   transparent.
 - Use `references/svg-readiness.md` before treating an SVG as a clean vector

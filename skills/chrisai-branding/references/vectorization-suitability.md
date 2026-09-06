@@ -41,3 +41,8 @@ Ask one question:
 Would a designer reasonably maintain this as vector after conversion?
 
 If the answer is no, keep the asset as PNG and explain why.
+
+For generated logo work, keeping the PNG means keeping it as exploratory
+reference only. Do not present it as a candidate or continue refinements from
+it. Stop and explain that the direction is not suitable for the required SVG
+logo workflow. For non-logo brand assets, PNG may remain the master.

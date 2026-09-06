@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Create an HTML QA sheet for multiple SVG logo variants."""
+"""Create an HTML QA sheet and source map for SVG logo variants."""
 
 from __future__ import annotations
 
 import argparse
 import html
+import os
 import re
 from pathlib import Path
 
@@ -180,6 +181,19 @@ HTML_TEMPLATE = """<!doctype html>
       line-height: 1.4;
       word-break: break-all;
     }}
+    .description {{
+      margin: 8px 0 0;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.45;
+    }}
+    .terms {{
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      word-break: break-word;
+    }}
     @media (max-width: 520px) {{
       body {{
         padding: 18px;
@@ -233,7 +247,10 @@ def scoped_svg(svg: str, scope: str) -> str:
 
 def build_card(path: Path) -> str:
     svg = path.read_text(encoding="utf-8")
-    name = html.escape(path.stem)
+    identity, concept, description, components = svg_identity(path, svg)
+    name = html.escape(f"{identity} — {concept}")
+    description_label = html.escape(description)
+    terms_label = html.escape(", ".join(components))
     path_label = html.escape(str(path))
     hero = scoped_svg(svg, f"{path.stem}-hero")
     size_16 = scoped_svg(svg, f"{path.stem}-size-16")
@@ -280,9 +297,104 @@ def build_card(path: Path) -> str:
       <div class="meta">
         <h2 class="name">{name}</h2>
         <p class="path">{path_label}</p>
+        <p class="description">{description_label}</p>
+        <p class="terms">SVG terms: {terms_label}</p>
       </div>
     </article>
     """
+
+
+def relative_path(path: Path, parent: Path) -> str:
+    value = os.path.relpath(path.resolve(), start=parent.resolve())
+    return value.replace(os.sep, "/")
+
+
+def svg_text(svg: str, tag: str) -> str:
+    match = re.search(
+        rf"<{tag}(?:\s[^>]*)?>(.*?)</{tag}>",
+        svg,
+        re.DOTALL | re.IGNORECASE,
+    )
+    if not match:
+        return ""
+    value = re.sub(r"<[^>]+>", "", match.group(1))
+    return html.unescape(" ".join(value.split()))
+
+
+def svg_identity(path: Path, svg: str) -> tuple[str, str, str, list[str]]:
+    fallback_id = path.stem.split("-", 1)[0].strip().upper()
+    title = svg_text(svg, "title")
+    description = svg_text(svg, "desc") or "No SVG construction description supplied."
+    title_match = re.match(r"Candidate\s+([^\s—-]+)\s*[—-]\s*(.+)", title)
+    if title_match:
+        candidate = title_match.group(1).strip().upper()
+        concept = title_match.group(2).strip()
+    else:
+        candidate = fallback_id
+        concept = title or path.stem.split("-", 1)[-1].replace("-", " ").title()
+
+    ignored = {"title", "desc", "svg"}
+    components = [
+        value
+        for value in re.findall(r'\bid="([^"]+)"', svg)
+        if value not in ignored
+    ]
+    if not components:
+        components = ["unnamed geometry"]
+    return candidate, concept, description, components
+
+
+def markdown_cell(value: str) -> str:
+    return " ".join(value.split()).replace("|", "\\|")
+
+
+def build_map(
+    title: str,
+    board: Path,
+    map_output: Path,
+    inputs: list[Path],
+    specs: list[Path | None],
+    reference_contract: Path | None,
+) -> str:
+    rows = []
+    for index, (visual, spec) in enumerate(zip(inputs, specs), start=1):
+        visual_path = relative_path(visual, map_output.parent)
+        svg = visual.read_text(encoding="utf-8")
+        identity, concept, description, components = svg_identity(visual, svg)
+        spec_path = (
+            f"`{relative_path(spec, map_output.parent)}`" if spec is not None else "—"
+        )
+        component_label = ", ".join(f"`{value}`" for value in components)
+        rows.append(
+            f"| card {index} | {markdown_cell(identity)} | {markdown_cell(concept)} | "
+            f"`{visual_path}` | {markdown_cell(description)} | {component_label} | "
+            f"{spec_path} | proposed |"
+        )
+
+    board_path = relative_path(board, map_output.parent)
+    contract_path = (
+        f"`{relative_path(reference_contract, map_output.parent)}`"
+        if reference_contract is not None
+        else "not applicable"
+    )
+    return f"""# {title} Map
+
+- Board artifact: `{board_path}`
+- Board role: derived review surface
+- Layout: responsive card grid in the display order below
+- Selection authority: candidate files listed below
+- Shared reference contract: {contract_path}
+
+| Board position | Candidate ID | Concept name | Visual asset | Visible construction | SVG component IDs | Optional record | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+{chr(10).join(rows)}
+
+## Selection Rule
+
+A selection resolves through the matching row to the exact SVG visual asset.
+Use its semantic component IDs for later edits. Do not edit or recreate the
+board card while that source asset exists.
+"""
 
 
 def main() -> int:
@@ -297,9 +409,45 @@ def main() -> int:
             "behavior, favicon use, and nav fit before choosing a direction."
         ),
     )
+    parser.add_argument(
+        "--specs",
+        nargs="+",
+        help=(
+            "Optional legacy specification or durable record files in input order."
+        ),
+    )
+    parser.add_argument(
+        "--reference-contract",
+        help="Optional shared reference-contract path recorded in the board map.",
+    )
+    parser.add_argument(
+        "--map-output",
+        help="Board-map output path. Defaults to <output-stem>.map.md.",
+    )
     args = parser.parse_args()
 
-    cards = "\n".join(build_card(Path(value)) for value in args.inputs)
+    inputs = [Path(value) for value in args.inputs]
+    if args.specs is not None and len(args.specs) != len(inputs):
+        parser.error("--specs must provide exactly one file for every SVG input")
+
+    specs: list[Path | None] = (
+        [Path(value) for value in args.specs]
+        if args.specs is not None
+        else [None for _ in inputs]
+    )
+    missing_specs = [str(path) for path in specs if path is not None and not path.is_file()]
+    if missing_specs:
+        parser.error(
+            "missing optional record file(s): " + ", ".join(missing_specs)
+        )
+
+    reference_contract = (
+        Path(args.reference_contract) if args.reference_contract is not None else None
+    )
+    if reference_contract is not None and not reference_contract.is_file():
+        parser.error(f"missing reference contract: {reference_contract}")
+
+    cards = "\n".join(build_card(path) for path in inputs)
     document = HTML_TEMPLATE.format(
         title=html.escape(args.title),
         subtitle=html.escape(args.subtitle),
@@ -309,7 +457,25 @@ def main() -> int:
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(document, encoding="utf-8")
+    map_output = (
+        Path(args.map_output)
+        if args.map_output
+        else output.with_suffix(".map.md")
+    )
+    map_output.parent.mkdir(parents=True, exist_ok=True)
+    map_output.write_text(
+        build_map(
+            args.title,
+            output,
+            map_output,
+            inputs,
+            specs,
+            reference_contract,
+        ),
+        encoding="utf-8",
+    )
     print(output)
+    print(map_output)
     return 0
 
 
