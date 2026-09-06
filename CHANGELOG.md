@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.4.1 - 2026-09-07
+
+- Renamed `chrisai-agents` to `chrisai-knowledge` and expanded its managed
+  workspace guidance for lossless Agent File creation, ingestion, updates,
+  user-journey coverage, task acceptance, and source-fidelity validation.
+- Expanded `chrisai-designing` with composition rules and reusable wireframe
+  components and interfaces for forms, detail panels, diagrams, workflows,
+  scheduling, mind maps, tables, trees, and related interaction patterns.
+- Added independently installable `chrisai-graphics` and
+  `chrisai-iconography` skills for standalone visual assets, diagrams, brand
+  compositions, icon creation, icon-system audits, and production SVGs.
+- Strengthened `chrisai-branding` with reference-led logo generation,
+  iterative refinement, concept-artifact contracts, improved SVG variant
+  sheets, and safeguards for supplied brand assets.
+- Added `chrisai-social` for accessible technical articles, platform-native
+  social posts and threads, and content repurposing without manufacturing an
+  influencer persona.
+- Clarified that portable skills must remain independently installable,
+  generalized the chatting form-intake handoff example, and added human-facing
+  documentation for the knowledge, graphics, and social skills.
+- Standardized wireframe and UI icon behavior around monochrome rendering and
+  removed generated calibration output from the tracked distribution.
+
 ## 0.3.1 - 2026-07-12
 
 - Overhauled `chrisai-agents` as a deterministic installer and repair surface
