@@ -18,6 +18,11 @@ Do not use this workflow before Freeze unless the user explicitly asks to draft 
 
 Whenever this workflow creates an Agent Document, apply the [Agent File Creation Workflow](agent-file-creation.md). Whenever it changes an existing Agent Document, apply the [Agent File Update Workflow](agent-file-update.md). Complete content before applying line thresholds.
 
+When the user asks an agent to perform acceptance on their behalf, use the
+[Spec Task Acceptance Workflow](spec-task-acceptance.md) after task
+verification. Do not infer Delegated Acceptance from an ordinary request to
+implement or verify a task.
+
 Do not load unrelated spec folders unless the current spec explicitly links to them or the user asks for cross-spec implementation planning.
 
 ## Status Model
@@ -34,7 +39,7 @@ Track task status in `.agents/specs/<spec-id>/tasks/status.md`:
 - `open`: user approved and task is opened to be worked on.
 - `started`: task has been started.
 - `verified`: task has been verified.
-- `accepted`: user has visually reviewed and accepted the task's human-reviewable output.
+- `accepted`: the task's Acceptance Criteria passed through explicit user acceptance or explicitly Delegated Acceptance with recorded evidence.
 
 Do not invent additional status values unless the user asks for them. When work cannot continue, keep the task at its current status and record the blocker and next action in the task file.
 
@@ -123,10 +128,10 @@ For each task:
 4. Run the task verification process.
 5. If verification fails, fix the issue or ask the user when a decision is needed, then repeat verification.
 6. When verification passes, update `tasks/status.md` task status to `verified`.
-7. Report the verification result and either present the visual acceptance artifact for user review or state that the task has no acceptance criteria.
-8. When acceptance criteria exist and the user visually reviews and accepts the implementation, update `tasks/status.md` task status to `accepted`.
+7. Report the verification result and either present the visual acceptance artifact for user review, invoke the Spec Task Acceptance Workflow when the user delegated acceptance, or state that the task has no acceptance criteria.
+8. When acceptance criteria exist, update `tasks/status.md` to `accepted` only after the user explicitly accepts the implementation or Delegated Acceptance passes every criterion with recorded evidence.
 
-Keep the task at `started` until verification passes. A task with `Acceptance criteria: none` finishes at `verified`. Do not mark a task `accepted` without the user's visual review and explicit acceptance.
+Keep the task at `started` until verification passes. A task with `Acceptance criteria: none` finishes at `verified`. Do not mark a task `accepted` without explicit user acceptance or explicit delegation followed by a complete passing acceptance result. Human-required, blocked, failed, or unrun criteria keep the task at `verified`.
 
 ## 4. Side Quests
 
@@ -153,5 +158,5 @@ When every task and side quest is `accepted`, or is `verified` with `Acceptance 
 
 ## Handoff
 
-End each implementation pass by stating the spec ID, implementation status, current task statuses, files changed, verification performed, visual artifact available for acceptance or `Acceptance criteria: none`, user acceptance still needed, context promotion performed or skipped, validation result, recommended next step, and any useful alternatives.
+End each implementation pass by stating the spec ID, implementation status, current task statuses, files changed, verification performed, visual artifact available for acceptance or `Acceptance criteria: none`, acceptance mode and any human input still needed, context promotion performed or skipped, validation result, recommended next step, and any useful alternatives.
 <!-- agent-workspace-rules:end -->

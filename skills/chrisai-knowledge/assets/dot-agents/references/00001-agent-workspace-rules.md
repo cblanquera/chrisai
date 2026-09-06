@@ -91,5 +91,6 @@ Use this router after setup and after each workflow pass. Recommend one next ste
 - If a spec has unresolved questions, fuzzy terms, or interrupted Q/A, use the Spec Grill Session Workflow.
 - If a spec has user-facing behavior, actors, permissions, lifecycle states, integrations, or step sequencing, use the Spec User Journeys Workflow.
 - If a Frozen spec is ready for technical planning or implementation, use the Spec Task Implementation Workflow.
+- If the user delegates acceptance of one or more implemented spec tasks to an agent, use the Spec Task Acceptance Workflow after verification.
 - If validation passes and there is no useful follow-up, say no next step is needed.
 <!-- agent-workspace-rules:end -->

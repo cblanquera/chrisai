@@ -47,7 +47,7 @@ function markdownLines(count) {
   ).join('\n')}\n`;
 }
 
-test('agent workspace install manages the update workflow idempotently', async () => {
+test('agent workspace install manages required workflows idempotently', async () => {
   const targetRoot = await mkdtemp(join(tmpdir(), 'chrisai-knowledge-install-'));
 
   try {
@@ -62,8 +62,15 @@ test('agent workspace install manages the update workflow idempotently', async (
       'scripts',
       'validate-agent-workspace.py'
     );
+    const acceptanceWorkflowPath = join(
+      agentsDir,
+      'workflows',
+      'spec-task-acceptance.md'
+    );
     const updateWorkflow = await readFile(updateWorkflowPath, 'utf8');
+    const acceptanceWorkflow = await readFile(acceptanceWorkflowPath, 'utf8');
     assert.ok(updateWorkflow.length > 0);
+    assert.ok(acceptanceWorkflow.length > 0);
 
     const dryRun = runPython(installerPath, ['--target', targetRoot]);
     assert.equal(dryRun.status, 0, dryRun.stderr);
@@ -86,6 +93,24 @@ test('agent workspace install manages the update workflow idempotently', async (
 
     const repairedWorkspace = runPython(installedValidatorPath, []);
     assert.equal(repairedWorkspace.status, 0, repairedWorkspace.stderr);
+
+    await rm(acceptanceWorkflowPath);
+    const missingAcceptance = runPython(installedValidatorPath, []);
+    assert.equal(missingAcceptance.status, 1, missingAcceptance.stderr);
+    assert.match(
+      missingAcceptance.stdout,
+      /workflows[\\/]spec-task-acceptance\.md/
+    );
+
+    const acceptanceRepair = runPython(installerPath, [
+      '--target',
+      targetRoot,
+      '--apply'
+    ]);
+    assert.equal(acceptanceRepair.status, 0, acceptanceRepair.stderr);
+
+    const acceptedWorkspace = runPython(installedValidatorPath, []);
+    assert.equal(acceptedWorkspace.status, 0, acceptedWorkspace.stderr);
   } finally {
     await rm(targetRoot, { force: true, recursive: true });
   }

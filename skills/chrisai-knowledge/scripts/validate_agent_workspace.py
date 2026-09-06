@@ -25,6 +25,7 @@ MANAGED_RULE_FILES = (
     Path("workflows/context-initialization.md"),
     Path("workflows/spec-driven-development.md"),
     Path("workflows/spec-task-implementation.md"),
+    Path("workflows/spec-task-acceptance.md"),
     Path("workflows/spec-grill-session.md"),
     Path("workflows/spec-user-journeys.md"),
     Path("workflows/repair-zombie-reference-files.md"),

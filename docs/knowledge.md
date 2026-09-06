@@ -32,8 +32,9 @@ The installer manages these files under a target project root:
     context-initialization.md
     repair-zombie-reference-files.md
     spec-driven-development.md
-    spec-grill-session.md
     spec-task-implementation.md
+    spec-task-acceptance.md
+    spec-grill-session.md
     spec-user-journeys.md
   references/
     00001-agent-workspace-rules.md
@@ -49,6 +50,31 @@ outside the managed block. Workflow files and references provide the detailed
 rules for lossless Agent File creation, ingestion, updates, context
 initialization, spec-driven development, grill sessions, user journeys, and
 zombie Reference File repair.
+
+## Delegated Task Acceptance
+
+The Spec Task Acceptance Workflow applies only when the user explicitly asks
+an agent to accept named implemented tasks on their behalf. It waits for the
+task file and verification result, identifies whether the deployment target is
+web, desktop, mobile, or multiple targets, then chooses a library, an available
+interactive agent capability, or a documented manual procedure. Playwright is
+the default proposed library for web acceptance when the user did not select
+one.
+
+Each Acceptance Criterion receives a flat record such as
+`.agents/specs/<spec-id>/acceptance/00001-001.md`. The same folder contains
+`status.md` for latest results and `evidence.md` for screenshots, recordings,
+and other Resource Files stored under
+`.agents/resources/acceptance/<spec-id>/`. Library-backed acceptance also uses
+human-editable JSON under project-root `tests/acceptance/` and a small
+project-native runner; interactive agent tools and manual procedures do not
+pretend to provide a standalone script.
+
+Delegated acceptance moves a verified task to `accepted` only after every
+criterion passes with recorded evidence. Failed, blocked, human-required, or
+unrun criteria leave it at `verified`. Reports describe any remaining human
+steps in simple language rather than requiring the reader to understand spec
+terminology.
 
 ## Fidelity And File Size
 

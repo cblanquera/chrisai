@@ -139,6 +139,10 @@ After Freeze, use [Spec Task Implementation Workflow](spec-task-implementation.m
 
 Implementation planning belongs under `.agents/specs/<spec-id>/tasks/`. Keep implementation sequencing, task status, verification notes, and user acceptance records out of `.agents/context/` unless implementation reveals accepted reusable truth that future specs should inherit.
 
+When the user explicitly delegates acceptance of verified tasks to an agent,
+use the [Spec Task Acceptance Workflow](spec-task-acceptance.md). Do not infer
+delegation from an ordinary implementation request.
+
 ## Validate
 
 Run the Agent Workspace validator after creating, splitting, freezing, or promoting Spec Files:

@@ -12,6 +12,7 @@ This file is the local operating contract for the project root `.agents/` worksp
 - [Context Initialization Workflow](workflows/context-initialization.md): use when bootstrapping or substantially rebuilding `.agents/context/` from mixed project inputs.
 - [Spec Driven Development Workflow](workflows/spec-driven-development.md): use when creating, researching, resolving gaps for, or freezing `.agents/specs/*/` work.
 - [Spec Task Implementation Workflow](workflows/spec-task-implementation.md): use when planning or implementing tasks from a Frozen spec.
+- [Spec Task Acceptance Workflow](workflows/spec-task-acceptance.md): use when the user delegates acceptance of implemented spec tasks to an agent.
 - [Spec Grill Session Workflow](workflows/spec-grill-session.md): use when pressure-testing, clarifying, or resuming unresolved spec questions.
 - [Spec User Journeys Workflow](workflows/spec-user-journeys.md): use when auditing human actors, actor states, features, applicable Use Cases, journey scenarios, clarity Gaps, and coverage before Freeze.
 - [Zombie Reference File Repair Workflow](workflows/repair-zombie-reference-files.md): use when Reference Files have no clear inbound owner.
