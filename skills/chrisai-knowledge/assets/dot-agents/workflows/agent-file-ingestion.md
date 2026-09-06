@@ -37,7 +37,7 @@ Source preservation and Agent Document completeness are separate requirements. A
 
 ## Scan Intersections
 
-Run an Intersection Scan across all Agent Files under `.agents/**/*.md`, excluding Resource Files under `.agents/resources/`. Classify matches before deciding whether to update anything.
+Run an Intersection Scan across all Agent Files under `.agents/**/*.md`, excluding Resource Files under `.agents/resources/` and installed skill packages under `.agents/skills/`. Classify matches before deciding whether to update anything.
 
 Load [Intersection Points](../references/00002-intersection-points.md) for the starting scan list. For each relevant intersection, identify matching headings, IDs, names, links, repeated concepts, answered gaps, new gaps, open questions, duplicate facts, and conflicting claims.
 

@@ -12,7 +12,7 @@ This file defines shared Agent Workspace terminology. Add project-specific terms
 - **Actor State**: a condition of an Actor, such as unverified, signed out, signed in, or suspended, that materially changes available behavior, permissions, system response, destination, or recovery.
 - **Agent Document**: the complete body of agent-consumable information represented by one Agent File or by an owner Agent File plus its linked Reference Files.
 - **Agent Workspace**: everything inside a project root `.agents/` folder.
-- **Agent Files**: markdown files under `.agents/` designed for AI-agent consumption unless explicitly excluded.
+- **Agent Files**: markdown files under `.agents/` designed as project Agent Documents unless explicitly excluded. Raw Source under `.agents/resources/` and installed skill packages under `.agents/skills/` are excluded.
 - **Complete Draft**: the full pre-split form of a new or updated Agent Document, with all in-scope information present before line thresholds are applied.
 - **Context Demotion**: rerouting content out of `.agents/context/` when it is not Accepted Reusable Truth, is stale or contradicted, is too narrow for shared context, or belongs in a Spec File, Reference File, or Resource File. Demotion preserves useful material in the right lower-authority location; it is not deletion.
 - **Context Files**: Agent Files under `.agents/context/`.
@@ -21,6 +21,7 @@ This file defines shared Agent Workspace terminology. Add project-specific terms
 - **Freeze/Frozen**: accepted planning state for a Spec File or spec package that should not be changed unless the user explicitly permits reopening it.
 - **Gaps**: documented unknowns written as questions and based on the current Context Files plus the Agent Files in the relevant spec. Each Gap must be paired with an assumption, a decision, or an explicit unresolved status.
 - **Intersection Scan**: review of Agent Files for overlaps, conflicts, answered gaps, new gaps, and affected records before updates.
+- **Installed Skill Packages**: independently reusable tooling under `.agents/skills/`; these files are not project Agent Files and follow their own skill-package validation rules.
 - **Journey Coverage Complete**: every in-scope feature, materially distinct Actor and Actor State, actor-feature intersection, applicable Use Case, and material journey scenario has been assessed, with every unclear or conflicting behavior linked to a Gap.
 - **Knowledge Base (KB)**: `.agents/context/`, the Agent Workspace source-of-truth folder containing Accepted Reusable Truth.
 - **Lossless Split**: partitioning a Complete Draft into cohesive Agent Files without summarizing, omitting, or deleting information or data.

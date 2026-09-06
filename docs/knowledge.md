@@ -89,6 +89,10 @@ Complete Draft. A split redistributes complete content into cohesive,
 task-routed Reference Files; it does not authorize summarizing, omitting, or
 deleting information or data.
 
+These project Agent File rules exclude Raw Source under `.agents/resources/`
+and independently installed skill packages under `.agents/skills/`. Installed
+skills are reusable tooling and remain subject to their own package validator.
+
 ## User Journey Coverage
 
 The Spec User Journeys Workflow audits every in-scope feature against every
@@ -164,6 +168,9 @@ require source and coverage review.
 
 - Do not install `.agents/context/` content.
 - Do not install `.agents/resources/` content.
+- Do not install or manage `.agents/skills/` content; the workspace validator
+  excludes installed skill packages from Agent File line-count and local-link
+  checks.
 - Keep `.agents/TERMS.md` managed by section so project-specific terms can be
   added outside the managed block.
 - Keep installed references flat under `.agents/references/`.

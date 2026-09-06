@@ -17,6 +17,8 @@ Reference Files may link to Context Files, Resource Files, or other Reference Fi
 
 `.agents/resources/` stores Raw Source and other Resource Files. Resource Files may be unlinked.
 
+`.agents/skills/` stores independently installed reusable skill packages. Those packages are tooling rather than project Agent Files, so this contract's Agent File line caps, local-link checks, Reference Link rules, and Intersection Scans do not apply to them. Use the skill package's own validator instead.
+
 `.agents/workflows/` stores repeatable Agent Workspace maintenance workflows.
 
 `.agents/scripts/` stores deterministic helper scripts for Agent Workspace checks.

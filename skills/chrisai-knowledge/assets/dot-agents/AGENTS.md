@@ -20,7 +20,7 @@ This file is the local operating contract for the project root `.agents/` worksp
 
 ## Operating Scope
 
-All markdown files under `.agents/` are Agent Files unless explicitly excluded. Raw Source markdown under `.agents/resources/` is an excluded Resource File.
+All markdown files under `.agents/` are Agent Files unless explicitly excluded. Raw Source markdown under `.agents/resources/` is an excluded Resource File. Independently installed reusable skill packages under `.agents/skills/` are tooling, not project Agent Files; validate them with their own skill-package validator.
 
 Fidelity comes before file size. This rule applies to every Agent File write, including writes performed through another workflow. Complete the Agent Document before applying line thresholds. When updating, include the existing owner Agent File and every relevant linked Reference File in that complete document.
 
@@ -45,6 +45,8 @@ When content is split from an owner Agent File, the owner and its linked Referen
 `.agents/resources/` stores Raw Source and other Resource Files. Zombie Resource Files are allowed.
 
 Do not mirror the repository into `.agents/resources/`. Keep source code in its authoritative location and record precise Source Provenance. Copy source code into `.agents/resources/` only when the user explicitly requests a source-code archive; being external, transient, at risk of deletion, or otherwise unavailable is not permission. Report those risks and ask instead. Non-code Source Material may be archived when the ingestion workflow determines preservation is required.
+
+`.agents/skills/` stores independently installed reusable skill packages. It is outside the project Agent Document, Reference Link, line-cap, and Intersection Scan rules in this contract.
 
 `.agents/workflows/` stores reusable Agent Workspace maintenance workflows.
 

@@ -12,7 +12,7 @@ The validator reports errors for deterministic hard-rule failures:
 - Missing `.agents/scripts/validate-agent-workspace.py`.
 - Missing managed workflow or Reference Files installed by `agent-workspace-rules`.
 - Missing `.agents/context/index.md` when `.agents/context/` exists.
-- Final Agent Files over 500 lines. Raw Source markdown under `.agents/resources/` is excluded from Agent File line caps. The error directs agents to split losslessly rather than shorten content.
+- Final Agent Files over 500 lines. Raw Source markdown under `.agents/resources/` and independently installed skill packages under `.agents/skills/` are excluded from Agent File checks. Skill packages follow their own validator. The error directs project Agent Files to split losslessly rather than shorten content.
 - Reference subfolders.
 - Reference File names that do not match `00001-meta-title.md`.
 - Duplicate Reference File numbers.
@@ -20,6 +20,8 @@ The validator reports errors for deterministic hard-rule failures:
 - Reference or Resource Links with empty link text.
 - `.agents/context/index.md` links that resolve outside `.agents/context/`, including links that leave `.agents/`.
 - Zombie Reference Files with no inbound link from another Agent File.
+
+The validator does not parse markdown under `.agents/skills/` for line counts or local links. This keeps independently installed tooling outside project Agent Document rules while preserving all checks for the managed workspace surface.
 
 ## Warnings
 

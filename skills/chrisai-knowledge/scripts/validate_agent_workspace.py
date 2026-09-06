@@ -299,6 +299,7 @@ def validate(target_root: Path) -> int:
     context_dir = agents_dir / "context"
     references_dir = agents_dir / "references"
     resources_dir = agents_dir / "resources"
+    skills_dir = agents_dir / "skills"
 
     reporter = Reporter()
     validate_required_surface(agents_dir, reporter)
@@ -311,6 +312,7 @@ def validate(target_root: Path) -> int:
         path.resolve()
         for path in agents_dir.rglob("*.md")
         if not is_relative_to(path.resolve(), resources_dir)
+        and not is_relative_to(path.resolve(), skills_dir)
     )
     validate_line_counts(agent_files, agents_dir, reporter)
     reference_files = validate_references(references_dir, agents_dir, reporter)
