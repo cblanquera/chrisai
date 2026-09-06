@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1440" viewBox="0 0 1440 1440">
+  <defs>
+    <symbol id="icon-file" viewBox="0 0 24 24">
+      <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z" />
+      <path d="M14 2v5a1 1 0 0 0 1 1h5" />
+    </symbol>
+    <symbol id="icon-cog" viewBox="0 0 24 24">
+      <path d="M11 10.27 7 3.34" />
+      <path d="m11 13.73-4 6.93" />
+      <path d="M12 22v-2" />
+      <path d="M12 2v2" />
+      <path d="M14 12h8" />
+      <path d="m17 20.66-1-1.73" />
+      <path d="m17 3.34-1 1.73" />
+      <path d="M2 12h2" />
+      <path d="m20.66 17-1.73-1" />
+      <path d="m20.66 7-1.73 1" />
+      <path d="m3.34 17 1.73-1" />
+      <path d="m3.34 7 1.73 1" />
+      <circle cx="12" cy="12" r="2" />
+      <circle cx="12" cy="12" r="8" />
+    </symbol>
+    <symbol id="icon-coffee" viewBox="0 0 24 24">
+      <path d="M10 2v2" />
+      <path d="M14 2v2" />
+      <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+      <path d="M6 2v2" />
+    </symbol>
+    <symbol id="icon-plug" viewBox="0 0 24 24">
+      <path d="M12 22v-5" />
+      <path d="M15 8V2" />
+      <path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z" />
+      <path d="M9 8V2" />
+    </symbol>
+  </defs>
+
+  <rect width="1440" height="1080" fill="#f4f5f7" />
+
+  <g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+    <text x="60" y="74" fill="#111827" font-size="34" font-weight="700">Iconography calibration set</text>
+    <text x="60" y="108" fill="#64748b" font-size="17">Lucide-compatible · 24 × 24 canvas · 2-unit round strokes · currentColor</text>
+
+    <g fill="#e6f4f1" stroke="#9bcfc5">
+      <rect x="1120" y="55" width="260" height="44" rx="22" />
+    </g>
+    <text x="1250" y="82" fill="#17695c" font-size="14" font-weight="700" text-anchor="middle">REUSE BEFORE INVENTION</text>
+
+    <g fill="#fff" stroke="#d9dee7">
+      <rect x="60" y="145" width="300" height="300" rx="20" />
+      <rect x="400" y="145" width="300" height="300" rx="20" />
+      <rect x="740" y="145" width="300" height="300" rx="20" />
+      <rect x="1080" y="145" width="300" height="300" rx="20" />
+    </g>
+
+    <g fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg x="150" y="190" width="120" height="120" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="490" y="190" width="120" height="120" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="830" y="190" width="120" height="120" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="1170" y="190" width="120" height="120" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+    </g>
+
+    <g fill="#111827" font-size="22" font-weight="700" text-anchor="middle">
+      <text x="210" y="354">file</text>
+      <text x="550" y="354">cog</text>
+      <text x="890" y="354">coffee</text>
+      <text x="1230" y="354">plug</text>
+    </g>
+    <g fill="#64748b" font-size="14" text-anchor="middle">
+      <text x="210" y="385">Document or generic file</text>
+      <text x="550" y="385">Settings or configuration</text>
+      <text x="890" y="385">Hot drink or break</text>
+      <text x="1230" y="385">Electric power connection</text>
+    </g>
+    <g fill="#94a3b8" font-size="12" text-anchor="middle">
+      <text x="210" y="413">Avoid: file-text</text>
+      <text x="550" y="413">Avoid: sun or loading</text>
+      <text x="890" y="413">Avoid: empty cup</text>
+      <text x="1230" y="413">Avoid: software plugin</text>
+    </g>
+
+    <rect x="60" y="485" width="1320" height="330" rx="20" fill="#fff" stroke="#d9dee7" />
+    <text x="92" y="530" fill="#111827" font-size="20" font-weight="700">Native-size proof</text>
+    <text x="92" y="558" fill="#64748b" font-size="13">Inspect at 100% zoom; enlarged cards above are diagnostic only.</text>
+
+    <g fill="#64748b" font-size="12" font-weight="700" text-anchor="middle">
+      <text x="330" y="580">16 px</text>
+      <text x="480" y="580">20 px</text>
+      <text x="630" y="580">24 px</text>
+      <text x="780" y="580">32 px</text>
+      <text x="930" y="580">48 px</text>
+      <text x="1185" y="580">UI context · 20 px</text>
+    </g>
+
+    <g fill="#334155" font-size="14" font-weight="600">
+      <text x="92" y="625">file</text>
+      <text x="92" y="675">cog</text>
+      <text x="92" y="725">coffee</text>
+      <text x="92" y="775">plug</text>
+    </g>
+
+    <g fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg x="322" y="607" width="16" height="16" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="470" y="605" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="618" y="603" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="764" y="599" width="32" height="32" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="906" y="591" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+
+      <svg x="322" y="657" width="16" height="16" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="470" y="655" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="618" y="653" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="764" y="649" width="32" height="32" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="906" y="641" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+
+      <svg x="322" y="707" width="16" height="16" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="470" y="705" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="618" y="703" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="764" y="699" width="32" height="32" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="906" y="691" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+
+      <svg x="322" y="757" width="16" height="16" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+      <svg x="470" y="755" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+      <svg x="618" y="753" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+      <svg x="764" y="749" width="32" height="32" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+      <svg x="906" y="741" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+    </g>
+
+    <g fill="#f8fafc" stroke="#cbd5e1">
+      <rect x="1070" y="596" width="230" height="38" rx="10" />
+      <rect x="1070" y="646" width="230" height="38" rx="10" />
+      <rect x="1070" y="696" width="230" height="38" rx="10" />
+      <rect x="1070" y="746" width="230" height="38" rx="10" />
+    </g>
+    <g fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg x="1084" y="605" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="1084" y="655" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="1084" y="705" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="1084" y="755" width="20" height="20" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+    </g>
+    <g fill="#111827" font-size="14" font-weight="600">
+      <text x="1118" y="621">Files</text>
+      <text x="1118" y="671">Settings</text>
+      <text x="1118" y="721">Coffee break</text>
+      <text x="1118" y="771">Power</text>
+    </g>
+
+    <rect x="60" y="845" width="1320" height="175" rx="20" fill="#111827" />
+    <text x="92" y="890" fill="#f8fafc" font-size="20" font-weight="700">Dark-context proof</text>
+    <text x="92" y="918" fill="#94a3b8" font-size="13">Color is inherited from the surrounding component.</text>
+
+    <g fill="none" stroke="#f8fafc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg x="360" y="900" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-file" /></svg>
+      <svg x="580" y="900" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-cog" /></svg>
+      <svg x="800" y="900" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-coffee" /></svg>
+      <svg x="1020" y="900" width="48" height="48" viewBox="0 0 24 24"><use href="#icon-plug" /></svg>
+    </g>
+    <g fill="#cbd5e1" font-size="13" text-anchor="middle">
+      <text x="384" y="974">file</text>
+      <text x="604" y="974">cog</text>
+      <text x="824" y="974">coffee</text>
+      <text x="1044" y="974">plug</text>
+    </g>
+
+    <rect x="60" y="1050" width="1320" height="310" rx="20" fill="#fff" stroke="#d9dee7" />
+    <text x="92" y="1098" fill="#111827" font-size="20" font-weight="700">Review record</text>
+    <text x="92" y="1126" fill="#64748b" font-size="13">Rendered at actual UI sizes and inspected in light, dark, and labeled-control contexts.</text>
+
+    <g fill="#e6f4f1" stroke="#9bcfc5">
+      <rect x="92" y="1160" width="72" height="28" rx="14" />
+      <rect x="92" y="1210" width="72" height="28" rx="14" />
+      <rect x="92" y="1260" width="72" height="28" rx="14" />
+    </g>
+    <g fill="#17695c" font-size="12" font-weight="700" text-anchor="middle">
+      <text x="128" y="1179">PASS</text>
+      <text x="128" y="1229">PASS</text>
+      <text x="128" y="1279">PASS</text>
+    </g>
+    <g fill="#334155" font-size="14">
+      <text x="184" y="1179">Recognition and open negative space remain intact from 16 to 48 px.</text>
+      <text x="184" y="1229">Round strokes, joins, and inherited color stay consistent across the family.</text>
+      <text x="184" y="1279">The cog is denser at 16 px, but remains recognizable and balanced enough for UI use.</text>
+    </g>
+
+    <text x="60" y="1400" fill="#64748b" font-size="12">Review artifact · labels and annotations are not part of the production SVG masters.</text>
+  </g>
+</svg>
