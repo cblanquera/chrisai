@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.2 - 2026-09-07
+
+- Fixed the Agent Workspace validator so independently installed packages under
+  `.agents/skills/` are treated as tooling rather than project Agent Files,
+  including exclusion from workspace line-count and local-link checks.
+- Added regression coverage for oversized third-party skills and for installing
+  the complete ChrisAI skill distribution beside the managed `.agents` surface.
+- Reduced the logo-generation workflow from 535 to 452 lines by routing its
+  detailed post-selection and refinement contracts through the existing logo
+  references without dropping the workflow gates.
+
 ## 0.4.1 - 2026-09-07
 
 - Renamed `chrisai-agents` to `chrisai-knowledge` and expanded its managed
