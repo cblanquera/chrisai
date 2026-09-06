@@ -1,0 +1,34 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Product & Engineering",
+      "description": "Skills for implementation, UI design, graphics, and icon systems.",
+      "skills": [
+        "chrisai-coding",
+        "chrisai-designing",
+        "chrisai-graphics",
+        "chrisai-iconography"
+      ]
+    },
+    {
+      "title": "Knowledge & Operations",
+      "description": "Skills for project knowledge, agent workflows, and maintenance.",
+      "skills": [
+        "chrisai-knowledge",
+        "chrisai-chatting",
+        "chrisai-doctor"
+      ]
+    },
+    {
+      "title": "Brand & Content",
+      "description": "Skills for branding, technical documentation, and social writing.",
+      "skills": [
+        "chrisai-branding",
+        "chrisai-docing",
+        "chrisai-social"
+      ]
+    }
+  ]
+}
