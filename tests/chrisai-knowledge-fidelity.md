@@ -1,11 +1,11 @@
-# ChrisAI Agents Fidelity Tests
+# ChrisAI Knowledge Fidelity Tests
 
 This test plan measures whether Agent Document creation, Source Material
 ingestion, and Agent Document updates lose required information. Line-count
 compliance is checked, but it is never a substitute for fidelity.
 
-The executable coverage is in `chrisai-agents-fidelity.test.mjs`. Its reusable
-evaluator is `helpers/chrisai-agents-fidelity.mjs`. Test inputs and candidate
+The executable coverage is in `chrisai-knowledge-fidelity.test.mjs`. Its reusable
+evaluator is `helpers/chrisai-knowledge-fidelity.mjs`. Test inputs and candidate
 Agent Workspaces are created in isolated temporary directories.
 
 ## Measurement Contract
@@ -74,7 +74,7 @@ from semantic loss in the Agent Document.
 
 ### DOCX ingestion
 
-`fixtures/chrisai-agents-fidelity/generate_mock_docx.py` creates a deterministic
+`fixtures/chrisai-knowledge-fidelity/generate_mock_docx.py` creates a deterministic
 DOCX with:
 
 - title and ordinary paragraphs;
@@ -142,7 +142,7 @@ will follow the skill correctly.
 
 A portable live-agent runner should later execute the same cases as follows:
 
-1. Create an isolated project and install `chrisai-agents` into it.
+1. Create an isolated project and install `chrisai-knowledge` into it.
 2. Give a producer agent only the realistic request and source fixture. Do not
    expose the acceptance contract or intentionally damaged output.
 3. Evaluate the produced `.agents/` workspace with the deterministic contract.

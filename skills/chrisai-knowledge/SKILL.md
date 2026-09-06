@@ -1,10 +1,10 @@
 ---
-name: chrisai-agents
+name: chrisai-knowledge
 description: Install, repair, or update a project-root `.agents` operating surface with lossless Agent Document workflows, spec lifecycle rules, routed references, and deterministic validation.
 license: MIT
 ---
 
-# ChrisAI Agents
+# ChrisAI Knowledge
 
 ## Purpose
 

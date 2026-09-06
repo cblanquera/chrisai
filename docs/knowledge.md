@@ -1,9 +1,9 @@
-# ChrisAI Agents
+# ChrisAI Knowledge
 
-`chrisai-agents` installs, repairs, and updates a project-local `.agents`
+`chrisai-knowledge` installs, repairs, and updates a project-local `.agents`
 operating surface.
 
-Source skill: [`skills/chrisai-agents`](../skills/chrisai-agents/SKILL.md)
+Source skill: [`skills/chrisai-knowledge`](../skills/chrisai-knowledge/SKILL.md)
 
 ## Purpose
 
@@ -149,20 +149,20 @@ require source and coverage review.
 Install or repair the local operating surface:
 
 ```text
-Use $chrisai-agents to install or repair this project's .agents workspace
+Use $chrisai-knowledge to install or repair this project's .agents workspace
 rules. Dry-run first, apply only after the plan is safe, then validate.
 ```
 
 Refresh an existing `.agents` workspace:
 
 ```text
-Use $chrisai-agents to update the managed .agents rules and workflows in this
+Use $chrisai-knowledge to update the managed .agents rules and workflows in this
 project without overwriting project-authored content outside managed sections.
 ```
 
 Investigate validation output:
 
 ```text
-Use $chrisai-agents to interpret the .agents validator results and propose the
+Use $chrisai-knowledge to interpret the .agents validator results and propose the
 smallest safe repair.
 ```

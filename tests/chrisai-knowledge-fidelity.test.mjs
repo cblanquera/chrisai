@@ -16,14 +16,14 @@ import test from 'node:test';
 import {
   evaluateAgentWorkspace,
   failureCodes
-} from './helpers/chrisai-agents-fidelity.mjs';
+} from './helpers/chrisai-knowledge-fidelity.mjs';
 
 const repoRoot = dirname(dirname(fileURLToPath(import.meta.url)));
 const fixtureRoot = join(
   repoRoot,
   'tests',
   'fixtures',
-  'chrisai-agents-fidelity'
+  'chrisai-knowledge-fidelity'
 );
 const docxGenerator = join(fixtureRoot, 'generate_mock_docx.py');
 const pythonExecutable = process.env.PYTHON

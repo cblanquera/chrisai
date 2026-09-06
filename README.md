@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/cblanquera/chrisai/blob/main/LICENSE)
 
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
-ChrisAI agents, branding, chatting, coding, designing, docing, and maintenance
+ChrisAI knowledge, branding, chatting, coding, designing, docing, and maintenance
 behaviors as reusable `skills/*/SKILL.md` folders.
 
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
@@ -16,7 +16,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Skill | Purpose |
 | --- | --- |
-| `chrisai-agents` | Install, repair, or update a project-local `.agents` operating surface with managed rules, workflows, references, and deterministic validation helpers. |
+| `chrisai-knowledge` | Install, repair, or update a project-local `.agents` operating surface with managed rules, workflows, references, and deterministic validation helpers. |
 | `chrisai-branding` | Support brand identity work, including guided branding, research, competitor discovery, positioning, naming, domain checks, logo guidance, brand kits, audits, launch readiness, transparent PNG preparation, and PNG/ICO conversion. |
 | `chrisai-chatting` | Route experimental chat-session experience work, including session caching and recall, HTML form intake, and readable HTML response preview links. |
 | `chrisai-coding` | Audit, recommend improvements to, and fix existing JavaScript, TypeScript, React TSX, TypeScript test, HTML/CSS, and TypeScript logic-review work through consolidated internal workflows and references. |
@@ -28,7 +28,7 @@ and OpenCode are install targets, not separate rewritten sources.
 
 | Topic | Guide |
 | --- | --- |
-| Agents | [docs/agents.md](docs/agents.md) |
+| Knowledge | [docs/knowledge.md](docs/knowledge.md) |
 | Branding | [docs/branding.md](docs/branding.md) |
 | Chatting | [docs/chatting.md](docs/chatting.md) |
 | Coding | [docs/coding.md](docs/coding.md) |

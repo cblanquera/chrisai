@@ -13,7 +13,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 const repoRoot = dirname(dirname(fileURLToPath(import.meta.url)));
-const skillRoot = join(repoRoot, 'skills', 'chrisai-agents');
+const skillRoot = join(repoRoot, 'skills', 'chrisai-knowledge');
 const installerPath = join(
   skillRoot,
   'scripts',
@@ -48,7 +48,7 @@ function markdownLines(count) {
 }
 
 test('agent workspace install manages the update workflow idempotently', async () => {
-  const targetRoot = await mkdtemp(join(tmpdir(), 'chrisai-agents-install-'));
+  const targetRoot = await mkdtemp(join(tmpdir(), 'chrisai-knowledge-install-'));
 
   try {
     const agentsDir = await installWorkspace(targetRoot);
@@ -92,7 +92,7 @@ test('agent workspace install manages the update workflow idempotently', async (
 });
 
 test('line validation enforces final boundaries and excludes Raw Source', async () => {
-  const targetRoot = await mkdtemp(join(tmpdir(), 'chrisai-agents-lines-'));
+  const targetRoot = await mkdtemp(join(tmpdir(), 'chrisai-knowledge-lines-'));
 
   try {
     const agentsDir = await installWorkspace(targetRoot);

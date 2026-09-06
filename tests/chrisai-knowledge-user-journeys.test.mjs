@@ -14,7 +14,7 @@ import test from 'node:test';
 import {
   evaluateAgentWorkspace,
   failureCodes
-} from './helpers/chrisai-agents-fidelity.mjs';
+} from './helpers/chrisai-knowledge-fidelity.mjs';
 
 async function write(projectRoot, path, content) {
   const destination = join(projectRoot, ...path.split('/'));

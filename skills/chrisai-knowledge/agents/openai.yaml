@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Knowledge"
+  short_description: "Install, repair, and update .agents workspace rules"
+  default_prompt: "Use $chrisai-knowledge to install, repair, or update the project-local .agents workspace rules."

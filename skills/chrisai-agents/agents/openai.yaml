@@ -1,4 +1,0 @@
-interface:
-  display_name: "ChrisAI Agents"
-  short_description: "Install, repair, and update .agents workspace rules"
-  default_prompt: "Use $chrisai-agents to install, repair, or update the project-local .agents workspace rules."
