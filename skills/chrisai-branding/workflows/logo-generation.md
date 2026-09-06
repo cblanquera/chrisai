@@ -283,124 +283,41 @@ itself. Use the board description and shared reference contract as context only.
 
 ## Step 8: Lock The Selected Candidate
 
-Establish the selected asset as the accepted SVG baseline before any revision,
-cleanup, or asset expansion.
+Read and apply `references/logo-iterative-refinement.md`. Resolve the selected
+candidate through the current board map and establish that exact SVG as the
+accepted baseline before any revision, cleanup, or asset expansion. Preserve
+the candidate label, source path, viewBox, accepted traits, locked invariants,
+and pending change in the baseline record described by the reference.
 
-Record:
-
-- candidate label, board-map path, and exact source SVG
-- viewBox and rendered aspect ratio
-- the traits the user selected
-- locked silhouette, geometry, negative space, proportions, stroke, curve,
-  angle, wordmark, palette, viewBox, and visible bounds that must not drift
-- any requested change in the user's own wording, recorded as pending until the
-  anatomy and shared-vocabulary handoff resolves its exact target
-
-The normal concept workflow already provides a separate SVG. For an imported
-legacy raster logo, preserve the raster as reference evidence and create a
-faithful SVG working candidate before continuing. Do not refine a cropped board
-cell or PNG as the selected working logo.
+For an imported legacy raster logo, follow the reference's imported-raster gate
+and obtain acceptance of a faithful SVG working baseline before refinement. Do
+not refine a cropped board cell or PNG.
 
 ## Step 9: Describe The Selected Logo And Establish Shared Vocabulary
 
-Selection triggers a vocabulary handoff before refinement. Inspect the exact
-selected SVG and respond with a concise `Logo anatomy` description using the
-agent's concrete visual terms. Do this even when the user's selection message
-also contains an edit request; describe the selected mark and resolve the
-language before rendering the requested change.
+Use the anatomy and shared-vocabulary handoff in
+`references/logo-iterative-refinement.md`. The concept review should already
+have described every candidate; when it did, reuse those terms and semantic SVG
+IDs instead of repeating the full description or asking for confirmation again.
 
-When the review response already supplied this anatomy, do not repeat the full
-description or make the user confirm the same vocabulary again. Resolve the
-requested modification against the existing terms and semantic SVG IDs, state
-the mapped target and protected remainder succinctly, and proceed when the
-target is unambiguous.
-
-Describe:
-
-- every visible component or coherent group, including its count
-- shape, color, position, orientation, and relationship to nearby components
-- negative spaces, overlaps, layer order, and the overall silhouette
-- technical terms such as `isometric`, `counter`, `compound path`, or `wordmark`
-  paired with a plain-language explanation
-- stable component names that correspond to SVG group or path IDs when possible
-
-Include a compact mapping when the user has supplied their own vocabulary:
-
-```markdown
-| Your term | Agent term | Exact visible scope |
-| --- | --- | --- |
-| [user phrase] | [technical or construction term] | [components included] |
-```
-
-The user's words and the agent's words are aliases after this handoff. Do not
-force the user to adopt jargon. If a term could identify one component or a
-larger semantic group, provide an annotated render or ask one concise question
-before editing. Record the accepted vocabulary in the board map or one selection
-record when it needs to survive beyond the conversation.
+If the handoff is missing, inspect the exact selected SVG and provide it before
+rendering a requested change. Map the user's words to the visible component and
+SVG IDs, keep both vocabularies as aliases, and resolve any ambiguous target
+with one concise question or an annotated baseline.
 
 ## Step 10: Refine The Selected Direction In SVG
 
-Read and apply `references/logo-iterative-refinement.md` whenever the user asks
-for a revision or the selected SVG needs cleanup before approval.
+Use `references/logo-iterative-refinement.md` for target resolution, locked
+invariants, revision briefs, allowed-change regions, surgical SVG edits,
+baseline comparison, promotion, and retry limits. Treat the whole accepted mark
+as locked by default, branch every revision from the exact accepted SVG, and
+change only the authorized groups or paths. A rejected candidate must not
+become the next baseline.
 
-Before editing, inspect the baseline and identify every visible component that
-could reasonably match the user's target phrase. If more than one component is
-plausible, ask one concise clarification question or provide an annotated
-baseline. Do not render candidates until the target is unambiguous.
-
-Choose the least destructive suitable path:
-
-- edit the accepted SVG's named objects, groups, or paths directly
-- use deterministic SVG transforms or path changes for color, text, spacing,
-  alignment, stroke, radius, shape, or sizing revisions
-- create a separately labeled redesign candidate only when the requested change
-  alters silhouette, metaphor, composition, or structural direction
-
-Make one conceptual change at a time. State `change only` and `keep unchanged`
-constraints explicitly, save a new candidate without overwriting the baseline,
-create a revision record only when it adds information not present in the SVG
-or board map, and compare the candidate directly with the baseline. A rejected
-candidate must not become the input to the next attempt.
-
-Treat the whole accepted mark as locked by default. Name the SVG groups or path
-IDs authorized to change and preserve all other SVG objects exactly. When the
-user requests several iterations, branch each SVG from the same accepted SVG
-baseline and vary only those authorized objects.
-
-If no suitable editing path can preserve the accepted identity, stop and state
-the fidelity limitation. Do not fall back to a generated PNG refinement.
-
-Use practical SVG defaults:
-
-- `viewBox="0 0 100 100"` for marks
-- `currentColor` where practical
-- simple geometric primitives when possible
-- 1-2 core elements
-- strong silhouette
-- controlled line weights
-- crisp negative space
-- transparent background
-
-For each variant, provide:
-
-- concept name
-- SVG code or file path when creating files
-- short rationale
-- expected strengths
-- risk or weakness
-- likely best use case
-
-Avoid:
-
-- generic startup gradients
-- meaningless shapes
-- copied or famous marks
-- clipart-style icons
-- overcomplicated symbols
-- inconsistent variant systems
-- marks that depend on tiny details
-- marks that look like settings, sync, upload, widget, or toolbar icons
-- wordmarks that cannot support an icon or favicon need
+Use `references/logo-generation.md` for SVG output standards, variant output,
+cliche rejection, and failure signs. If no suitable editing path can preserve
+the accepted identity, stop and state the fidelity limitation instead of
+falling back to a generated PNG refinement.
 
 ## Step 11: Preview And Validate SVG Candidates
 
