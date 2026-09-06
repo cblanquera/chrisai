@@ -45,12 +45,13 @@
 
   --wf-font-sans: Arial, Helvetica, sans-serif;
   --wf-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --wf-text-2xs: 11px;
   --wf-text-xs: 12px;
-  --wf-text-sm: 14px;
-  --wf-text-md: 16px;
-  --wf-text-lg: 20px;
-  --wf-text-xl: 24px;
-  --wf-text-2xl: 32px;
+  --wf-text-sm: 13px;
+  --wf-text-md: 15px;
+  --wf-text-lg: 16px;
+  --wf-text-xl: 18px;
+  --wf-text-2xl: 20px;
   --wf-line-tight: 1.2;
   --wf-line: 1.5;
 

@@ -10,7 +10,7 @@
   color: var(--wf-gray-800);
   font-size: var(--wf-text-xs);
   font-weight: 700;
-  line-height: 1;
+  line-height: var(--wf-line-tight);
   white-space: nowrap;
 }
 

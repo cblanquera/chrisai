@@ -1,15 +1,15 @@
-.wf-category-manager { min-height: 680px; overflow: hidden; border: 1px solid var(--wf-border); border-radius: var(--wf-radius-4); background: var(--wf-surface); font-size: 13px; }
+.wf-category-manager { min-height: 680px; overflow: hidden; border: 1px solid var(--wf-border); border-radius: var(--wf-radius-4); background: var(--wf-surface); font-size: var(--wf-text-sm); }
 .wf-category-manager__header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--wf-space-4); padding: var(--wf-space-4); border-bottom: 1px solid var(--wf-border); }
 .wf-category-manager__search { display: grid; grid-template-columns: minmax(220px, 420px) auto; align-items: center; justify-content: space-between; gap: var(--wf-space-3); padding: var(--wf-space-3) var(--wf-space-4); border-bottom: 1px solid var(--wf-border); background: var(--wf-gray-50); }
-.wf-category-manager__count { color: var(--wf-text-muted); font-size: 12px; }
-.wf-category-manager__tree { min-height: 560px; padding: 8px 0; }
+.wf-category-manager__count { color: var(--wf-text-muted); font-size: var(--wf-text-xs); }
+.wf-category-manager__tree { min-height: 560px; padding: var(--wf-space-2) 0; }
 .wf-category-manager__tree ul { position: relative; padding-left: 22px; margin: 0; }
 .wf-category-manager__tree .wf-tree__item { margin: 0; }
 .wf-category-manager__tree .wf-tree__node { min-height: 30px; padding-right: 10px; border-radius: 0; }
 .wf-category-manager__tree .wf-tree__expand { width: 25px; min-width: 25px; height: 27px; }
 .wf-category-manager__tree span.wf-tree__expand::before { width: 0; height: 18px; border-left: 1px dotted var(--wf-border-strong); content: ""; }
 .wf-category-manager__tree .wf-tree__label { min-height: 28px; padding: 2px 6px; }
-.wf-category-manager__drag { width: 24px; height: 26px; display: grid; place-items: center; border: 0; background: transparent; color: var(--wf-text-muted); cursor: grab; font-size: 15px; letter-spacing: -2px; }
+.wf-category-manager__drag { width: 24px; height: 26px; display: grid; place-items: center; border: 0; background: transparent; color: var(--wf-text-muted); cursor: grab; font-size: var(--wf-text-md); letter-spacing: -2px; }
 .wf-category-manager__drag:active { cursor: grabbing; }
 .wf-category-manager__tree [data-drop-position="before"] > .wf-tree__node { box-shadow: inset 0 2px var(--wf-gray-600); }
 .wf-category-manager__tree [data-drop-position="after"] > .wf-tree__node { box-shadow: inset 0 -2px var(--wf-gray-600); }

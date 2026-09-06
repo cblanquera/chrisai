@@ -91,6 +91,9 @@ review artifacts.
 - Use `references/wireframe-lib-inventory.md` to select bundled wireframe
   layouts, components, icons, utilities, and behavioral samples before
   creating new equivalents.
+- Use `references/wireframe-composition-rules.md` after library lookup when a
+  wireframe needs custom elements or compositions, including table-like data
+  collections.
 - Use `references/creative-draft-specs-contract.md`,
   `references/creative-draft-implementation-rules.md`,
   `references/creative-draft-revision-workflow.md`, and

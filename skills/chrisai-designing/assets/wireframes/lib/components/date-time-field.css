@@ -3,7 +3,7 @@
 }
 
 .wf-date-time-field .wf-input {
-  padding-right: 48px;
+  padding-right: var(--wf-space-12);
 }
 
 .wf-date-time-field .wf-icon-button {

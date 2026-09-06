@@ -83,13 +83,13 @@
     function renderRows() {
       var visible = filteredRecords();
       if (!visible.length) {
-        list.innerHTML = '<tr><td class="wf-detail-panel__empty" colspan="4">No matching records</td></tr>';
+        list.innerHTML = '<tr><td class="wf-table__empty wf-detail-panel__empty" colspan="4">No matching records</td></tr>';
       } else {
         list.innerHTML = visible.map(function (record) {
           var person = personById(record.personId) || { name: 'Unassigned' };
           var selected = isPanelOpen() && record.id === currentRecordId;
           return '<tr tabindex="0" aria-selected="' + String(selected) + '" data-wf-detail-open="record-detail" data-wf-detail-panel-record="' + escapeHtml(record.id) + '"' + (selected ? ' data-wf-detail-selected' : '') + '>' +
-            '<td><strong>' + escapeHtml(record.title) + '</strong></td>' +
+            '<th scope="row"><strong>' + escapeHtml(record.title) + '</strong></th>' +
             '<td data-wf-detail-panel-person-cell="' + escapeHtml(person.id || '') + '">' + escapeHtml(person.name) + '</td>' +
             '<td><span class="' + badgeClass(record.status) + '" data-wf-detail-panel-status-cell>' + escapeHtml(record.status) + '</span></td>' +
             '<td data-wf-detail-panel-updated-cell>' + escapeHtml(record.updated) + '</td>' +

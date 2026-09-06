@@ -72,6 +72,10 @@ with its `base/` CSS system, then inspect
 [wireframe-lib-inventory](../references/wireframe-lib-inventory.md) for other
 useful files. Copy only what the revision uses.
 
+When no library source matches the required element or composition, use
+[wireframe-composition-rules](../references/wireframe-composition-rules.md)
+before writing custom markup or styles.
+
 When a user describes a component, interface, or layout without knowing its
 library name, treat the description as a lookup request. Use the inventory as
 the first index, then inspect the closest matching source under `components/`,

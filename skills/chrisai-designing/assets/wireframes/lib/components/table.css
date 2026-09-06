@@ -18,16 +18,45 @@
   vertical-align: top;
 }
 
-.wf-table th {
+.wf-table thead th {
   background: var(--wf-gray-50);
   color: var(--wf-text-muted);
   font-weight: 700;
 }
 
-.wf-table tr:last-child td {
+.wf-table tbody th {
+  background: inherit;
+  color: var(--wf-text);
+  font-weight: 700;
+}
+
+.wf-table tbody tr:last-child > * {
   border-bottom: 0;
 }
 
 .wf-table tbody tr:hover {
   background: var(--wf-gray-50);
+}
+
+.wf-table tbody tr[aria-selected="true"] {
+  background: var(--wf-gray-100);
+}
+
+.wf-table__number,
+.wf-table__actions {
+  text-align: right;
+}
+
+.wf-table__number {
+  font-variant-numeric: tabular-nums;
+}
+
+.wf-table__actions {
+  white-space: nowrap;
+}
+
+.wf-table__empty {
+  padding: var(--wf-space-8);
+  color: var(--wf-text-muted);
+  text-align: center;
 }

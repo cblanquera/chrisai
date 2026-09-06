@@ -184,7 +184,7 @@
     function renderList() {
       listBody.innerHTML = state.nodes.map(function (node) {
         var parent = node.parentId ? nodeById(node.parentId) : null;
-        return '<tr aria-selected="' + String(node.id === selectedId) + '"><td><button type="button" data-wf-mind-map-list-node="' + escapeHtml(node.id) + '">' + escapeHtml(node.title) + '</button></td><td>' + escapeHtml(parent ? parent.title : 'Central topic') + '</td><td>' + childrenOf(node.id).length + '</td></tr>';
+        return '<tr aria-selected="' + String(node.id === selectedId) + '"><th scope="row"><button type="button" data-wf-mind-map-list-node="' + escapeHtml(node.id) + '">' + escapeHtml(node.title) + '</button></th><td>' + escapeHtml(parent ? parent.title : 'Central topic') + '</td><td class="wf-table__number">' + childrenOf(node.id).length + '</td></tr>';
       }).join('');
     }
 

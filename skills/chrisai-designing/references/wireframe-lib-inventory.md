@@ -10,6 +10,10 @@ HTML files beside component and layout CSS are canonical, copyable markup.
 Adapt their content, IDs, links, and initial state to the revision. Sample HTML
 files are complete review pages and are not source templates.
 
+When this inventory has no suitable source, use
+[Wireframe Composition Rules](wireframe-composition-rules.md) to compose the
+custom element from established tokens and patterns.
+
 ## Base
 
 | Item | Source files | Sample | Dependencies | Copy when |
@@ -92,7 +96,7 @@ Replace the embedded JSON with the revision's initial state.
 | Loader | `components/loader.html`, `components/loader.css` | `samples/components/loader.html` | base files | Loading, skeleton, or progress states are needed. |
 | Notifier | `components/notifier.html`, `components/notifier.css`, `components/notifier.js` | `samples/components/notifier.html` | base files, icons, buttons | Toasts or notification stacks are needed. |
 | Pagination | `components/pagination.html`, `components/pagination.css` | `samples/components/pagination.html` | base files, icons | Lists or tables need page navigation. |
-| Table | `components/table.html`, `components/table.css` | `samples/components/table.html` | base files, badges | Structured row data is needed. |
+| Table | `components/table.html`, `components/table.css` | `samples/components/table.html` | base files, badges | Structured row data needs scoped headers plus consistent selection, numeric, action, and empty-state treatments. |
 | Tabs | `components/tabs.html`, `components/tabs.css`, `components/tabs.js` | `samples/components/tabs.html` | base files | A view switches between panels without changing pages. |
 | Tree | `components/tree.html`, `components/tree.css`, `components/tree.js` | `samples/components/tree.html` | base files, icons | Nested navigation or hierarchical records need expansion, optional single or multiple selection, ARIA tree semantics, roving focus, and arrow-key navigation. |
 | Tooltip | `components/tooltip.html`, `components/tooltip.css`, `components/tooltip.js` | `samples/components/tooltip.html` | base files, buttons | Small hover or focus help is needed. |

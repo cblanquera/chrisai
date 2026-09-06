@@ -204,6 +204,8 @@ Include only files that are used by the revision. Candidate files may include:
 
 Use [Wireframe Library Inventory](wireframe-lib-inventory.md) to identify
 bundled sources.
+Use [Wireframe Composition Rules](wireframe-composition-rules.md) to define
+custom elements when the inventory has no suitable source.
 For each planned library file, state whether it will be copied, adapted, or
 created for the revision. Include any new layouts, component collections,
 templates, interactions, state helpers, or Lucide-guided SVG icons the bundled

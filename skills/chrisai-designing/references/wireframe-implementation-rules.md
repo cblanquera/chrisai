@@ -131,6 +131,10 @@ Start most revisions with `base/tokens.css`, `base/reset.css`, and
 5. Do not copy unused components, layouts, icons, helpers, or CSS.
 6. If a copied file includes unused exports or styles, trim it when doing so will not break the shared pattern.
 
+When no library source matches the required element or composition, read
+[Wireframe Composition Rules](wireframe-composition-rules.md) before writing
+custom markup or styles.
+
 Keep source paths grouped as `base/`, `layouts/`, `components/`, `icons/`,
 and `utilities/` when preserving the bundled structure. If a revision flattens
 or combines files, record that mapping in `specs.md`.

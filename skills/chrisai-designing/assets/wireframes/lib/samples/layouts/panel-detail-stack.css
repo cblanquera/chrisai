@@ -22,7 +22,7 @@
   width: 18%;
 }
 
-.sample-detail-table td {
+.sample-detail-table tbody > tr > * {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
