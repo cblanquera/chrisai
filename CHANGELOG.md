@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.3 - 2026-09-07
+
+- Bounded acceptance Resource File retention to the latest finalized attempt
+  per Acceptance Control while preserving compact text-only attempt history.
+- Made Agent Workspace link validation fence-aware so example links inside
+  backtick or tilde code blocks are not treated as live file references.
+- Excluded reusable workflows and installed skills from local-link errors and
+  warnings while preserving valid workflow ownership of Reference Files.
+- Added regression coverage for fenced placeholder links, unchecked workflow
+  and skill links, and real broken links following fenced examples.
+
 ## 0.4.2 - 2026-09-07
 
 - Fixed the Agent Workspace validator so independently installed packages under
