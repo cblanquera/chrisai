@@ -16,6 +16,24 @@ Review the rendered artifact against its purpose and source.
 - Does the asset respect the supplied brand system and required text?
 - Are uncertainty and limitations represented honestly when relevant?
 
+## Protected Brand Asset Fidelity
+
+When a supplied logo, wordmark, lockup, seal, or other protected brand asset
+appears, apply `protected-brand-assets.md` as a binary gate:
+
+- Was the canonical source file placed through a deterministic compositor
+  rather than recreated by a generative model?
+- Are variant, geometry, aspect ratio, orientation, colors, alpha, internal
+  spacing, and wordmark casing preserved?
+- Is the asset free of cropping, stretching, skewing, rotation, recoloring,
+  effects, or transparency changes that were not explicitly approved?
+- Does placement satisfy the recorded anchor, dimensions, clearspace,
+  contrast, and safe-crop requirements?
+- Are there no duplicate, residual, approximate, or invented marks elsewhere?
+
+Reject the candidate if any required answer is no. Visual similarity is not a
+substitute for canonical-file placement.
+
 ## Revision Fidelity
 
 When reviewing a revision, compare the candidate with the selected baseline:

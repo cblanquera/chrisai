@@ -14,6 +14,9 @@ passes review or the user accepts it.
   attempt.
 - Do not overwrite a saved baseline by default. Save candidates
   non-destructively when files are being maintained.
+- When the graphic contains a protected brand asset, keep the visual plate,
+  canonical asset, and placement specification as separate baseline inputs.
+  Do not use a flattened, generated approximation as the brand source.
 - If several images are available, identify the edit target explicitly and
   give every other image a role such as style reference, brand reference,
   content source, or compositing input.
@@ -76,6 +79,8 @@ contradictions.
   broad requests such as `make it better`, `polish it`, or `try another`.
 - Preserve the baseline's aspect ratio and dimensions unless the requested
   change requires different output geometry.
+- Edit the visual plate without protected brand assets whenever practical,
+  then reapply every protected asset deterministically from its canonical file.
 - When repairing a failure, describe the exact defect and regenerate the
   smallest practical scope.
 - Keep tool-specific parameters in the instructions for the selected runtime;

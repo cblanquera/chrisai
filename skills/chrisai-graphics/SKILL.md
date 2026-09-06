@@ -21,7 +21,9 @@ software UI/UX, wireframes, interactive drafts, or design-system extraction.
 - Choose the medium from the information structure, not from a default style.
 - Establish hierarchy before decoration.
 - Keep on-image text concise and legible at the intended viewing size.
-- Respect supplied brand assets and visual constraints.
+- Treat supplied logos, wordmarks, lockups, seals, and other protected brand
+  assets as immutable source files, not imagery for a generative model to
+  redraw.
 - Create for the destination crop or aspect ratio instead of trimming a random
   composition afterward.
 - Treat a requested revision as a controlled change from the latest acceptable
@@ -50,6 +52,9 @@ software UI/UX, wireframes, interactive drafts, or design-system extraction.
   fidelity, legibility, composition, and export readiness.
 - Use `references/iterative-editing.md` whenever feedback asks to revise,
   refine, repair, or try again from an existing artifact.
+- Use `references/protected-brand-assets.md` whenever a supplied logo,
+  wordmark, lockup, seal, partner mark, or certification mark must appear in
+  the output.
 
 ## Capability Selection
 
@@ -65,7 +70,10 @@ runtime a hard dependency:
 - Use an editable diagram, vector, slide, canvas, or code-based renderer when
   exact labels, relationships, geometry, or repeated revisions matter more
   than illustrative richness.
-- Use existing brand assets or user-supplied references when available.
+- Use a deterministic composition medium to place protected brand assets from
+  their canonical files after generative artwork is complete. Generate a
+  logo-free visual plate with suitable negative space instead of asking an
+  image model to reproduce a supplied logo.
 - If no suitable rendering capability exists, deliver a production-ready
   visual specification or generation prompt and state that the final graphic
   was not rendered.
@@ -102,6 +110,10 @@ continue.
   graphic communicates more clearly.
 - Do not force exact text into a raster generator known to render text
   unreliably; switch to a more controllable medium or reduce on-image text.
+- Do not redraw, trace, regenerate, restyle, recolor, crop, stretch, skew, or
+  bake a supplied protected brand asset into generated pixels. If exact
+  placement is unavailable, deliver the unbranded visual plate and placement
+  specification instead of substituting an approximation.
 - Do not repair incorrect rendered text by painting over a bitmap. Regenerate,
   revise the composition, or switch to an editable medium.
 - Do not continue editing from a rejected or visibly degraded candidate unless
