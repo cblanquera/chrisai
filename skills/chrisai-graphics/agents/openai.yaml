@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Graphics"
+  short_description: "Banners, infographics, diagrams, and social graphics"
+  default_prompt: "Use $chrisai-graphics to create a clear banner, article graphic, social graphic, infographic, or diagram from my content."
