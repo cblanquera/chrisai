@@ -27,6 +27,10 @@ decorative graphics, or general screen design.
   grid, live area, keylines, construction style, stroke or fill rules, caps,
   joins, corners, spacing, optical corrections, modifiers, naming, and output
   formats.
+- Default original UI icons to monochrome: one foreground color plus negative
+  space. Use `currentColor` unless the accepted system requires another token.
+  Use duotone or multicolor only when the existing system or user explicitly
+  requires it.
 - Use editable vector geometry as the source of truth. Raster generation may
   support exploration but must not become the master for geometric UI icons.
 - Judge icons as a family and at their intended display sizes. Source-only SVG
