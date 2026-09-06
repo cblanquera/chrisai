@@ -75,8 +75,8 @@ Use a small JSON schema as the handoff from agent parsing to rendering:
 ```json
 {
   "title": "Project Intake",
-  "source_skill": "chrisai-designing",
-  "source_workflow": "wireframes",
+  "source_skill": "requesting-skill",
+  "source_workflow": "project-intake",
   "questions": [
     {
       "id": "goal",

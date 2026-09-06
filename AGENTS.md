@@ -83,6 +83,12 @@ Write portable skill guidance first, then add adapter-specific notes for Codex,
 Claude Code, OpenCode, or other targets only where the behavior actually
 differs.
 
+Treat every `skills/<skill-name>/` folder as independently installable. Do not
+name, require, or route to sibling ChrisAI skills from portable skill content.
+Express exclusions as boundaries of the current skill and describe optional
+capabilities generically. Root distribution documentation may list and compare
+the available skills without creating a runtime dependency between them.
+
 When drafting or revising skills, consider Linux, macOS, and Windows support
 before treating command guidance as complete.
 
