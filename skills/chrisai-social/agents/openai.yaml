@@ -1,0 +1,4 @@
+interface:
+  display_name: "ChrisAI Social"
+  short_description: "Articles and platform-native social writing"
+  default_prompt: "Use $chrisai-social to turn a technical idea or rough thought into an accessible article, social post, X thread, or LinkedIn post."

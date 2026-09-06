@@ -6,8 +6,8 @@
 [![License](https://img.shields.io/badge/license-MIT-blue)](https://github.com/cblanquera/chrisai/blob/main/LICENSE)
 
 ChrisAI is a portable skill distribution for AI coding agents. It packages the
-ChrisAI knowledge, branding, chatting, coding, designing, docing, and maintenance
-behaviors as reusable `skills/*/SKILL.md` folders.
+ChrisAI knowledge, branding, chatting, coding, designing, social, docing, and
+maintenance behaviors as reusable `skills/*/SKILL.md` folders.
 
 The source of truth is the repository `skills/` directory. Codex, Claude Code,
 and OpenCode are install targets, not separate rewritten sources.
@@ -23,6 +23,7 @@ and OpenCode are install targets, not separate rewritten sources.
 | `chrisai-docing` | Route developer-facing technical writing to internal workflows and references for guided learning, API reference, formatting, and copy editing. |
 | `chrisai-designing` | Route ChrisAI design work to internal workflows and references for creative direction, design-system extraction, wireframes, design drafts, and browser-visible feedback loops. |
 | `chrisai-doctor` | Diagnose, verify, inspect, troubleshoot, update, upgrade, pull, install, or sync ChrisAI skills, repository state, validation, or agent adapter targets. |
+| `chrisai-social` | Turn technical ideas and rough thoughts into accessible articles, social posts, X/Twitter threads, LinkedIn posts, and platform-native derivatives. |
 
 ## Human-Readable Docs
 
@@ -34,6 +35,7 @@ and OpenCode are install targets, not separate rewritten sources.
 | Coding | [docs/coding.md](docs/coding.md) |
 | Designing | [docs/design.md](docs/design.md) |
 | Docing | [docs/docs.md](docs/docs.md) |
+| Social | [docs/social.md](docs/social.md) |
 
 ## Install
 
