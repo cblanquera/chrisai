@@ -124,8 +124,7 @@
   cursor: grab;
 }
 
-.wf-form-builder__drag::before {
-  content: "⠿";
+.wf-form-builder__drag .wf-icon {
   font-size: var(--wf-text-lg);
 }
 

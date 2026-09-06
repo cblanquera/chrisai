@@ -43,6 +43,7 @@
 .sample-link {
   display: inline-flex;
   align-items: center;
+  gap: var(--wf-space-2);
   min-height: 34px;
   padding: 0 var(--wf-space-3);
   border: 1px solid var(--wf-border);

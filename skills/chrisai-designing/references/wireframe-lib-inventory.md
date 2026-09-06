@@ -63,7 +63,7 @@ Replace the embedded JSON with the revision's initial state.
 
 | Item | Source files | Sample | Dependencies | Copy when |
 | --- | --- | --- | --- | --- |
-| Lucide icons | `icons/icons.css`, `icons/icons.js`, `icons/inventory.md` | `samples/index.html` | base files | UI controls need familiar grayscale icons. |
+| Monochrome Lucide 1.27.0 icons | `icons/icons.css`, `icons/icons.js`, `icons/inventory.md` | `samples/index.html` | base files | UI controls need familiar, single-color icons with stable local names. |
 
 ## Components
 

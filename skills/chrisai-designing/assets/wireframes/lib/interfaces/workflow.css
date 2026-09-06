@@ -141,9 +141,12 @@
 .wf-workflow__column-handle {
   width: 18px;
   height: 30px;
+  display: grid;
+  place-items: center;
   padding: 0;
   border: 0;
-  background: radial-gradient(circle, var(--wf-gray-500) 1px, transparent 1.5px) 0 0 / 6px 6px;
+  background: transparent;
+  color: var(--wf-gray-500);
   cursor: grab;
 }
 
@@ -475,8 +478,12 @@
 .wf-workflow__stage-handle {
   width: 18px;
   height: 26px;
+  display: grid;
+  place-items: center;
+  padding: 0;
   border: 0;
-  background: radial-gradient(circle, var(--wf-gray-500) 1px, transparent 1.5px) 0 0 / 6px 6px;
+  background: transparent;
+  color: var(--wf-gray-500);
   cursor: grab;
 }
 
@@ -695,8 +702,12 @@
   width: 18px;
   height: 28px;
   flex: 0 0 18px;
+  display: grid;
+  place-items: center;
+  padding: 0;
   border: 0;
-  background: radial-gradient(circle, var(--wf-gray-500) 1px, transparent 1.5px) 0 0 / 6px 6px;
+  background: transparent;
+  color: var(--wf-gray-500);
   cursor: grab;
 }
 

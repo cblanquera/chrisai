@@ -103,7 +103,7 @@
     function renderLists() {
       list.innerHTML = fields.map(function (field, index) {
         return '<article class="wf-form-builder__field-card" draggable="true" tabindex="0" aria-selected="' + String(field.id === selectedId) + '" data-wf-form-builder-field="' + escapeHtml(field.id) + '">' +
-          '<button class="wf-form-builder__drag" type="button" aria-label="Reorder ' + escapeHtml(field.label) + '"></button>' +
+          '<button class="wf-form-builder__drag" type="button" aria-label="Reorder ' + escapeHtml(field.label) + '"><span data-wf-icon="grip"></span></button>' +
           '<div class="wf-form-builder__field-main"><header><span class="wf-form-builder__field-number">' + (index + 1) + '</span><div><h3>' + escapeHtml(field.label) + (field.required ? ' <em class="wf-form-builder__required">*</em>' : '') + '</h3><p>' + escapeHtml(typeLabels[field.type]) + (field.required ? ' · Required' : '') + '</p></div></header>' + answerPreview(field) + '</div>' +
         '<div class="wf-form-builder__field-actions"><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-form-builder-move="up" aria-label="Move field up"' + (index === 0 ? ' disabled' : '') + '><span data-wf-icon="chevron-up"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-form-builder-move="down" aria-label="Move field down"' + (index === fields.length - 1 ? ' disabled' : '') + '><span data-wf-icon="chevron-down"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" data-wf-form-builder-copy aria-label="Duplicate field"><span data-wf-icon="copy"></span></button></div>' +
           '</article>';
