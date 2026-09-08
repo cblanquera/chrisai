@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="../../base/tokens.css">
   <link rel="stylesheet" href="../../base/reset.css">
   <link rel="stylesheet" href="../../base/base.css">
+  <link rel="stylesheet" href="../../icons/icons.css">
   <link rel="stylesheet" href="../../components/badge.css">
+  <link rel="stylesheet" href="../../components/buttons.css">
   <link rel="stylesheet" href="../../components/table.css">
   <link rel="stylesheet" href="../sample.css">
 </head>
@@ -16,19 +18,106 @@
     <div class="sample-shell wf-stack">
       <a class="sample-link" href="../index.html">Back to samples</a>
       <h1 class="wf-title">Table</h1>
-      <div class="wf-table-wrap">
-        <table class="wf-table" aria-label="Records">
+      <div class="wf-table-wrap wf-table-wrap--sticky">
+        <table class="wf-table wf-table--sticky" aria-label="Records">
           <thead>
-            <tr><th scope="col">Record</th><th scope="col">Owner</th><th scope="col">Status</th><th scope="col">Updated</th></tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="col">Record</th>
+              <th scope="col">Owner</th>
+              <th scope="col">Team</th>
+              <th scope="col">Status</th>
+              <th scope="col">Priority</th>
+              <th scope="col">Created</th>
+              <th scope="col">Updated</th>
+              <th class="wf-table__actions wf-table__sticky-right" scope="col">Actions</th>
+            </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Onboarding flow</th><td>Product</td><td><span class="wf-badge wf-badge--solid">Active</span></td><td>Today</td></tr>
-            <tr><th scope="row">Billing review</th><td>Ops</td><td><span class="wf-badge">Draft</span></td><td>Yesterday</td></tr>
-            <tr><th scope="row">Support export</th><td>Success</td><td><span class="wf-badge wf-badge--outline">Queued</span></td><td>Jul 9</td></tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Onboarding flow</th>
+              <td>Avery Stone</td>
+              <td>Product</td>
+              <td><span class="wf-badge wf-badge--solid">Active</span></td>
+              <td>High</td>
+              <td>Sep 8</td>
+              <td>Today</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Onboarding flow"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Onboarding flow"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Billing review</th>
+              <td>Jamie Cruz</td>
+              <td>Finance</td>
+              <td><span class="wf-badge">Draft</span></td>
+              <td>Medium</td>
+              <td>Sep 5</td>
+              <td>Yesterday</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Billing review"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Billing review"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Support export</th>
+              <td>Morgan Lee</td>
+              <td>Success</td>
+              <td><span class="wf-badge wf-badge--outline">Queued</span></td>
+              <td>Low</td>
+              <td>Sep 3</td>
+              <td>Jul 9</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Support export"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Support export"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Catalog migration</th>
+              <td>Priya Shah</td>
+              <td>Operations</td>
+              <td><span class="wf-badge wf-badge--solid">Active</span></td>
+              <td>High</td>
+              <td>Aug 29</td>
+              <td>Sep 6</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Catalog migration"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Catalog migration"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Checkout QA</th>
+              <td>Devon Reed</td>
+              <td>Quality</td>
+              <td><span class="wf-badge">Review</span></td>
+              <td>High</td>
+              <td>Aug 28</td>
+              <td>Sep 5</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Checkout QA"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Checkout QA"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Partner launch</th>
+              <td>Noel Garcia</td>
+              <td>Growth</td>
+              <td><span class="wf-badge wf-badge--outline">Scheduled</span></td>
+              <td>Medium</td>
+              <td>Aug 25</td>
+              <td>Sep 4</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Partner launch"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Partner launch"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Policy refresh</th>
+              <td>Casey Park</td>
+              <td>Legal</td>
+              <td><span class="wf-badge">Draft</span></td>
+              <td>Low</td>
+              <td>Aug 20</td>
+              <td>Sep 1</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Policy refresh"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Policy refresh"><span data-wf-icon="trash"></span></button></td>
+            </tr>
+            <tr>
+              <th class="wf-table__sticky-left" scope="row">Usage report</th>
+              <td>Robin Tan</td>
+              <td>Data</td>
+              <td><span class="wf-badge wf-badge--solid">Complete</span></td>
+              <td>Medium</td>
+              <td>Aug 18</td>
+              <td>Aug 31</td>
+              <td class="wf-table__actions wf-table__sticky-right"><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Edit Usage report"><span data-wf-icon="edit"></span></button><button class="wf-button wf-button--ghost wf-icon-button" type="button" aria-label="Delete Usage report"><span data-wf-icon="trash"></span></button></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </main>
+  <script src="../../icons/icons.js"></script>
 </body>
 </html>

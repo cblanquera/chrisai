@@ -133,6 +133,10 @@ element or CSS layout.
 ### Responsive Collections
 
 - Preserve column relationships with horizontal scrolling by default.
+- In a bounded two-axis scroller, keep column headers pinned to the top. Pin a
+  short identity column to the left and compact actions to the right when they
+  must remain available; use opaque cell backgrounds and raise corner cells
+  above the other sticky cells.
 - Convert rows into labeled cards only when `specs.md` defines that behavior
   and every value retains its label and meaning.
 - Do not shrink typography below the type scale to make columns fit.

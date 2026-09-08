@@ -5,6 +5,11 @@
   background: var(--wf-surface);
 }
 
+.wf-table-wrap--sticky {
+  max-height: var(--wf-table-sticky-height, 320px);
+  overscroll-behavior: contain;
+}
+
 .wf-table {
   min-width: 640px;
   font-size: var(--wf-text-sm);
@@ -34,12 +39,52 @@
   border-bottom: 0;
 }
 
+.wf-table--sticky tbody tr {
+  background: var(--wf-surface);
+}
+
 .wf-table tbody tr:hover {
   background: var(--wf-gray-50);
 }
 
 .wf-table tbody tr[aria-selected="true"] {
   background: var(--wf-gray-100);
+}
+
+.wf-table--sticky {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.wf-table--sticky thead th {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
+.wf-table--sticky .wf-table__sticky-left {
+  position: sticky;
+  z-index: 1;
+  left: 0;
+  box-shadow: 1px 0 var(--wf-border);
+  white-space: nowrap;
+}
+
+.wf-table--sticky .wf-table__sticky-right {
+  position: sticky;
+  z-index: 1;
+  right: 0;
+  box-shadow: -1px 0 var(--wf-border);
+}
+
+.wf-table--sticky tbody .wf-table__sticky-left,
+.wf-table--sticky tbody .wf-table__sticky-right {
+  background: inherit;
+}
+
+.wf-table--sticky thead .wf-table__sticky-left,
+.wf-table--sticky thead .wf-table__sticky-right {
+  z-index: 3;
 }
 
 .wf-table__number,
